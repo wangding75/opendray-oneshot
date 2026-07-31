@@ -132,6 +132,36 @@ func TestPostgresQueueCompetitionLeaseRecoveryIdempotencyAndRestart(t *testing.T
 		t.Fatalf("restart claims=%+v err=%v", claims, err)
 	}
 
+	// A stable lease is claimed first, then expired via direct DB update so
+	// recovery does not depend on wall-clock sleep.
+	recovered := enqueueLive(t, repository, owner, providerID, "lease-recovery")
+	firstClaims, err := repository.ClaimDue(ctx, "crashed-worker", 1, time.Minute)
+	if err != nil || len(firstClaims) != 1 || firstClaims[0].Delivery.ID != recovered.Delivery.ID {
+		t.Fatalf("short claim=%+v err=%v", firstClaims, err)
+	}
+	if firstClaims[0].Delivery.Attempt != 1 {
+		t.Fatalf("first claim attempt=%d; want 1", firstClaims[0].Delivery.Attempt)
+	}
+	result, err := root.Pool().Exec(
+		ctx,
+		`UPDATE oneshot_deliveries
+         SET lease_until = clock_timestamp() - interval '1 second'
+         WHERE id = $1
+           AND status = 'reserved'
+           AND attempt = 1`,
+		recovered.Delivery.ID,
+	)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if result.RowsAffected() != 1 {
+		t.Fatalf("expire lease rows=%d; want 1", result.RowsAffected())
+	}
+	secondClaims, err := repository.ClaimDue(ctx, "recovery-worker", 1, time.Minute)
+	if err != nil || len(secondClaims) != 1 || secondClaims[0].Delivery.ID != recovered.Delivery.ID || secondClaims[0].Delivery.Attempt != 2 {
+		t.Fatalf("recovery=%+v err=%v", secondClaims, err)
+	}
+
 	// Same key/payload replays; different payload conflicts.
 	service := application.NewDispatchService(repository)
 	command := application.CreateTaskCommand{
@@ -151,17 +181,5 @@ func TestPostgresQueueCompetitionLeaseRecoveryIdempotencyAndRestart(t *testing.T
 	command.Prompt = "different"
 	if _, err := service.CreateTask(ctx, command); !domain.HasCode(err, domain.ErrorIdempotencyConflict) {
 		t.Fatalf("payload conflict err=%v", err)
-	}
-
-	// A short expired lease is recoverable by exactly one later worker.
-	recovered := enqueueLive(t, repository, owner, providerID, "lease-recovery")
-	firstClaims, err := repository.ClaimDue(ctx, "crashed-worker", 1, 10*time.Millisecond)
-	if err != nil || len(firstClaims) != 1 || firstClaims[0].Delivery.ID != recovered.Delivery.ID {
-		t.Fatalf("short claim=%+v err=%v", firstClaims, err)
-	}
-	time.Sleep(30 * time.Millisecond)
-	secondClaims, err := repository.ClaimDue(ctx, "recovery-worker", 1, time.Minute)
-	if err != nil || len(secondClaims) != 1 || secondClaims[0].Delivery.ID != recovered.Delivery.ID || secondClaims[0].Delivery.Attempt != 2 {
-		t.Fatalf("recovery=%+v err=%v", secondClaims, err)
 	}
 }
