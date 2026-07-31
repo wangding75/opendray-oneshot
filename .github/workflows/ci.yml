@@ -113,8 +113,20 @@ jobs:
         with:
           go-version: "1.25"
 
+      - name: Enable pgvector extension
+        env:
+          PGPASSWORD: opendray
+        run: |
+          psql \
+            --host=127.0.0.1 \
+            --port=5432 \
+            --username=opendray \
+            --dbname=opendray_ci \
+            --set=ON_ERROR_STOP=1 \
+            --command='CREATE EXTENSION IF NOT EXISTS vector;'
+
       - name: Verify migrations are idempotent
-        run: go test -race -timeout=10m ./internal/store -run '^(TestOneShotMigrationIsRecordedAndRepeatable|TestMigrationFailureRollsBackBodyAndVersion)$'
+        run: go test -race -tags=postgres -timeout=10m ./internal/store -run '^(TestOneShotMigrationIsRecordedAndRepeatable|TestMigrationFailureRollsBackBodyAndVersion)$'
 
       - name: Run One-shot PostgreSQL tests
         run: |
