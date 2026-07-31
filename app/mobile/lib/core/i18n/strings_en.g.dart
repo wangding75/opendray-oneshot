@@ -40,42 +40,43 @@ class Translations with BaseTranslations<AppLocale, Translations> {
 	Translations $copyWith({TranslationMetadata<AppLocale, Translations>? meta}) => Translations(meta: meta ?? this.$meta);
 
 	// Translations
-	late final TranslationsCommonEn common = TranslationsCommonEn.internal(_root);
-	late final TranslationsAuthEn auth = TranslationsAuthEn.internal(_root);
-	late final TranslationsNavEn nav = TranslationsNavEn.internal(_root);
-	late final TranslationsWebEn web = TranslationsWebEn.internal(_root);
-	late final TranslationsMoreEn more = TranslationsMoreEn.internal(_root);
-	late final TranslationsActivityEn activity = TranslationsActivityEn.internal(_root);
-	late final TranslationsMemoryAmbientEn memoryAmbient = TranslationsMemoryAmbientEn.internal(_root);
-	late final TranslationsSessionsEn sessions = TranslationsSessionsEn.internal(_root);
-	late final TranslationsMcpEn mcp = TranslationsMcpEn.internal(_root);
-	late final TranslationsProvidersEn providers = TranslationsProvidersEn.internal(_root);
-	late final TranslationsIntegrationsEn integrations = TranslationsIntegrationsEn.internal(_root);
-	late final TranslationsMemoryWorkersEn memoryWorkers = TranslationsMemoryWorkersEn.internal(_root);
-	late final TranslationsMemoryArchivedEn memoryArchived = TranslationsMemoryArchivedEn.internal(_root);
-	late final TranslationsProjectEn project = TranslationsProjectEn.internal(_root);
-	late final TranslationsBackupsEn backups = TranslationsBackupsEn.internal(_root);
-	late final TranslationsBackupTargetsEn backupTargets = TranslationsBackupTargetsEn.internal(_root);
-	late final TranslationsBackupSchedulesEn backupSchedules = TranslationsBackupSchedulesEn.internal(_root);
-	late final TranslationsBackupTargetEditorEn backupTargetEditor = TranslationsBackupTargetEditorEn.internal(_root);
-	late final TranslationsGithostsEn githosts = TranslationsGithostsEn.internal(_root);
-	late final TranslationsChannelsEn channels = TranslationsChannelsEn.internal(_root);
-	late final TranslationsOnboardingEn onboarding = TranslationsOnboardingEn.internal(_root);
-	late final TranslationsSkillsEn skills = TranslationsSkillsEn.internal(_root);
-	late final TranslationsCustomTasksEn customTasks = TranslationsCustomTasksEn.internal(_root);
-	late final TranslationsNotesPageEn notesPage = TranslationsNotesPageEn.internal(_root);
-	late final TranslationsDataExportEn dataExport = TranslationsDataExportEn.internal(_root);
-	late final TranslationsMemoryEn memory = TranslationsMemoryEn.internal(_root);
-	late final TranslationsAboutEn about = TranslationsAboutEn.internal(_root);
-	late final TranslationsSettingsEn settings = TranslationsSettingsEn.internal(_root);
-	late final TranslationsMemoryQuarantineEn memoryQuarantine = TranslationsMemoryQuarantineEn.internal(_root);
-	late final TranslationsCortexHubEn cortexHub = TranslationsCortexHubEn.internal(_root);
-	late final TranslationsCortexSettingsEn cortexSettings = TranslationsCortexSettingsEn.internal(_root);
+	late final Translations$common$en common = Translations$common$en.internal(_root);
+	late final Translations$auth$en auth = Translations$auth$en.internal(_root);
+	late final Translations$nav$en nav = Translations$nav$en.internal(_root);
+	late final Translations$web$en web = Translations$web$en.internal(_root);
+	late final Translations$more$en more = Translations$more$en.internal(_root);
+	late final Translations$activity$en activity = Translations$activity$en.internal(_root);
+	late final Translations$memoryAmbient$en memoryAmbient = Translations$memoryAmbient$en.internal(_root);
+	late final Translations$sessions$en sessions = Translations$sessions$en.internal(_root);
+	late final Translations$mcp$en mcp = Translations$mcp$en.internal(_root);
+	late final Translations$providers$en providers = Translations$providers$en.internal(_root);
+	late final Translations$integrations$en integrations = Translations$integrations$en.internal(_root);
+	late final Translations$memoryWorkers$en memoryWorkers = Translations$memoryWorkers$en.internal(_root);
+	late final Translations$memoryArchived$en memoryArchived = Translations$memoryArchived$en.internal(_root);
+	late final Translations$project$en project = Translations$project$en.internal(_root);
+	late final Translations$backups$en backups = Translations$backups$en.internal(_root);
+	late final Translations$backupTargets$en backupTargets = Translations$backupTargets$en.internal(_root);
+	late final Translations$backupSchedules$en backupSchedules = Translations$backupSchedules$en.internal(_root);
+	late final Translations$backupTargetEditor$en backupTargetEditor = Translations$backupTargetEditor$en.internal(_root);
+	late final Translations$githosts$en githosts = Translations$githosts$en.internal(_root);
+	late final Translations$channels$en channels = Translations$channels$en.internal(_root);
+	late final Translations$onboarding$en onboarding = Translations$onboarding$en.internal(_root);
+	late final Translations$skills$en skills = Translations$skills$en.internal(_root);
+	late final Translations$customTasks$en customTasks = Translations$customTasks$en.internal(_root);
+	late final Translations$notesPage$en notesPage = Translations$notesPage$en.internal(_root);
+	late final Translations$dataExport$en dataExport = Translations$dataExport$en.internal(_root);
+	late final Translations$memory$en memory = Translations$memory$en.internal(_root);
+	late final Translations$about$en about = Translations$about$en.internal(_root);
+	late final Translations$settings$en settings = Translations$settings$en.internal(_root);
+	late final Translations$memoryQuarantine$en memoryQuarantine = Translations$memoryQuarantine$en.internal(_root);
+	late final Translations$cortexHub$en cortexHub = Translations$cortexHub$en.internal(_root);
+	late final Translations$cortexSettings$en cortexSettings = Translations$cortexSettings$en.internal(_root);
+	late final Translations$agentTasks$en agentTasks = Translations$agentTasks$en.internal(_root);
 }
 
 // Path: common
-class TranslationsCommonEn {
-	TranslationsCommonEn.internal(this._root);
+class Translations$common$en {
+	Translations$common$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -125,8 +126,8 @@ class TranslationsCommonEn {
 }
 
 // Path: auth
-class TranslationsAuthEn {
-	TranslationsAuthEn.internal(this._root);
+class Translations$auth$en {
+	Translations$auth$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -164,8 +165,8 @@ class TranslationsAuthEn {
 }
 
 // Path: nav
-class TranslationsNavEn {
-	TranslationsNavEn.internal(this._root);
+class Translations$nav$en {
+	Translations$nav$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -231,15 +232,15 @@ class TranslationsNavEn {
 	/// en: 'Sponsor'
 	String get sponsor => 'Sponsor';
 
-	late final TranslationsNavUpdatesEn updates = TranslationsNavUpdatesEn.internal(_root);
+	late final Translations$nav$updates$en updates = Translations$nav$updates$en.internal(_root);
 
 	/// en: 'Round Table'
 	String get roundTable => 'Round Table';
 }
 
 // Path: web
-class TranslationsWebEn {
-	TranslationsWebEn.internal(this._root);
+class Translations$web$en {
+	Translations$web$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -251,40 +252,40 @@ class TranslationsWebEn {
 	/// en: 'Loading…'
 	String get loading => 'Loading…';
 
-	late final TranslationsWebTopbarEn topbar = TranslationsWebTopbarEn.internal(_root);
-	late final TranslationsWebSessionsEn sessions = TranslationsWebSessionsEn.internal(_root);
-	late final TranslationsWebMemoryEn memory = TranslationsWebMemoryEn.internal(_root);
-	late final TranslationsWebJournalStaleEn journalStale = TranslationsWebJournalStaleEn.internal(_root);
-	late final TranslationsWebConflictsEn conflicts = TranslationsWebConflictsEn.internal(_root);
-	late final TranslationsWebMemoryHealthEn memoryHealth = TranslationsWebMemoryHealthEn.internal(_root);
-	late final TranslationsWebMemoryConfigEn memoryConfig = TranslationsWebMemoryConfigEn.internal(_root);
-	late final TranslationsWebMemoryWorkersEn memoryWorkers = TranslationsWebMemoryWorkersEn.internal(_root);
-	late final TranslationsWebArchivedEn archived = TranslationsWebArchivedEn.internal(_root);
-	late final TranslationsWebProjectEn project = TranslationsWebProjectEn.internal(_root);
-	late final TranslationsWebMemoryInspectorEn memoryInspector = TranslationsWebMemoryInspectorEn.internal(_root);
-	late final TranslationsWebNotesEn notes = TranslationsWebNotesEn.internal(_root);
-	late final TranslationsWebActivityEn activity = TranslationsWebActivityEn.internal(_root);
-	late final TranslationsWebProvidersEn providers = TranslationsWebProvidersEn.internal(_root);
-	late final TranslationsWebChannelsEn channels = TranslationsWebChannelsEn.internal(_root);
-	late final TranslationsWebIntegrationsEn integrations = TranslationsWebIntegrationsEn.internal(_root);
-	late final TranslationsWebPluginsEn plugins = TranslationsWebPluginsEn.internal(_root);
-	late final TranslationsWebBackupsEn backups = TranslationsWebBackupsEn.internal(_root);
-	late final TranslationsWebServerSettingsEn serverSettings = TranslationsWebServerSettingsEn.internal(_root);
-	late final TranslationsWebSettingsEn settings = TranslationsWebSettingsEn.internal(_root);
-	late final TranslationsWebLogViewerEn logViewer = TranslationsWebLogViewerEn.internal(_root);
-	late final TranslationsWebPathInputEn pathInput = TranslationsWebPathInputEn.internal(_root);
-	late final TranslationsWebMemoryAmbientEn memoryAmbient = TranslationsWebMemoryAmbientEn.internal(_root);
-	late final TranslationsWebNoteEditorEn noteEditor = TranslationsWebNoteEditorEn.internal(_root);
-	late final TranslationsWebExportEn export = TranslationsWebExportEn.internal(_root);
-	late final TranslationsWebKnowledgeEn knowledge = TranslationsWebKnowledgeEn.internal(_root);
-	late final TranslationsWebCortexEn cortex = TranslationsWebCortexEn.internal(_root);
-	late final TranslationsWebDatabaseEn database = TranslationsWebDatabaseEn.internal(_root);
-	late final TranslationsWebRoundTableEn roundTable = TranslationsWebRoundTableEn.internal(_root);
+	late final Translations$web$topbar$en topbar = Translations$web$topbar$en.internal(_root);
+	late final Translations$web$sessions$en sessions = Translations$web$sessions$en.internal(_root);
+	late final Translations$web$memory$en memory = Translations$web$memory$en.internal(_root);
+	late final Translations$web$journalStale$en journalStale = Translations$web$journalStale$en.internal(_root);
+	late final Translations$web$conflicts$en conflicts = Translations$web$conflicts$en.internal(_root);
+	late final Translations$web$memoryHealth$en memoryHealth = Translations$web$memoryHealth$en.internal(_root);
+	late final Translations$web$memoryConfig$en memoryConfig = Translations$web$memoryConfig$en.internal(_root);
+	late final Translations$web$memoryWorkers$en memoryWorkers = Translations$web$memoryWorkers$en.internal(_root);
+	late final Translations$web$archived$en archived = Translations$web$archived$en.internal(_root);
+	late final Translations$web$project$en project = Translations$web$project$en.internal(_root);
+	late final Translations$web$memoryInspector$en memoryInspector = Translations$web$memoryInspector$en.internal(_root);
+	late final Translations$web$notes$en notes = Translations$web$notes$en.internal(_root);
+	late final Translations$web$activity$en activity = Translations$web$activity$en.internal(_root);
+	late final Translations$web$providers$en providers = Translations$web$providers$en.internal(_root);
+	late final Translations$web$channels$en channels = Translations$web$channels$en.internal(_root);
+	late final Translations$web$integrations$en integrations = Translations$web$integrations$en.internal(_root);
+	late final Translations$web$plugins$en plugins = Translations$web$plugins$en.internal(_root);
+	late final Translations$web$backups$en backups = Translations$web$backups$en.internal(_root);
+	late final Translations$web$serverSettings$en serverSettings = Translations$web$serverSettings$en.internal(_root);
+	late final Translations$web$settings$en settings = Translations$web$settings$en.internal(_root);
+	late final Translations$web$logViewer$en logViewer = Translations$web$logViewer$en.internal(_root);
+	late final Translations$web$pathInput$en pathInput = Translations$web$pathInput$en.internal(_root);
+	late final Translations$web$memoryAmbient$en memoryAmbient = Translations$web$memoryAmbient$en.internal(_root);
+	late final Translations$web$noteEditor$en noteEditor = Translations$web$noteEditor$en.internal(_root);
+	late final Translations$web$export$en export = Translations$web$export$en.internal(_root);
+	late final Translations$web$knowledge$en knowledge = Translations$web$knowledge$en.internal(_root);
+	late final Translations$web$cortex$en cortex = Translations$web$cortex$en.internal(_root);
+	late final Translations$web$database$en database = Translations$web$database$en.internal(_root);
+	late final Translations$web$roundTable$en roundTable = Translations$web$roundTable$en.internal(_root);
 }
 
 // Path: more
-class TranslationsMoreEn {
-	TranslationsMoreEn.internal(this._root);
+class Translations$more$en {
+	Translations$more$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -293,17 +294,17 @@ class TranslationsMoreEn {
 	/// en: 'More'
 	String get title => 'More';
 
-	late final TranslationsMoreIdentityEn identity = TranslationsMoreIdentityEn.internal(_root);
-	late final TranslationsMoreSectionsEn sections = TranslationsMoreSectionsEn.internal(_root);
-	late final TranslationsMoreItemsEn items = TranslationsMoreItemsEn.internal(_root);
+	late final Translations$more$identity$en identity = Translations$more$identity$en.internal(_root);
+	late final Translations$more$sections$en sections = Translations$more$sections$en.internal(_root);
+	late final Translations$more$items$en items = Translations$more$items$en.internal(_root);
 
 	/// en: 'Sign out'
 	String get signOut => 'Sign out';
 }
 
 // Path: activity
-class TranslationsActivityEn {
-	TranslationsActivityEn.internal(this._root);
+class Translations$activity$en {
+	Translations$activity$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -327,13 +328,13 @@ class TranslationsActivityEn {
 	/// en: 'outbound'
 	String get directionOutbound => 'outbound';
 
-	late final TranslationsActivityFilterEn filter = TranslationsActivityFilterEn.internal(_root);
-	late final TranslationsActivityDetailEn detail = TranslationsActivityDetailEn.internal(_root);
+	late final Translations$activity$filter$en filter = Translations$activity$filter$en.internal(_root);
+	late final Translations$activity$detail$en detail = Translations$activity$detail$en.internal(_root);
 }
 
 // Path: memoryAmbient
-class TranslationsMemoryAmbientEn {
-	TranslationsMemoryAmbientEn.internal(this._root);
+class Translations$memoryAmbient$en {
+	Translations$memoryAmbient$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -413,14 +414,14 @@ class TranslationsMemoryAmbientEn {
 }
 
 // Path: sessions
-class TranslationsSessionsEn {
-	TranslationsSessionsEn.internal(this._root);
+class Translations$sessions$en {
+	Translations$sessions$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	late final TranslationsSessionsDockEn dock = TranslationsSessionsDockEn.internal(_root);
-	late final TranslationsSessionsToolsEn tools = TranslationsSessionsToolsEn.internal(_root);
+	late final Translations$sessions$dock$en dock = Translations$sessions$dock$en.internal(_root);
+	late final Translations$sessions$tools$en tools = Translations$sessions$tools$en.internal(_root);
 
 	/// en: 'Sessions'
 	String get title => 'Sessions';
@@ -434,25 +435,25 @@ class TranslationsSessionsEn {
 	/// en: 'Spawn'
 	String get spawn => 'Spawn';
 
-	late final TranslationsSessionsFiltersEn filters = TranslationsSessionsFiltersEn.internal(_root);
-	late final TranslationsSessionsCardEn card = TranslationsSessionsCardEn.internal(_root);
-	late final TranslationsSessionsEmptyEn empty = TranslationsSessionsEmptyEn.internal(_root);
+	late final Translations$sessions$filters$en filters = Translations$sessions$filters$en.internal(_root);
+	late final Translations$sessions$card$en card = Translations$sessions$card$en.internal(_root);
+	late final Translations$sessions$empty$en empty = Translations$sessions$empty$en.internal(_root);
 
 	/// en: 'Failed to load sessions'
 	String get errorTitle => 'Failed to load sessions';
 
-	late final TranslationsSessionsRelativeEn relative = TranslationsSessionsRelativeEn.internal(_root);
-	late final TranslationsSessionsDetailEn detail = TranslationsSessionsDetailEn.internal(_root);
-	late final TranslationsSessionsTerminalEn terminal = TranslationsSessionsTerminalEn.internal(_root);
-	late final TranslationsSessionsActionEn action = TranslationsSessionsActionEn.internal(_root);
-	late final TranslationsSessionsDirPickerEn dirPicker = TranslationsSessionsDirPickerEn.internal(_root);
-	late final TranslationsSessionsInspectorEn inspector = TranslationsSessionsInspectorEn.internal(_root);
-	late final TranslationsSessionsSpawnSheetEn spawnSheet = TranslationsSessionsSpawnSheetEn.internal(_root);
+	late final Translations$sessions$relative$en relative = Translations$sessions$relative$en.internal(_root);
+	late final Translations$sessions$detail$en detail = Translations$sessions$detail$en.internal(_root);
+	late final Translations$sessions$terminal$en terminal = Translations$sessions$terminal$en.internal(_root);
+	late final Translations$sessions$action$en action = Translations$sessions$action$en.internal(_root);
+	late final Translations$sessions$dirPicker$en dirPicker = Translations$sessions$dirPicker$en.internal(_root);
+	late final Translations$sessions$inspector$en inspector = Translations$sessions$inspector$en.internal(_root);
+	late final Translations$sessions$spawnSheet$en spawnSheet = Translations$sessions$spawnSheet$en.internal(_root);
 }
 
 // Path: mcp
-class TranslationsMcpEn {
-	TranslationsMcpEn.internal(this._root);
+class Translations$mcp$en {
+	Translations$mcp$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -485,15 +486,15 @@ class TranslationsMcpEn {
 	/// en: 'Delete secret?'
 	String get deleteSecretTitle => 'Delete secret?';
 
-	late final TranslationsMcpErrorPrefixEn errorPrefix = TranslationsMcpErrorPrefixEn.internal(_root);
+	late final Translations$mcp$errorPrefix$en errorPrefix = Translations$mcp$errorPrefix$en.internal(_root);
 
 	/// en: '{prefix}: {error}'
 	String errorWithMessage({required Object prefix, required Object error}) => '${prefix}: ${error}';
 
-	late final TranslationsMcpEditorEn editor = TranslationsMcpEditorEn.internal(_root);
-	late final TranslationsMcpSecretEn secret = TranslationsMcpSecretEn.internal(_root);
-	late final TranslationsMcpPopupEn popup = TranslationsMcpPopupEn.internal(_root);
-	late final TranslationsMcpKvEn kv = TranslationsMcpKvEn.internal(_root);
+	late final Translations$mcp$editor$en editor = Translations$mcp$editor$en.internal(_root);
+	late final Translations$mcp$secret$en secret = Translations$mcp$secret$en.internal(_root);
+	late final Translations$mcp$popup$en popup = Translations$mcp$popup$en.internal(_root);
+	late final Translations$mcp$kv$en kv = Translations$mcp$kv$en.internal(_root);
 
 	/// en: 'Removes the vault directory for {id}. Sessions that reference this server stop being able to spawn it.'
 	String deleteServerBody({required Object id}) => 'Removes the vault directory for ${id}. Sessions that reference this server stop being able to spawn it.';
@@ -554,8 +555,8 @@ class TranslationsMcpEn {
 }
 
 // Path: providers
-class TranslationsProvidersEn {
-	TranslationsProvidersEn.internal(this._root);
+class Translations$providers$en {
+	Translations$providers$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -576,14 +577,14 @@ class TranslationsProvidersEn {
 	/// en: 'Reload'
 	String get reload => 'Reload';
 
-	late final TranslationsProvidersErrorPrefixEn errorPrefix = TranslationsProvidersErrorPrefixEn.internal(_root);
+	late final Translations$providers$errorPrefix$en errorPrefix = Translations$providers$errorPrefix$en.internal(_root);
 
 	/// en: '{prefix}: {error}'
 	String errorWithMessage({required Object prefix, required Object error}) => '${prefix}: ${error}';
 
-	late final TranslationsProvidersUpdateCheckEn updateCheck = TranslationsProvidersUpdateCheckEn.internal(_root);
-	late final TranslationsProvidersAccountsEn accounts = TranslationsProvidersAccountsEn.internal(_root);
-	late final TranslationsProvidersAntigravityAccountsEn antigravityAccounts = TranslationsProvidersAntigravityAccountsEn.internal(_root);
+	late final Translations$providers$updateCheck$en updateCheck = Translations$providers$updateCheck$en.internal(_root);
+	late final Translations$providers$accounts$en accounts = Translations$providers$accounts$en.internal(_root);
+	late final Translations$providers$antigravityAccounts$en antigravityAccounts = Translations$providers$antigravityAccounts$en.internal(_root);
 
 	/// en: 'Provider config'
 	String get configFallbackTitle => 'Provider config';
@@ -620,8 +621,8 @@ class TranslationsProvidersEn {
 }
 
 // Path: integrations
-class TranslationsIntegrationsEn {
-	TranslationsIntegrationsEn.internal(this._root);
+class Translations$integrations$en {
+	Translations$integrations$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -759,8 +760,8 @@ class TranslationsIntegrationsEn {
 	/// en: 'Outbound'
 	String get directionOutbound => 'Outbound';
 
-	late final TranslationsIntegrationsFormEn form = TranslationsIntegrationsFormEn.internal(_root);
-	late final TranslationsIntegrationsDefaultAgentEn defaultAgent = TranslationsIntegrationsDefaultAgentEn.internal(_root);
+	late final Translations$integrations$form$en form = Translations$integrations$form$en.internal(_root);
+	late final Translations$integrations$defaultAgent$en defaultAgent = Translations$integrations$defaultAgent$en.internal(_root);
 
 	/// en: 'Register from the web admin: Integrations → New.'
 	String get emptyState => 'Register from the web admin: Integrations → New.';
@@ -776,8 +777,8 @@ class TranslationsIntegrationsEn {
 }
 
 // Path: memoryWorkers
-class TranslationsMemoryWorkersEn {
-	TranslationsMemoryWorkersEn.internal(this._root);
+class Translations$memoryWorkers$en {
+	Translations$memoryWorkers$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -879,12 +880,12 @@ class TranslationsMemoryWorkersEn {
 	/// en: 'unknown'
 	String get unknownError => 'unknown';
 
-	late final TranslationsMemoryWorkersTasksEn tasks = TranslationsMemoryWorkersTasksEn.internal(_root);
+	late final Translations$memoryWorkers$tasks$en tasks = Translations$memoryWorkers$tasks$en.internal(_root);
 }
 
 // Path: memoryArchived
-class TranslationsMemoryArchivedEn {
-	TranslationsMemoryArchivedEn.internal(this._root);
+class Translations$memoryArchived$en {
+	Translations$memoryArchived$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -952,8 +953,8 @@ class TranslationsMemoryArchivedEn {
 }
 
 // Path: project
-class TranslationsProjectEn {
-	TranslationsProjectEn.internal(this._root);
+class Translations$project$en {
+	Translations$project$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -965,9 +966,9 @@ class TranslationsProjectEn {
 	/// en: 'Pick a project first.'
 	String get pickFirst => 'Pick a project first.';
 
-	late final TranslationsProjectHealthEn health = TranslationsProjectHealthEn.internal(_root);
-	late final TranslationsProjectConflictsEn conflicts = TranslationsProjectConflictsEn.internal(_root);
-	late final TranslationsProjectJournalPruneEn journalPrune = TranslationsProjectJournalPruneEn.internal(_root);
+	late final Translations$project$health$en health = Translations$project$health$en.internal(_root);
+	late final Translations$project$conflicts$en conflicts = Translations$project$conflicts$en.internal(_root);
+	late final Translations$project$journalPrune$en journalPrune = Translations$project$journalPrune$en.internal(_root);
 
 	/// en: 'Failed to load: {error}'
 	String loadFailed({required Object error}) => 'Failed to load: ${error}';
@@ -1050,12 +1051,12 @@ class TranslationsProjectEn {
 	/// en: 'Replace {kind}'
 	String replaceKind({required Object kind}) => 'Replace ${kind}';
 
-	late final TranslationsProjectArchivedEn archived = TranslationsProjectArchivedEn.internal(_root);
+	late final Translations$project$archived$en archived = Translations$project$archived$en.internal(_root);
 }
 
 // Path: backups
-class TranslationsBackupsEn {
-	TranslationsBackupsEn.internal(this._root);
+class Translations$backups$en {
+	Translations$backups$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -1145,11 +1146,11 @@ class TranslationsBackupsEn {
 	/// en: 'Targets'
 	String get menuTargets => 'Targets';
 
-	late final TranslationsBackupsKvEn kv = TranslationsBackupsKvEn.internal(_root);
-	late final TranslationsBackupsRecoveryKitEn recoveryKit = TranslationsBackupsRecoveryKitEn.internal(_root);
-	late final TranslationsBackupsEmptyMissingDepsEn emptyMissingDeps = TranslationsBackupsEmptyMissingDepsEn.internal(_root);
-	late final TranslationsBackupsEmptyNoTargetsEn emptyNoTargets = TranslationsBackupsEmptyNoTargetsEn.internal(_root);
-	late final TranslationsBackupsEmptyNoBackupsEn emptyNoBackups = TranslationsBackupsEmptyNoBackupsEn.internal(_root);
+	late final Translations$backups$kv$en kv = Translations$backups$kv$en.internal(_root);
+	late final Translations$backups$recoveryKit$en recoveryKit = Translations$backups$recoveryKit$en.internal(_root);
+	late final Translations$backups$emptyMissingDeps$en emptyMissingDeps = Translations$backups$emptyMissingDeps$en.internal(_root);
+	late final Translations$backups$emptyNoTargets$en emptyNoTargets = Translations$backups$emptyNoTargets$en.internal(_root);
+	late final Translations$backups$emptyNoBackups$en emptyNoBackups = Translations$backups$emptyNoBackups$en.internal(_root);
 
 	/// en: 'Restart opendray to activate backups'
 	String get restartToActivate => 'Restart opendray to activate backups';
@@ -1163,7 +1164,7 @@ class TranslationsBackupsEn {
 	/// en: 'Configured via'
 	String get configuredViaLabel => 'Configured via';
 
-	late final TranslationsBackupsWizardEn wizard = TranslationsBackupsWizardEn.internal(_root);
+	late final Translations$backups$wizard$en wizard = Translations$backups$wizard$en.internal(_root);
 
 	/// en: 'Targets'
 	String get overviewTargets => 'Targets';
@@ -1174,7 +1175,7 @@ class TranslationsBackupsEn {
 	/// en: 'Backups'
 	String get overviewBackups => 'Backups';
 
-	late final TranslationsBackupsHealthEn health = TranslationsBackupsHealthEn.internal(_root);
+	late final Translations$backups$health$en health = Translations$backups$health$en.internal(_root);
 
 	/// en: 'Failed to load backups'
 	String get failedToLoad => 'Failed to load backups';
@@ -1188,18 +1189,18 @@ class TranslationsBackupsEn {
 	/// en: 'pg_dump is not on PATH. Install postgresql-client and restart opendray.'
 	String get pgDumpMissing => 'pg_dump is not on PATH. Install postgresql-client and restart opendray.';
 
-	late final TranslationsBackupsEncryptionEn encryption = TranslationsBackupsEncryptionEn.internal(_root);
+	late final Translations$backups$encryption$en encryption = Translations$backups$encryption$en.internal(_root);
 
 	/// en: 'Restore from file'
 	String get restoreFromFile => 'Restore from file';
 
-	late final TranslationsBackupsRestoreEn restore = TranslationsBackupsRestoreEn.internal(_root);
-	late final TranslationsBackupsInventoryEn inventory = TranslationsBackupsInventoryEn.internal(_root);
+	late final Translations$backups$restore$en restore = Translations$backups$restore$en.internal(_root);
+	late final Translations$backups$inventory$en inventory = Translations$backups$inventory$en.internal(_root);
 }
 
 // Path: backupTargets
-class TranslationsBackupTargetsEn {
-	TranslationsBackupTargetsEn.internal(this._root);
+class Translations$backupTargets$en {
+	Translations$backupTargets$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -1231,8 +1232,8 @@ class TranslationsBackupTargetsEn {
 }
 
 // Path: backupSchedules
-class TranslationsBackupSchedulesEn {
-	TranslationsBackupSchedulesEn.internal(this._root);
+class Translations$backupSchedules$en {
+	Translations$backupSchedules$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -1336,8 +1337,8 @@ class TranslationsBackupSchedulesEn {
 }
 
 // Path: backupTargetEditor
-class TranslationsBackupTargetEditorEn {
-	TranslationsBackupTargetEditorEn.internal(this._root);
+class Translations$backupTargetEditor$en {
+	Translations$backupTargetEditor$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -1352,7 +1353,7 @@ class TranslationsBackupTargetEditorEn {
 	/// en: 'Legacy / MinIO'
 	String get pathStyleSubtitle => 'Legacy / MinIO';
 
-	late final TranslationsBackupTargetEditorKindsEn kinds = TranslationsBackupTargetEditorKindsEn.internal(_root);
+	late final Translations$backupTargetEditor$kinds$en kinds = Translations$backupTargetEditor$kinds$en.internal(_root);
 
 	/// en: 'Edit target'
 	String get formTitleEdit => 'Edit target';
@@ -1500,8 +1501,8 @@ class TranslationsBackupTargetEditorEn {
 }
 
 // Path: githosts
-class TranslationsGithostsEn {
-	TranslationsGithostsEn.internal(this._root);
+class Translations$githosts$en {
+	Translations$githosts$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -1519,8 +1520,8 @@ class TranslationsGithostsEn {
 	/// en: '{prefix}: {error}'
 	String errorWithMessage({required Object prefix, required Object error}) => '${prefix}: ${error}';
 
-	late final TranslationsGithostsErrorPrefixEn errorPrefix = TranslationsGithostsErrorPrefixEn.internal(_root);
-	late final TranslationsGithostsFormEn form = TranslationsGithostsFormEn.internal(_root);
+	late final Translations$githosts$errorPrefix$en errorPrefix = Translations$githosts$errorPrefix$en.internal(_root);
+	late final Translations$githosts$form$en form = Translations$githosts$form$en.internal(_root);
 
 	/// en: 'Removes the credential. Sessions trying to list PRs from {host} will fall back to the unauthenticated API.'
 	String deleteBody({required Object host}) => 'Removes the credential. Sessions trying to list PRs from ${host} will fall back to the unauthenticated API.';
@@ -1542,8 +1543,8 @@ class TranslationsGithostsEn {
 }
 
 // Path: channels
-class TranslationsChannelsEn {
-	TranslationsChannelsEn.internal(this._root);
+class Translations$channels$en {
+	Translations$channels$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -1585,15 +1586,15 @@ class TranslationsChannelsEn {
 	/// en: 'Delete channel?'
 	String get deleteTitle => 'Delete channel?';
 
-	late final TranslationsChannelsConfigDialogEn configDialog = TranslationsChannelsConfigDialogEn.internal(_root);
-	late final TranslationsChannelsWebhookDialogEn webhookDialog = TranslationsChannelsWebhookDialogEn.internal(_root);
+	late final Translations$channels$configDialog$en configDialog = Translations$channels$configDialog$en.internal(_root);
+	late final Translations$channels$webhookDialog$en webhookDialog = Translations$channels$webhookDialog$en.internal(_root);
 
 	/// en: '{prefix}: {error}'
 	String errorWithMessage({required Object prefix, required Object error}) => '${prefix}: ${error}';
 
-	late final TranslationsChannelsNotificationsEn notifications = TranslationsChannelsNotificationsEn.internal(_root);
-	late final TranslationsChannelsPopupEn popup = TranslationsChannelsPopupEn.internal(_root);
-	late final TranslationsChannelsBadgesEn badges = TranslationsChannelsBadgesEn.internal(_root);
+	late final Translations$channels$notifications$en notifications = Translations$channels$notifications$en.internal(_root);
+	late final Translations$channels$popup$en popup = Translations$channels$popup$en.internal(_root);
+	late final Translations$channels$badges$en badges = Translations$channels$badges$en.internal(_root);
 
 	/// en: '· caps: {list}'
 	String capsLabel({required Object list}) => '· caps: ${list}';
@@ -1607,18 +1608,18 @@ class TranslationsChannelsEn {
 	/// en: 'Stops the channel and removes its configuration. In-flight notifications addressed to it will be dropped silently.'
 	String get deleteBody => 'Stops the channel and removes its configuration. In-flight notifications addressed to it will be dropped silently.';
 
-	late final TranslationsChannelsSnacksEn snacks = TranslationsChannelsSnacksEn.internal(_root);
-	late final TranslationsChannelsErrorPrefixEn errorPrefix = TranslationsChannelsErrorPrefixEn.internal(_root);
+	late final Translations$channels$snacks$en snacks = Translations$channels$snacks$en.internal(_root);
+	late final Translations$channels$errorPrefix$en errorPrefix = Translations$channels$errorPrefix$en.internal(_root);
 
 	/// en: 'Failed to load channels'
 	String get failedToLoad => 'Failed to load channels';
 
-	late final TranslationsChannelsKindsEn kinds = TranslationsChannelsKindsEn.internal(_root);
+	late final Translations$channels$kinds$en kinds = Translations$channels$kinds$en.internal(_root);
 }
 
 // Path: onboarding
-class TranslationsOnboardingEn {
-	TranslationsOnboardingEn.internal(this._root);
+class Translations$onboarding$en {
+	Translations$onboarding$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -1635,8 +1636,8 @@ class TranslationsOnboardingEn {
 }
 
 // Path: skills
-class TranslationsSkillsEn {
-	TranslationsSkillsEn.internal(this._root);
+class Translations$skills$en {
+	Translations$skills$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -1758,8 +1759,8 @@ class TranslationsSkillsEn {
 }
 
 // Path: customTasks
-class TranslationsCustomTasksEn {
-	TranslationsCustomTasksEn.internal(this._root);
+class Translations$customTasks$en {
+	Translations$customTasks$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -1878,8 +1879,8 @@ class TranslationsCustomTasksEn {
 }
 
 // Path: notesPage
-class TranslationsNotesPageEn {
-	TranslationsNotesPageEn.internal(this._root);
+class Translations$notesPage$en {
+	Translations$notesPage$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -1960,12 +1961,12 @@ class TranslationsNotesPageEn {
 	/// en: 'Auto-appends .md if missing.'
 	String get pathHelper => 'Auto-appends .md if missing.';
 
-	late final TranslationsNotesPageEditorEn editor = TranslationsNotesPageEditorEn.internal(_root);
+	late final Translations$notesPage$editor$en editor = Translations$notesPage$editor$en.internal(_root);
 }
 
 // Path: dataExport
-class TranslationsDataExportEn {
-	TranslationsDataExportEn.internal(this._root);
+class Translations$dataExport$en {
+	Translations$dataExport$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -1977,23 +1978,23 @@ class TranslationsDataExportEn {
 	/// en: 'User-level bundles for migration or verification — separate from /backups (disaster recovery).'
 	String get subtitle => 'User-level bundles for migration or verification — separate from /backups (disaster recovery).';
 
-	late final TranslationsDataExportSectionsEn sections = TranslationsDataExportSectionsEn.internal(_root);
-	late final TranslationsDataExportFormEn form = TranslationsDataExportFormEn.internal(_root);
-	late final TranslationsDataExportHistoryEn history = TranslationsDataExportHistoryEn.internal(_root);
-	late final TranslationsDataExportImportEn import = TranslationsDataExportImportEn.internal(_root);
-	late final TranslationsDataExportImportsEn imports = TranslationsDataExportImportsEn.internal(_root);
-	late final TranslationsDataExportRelativeEn relative = TranslationsDataExportRelativeEn.internal(_root);
-	late final TranslationsDataExportStatusEn status = TranslationsDataExportStatusEn.internal(_root);
+	late final Translations$dataExport$sections$en sections = Translations$dataExport$sections$en.internal(_root);
+	late final Translations$dataExport$form$en form = Translations$dataExport$form$en.internal(_root);
+	late final Translations$dataExport$history$en history = Translations$dataExport$history$en.internal(_root);
+	late final Translations$dataExport$import$en import = Translations$dataExport$import$en.internal(_root);
+	late final Translations$dataExport$imports$en imports = Translations$dataExport$imports$en.internal(_root);
+	late final Translations$dataExport$relative$en relative = Translations$dataExport$relative$en.internal(_root);
+	late final Translations$dataExport$status$en status = Translations$dataExport$status$en.internal(_root);
 }
 
 // Path: memory
-class TranslationsMemoryEn {
-	TranslationsMemoryEn.internal(this._root);
+class Translations$memory$en {
+	Translations$memory$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	late final TranslationsMemoryStatusEn status = TranslationsMemoryStatusEn.internal(_root);
+	late final Translations$memory$status$en status = Translations$memory$status$en.internal(_root);
 
 	/// en: 'Memory'
 	String get title => 'Memory';
@@ -2004,7 +2005,7 @@ class TranslationsMemoryEn {
 	/// en: 'Memory workers'
 	String get workers => 'Memory workers';
 
-	late final TranslationsMemoryRankEn rank = TranslationsMemoryRankEn.internal(_root);
+	late final Translations$memory$rank$en rank = Translations$memory$rank$en.internal(_root);
 
 	/// en: 'New'
 	String get kNew => 'New';
@@ -2024,7 +2025,7 @@ class TranslationsMemoryEn {
 	/// en: 'Copy text'
 	String get copyTooltip => 'Copy text';
 
-	late final TranslationsMemoryDeleteAllConfirmEn deleteAllConfirm = TranslationsMemoryDeleteAllConfirmEn.internal(_root);
+	late final Translations$memory$deleteAllConfirm$en deleteAllConfirm = Translations$memory$deleteAllConfirm$en.internal(_root);
 
 	/// en: 'Deleted {n} memory item'
 	String deletedSnackOne({required Object n}) => 'Deleted ${n} memory item';
@@ -2038,9 +2039,9 @@ class TranslationsMemoryEn {
 	/// en: 'Bulk delete failed: {error}'
 	String bulkDeleteFailedGeneric({required Object error}) => 'Bulk delete failed: ${error}';
 
-	late final TranslationsMemoryDeleteOneEn deleteOne = TranslationsMemoryDeleteOneEn.internal(_root);
-	late final TranslationsMemoryScopeEn scope = TranslationsMemoryScopeEn.internal(_root);
-	late final TranslationsMemoryCreateEn create = TranslationsMemoryCreateEn.internal(_root);
+	late final Translations$memory$deleteOne$en deleteOne = Translations$memory$deleteOne$en.internal(_root);
+	late final Translations$memory$scope$en scope = Translations$memory$scope$en.internal(_root);
+	late final Translations$memory$create$en create = Translations$memory$create$en.internal(_root);
 
 	/// en: 'Archive'
 	String get archive => 'Archive';
@@ -2060,12 +2061,12 @@ class TranslationsMemoryEn {
 	/// en: 'Quarantine failed: {error}'
 	String quarantineFailed({required Object error}) => 'Quarantine failed: ${error}';
 
-	late final TranslationsMemoryReembedEn reembed = TranslationsMemoryReembedEn.internal(_root);
+	late final Translations$memory$reembed$en reembed = Translations$memory$reembed$en.internal(_root);
 }
 
 // Path: about
-class TranslationsAboutEn {
-	TranslationsAboutEn.internal(this._root);
+class Translations$about$en {
+	Translations$about$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -2077,8 +2078,8 @@ class TranslationsAboutEn {
 	/// en: 'Loading…'
 	String get loading => 'Loading…';
 
-	late final TranslationsAboutSectionsEn sections = TranslationsAboutSectionsEn.internal(_root);
-	late final TranslationsAboutFieldsEn fields = TranslationsAboutFieldsEn.internal(_root);
+	late final Translations$about$sections$en sections = Translations$about$sections$en.internal(_root);
+	late final Translations$about$fields$en fields = Translations$about$fields$en.internal(_root);
 
 	/// en: 'Copied {label}'
 	String copied({required Object label}) => 'Copied ${label}';
@@ -2086,17 +2087,17 @@ class TranslationsAboutEn {
 	/// en: 'Copy'
 	String get copyTooltip => 'Copy';
 
-	late final TranslationsAboutCopyLabelsEn copyLabels = TranslationsAboutCopyLabelsEn.internal(_root);
+	late final Translations$about$copyLabels$en copyLabels = Translations$about$copyLabels$en.internal(_root);
 
 	/// en: 'opendray mobile — multi-CLI gateway control. Source: github.com/Opendray/opendray'
 	String get tagline => 'opendray mobile — multi-CLI gateway control.\nSource: github.com/Opendray/opendray';
 
-	late final TranslationsAboutGatewayEn gateway = TranslationsAboutGatewayEn.internal(_root);
+	late final Translations$about$gateway$en gateway = Translations$about$gateway$en.internal(_root);
 }
 
 // Path: settings
-class TranslationsSettingsEn {
-	TranslationsSettingsEn.internal(this._root);
+class Translations$settings$en {
+	Translations$settings$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -2105,18 +2106,18 @@ class TranslationsSettingsEn {
 	/// en: 'Settings'
 	String get title => 'Settings';
 
-	late final TranslationsSettingsLanguageEn language = TranslationsSettingsLanguageEn.internal(_root);
-	late final TranslationsSettingsAppearanceEn appearance = TranslationsSettingsAppearanceEn.internal(_root);
-	late final TranslationsSettingsAccountEn account = TranslationsSettingsAccountEn.internal(_root);
-	late final TranslationsSettingsGatewayEn gateway = TranslationsSettingsGatewayEn.internal(_root);
-	late final TranslationsSettingsChangeCredentialsEn changeCredentials = TranslationsSettingsChangeCredentialsEn.internal(_root);
-	late final TranslationsSettingsLogViewerEn logViewer = TranslationsSettingsLogViewerEn.internal(_root);
-	late final TranslationsSettingsServerSettingsEn serverSettings = TranslationsSettingsServerSettingsEn.internal(_root);
+	late final Translations$settings$language$en language = Translations$settings$language$en.internal(_root);
+	late final Translations$settings$appearance$en appearance = Translations$settings$appearance$en.internal(_root);
+	late final Translations$settings$account$en account = Translations$settings$account$en.internal(_root);
+	late final Translations$settings$gateway$en gateway = Translations$settings$gateway$en.internal(_root);
+	late final Translations$settings$changeCredentials$en changeCredentials = Translations$settings$changeCredentials$en.internal(_root);
+	late final Translations$settings$logViewer$en logViewer = Translations$settings$logViewer$en.internal(_root);
+	late final Translations$settings$serverSettings$en serverSettings = Translations$settings$serverSettings$en.internal(_root);
 }
 
 // Path: memoryQuarantine
-class TranslationsMemoryQuarantineEn {
-	TranslationsMemoryQuarantineEn.internal(this._root);
+class Translations$memoryQuarantine$en {
+	Translations$memoryQuarantine$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -2157,8 +2158,8 @@ class TranslationsMemoryQuarantineEn {
 }
 
 // Path: cortexHub
-class TranslationsCortexHubEn {
-	TranslationsCortexHubEn.internal(this._root);
+class Translations$cortexHub$en {
+	Translations$cortexHub$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -2247,8 +2248,8 @@ class TranslationsCortexHubEn {
 }
 
 // Path: cortexSettings
-class TranslationsCortexSettingsEn {
-	TranslationsCortexSettingsEn.internal(this._root);
+class Translations$cortexSettings$en {
+	Translations$cortexSettings$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -2282,9 +2283,255 @@ class TranslationsCortexSettingsEn {
 	String get defaultBadge => 'default';
 }
 
+// Path: agentTasks
+class Translations$agentTasks$en {
+	Translations$agentTasks$en.internal(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+
+	/// en: 'Tasks'
+	String get navLabel => 'Tasks';
+
+	/// en: 'Agent Tasks'
+	String get title => 'Agent Tasks';
+
+	/// en: 'New task'
+	String get create => 'New task';
+
+	/// en: 'No agent tasks'
+	String get emptyTitle => 'No agent tasks';
+
+	/// en: 'Create a non-interactive agent task. Terminal sessions remain separate.'
+	String get emptyBody => 'Create a non-interactive agent task. Terminal sessions remain separate.';
+
+	/// en: 'Refresh'
+	String get refresh => 'Refresh';
+
+	/// en: 'All'
+	String get all => 'All';
+
+	/// en: 'Load more'
+	String get loadMore => 'Load more';
+
+	/// en: 'Offline. Showing the last loaded state.'
+	String get offline => 'Offline. Showing the last loaded state.';
+
+	/// en: 'Retry'
+	String get retry => 'Retry';
+
+	/// en: 'Project'
+	String get project => 'Project';
+
+	/// en: 'Provider'
+	String get provider => 'Provider';
+
+	/// en: 'Prompt'
+	String get prompt => 'Prompt';
+
+	/// en: 'Workspace'
+	String get workspace => 'Workspace';
+
+	/// en: 'Context'
+	String get contextMode => 'Context';
+
+	/// en: 'New context'
+	String get newContext => 'New context';
+
+	/// en: 'Continue context'
+	String get continueContext => 'Continue context';
+
+	/// en: 'Attachments'
+	String get attachments => 'Attachments';
+
+	/// en: 'Timeout (seconds)'
+	String get timeout => 'Timeout (seconds)';
+
+	/// en: 'Notify in Telegram'
+	String get telegramNotify => 'Notify in Telegram';
+
+	/// en: 'Create task'
+	String get submit => 'Create task';
+
+	/// en: 'Creating…'
+	String get creating => 'Creating…';
+
+	/// en: 'This field is required'
+	String get required => 'This field is required';
+
+	/// en: 'Enter a timeout between 30 and 86400 seconds'
+	String get invalidTimeout => 'Enter a timeout between 30 and 86400 seconds';
+
+	/// en: 'Task details'
+	String get details => 'Task details';
+
+	/// en: 'Runs'
+	String get runs => 'Runs';
+
+	/// en: 'Output'
+	String get events => 'Output';
+
+	/// en: 'Artifacts'
+	String get artifacts => 'Artifacts';
+
+	/// en: 'Continue'
+	String get continueAction => 'Continue';
+
+	/// en: 'Cancel'
+	String get cancelAction => 'Cancel';
+
+	/// en: 'Confirm'
+	String get confirm => 'Confirm';
+
+	/// en: 'Retry'
+	String get retryAction => 'Retry';
+
+	/// en: 'Cancel this task and terminate its active process tree?'
+	String get confirmCancel => 'Cancel this task and terminate its active process tree?';
+
+	/// en: 'Create a new retry run?'
+	String get confirmRetry => 'Create a new retry run?';
+
+	/// en: 'Input required'
+	String get waitingInput => 'Input required';
+
+	/// en: 'Enter follow-up instructions'
+	String get continueHint => 'Enter follow-up instructions';
+
+	/// en: 'Send'
+	String get send => 'Send';
+
+	/// en: 'stdout'
+	String get stdout => 'stdout';
+
+	/// en: 'stderr'
+	String get stderr => 'stderr';
+
+	/// en: 'raw'
+	String get raw => 'raw';
+
+	/// en: 'Download'
+	String get download => 'Download';
+
+	/// en: 'Integrity verified'
+	String get verified => 'Integrity verified';
+
+	/// en: 'Artifact download failed'
+	String get downloadFailed => 'Artifact download failed';
+
+	/// en: 'No runs yet'
+	String get noRuns => 'No runs yet';
+
+	/// en: 'No output yet'
+	String get noOutput => 'No output yet';
+
+	/// en: 'Source'
+	String get source => 'Source';
+
+	/// en: 'Status'
+	String get status => 'Status';
+
+	/// en: 'Created'
+	String get created => 'Created';
+
+	/// en: 'Updated'
+	String get updated => 'Updated';
+
+	/// en: 'Runtime context'
+	String get context => 'Runtime context';
+
+	/// en: 'Current run'
+	String get currentRun => 'Current run';
+
+	/// en: 'Network request failed'
+	String get networkError => 'Network request failed';
+
+	/// en: 'You do not have permission for this operation'
+	String get permissionError => 'You do not have permission for this operation';
+
+	/// en: 'One-shot tasks do not open or write to terminal sessions.'
+	String get sessionIsolation => 'One-shot tasks do not open or write to terminal sessions.';
+
+	/// en: 'Resume'
+	String get capabilityResume => 'Resume';
+
+	/// en: 'Attachments'
+	String get capabilityAttachment => 'Attachments';
+
+	/// en: 'Fields are stacked for small screens.'
+	String get smallScreenHint => 'Fields are stacked for small screens.';
+
+	/// en: 'Status filter'
+	String get filterStatus => 'Status filter';
+
+	/// en: 'Task created'
+	String get taskCreated => 'Task created';
+
+	/// en: 'Action failed'
+	String get actionFailed => 'Action failed';
+
+	/// en: 'Loading…'
+	String get loading => 'Loading…';
+
+	/// en: 'Open'
+	String get open => 'Open';
+
+	/// en: 'Timeline'
+	String get timeline => 'Timeline';
+
+	/// en: 'Result'
+	String get result => 'Result';
+
+	/// en: 'Duplicate taps reuse the same idempotency key.'
+	String get idempotent => 'Duplicate taps reuse the same idempotency key.';
+
+	/// en: 'Telegram'
+	String get telegramSource => 'Telegram';
+
+	/// en: 'Mobile'
+	String get mobileSource => 'Mobile';
+
+	/// en: 'API'
+	String get apiSource => 'API';
+
+	/// en: 'Unknown'
+	String get unknownSource => 'Unknown';
+
+	/// en: 'Cancelled'
+	String get cancelled => 'Cancelled';
+
+	/// en: 'Completed'
+	String get completed => 'Completed';
+
+	/// en: 'Failed'
+	String get failed => 'Failed';
+
+	/// en: 'Timed out'
+	String get timedOut => 'Timed out';
+
+	/// en: 'Running'
+	String get running => 'Running';
+
+	/// en: 'Queued'
+	String get queued => 'Queued';
+
+	/// en: 'Pending'
+	String get pending => 'Pending';
+
+	/// en: 'Waiting for input'
+	String get waiting => 'Waiting for input';
+
+	/// en: 'Unknown'
+	String get unknown => 'Unknown';
+
+	/// en: 'All projects'
+	String get allProjects => 'All projects';
+}
+
 // Path: nav.updates
-class TranslationsNavUpdatesEn {
-	TranslationsNavUpdatesEn.internal(this._root);
+class Translations$nav$updates$en {
+	Translations$nav$updates$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -2322,8 +2569,8 @@ class TranslationsNavUpdatesEn {
 }
 
 // Path: web.topbar
-class TranslationsWebTopbarEn {
-	TranslationsWebTopbarEn.internal(this._root);
+class Translations$web$topbar$en {
+	Translations$web$topbar$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -2382,28 +2629,28 @@ class TranslationsWebTopbarEn {
 }
 
 // Path: web.sessions
-class TranslationsWebSessionsEn {
-	TranslationsWebSessionsEn.internal(this._root);
+class Translations$web$sessions$en {
+	Translations$web$sessions$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	late final TranslationsWebSessionsListEn list = TranslationsWebSessionsListEn.internal(_root);
-	late final TranslationsWebSessionsTabsEn tabs = TranslationsWebSessionsTabsEn.internal(_root);
-	late final TranslationsWebSessionsPageEn page = TranslationsWebSessionsPageEn.internal(_root);
-	late final TranslationsWebSessionsEmptyEn empty = TranslationsWebSessionsEmptyEn.internal(_root);
-	late final TranslationsWebSessionsHeaderEn header = TranslationsWebSessionsHeaderEn.internal(_root);
-	late final TranslationsWebSessionsTerminalEn terminal = TranslationsWebSessionsTerminalEn.internal(_root);
-	late final TranslationsWebSessionsSpawnEn spawn = TranslationsWebSessionsSpawnEn.internal(_root);
-	late final TranslationsWebSessionsAccountSwitcherEn accountSwitcher = TranslationsWebSessionsAccountSwitcherEn.internal(_root);
-	late final TranslationsWebSessionsInspectorEn inspector = TranslationsWebSessionsInspectorEn.internal(_root);
-	late final TranslationsWebSessionsEndedEn ended = TranslationsWebSessionsEndedEn.internal(_root);
-	late final TranslationsWebSessionsFileBrowserEn fileBrowser = TranslationsWebSessionsFileBrowserEn.internal(_root);
+	late final Translations$web$sessions$list$en list = Translations$web$sessions$list$en.internal(_root);
+	late final Translations$web$sessions$tabs$en tabs = Translations$web$sessions$tabs$en.internal(_root);
+	late final Translations$web$sessions$page$en page = Translations$web$sessions$page$en.internal(_root);
+	late final Translations$web$sessions$empty$en empty = Translations$web$sessions$empty$en.internal(_root);
+	late final Translations$web$sessions$header$en header = Translations$web$sessions$header$en.internal(_root);
+	late final Translations$web$sessions$terminal$en terminal = Translations$web$sessions$terminal$en.internal(_root);
+	late final Translations$web$sessions$spawn$en spawn = Translations$web$sessions$spawn$en.internal(_root);
+	late final Translations$web$sessions$accountSwitcher$en accountSwitcher = Translations$web$sessions$accountSwitcher$en.internal(_root);
+	late final Translations$web$sessions$inspector$en inspector = Translations$web$sessions$inspector$en.internal(_root);
+	late final Translations$web$sessions$ended$en ended = Translations$web$sessions$ended$en.internal(_root);
+	late final Translations$web$sessions$fileBrowser$en fileBrowser = Translations$web$sessions$fileBrowser$en.internal(_root);
 }
 
 // Path: web.memory
-class TranslationsWebMemoryEn {
-	TranslationsWebMemoryEn.internal(this._root);
+class Translations$web$memory$en {
+	Translations$web$memory$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -2432,8 +2679,8 @@ class TranslationsWebMemoryEn {
 }
 
 // Path: web.journalStale
-class TranslationsWebJournalStaleEn {
-	TranslationsWebJournalStaleEn.internal(this._root);
+class Translations$web$journalStale$en {
+	Translations$web$journalStale$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -2471,8 +2718,8 @@ class TranslationsWebJournalStaleEn {
 }
 
 // Path: web.conflicts
-class TranslationsWebConflictsEn {
-	TranslationsWebConflictsEn.internal(this._root);
+class Translations$web$conflicts$en {
+	Translations$web$conflicts$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -2523,14 +2770,14 @@ class TranslationsWebConflictsEn {
 	/// en: 'Delete {side}: {ref}'
 	String deleteFactSide({required Object side, required Object ref}) => 'Delete ${side}: ${ref}';
 
-	late final TranslationsWebConflictsConfirmDeleteEn confirmDelete = TranslationsWebConflictsConfirmDeleteEn.internal(_root);
-	late final TranslationsWebConflictsOpenLayerEn openLayer = TranslationsWebConflictsOpenLayerEn.internal(_root);
-	late final TranslationsWebConflictsSeverityEn severity = TranslationsWebConflictsSeverityEn.internal(_root);
+	late final Translations$web$conflicts$confirmDelete$en confirmDelete = Translations$web$conflicts$confirmDelete$en.internal(_root);
+	late final Translations$web$conflicts$openLayer$en openLayer = Translations$web$conflicts$openLayer$en.internal(_root);
+	late final Translations$web$conflicts$severity$en severity = Translations$web$conflicts$severity$en.internal(_root);
 }
 
 // Path: web.memoryHealth
-class TranslationsWebMemoryHealthEn {
-	TranslationsWebMemoryHealthEn.internal(this._root);
+class Translations$web$memoryHealth$en {
+	Translations$web$memoryHealth$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -2607,8 +2854,8 @@ class TranslationsWebMemoryHealthEn {
 }
 
 // Path: web.memoryConfig
-class TranslationsWebMemoryConfigEn {
-	TranslationsWebMemoryConfigEn.internal(this._root);
+class Translations$web$memoryConfig$en {
+	Translations$web$memoryConfig$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -2620,15 +2867,15 @@ class TranslationsWebMemoryConfigEn {
 	/// en: 'Every runtime knob of the AI loop in one place — spawn injection, LLM providers, per-task workers, capture triggers, injection profiles, token costs. Changes apply immediately; no restart.'
 	String get subtitle => 'Every runtime knob of the AI loop in one place — spawn injection, LLM providers, per-task workers, capture triggers, injection profiles, token costs. Changes apply immediately; no restart.';
 
-	late final TranslationsWebMemoryConfigSectionsEn sections = TranslationsWebMemoryConfigSectionsEn.internal(_root);
-	late final TranslationsWebMemoryConfigSectionHintsEn sectionHints = TranslationsWebMemoryConfigSectionHintsEn.internal(_root);
-	late final TranslationsWebMemoryConfigMoveBannerEn moveBanner = TranslationsWebMemoryConfigMoveBannerEn.internal(_root);
-	late final TranslationsWebMemoryConfigInfraEn infra = TranslationsWebMemoryConfigInfraEn.internal(_root);
+	late final Translations$web$memoryConfig$sections$en sections = Translations$web$memoryConfig$sections$en.internal(_root);
+	late final Translations$web$memoryConfig$sectionHints$en sectionHints = Translations$web$memoryConfig$sectionHints$en.internal(_root);
+	late final Translations$web$memoryConfig$moveBanner$en moveBanner = Translations$web$memoryConfig$moveBanner$en.internal(_root);
+	late final Translations$web$memoryConfig$infra$en infra = Translations$web$memoryConfig$infra$en.internal(_root);
 }
 
 // Path: web.memoryWorkers
-class TranslationsWebMemoryWorkersEn {
-	TranslationsWebMemoryWorkersEn.internal(this._root);
+class Translations$web$memoryWorkers$en {
+	Translations$web$memoryWorkers$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -2742,7 +2989,7 @@ class TranslationsWebMemoryWorkersEn {
 	/// en: 'unknown error'
 	String get unknownError => 'unknown error';
 
-	late final TranslationsWebMemoryWorkersTasksEn tasks = TranslationsWebMemoryWorkersTasksEn.internal(_root);
+	late final Translations$web$memoryWorkers$tasks$en tasks = Translations$web$memoryWorkers$tasks$en.internal(_root);
 
 	/// en: 'Model'
 	String get modelLabel => 'Model';
@@ -2785,8 +3032,8 @@ class TranslationsWebMemoryWorkersEn {
 }
 
 // Path: web.archived
-class TranslationsWebArchivedEn {
-	TranslationsWebArchivedEn.internal(this._root);
+class Translations$web$archived$en {
+	Translations$web$archived$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -2872,55 +3119,55 @@ class TranslationsWebArchivedEn {
 }
 
 // Path: web.project
-class TranslationsWebProjectEn {
-	TranslationsWebProjectEn.internal(this._root);
+class Translations$web$project$en {
+	Translations$web$project$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	late final TranslationsWebProjectPickerEn picker = TranslationsWebProjectPickerEn.internal(_root);
+	late final Translations$web$project$picker$en picker = Translations$web$project$picker$en.internal(_root);
 
 	/// en: 'Pick a project to manage its memory.'
 	String get noCwd => 'Pick a project to manage its memory.';
 
-	late final TranslationsWebProjectHeaderEn header = TranslationsWebProjectHeaderEn.internal(_root);
-	late final TranslationsWebProjectTabsEn tabs = TranslationsWebProjectTabsEn.internal(_root);
-	late final TranslationsWebProjectDocLabelEn docLabel = TranslationsWebProjectDocLabelEn.internal(_root);
-	late final TranslationsWebProjectEditorEn editor = TranslationsWebProjectEditorEn.internal(_root);
-	late final TranslationsWebProjectReadonlyEn readonly = TranslationsWebProjectReadonlyEn.internal(_root);
-	late final TranslationsWebProjectJournalEn journal = TranslationsWebProjectJournalEn.internal(_root);
-	late final TranslationsWebProjectInboxEn inbox = TranslationsWebProjectInboxEn.internal(_root);
-	late final TranslationsWebProjectArchivedEn archived = TranslationsWebProjectArchivedEn.internal(_root);
-	late final TranslationsWebProjectResetEn reset = TranslationsWebProjectResetEn.internal(_root);
-	late final TranslationsWebProjectLifecycleEn lifecycle = TranslationsWebProjectLifecycleEn.internal(_root);
-	late final TranslationsWebProjectDocMetaEn docMeta = TranslationsWebProjectDocMetaEn.internal(_root);
-	late final TranslationsWebProjectProposalBannerEn proposalBanner = TranslationsWebProjectProposalBannerEn.internal(_root);
-	late final TranslationsWebProjectOverviewEn overview = TranslationsWebProjectOverviewEn.internal(_root);
+	late final Translations$web$project$header$en header = Translations$web$project$header$en.internal(_root);
+	late final Translations$web$project$tabs$en tabs = Translations$web$project$tabs$en.internal(_root);
+	late final Translations$web$project$docLabel$en docLabel = Translations$web$project$docLabel$en.internal(_root);
+	late final Translations$web$project$editor$en editor = Translations$web$project$editor$en.internal(_root);
+	late final Translations$web$project$readonly$en readonly = Translations$web$project$readonly$en.internal(_root);
+	late final Translations$web$project$journal$en journal = Translations$web$project$journal$en.internal(_root);
+	late final Translations$web$project$inbox$en inbox = Translations$web$project$inbox$en.internal(_root);
+	late final Translations$web$project$archived$en archived = Translations$web$project$archived$en.internal(_root);
+	late final Translations$web$project$reset$en reset = Translations$web$project$reset$en.internal(_root);
+	late final Translations$web$project$lifecycle$en lifecycle = Translations$web$project$lifecycle$en.internal(_root);
+	late final Translations$web$project$docMeta$en docMeta = Translations$web$project$docMeta$en.internal(_root);
+	late final Translations$web$project$proposalBanner$en proposalBanner = Translations$web$project$proposalBanner$en.internal(_root);
+	late final Translations$web$project$overview$en overview = Translations$web$project$overview$en.internal(_root);
 }
 
 // Path: web.memoryInspector
-class TranslationsWebMemoryInspectorEn {
-	TranslationsWebMemoryInspectorEn.internal(this._root);
+class Translations$web$memoryInspector$en {
+	Translations$web$memoryInspector$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	late final TranslationsWebMemoryInspectorStatusEn status = TranslationsWebMemoryInspectorStatusEn.internal(_root);
-	late final TranslationsWebMemoryInspectorScopeEn scope = TranslationsWebMemoryInspectorScopeEn.internal(_root);
-	late final TranslationsWebMemoryInspectorSearchEn search = TranslationsWebMemoryInspectorSearchEn.internal(_root);
-	late final TranslationsWebMemoryInspectorRecordsEn records = TranslationsWebMemoryInspectorRecordsEn.internal(_root);
-	late final TranslationsWebMemoryInspectorRowEn row = TranslationsWebMemoryInspectorRowEn.internal(_root);
-	late final TranslationsWebMemoryInspectorToastsEn toasts = TranslationsWebMemoryInspectorToastsEn.internal(_root);
-	late final TranslationsWebMemoryInspectorBulkDeleteEn bulkDelete = TranslationsWebMemoryInspectorBulkDeleteEn.internal(_root);
-	late final TranslationsWebMemoryInspectorAddMemEn addMem = TranslationsWebMemoryInspectorAddMemEn.internal(_root);
-	late final TranslationsWebMemoryInspectorPickerEn picker = TranslationsWebMemoryInspectorPickerEn.internal(_root);
-	late final TranslationsWebMemoryInspectorMigrationBannerEn migrationBanner = TranslationsWebMemoryInspectorMigrationBannerEn.internal(_root);
-	late final TranslationsWebMemoryInspectorReembedEn reembed = TranslationsWebMemoryInspectorReembedEn.internal(_root);
+	late final Translations$web$memoryInspector$status$en status = Translations$web$memoryInspector$status$en.internal(_root);
+	late final Translations$web$memoryInspector$scope$en scope = Translations$web$memoryInspector$scope$en.internal(_root);
+	late final Translations$web$memoryInspector$search$en search = Translations$web$memoryInspector$search$en.internal(_root);
+	late final Translations$web$memoryInspector$records$en records = Translations$web$memoryInspector$records$en.internal(_root);
+	late final Translations$web$memoryInspector$row$en row = Translations$web$memoryInspector$row$en.internal(_root);
+	late final Translations$web$memoryInspector$toasts$en toasts = Translations$web$memoryInspector$toasts$en.internal(_root);
+	late final Translations$web$memoryInspector$bulkDelete$en bulkDelete = Translations$web$memoryInspector$bulkDelete$en.internal(_root);
+	late final Translations$web$memoryInspector$addMem$en addMem = Translations$web$memoryInspector$addMem$en.internal(_root);
+	late final Translations$web$memoryInspector$picker$en picker = Translations$web$memoryInspector$picker$en.internal(_root);
+	late final Translations$web$memoryInspector$migrationBanner$en migrationBanner = Translations$web$memoryInspector$migrationBanner$en.internal(_root);
+	late final Translations$web$memoryInspector$reembed$en reembed = Translations$web$memoryInspector$reembed$en.internal(_root);
 }
 
 // Path: web.notes
-class TranslationsWebNotesEn {
-	TranslationsWebNotesEn.internal(this._root);
+class Translations$web$notes$en {
+	Translations$web$notes$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -2929,21 +3176,21 @@ class TranslationsWebNotesEn {
 	/// en: 'Notes'
 	String get title => 'Notes';
 
-	late final TranslationsWebNotesHeaderEn header = TranslationsWebNotesHeaderEn.internal(_root);
-	late final TranslationsWebNotesLeftEn left = TranslationsWebNotesLeftEn.internal(_root);
-	late final TranslationsWebNotesTagsEn tags = TranslationsWebNotesTagsEn.internal(_root);
-	late final TranslationsWebNotesTreeEn tree = TranslationsWebNotesTreeEn.internal(_root);
-	late final TranslationsWebNotesOutlineEn outline = TranslationsWebNotesOutlineEn.internal(_root);
-	late final TranslationsWebNotesNewNoteEn newNote = TranslationsWebNotesNewNoteEn.internal(_root);
-	late final TranslationsWebNotesEmptyEn empty = TranslationsWebNotesEmptyEn.internal(_root);
-	late final TranslationsWebNotesPickerEn picker = TranslationsWebNotesPickerEn.internal(_root);
-	late final TranslationsWebNotesVaultSyncEn vaultSync = TranslationsWebNotesVaultSyncEn.internal(_root);
-	late final TranslationsWebNotesSyncBadgeEn syncBadge = TranslationsWebNotesSyncBadgeEn.internal(_root);
+	late final Translations$web$notes$header$en header = Translations$web$notes$header$en.internal(_root);
+	late final Translations$web$notes$left$en left = Translations$web$notes$left$en.internal(_root);
+	late final Translations$web$notes$tags$en tags = Translations$web$notes$tags$en.internal(_root);
+	late final Translations$web$notes$tree$en tree = Translations$web$notes$tree$en.internal(_root);
+	late final Translations$web$notes$outline$en outline = Translations$web$notes$outline$en.internal(_root);
+	late final Translations$web$notes$newNote$en newNote = Translations$web$notes$newNote$en.internal(_root);
+	late final Translations$web$notes$empty$en empty = Translations$web$notes$empty$en.internal(_root);
+	late final Translations$web$notes$picker$en picker = Translations$web$notes$picker$en.internal(_root);
+	late final Translations$web$notes$vaultSync$en vaultSync = Translations$web$notes$vaultSync$en.internal(_root);
+	late final Translations$web$notes$syncBadge$en syncBadge = Translations$web$notes$syncBadge$en.internal(_root);
 }
 
 // Path: web.activity
-class TranslationsWebActivityEn {
-	TranslationsWebActivityEn.internal(this._root);
+class Translations$web$activity$en {
+	Translations$web$activity$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -2961,7 +3208,7 @@ class TranslationsWebActivityEn {
 	/// en: 'Refresh'
 	String get refreshTooltip => 'Refresh';
 
-	late final TranslationsWebActivityFiltersEn filters = TranslationsWebActivityFiltersEn.internal(_root);
+	late final Translations$web$activity$filters$en filters = Translations$web$activity$filters$en.internal(_root);
 
 	/// en: '{count} call'
 	String callsCount_one({required Object count}) => '${count} call';
@@ -2972,29 +3219,29 @@ class TranslationsWebActivityEn {
 	/// en: 'Loading…'
 	String get loading => 'Loading…';
 
-	late final TranslationsWebActivityTableEn table = TranslationsWebActivityTableEn.internal(_root);
-	late final TranslationsWebActivityEmptyEn empty = TranslationsWebActivityEmptyEn.internal(_root);
-	late final TranslationsWebActivityEventsEn events = TranslationsWebActivityEventsEn.internal(_root);
+	late final Translations$web$activity$table$en table = Translations$web$activity$table$en.internal(_root);
+	late final Translations$web$activity$empty$en empty = Translations$web$activity$empty$en.internal(_root);
+	late final Translations$web$activity$events$en events = Translations$web$activity$events$en.internal(_root);
 }
 
 // Path: web.providers
-class TranslationsWebProvidersEn {
-	TranslationsWebProvidersEn.internal(this._root);
+class Translations$web$providers$en {
+	Translations$web$providers$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	late final TranslationsWebProvidersListEn list = TranslationsWebProvidersListEn.internal(_root);
-	late final TranslationsWebProvidersDetailEn detail = TranslationsWebProvidersDetailEn.internal(_root);
-	late final TranslationsWebProvidersConfigFormEn configForm = TranslationsWebProvidersConfigFormEn.internal(_root);
-	late final TranslationsWebProvidersClaudeAccountsEn claudeAccounts = TranslationsWebProvidersClaudeAccountsEn.internal(_root);
-	late final TranslationsWebProvidersAntigravityAccountsEn antigravityAccounts = TranslationsWebProvidersAntigravityAccountsEn.internal(_root);
-	late final TranslationsWebProvidersModelsEn models = TranslationsWebProvidersModelsEn.internal(_root);
+	late final Translations$web$providers$list$en list = Translations$web$providers$list$en.internal(_root);
+	late final Translations$web$providers$detail$en detail = Translations$web$providers$detail$en.internal(_root);
+	late final Translations$web$providers$configForm$en configForm = Translations$web$providers$configForm$en.internal(_root);
+	late final Translations$web$providers$claudeAccounts$en claudeAccounts = Translations$web$providers$claudeAccounts$en.internal(_root);
+	late final Translations$web$providers$antigravityAccounts$en antigravityAccounts = Translations$web$providers$antigravityAccounts$en.internal(_root);
+	late final Translations$web$providers$models$en models = Translations$web$providers$models$en.internal(_root);
 }
 
 // Path: web.channels
-class TranslationsWebChannelsEn {
-	TranslationsWebChannelsEn.internal(this._root);
+class Translations$web$channels$en {
+	Translations$web$channels$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -3012,18 +3259,18 @@ class TranslationsWebChannelsEn {
 	/// en: 'Loading…'
 	String get loading => 'Loading…';
 
-	late final TranslationsWebChannelsEmptyEn empty = TranslationsWebChannelsEmptyEn.internal(_root);
-	late final TranslationsWebChannelsCardEn card = TranslationsWebChannelsCardEn.internal(_root);
-	late final TranslationsWebChannelsToastsEn toasts = TranslationsWebChannelsToastsEn.internal(_root);
-	late final TranslationsWebChannelsDialogEn dialog = TranslationsWebChannelsDialogEn.internal(_root);
-	late final TranslationsWebChannelsNotificationsEn notifications = TranslationsWebChannelsNotificationsEn.internal(_root);
-	late final TranslationsWebChannelsBridgeEn bridge = TranslationsWebChannelsBridgeEn.internal(_root);
-	late final TranslationsWebChannelsSetupEn setup = TranslationsWebChannelsSetupEn.internal(_root);
+	late final Translations$web$channels$empty$en empty = Translations$web$channels$empty$en.internal(_root);
+	late final Translations$web$channels$card$en card = Translations$web$channels$card$en.internal(_root);
+	late final Translations$web$channels$toasts$en toasts = Translations$web$channels$toasts$en.internal(_root);
+	late final Translations$web$channels$dialog$en dialog = Translations$web$channels$dialog$en.internal(_root);
+	late final Translations$web$channels$notifications$en notifications = Translations$web$channels$notifications$en.internal(_root);
+	late final Translations$web$channels$bridge$en bridge = Translations$web$channels$bridge$en.internal(_root);
+	late final Translations$web$channels$setup$en setup = Translations$web$channels$setup$en.internal(_root);
 }
 
 // Path: web.integrations
-class TranslationsWebIntegrationsEn {
-	TranslationsWebIntegrationsEn.internal(this._root);
+class Translations$web$integrations$en {
+	Translations$web$integrations$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -3041,8 +3288,8 @@ class TranslationsWebIntegrationsEn {
 	/// en: 'Loading…'
 	String get loading => 'Loading…';
 
-	late final TranslationsWebIntegrationsTabsEn tabs = TranslationsWebIntegrationsTabsEn.internal(_root);
-	late final TranslationsWebIntegrationsEmptyEn empty = TranslationsWebIntegrationsEmptyEn.internal(_root);
+	late final Translations$web$integrations$tabs$en tabs = Translations$web$integrations$tabs$en.internal(_root);
+	late final Translations$web$integrations$empty$en empty = Translations$web$integrations$empty$en.internal(_root);
 
 	/// en: 'System (managed by opendray)'
 	String get groupSystem => 'System (managed by opendray)';
@@ -3050,17 +3297,17 @@ class TranslationsWebIntegrationsEn {
 	/// en: 'Operator-registered'
 	String get groupOperator => 'Operator-registered';
 
-	late final TranslationsWebIntegrationsCardEn card = TranslationsWebIntegrationsCardEn.internal(_root);
-	late final TranslationsWebIntegrationsDefaultAgentEn defaultAgent = TranslationsWebIntegrationsDefaultAgentEn.internal(_root);
-	late final TranslationsWebIntegrationsRegisterDialogEn register_dialog = TranslationsWebIntegrationsRegisterDialogEn.internal(_root);
-	late final TranslationsWebIntegrationsRevealEn reveal = TranslationsWebIntegrationsRevealEn.internal(_root);
-	late final TranslationsWebIntegrationsEditDialogEn edit_dialog = TranslationsWebIntegrationsEditDialogEn.internal(_root);
-	late final TranslationsWebIntegrationsProxyEn proxy = TranslationsWebIntegrationsProxyEn.internal(_root);
+	late final Translations$web$integrations$card$en card = Translations$web$integrations$card$en.internal(_root);
+	late final Translations$web$integrations$defaultAgent$en defaultAgent = Translations$web$integrations$defaultAgent$en.internal(_root);
+	late final Translations$web$integrations$register_dialog$en register_dialog = Translations$web$integrations$register_dialog$en.internal(_root);
+	late final Translations$web$integrations$reveal$en reveal = Translations$web$integrations$reveal$en.internal(_root);
+	late final Translations$web$integrations$edit_dialog$en edit_dialog = Translations$web$integrations$edit_dialog$en.internal(_root);
+	late final Translations$web$integrations$proxy$en proxy = Translations$web$integrations$proxy$en.internal(_root);
 }
 
 // Path: web.plugins
-class TranslationsWebPluginsEn {
-	TranslationsWebPluginsEn.internal(this._root);
+class Translations$web$plugins$en {
+	Translations$web$plugins$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -3072,17 +3319,17 @@ class TranslationsWebPluginsEn {
 	/// en: 'Configure data sources surfaced in the right-hand Inspector panel when a session is open. Each plugin is admin-only and shared across all sessions. Click a section header to collapse it.'
 	String get subtitle => 'Configure data sources surfaced in the right-hand Inspector panel when a session is open. Each plugin is admin-only and shared across all sessions. Click a section header to collapse it.';
 
-	late final TranslationsWebPluginsCommonEn common = TranslationsWebPluginsCommonEn.internal(_root);
-	late final TranslationsWebPluginsMcpEn mcp = TranslationsWebPluginsMcpEn.internal(_root);
-	late final TranslationsWebPluginsMcpSecretsEn mcpSecrets = TranslationsWebPluginsMcpSecretsEn.internal(_root);
-	late final TranslationsWebPluginsSkillsEn skills = TranslationsWebPluginsSkillsEn.internal(_root);
-	late final TranslationsWebPluginsCustomTasksEn customTasks = TranslationsWebPluginsCustomTasksEn.internal(_root);
-	late final TranslationsWebPluginsGitHostsEn gitHosts = TranslationsWebPluginsGitHostsEn.internal(_root);
+	late final Translations$web$plugins$common$en common = Translations$web$plugins$common$en.internal(_root);
+	late final Translations$web$plugins$mcp$en mcp = Translations$web$plugins$mcp$en.internal(_root);
+	late final Translations$web$plugins$mcpSecrets$en mcpSecrets = Translations$web$plugins$mcpSecrets$en.internal(_root);
+	late final Translations$web$plugins$skills$en skills = Translations$web$plugins$skills$en.internal(_root);
+	late final Translations$web$plugins$customTasks$en customTasks = Translations$web$plugins$customTasks$en.internal(_root);
+	late final Translations$web$plugins$gitHosts$en gitHosts = Translations$web$plugins$gitHosts$en.internal(_root);
 }
 
 // Path: web.backups
-class TranslationsWebBackupsEn {
-	TranslationsWebBackupsEn.internal(this._root);
+class Translations$web$backups$en {
+	Translations$web$backups$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -3103,35 +3350,35 @@ class TranslationsWebBackupsEn {
 	/// en: 'Failed to load backup status'
 	String get loadStatusFailedToast => 'Failed to load backup status';
 
-	late final TranslationsWebBackupsTabsEn tabs = TranslationsWebBackupsTabsEn.internal(_root);
-	late final TranslationsWebBackupsInventoryEn inventory = TranslationsWebBackupsInventoryEn.internal(_root);
-	late final TranslationsWebBackupsRestartEn restart = TranslationsWebBackupsRestartEn.internal(_root);
-	late final TranslationsWebBackupsSetupEn setup = TranslationsWebBackupsSetupEn.internal(_root);
-	late final TranslationsWebBackupsGeneratedEn generated = TranslationsWebBackupsGeneratedEn.internal(_root);
-	late final TranslationsWebBackupsStatusEn status = TranslationsWebBackupsStatusEn.internal(_root);
-	late final TranslationsWebBackupsBackupsTabEn backupsTab = TranslationsWebBackupsBackupsTabEn.internal(_root);
-	late final TranslationsWebBackupsRestoreEn restore = TranslationsWebBackupsRestoreEn.internal(_root);
-	late final TranslationsWebBackupsKindEn kind = TranslationsWebBackupsKindEn.internal(_root);
-	late final TranslationsWebBackupsVerifyEn verify = TranslationsWebBackupsVerifyEn.internal(_root);
-	late final TranslationsWebBackupsHealthEn health = TranslationsWebBackupsHealthEn.internal(_root);
-	late final TranslationsWebBackupsTriggerEn trigger = TranslationsWebBackupsTriggerEn.internal(_root);
-	late final TranslationsWebBackupsRecoveryKitEn recoveryKit = TranslationsWebBackupsRecoveryKitEn.internal(_root);
-	late final TranslationsWebBackupsSchedulesTabEn schedulesTab = TranslationsWebBackupsSchedulesTabEn.internal(_root);
-	late final TranslationsWebBackupsNewScheduleEn newSchedule = TranslationsWebBackupsNewScheduleEn.internal(_root);
-	late final TranslationsWebBackupsFanoutEn fanout = TranslationsWebBackupsFanoutEn.internal(_root);
-	late final TranslationsWebBackupsDedupEn dedup = TranslationsWebBackupsDedupEn.internal(_root);
-	late final TranslationsWebBackupsTargetsTabEn targetsTab = TranslationsWebBackupsTargetsTabEn.internal(_root);
-	late final TranslationsWebBackupsTargetEditorEn targetEditor = TranslationsWebBackupsTargetEditorEn.internal(_root);
+	late final Translations$web$backups$tabs$en tabs = Translations$web$backups$tabs$en.internal(_root);
+	late final Translations$web$backups$inventory$en inventory = Translations$web$backups$inventory$en.internal(_root);
+	late final Translations$web$backups$restart$en restart = Translations$web$backups$restart$en.internal(_root);
+	late final Translations$web$backups$setup$en setup = Translations$web$backups$setup$en.internal(_root);
+	late final Translations$web$backups$generated$en generated = Translations$web$backups$generated$en.internal(_root);
+	late final Translations$web$backups$status$en status = Translations$web$backups$status$en.internal(_root);
+	late final Translations$web$backups$backupsTab$en backupsTab = Translations$web$backups$backupsTab$en.internal(_root);
+	late final Translations$web$backups$restore$en restore = Translations$web$backups$restore$en.internal(_root);
+	late final Translations$web$backups$kind$en kind = Translations$web$backups$kind$en.internal(_root);
+	late final Translations$web$backups$verify$en verify = Translations$web$backups$verify$en.internal(_root);
+	late final Translations$web$backups$health$en health = Translations$web$backups$health$en.internal(_root);
+	late final Translations$web$backups$trigger$en trigger = Translations$web$backups$trigger$en.internal(_root);
+	late final Translations$web$backups$recoveryKit$en recoveryKit = Translations$web$backups$recoveryKit$en.internal(_root);
+	late final Translations$web$backups$schedulesTab$en schedulesTab = Translations$web$backups$schedulesTab$en.internal(_root);
+	late final Translations$web$backups$newSchedule$en newSchedule = Translations$web$backups$newSchedule$en.internal(_root);
+	late final Translations$web$backups$fanout$en fanout = Translations$web$backups$fanout$en.internal(_root);
+	late final Translations$web$backups$dedup$en dedup = Translations$web$backups$dedup$en.internal(_root);
+	late final Translations$web$backups$targetsTab$en targetsTab = Translations$web$backups$targetsTab$en.internal(_root);
+	late final Translations$web$backups$targetEditor$en targetEditor = Translations$web$backups$targetEditor$en.internal(_root);
 }
 
 // Path: web.serverSettings
-class TranslationsWebServerSettingsEn {
-	TranslationsWebServerSettingsEn.internal(this._root);
+class Translations$web$serverSettings$en {
+	Translations$web$serverSettings$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	late final TranslationsWebServerSettingsSectionsEn sections = TranslationsWebServerSettingsSectionsEn.internal(_root);
+	late final Translations$web$serverSettings$sections$en sections = Translations$web$serverSettings$sections$en.internal(_root);
 
 	/// en: 'Loading server settings…'
 	String get loading => 'Loading server settings…';
@@ -3181,21 +3428,21 @@ class TranslationsWebServerSettingsEn {
 	/// en: 'Filter fields…'
 	String get searchPlaceholder => 'Filter fields…';
 
-	late final TranslationsWebServerSettingsRestartEn restart = TranslationsWebServerSettingsRestartEn.internal(_root);
-	late final TranslationsWebServerSettingsFormGroupsEn formGroups = TranslationsWebServerSettingsFormGroupsEn.internal(_root);
-	late final TranslationsWebServerSettingsFieldsEn fields = TranslationsWebServerSettingsFieldsEn.internal(_root);
-	late final TranslationsWebServerSettingsLiveTailEn liveTail = TranslationsWebServerSettingsLiveTailEn.internal(_root);
-	late final TranslationsWebServerSettingsMemoryInspectorCardEn memoryInspectorCard = TranslationsWebServerSettingsMemoryInspectorCardEn.internal(_root);
+	late final Translations$web$serverSettings$restart$en restart = Translations$web$serverSettings$restart$en.internal(_root);
+	late final Translations$web$serverSettings$formGroups$en formGroups = Translations$web$serverSettings$formGroups$en.internal(_root);
+	late final Translations$web$serverSettings$fields$en fields = Translations$web$serverSettings$fields$en.internal(_root);
+	late final Translations$web$serverSettings$liveTail$en liveTail = Translations$web$serverSettings$liveTail$en.internal(_root);
+	late final Translations$web$serverSettings$memoryInspectorCard$en memoryInspectorCard = Translations$web$serverSettings$memoryInspectorCard$en.internal(_root);
 
 	/// en: 'Requires the binary to be compiled with <1>-tags local_onnx</1>. The standard build returns a clear stub error when this backend is selected. See <3>Memory → Local ONNX</3> tutorial for setup steps.'
 	String get localOnnxBanner => 'Requires the binary to be compiled with <1>-tags local_onnx</1>. The standard build returns a clear stub error when this backend is selected. See <3>Memory → Local ONNX</3> tutorial for setup steps.';
 
-	late final TranslationsWebServerSettingsStringListEn stringList = TranslationsWebServerSettingsStringListEn.internal(_root);
-	late final TranslationsWebServerSettingsHttpHelpersEn httpHelpers = TranslationsWebServerSettingsHttpHelpersEn.internal(_root);
-	late final TranslationsWebServerSettingsProbeEn probe = TranslationsWebServerSettingsProbeEn.internal(_root);
-	late final TranslationsWebServerSettingsBackupEn backup = TranslationsWebServerSettingsBackupEn.internal(_root);
-	late final TranslationsWebServerSettingsTargetRowEn targetRow = TranslationsWebServerSettingsTargetRowEn.internal(_root);
-	late final TranslationsWebServerSettingsToggleEn toggle = TranslationsWebServerSettingsToggleEn.internal(_root);
+	late final Translations$web$serverSettings$stringList$en stringList = Translations$web$serverSettings$stringList$en.internal(_root);
+	late final Translations$web$serverSettings$httpHelpers$en httpHelpers = Translations$web$serverSettings$httpHelpers$en.internal(_root);
+	late final Translations$web$serverSettings$probe$en probe = Translations$web$serverSettings$probe$en.internal(_root);
+	late final Translations$web$serverSettings$backup$en backup = Translations$web$serverSettings$backup$en.internal(_root);
+	late final Translations$web$serverSettings$targetRow$en targetRow = Translations$web$serverSettings$targetRow$en.internal(_root);
+	late final Translations$web$serverSettings$toggle$en toggle = Translations$web$serverSettings$toggle$en.internal(_root);
 
 	/// en: 'Runtime AI behaviour — workers, capture rules, injection profiles and spawn mode — lives in Cortex settings and applies instantly. This section is the infrastructure half: embedder, storage and background governance (restart required).'
 	String get memoryRuntimeBanner => 'Runtime AI behaviour — workers, capture rules, injection profiles and spawn mode — lives in Cortex settings and applies instantly. This section is the infrastructure half: embedder, storage and background governance (restart required).';
@@ -3205,8 +3452,8 @@ class TranslationsWebServerSettingsEn {
 }
 
 // Path: web.settings
-class TranslationsWebSettingsEn {
-	TranslationsWebSettingsEn.internal(this._root);
+class Translations$web$settings$en {
+	Translations$web$settings$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -3218,21 +3465,21 @@ class TranslationsWebSettingsEn {
 	/// en: 'Workspace, account, and gateway config.'
 	String get subtitle => 'Workspace, account, and gateway config.';
 
-	late final TranslationsWebSettingsGroupsEn groups = TranslationsWebSettingsGroupsEn.internal(_root);
-	late final TranslationsWebSettingsItemsEn items = TranslationsWebSettingsItemsEn.internal(_root);
-	late final TranslationsWebSettingsHealthEn health = TranslationsWebSettingsHealthEn.internal(_root);
-	late final TranslationsWebSettingsBreadcrumbEn breadcrumb = TranslationsWebSettingsBreadcrumbEn.internal(_root);
-	late final TranslationsWebSettingsAppearanceEn appearance = TranslationsWebSettingsAppearanceEn.internal(_root);
-	late final TranslationsWebSettingsFontEn font = TranslationsWebSettingsFontEn.internal(_root);
-	late final TranslationsWebSettingsAccountEn account = TranslationsWebSettingsAccountEn.internal(_root);
-	late final TranslationsWebSettingsChangeCredentialsEn changeCredentials = TranslationsWebSettingsChangeCredentialsEn.internal(_root);
-	late final TranslationsWebSettingsSystemEn system = TranslationsWebSettingsSystemEn.internal(_root);
-	late final TranslationsWebSettingsAboutEn about = TranslationsWebSettingsAboutEn.internal(_root);
+	late final Translations$web$settings$groups$en groups = Translations$web$settings$groups$en.internal(_root);
+	late final Translations$web$settings$items$en items = Translations$web$settings$items$en.internal(_root);
+	late final Translations$web$settings$health$en health = Translations$web$settings$health$en.internal(_root);
+	late final Translations$web$settings$breadcrumb$en breadcrumb = Translations$web$settings$breadcrumb$en.internal(_root);
+	late final Translations$web$settings$appearance$en appearance = Translations$web$settings$appearance$en.internal(_root);
+	late final Translations$web$settings$font$en font = Translations$web$settings$font$en.internal(_root);
+	late final Translations$web$settings$account$en account = Translations$web$settings$account$en.internal(_root);
+	late final Translations$web$settings$changeCredentials$en changeCredentials = Translations$web$settings$changeCredentials$en.internal(_root);
+	late final Translations$web$settings$system$en system = Translations$web$settings$system$en.internal(_root);
+	late final Translations$web$settings$about$en about = Translations$web$settings$about$en.internal(_root);
 }
 
 // Path: web.logViewer
-class TranslationsWebLogViewerEn {
-	TranslationsWebLogViewerEn.internal(this._root);
+class Translations$web$logViewer$en {
+	Translations$web$logViewer$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -3285,8 +3532,8 @@ class TranslationsWebLogViewerEn {
 }
 
 // Path: web.pathInput
-class TranslationsWebPathInputEn {
-	TranslationsWebPathInputEn.internal(this._root);
+class Translations$web$pathInput$en {
+	Translations$web$pathInput$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -3309,26 +3556,26 @@ class TranslationsWebPathInputEn {
 }
 
 // Path: web.memoryAmbient
-class TranslationsWebMemoryAmbientEn {
-	TranslationsWebMemoryAmbientEn.internal(this._root);
+class Translations$web$memoryAmbient$en {
+	Translations$web$memoryAmbient$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	late final TranslationsWebMemoryAmbientHeaderEn header = TranslationsWebMemoryAmbientHeaderEn.internal(_root);
+	late final Translations$web$memoryAmbient$header$en header = Translations$web$memoryAmbient$header$en.internal(_root);
 
 	/// en: 'Loading…'
 	String get loading => 'Loading…';
 
-	late final TranslationsWebMemoryAmbientProvidersEn providers = TranslationsWebMemoryAmbientProvidersEn.internal(_root);
-	late final TranslationsWebMemoryAmbientRulesEn rules = TranslationsWebMemoryAmbientRulesEn.internal(_root);
-	late final TranslationsWebMemoryAmbientProfilesEn profiles = TranslationsWebMemoryAmbientProfilesEn.internal(_root);
-	late final TranslationsWebMemoryAmbientCostEn cost = TranslationsWebMemoryAmbientCostEn.internal(_root);
+	late final Translations$web$memoryAmbient$providers$en providers = Translations$web$memoryAmbient$providers$en.internal(_root);
+	late final Translations$web$memoryAmbient$rules$en rules = Translations$web$memoryAmbient$rules$en.internal(_root);
+	late final Translations$web$memoryAmbient$profiles$en profiles = Translations$web$memoryAmbient$profiles$en.internal(_root);
+	late final Translations$web$memoryAmbient$cost$en cost = Translations$web$memoryAmbient$cost$en.internal(_root);
 }
 
 // Path: web.noteEditor
-class TranslationsWebNoteEditorEn {
-	TranslationsWebNoteEditorEn.internal(this._root);
+class Translations$web$noteEditor$en {
+	Translations$web$noteEditor$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -3352,12 +3599,12 @@ class TranslationsWebNoteEditorEn {
 	/// en: 'Save failed'
 	String get saveFailedToast => 'Save failed';
 
-	late final TranslationsWebNoteEditorStatusEn status = TranslationsWebNoteEditorStatusEn.internal(_root);
+	late final Translations$web$noteEditor$status$en status = Translations$web$noteEditor$status$en.internal(_root);
 }
 
 // Path: web.export
-class TranslationsWebExportEn {
-	TranslationsWebExportEn.internal(this._root);
+class Translations$web$export$en {
+	Translations$web$export$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -3372,16 +3619,16 @@ class TranslationsWebExportEn {
 	/// en: '← Backups'
 	String get backToBackups => '← Backups';
 
-	late final TranslationsWebExportSectionsEn sections = TranslationsWebExportSectionsEn.internal(_root);
-	late final TranslationsWebExportFormEn form = TranslationsWebExportFormEn.internal(_root);
-	late final TranslationsWebExportHistoryEn history = TranslationsWebExportHistoryEn.internal(_root);
-	late final TranslationsWebExportImportEn import = TranslationsWebExportImportEn.internal(_root);
-	late final TranslationsWebExportImportsEn imports = TranslationsWebExportImportsEn.internal(_root);
+	late final Translations$web$export$sections$en sections = Translations$web$export$sections$en.internal(_root);
+	late final Translations$web$export$form$en form = Translations$web$export$form$en.internal(_root);
+	late final Translations$web$export$history$en history = Translations$web$export$history$en.internal(_root);
+	late final Translations$web$export$import$en import = Translations$web$export$import$en.internal(_root);
+	late final Translations$web$export$imports$en imports = Translations$web$export$imports$en.internal(_root);
 }
 
 // Path: web.knowledge
-class TranslationsWebKnowledgeEn {
-	TranslationsWebKnowledgeEn.internal(this._root);
+class Translations$web$knowledge$en {
+	Translations$web$knowledge$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -3444,47 +3691,47 @@ class TranslationsWebKnowledgeEn {
 	/// en: 'Delete this node? Skills stay deleted; auto-derived facts/entities may re-appear on the next sweep.'
 	String get deleteConfirm => 'Delete this node? Skills stay deleted; auto-derived facts/entities may re-appear on the next sweep.';
 
-	late final TranslationsWebKnowledgeScopesEn scopes = TranslationsWebKnowledgeScopesEn.internal(_root);
-	late final TranslationsWebKnowledgeKbEn kb = TranslationsWebKnowledgeKbEn.internal(_root);
-	late final TranslationsWebKnowledgeKindsEn kinds = TranslationsWebKnowledgeKindsEn.internal(_root);
-	late final TranslationsWebKnowledgeDistillEn distill = TranslationsWebKnowledgeDistillEn.internal(_root);
-	late final TranslationsWebKnowledgeGraphEn graph = TranslationsWebKnowledgeGraphEn.internal(_root);
+	late final Translations$web$knowledge$scopes$en scopes = Translations$web$knowledge$scopes$en.internal(_root);
+	late final Translations$web$knowledge$kb$en kb = Translations$web$knowledge$kb$en.internal(_root);
+	late final Translations$web$knowledge$kinds$en kinds = Translations$web$knowledge$kinds$en.internal(_root);
+	late final Translations$web$knowledge$distill$en distill = Translations$web$knowledge$distill$en.internal(_root);
+	late final Translations$web$knowledge$graph$en graph = Translations$web$knowledge$graph$en.internal(_root);
 }
 
 // Path: web.cortex
-class TranslationsWebCortexEn {
-	TranslationsWebCortexEn.internal(this._root);
+class Translations$web$cortex$en {
+	Translations$web$cortex$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	late final TranslationsWebCortexHomeEn home = TranslationsWebCortexHomeEn.internal(_root);
-	late final TranslationsWebCortexChatEn chat = TranslationsWebCortexChatEn.internal(_root);
-	late final TranslationsWebCortexBlueprintEn blueprint = TranslationsWebCortexBlueprintEn.internal(_root);
-	late final TranslationsWebCortexQuarantineEn quarantine = TranslationsWebCortexQuarantineEn.internal(_root);
-	late final TranslationsWebCortexSettingsEn settings = TranslationsWebCortexSettingsEn.internal(_root);
+	late final Translations$web$cortex$home$en home = Translations$web$cortex$home$en.internal(_root);
+	late final Translations$web$cortex$chat$en chat = Translations$web$cortex$chat$en.internal(_root);
+	late final Translations$web$cortex$blueprint$en blueprint = Translations$web$cortex$blueprint$en.internal(_root);
+	late final Translations$web$cortex$quarantine$en quarantine = Translations$web$cortex$quarantine$en.internal(_root);
+	late final Translations$web$cortex$settings$en settings = Translations$web$cortex$settings$en.internal(_root);
 }
 
 // Path: web.database
-class TranslationsWebDatabaseEn {
-	TranslationsWebDatabaseEn.internal(this._root);
+class Translations$web$database$en {
+	Translations$web$database$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	late final TranslationsWebDatabaseDialogEn dialog = TranslationsWebDatabaseDialogEn.internal(_root);
-	late final TranslationsWebDatabaseResultsEn results = TranslationsWebDatabaseResultsEn.internal(_root);
-	late final TranslationsWebDatabaseTreeEn tree = TranslationsWebDatabaseTreeEn.internal(_root);
-	late final TranslationsWebDatabaseRowEn row = TranslationsWebDatabaseRowEn.internal(_root);
-	late final TranslationsWebDatabaseGridEn grid = TranslationsWebDatabaseGridEn.internal(_root);
-	late final TranslationsWebDatabaseConsoleEn console = TranslationsWebDatabaseConsoleEn.internal(_root);
-	late final TranslationsWebDatabasePanelEn panel = TranslationsWebDatabasePanelEn.internal(_root);
-	late final TranslationsWebDatabaseWorkbenchEn workbench = TranslationsWebDatabaseWorkbenchEn.internal(_root);
+	late final Translations$web$database$dialog$en dialog = Translations$web$database$dialog$en.internal(_root);
+	late final Translations$web$database$results$en results = Translations$web$database$results$en.internal(_root);
+	late final Translations$web$database$tree$en tree = Translations$web$database$tree$en.internal(_root);
+	late final Translations$web$database$row$en row = Translations$web$database$row$en.internal(_root);
+	late final Translations$web$database$grid$en grid = Translations$web$database$grid$en.internal(_root);
+	late final Translations$web$database$console$en console = Translations$web$database$console$en.internal(_root);
+	late final Translations$web$database$panel$en panel = Translations$web$database$panel$en.internal(_root);
+	late final Translations$web$database$workbench$en workbench = Translations$web$database$workbench$en.internal(_root);
 }
 
 // Path: web.roundTable
-class TranslationsWebRoundTableEn {
-	TranslationsWebRoundTableEn.internal(this._root);
+class Translations$web$roundTable$en {
+	Translations$web$roundTable$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -3517,20 +3764,20 @@ class TranslationsWebRoundTableEn {
 	/// en: 'Summary'
 	String get summary => 'Summary';
 
-	late final TranslationsWebRoundTableDialogEn dialog = TranslationsWebRoundTableDialogEn.internal(_root);
-	late final TranslationsWebRoundTableDetailEn detail = TranslationsWebRoundTableDetailEn.internal(_root);
-	late final TranslationsWebRoundTableStatusEn status = TranslationsWebRoundTableStatusEn.internal(_root);
+	late final Translations$web$roundTable$dialog$en dialog = Translations$web$roundTable$dialog$en.internal(_root);
+	late final Translations$web$roundTable$detail$en detail = Translations$web$roundTable$detail$en.internal(_root);
+	late final Translations$web$roundTable$status$en status = Translations$web$roundTable$status$en.internal(_root);
 
 	/// en: 'New chat'
 	String get untitled => 'New chat';
 
-	late final TranslationsWebRoundTableHandoffEn handoff = TranslationsWebRoundTableHandoffEn.internal(_root);
-	late final TranslationsWebRoundTablePlanEn plan = TranslationsWebRoundTablePlanEn.internal(_root);
+	late final Translations$web$roundTable$handoff$en handoff = Translations$web$roundTable$handoff$en.internal(_root);
+	late final Translations$web$roundTable$plan$en plan = Translations$web$roundTable$plan$en.internal(_root);
 }
 
 // Path: more.identity
-class TranslationsMoreIdentityEn {
-	TranslationsMoreIdentityEn.internal(this._root);
+class Translations$more$identity$en {
+	Translations$more$identity$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -3547,8 +3794,8 @@ class TranslationsMoreIdentityEn {
 }
 
 // Path: more.sections
-class TranslationsMoreSectionsEn {
-	TranslationsMoreSectionsEn.internal(this._root);
+class Translations$more$sections$en {
+	Translations$more$sections$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -3568,36 +3815,36 @@ class TranslationsMoreSectionsEn {
 }
 
 // Path: more.items
-class TranslationsMoreItemsEn {
-	TranslationsMoreItemsEn.internal(this._root);
+class Translations$more$items$en {
+	Translations$more$items$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	late final TranslationsMoreItemsIntegrationsEn integrations = TranslationsMoreItemsIntegrationsEn.internal(_root);
-	late final TranslationsMoreItemsActivityEn activity = TranslationsMoreItemsActivityEn.internal(_root);
-	late final TranslationsMoreItemsMemoryAmbientEn memoryAmbient = TranslationsMoreItemsMemoryAmbientEn.internal(_root);
-	late final TranslationsMoreItemsChannelsEn channels = TranslationsMoreItemsChannelsEn.internal(_root);
-	late final TranslationsMoreItemsProvidersEn providers = TranslationsMoreItemsProvidersEn.internal(_root);
-	late final TranslationsMoreItemsMcpEn mcp = TranslationsMoreItemsMcpEn.internal(_root);
-	late final TranslationsMoreItemsSkillsEn skills = TranslationsMoreItemsSkillsEn.internal(_root);
-	late final TranslationsMoreItemsGitHostsEn gitHosts = TranslationsMoreItemsGitHostsEn.internal(_root);
-	late final TranslationsMoreItemsCustomTasksEn customTasks = TranslationsMoreItemsCustomTasksEn.internal(_root);
-	late final TranslationsMoreItemsCortexHubEn cortexHub = TranslationsMoreItemsCortexHubEn.internal(_root);
-	late final TranslationsMoreItemsProjectMemoryEn projectMemory = TranslationsMoreItemsProjectMemoryEn.internal(_root);
-	late final TranslationsMoreItemsArchivedEn archived = TranslationsMoreItemsArchivedEn.internal(_root);
-	late final TranslationsMoreItemsQuarantineEn quarantine = TranslationsMoreItemsQuarantineEn.internal(_root);
-	late final TranslationsMoreItemsBackupsEn backups = TranslationsMoreItemsBackupsEn.internal(_root);
-	late final TranslationsMoreItemsDataExportEn dataExport = TranslationsMoreItemsDataExportEn.internal(_root);
-	late final TranslationsMoreItemsSettingsEn settings = TranslationsMoreItemsSettingsEn.internal(_root);
-	late final TranslationsMoreItemsAboutEn about = TranslationsMoreItemsAboutEn.internal(_root);
-	late final TranslationsMoreItemsVaultEn vault = TranslationsMoreItemsVaultEn.internal(_root);
-	late final TranslationsMoreItemsRoundTableEn roundTable = TranslationsMoreItemsRoundTableEn.internal(_root);
+	late final Translations$more$items$integrations$en integrations = Translations$more$items$integrations$en.internal(_root);
+	late final Translations$more$items$activity$en activity = Translations$more$items$activity$en.internal(_root);
+	late final Translations$more$items$memoryAmbient$en memoryAmbient = Translations$more$items$memoryAmbient$en.internal(_root);
+	late final Translations$more$items$channels$en channels = Translations$more$items$channels$en.internal(_root);
+	late final Translations$more$items$providers$en providers = Translations$more$items$providers$en.internal(_root);
+	late final Translations$more$items$mcp$en mcp = Translations$more$items$mcp$en.internal(_root);
+	late final Translations$more$items$skills$en skills = Translations$more$items$skills$en.internal(_root);
+	late final Translations$more$items$gitHosts$en gitHosts = Translations$more$items$gitHosts$en.internal(_root);
+	late final Translations$more$items$customTasks$en customTasks = Translations$more$items$customTasks$en.internal(_root);
+	late final Translations$more$items$cortexHub$en cortexHub = Translations$more$items$cortexHub$en.internal(_root);
+	late final Translations$more$items$projectMemory$en projectMemory = Translations$more$items$projectMemory$en.internal(_root);
+	late final Translations$more$items$archived$en archived = Translations$more$items$archived$en.internal(_root);
+	late final Translations$more$items$quarantine$en quarantine = Translations$more$items$quarantine$en.internal(_root);
+	late final Translations$more$items$backups$en backups = Translations$more$items$backups$en.internal(_root);
+	late final Translations$more$items$dataExport$en dataExport = Translations$more$items$dataExport$en.internal(_root);
+	late final Translations$more$items$settings$en settings = Translations$more$items$settings$en.internal(_root);
+	late final Translations$more$items$about$en about = Translations$more$items$about$en.internal(_root);
+	late final Translations$more$items$vault$en vault = Translations$more$items$vault$en.internal(_root);
+	late final Translations$more$items$roundTable$en roundTable = Translations$more$items$roundTable$en.internal(_root);
 }
 
 // Path: activity.filter
-class TranslationsActivityFilterEn {
-	TranslationsActivityFilterEn.internal(this._root);
+class Translations$activity$filter$en {
+	Translations$activity$filter$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -3635,8 +3882,8 @@ class TranslationsActivityFilterEn {
 }
 
 // Path: activity.detail
-class TranslationsActivityDetailEn {
-	TranslationsActivityDetailEn.internal(this._root);
+class Translations$activity$detail$en {
+	Translations$activity$detail$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -3671,8 +3918,8 @@ class TranslationsActivityDetailEn {
 }
 
 // Path: sessions.dock
-class TranslationsSessionsDockEn {
-	TranslationsSessionsDockEn.internal(this._root);
+class Translations$sessions$dock$en {
+	Translations$sessions$dock$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -3683,8 +3930,8 @@ class TranslationsSessionsDockEn {
 }
 
 // Path: sessions.tools
-class TranslationsSessionsToolsEn {
-	TranslationsSessionsToolsEn.internal(this._root);
+class Translations$sessions$tools$en {
+	Translations$sessions$tools$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -3701,8 +3948,8 @@ class TranslationsSessionsToolsEn {
 }
 
 // Path: sessions.filters
-class TranslationsSessionsFiltersEn {
-	TranslationsSessionsFiltersEn.internal(this._root);
+class Translations$sessions$filters$en {
+	Translations$sessions$filters$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -3722,8 +3969,8 @@ class TranslationsSessionsFiltersEn {
 }
 
 // Path: sessions.card
-class TranslationsSessionsCardEn {
-	TranslationsSessionsCardEn.internal(this._root);
+class Translations$sessions$card$en {
+	Translations$sessions$card$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -3734,8 +3981,8 @@ class TranslationsSessionsCardEn {
 }
 
 // Path: sessions.empty
-class TranslationsSessionsEmptyEn {
-	TranslationsSessionsEmptyEn.internal(this._root);
+class Translations$sessions$empty$en {
+	Translations$sessions$empty$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -3755,8 +4002,8 @@ class TranslationsSessionsEmptyEn {
 }
 
 // Path: sessions.relative
-class TranslationsSessionsRelativeEn {
-	TranslationsSessionsRelativeEn.internal(this._root);
+class Translations$sessions$relative$en {
+	Translations$sessions$relative$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -3776,8 +4023,8 @@ class TranslationsSessionsRelativeEn {
 }
 
 // Path: sessions.detail
-class TranslationsSessionsDetailEn {
-	TranslationsSessionsDetailEn.internal(this._root);
+class Translations$sessions$detail$en {
+	Translations$sessions$detail$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -3810,27 +4057,27 @@ class TranslationsSessionsDetailEn {
 	/// en: 'Failed to load session'
 	String get errorTitle => 'Failed to load session';
 
-	late final TranslationsSessionsDetailAccountSwitcherEn accountSwitcher = TranslationsSessionsDetailAccountSwitcherEn.internal(_root);
+	late final Translations$sessions$detail$accountSwitcher$en accountSwitcher = Translations$sessions$detail$accountSwitcher$en.internal(_root);
 }
 
 // Path: sessions.terminal
-class TranslationsSessionsTerminalEn {
-	TranslationsSessionsTerminalEn.internal(this._root);
+class Translations$sessions$terminal$en {
+	Translations$sessions$terminal$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	late final TranslationsSessionsTerminalSnackbarEn snackbar = TranslationsSessionsTerminalSnackbarEn.internal(_root);
-	late final TranslationsSessionsTerminalImageSourceEn imageSource = TranslationsSessionsTerminalImageSourceEn.internal(_root);
-	late final TranslationsSessionsTerminalKeyboardEn keyboard = TranslationsSessionsTerminalKeyboardEn.internal(_root);
-	late final TranslationsSessionsTerminalAttachmentsEn attachments = TranslationsSessionsTerminalAttachmentsEn.internal(_root);
-	late final TranslationsSessionsTerminalConnectionEn connection = TranslationsSessionsTerminalConnectionEn.internal(_root);
-	late final TranslationsSessionsTerminalSelectCopyEn selectCopy = TranslationsSessionsTerminalSelectCopyEn.internal(_root);
+	late final Translations$sessions$terminal$snackbar$en snackbar = Translations$sessions$terminal$snackbar$en.internal(_root);
+	late final Translations$sessions$terminal$imageSource$en imageSource = Translations$sessions$terminal$imageSource$en.internal(_root);
+	late final Translations$sessions$terminal$keyboard$en keyboard = Translations$sessions$terminal$keyboard$en.internal(_root);
+	late final Translations$sessions$terminal$attachments$en attachments = Translations$sessions$terminal$attachments$en.internal(_root);
+	late final Translations$sessions$terminal$connection$en connection = Translations$sessions$terminal$connection$en.internal(_root);
+	late final Translations$sessions$terminal$selectCopy$en selectCopy = Translations$sessions$terminal$selectCopy$en.internal(_root);
 }
 
 // Path: sessions.action
-class TranslationsSessionsActionEn {
-	TranslationsSessionsActionEn.internal(this._root);
+class Translations$sessions$action$en {
+	Translations$sessions$action$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -3863,12 +4110,12 @@ class TranslationsSessionsActionEn {
 	/// en: 'Delete this session permanently? Its ring buffer and history will be gone.'
 	String get deleteConfirm => 'Delete this session permanently? Its ring buffer and history will be gone.';
 
-	late final TranslationsSessionsActionErrorsEn errors = TranslationsSessionsActionErrorsEn.internal(_root);
+	late final Translations$sessions$action$errors$en errors = Translations$sessions$action$errors$en.internal(_root);
 }
 
 // Path: sessions.dirPicker
-class TranslationsSessionsDirPickerEn {
-	TranslationsSessionsDirPickerEn.internal(this._root);
+class Translations$sessions$dirPicker$en {
+	Translations$sessions$dirPicker$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -3895,29 +4142,29 @@ class TranslationsSessionsDirPickerEn {
 	/// en: 'mkdir failed: {error}'
 	String mkdirFailedSnack({required Object error}) => 'mkdir failed: ${error}';
 
-	late final TranslationsSessionsDirPickerDialogEn dialog = TranslationsSessionsDirPickerDialogEn.internal(_root);
+	late final Translations$sessions$dirPicker$dialog$en dialog = Translations$sessions$dirPicker$dialog$en.internal(_root);
 }
 
 // Path: sessions.inspector
-class TranslationsSessionsInspectorEn {
-	TranslationsSessionsInspectorEn.internal(this._root);
+class Translations$sessions$inspector$en {
+	Translations$sessions$inspector$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	late final TranslationsSessionsInspectorShellEn shell = TranslationsSessionsInspectorShellEn.internal(_root);
-	late final TranslationsSessionsInspectorCortexEn cortex = TranslationsSessionsInspectorCortexEn.internal(_root);
-	late final TranslationsSessionsInspectorSharedEn shared = TranslationsSessionsInspectorSharedEn.internal(_root);
-	late final TranslationsSessionsInspectorHistoryEn history = TranslationsSessionsInspectorHistoryEn.internal(_root);
-	late final TranslationsSessionsInspectorFilesEn files = TranslationsSessionsInspectorFilesEn.internal(_root);
-	late final TranslationsSessionsInspectorGitEn git = TranslationsSessionsInspectorGitEn.internal(_root);
-	late final TranslationsSessionsInspectorTasksEn tasks = TranslationsSessionsInspectorTasksEn.internal(_root);
-	late final TranslationsSessionsInspectorNotesEn notes = TranslationsSessionsInspectorNotesEn.internal(_root);
+	late final Translations$sessions$inspector$shell$en shell = Translations$sessions$inspector$shell$en.internal(_root);
+	late final Translations$sessions$inspector$cortex$en cortex = Translations$sessions$inspector$cortex$en.internal(_root);
+	late final Translations$sessions$inspector$shared$en shared = Translations$sessions$inspector$shared$en.internal(_root);
+	late final Translations$sessions$inspector$history$en history = Translations$sessions$inspector$history$en.internal(_root);
+	late final Translations$sessions$inspector$files$en files = Translations$sessions$inspector$files$en.internal(_root);
+	late final Translations$sessions$inspector$git$en git = Translations$sessions$inspector$git$en.internal(_root);
+	late final Translations$sessions$inspector$tasks$en tasks = Translations$sessions$inspector$tasks$en.internal(_root);
+	late final Translations$sessions$inspector$notes$en notes = Translations$sessions$inspector$notes$en.internal(_root);
 }
 
 // Path: sessions.spawnSheet
-class TranslationsSessionsSpawnSheetEn {
-	TranslationsSessionsSpawnSheetEn.internal(this._root);
+class Translations$sessions$spawnSheet$en {
+	Translations$sessions$spawnSheet$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -3971,15 +4218,15 @@ class TranslationsSessionsSpawnSheetEn {
 	/// en: 'Whitespace-separated; blank uses the provider's defaults.'
 	String get argsHelper => 'Whitespace-separated; blank uses the provider\'s defaults.';
 
-	late final TranslationsSessionsSpawnSheetBypassEn bypass = TranslationsSessionsSpawnSheetBypassEn.internal(_root);
-	late final TranslationsSessionsSpawnSheetNoProvidersEn noProviders = TranslationsSessionsSpawnSheetNoProvidersEn.internal(_root);
-	late final TranslationsSessionsSpawnSheetProviderLoadErrorEn providerLoadError = TranslationsSessionsSpawnSheetProviderLoadErrorEn.internal(_root);
-	late final TranslationsSessionsSpawnSheetClaudeAccountEn claudeAccount = TranslationsSessionsSpawnSheetClaudeAccountEn.internal(_root);
+	late final Translations$sessions$spawnSheet$bypass$en bypass = Translations$sessions$spawnSheet$bypass$en.internal(_root);
+	late final Translations$sessions$spawnSheet$noProviders$en noProviders = Translations$sessions$spawnSheet$noProviders$en.internal(_root);
+	late final Translations$sessions$spawnSheet$providerLoadError$en providerLoadError = Translations$sessions$spawnSheet$providerLoadError$en.internal(_root);
+	late final Translations$sessions$spawnSheet$claudeAccount$en claudeAccount = Translations$sessions$spawnSheet$claudeAccount$en.internal(_root);
 }
 
 // Path: mcp.errorPrefix
-class TranslationsMcpErrorPrefixEn {
-	TranslationsMcpErrorPrefixEn.internal(this._root);
+class Translations$mcp$errorPrefix$en {
+	Translations$mcp$errorPrefix$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -3999,8 +4246,8 @@ class TranslationsMcpErrorPrefixEn {
 }
 
 // Path: mcp.editor
-class TranslationsMcpEditorEn {
-	TranslationsMcpEditorEn.internal(this._root);
+class Translations$mcp$editor$en {
+	Translations$mcp$editor$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -4053,8 +4300,8 @@ class TranslationsMcpEditorEn {
 }
 
 // Path: mcp.secret
-class TranslationsMcpSecretEn {
-	TranslationsMcpSecretEn.internal(this._root);
+class Translations$mcp$secret$en {
+	Translations$mcp$secret$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -4113,8 +4360,8 @@ class TranslationsMcpSecretEn {
 }
 
 // Path: mcp.popup
-class TranslationsMcpPopupEn {
-	TranslationsMcpPopupEn.internal(this._root);
+class Translations$mcp$popup$en {
+	Translations$mcp$popup$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -4131,8 +4378,8 @@ class TranslationsMcpPopupEn {
 }
 
 // Path: mcp.kv
-class TranslationsMcpKvEn {
-	TranslationsMcpKvEn.internal(this._root);
+class Translations$mcp$kv$en {
+	Translations$mcp$kv$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -4155,8 +4402,8 @@ class TranslationsMcpKvEn {
 }
 
 // Path: providers.errorPrefix
-class TranslationsProvidersErrorPrefixEn {
-	TranslationsProvidersErrorPrefixEn.internal(this._root);
+class Translations$providers$errorPrefix$en {
+	Translations$providers$errorPrefix$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -4173,8 +4420,8 @@ class TranslationsProvidersErrorPrefixEn {
 }
 
 // Path: providers.updateCheck
-class TranslationsProvidersUpdateCheckEn {
-	TranslationsProvidersUpdateCheckEn.internal(this._root);
+class Translations$providers$updateCheck$en {
+	Translations$providers$updateCheck$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -4227,8 +4474,8 @@ class TranslationsProvidersUpdateCheckEn {
 }
 
 // Path: providers.accounts
-class TranslationsProvidersAccountsEn {
-	TranslationsProvidersAccountsEn.internal(this._root);
+class Translations$providers$accounts$en {
+	Translations$providers$accounts$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -4329,8 +4576,8 @@ class TranslationsProvidersAccountsEn {
 }
 
 // Path: providers.antigravityAccounts
-class TranslationsProvidersAntigravityAccountsEn {
-	TranslationsProvidersAntigravityAccountsEn.internal(this._root);
+class Translations$providers$antigravityAccounts$en {
+	Translations$providers$antigravityAccounts$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -4365,8 +4612,8 @@ class TranslationsProvidersAntigravityAccountsEn {
 }
 
 // Path: integrations.form
-class TranslationsIntegrationsFormEn {
-	TranslationsIntegrationsFormEn.internal(this._root);
+class Translations$integrations$form$en {
+	Translations$integrations$form$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -4410,8 +4657,8 @@ class TranslationsIntegrationsFormEn {
 }
 
 // Path: integrations.defaultAgent
-class TranslationsIntegrationsDefaultAgentEn {
-	TranslationsIntegrationsDefaultAgentEn.internal(this._root);
+class Translations$integrations$defaultAgent$en {
+	Translations$integrations$defaultAgent$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -4449,24 +4696,24 @@ class TranslationsIntegrationsDefaultAgentEn {
 }
 
 // Path: memoryWorkers.tasks
-class TranslationsMemoryWorkersTasksEn {
-	TranslationsMemoryWorkersTasksEn.internal(this._root);
+class Translations$memoryWorkers$tasks$en {
+	Translations$memoryWorkers$tasks$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	late final TranslationsMemoryWorkersTasksGatekeeperEn gatekeeper = TranslationsMemoryWorkersTasksGatekeeperEn.internal(_root);
-	late final TranslationsMemoryWorkersTasksCleanerEn cleaner = TranslationsMemoryWorkersTasksCleanerEn.internal(_root);
-	late final TranslationsMemoryWorkersTasksGitactivityEn gitactivity = TranslationsMemoryWorkersTasksGitactivityEn.internal(_root);
-	late final TranslationsMemoryWorkersTasksTranscriptEn transcript = TranslationsMemoryWorkersTasksTranscriptEn.internal(_root);
-	late final TranslationsMemoryWorkersTasksPlanDriftEn planDrift = TranslationsMemoryWorkersTasksPlanDriftEn.internal(_root);
-	late final TranslationsMemoryWorkersTasksConflictDetectorEn conflictDetector = TranslationsMemoryWorkersTasksConflictDetectorEn.internal(_root);
-	late final TranslationsMemoryWorkersTasksCaptureEn capture = TranslationsMemoryWorkersTasksCaptureEn.internal(_root);
+	late final Translations$memoryWorkers$tasks$gatekeeper$en gatekeeper = Translations$memoryWorkers$tasks$gatekeeper$en.internal(_root);
+	late final Translations$memoryWorkers$tasks$cleaner$en cleaner = Translations$memoryWorkers$tasks$cleaner$en.internal(_root);
+	late final Translations$memoryWorkers$tasks$gitactivity$en gitactivity = Translations$memoryWorkers$tasks$gitactivity$en.internal(_root);
+	late final Translations$memoryWorkers$tasks$transcript$en transcript = Translations$memoryWorkers$tasks$transcript$en.internal(_root);
+	late final Translations$memoryWorkers$tasks$planDrift$en planDrift = Translations$memoryWorkers$tasks$planDrift$en.internal(_root);
+	late final Translations$memoryWorkers$tasks$conflictDetector$en conflictDetector = Translations$memoryWorkers$tasks$conflictDetector$en.internal(_root);
+	late final Translations$memoryWorkers$tasks$capture$en capture = Translations$memoryWorkers$tasks$capture$en.internal(_root);
 }
 
 // Path: project.health
-class TranslationsProjectHealthEn {
-	TranslationsProjectHealthEn.internal(this._root);
+class Translations$project$health$en {
+	Translations$project$health$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -4531,8 +4778,8 @@ class TranslationsProjectHealthEn {
 }
 
 // Path: project.conflicts
-class TranslationsProjectConflictsEn {
-	TranslationsProjectConflictsEn.internal(this._root);
+class Translations$project$conflicts$en {
+	Translations$project$conflicts$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -4589,12 +4836,12 @@ class TranslationsProjectConflictsEn {
 	/// en: 'Open goal editor'
 	String get openGoalEditor => 'Open goal editor';
 
-	late final TranslationsProjectConflictsSeverityEn severity = TranslationsProjectConflictsSeverityEn.internal(_root);
+	late final Translations$project$conflicts$severity$en severity = Translations$project$conflicts$severity$en.internal(_root);
 }
 
 // Path: project.journalPrune
-class TranslationsProjectJournalPruneEn {
-	TranslationsProjectJournalPruneEn.internal(this._root);
+class Translations$project$journalPrune$en {
+	Translations$project$journalPrune$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -4626,8 +4873,8 @@ class TranslationsProjectJournalPruneEn {
 }
 
 // Path: project.archived
-class TranslationsProjectArchivedEn {
-	TranslationsProjectArchivedEn.internal(this._root);
+class Translations$project$archived$en {
+	Translations$project$archived$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -4647,8 +4894,8 @@ class TranslationsProjectArchivedEn {
 }
 
 // Path: backups.kv
-class TranslationsBackupsKvEn {
-	TranslationsBackupsKvEn.internal(this._root);
+class Translations$backups$kv$en {
+	Translations$backups$kv$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -4701,8 +4948,8 @@ class TranslationsBackupsKvEn {
 }
 
 // Path: backups.recoveryKit
-class TranslationsBackupsRecoveryKitEn {
-	TranslationsBackupsRecoveryKitEn.internal(this._root);
+class Translations$backups$recoveryKit$en {
+	Translations$backups$recoveryKit$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -4737,8 +4984,8 @@ class TranslationsBackupsRecoveryKitEn {
 }
 
 // Path: backups.emptyMissingDeps
-class TranslationsBackupsEmptyMissingDepsEn {
-	TranslationsBackupsEmptyMissingDepsEn.internal(this._root);
+class Translations$backups$emptyMissingDeps$en {
+	Translations$backups$emptyMissingDeps$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -4752,8 +4999,8 @@ class TranslationsBackupsEmptyMissingDepsEn {
 }
 
 // Path: backups.emptyNoTargets
-class TranslationsBackupsEmptyNoTargetsEn {
-	TranslationsBackupsEmptyNoTargetsEn.internal(this._root);
+class Translations$backups$emptyNoTargets$en {
+	Translations$backups$emptyNoTargets$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -4767,8 +5014,8 @@ class TranslationsBackupsEmptyNoTargetsEn {
 }
 
 // Path: backups.emptyNoBackups
-class TranslationsBackupsEmptyNoBackupsEn {
-	TranslationsBackupsEmptyNoBackupsEn.internal(this._root);
+class Translations$backups$emptyNoBackups$en {
+	Translations$backups$emptyNoBackups$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -4782,8 +5029,8 @@ class TranslationsBackupsEmptyNoBackupsEn {
 }
 
 // Path: backups.wizard
-class TranslationsBackupsWizardEn {
-	TranslationsBackupsWizardEn.internal(this._root);
+class Translations$backups$wizard$en {
+	Translations$backups$wizard$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -4818,8 +5065,8 @@ class TranslationsBackupsWizardEn {
 }
 
 // Path: backups.health
-class TranslationsBackupsHealthEn {
-	TranslationsBackupsHealthEn.internal(this._root);
+class Translations$backups$health$en {
+	Translations$backups$health$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -4840,12 +5087,12 @@ class TranslationsBackupsHealthEn {
 	/// en: 'never'
 	String get never => 'never';
 
-	late final TranslationsBackupsHealthTilesEn tiles = TranslationsBackupsHealthTilesEn.internal(_root);
+	late final Translations$backups$health$tiles$en tiles = Translations$backups$health$tiles$en.internal(_root);
 }
 
 // Path: backups.encryption
-class TranslationsBackupsEncryptionEn {
-	TranslationsBackupsEncryptionEn.internal(this._root);
+class Translations$backups$encryption$en {
+	Translations$backups$encryption$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -4874,8 +5121,8 @@ class TranslationsBackupsEncryptionEn {
 }
 
 // Path: backups.restore
-class TranslationsBackupsRestoreEn {
-	TranslationsBackupsRestoreEn.internal(this._root);
+class Translations$backups$restore$en {
+	Translations$backups$restore$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -5027,8 +5274,8 @@ class TranslationsBackupsRestoreEn {
 }
 
 // Path: backups.inventory
-class TranslationsBackupsInventoryEn {
-	TranslationsBackupsInventoryEn.internal(this._root);
+class Translations$backups$inventory$en {
+	Translations$backups$inventory$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -5057,23 +5304,23 @@ class TranslationsBackupsInventoryEn {
 }
 
 // Path: backupTargetEditor.kinds
-class TranslationsBackupTargetEditorKindsEn {
-	TranslationsBackupTargetEditorKindsEn.internal(this._root);
+class Translations$backupTargetEditor$kinds$en {
+	Translations$backupTargetEditor$kinds$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	late final TranslationsBackupTargetEditorKindsLocalEn local = TranslationsBackupTargetEditorKindsLocalEn.internal(_root);
-	late final TranslationsBackupTargetEditorKindsSmbEn smb = TranslationsBackupTargetEditorKindsSmbEn.internal(_root);
-	late final TranslationsBackupTargetEditorKindsWebdavEn webdav = TranslationsBackupTargetEditorKindsWebdavEn.internal(_root);
-	late final TranslationsBackupTargetEditorKindsSftpEn sftp = TranslationsBackupTargetEditorKindsSftpEn.internal(_root);
-	late final TranslationsBackupTargetEditorKindsS3En s3 = TranslationsBackupTargetEditorKindsS3En.internal(_root);
-	late final TranslationsBackupTargetEditorKindsRcloneEn rclone = TranslationsBackupTargetEditorKindsRcloneEn.internal(_root);
+	late final Translations$backupTargetEditor$kinds$local$en local = Translations$backupTargetEditor$kinds$local$en.internal(_root);
+	late final Translations$backupTargetEditor$kinds$smb$en smb = Translations$backupTargetEditor$kinds$smb$en.internal(_root);
+	late final Translations$backupTargetEditor$kinds$webdav$en webdav = Translations$backupTargetEditor$kinds$webdav$en.internal(_root);
+	late final Translations$backupTargetEditor$kinds$sftp$en sftp = Translations$backupTargetEditor$kinds$sftp$en.internal(_root);
+	late final Translations$backupTargetEditor$kinds$s3$en s3 = Translations$backupTargetEditor$kinds$s3$en.internal(_root);
+	late final Translations$backupTargetEditor$kinds$rclone$en rclone = Translations$backupTargetEditor$kinds$rclone$en.internal(_root);
 }
 
 // Path: githosts.errorPrefix
-class TranslationsGithostsErrorPrefixEn {
-	TranslationsGithostsErrorPrefixEn.internal(this._root);
+class Translations$githosts$errorPrefix$en {
+	Translations$githosts$errorPrefix$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -5087,8 +5334,8 @@ class TranslationsGithostsErrorPrefixEn {
 }
 
 // Path: githosts.form
-class TranslationsGithostsFormEn {
-	TranslationsGithostsFormEn.internal(this._root);
+class Translations$githosts$form$en {
+	Translations$githosts$form$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -5106,7 +5353,7 @@ class TranslationsGithostsFormEn {
 	/// en: 'work-github, personal-gitlab, …'
 	String get nameHint => 'work-github, personal-gitlab, …';
 
-	late final TranslationsGithostsFormKindsEn kinds = TranslationsGithostsFormKindsEn.internal(_root);
+	late final Translations$githosts$form$kinds$en kinds = Translations$githosts$form$kinds$en.internal(_root);
 
 	/// en: 'Host is required.'
 	String get validateHost => 'Host is required.';
@@ -5173,8 +5420,8 @@ class TranslationsGithostsFormEn {
 }
 
 // Path: channels.configDialog
-class TranslationsChannelsConfigDialogEn {
-	TranslationsChannelsConfigDialogEn.internal(this._root);
+class Translations$channels$configDialog$en {
+	Translations$channels$configDialog$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -5185,8 +5432,8 @@ class TranslationsChannelsConfigDialogEn {
 }
 
 // Path: channels.webhookDialog
-class TranslationsChannelsWebhookDialogEn {
-	TranslationsChannelsWebhookDialogEn.internal(this._root);
+class Translations$channels$webhookDialog$en {
+	Translations$channels$webhookDialog$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -5200,8 +5447,8 @@ class TranslationsChannelsWebhookDialogEn {
 }
 
 // Path: channels.notifications
-class TranslationsChannelsNotificationsEn {
-	TranslationsChannelsNotificationsEn.internal(this._root);
+class Translations$channels$notifications$en {
+	Translations$channels$notifications$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -5234,12 +5481,12 @@ class TranslationsChannelsNotificationsEn {
 	/// en: 'Notification preferences updated.'
 	String get updatedSnack => 'Notification preferences updated.';
 
-	late final TranslationsChannelsNotificationsModesEn modes = TranslationsChannelsNotificationsModesEn.internal(_root);
+	late final Translations$channels$notifications$modes$en modes = Translations$channels$notifications$modes$en.internal(_root);
 }
 
 // Path: channels.popup
-class TranslationsChannelsPopupEn {
-	TranslationsChannelsPopupEn.internal(this._root);
+class Translations$channels$popup$en {
+	Translations$channels$popup$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -5262,8 +5509,8 @@ class TranslationsChannelsPopupEn {
 }
 
 // Path: channels.badges
-class TranslationsChannelsBadgesEn {
-	TranslationsChannelsBadgesEn.internal(this._root);
+class Translations$channels$badges$en {
+	Translations$channels$badges$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -5283,8 +5530,8 @@ class TranslationsChannelsBadgesEn {
 }
 
 // Path: channels.snacks
-class TranslationsChannelsSnacksEn {
-	TranslationsChannelsSnacksEn.internal(this._root);
+class Translations$channels$snacks$en {
+	Translations$channels$snacks$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -5313,8 +5560,8 @@ class TranslationsChannelsSnacksEn {
 }
 
 // Path: channels.errorPrefix
-class TranslationsChannelsErrorPrefixEn {
-	TranslationsChannelsErrorPrefixEn.internal(this._root);
+class Translations$channels$errorPrefix$en {
+	Translations$channels$errorPrefix$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -5337,23 +5584,23 @@ class TranslationsChannelsErrorPrefixEn {
 }
 
 // Path: channels.kinds
-class TranslationsChannelsKindsEn {
-	TranslationsChannelsKindsEn.internal(this._root);
+class Translations$channels$kinds$en {
+	Translations$channels$kinds$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	late final TranslationsChannelsKindsTelegramEn telegram = TranslationsChannelsKindsTelegramEn.internal(_root);
-	late final TranslationsChannelsKindsSlackEn slack = TranslationsChannelsKindsSlackEn.internal(_root);
-	late final TranslationsChannelsKindsDiscordEn discord = TranslationsChannelsKindsDiscordEn.internal(_root);
-	late final TranslationsChannelsKindsFeishuEn feishu = TranslationsChannelsKindsFeishuEn.internal(_root);
-	late final TranslationsChannelsKindsDingtalkEn dingtalk = TranslationsChannelsKindsDingtalkEn.internal(_root);
-	late final TranslationsChannelsKindsWecomEn wecom = TranslationsChannelsKindsWecomEn.internal(_root);
+	late final Translations$channels$kinds$telegram$en telegram = Translations$channels$kinds$telegram$en.internal(_root);
+	late final Translations$channels$kinds$slack$en slack = Translations$channels$kinds$slack$en.internal(_root);
+	late final Translations$channels$kinds$discord$en discord = Translations$channels$kinds$discord$en.internal(_root);
+	late final Translations$channels$kinds$feishu$en feishu = Translations$channels$kinds$feishu$en.internal(_root);
+	late final Translations$channels$kinds$dingtalk$en dingtalk = Translations$channels$kinds$dingtalk$en.internal(_root);
+	late final Translations$channels$kinds$wecom$en wecom = Translations$channels$kinds$wecom$en.internal(_root);
 }
 
 // Path: notesPage.editor
-class TranslationsNotesPageEditorEn {
-	TranslationsNotesPageEditorEn.internal(this._root);
+class Translations$notesPage$editor$en {
+	Translations$notesPage$editor$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -5385,8 +5632,8 @@ class TranslationsNotesPageEditorEn {
 }
 
 // Path: dataExport.sections
-class TranslationsDataExportSectionsEn {
-	TranslationsDataExportSectionsEn.internal(this._root);
+class Translations$dataExport$sections$en {
+	Translations$dataExport$sections$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -5400,8 +5647,8 @@ class TranslationsDataExportSectionsEn {
 }
 
 // Path: dataExport.form
-class TranslationsDataExportFormEn {
-	TranslationsDataExportFormEn.internal(this._root);
+class Translations$dataExport$form$en {
+	Translations$dataExport$form$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -5419,7 +5666,7 @@ class TranslationsDataExportFormEn {
 	/// en: 'Integrations'
 	String get integrations => 'Integrations';
 
-	late final TranslationsDataExportFormIntegrationOptionsEn integrationOptions = TranslationsDataExportFormIntegrationOptionsEn.internal(_root);
+	late final Translations$dataExport$form$integrationOptions$en integrationOptions = Translations$dataExport$form$integrationOptions$en.internal(_root);
 
 	/// en: 'Plaintext key export contains decryptable secrets. Type "I understand" to confirm.'
 	String get confirmWarning => 'Plaintext key export contains decryptable secrets. Type "I understand" to confirm.';
@@ -5456,8 +5703,8 @@ class TranslationsDataExportFormEn {
 }
 
 // Path: dataExport.history
-class TranslationsDataExportHistoryEn {
-	TranslationsDataExportHistoryEn.internal(this._root);
+class Translations$dataExport$history$en {
+	Translations$dataExport$history$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -5502,7 +5749,7 @@ class TranslationsDataExportHistoryEn {
 	/// en: 'Download URL copied to clipboard. Paste into a browser to fetch (single-use).'
 	String get downloadCopiedToast => 'Download URL copied to clipboard. Paste into a browser to fetch (single-use).';
 
-	late final TranslationsDataExportHistoryColumnsEn columns = TranslationsDataExportHistoryColumnsEn.internal(_root);
+	late final Translations$dataExport$history$columns$en columns = Translations$dataExport$history$columns$en.internal(_root);
 
 	/// en: '(empty)'
 	String get scopeEmpty => '(empty)';
@@ -5518,8 +5765,8 @@ class TranslationsDataExportHistoryEn {
 }
 
 // Path: dataExport.import
-class TranslationsDataExportImportEn {
-	TranslationsDataExportImportEn.internal(this._root);
+class Translations$dataExport$import$en {
+	Translations$dataExport$import$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -5567,12 +5814,12 @@ class TranslationsDataExportImportEn {
 	/// en: 'Import failed: {error}'
 	String failedToast({required Object error}) => 'Import failed: ${error}';
 
-	late final TranslationsDataExportImportSummaryCardEn summaryCard = TranslationsDataExportImportSummaryCardEn.internal(_root);
+	late final Translations$dataExport$import$summaryCard$en summaryCard = Translations$dataExport$import$summaryCard$en.internal(_root);
 }
 
 // Path: dataExport.imports
-class TranslationsDataExportImportsEn {
-	TranslationsDataExportImportsEn.internal(this._root);
+class Translations$dataExport$imports$en {
+	Translations$dataExport$imports$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -5596,12 +5843,12 @@ class TranslationsDataExportImportsEn {
 	/// en: '(unknown source)'
 	String get sourceUnknown => '(unknown source)';
 
-	late final TranslationsDataExportImportsColumnsEn columns = TranslationsDataExportImportsColumnsEn.internal(_root);
+	late final Translations$dataExport$imports$columns$en columns = Translations$dataExport$imports$columns$en.internal(_root);
 }
 
 // Path: dataExport.relative
-class TranslationsDataExportRelativeEn {
-	TranslationsDataExportRelativeEn.internal(this._root);
+class Translations$dataExport$relative$en {
+	Translations$dataExport$relative$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -5630,8 +5877,8 @@ class TranslationsDataExportRelativeEn {
 }
 
 // Path: dataExport.status
-class TranslationsDataExportStatusEn {
-	TranslationsDataExportStatusEn.internal(this._root);
+class Translations$dataExport$status$en {
+	Translations$dataExport$status$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -5657,8 +5904,8 @@ class TranslationsDataExportStatusEn {
 }
 
 // Path: memory.status
-class TranslationsMemoryStatusEn {
-	TranslationsMemoryStatusEn.internal(this._root);
+class Translations$memory$status$en {
+	Translations$memory$status$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -5690,8 +5937,8 @@ class TranslationsMemoryStatusEn {
 }
 
 // Path: memory.rank
-class TranslationsMemoryRankEn {
-	TranslationsMemoryRankEn.internal(this._root);
+class Translations$memory$rank$en {
+	Translations$memory$rank$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -5723,8 +5970,8 @@ class TranslationsMemoryRankEn {
 }
 
 // Path: memory.deleteAllConfirm
-class TranslationsMemoryDeleteAllConfirmEn {
-	TranslationsMemoryDeleteAllConfirmEn.internal(this._root);
+class Translations$memory$deleteAllConfirm$en {
+	Translations$memory$deleteAllConfirm$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -5738,8 +5985,8 @@ class TranslationsMemoryDeleteAllConfirmEn {
 }
 
 // Path: memory.deleteOne
-class TranslationsMemoryDeleteOneEn {
-	TranslationsMemoryDeleteOneEn.internal(this._root);
+class Translations$memory$deleteOne$en {
+	Translations$memory$deleteOne$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -5753,8 +6000,8 @@ class TranslationsMemoryDeleteOneEn {
 }
 
 // Path: memory.scope
-class TranslationsMemoryScopeEn {
-	TranslationsMemoryScopeEn.internal(this._root);
+class Translations$memory$scope$en {
+	Translations$memory$scope$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -5768,8 +6015,8 @@ class TranslationsMemoryScopeEn {
 }
 
 // Path: memory.create
-class TranslationsMemoryCreateEn {
-	TranslationsMemoryCreateEn.internal(this._root);
+class Translations$memory$create$en {
+	Translations$memory$create$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -5789,8 +6036,8 @@ class TranslationsMemoryCreateEn {
 }
 
 // Path: memory.reembed
-class TranslationsMemoryReembedEn {
-	TranslationsMemoryReembedEn.internal(this._root);
+class Translations$memory$reembed$en {
+	Translations$memory$reembed$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -5819,8 +6066,8 @@ class TranslationsMemoryReembedEn {
 }
 
 // Path: about.sections
-class TranslationsAboutSectionsEn {
-	TranslationsAboutSectionsEn.internal(this._root);
+class Translations$about$sections$en {
+	Translations$about$sections$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -5837,8 +6084,8 @@ class TranslationsAboutSectionsEn {
 }
 
 // Path: about.fields
-class TranslationsAboutFieldsEn {
-	TranslationsAboutFieldsEn.internal(this._root);
+class Translations$about$fields$en {
+	Translations$about$fields$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -5867,8 +6114,8 @@ class TranslationsAboutFieldsEn {
 }
 
 // Path: about.copyLabels
-class TranslationsAboutCopyLabelsEn {
-	TranslationsAboutCopyLabelsEn.internal(this._root);
+class Translations$about$copyLabels$en {
+	Translations$about$copyLabels$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -5882,8 +6129,8 @@ class TranslationsAboutCopyLabelsEn {
 }
 
 // Path: about.gateway
-class TranslationsAboutGatewayEn {
-	TranslationsAboutGatewayEn.internal(this._root);
+class Translations$about$gateway$en {
+	Translations$about$gateway$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -5912,8 +6159,8 @@ class TranslationsAboutGatewayEn {
 }
 
 // Path: settings.language
-class TranslationsSettingsLanguageEn {
-	TranslationsSettingsLanguageEn.internal(this._root);
+class Translations$settings$language$en {
+	Translations$settings$language$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -5939,8 +6186,8 @@ class TranslationsSettingsLanguageEn {
 }
 
 // Path: settings.appearance
-class TranslationsSettingsAppearanceEn {
-	TranslationsSettingsAppearanceEn.internal(this._root);
+class Translations$settings$appearance$en {
+	Translations$settings$appearance$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -5969,8 +6216,8 @@ class TranslationsSettingsAppearanceEn {
 }
 
 // Path: settings.account
-class TranslationsSettingsAccountEn {
-	TranslationsSettingsAccountEn.internal(this._root);
+class Translations$settings$account$en {
+	Translations$settings$account$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -5987,8 +6234,8 @@ class TranslationsSettingsAccountEn {
 }
 
 // Path: settings.gateway
-class TranslationsSettingsGatewayEn {
-	TranslationsSettingsGatewayEn.internal(this._root);
+class Translations$settings$gateway$en {
+	Translations$settings$gateway$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -6011,8 +6258,8 @@ class TranslationsSettingsGatewayEn {
 }
 
 // Path: settings.changeCredentials
-class TranslationsSettingsChangeCredentialsEn {
-	TranslationsSettingsChangeCredentialsEn.internal(this._root);
+class Translations$settings$changeCredentials$en {
+	Translations$settings$changeCredentials$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -6062,8 +6309,8 @@ class TranslationsSettingsChangeCredentialsEn {
 }
 
 // Path: settings.logViewer
-class TranslationsSettingsLogViewerEn {
-	TranslationsSettingsLogViewerEn.internal(this._root);
+class Translations$settings$logViewer$en {
+	Translations$settings$logViewer$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -6087,12 +6334,12 @@ class TranslationsSettingsLogViewerEn {
 	/// en: 'Filter substring…'
 	String get filterHint => 'Filter substring…';
 
-	late final TranslationsSettingsLogViewerLevelsEn levels = TranslationsSettingsLogViewerLevelsEn.internal(_root);
+	late final Translations$settings$logViewer$levels$en levels = Translations$settings$logViewer$levels$en.internal(_root);
 }
 
 // Path: settings.serverSettings
-class TranslationsSettingsServerSettingsEn {
-	TranslationsSettingsServerSettingsEn.internal(this._root);
+class Translations$settings$serverSettings$en {
+	Translations$settings$serverSettings$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -6143,9 +6390,9 @@ class TranslationsSettingsServerSettingsEn {
 	/// en: 'Failed to load server settings'
 	String get loadFailed => 'Failed to load server settings';
 
-	late final TranslationsSettingsServerSettingsSectionsEn sections = TranslationsSettingsServerSettingsSectionsEn.internal(_root);
-	late final TranslationsSettingsServerSettingsSectionDescriptionsEn sectionDescriptions = TranslationsSettingsServerSettingsSectionDescriptionsEn.internal(_root);
-	late final TranslationsSettingsServerSettingsFieldsEn fields = TranslationsSettingsServerSettingsFieldsEn.internal(_root);
+	late final Translations$settings$serverSettings$sections$en sections = Translations$settings$serverSettings$sections$en.internal(_root);
+	late final Translations$settings$serverSettings$sectionDescriptions$en sectionDescriptions = Translations$settings$serverSettings$sectionDescriptions$en.internal(_root);
+	late final Translations$settings$serverSettings$fields$en fields = Translations$settings$serverSettings$fields$en.internal(_root);
 
 	/// en: '"{field}" must be an integer'
 	String validateInteger({required Object field}) => '"${field}" must be an integer';
@@ -6153,12 +6400,12 @@ class TranslationsSettingsServerSettingsEn {
 	/// en: '"{field}" must be a number'
 	String validateNumber({required Object field}) => '"${field}" must be a number';
 
-	late final TranslationsSettingsServerSettingsEmbedderModelEn embedderModel = TranslationsSettingsServerSettingsEmbedderModelEn.internal(_root);
+	late final Translations$settings$serverSettings$embedderModel$en embedderModel = Translations$settings$serverSettings$embedderModel$en.internal(_root);
 }
 
 // Path: web.sessions.list
-class TranslationsWebSessionsListEn {
-	TranslationsWebSessionsListEn.internal(this._root);
+class Translations$web$sessions$list$en {
+	Translations$web$sessions$list$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -6206,15 +6453,15 @@ class TranslationsWebSessionsListEn {
 	/// en: '{live} live · {ended} ended'
 	String footer({required Object live, required Object ended}) => '${live} live · ${ended} ended';
 
-	late final TranslationsWebSessionsListRowEn row = TranslationsWebSessionsListRowEn.internal(_root);
+	late final Translations$web$sessions$list$row$en row = Translations$web$sessions$list$row$en.internal(_root);
 
 	/// en: 'Delete failed'
 	String get deleteFailedToast => 'Delete failed';
 }
 
 // Path: web.sessions.tabs
-class TranslationsWebSessionsTabsEn {
-	TranslationsWebSessionsTabsEn.internal(this._root);
+class Translations$web$sessions$tabs$en {
+	Translations$web$sessions$tabs$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -6228,8 +6475,8 @@ class TranslationsWebSessionsTabsEn {
 }
 
 // Path: web.sessions.page
-class TranslationsWebSessionsPageEn {
-	TranslationsWebSessionsPageEn.internal(this._root);
+class Translations$web$sessions$page$en {
+	Translations$web$sessions$page$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -6276,8 +6523,8 @@ class TranslationsWebSessionsPageEn {
 }
 
 // Path: web.sessions.empty
-class TranslationsWebSessionsEmptyEn {
-	TranslationsWebSessionsEmptyEn.internal(this._root);
+class Translations$web$sessions$empty$en {
+	Translations$web$sessions$empty$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -6294,8 +6541,8 @@ class TranslationsWebSessionsEmptyEn {
 }
 
 // Path: web.sessions.header
-class TranslationsWebSessionsHeaderEn {
-	TranslationsWebSessionsHeaderEn.internal(this._root);
+class Translations$web$sessions$header$en {
+	Translations$web$sessions$header$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -6357,8 +6604,8 @@ class TranslationsWebSessionsHeaderEn {
 }
 
 // Path: web.sessions.terminal
-class TranslationsWebSessionsTerminalEn {
-	TranslationsWebSessionsTerminalEn.internal(this._root);
+class Translations$web$sessions$terminal$en {
+	Translations$web$sessions$terminal$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -6429,8 +6676,8 @@ class TranslationsWebSessionsTerminalEn {
 }
 
 // Path: web.sessions.spawn
-class TranslationsWebSessionsSpawnEn {
-	TranslationsWebSessionsSpawnEn.internal(this._root);
+class Translations$web$sessions$spawn$en {
+	Translations$web$sessions$spawn$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -6534,8 +6781,8 @@ class TranslationsWebSessionsSpawnEn {
 }
 
 // Path: web.sessions.accountSwitcher
-class TranslationsWebSessionsAccountSwitcherEn {
-	TranslationsWebSessionsAccountSwitcherEn.internal(this._root);
+class Translations$web$sessions$accountSwitcher$en {
+	Translations$web$sessions$accountSwitcher$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -6594,20 +6841,20 @@ class TranslationsWebSessionsAccountSwitcherEn {
 }
 
 // Path: web.sessions.inspector
-class TranslationsWebSessionsInspectorEn {
-	TranslationsWebSessionsInspectorEn.internal(this._root);
+class Translations$web$sessions$inspector$en {
+	Translations$web$sessions$inspector$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	late final TranslationsWebSessionsInspectorTabsEn tabs = TranslationsWebSessionsInspectorTabsEn.internal(_root);
-	late final TranslationsWebSessionsInspectorVaultPanelEn vaultPanel = TranslationsWebSessionsInspectorVaultPanelEn.internal(_root);
-	late final TranslationsWebSessionsInspectorCortexPanelEn cortexPanel = TranslationsWebSessionsInspectorCortexPanelEn.internal(_root);
+	late final Translations$web$sessions$inspector$tabs$en tabs = Translations$web$sessions$inspector$tabs$en.internal(_root);
+	late final Translations$web$sessions$inspector$vaultPanel$en vaultPanel = Translations$web$sessions$inspector$vaultPanel$en.internal(_root);
+	late final Translations$web$sessions$inspector$cortexPanel$en cortexPanel = Translations$web$sessions$inspector$cortexPanel$en.internal(_root);
 }
 
 // Path: web.sessions.ended
-class TranslationsWebSessionsEndedEn {
-	TranslationsWebSessionsEndedEn.internal(this._root);
+class Translations$web$sessions$ended$en {
+	Translations$web$sessions$ended$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -6621,8 +6868,8 @@ class TranslationsWebSessionsEndedEn {
 }
 
 // Path: web.sessions.fileBrowser
-class TranslationsWebSessionsFileBrowserEn {
-	TranslationsWebSessionsFileBrowserEn.internal(this._root);
+class Translations$web$sessions$fileBrowser$en {
+	Translations$web$sessions$fileBrowser$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -6678,8 +6925,8 @@ class TranslationsWebSessionsFileBrowserEn {
 }
 
 // Path: web.conflicts.confirmDelete
-class TranslationsWebConflictsConfirmDeleteEn {
-	TranslationsWebConflictsConfirmDeleteEn.internal(this._root);
+class Translations$web$conflicts$confirmDelete$en {
+	Translations$web$conflicts$confirmDelete$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -6717,8 +6964,8 @@ class TranslationsWebConflictsConfirmDeleteEn {
 }
 
 // Path: web.conflicts.openLayer
-class TranslationsWebConflictsOpenLayerEn {
-	TranslationsWebConflictsOpenLayerEn.internal(this._root);
+class Translations$web$conflicts$openLayer$en {
+	Translations$web$conflicts$openLayer$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -6732,8 +6979,8 @@ class TranslationsWebConflictsOpenLayerEn {
 }
 
 // Path: web.conflicts.severity
-class TranslationsWebConflictsSeverityEn {
-	TranslationsWebConflictsSeverityEn.internal(this._root);
+class Translations$web$conflicts$severity$en {
+	Translations$web$conflicts$severity$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -6750,8 +6997,8 @@ class TranslationsWebConflictsSeverityEn {
 }
 
 // Path: web.memoryConfig.sections
-class TranslationsWebMemoryConfigSectionsEn {
-	TranslationsWebMemoryConfigSectionsEn.internal(this._root);
+class Translations$web$memoryConfig$sections$en {
+	Translations$web$memoryConfig$sections$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -6774,8 +7021,8 @@ class TranslationsWebMemoryConfigSectionsEn {
 }
 
 // Path: web.memoryConfig.sectionHints
-class TranslationsWebMemoryConfigSectionHintsEn {
-	TranslationsWebMemoryConfigSectionHintsEn.internal(this._root);
+class Translations$web$memoryConfig$sectionHints$en {
+	Translations$web$memoryConfig$sectionHints$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -6798,8 +7045,8 @@ class TranslationsWebMemoryConfigSectionHintsEn {
 }
 
 // Path: web.memoryConfig.moveBanner
-class TranslationsWebMemoryConfigMoveBannerEn {
-	TranslationsWebMemoryConfigMoveBannerEn.internal(this._root);
+class Translations$web$memoryConfig$moveBanner$en {
+	Translations$web$memoryConfig$moveBanner$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -6816,8 +7063,8 @@ class TranslationsWebMemoryConfigMoveBannerEn {
 }
 
 // Path: web.memoryConfig.infra
-class TranslationsWebMemoryConfigInfraEn {
-	TranslationsWebMemoryConfigInfraEn.internal(this._root);
+class Translations$web$memoryConfig$infra$en {
+	Translations$web$memoryConfig$infra$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -6852,26 +7099,26 @@ class TranslationsWebMemoryConfigInfraEn {
 }
 
 // Path: web.memoryWorkers.tasks
-class TranslationsWebMemoryWorkersTasksEn {
-	TranslationsWebMemoryWorkersTasksEn.internal(this._root);
+class Translations$web$memoryWorkers$tasks$en {
+	Translations$web$memoryWorkers$tasks$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	late final TranslationsWebMemoryWorkersTasksGatekeeperEn gatekeeper = TranslationsWebMemoryWorkersTasksGatekeeperEn.internal(_root);
-	late final TranslationsWebMemoryWorkersTasksCleanerEn cleaner = TranslationsWebMemoryWorkersTasksCleanerEn.internal(_root);
-	late final TranslationsWebMemoryWorkersTasksGitactivityEn gitactivity = TranslationsWebMemoryWorkersTasksGitactivityEn.internal(_root);
-	late final TranslationsWebMemoryWorkersTasksTranscriptEn transcript = TranslationsWebMemoryWorkersTasksTranscriptEn.internal(_root);
-	late final TranslationsWebMemoryWorkersTasksPlanDriftEn plan_drift = TranslationsWebMemoryWorkersTasksPlanDriftEn.internal(_root);
-	late final TranslationsWebMemoryWorkersTasksConflictDetectorEn conflict_detector = TranslationsWebMemoryWorkersTasksConflictDetectorEn.internal(_root);
-	late final TranslationsWebMemoryWorkersTasksCaptureEn capture = TranslationsWebMemoryWorkersTasksCaptureEn.internal(_root);
-	late final TranslationsWebMemoryWorkersTasksBlueprintEn blueprint = TranslationsWebMemoryWorkersTasksBlueprintEn.internal(_root);
-	late final TranslationsWebMemoryWorkersTasksCurationEn curation = TranslationsWebMemoryWorkersTasksCurationEn.internal(_root);
+	late final Translations$web$memoryWorkers$tasks$gatekeeper$en gatekeeper = Translations$web$memoryWorkers$tasks$gatekeeper$en.internal(_root);
+	late final Translations$web$memoryWorkers$tasks$cleaner$en cleaner = Translations$web$memoryWorkers$tasks$cleaner$en.internal(_root);
+	late final Translations$web$memoryWorkers$tasks$gitactivity$en gitactivity = Translations$web$memoryWorkers$tasks$gitactivity$en.internal(_root);
+	late final Translations$web$memoryWorkers$tasks$transcript$en transcript = Translations$web$memoryWorkers$tasks$transcript$en.internal(_root);
+	late final Translations$web$memoryWorkers$tasks$plan_drift$en plan_drift = Translations$web$memoryWorkers$tasks$plan_drift$en.internal(_root);
+	late final Translations$web$memoryWorkers$tasks$conflict_detector$en conflict_detector = Translations$web$memoryWorkers$tasks$conflict_detector$en.internal(_root);
+	late final Translations$web$memoryWorkers$tasks$capture$en capture = Translations$web$memoryWorkers$tasks$capture$en.internal(_root);
+	late final Translations$web$memoryWorkers$tasks$blueprint$en blueprint = Translations$web$memoryWorkers$tasks$blueprint$en.internal(_root);
+	late final Translations$web$memoryWorkers$tasks$curation$en curation = Translations$web$memoryWorkers$tasks$curation$en.internal(_root);
 }
 
 // Path: web.project.picker
-class TranslationsWebProjectPickerEn {
-	TranslationsWebProjectPickerEn.internal(this._root);
+class Translations$web$project$picker$en {
+	Translations$web$project$picker$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -6906,8 +7153,8 @@ class TranslationsWebProjectPickerEn {
 }
 
 // Path: web.project.header
-class TranslationsWebProjectHeaderEn {
-	TranslationsWebProjectHeaderEn.internal(this._root);
+class Translations$web$project$header$en {
+	Translations$web$project$header$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -6936,8 +7183,8 @@ class TranslationsWebProjectHeaderEn {
 }
 
 // Path: web.project.tabs
-class TranslationsWebProjectTabsEn {
-	TranslationsWebProjectTabsEn.internal(this._root);
+class Translations$web$project$tabs$en {
+	Translations$web$project$tabs$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -6981,8 +7228,8 @@ class TranslationsWebProjectTabsEn {
 }
 
 // Path: web.project.docLabel
-class TranslationsWebProjectDocLabelEn {
-	TranslationsWebProjectDocLabelEn.internal(this._root);
+class Translations$web$project$docLabel$en {
+	Translations$web$project$docLabel$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -7005,8 +7252,8 @@ class TranslationsWebProjectDocLabelEn {
 }
 
 // Path: web.project.editor
-class TranslationsWebProjectEditorEn {
-	TranslationsWebProjectEditorEn.internal(this._root);
+class Translations$web$project$editor$en {
+	Translations$web$project$editor$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -7038,14 +7285,14 @@ class TranslationsWebProjectEditorEn {
 }
 
 // Path: web.project.readonly
-class TranslationsWebProjectReadonlyEn {
-	TranslationsWebProjectReadonlyEn.internal(this._root);
+class Translations$web$project$readonly$en {
+	Translations$web$project$readonly$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	late final TranslationsWebProjectReadonlyTechStackEn tech_stack = TranslationsWebProjectReadonlyTechStackEn.internal(_root);
-	late final TranslationsWebProjectReadonlyRecentActivityEn recent_activity = TranslationsWebProjectReadonlyRecentActivityEn.internal(_root);
+	late final Translations$web$project$readonly$tech_stack$en tech_stack = Translations$web$project$readonly$tech_stack$en.internal(_root);
+	late final Translations$web$project$readonly$recent_activity$en recent_activity = Translations$web$project$readonly$recent_activity$en.internal(_root);
 
 	/// en: 'No {label} captured yet.'
 	String noneCaptured({required Object label}) => 'No ${label} captured yet.';
@@ -7061,8 +7308,8 @@ class TranslationsWebProjectReadonlyEn {
 }
 
 // Path: web.project.journal
-class TranslationsWebProjectJournalEn {
-	TranslationsWebProjectJournalEn.internal(this._root);
+class Translations$web$project$journal$en {
+	Translations$web$project$journal$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -7076,8 +7323,8 @@ class TranslationsWebProjectJournalEn {
 }
 
 // Path: web.project.inbox
-class TranslationsWebProjectInboxEn {
-	TranslationsWebProjectInboxEn.internal(this._root);
+class Translations$web$project$inbox$en {
+	Translations$web$project$inbox$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -7142,8 +7389,8 @@ class TranslationsWebProjectInboxEn {
 }
 
 // Path: web.project.archived
-class TranslationsWebProjectArchivedEn {
-	TranslationsWebProjectArchivedEn.internal(this._root);
+class Translations$web$project$archived$en {
+	Translations$web$project$archived$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -7169,8 +7416,8 @@ class TranslationsWebProjectArchivedEn {
 }
 
 // Path: web.project.reset
-class TranslationsWebProjectResetEn {
-	TranslationsWebProjectResetEn.internal(this._root);
+class Translations$web$project$reset$en {
+	Translations$web$project$reset$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -7215,20 +7462,20 @@ class TranslationsWebProjectResetEn {
 	/// en: 'Reset: deleted {summary}'
 	String successToast({required Object summary}) => 'Reset: deleted ${summary}';
 
-	late final TranslationsWebProjectResetSummaryEn summary = TranslationsWebProjectResetSummaryEn.internal(_root);
+	late final Translations$web$project$reset$summary$en summary = Translations$web$project$reset$summary$en.internal(_root);
 
 	/// en: 'Reset failed'
 	String get failedToast => 'Reset failed';
 }
 
 // Path: web.project.lifecycle
-class TranslationsWebProjectLifecycleEn {
-	TranslationsWebProjectLifecycleEn.internal(this._root);
+class Translations$web$project$lifecycle$en {
+	Translations$web$project$lifecycle$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	late final TranslationsWebProjectLifecycleStatusEn status = TranslationsWebProjectLifecycleStatusEn.internal(_root);
+	late final Translations$web$project$lifecycle$status$en status = Translations$web$project$lifecycle$status$en.internal(_root);
 
 	/// en: 'Activate'
 	String get activate => 'Activate';
@@ -7248,24 +7495,24 @@ class TranslationsWebProjectLifecycleEn {
 	/// en: 'Could not change project status'
 	String get failedToast => 'Could not change project status';
 
-	late final TranslationsWebProjectLifecycleAppliedEn applied = TranslationsWebProjectLifecycleAppliedEn.internal(_root);
-	late final TranslationsWebProjectLifecycleTooltipEn tooltip = TranslationsWebProjectLifecycleTooltipEn.internal(_root);
+	late final Translations$web$project$lifecycle$applied$en applied = Translations$web$project$lifecycle$applied$en.internal(_root);
+	late final Translations$web$project$lifecycle$tooltip$en tooltip = Translations$web$project$lifecycle$tooltip$en.internal(_root);
 }
 
 // Path: web.project.docMeta
-class TranslationsWebProjectDocMetaEn {
-	TranslationsWebProjectDocMetaEn.internal(this._root);
+class Translations$web$project$docMeta$en {
+	Translations$web$project$docMeta$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	late final TranslationsWebProjectDocMetaMaintainerEn maintainer = TranslationsWebProjectDocMetaMaintainerEn.internal(_root);
-	late final TranslationsWebProjectDocMetaPurposeEn purpose = TranslationsWebProjectDocMetaPurposeEn.internal(_root);
+	late final Translations$web$project$docMeta$maintainer$en maintainer = Translations$web$project$docMeta$maintainer$en.internal(_root);
+	late final Translations$web$project$docMeta$purpose$en purpose = Translations$web$project$docMeta$purpose$en.internal(_root);
 }
 
 // Path: web.project.proposalBanner
-class TranslationsWebProjectProposalBannerEn {
-	TranslationsWebProjectProposalBannerEn.internal(this._root);
+class Translations$web$project$proposalBanner$en {
+	Translations$web$project$proposalBanner$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -7279,8 +7526,8 @@ class TranslationsWebProjectProposalBannerEn {
 }
 
 // Path: web.project.overview
-class TranslationsWebProjectOverviewEn {
-	TranslationsWebProjectOverviewEn.internal(this._root);
+class Translations$web$project$overview$en {
+	Translations$web$project$overview$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -7330,8 +7577,8 @@ class TranslationsWebProjectOverviewEn {
 }
 
 // Path: web.memoryInspector.status
-class TranslationsWebMemoryInspectorStatusEn {
-	TranslationsWebMemoryInspectorStatusEn.internal(this._root);
+class Translations$web$memoryInspector$status$en {
+	Translations$web$memoryInspector$status$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -7369,8 +7616,8 @@ class TranslationsWebMemoryInspectorStatusEn {
 }
 
 // Path: web.memoryInspector.scope
-class TranslationsWebMemoryInspectorScopeEn {
-	TranslationsWebMemoryInspectorScopeEn.internal(this._root);
+class Translations$web$memoryInspector$scope$en {
+	Translations$web$memoryInspector$scope$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -7403,12 +7650,12 @@ class TranslationsWebMemoryInspectorScopeEn {
 	/// en: 'Browse the gateway host's filesystem to pick any project directory'
 	String get browseTooltip => 'Browse the gateway host\'s filesystem to pick any project directory';
 
-	late final TranslationsWebMemoryInspectorScopeValuesEn values = TranslationsWebMemoryInspectorScopeValuesEn.internal(_root);
+	late final Translations$web$memoryInspector$scope$values$en values = Translations$web$memoryInspector$scope$values$en.internal(_root);
 }
 
 // Path: web.memoryInspector.search
-class TranslationsWebMemoryInspectorSearchEn {
-	TranslationsWebMemoryInspectorSearchEn.internal(this._root);
+class Translations$web$memoryInspector$search$en {
+	Translations$web$memoryInspector$search$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -7428,8 +7675,8 @@ class TranslationsWebMemoryInspectorSearchEn {
 }
 
 // Path: web.memoryInspector.records
-class TranslationsWebMemoryInspectorRecordsEn {
-	TranslationsWebMemoryInspectorRecordsEn.internal(this._root);
+class Translations$web$memoryInspector$records$en {
+	Translations$web$memoryInspector$records$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -7482,8 +7729,8 @@ class TranslationsWebMemoryInspectorRecordsEn {
 }
 
 // Path: web.memoryInspector.row
-class TranslationsWebMemoryInspectorRowEn {
-	TranslationsWebMemoryInspectorRowEn.internal(this._root);
+class Translations$web$memoryInspector$row$en {
+	Translations$web$memoryInspector$row$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -7536,8 +7783,8 @@ class TranslationsWebMemoryInspectorRowEn {
 }
 
 // Path: web.memoryInspector.toasts
-class TranslationsWebMemoryInspectorToastsEn {
-	TranslationsWebMemoryInspectorToastsEn.internal(this._root);
+class Translations$web$memoryInspector$toasts$en {
+	Translations$web$memoryInspector$toasts$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -7605,8 +7852,8 @@ class TranslationsWebMemoryInspectorToastsEn {
 }
 
 // Path: web.memoryInspector.bulkDelete
-class TranslationsWebMemoryInspectorBulkDeleteEn {
-	TranslationsWebMemoryInspectorBulkDeleteEn.internal(this._root);
+class Translations$web$memoryInspector$bulkDelete$en {
+	Translations$web$memoryInspector$bulkDelete$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -7641,8 +7888,8 @@ class TranslationsWebMemoryInspectorBulkDeleteEn {
 }
 
 // Path: web.memoryInspector.addMem
-class TranslationsWebMemoryInspectorAddMemEn {
-	TranslationsWebMemoryInspectorAddMemEn.internal(this._root);
+class Translations$web$memoryInspector$addMem$en {
+	Translations$web$memoryInspector$addMem$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -7668,8 +7915,8 @@ class TranslationsWebMemoryInspectorAddMemEn {
 }
 
 // Path: web.memoryInspector.picker
-class TranslationsWebMemoryInspectorPickerEn {
-	TranslationsWebMemoryInspectorPickerEn.internal(this._root);
+class Translations$web$memoryInspector$picker$en {
+	Translations$web$memoryInspector$picker$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -7695,8 +7942,8 @@ class TranslationsWebMemoryInspectorPickerEn {
 }
 
 // Path: web.memoryInspector.migrationBanner
-class TranslationsWebMemoryInspectorMigrationBannerEn {
-	TranslationsWebMemoryInspectorMigrationBannerEn.internal(this._root);
+class Translations$web$memoryInspector$migrationBanner$en {
+	Translations$web$memoryInspector$migrationBanner$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -7719,8 +7966,8 @@ class TranslationsWebMemoryInspectorMigrationBannerEn {
 }
 
 // Path: web.memoryInspector.reembed
-class TranslationsWebMemoryInspectorReembedEn {
-	TranslationsWebMemoryInspectorReembedEn.internal(this._root);
+class Translations$web$memoryInspector$reembed$en {
+	Translations$web$memoryInspector$reembed$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -7776,8 +8023,8 @@ class TranslationsWebMemoryInspectorReembedEn {
 }
 
 // Path: web.notes.header
-class TranslationsWebNotesHeaderEn {
-	TranslationsWebNotesHeaderEn.internal(this._root);
+class Translations$web$notes$header$en {
+	Translations$web$notes$header$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -7803,8 +8050,8 @@ class TranslationsWebNotesHeaderEn {
 }
 
 // Path: web.notes.left
-class TranslationsWebNotesLeftEn {
-	TranslationsWebNotesLeftEn.internal(this._root);
+class Translations$web$notes$left$en {
+	Translations$web$notes$left$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -7848,8 +8095,8 @@ class TranslationsWebNotesLeftEn {
 }
 
 // Path: web.notes.tags
-class TranslationsWebNotesTagsEn {
-	TranslationsWebNotesTagsEn.internal(this._root);
+class Translations$web$notes$tags$en {
+	Translations$web$notes$tags$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -7863,8 +8110,8 @@ class TranslationsWebNotesTagsEn {
 }
 
 // Path: web.notes.tree
-class TranslationsWebNotesTreeEn {
-	TranslationsWebNotesTreeEn.internal(this._root);
+class Translations$web$notes$tree$en {
+	Translations$web$notes$tree$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -7875,8 +8122,8 @@ class TranslationsWebNotesTreeEn {
 }
 
 // Path: web.notes.outline
-class TranslationsWebNotesOutlineEn {
-	TranslationsWebNotesOutlineEn.internal(this._root);
+class Translations$web$notes$outline$en {
+	Translations$web$notes$outline$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -7890,8 +8137,8 @@ class TranslationsWebNotesOutlineEn {
 }
 
 // Path: web.notes.newNote
-class TranslationsWebNotesNewNoteEn {
-	TranslationsWebNotesNewNoteEn.internal(this._root);
+class Translations$web$notes$newNote$en {
+	Translations$web$notes$newNote$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -7914,8 +8161,8 @@ class TranslationsWebNotesNewNoteEn {
 }
 
 // Path: web.notes.empty
-class TranslationsWebNotesEmptyEn {
-	TranslationsWebNotesEmptyEn.internal(this._root);
+class Translations$web$notes$empty$en {
+	Translations$web$notes$empty$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -7935,8 +8182,8 @@ class TranslationsWebNotesEmptyEn {
 }
 
 // Path: web.notes.picker
-class TranslationsWebNotesPickerEn {
-	TranslationsWebNotesPickerEn.internal(this._root);
+class Translations$web$notes$picker$en {
+	Translations$web$notes$picker$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -7959,8 +8206,8 @@ class TranslationsWebNotesPickerEn {
 }
 
 // Path: web.notes.vaultSync
-class TranslationsWebNotesVaultSyncEn {
-	TranslationsWebNotesVaultSyncEn.internal(this._root);
+class Translations$web$notes$vaultSync$en {
+	Translations$web$notes$vaultSync$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -7975,21 +8222,21 @@ class TranslationsWebNotesVaultSyncEn {
 	/// en: 'Reading vault state…'
 	String get reading => 'Reading vault state…';
 
-	late final TranslationsWebNotesVaultSyncInitEn init = TranslationsWebNotesVaultSyncInitEn.internal(_root);
-	late final TranslationsWebNotesVaultSyncBranchEn branch = TranslationsWebNotesVaultSyncBranchEn.internal(_root);
-	late final TranslationsWebNotesVaultSyncActionEn action = TranslationsWebNotesVaultSyncActionEn.internal(_root);
-	late final TranslationsWebNotesVaultSyncCommitEn commit = TranslationsWebNotesVaultSyncCommitEn.internal(_root);
-	late final TranslationsWebNotesVaultSyncFileListEn fileList = TranslationsWebNotesVaultSyncFileListEn.internal(_root);
-	late final TranslationsWebNotesVaultSyncRemoteEn remote = TranslationsWebNotesVaultSyncRemoteEn.internal(_root);
-	late final TranslationsWebNotesVaultSyncHistoryEn history = TranslationsWebNotesVaultSyncHistoryEn.internal(_root);
-	late final TranslationsWebNotesVaultSyncConflictEn conflict = TranslationsWebNotesVaultSyncConflictEn.internal(_root);
-	late final TranslationsWebNotesVaultSyncAuthEn auth = TranslationsWebNotesVaultSyncAuthEn.internal(_root);
-	late final TranslationsWebNotesVaultSyncAutoSyncEn autoSync = TranslationsWebNotesVaultSyncAutoSyncEn.internal(_root);
+	late final Translations$web$notes$vaultSync$init$en init = Translations$web$notes$vaultSync$init$en.internal(_root);
+	late final Translations$web$notes$vaultSync$branch$en branch = Translations$web$notes$vaultSync$branch$en.internal(_root);
+	late final Translations$web$notes$vaultSync$action$en action = Translations$web$notes$vaultSync$action$en.internal(_root);
+	late final Translations$web$notes$vaultSync$commit$en commit = Translations$web$notes$vaultSync$commit$en.internal(_root);
+	late final Translations$web$notes$vaultSync$fileList$en fileList = Translations$web$notes$vaultSync$fileList$en.internal(_root);
+	late final Translations$web$notes$vaultSync$remote$en remote = Translations$web$notes$vaultSync$remote$en.internal(_root);
+	late final Translations$web$notes$vaultSync$history$en history = Translations$web$notes$vaultSync$history$en.internal(_root);
+	late final Translations$web$notes$vaultSync$conflict$en conflict = Translations$web$notes$vaultSync$conflict$en.internal(_root);
+	late final Translations$web$notes$vaultSync$auth$en auth = Translations$web$notes$vaultSync$auth$en.internal(_root);
+	late final Translations$web$notes$vaultSync$autoSync$en autoSync = Translations$web$notes$vaultSync$autoSync$en.internal(_root);
 }
 
 // Path: web.notes.syncBadge
-class TranslationsWebNotesSyncBadgeEn {
-	TranslationsWebNotesSyncBadgeEn.internal(this._root);
+class Translations$web$notes$syncBadge$en {
+	Translations$web$notes$syncBadge$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -8030,8 +8277,8 @@ class TranslationsWebNotesSyncBadgeEn {
 }
 
 // Path: web.activity.filters
-class TranslationsWebActivityFiltersEn {
-	TranslationsWebActivityFiltersEn.internal(this._root);
+class Translations$web$activity$filters$en {
+	Translations$web$activity$filters$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -8075,8 +8322,8 @@ class TranslationsWebActivityFiltersEn {
 }
 
 // Path: web.activity.table
-class TranslationsWebActivityTableEn {
-	TranslationsWebActivityTableEn.internal(this._root);
+class Translations$web$activity$table$en {
+	Translations$web$activity$table$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -8111,8 +8358,8 @@ class TranslationsWebActivityTableEn {
 }
 
 // Path: web.activity.empty
-class TranslationsWebActivityEmptyEn {
-	TranslationsWebActivityEmptyEn.internal(this._root);
+class Translations$web$activity$empty$en {
+	Translations$web$activity$empty$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -8144,8 +8391,8 @@ class TranslationsWebActivityEmptyEn {
 }
 
 // Path: web.activity.events
-class TranslationsWebActivityEventsEn {
-	TranslationsWebActivityEventsEn.internal(this._root);
+class Translations$web$activity$events$en {
+	Translations$web$activity$events$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -8171,8 +8418,8 @@ class TranslationsWebActivityEventsEn {
 }
 
 // Path: web.providers.list
-class TranslationsWebProvidersListEn {
-	TranslationsWebProvidersListEn.internal(this._root);
+class Translations$web$providers$list$en {
+	Translations$web$providers$list$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -8192,8 +8439,8 @@ class TranslationsWebProvidersListEn {
 }
 
 // Path: web.providers.detail
-class TranslationsWebProvidersDetailEn {
-	TranslationsWebProvidersDetailEn.internal(this._root);
+class Translations$web$providers$detail$en {
+	Translations$web$providers$detail$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -8238,7 +8485,7 @@ class TranslationsWebProvidersDetailEn {
 	/// en: 'Toggle failed'
 	String get toggleFailedToast => 'Toggle failed';
 
-	late final TranslationsWebProvidersDetailCapsEn caps = TranslationsWebProvidersDetailCapsEn.internal(_root);
+	late final Translations$web$providers$detail$caps$en caps = Translations$web$providers$detail$caps$en.internal(_root);
 
 	/// en: 'not installed'
 	String get notInstalled => 'not installed';
@@ -8272,8 +8519,8 @@ class TranslationsWebProvidersDetailEn {
 }
 
 // Path: web.providers.configForm
-class TranslationsWebProvidersConfigFormEn {
-	TranslationsWebProvidersConfigFormEn.internal(this._root);
+class Translations$web$providers$configForm$en {
+	Translations$web$providers$configForm$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -8299,8 +8546,8 @@ class TranslationsWebProvidersConfigFormEn {
 }
 
 // Path: web.providers.claudeAccounts
-class TranslationsWebProvidersClaudeAccountsEn {
-	TranslationsWebProvidersClaudeAccountsEn.internal(this._root);
+class Translations$web$providers$claudeAccounts$en {
+	Translations$web$providers$claudeAccounts$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -8380,8 +8627,8 @@ class TranslationsWebProvidersClaudeAccountsEn {
 }
 
 // Path: web.providers.antigravityAccounts
-class TranslationsWebProvidersAntigravityAccountsEn {
-	TranslationsWebProvidersAntigravityAccountsEn.internal(this._root);
+class Translations$web$providers$antigravityAccounts$en {
+	Translations$web$providers$antigravityAccounts$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -8449,8 +8696,8 @@ class TranslationsWebProvidersAntigravityAccountsEn {
 }
 
 // Path: web.providers.models
-class TranslationsWebProvidersModelsEn {
-	TranslationsWebProvidersModelsEn.internal(this._root);
+class Translations$web$providers$models$en {
+	Translations$web$providers$models$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -8488,8 +8735,8 @@ class TranslationsWebProvidersModelsEn {
 }
 
 // Path: web.channels.empty
-class TranslationsWebChannelsEmptyEn {
-	TranslationsWebChannelsEmptyEn.internal(this._root);
+class Translations$web$channels$empty$en {
+	Translations$web$channels$empty$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -8503,8 +8750,8 @@ class TranslationsWebChannelsEmptyEn {
 }
 
 // Path: web.channels.card
-class TranslationsWebChannelsCardEn {
-	TranslationsWebChannelsCardEn.internal(this._root);
+class Translations$web$channels$card$en {
+	Translations$web$channels$card$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -8578,8 +8825,8 @@ class TranslationsWebChannelsCardEn {
 }
 
 // Path: web.channels.toasts
-class TranslationsWebChannelsToastsEn {
-	TranslationsWebChannelsToastsEn.internal(this._root);
+class Translations$web$channels$toasts$en {
+	Translations$web$channels$toasts$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -8611,8 +8858,8 @@ class TranslationsWebChannelsToastsEn {
 }
 
 // Path: web.channels.dialog
-class TranslationsWebChannelsDialogEn {
-	TranslationsWebChannelsDialogEn.internal(this._root);
+class Translations$web$channels$dialog$en {
+	Translations$web$channels$dialog$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -8686,8 +8933,8 @@ class TranslationsWebChannelsDialogEn {
 }
 
 // Path: web.channels.notifications
-class TranslationsWebChannelsNotificationsEn {
-	TranslationsWebChannelsNotificationsEn.internal(this._root);
+class Translations$web$channels$notifications$en {
+	Translations$web$channels$notifications$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -8714,14 +8961,14 @@ class TranslationsWebChannelsNotificationsEn {
 	/// en: 'When enabled, the idle card includes a code-block snippet of what the user would see in the live web terminal — Claude TUI chrome (status spinner, "bypass permissions" hint, separator lines) is filtered out automatically.'
 	String get snippetExplainer => 'When enabled, the idle card includes a code-block snippet of what the user would see in the live web terminal — Claude TUI chrome (status spinner, "bypass permissions" hint, separator lines) is filtered out automatically.';
 
-	late final TranslationsWebChannelsNotificationsModesEn modes = TranslationsWebChannelsNotificationsModesEn.internal(_root);
-	late final TranslationsWebChannelsNotificationsCooldownsEn cooldowns = TranslationsWebChannelsNotificationsCooldownsEn.internal(_root);
-	late final TranslationsWebChannelsNotificationsSnippetCapsEn snippetCaps = TranslationsWebChannelsNotificationsSnippetCapsEn.internal(_root);
+	late final Translations$web$channels$notifications$modes$en modes = Translations$web$channels$notifications$modes$en.internal(_root);
+	late final Translations$web$channels$notifications$cooldowns$en cooldowns = Translations$web$channels$notifications$cooldowns$en.internal(_root);
+	late final Translations$web$channels$notifications$snippetCaps$en snippetCaps = Translations$web$channels$notifications$snippetCaps$en.internal(_root);
 }
 
 // Path: web.channels.bridge
-class TranslationsWebChannelsBridgeEn {
-	TranslationsWebChannelsBridgeEn.internal(this._root);
+class Translations$web$channels$bridge$en {
+	Translations$web$channels$bridge$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -8762,8 +9009,8 @@ class TranslationsWebChannelsBridgeEn {
 }
 
 // Path: web.channels.setup
-class TranslationsWebChannelsSetupEn {
-	TranslationsWebChannelsSetupEn.internal(this._root);
+class Translations$web$channels$setup$en {
+	Translations$web$channels$setup$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -8816,8 +9063,8 @@ class TranslationsWebChannelsSetupEn {
 }
 
 // Path: web.integrations.tabs
-class TranslationsWebIntegrationsTabsEn {
-	TranslationsWebIntegrationsTabsEn.internal(this._root);
+class Translations$web$integrations$tabs$en {
+	Translations$web$integrations$tabs$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -8831,8 +9078,8 @@ class TranslationsWebIntegrationsTabsEn {
 }
 
 // Path: web.integrations.empty
-class TranslationsWebIntegrationsEmptyEn {
-	TranslationsWebIntegrationsEmptyEn.internal(this._root);
+class Translations$web$integrations$empty$en {
+	Translations$web$integrations$empty$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -8849,8 +9096,8 @@ class TranslationsWebIntegrationsEmptyEn {
 }
 
 // Path: web.integrations.card
-class TranslationsWebIntegrationsCardEn {
-	TranslationsWebIntegrationsCardEn.internal(this._root);
+class Translations$web$integrations$card$en {
+	Translations$web$integrations$card$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -8909,8 +9156,8 @@ class TranslationsWebIntegrationsCardEn {
 }
 
 // Path: web.integrations.defaultAgent
-class TranslationsWebIntegrationsDefaultAgentEn {
-	TranslationsWebIntegrationsDefaultAgentEn.internal(this._root);
+class Translations$web$integrations$defaultAgent$en {
+	Translations$web$integrations$defaultAgent$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -8951,8 +9198,8 @@ class TranslationsWebIntegrationsDefaultAgentEn {
 }
 
 // Path: web.integrations.register_dialog
-class TranslationsWebIntegrationsRegisterDialogEn {
-	TranslationsWebIntegrationsRegisterDialogEn.internal(this._root);
+class Translations$web$integrations$register_dialog$en {
+	Translations$web$integrations$register_dialog$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -9023,8 +9270,8 @@ class TranslationsWebIntegrationsRegisterDialogEn {
 }
 
 // Path: web.integrations.reveal
-class TranslationsWebIntegrationsRevealEn {
-	TranslationsWebIntegrationsRevealEn.internal(this._root);
+class Translations$web$integrations$reveal$en {
+	Translations$web$integrations$reveal$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -9068,8 +9315,8 @@ class TranslationsWebIntegrationsRevealEn {
 }
 
 // Path: web.integrations.edit_dialog
-class TranslationsWebIntegrationsEditDialogEn {
-	TranslationsWebIntegrationsEditDialogEn.internal(this._root);
+class Translations$web$integrations$edit_dialog$en {
+	Translations$web$integrations$edit_dialog$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -9155,8 +9402,8 @@ class TranslationsWebIntegrationsEditDialogEn {
 }
 
 // Path: web.integrations.proxy
-class TranslationsWebIntegrationsProxyEn {
-	TranslationsWebIntegrationsProxyEn.internal(this._root);
+class Translations$web$integrations$proxy$en {
+	Translations$web$integrations$proxy$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -9218,8 +9465,8 @@ class TranslationsWebIntegrationsProxyEn {
 }
 
 // Path: web.plugins.common
-class TranslationsWebPluginsCommonEn {
-	TranslationsWebPluginsCommonEn.internal(this._root);
+class Translations$web$plugins$common$en {
+	Translations$web$plugins$common$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -9245,8 +9492,8 @@ class TranslationsWebPluginsCommonEn {
 }
 
 // Path: web.plugins.mcp
-class TranslationsWebPluginsMcpEn {
-	TranslationsWebPluginsMcpEn.internal(this._root);
+class Translations$web$plugins$mcp$en {
+	Translations$web$plugins$mcp$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -9264,7 +9511,7 @@ class TranslationsWebPluginsMcpEn {
 	/// en: 'No MCP servers yet. Add one to expose extra tools to your agent sessions.'
 	String get empty => 'No MCP servers yet. Add one to expose extra tools to your agent sessions.';
 
-	late final TranslationsWebPluginsMcpColumnsEn columns = TranslationsWebPluginsMcpColumnsEn.internal(_root);
+	late final Translations$web$plugins$mcp$columns$en columns = Translations$web$plugins$mcp$columns$en.internal(_root);
 
 	/// en: 'no url'
 	String get noUrl => 'no url';
@@ -9302,13 +9549,13 @@ class TranslationsWebPluginsMcpEn {
 	/// en: 'always on'
 	String get builtinAutoAttach => 'always on';
 
-	late final TranslationsWebPluginsMcpEditorEn editor = TranslationsWebPluginsMcpEditorEn.internal(_root);
-	late final TranslationsWebPluginsMcpTestEn test = TranslationsWebPluginsMcpTestEn.internal(_root);
+	late final Translations$web$plugins$mcp$editor$en editor = Translations$web$plugins$mcp$editor$en.internal(_root);
+	late final Translations$web$plugins$mcp$test$en test = Translations$web$plugins$mcp$test$en.internal(_root);
 }
 
 // Path: web.plugins.mcpSecrets
-class TranslationsWebPluginsMcpSecretsEn {
-	TranslationsWebPluginsMcpSecretsEn.internal(this._root);
+class Translations$web$plugins$mcpSecrets$en {
+	Translations$web$plugins$mcpSecrets$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -9341,7 +9588,7 @@ class TranslationsWebPluginsMcpSecretsEn {
 	/// en: 'No secrets stored. Add one to start referencing it as <1>${KEY}</1> in your MCP server configs.'
 	String empty({required Object KEY}) => 'No secrets stored. Add one to start referencing it as <1>\$${KEY}</1> in your MCP server configs.';
 
-	late final TranslationsWebPluginsMcpSecretsColumnsEn columns = TranslationsWebPluginsMcpSecretsColumnsEn.internal(_root);
+	late final Translations$web$plugins$mcpSecrets$columns$en columns = Translations$web$plugins$mcpSecrets$columns$en.internal(_root);
 
 	/// en: 'Overwrite the stored value'
 	String get editTooltip => 'Overwrite the stored value';
@@ -9355,12 +9602,12 @@ class TranslationsWebPluginsMcpSecretsEn {
 	/// en: 'Delete failed'
 	String get deleteFailedToast => 'Delete failed';
 
-	late final TranslationsWebPluginsMcpSecretsEditorEn editor = TranslationsWebPluginsMcpSecretsEditorEn.internal(_root);
+	late final Translations$web$plugins$mcpSecrets$editor$en editor = Translations$web$plugins$mcpSecrets$editor$en.internal(_root);
 }
 
 // Path: web.plugins.skills
-class TranslationsWebPluginsSkillsEn {
-	TranslationsWebPluginsSkillsEn.internal(this._root);
+class Translations$web$plugins$skills$en {
+	Translations$web$plugins$skills$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -9378,7 +9625,7 @@ class TranslationsWebPluginsSkillsEn {
 	/// en: 'No skills found.'
 	String get empty => 'No skills found.';
 
-	late final TranslationsWebPluginsSkillsColumnsEn columns = TranslationsWebPluginsSkillsColumnsEn.internal(_root);
+	late final Translations$web$plugins$skills$columns$en columns = Translations$web$plugins$skills$columns$en.internal(_root);
 
 	/// en: 'no description'
 	String get noDescription => 'no description';
@@ -9425,7 +9672,7 @@ class TranslationsWebPluginsSkillsEn {
 	/// en: 'Delete failed'
 	String get deleteFailedToast => 'Delete failed';
 
-	late final TranslationsWebPluginsSkillsEditorEn editor = TranslationsWebPluginsSkillsEditorEn.internal(_root);
+	late final Translations$web$plugins$skills$editor$en editor = Translations$web$plugins$skills$editor$en.internal(_root);
 
 	/// en: 'Or drop a SKILL.md here to install it.'
 	String get dropHint => 'Or drop a SKILL.md here to install it.';
@@ -9447,8 +9694,8 @@ class TranslationsWebPluginsSkillsEn {
 }
 
 // Path: web.plugins.customTasks
-class TranslationsWebPluginsCustomTasksEn {
-	TranslationsWebPluginsCustomTasksEn.internal(this._root);
+class Translations$web$plugins$customTasks$en {
+	Translations$web$plugins$customTasks$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -9466,7 +9713,7 @@ class TranslationsWebPluginsCustomTasksEn {
 	/// en: 'No custom tasks yet.'
 	String get empty => 'No custom tasks yet.';
 
-	late final TranslationsWebPluginsCustomTasksColumnsEn columns = TranslationsWebPluginsCustomTasksColumnsEn.internal(_root);
+	late final Translations$web$plugins$customTasks$columns$en columns = Translations$web$plugins$customTasks$columns$en.internal(_root);
 
 	/// en: 'global'
 	String get globalScope => 'global';
@@ -9480,12 +9727,12 @@ class TranslationsWebPluginsCustomTasksEn {
 	/// en: 'Delete failed'
 	String get deleteFailedToast => 'Delete failed';
 
-	late final TranslationsWebPluginsCustomTasksDialogEn dialog = TranslationsWebPluginsCustomTasksDialogEn.internal(_root);
+	late final Translations$web$plugins$customTasks$dialog$en dialog = Translations$web$plugins$customTasks$dialog$en.internal(_root);
 }
 
 // Path: web.plugins.gitHosts
-class TranslationsWebPluginsGitHostsEn {
-	TranslationsWebPluginsGitHostsEn.internal(this._root);
+class Translations$web$plugins$gitHosts$en {
+	Translations$web$plugins$gitHosts$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -9503,7 +9750,7 @@ class TranslationsWebPluginsGitHostsEn {
 	/// en: 'No git hosts configured. Add one to enable the PR list in the inspector's Git tab.'
 	String get empty => 'No git hosts configured.\nAdd one to enable the PR list in the inspector\'s Git tab.';
 
-	late final TranslationsWebPluginsGitHostsColumnsEn columns = TranslationsWebPluginsGitHostsColumnsEn.internal(_root);
+	late final Translations$web$plugins$gitHosts$columns$en columns = Translations$web$plugins$gitHosts$columns$en.internal(_root);
 
 	/// en: 'enabled'
 	String get statusEnabled => 'enabled';
@@ -9520,12 +9767,12 @@ class TranslationsWebPluginsGitHostsEn {
 	/// en: 'Delete failed'
 	String get deleteFailedToast => 'Delete failed';
 
-	late final TranslationsWebPluginsGitHostsDialogEn dialog = TranslationsWebPluginsGitHostsDialogEn.internal(_root);
+	late final Translations$web$plugins$gitHosts$dialog$en dialog = Translations$web$plugins$gitHosts$dialog$en.internal(_root);
 }
 
 // Path: web.backups.tabs
-class TranslationsWebBackupsTabsEn {
-	TranslationsWebBackupsTabsEn.internal(this._root);
+class Translations$web$backups$tabs$en {
+	Translations$web$backups$tabs$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -9542,8 +9789,8 @@ class TranslationsWebBackupsTabsEn {
 }
 
 // Path: web.backups.inventory
-class TranslationsWebBackupsInventoryEn {
-	TranslationsWebBackupsInventoryEn.internal(this._root);
+class Translations$web$backups$inventory$en {
+	Translations$web$backups$inventory$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -9566,8 +9813,8 @@ class TranslationsWebBackupsInventoryEn {
 }
 
 // Path: web.backups.restart
-class TranslationsWebBackupsRestartEn {
-	TranslationsWebBackupsRestartEn.internal(this._root);
+class Translations$web$backups$restart$en {
+	Translations$web$backups$restart$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -9593,8 +9840,8 @@ class TranslationsWebBackupsRestartEn {
 }
 
 // Path: web.backups.setup
-class TranslationsWebBackupsSetupEn {
-	TranslationsWebBackupsSetupEn.internal(this._root);
+class Translations$web$backups$setup$en {
+	Translations$web$backups$setup$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -9641,8 +9888,8 @@ class TranslationsWebBackupsSetupEn {
 }
 
 // Path: web.backups.generated
-class TranslationsWebBackupsGeneratedEn {
-	TranslationsWebBackupsGeneratedEn.internal(this._root);
+class Translations$web$backups$generated$en {
+	Translations$web$backups$generated$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -9674,8 +9921,8 @@ class TranslationsWebBackupsGeneratedEn {
 }
 
 // Path: web.backups.status
-class TranslationsWebBackupsStatusEn {
-	TranslationsWebBackupsStatusEn.internal(this._root);
+class Translations$web$backups$status$en {
+	Translations$web$backups$status$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -9695,8 +9942,8 @@ class TranslationsWebBackupsStatusEn {
 }
 
 // Path: web.backups.backupsTab
-class TranslationsWebBackupsBackupsTabEn {
-	TranslationsWebBackupsBackupsTabEn.internal(this._root);
+class Translations$web$backups$backupsTab$en {
+	Translations$web$backups$backupsTab$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -9744,7 +9991,7 @@ class TranslationsWebBackupsBackupsTabEn {
 	/// en: 'No backups yet. Click "Backup now" above to take the first one.'
 	String get empty => 'No backups yet. Click "Backup now" above to take the first one.';
 
-	late final TranslationsWebBackupsBackupsTabColumnsEn columns = TranslationsWebBackupsBackupsTabColumnsEn.internal(_root);
+	late final Translations$web$backups$backupsTab$columns$en columns = Translations$web$backups$backupsTab$columns$en.internal(_root);
 
 	/// en: 'Download'
 	String get downloadTooltip => 'Download';
@@ -9754,8 +10001,8 @@ class TranslationsWebBackupsBackupsTabEn {
 }
 
 // Path: web.backups.restore
-class TranslationsWebBackupsRestoreEn {
-	TranslationsWebBackupsRestoreEn.internal(this._root);
+class Translations$web$backups$restore$en {
+	Translations$web$backups$restore$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -9850,8 +10097,8 @@ class TranslationsWebBackupsRestoreEn {
 }
 
 // Path: web.backups.kind
-class TranslationsWebBackupsKindEn {
-	TranslationsWebBackupsKindEn.internal(this._root);
+class Translations$web$backups$kind$en {
+	Translations$web$backups$kind$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -9868,8 +10115,8 @@ class TranslationsWebBackupsKindEn {
 }
 
 // Path: web.backups.verify
-class TranslationsWebBackupsVerifyEn {
-	TranslationsWebBackupsVerifyEn.internal(this._root);
+class Translations$web$backups$verify$en {
+	Translations$web$backups$verify$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -9886,8 +10133,8 @@ class TranslationsWebBackupsVerifyEn {
 }
 
 // Path: web.backups.health
-class TranslationsWebBackupsHealthEn {
-	TranslationsWebBackupsHealthEn.internal(this._root);
+class Translations$web$backups$health$en {
+	Translations$web$backups$health$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -9908,15 +10155,15 @@ class TranslationsWebBackupsHealthEn {
 	/// en: 'never'
 	String get never => 'never';
 
-	late final TranslationsWebBackupsHealthTilesEn tiles = TranslationsWebBackupsHealthTilesEn.internal(_root);
+	late final Translations$web$backups$health$tiles$en tiles = Translations$web$backups$health$tiles$en.internal(_root);
 
 	/// en: 'Could not load backup health'
 	String get loadFailedToast => 'Could not load backup health';
 }
 
 // Path: web.backups.trigger
-class TranslationsWebBackupsTriggerEn {
-	TranslationsWebBackupsTriggerEn.internal(this._root);
+class Translations$web$backups$trigger$en {
+	Translations$web$backups$trigger$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -9936,8 +10183,8 @@ class TranslationsWebBackupsTriggerEn {
 }
 
 // Path: web.backups.recoveryKit
-class TranslationsWebBackupsRecoveryKitEn {
-	TranslationsWebBackupsRecoveryKitEn.internal(this._root);
+class Translations$web$backups$recoveryKit$en {
+	Translations$web$backups$recoveryKit$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -9978,8 +10225,8 @@ class TranslationsWebBackupsRecoveryKitEn {
 }
 
 // Path: web.backups.schedulesTab
-class TranslationsWebBackupsSchedulesTabEn {
-	TranslationsWebBackupsSchedulesTabEn.internal(this._root);
+class Translations$web$backups$schedulesTab$en {
+	Translations$web$backups$schedulesTab$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -10009,7 +10256,7 @@ class TranslationsWebBackupsSchedulesTabEn {
 	/// en: 'No schedules. Add one to take automatic recurring backups.'
 	String get empty => 'No schedules. Add one to take automatic recurring backups.';
 
-	late final TranslationsWebBackupsSchedulesTabColumnsEn columns = TranslationsWebBackupsSchedulesTabColumnsEn.internal(_root);
+	late final Translations$web$backups$schedulesTab$columns$en columns = Translations$web$backups$schedulesTab$columns$en.internal(_root);
 
 	/// en: '{count} backups'
 	String keepCount({required Object count}) => '${count} backups';
@@ -10019,8 +10266,8 @@ class TranslationsWebBackupsSchedulesTabEn {
 }
 
 // Path: web.backups.newSchedule
-class TranslationsWebBackupsNewScheduleEn {
-	TranslationsWebBackupsNewScheduleEn.internal(this._root);
+class Translations$web$backups$newSchedule$en {
+	Translations$web$backups$newSchedule$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -10058,8 +10305,8 @@ class TranslationsWebBackupsNewScheduleEn {
 }
 
 // Path: web.backups.fanout
-class TranslationsWebBackupsFanoutEn {
-	TranslationsWebBackupsFanoutEn.internal(this._root);
+class Translations$web$backups$fanout$en {
+	Translations$web$backups$fanout$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -10073,8 +10320,8 @@ class TranslationsWebBackupsFanoutEn {
 }
 
 // Path: web.backups.dedup
-class TranslationsWebBackupsDedupEn {
-	TranslationsWebBackupsDedupEn.internal(this._root);
+class Translations$web$backups$dedup$en {
+	Translations$web$backups$dedup$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -10088,8 +10335,8 @@ class TranslationsWebBackupsDedupEn {
 }
 
 // Path: web.backups.targetsTab
-class TranslationsWebBackupsTargetsTabEn {
-	TranslationsWebBackupsTargetsTabEn.internal(this._root);
+class Translations$web$backups$targetsTab$en {
+	Translations$web$backups$targetsTab$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -10122,7 +10369,7 @@ class TranslationsWebBackupsTargetsTabEn {
 	/// en: 'Test failed'
 	String get testFailedToast => 'Test failed';
 
-	late final TranslationsWebBackupsTargetsTabColumnsEn columns = TranslationsWebBackupsTargetsTabColumnsEn.internal(_root);
+	late final Translations$web$backups$targetsTab$columns$en columns = Translations$web$backups$targetsTab$columns$en.internal(_root);
 
 	/// en: 'on'
 	String get on => 'on';
@@ -10141,8 +10388,8 @@ class TranslationsWebBackupsTargetsTabEn {
 }
 
 // Path: web.backups.targetEditor
-class TranslationsWebBackupsTargetEditorEn {
-	TranslationsWebBackupsTargetEditorEn.internal(this._root);
+class Translations$web$backups$targetEditor$en {
+	Translations$web$backups$targetEditor$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -10175,36 +10422,36 @@ class TranslationsWebBackupsTargetEditorEn {
 	/// en: 'Enable immediately (otherwise saved as disabled — useful for "configure now, turn on later")'
 	String get enableImmediately => 'Enable immediately (otherwise saved as disabled — useful for "configure now, turn on later")';
 
-	late final TranslationsWebBackupsTargetEditorLocalEn local = TranslationsWebBackupsTargetEditorLocalEn.internal(_root);
-	late final TranslationsWebBackupsTargetEditorSmbEn smb = TranslationsWebBackupsTargetEditorSmbEn.internal(_root);
-	late final TranslationsWebBackupsTargetEditorS3En s3 = TranslationsWebBackupsTargetEditorS3En.internal(_root);
-	late final TranslationsWebBackupsTargetEditorWebdavEn webdav = TranslationsWebBackupsTargetEditorWebdavEn.internal(_root);
-	late final TranslationsWebBackupsTargetEditorSftpEn sftp = TranslationsWebBackupsTargetEditorSftpEn.internal(_root);
-	late final TranslationsWebBackupsTargetEditorRcloneEn rclone = TranslationsWebBackupsTargetEditorRcloneEn.internal(_root);
+	late final Translations$web$backups$targetEditor$local$en local = Translations$web$backups$targetEditor$local$en.internal(_root);
+	late final Translations$web$backups$targetEditor$smb$en smb = Translations$web$backups$targetEditor$smb$en.internal(_root);
+	late final Translations$web$backups$targetEditor$s3$en s3 = Translations$web$backups$targetEditor$s3$en.internal(_root);
+	late final Translations$web$backups$targetEditor$webdav$en webdav = Translations$web$backups$targetEditor$webdav$en.internal(_root);
+	late final Translations$web$backups$targetEditor$sftp$en sftp = Translations$web$backups$targetEditor$sftp$en.internal(_root);
+	late final Translations$web$backups$targetEditor$rclone$en rclone = Translations$web$backups$targetEditor$rclone$en.internal(_root);
 }
 
 // Path: web.serverSettings.sections
-class TranslationsWebServerSettingsSectionsEn {
-	TranslationsWebServerSettingsSectionsEn.internal(this._root);
+class Translations$web$serverSettings$sections$en {
+	Translations$web$serverSettings$sections$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	late final TranslationsWebServerSettingsSectionsGeneralEn general = TranslationsWebServerSettingsSectionsGeneralEn.internal(_root);
-	late final TranslationsWebServerSettingsSectionsLoggingEn logging = TranslationsWebServerSettingsSectionsLoggingEn.internal(_root);
-	late final TranslationsWebServerSettingsSectionsSessionsEn sessions = TranslationsWebServerSettingsSectionsSessionsEn.internal(_root);
-	late final TranslationsWebServerSettingsSectionsVaultEn vault = TranslationsWebServerSettingsSectionsVaultEn.internal(_root);
-	late final TranslationsWebServerSettingsSectionsMcpEn mcp = TranslationsWebServerSettingsSectionsMcpEn.internal(_root);
-	late final TranslationsWebServerSettingsSectionsMemoryEn memory = TranslationsWebServerSettingsSectionsMemoryEn.internal(_root);
-	late final TranslationsWebServerSettingsSectionsBackupEn backup = TranslationsWebServerSettingsSectionsBackupEn.internal(_root);
-	late final TranslationsWebServerSettingsSectionsClaudeEn claude = TranslationsWebServerSettingsSectionsClaudeEn.internal(_root);
-	late final TranslationsWebServerSettingsSectionsCodexEn codex = TranslationsWebServerSettingsSectionsCodexEn.internal(_root);
-	late final TranslationsWebServerSettingsSectionsAntigravityEn antigravity = TranslationsWebServerSettingsSectionsAntigravityEn.internal(_root);
+	late final Translations$web$serverSettings$sections$general$en general = Translations$web$serverSettings$sections$general$en.internal(_root);
+	late final Translations$web$serverSettings$sections$logging$en logging = Translations$web$serverSettings$sections$logging$en.internal(_root);
+	late final Translations$web$serverSettings$sections$sessions$en sessions = Translations$web$serverSettings$sections$sessions$en.internal(_root);
+	late final Translations$web$serverSettings$sections$vault$en vault = Translations$web$serverSettings$sections$vault$en.internal(_root);
+	late final Translations$web$serverSettings$sections$mcp$en mcp = Translations$web$serverSettings$sections$mcp$en.internal(_root);
+	late final Translations$web$serverSettings$sections$memory$en memory = Translations$web$serverSettings$sections$memory$en.internal(_root);
+	late final Translations$web$serverSettings$sections$backup$en backup = Translations$web$serverSettings$sections$backup$en.internal(_root);
+	late final Translations$web$serverSettings$sections$claude$en claude = Translations$web$serverSettings$sections$claude$en.internal(_root);
+	late final Translations$web$serverSettings$sections$codex$en codex = Translations$web$serverSettings$sections$codex$en.internal(_root);
+	late final Translations$web$serverSettings$sections$antigravity$en antigravity = Translations$web$serverSettings$sections$antigravity$en.internal(_root);
 }
 
 // Path: web.serverSettings.restart
-class TranslationsWebServerSettingsRestartEn {
-	TranslationsWebServerSettingsRestartEn.internal(this._root);
+class Translations$web$serverSettings$restart$en {
+	Translations$web$serverSettings$restart$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -10239,8 +10486,8 @@ class TranslationsWebServerSettingsRestartEn {
 }
 
 // Path: web.serverSettings.formGroups
-class TranslationsWebServerSettingsFormGroupsEn {
-	TranslationsWebServerSettingsFormGroupsEn.internal(this._root);
+class Translations$web$serverSettings$formGroups$en {
+	Translations$web$serverSettings$formGroups$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -10284,66 +10531,66 @@ class TranslationsWebServerSettingsFormGroupsEn {
 }
 
 // Path: web.serverSettings.fields
-class TranslationsWebServerSettingsFieldsEn {
-	TranslationsWebServerSettingsFieldsEn.internal(this._root);
+class Translations$web$serverSettings$fields$en {
+	Translations$web$serverSettings$fields$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	late final TranslationsWebServerSettingsFieldsListenAddressEn listenAddress = TranslationsWebServerSettingsFieldsListenAddressEn.internal(_root);
-	late final TranslationsWebServerSettingsFieldsUsernameEn username = TranslationsWebServerSettingsFieldsUsernameEn.internal(_root);
-	late final TranslationsWebServerSettingsFieldsPasswordEn password = TranslationsWebServerSettingsFieldsPasswordEn.internal(_root);
-	late final TranslationsWebServerSettingsFieldsTokenTTLEn tokenTTL = TranslationsWebServerSettingsFieldsTokenTTLEn.internal(_root);
-	late final TranslationsWebServerSettingsFieldsLogLevelEn logLevel = TranslationsWebServerSettingsFieldsLogLevelEn.internal(_root);
-	late final TranslationsWebServerSettingsFieldsLogFormatEn logFormat = TranslationsWebServerSettingsFieldsLogFormatEn.internal(_root);
-	late final TranslationsWebServerSettingsFieldsLogFileEn logFile = TranslationsWebServerSettingsFieldsLogFileEn.internal(_root);
-	late final TranslationsWebServerSettingsFieldsIdleThresholdEn idleThreshold = TranslationsWebServerSettingsFieldsIdleThresholdEn.internal(_root);
-	late final TranslationsWebServerSettingsFieldsIdlePollIntervalEn idlePollInterval = TranslationsWebServerSettingsFieldsIdlePollIntervalEn.internal(_root);
-	late final TranslationsWebServerSettingsFieldsVaultRootEn vaultRoot = TranslationsWebServerSettingsFieldsVaultRootEn.internal(_root);
-	late final TranslationsWebServerSettingsFieldsNotesDirectoryEn notesDirectory = TranslationsWebServerSettingsFieldsNotesDirectoryEn.internal(_root);
-	late final TranslationsWebServerSettingsFieldsSkillsDirectoryEn skillsDirectory = TranslationsWebServerSettingsFieldsSkillsDirectoryEn.internal(_root);
-	late final TranslationsWebServerSettingsFieldsGitRootEn gitRoot = TranslationsWebServerSettingsFieldsGitRootEn.internal(_root);
-	late final TranslationsWebServerSettingsFieldsPersonalPrefixEn personalPrefix = TranslationsWebServerSettingsFieldsPersonalPrefixEn.internal(_root);
-	late final TranslationsWebServerSettingsFieldsProjectsPrefixEn projectsPrefix = TranslationsWebServerSettingsFieldsProjectsPrefixEn.internal(_root);
-	late final TranslationsWebServerSettingsFieldsRegistryRootEn registryRoot = TranslationsWebServerSettingsFieldsRegistryRootEn.internal(_root);
-	late final TranslationsWebServerSettingsFieldsSecretsFileEn secretsFile = TranslationsWebServerSettingsFieldsSecretsFileEn.internal(_root);
-	late final TranslationsWebServerSettingsFieldsMemoryBackendEn memoryBackend = TranslationsWebServerSettingsFieldsMemoryBackendEn.internal(_root);
-	late final TranslationsWebServerSettingsFieldsMemoryStoreEn memoryStore = TranslationsWebServerSettingsFieldsMemoryStoreEn.internal(_root);
-	late final TranslationsWebServerSettingsFieldsMemoryTopKEn memoryTopK = TranslationsWebServerSettingsFieldsMemoryTopKEn.internal(_root);
-	late final TranslationsWebServerSettingsFieldsMemoryThresholdEn memoryThreshold = TranslationsWebServerSettingsFieldsMemoryThresholdEn.internal(_root);
-	late final TranslationsWebServerSettingsFieldsMemoryScopeEn memoryScope = TranslationsWebServerSettingsFieldsMemoryScopeEn.internal(_root);
-	late final TranslationsWebServerSettingsFieldsMemoryBaseUrlEn memoryBaseUrl = TranslationsWebServerSettingsFieldsMemoryBaseUrlEn.internal(_root);
-	late final TranslationsWebServerSettingsFieldsMemoryModelEn memoryModel = TranslationsWebServerSettingsFieldsMemoryModelEn.internal(_root);
-	late final TranslationsWebServerSettingsFieldsMemoryApiKeyEn memoryApiKey = TranslationsWebServerSettingsFieldsMemoryApiKeyEn.internal(_root);
-	late final TranslationsWebServerSettingsFieldsMemoryLocalModelEn memoryLocalModel = TranslationsWebServerSettingsFieldsMemoryLocalModelEn.internal(_root);
-	late final TranslationsWebServerSettingsFieldsMemoryLibraryPathEn memoryLibraryPath = TranslationsWebServerSettingsFieldsMemoryLibraryPathEn.internal(_root);
-	late final TranslationsWebServerSettingsFieldsMemoryModelPathEn memoryModelPath = TranslationsWebServerSettingsFieldsMemoryModelPathEn.internal(_root);
-	late final TranslationsWebServerSettingsFieldsMemoryTokenizerPathEn memoryTokenizerPath = TranslationsWebServerSettingsFieldsMemoryTokenizerPathEn.internal(_root);
-	late final TranslationsWebServerSettingsFieldsMemoryMaxSeqLenEn memoryMaxSeqLen = TranslationsWebServerSettingsFieldsMemoryMaxSeqLenEn.internal(_root);
-	late final TranslationsWebServerSettingsFieldsClaudeHistoryRootsEn claudeHistoryRoots = TranslationsWebServerSettingsFieldsClaudeHistoryRootsEn.internal(_root);
-	late final TranslationsWebServerSettingsFieldsClaudeAccountsDirEn claudeAccountsDir = TranslationsWebServerSettingsFieldsClaudeAccountsDirEn.internal(_root);
-	late final TranslationsWebServerSettingsFieldsCodexSessionsRootEn codexSessionsRoot = TranslationsWebServerSettingsFieldsCodexSessionsRootEn.internal(_root);
-	late final TranslationsWebServerSettingsFieldsAntigravityConversationsRootEn antigravityConversationsRoot = TranslationsWebServerSettingsFieldsAntigravityConversationsRootEn.internal(_root);
-	late final TranslationsWebServerSettingsFieldsBackupLocalDirEn backupLocalDir = TranslationsWebServerSettingsFieldsBackupLocalDirEn.internal(_root);
-	late final TranslationsWebServerSettingsFieldsBackupExportDirEn backupExportDir = TranslationsWebServerSettingsFieldsBackupExportDirEn.internal(_root);
-	late final TranslationsWebServerSettingsFieldsBackupPgDumpPathEn backupPgDumpPath = TranslationsWebServerSettingsFieldsBackupPgDumpPathEn.internal(_root);
-	late final TranslationsWebServerSettingsFieldsBackupPgRestorePathEn backupPgRestorePath = TranslationsWebServerSettingsFieldsBackupPgRestorePathEn.internal(_root);
-	late final TranslationsWebServerSettingsFieldsMemoryDedupEn memoryDedup = TranslationsWebServerSettingsFieldsMemoryDedupEn.internal(_root);
-	late final TranslationsWebServerSettingsFieldsGatekeeperEnabledEn gatekeeperEnabled = TranslationsWebServerSettingsFieldsGatekeeperEnabledEn.internal(_root);
-	late final TranslationsWebServerSettingsFieldsGatekeeperLatencyEn gatekeeperLatency = TranslationsWebServerSettingsFieldsGatekeeperLatencyEn.internal(_root);
-	late final TranslationsWebServerSettingsFieldsCleanerEnabledEn cleanerEnabled = TranslationsWebServerSettingsFieldsCleanerEnabledEn.internal(_root);
-	late final TranslationsWebServerSettingsFieldsCleanerIntervalEn cleanerInterval = TranslationsWebServerSettingsFieldsCleanerIntervalEn.internal(_root);
-	late final TranslationsWebServerSettingsFieldsCleanerGlobalScopeEn cleanerGlobalScope = TranslationsWebServerSettingsFieldsCleanerGlobalScopeEn.internal(_root);
-	late final TranslationsWebServerSettingsFieldsKnowledgeEnabledEn knowledgeEnabled = TranslationsWebServerSettingsFieldsKnowledgeEnabledEn.internal(_root);
-	late final TranslationsWebServerSettingsFieldsClaudeWatcherEn claudeWatcher = TranslationsWebServerSettingsFieldsClaudeWatcherEn.internal(_root);
-	late final TranslationsWebServerSettingsFieldsClaudeAutoFailoverEn claudeAutoFailover = TranslationsWebServerSettingsFieldsClaudeAutoFailoverEn.internal(_root);
-	late final TranslationsWebServerSettingsFieldsMobileTokenTTLEn mobileTokenTTL = TranslationsWebServerSettingsFieldsMobileTokenTTLEn.internal(_root);
-	late final TranslationsWebServerSettingsFieldsDbMaxConnsEn dbMaxConns = TranslationsWebServerSettingsFieldsDbMaxConnsEn.internal(_root);
+	late final Translations$web$serverSettings$fields$listenAddress$en listenAddress = Translations$web$serverSettings$fields$listenAddress$en.internal(_root);
+	late final Translations$web$serverSettings$fields$username$en username = Translations$web$serverSettings$fields$username$en.internal(_root);
+	late final Translations$web$serverSettings$fields$password$en password = Translations$web$serverSettings$fields$password$en.internal(_root);
+	late final Translations$web$serverSettings$fields$tokenTTL$en tokenTTL = Translations$web$serverSettings$fields$tokenTTL$en.internal(_root);
+	late final Translations$web$serverSettings$fields$logLevel$en logLevel = Translations$web$serverSettings$fields$logLevel$en.internal(_root);
+	late final Translations$web$serverSettings$fields$logFormat$en logFormat = Translations$web$serverSettings$fields$logFormat$en.internal(_root);
+	late final Translations$web$serverSettings$fields$logFile$en logFile = Translations$web$serverSettings$fields$logFile$en.internal(_root);
+	late final Translations$web$serverSettings$fields$idleThreshold$en idleThreshold = Translations$web$serverSettings$fields$idleThreshold$en.internal(_root);
+	late final Translations$web$serverSettings$fields$idlePollInterval$en idlePollInterval = Translations$web$serverSettings$fields$idlePollInterval$en.internal(_root);
+	late final Translations$web$serverSettings$fields$vaultRoot$en vaultRoot = Translations$web$serverSettings$fields$vaultRoot$en.internal(_root);
+	late final Translations$web$serverSettings$fields$notesDirectory$en notesDirectory = Translations$web$serverSettings$fields$notesDirectory$en.internal(_root);
+	late final Translations$web$serverSettings$fields$skillsDirectory$en skillsDirectory = Translations$web$serverSettings$fields$skillsDirectory$en.internal(_root);
+	late final Translations$web$serverSettings$fields$gitRoot$en gitRoot = Translations$web$serverSettings$fields$gitRoot$en.internal(_root);
+	late final Translations$web$serverSettings$fields$personalPrefix$en personalPrefix = Translations$web$serverSettings$fields$personalPrefix$en.internal(_root);
+	late final Translations$web$serverSettings$fields$projectsPrefix$en projectsPrefix = Translations$web$serverSettings$fields$projectsPrefix$en.internal(_root);
+	late final Translations$web$serverSettings$fields$registryRoot$en registryRoot = Translations$web$serverSettings$fields$registryRoot$en.internal(_root);
+	late final Translations$web$serverSettings$fields$secretsFile$en secretsFile = Translations$web$serverSettings$fields$secretsFile$en.internal(_root);
+	late final Translations$web$serverSettings$fields$memoryBackend$en memoryBackend = Translations$web$serverSettings$fields$memoryBackend$en.internal(_root);
+	late final Translations$web$serverSettings$fields$memoryStore$en memoryStore = Translations$web$serverSettings$fields$memoryStore$en.internal(_root);
+	late final Translations$web$serverSettings$fields$memoryTopK$en memoryTopK = Translations$web$serverSettings$fields$memoryTopK$en.internal(_root);
+	late final Translations$web$serverSettings$fields$memoryThreshold$en memoryThreshold = Translations$web$serverSettings$fields$memoryThreshold$en.internal(_root);
+	late final Translations$web$serverSettings$fields$memoryScope$en memoryScope = Translations$web$serverSettings$fields$memoryScope$en.internal(_root);
+	late final Translations$web$serverSettings$fields$memoryBaseUrl$en memoryBaseUrl = Translations$web$serverSettings$fields$memoryBaseUrl$en.internal(_root);
+	late final Translations$web$serverSettings$fields$memoryModel$en memoryModel = Translations$web$serverSettings$fields$memoryModel$en.internal(_root);
+	late final Translations$web$serverSettings$fields$memoryApiKey$en memoryApiKey = Translations$web$serverSettings$fields$memoryApiKey$en.internal(_root);
+	late final Translations$web$serverSettings$fields$memoryLocalModel$en memoryLocalModel = Translations$web$serverSettings$fields$memoryLocalModel$en.internal(_root);
+	late final Translations$web$serverSettings$fields$memoryLibraryPath$en memoryLibraryPath = Translations$web$serverSettings$fields$memoryLibraryPath$en.internal(_root);
+	late final Translations$web$serverSettings$fields$memoryModelPath$en memoryModelPath = Translations$web$serverSettings$fields$memoryModelPath$en.internal(_root);
+	late final Translations$web$serverSettings$fields$memoryTokenizerPath$en memoryTokenizerPath = Translations$web$serverSettings$fields$memoryTokenizerPath$en.internal(_root);
+	late final Translations$web$serverSettings$fields$memoryMaxSeqLen$en memoryMaxSeqLen = Translations$web$serverSettings$fields$memoryMaxSeqLen$en.internal(_root);
+	late final Translations$web$serverSettings$fields$claudeHistoryRoots$en claudeHistoryRoots = Translations$web$serverSettings$fields$claudeHistoryRoots$en.internal(_root);
+	late final Translations$web$serverSettings$fields$claudeAccountsDir$en claudeAccountsDir = Translations$web$serverSettings$fields$claudeAccountsDir$en.internal(_root);
+	late final Translations$web$serverSettings$fields$codexSessionsRoot$en codexSessionsRoot = Translations$web$serverSettings$fields$codexSessionsRoot$en.internal(_root);
+	late final Translations$web$serverSettings$fields$antigravityConversationsRoot$en antigravityConversationsRoot = Translations$web$serverSettings$fields$antigravityConversationsRoot$en.internal(_root);
+	late final Translations$web$serverSettings$fields$backupLocalDir$en backupLocalDir = Translations$web$serverSettings$fields$backupLocalDir$en.internal(_root);
+	late final Translations$web$serverSettings$fields$backupExportDir$en backupExportDir = Translations$web$serverSettings$fields$backupExportDir$en.internal(_root);
+	late final Translations$web$serverSettings$fields$backupPgDumpPath$en backupPgDumpPath = Translations$web$serverSettings$fields$backupPgDumpPath$en.internal(_root);
+	late final Translations$web$serverSettings$fields$backupPgRestorePath$en backupPgRestorePath = Translations$web$serverSettings$fields$backupPgRestorePath$en.internal(_root);
+	late final Translations$web$serverSettings$fields$memoryDedup$en memoryDedup = Translations$web$serverSettings$fields$memoryDedup$en.internal(_root);
+	late final Translations$web$serverSettings$fields$gatekeeperEnabled$en gatekeeperEnabled = Translations$web$serverSettings$fields$gatekeeperEnabled$en.internal(_root);
+	late final Translations$web$serverSettings$fields$gatekeeperLatency$en gatekeeperLatency = Translations$web$serverSettings$fields$gatekeeperLatency$en.internal(_root);
+	late final Translations$web$serverSettings$fields$cleanerEnabled$en cleanerEnabled = Translations$web$serverSettings$fields$cleanerEnabled$en.internal(_root);
+	late final Translations$web$serverSettings$fields$cleanerInterval$en cleanerInterval = Translations$web$serverSettings$fields$cleanerInterval$en.internal(_root);
+	late final Translations$web$serverSettings$fields$cleanerGlobalScope$en cleanerGlobalScope = Translations$web$serverSettings$fields$cleanerGlobalScope$en.internal(_root);
+	late final Translations$web$serverSettings$fields$knowledgeEnabled$en knowledgeEnabled = Translations$web$serverSettings$fields$knowledgeEnabled$en.internal(_root);
+	late final Translations$web$serverSettings$fields$claudeWatcher$en claudeWatcher = Translations$web$serverSettings$fields$claudeWatcher$en.internal(_root);
+	late final Translations$web$serverSettings$fields$claudeAutoFailover$en claudeAutoFailover = Translations$web$serverSettings$fields$claudeAutoFailover$en.internal(_root);
+	late final Translations$web$serverSettings$fields$mobileTokenTTL$en mobileTokenTTL = Translations$web$serverSettings$fields$mobileTokenTTL$en.internal(_root);
+	late final Translations$web$serverSettings$fields$dbMaxConns$en dbMaxConns = Translations$web$serverSettings$fields$dbMaxConns$en.internal(_root);
 }
 
 // Path: web.serverSettings.liveTail
-class TranslationsWebServerSettingsLiveTailEn {
-	TranslationsWebServerSettingsLiveTailEn.internal(this._root);
+class Translations$web$serverSettings$liveTail$en {
+	Translations$web$serverSettings$liveTail$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -10357,8 +10604,8 @@ class TranslationsWebServerSettingsLiveTailEn {
 }
 
 // Path: web.serverSettings.memoryInspectorCard
-class TranslationsWebServerSettingsMemoryInspectorCardEn {
-	TranslationsWebServerSettingsMemoryInspectorCardEn.internal(this._root);
+class Translations$web$serverSettings$memoryInspectorCard$en {
+	Translations$web$serverSettings$memoryInspectorCard$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -10375,8 +10622,8 @@ class TranslationsWebServerSettingsMemoryInspectorCardEn {
 }
 
 // Path: web.serverSettings.stringList
-class TranslationsWebServerSettingsStringListEn {
-	TranslationsWebServerSettingsStringListEn.internal(this._root);
+class Translations$web$serverSettings$stringList$en {
+	Translations$web$serverSettings$stringList$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -10393,8 +10640,8 @@ class TranslationsWebServerSettingsStringListEn {
 }
 
 // Path: web.serverSettings.httpHelpers
-class TranslationsWebServerSettingsHttpHelpersEn {
-	TranslationsWebServerSettingsHttpHelpersEn.internal(this._root);
+class Translations$web$serverSettings$httpHelpers$en {
+	Translations$web$serverSettings$httpHelpers$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -10412,12 +10659,12 @@ class TranslationsWebServerSettingsHttpHelpersEn {
 	/// en: 'Test connection'
 	String get testConnection => 'Test connection';
 
-	late final TranslationsWebServerSettingsHttpHelpersPresetTipEn presetTip = TranslationsWebServerSettingsHttpHelpersPresetTipEn.internal(_root);
+	late final Translations$web$serverSettings$httpHelpers$presetTip$en presetTip = Translations$web$serverSettings$httpHelpers$presetTip$en.internal(_root);
 }
 
 // Path: web.serverSettings.probe
-class TranslationsWebServerSettingsProbeEn {
-	TranslationsWebServerSettingsProbeEn.internal(this._root);
+class Translations$web$serverSettings$probe$en {
+	Translations$web$serverSettings$probe$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -10452,8 +10699,8 @@ class TranslationsWebServerSettingsProbeEn {
 }
 
 // Path: web.serverSettings.backup
-class TranslationsWebServerSettingsBackupEn {
-	TranslationsWebServerSettingsBackupEn.internal(this._root);
+class Translations$web$serverSettings$backup$en {
+	Translations$web$serverSettings$backup$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -10513,7 +10760,7 @@ class TranslationsWebServerSettingsBackupEn {
 	/// en: 'No recurring schedules. Add one on <1>/backups → Schedules</1> to take backups automatically.'
 	String get noSchedulesHint => 'No recurring schedules. Add one on <1>/backups → Schedules</1> to take backups automatically.';
 
-	late final TranslationsWebServerSettingsBackupScheduleHeadersEn scheduleHeaders = TranslationsWebServerSettingsBackupScheduleHeadersEn.internal(_root);
+	late final Translations$web$serverSettings$backup$scheduleHeaders$en scheduleHeaders = Translations$web$serverSettings$backup$scheduleHeaders$en.internal(_root);
 
 	/// en: 'every {interval}'
 	String every({required Object interval}) => 'every ${interval}';
@@ -10538,8 +10785,8 @@ class TranslationsWebServerSettingsBackupEn {
 }
 
 // Path: web.serverSettings.targetRow
-class TranslationsWebServerSettingsTargetRowEn {
-	TranslationsWebServerSettingsTargetRowEn.internal(this._root);
+class Translations$web$serverSettings$targetRow$en {
+	Translations$web$serverSettings$targetRow$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -10583,8 +10830,8 @@ class TranslationsWebServerSettingsTargetRowEn {
 }
 
 // Path: web.serverSettings.toggle
-class TranslationsWebServerSettingsToggleEn {
-	TranslationsWebServerSettingsToggleEn.internal(this._root);
+class Translations$web$serverSettings$toggle$en {
+	Translations$web$serverSettings$toggle$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -10604,8 +10851,8 @@ class TranslationsWebServerSettingsToggleEn {
 }
 
 // Path: web.settings.groups
-class TranslationsWebSettingsGroupsEn {
-	TranslationsWebSettingsGroupsEn.internal(this._root);
+class Translations$web$settings$groups$en {
+	Translations$web$settings$groups$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -10622,8 +10869,8 @@ class TranslationsWebSettingsGroupsEn {
 }
 
 // Path: web.settings.items
-class TranslationsWebSettingsItemsEn {
-	TranslationsWebSettingsItemsEn.internal(this._root);
+class Translations$web$settings$items$en {
+	Translations$web$settings$items$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -10646,8 +10893,8 @@ class TranslationsWebSettingsItemsEn {
 }
 
 // Path: web.settings.health
-class TranslationsWebSettingsHealthEn {
-	TranslationsWebSettingsHealthEn.internal(this._root);
+class Translations$web$settings$health$en {
+	Translations$web$settings$health$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -10664,8 +10911,8 @@ class TranslationsWebSettingsHealthEn {
 }
 
 // Path: web.settings.breadcrumb
-class TranslationsWebSettingsBreadcrumbEn {
-	TranslationsWebSettingsBreadcrumbEn.internal(this._root);
+class Translations$web$settings$breadcrumb$en {
+	Translations$web$settings$breadcrumb$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -10676,8 +10923,8 @@ class TranslationsWebSettingsBreadcrumbEn {
 }
 
 // Path: web.settings.appearance
-class TranslationsWebSettingsAppearanceEn {
-	TranslationsWebSettingsAppearanceEn.internal(this._root);
+class Translations$web$settings$appearance$en {
+	Translations$web$settings$appearance$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -10689,12 +10936,12 @@ class TranslationsWebSettingsAppearanceEn {
 	/// en: 'Choose how opendray looks.'
 	String get description => 'Choose how opendray looks.';
 
-	late final TranslationsWebSettingsAppearanceOptionsEn options = TranslationsWebSettingsAppearanceOptionsEn.internal(_root);
+	late final Translations$web$settings$appearance$options$en options = Translations$web$settings$appearance$options$en.internal(_root);
 }
 
 // Path: web.settings.font
-class TranslationsWebSettingsFontEn {
-	TranslationsWebSettingsFontEn.internal(this._root);
+class Translations$web$settings$font$en {
+	Translations$web$settings$font$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -10706,12 +10953,12 @@ class TranslationsWebSettingsFontEn {
 	/// en: 'Scales the entire interface. Persisted per browser.'
 	String get description => 'Scales the entire interface. Persisted per browser.';
 
-	late final TranslationsWebSettingsFontOptionsEn options = TranslationsWebSettingsFontOptionsEn.internal(_root);
+	late final Translations$web$settings$font$options$en options = Translations$web$settings$font$options$en.internal(_root);
 }
 
 // Path: web.settings.account
-class TranslationsWebSettingsAccountEn {
-	TranslationsWebSettingsAccountEn.internal(this._root);
+class Translations$web$settings$account$en {
+	Translations$web$settings$account$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -10734,8 +10981,8 @@ class TranslationsWebSettingsAccountEn {
 }
 
 // Path: web.settings.changeCredentials
-class TranslationsWebSettingsChangeCredentialsEn {
-	TranslationsWebSettingsChangeCredentialsEn.internal(this._root);
+class Translations$web$settings$changeCredentials$en {
+	Translations$web$settings$changeCredentials$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -10782,8 +11029,8 @@ class TranslationsWebSettingsChangeCredentialsEn {
 }
 
 // Path: web.settings.system
-class TranslationsWebSettingsSystemEn {
-	TranslationsWebSettingsSystemEn.internal(this._root);
+class Translations$web$settings$system$en {
+	Translations$web$settings$system$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -10815,8 +11062,8 @@ class TranslationsWebSettingsSystemEn {
 }
 
 // Path: web.settings.about
-class TranslationsWebSettingsAboutEn {
-	TranslationsWebSettingsAboutEn.internal(this._root);
+class Translations$web$settings$about$en {
+	Translations$web$settings$about$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -10887,8 +11134,8 @@ class TranslationsWebSettingsAboutEn {
 }
 
 // Path: web.memoryAmbient.header
-class TranslationsWebMemoryAmbientHeaderEn {
-	TranslationsWebMemoryAmbientHeaderEn.internal(this._root);
+class Translations$web$memoryAmbient$header$en {
+	Translations$web$memoryAmbient$header$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -10902,8 +11149,8 @@ class TranslationsWebMemoryAmbientHeaderEn {
 }
 
 // Path: web.memoryAmbient.providers
-class TranslationsWebMemoryAmbientProvidersEn {
-	TranslationsWebMemoryAmbientProvidersEn.internal(this._root);
+class Translations$web$memoryAmbient$providers$en {
+	Translations$web$memoryAmbient$providers$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -10921,14 +11168,14 @@ class TranslationsWebMemoryAmbientProvidersEn {
 	/// en: 'No providers configured yet.'
 	String get empty => 'No providers configured yet.';
 
-	late final TranslationsWebMemoryAmbientProvidersRowEn row = TranslationsWebMemoryAmbientProvidersRowEn.internal(_root);
-	late final TranslationsWebMemoryAmbientProvidersDialogEn dialog = TranslationsWebMemoryAmbientProvidersDialogEn.internal(_root);
-	late final TranslationsWebMemoryAmbientProvidersModelSelectEn modelSelect = TranslationsWebMemoryAmbientProvidersModelSelectEn.internal(_root);
+	late final Translations$web$memoryAmbient$providers$row$en row = Translations$web$memoryAmbient$providers$row$en.internal(_root);
+	late final Translations$web$memoryAmbient$providers$dialog$en dialog = Translations$web$memoryAmbient$providers$dialog$en.internal(_root);
+	late final Translations$web$memoryAmbient$providers$modelSelect$en modelSelect = Translations$web$memoryAmbient$providers$modelSelect$en.internal(_root);
 }
 
 // Path: web.memoryAmbient.rules
-class TranslationsWebMemoryAmbientRulesEn {
-	TranslationsWebMemoryAmbientRulesEn.internal(this._root);
+class Translations$web$memoryAmbient$rules$en {
+	Translations$web$memoryAmbient$rules$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -10946,13 +11193,13 @@ class TranslationsWebMemoryAmbientRulesEn {
 	/// en: 'No capture rules yet. Add one to enable auto-capture.'
 	String get empty => 'No capture rules yet. Add one to enable auto-capture.';
 
-	late final TranslationsWebMemoryAmbientRulesRowEn row = TranslationsWebMemoryAmbientRulesRowEn.internal(_root);
-	late final TranslationsWebMemoryAmbientRulesDialogEn dialog = TranslationsWebMemoryAmbientRulesDialogEn.internal(_root);
+	late final Translations$web$memoryAmbient$rules$row$en row = Translations$web$memoryAmbient$rules$row$en.internal(_root);
+	late final Translations$web$memoryAmbient$rules$dialog$en dialog = Translations$web$memoryAmbient$rules$dialog$en.internal(_root);
 }
 
 // Path: web.memoryAmbient.profiles
-class TranslationsWebMemoryAmbientProfilesEn {
-	TranslationsWebMemoryAmbientProfilesEn.internal(this._root);
+class Translations$web$memoryAmbient$profiles$en {
+	Translations$web$memoryAmbient$profiles$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -10970,13 +11217,13 @@ class TranslationsWebMemoryAmbientProfilesEn {
 	/// en: 'No injection profile. Memories are not auto-injected at spawn — model still uses memory_search.'
 	String get empty => 'No injection profile. Memories are not auto-injected at spawn — model still uses memory_search.';
 
-	late final TranslationsWebMemoryAmbientProfilesRowEn row = TranslationsWebMemoryAmbientProfilesRowEn.internal(_root);
-	late final TranslationsWebMemoryAmbientProfilesDialogEn dialog = TranslationsWebMemoryAmbientProfilesDialogEn.internal(_root);
+	late final Translations$web$memoryAmbient$profiles$row$en row = Translations$web$memoryAmbient$profiles$row$en.internal(_root);
+	late final Translations$web$memoryAmbient$profiles$dialog$en dialog = Translations$web$memoryAmbient$profiles$dialog$en.internal(_root);
 }
 
 // Path: web.memoryAmbient.cost
-class TranslationsWebMemoryAmbientCostEn {
-	TranslationsWebMemoryAmbientCostEn.internal(this._root);
+class Translations$web$memoryAmbient$cost$en {
+	Translations$web$memoryAmbient$cost$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -10991,12 +11238,12 @@ class TranslationsWebMemoryAmbientCostEn {
 	/// en: 'No enabled providers — no cost data.'
 	String get empty => 'No enabled providers — no cost data.';
 
-	late final TranslationsWebMemoryAmbientCostColumnsEn columns = TranslationsWebMemoryAmbientCostColumnsEn.internal(_root);
+	late final Translations$web$memoryAmbient$cost$columns$en columns = Translations$web$memoryAmbient$cost$columns$en.internal(_root);
 }
 
 // Path: web.noteEditor.status
-class TranslationsWebNoteEditorStatusEn {
-	TranslationsWebNoteEditorStatusEn.internal(this._root);
+class Translations$web$noteEditor$status$en {
+	Translations$web$noteEditor$status$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -11019,8 +11266,8 @@ class TranslationsWebNoteEditorStatusEn {
 }
 
 // Path: web.export.sections
-class TranslationsWebExportSectionsEn {
-	TranslationsWebExportSectionsEn.internal(this._root);
+class Translations$web$export$sections$en {
+	Translations$web$export$sections$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -11034,8 +11281,8 @@ class TranslationsWebExportSectionsEn {
 }
 
 // Path: web.export.form
-class TranslationsWebExportFormEn {
-	TranslationsWebExportFormEn.internal(this._root);
+class Translations$web$export$form$en {
+	Translations$web$export$form$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -11059,7 +11306,7 @@ class TranslationsWebExportFormEn {
 	/// en: 'Operator-defined tasks shown in the Inspector's Tasks tab.'
 	String get customTasksHint => 'Operator-defined tasks shown in the Inspector\'s Tasks tab.';
 
-	late final TranslationsWebExportFormIntegrationOptionsEn integrationOptions = TranslationsWebExportFormIntegrationOptionsEn.internal(_root);
+	late final Translations$web$export$form$integrationOptions$en integrationOptions = Translations$web$export$form$integrationOptions$en.internal(_root);
 
 	/// en: 'Type <1>I understand</1> to confirm. opendray currently stores only bcrypt hashes — selecting plaintext does NOT export any plaintext (the feature is reserved for a future release that keeps plaintext caches).'
 	String get confirmWarning => 'Type <1>I understand</1> to confirm. opendray currently stores only bcrypt hashes — selecting plaintext does NOT export any plaintext (the feature is reserved for a future release that keeps plaintext caches).';
@@ -11090,8 +11337,8 @@ class TranslationsWebExportFormEn {
 }
 
 // Path: web.export.history
-class TranslationsWebExportHistoryEn {
-	TranslationsWebExportHistoryEn.internal(this._root);
+class Translations$web$export$history$en {
+	Translations$web$export$history$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -11106,7 +11353,7 @@ class TranslationsWebExportHistoryEn {
 	/// en: 'History'
 	String get title => 'History';
 
-	late final TranslationsWebExportHistoryColumnsEn columns = TranslationsWebExportHistoryColumnsEn.internal(_root);
+	late final Translations$web$export$history$columns$en columns = Translations$web$export$history$columns$en.internal(_root);
 
 	/// en: 'Download'
 	String get download => 'Download';
@@ -11137,8 +11384,8 @@ class TranslationsWebExportHistoryEn {
 }
 
 // Path: web.export.import
-class TranslationsWebExportImportEn {
-	TranslationsWebExportImportEn.internal(this._root);
+class Translations$web$export$import$en {
+	Translations$web$export$import$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -11180,12 +11427,12 @@ class TranslationsWebExportImportEn {
 	/// en: 'Import failed'
 	String get failedToast => 'Import failed';
 
-	late final TranslationsWebExportImportSummaryCardEn summaryCard = TranslationsWebExportImportSummaryCardEn.internal(_root);
+	late final Translations$web$export$import$summaryCard$en summaryCard = Translations$web$export$import$summaryCard$en.internal(_root);
 }
 
 // Path: web.export.imports
-class TranslationsWebExportImportsEn {
-	TranslationsWebExportImportsEn.internal(this._root);
+class Translations$web$export$imports$en {
+	Translations$web$export$imports$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -11200,7 +11447,7 @@ class TranslationsWebExportImportsEn {
 	/// en: 'History'
 	String get title => 'History';
 
-	late final TranslationsWebExportImportsColumnsEn columns = TranslationsWebExportImportsColumnsEn.internal(_root);
+	late final Translations$web$export$imports$columns$en columns = Translations$web$export$imports$columns$en.internal(_root);
 
 	/// en: '(none)'
 	String get noneCounts => '(none)';
@@ -11210,8 +11457,8 @@ class TranslationsWebExportImportsEn {
 }
 
 // Path: web.knowledge.scopes
-class TranslationsWebKnowledgeScopesEn {
-	TranslationsWebKnowledgeScopesEn.internal(this._root);
+class Translations$web$knowledge$scopes$en {
+	Translations$web$knowledge$scopes$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -11231,8 +11478,8 @@ class TranslationsWebKnowledgeScopesEn {
 }
 
 // Path: web.knowledge.kb
-class TranslationsWebKnowledgeKbEn {
-	TranslationsWebKnowledgeKbEn.internal(this._root);
+class Translations$web$knowledge$kb$en {
+	Translations$web$knowledge$kb$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -11289,7 +11536,7 @@ class TranslationsWebKnowledgeKbEn {
 	/// en: 'Regenerating in the background…'
 	String get regenerating => 'Regenerating in the background…';
 
-	late final TranslationsWebKnowledgeKbKindsEn kinds = TranslationsWebKnowledgeKbKindsEn.internal(_root);
+	late final Translations$web$knowledge$kb$kinds$en kinds = Translations$web$knowledge$kb$kinds$en.internal(_root);
 
 	/// en: 'Foundational'
 	String get foundational => 'Foundational';
@@ -11309,7 +11556,7 @@ class TranslationsWebKnowledgeKbEn {
 	/// en: 'Reference'
 	String get referenceBadge => 'Reference';
 
-	late final TranslationsWebKnowledgeKbProposalEn proposal = TranslationsWebKnowledgeKbProposalEn.internal(_root);
+	late final Translations$web$knowledge$kb$proposal$en proposal = Translations$web$knowledge$kb$proposal$en.internal(_root);
 
 	/// en: 'Discuss with AI'
 	String get discuss => 'Discuss with AI';
@@ -11335,14 +11582,14 @@ class TranslationsWebKnowledgeKbEn {
 	/// en: 'Page removed'
 	String get pageRemovedToast => 'Page removed';
 
-	late final TranslationsWebKnowledgeKbNewPageEn newPage = TranslationsWebKnowledgeKbNewPageEn.internal(_root);
-	late final TranslationsWebKnowledgeKbPageSettingsEn pageSettings = TranslationsWebKnowledgeKbPageSettingsEn.internal(_root);
-	late final TranslationsWebKnowledgeKbLibrarianEn librarian = TranslationsWebKnowledgeKbLibrarianEn.internal(_root);
+	late final Translations$web$knowledge$kb$newPage$en newPage = Translations$web$knowledge$kb$newPage$en.internal(_root);
+	late final Translations$web$knowledge$kb$pageSettings$en pageSettings = Translations$web$knowledge$kb$pageSettings$en.internal(_root);
+	late final Translations$web$knowledge$kb$librarian$en librarian = Translations$web$knowledge$kb$librarian$en.internal(_root);
 }
 
 // Path: web.knowledge.kinds
-class TranslationsWebKnowledgeKindsEn {
-	TranslationsWebKnowledgeKindsEn.internal(this._root);
+class Translations$web$knowledge$kinds$en {
+	Translations$web$knowledge$kinds$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -11365,8 +11612,8 @@ class TranslationsWebKnowledgeKindsEn {
 }
 
 // Path: web.knowledge.distill
-class TranslationsWebKnowledgeDistillEn {
-	TranslationsWebKnowledgeDistillEn.internal(this._root);
+class Translations$web$knowledge$distill$en {
+	Translations$web$knowledge$distill$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -11468,7 +11715,7 @@ class TranslationsWebKnowledgeDistillEn {
 	/// en: '{ok} ok / {failed} failed after loading'
 	String outcomes({required Object ok, required Object failed}) => '${ok} ok / ${failed} failed after loading';
 
-	late final TranslationsWebKnowledgeDistillRetirementEn retirement = TranslationsWebKnowledgeDistillRetirementEn.internal(_root);
+	late final Translations$web$knowledge$distill$retirement$en retirement = Translations$web$knowledge$distill$retirement$en.internal(_root);
 
 	/// en: 'No retirement candidates — all skills are pulling their weight.'
 	String get retirementEmpty => 'No retirement candidates — all skills are pulling their weight.';
@@ -11481,8 +11728,8 @@ class TranslationsWebKnowledgeDistillEn {
 }
 
 // Path: web.knowledge.graph
-class TranslationsWebKnowledgeGraphEn {
-	TranslationsWebKnowledgeGraphEn.internal(this._root);
+class Translations$web$knowledge$graph$en {
+	Translations$web$knowledge$graph$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -11500,7 +11747,7 @@ class TranslationsWebKnowledgeGraphEn {
 	/// en: 'Scroll to zoom · drag the background to pan · drag a node to untangle · click a node to inspect it'
 	String get hint => 'Scroll to zoom · drag the background to pan · drag a node to untangle · click a node to inspect it';
 
-	late final TranslationsWebKnowledgeGraphLegendEn legend = TranslationsWebKnowledgeGraphLegendEn.internal(_root);
+	late final Translations$web$knowledge$graph$legend$en legend = Translations$web$knowledge$graph$legend$en.internal(_root);
 
 	/// en: '{count} connected nodes'
 	String connections({required Object count}) => '${count} connected nodes';
@@ -11510,8 +11757,8 @@ class TranslationsWebKnowledgeGraphEn {
 }
 
 // Path: web.cortex.home
-class TranslationsWebCortexHomeEn {
-	TranslationsWebCortexHomeEn.internal(this._root);
+class Translations$web$cortex$home$en {
+	Translations$web$cortex$home$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -11538,19 +11785,19 @@ class TranslationsWebCortexHomeEn {
 	/// en: 'idle {days}d'
 	String idle({required Object days}) => 'idle ${days}d';
 
-	late final TranslationsWebCortexHomeMemoryEn memory = TranslationsWebCortexHomeMemoryEn.internal(_root);
-	late final TranslationsWebCortexHomeNotesEn notes = TranslationsWebCortexHomeNotesEn.internal(_root);
-	late final TranslationsWebCortexHomeKnowledgeEn knowledge = TranslationsWebCortexHomeKnowledgeEn.internal(_root);
+	late final Translations$web$cortex$home$memory$en memory = Translations$web$cortex$home$memory$en.internal(_root);
+	late final Translations$web$cortex$home$notes$en notes = Translations$web$cortex$home$notes$en.internal(_root);
+	late final Translations$web$cortex$home$knowledge$en knowledge = Translations$web$cortex$home$knowledge$en.internal(_root);
 
 	/// en: 'Settings'
 	String get settings => 'Settings';
 
-	late final TranslationsWebCortexHomeProposalsEn proposals = TranslationsWebCortexHomeProposalsEn.internal(_root);
+	late final Translations$web$cortex$home$proposals$en proposals = Translations$web$cortex$home$proposals$en.internal(_root);
 }
 
 // Path: web.cortex.chat
-class TranslationsWebCortexChatEn {
-	TranslationsWebCortexChatEn.internal(this._root);
+class Translations$web$cortex$chat$en {
+	Translations$web$cortex$chat$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -11636,8 +11883,8 @@ class TranslationsWebCortexChatEn {
 }
 
 // Path: web.cortex.blueprint
-class TranslationsWebCortexBlueprintEn {
-	TranslationsWebCortexBlueprintEn.internal(this._root);
+class Translations$web$cortex$blueprint$en {
+	Translations$web$cortex$blueprint$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -11679,7 +11926,7 @@ class TranslationsWebCortexBlueprintEn {
 	/// en: 'Maintainer hint — one sentence steering the AI for this section (optional)'
 	String get hintPlaceholder => 'Maintainer hint — one sentence steering the AI for this section (optional)';
 
-	late final TranslationsWebCortexBlueprintModeEn mode = TranslationsWebCortexBlueprintModeEn.internal(_root);
+	late final Translations$web$cortex$blueprint$mode$en mode = Translations$web$cortex$blueprint$mode$en.internal(_root);
 
 	/// en: 'inject'
 	String get inject => 'inject';
@@ -11702,12 +11949,12 @@ class TranslationsWebCortexBlueprintEn {
 	/// en: 'Blueprint applied'
 	String get appliedToast => 'Blueprint applied';
 
-	late final TranslationsWebCortexBlueprintWritePolicyEn writePolicy = TranslationsWebCortexBlueprintWritePolicyEn.internal(_root);
+	late final Translations$web$cortex$blueprint$writePolicy$en writePolicy = Translations$web$cortex$blueprint$writePolicy$en.internal(_root);
 }
 
 // Path: web.cortex.quarantine
-class TranslationsWebCortexQuarantineEn {
-	TranslationsWebCortexQuarantineEn.internal(this._root);
+class Translations$web$cortex$quarantine$en {
+	Translations$web$cortex$quarantine$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -11745,18 +11992,18 @@ class TranslationsWebCortexQuarantineEn {
 }
 
 // Path: web.cortex.settings
-class TranslationsWebCortexSettingsEn {
-	TranslationsWebCortexSettingsEn.internal(this._root);
+class Translations$web$cortex$settings$en {
+	Translations$web$cortex$settings$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	late final TranslationsWebCortexSettingsInjectionEn injection = TranslationsWebCortexSettingsInjectionEn.internal(_root);
+	late final Translations$web$cortex$settings$injection$en injection = Translations$web$cortex$settings$injection$en.internal(_root);
 }
 
 // Path: web.database.dialog
-class TranslationsWebDatabaseDialogEn {
-	TranslationsWebDatabaseDialogEn.internal(this._root);
+class Translations$web$database$dialog$en {
+	Translations$web$database$dialog$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -11825,7 +12072,7 @@ class TranslationsWebDatabaseDialogEn {
 	/// en: 'Database engine'
 	String get driver => 'Database engine';
 
-	late final TranslationsWebDatabaseDialogDriversEn drivers = TranslationsWebDatabaseDialogDriversEn.internal(_root);
+	late final Translations$web$database$dialog$drivers$en drivers = Translations$web$database$dialog$drivers$en.internal(_root);
 
 	/// en: 'Database file'
 	String get filePath => 'Database file';
@@ -11835,8 +12082,8 @@ class TranslationsWebDatabaseDialogEn {
 }
 
 // Path: web.database.results
-class TranslationsWebDatabaseResultsEn {
-	TranslationsWebDatabaseResultsEn.internal(this._root);
+class Translations$web$database$results$en {
+	Translations$web$database$results$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -11847,8 +12094,8 @@ class TranslationsWebDatabaseResultsEn {
 }
 
 // Path: web.database.tree
-class TranslationsWebDatabaseTreeEn {
-	TranslationsWebDatabaseTreeEn.internal(this._root);
+class Translations$web$database$tree$en {
+	Translations$web$database$tree$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -11862,8 +12109,8 @@ class TranslationsWebDatabaseTreeEn {
 }
 
 // Path: web.database.row
-class TranslationsWebDatabaseRowEn {
-	TranslationsWebDatabaseRowEn.internal(this._root);
+class Translations$web$database$row$en {
+	Translations$web$database$row$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -11892,8 +12139,8 @@ class TranslationsWebDatabaseRowEn {
 }
 
 // Path: web.database.grid
-class TranslationsWebDatabaseGridEn {
-	TranslationsWebDatabaseGridEn.internal(this._root);
+class Translations$web$database$grid$en {
+	Translations$web$database$grid$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -11931,8 +12178,8 @@ class TranslationsWebDatabaseGridEn {
 }
 
 // Path: web.database.console
-class TranslationsWebDatabaseConsoleEn {
-	TranslationsWebDatabaseConsoleEn.internal(this._root);
+class Translations$web$database$console$en {
+	Translations$web$database$console$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -11961,8 +12208,8 @@ class TranslationsWebDatabaseConsoleEn {
 }
 
 // Path: web.database.panel
-class TranslationsWebDatabasePanelEn {
-	TranslationsWebDatabasePanelEn.internal(this._root);
+class Translations$web$database$panel$en {
+	Translations$web$database$panel$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -12003,8 +12250,8 @@ class TranslationsWebDatabasePanelEn {
 }
 
 // Path: web.database.workbench
-class TranslationsWebDatabaseWorkbenchEn {
-	TranslationsWebDatabaseWorkbenchEn.internal(this._root);
+class Translations$web$database$workbench$en {
+	Translations$web$database$workbench$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -12015,8 +12262,8 @@ class TranslationsWebDatabaseWorkbenchEn {
 }
 
 // Path: web.roundTable.dialog
-class TranslationsWebRoundTableDialogEn {
-	TranslationsWebRoundTableDialogEn.internal(this._root);
+class Translations$web$roundTable$dialog$en {
+	Translations$web$roundTable$dialog$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -12076,7 +12323,7 @@ class TranslationsWebRoundTableDialogEn {
 	/// en: 'Role / persona (optional) — shapes how this member argues'
 	String get personaPlaceholder => 'Role / persona (optional) — shapes how this member argues';
 
-	late final TranslationsWebRoundTableDialogPersonaPresetsEn personaPresets = TranslationsWebRoundTableDialogPersonaPresetsEn.internal(_root);
+	late final Translations$web$roundTable$dialog$personaPresets$en personaPresets = Translations$web$roundTable$dialog$personaPresets$en.internal(_root);
 
 	/// en: 'Framing (optional)'
 	String get framing => 'Framing (optional)';
@@ -12086,8 +12333,8 @@ class TranslationsWebRoundTableDialogEn {
 }
 
 // Path: web.roundTable.detail
-class TranslationsWebRoundTableDetailEn {
-	TranslationsWebRoundTableDetailEn.internal(this._root);
+class Translations$web$roundTable$detail$en {
+	Translations$web$roundTable$detail$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -12167,8 +12414,8 @@ class TranslationsWebRoundTableDetailEn {
 }
 
 // Path: web.roundTable.status
-class TranslationsWebRoundTableStatusEn {
-	TranslationsWebRoundTableStatusEn.internal(this._root);
+class Translations$web$roundTable$status$en {
+	Translations$web$roundTable$status$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -12182,8 +12429,8 @@ class TranslationsWebRoundTableStatusEn {
 }
 
 // Path: web.roundTable.handoff
-class TranslationsWebRoundTableHandoffEn {
-	TranslationsWebRoundTableHandoffEn.internal(this._root);
+class Translations$web$roundTable$handoff$en {
+	Translations$web$roundTable$handoff$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -12242,8 +12489,8 @@ class TranslationsWebRoundTableHandoffEn {
 }
 
 // Path: web.roundTable.plan
-class TranslationsWebRoundTablePlanEn {
-	TranslationsWebRoundTablePlanEn.internal(this._root);
+class Translations$web$roundTable$plan$en {
+	Translations$web$roundTable$plan$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -12329,8 +12576,8 @@ class TranslationsWebRoundTablePlanEn {
 }
 
 // Path: more.items.integrations
-class TranslationsMoreItemsIntegrationsEn {
-	TranslationsMoreItemsIntegrationsEn.internal(this._root);
+class Translations$more$items$integrations$en {
+	Translations$more$items$integrations$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -12344,8 +12591,8 @@ class TranslationsMoreItemsIntegrationsEn {
 }
 
 // Path: more.items.activity
-class TranslationsMoreItemsActivityEn {
-	TranslationsMoreItemsActivityEn.internal(this._root);
+class Translations$more$items$activity$en {
+	Translations$more$items$activity$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -12359,8 +12606,8 @@ class TranslationsMoreItemsActivityEn {
 }
 
 // Path: more.items.memoryAmbient
-class TranslationsMoreItemsMemoryAmbientEn {
-	TranslationsMoreItemsMemoryAmbientEn.internal(this._root);
+class Translations$more$items$memoryAmbient$en {
+	Translations$more$items$memoryAmbient$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -12374,8 +12621,8 @@ class TranslationsMoreItemsMemoryAmbientEn {
 }
 
 // Path: more.items.channels
-class TranslationsMoreItemsChannelsEn {
-	TranslationsMoreItemsChannelsEn.internal(this._root);
+class Translations$more$items$channels$en {
+	Translations$more$items$channels$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -12389,8 +12636,8 @@ class TranslationsMoreItemsChannelsEn {
 }
 
 // Path: more.items.providers
-class TranslationsMoreItemsProvidersEn {
-	TranslationsMoreItemsProvidersEn.internal(this._root);
+class Translations$more$items$providers$en {
+	Translations$more$items$providers$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -12404,8 +12651,8 @@ class TranslationsMoreItemsProvidersEn {
 }
 
 // Path: more.items.mcp
-class TranslationsMoreItemsMcpEn {
-	TranslationsMoreItemsMcpEn.internal(this._root);
+class Translations$more$items$mcp$en {
+	Translations$more$items$mcp$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -12419,8 +12666,8 @@ class TranslationsMoreItemsMcpEn {
 }
 
 // Path: more.items.skills
-class TranslationsMoreItemsSkillsEn {
-	TranslationsMoreItemsSkillsEn.internal(this._root);
+class Translations$more$items$skills$en {
+	Translations$more$items$skills$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -12434,8 +12681,8 @@ class TranslationsMoreItemsSkillsEn {
 }
 
 // Path: more.items.gitHosts
-class TranslationsMoreItemsGitHostsEn {
-	TranslationsMoreItemsGitHostsEn.internal(this._root);
+class Translations$more$items$gitHosts$en {
+	Translations$more$items$gitHosts$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -12449,8 +12696,8 @@ class TranslationsMoreItemsGitHostsEn {
 }
 
 // Path: more.items.customTasks
-class TranslationsMoreItemsCustomTasksEn {
-	TranslationsMoreItemsCustomTasksEn.internal(this._root);
+class Translations$more$items$customTasks$en {
+	Translations$more$items$customTasks$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -12464,8 +12711,8 @@ class TranslationsMoreItemsCustomTasksEn {
 }
 
 // Path: more.items.cortexHub
-class TranslationsMoreItemsCortexHubEn {
-	TranslationsMoreItemsCortexHubEn.internal(this._root);
+class Translations$more$items$cortexHub$en {
+	Translations$more$items$cortexHub$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -12479,8 +12726,8 @@ class TranslationsMoreItemsCortexHubEn {
 }
 
 // Path: more.items.projectMemory
-class TranslationsMoreItemsProjectMemoryEn {
-	TranslationsMoreItemsProjectMemoryEn.internal(this._root);
+class Translations$more$items$projectMemory$en {
+	Translations$more$items$projectMemory$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -12494,8 +12741,8 @@ class TranslationsMoreItemsProjectMemoryEn {
 }
 
 // Path: more.items.archived
-class TranslationsMoreItemsArchivedEn {
-	TranslationsMoreItemsArchivedEn.internal(this._root);
+class Translations$more$items$archived$en {
+	Translations$more$items$archived$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -12509,8 +12756,8 @@ class TranslationsMoreItemsArchivedEn {
 }
 
 // Path: more.items.quarantine
-class TranslationsMoreItemsQuarantineEn {
-	TranslationsMoreItemsQuarantineEn.internal(this._root);
+class Translations$more$items$quarantine$en {
+	Translations$more$items$quarantine$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -12524,8 +12771,8 @@ class TranslationsMoreItemsQuarantineEn {
 }
 
 // Path: more.items.backups
-class TranslationsMoreItemsBackupsEn {
-	TranslationsMoreItemsBackupsEn.internal(this._root);
+class Translations$more$items$backups$en {
+	Translations$more$items$backups$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -12539,8 +12786,8 @@ class TranslationsMoreItemsBackupsEn {
 }
 
 // Path: more.items.dataExport
-class TranslationsMoreItemsDataExportEn {
-	TranslationsMoreItemsDataExportEn.internal(this._root);
+class Translations$more$items$dataExport$en {
+	Translations$more$items$dataExport$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -12554,8 +12801,8 @@ class TranslationsMoreItemsDataExportEn {
 }
 
 // Path: more.items.settings
-class TranslationsMoreItemsSettingsEn {
-	TranslationsMoreItemsSettingsEn.internal(this._root);
+class Translations$more$items$settings$en {
+	Translations$more$items$settings$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -12569,8 +12816,8 @@ class TranslationsMoreItemsSettingsEn {
 }
 
 // Path: more.items.about
-class TranslationsMoreItemsAboutEn {
-	TranslationsMoreItemsAboutEn.internal(this._root);
+class Translations$more$items$about$en {
+	Translations$more$items$about$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -12584,8 +12831,8 @@ class TranslationsMoreItemsAboutEn {
 }
 
 // Path: more.items.vault
-class TranslationsMoreItemsVaultEn {
-	TranslationsMoreItemsVaultEn.internal(this._root);
+class Translations$more$items$vault$en {
+	Translations$more$items$vault$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -12599,8 +12846,8 @@ class TranslationsMoreItemsVaultEn {
 }
 
 // Path: more.items.roundTable
-class TranslationsMoreItemsRoundTableEn {
-	TranslationsMoreItemsRoundTableEn.internal(this._root);
+class Translations$more$items$roundTable$en {
+	Translations$more$items$roundTable$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -12614,8 +12861,8 @@ class TranslationsMoreItemsRoundTableEn {
 }
 
 // Path: sessions.detail.accountSwitcher
-class TranslationsSessionsDetailAccountSwitcherEn {
-	TranslationsSessionsDetailAccountSwitcherEn.internal(this._root);
+class Translations$sessions$detail$accountSwitcher$en {
+	Translations$sessions$detail$accountSwitcher$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -12677,8 +12924,8 @@ class TranslationsSessionsDetailAccountSwitcherEn {
 }
 
 // Path: sessions.terminal.snackbar
-class TranslationsSessionsTerminalSnackbarEn {
-	TranslationsSessionsTerminalSnackbarEn.internal(this._root);
+class Translations$sessions$terminal$snackbar$en {
+	Translations$sessions$terminal$snackbar$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -12701,8 +12948,8 @@ class TranslationsSessionsTerminalSnackbarEn {
 }
 
 // Path: sessions.terminal.imageSource
-class TranslationsSessionsTerminalImageSourceEn {
-	TranslationsSessionsTerminalImageSourceEn.internal(this._root);
+class Translations$sessions$terminal$imageSource$en {
+	Translations$sessions$terminal$imageSource$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -12716,8 +12963,8 @@ class TranslationsSessionsTerminalImageSourceEn {
 }
 
 // Path: sessions.terminal.keyboard
-class TranslationsSessionsTerminalKeyboardEn {
-	TranslationsSessionsTerminalKeyboardEn.internal(this._root);
+class Translations$sessions$terminal$keyboard$en {
+	Translations$sessions$terminal$keyboard$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -12737,8 +12984,8 @@ class TranslationsSessionsTerminalKeyboardEn {
 }
 
 // Path: sessions.terminal.attachments
-class TranslationsSessionsTerminalAttachmentsEn {
-	TranslationsSessionsTerminalAttachmentsEn.internal(this._root);
+class Translations$sessions$terminal$attachments$en {
+	Translations$sessions$terminal$attachments$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -12755,8 +13002,8 @@ class TranslationsSessionsTerminalAttachmentsEn {
 }
 
 // Path: sessions.terminal.connection
-class TranslationsSessionsTerminalConnectionEn {
-	TranslationsSessionsTerminalConnectionEn.internal(this._root);
+class Translations$sessions$terminal$connection$en {
+	Translations$sessions$terminal$connection$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -12785,8 +13032,8 @@ class TranslationsSessionsTerminalConnectionEn {
 }
 
 // Path: sessions.terminal.selectCopy
-class TranslationsSessionsTerminalSelectCopyEn {
-	TranslationsSessionsTerminalSelectCopyEn.internal(this._root);
+class Translations$sessions$terminal$selectCopy$en {
+	Translations$sessions$terminal$selectCopy$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -12809,8 +13056,8 @@ class TranslationsSessionsTerminalSelectCopyEn {
 }
 
 // Path: sessions.action.errors
-class TranslationsSessionsActionErrorsEn {
-	TranslationsSessionsActionErrorsEn.internal(this._root);
+class Translations$sessions$action$errors$en {
+	Translations$sessions$action$errors$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -12827,8 +13074,8 @@ class TranslationsSessionsActionErrorsEn {
 }
 
 // Path: sessions.dirPicker.dialog
-class TranslationsSessionsDirPickerDialogEn {
-	TranslationsSessionsDirPickerDialogEn.internal(this._root);
+class Translations$sessions$dirPicker$dialog$en {
+	Translations$sessions$dirPicker$dialog$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -12845,8 +13092,8 @@ class TranslationsSessionsDirPickerDialogEn {
 }
 
 // Path: sessions.inspector.shell
-class TranslationsSessionsInspectorShellEn {
-	TranslationsSessionsInspectorShellEn.internal(this._root);
+class Translations$sessions$inspector$shell$en {
+	Translations$sessions$inspector$shell$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -12858,12 +13105,12 @@ class TranslationsSessionsInspectorShellEn {
 	/// en: 'Failed to load session: {error}'
 	String loadError({required Object error}) => 'Failed to load session: ${error}';
 
-	late final TranslationsSessionsInspectorShellTabsEn tabs = TranslationsSessionsInspectorShellTabsEn.internal(_root);
+	late final Translations$sessions$inspector$shell$tabs$en tabs = Translations$sessions$inspector$shell$tabs$en.internal(_root);
 }
 
 // Path: sessions.inspector.cortex
-class TranslationsSessionsInspectorCortexEn {
-	TranslationsSessionsInspectorCortexEn.internal(this._root);
+class Translations$sessions$inspector$cortex$en {
+	Translations$sessions$inspector$cortex$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -12880,8 +13127,8 @@ class TranslationsSessionsInspectorCortexEn {
 }
 
 // Path: sessions.inspector.shared
-class TranslationsSessionsInspectorSharedEn {
-	TranslationsSessionsInspectorSharedEn.internal(this._root);
+class Translations$sessions$inspector$shared$en {
+	Translations$sessions$inspector$shared$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -12904,8 +13151,8 @@ class TranslationsSessionsInspectorSharedEn {
 }
 
 // Path: sessions.inspector.history
-class TranslationsSessionsInspectorHistoryEn {
-	TranslationsSessionsInspectorHistoryEn.internal(this._root);
+class Translations$sessions$inspector$history$en {
+	Translations$sessions$inspector$history$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -12919,8 +13166,8 @@ class TranslationsSessionsInspectorHistoryEn {
 }
 
 // Path: sessions.inspector.files
-class TranslationsSessionsInspectorFilesEn {
-	TranslationsSessionsInspectorFilesEn.internal(this._root);
+class Translations$sessions$inspector$files$en {
+	Translations$sessions$inspector$files$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -12964,8 +13211,8 @@ class TranslationsSessionsInspectorFilesEn {
 }
 
 // Path: sessions.inspector.git
-class TranslationsSessionsInspectorGitEn {
-	TranslationsSessionsInspectorGitEn.internal(this._root);
+class Translations$sessions$inspector$git$en {
+	Translations$sessions$inspector$git$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -13006,8 +13253,8 @@ class TranslationsSessionsInspectorGitEn {
 }
 
 // Path: sessions.inspector.tasks
-class TranslationsSessionsInspectorTasksEn {
-	TranslationsSessionsInspectorTasksEn.internal(this._root);
+class Translations$sessions$inspector$tasks$en {
+	Translations$sessions$inspector$tasks$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -13036,8 +13283,8 @@ class TranslationsSessionsInspectorTasksEn {
 }
 
 // Path: sessions.inspector.notes
-class TranslationsSessionsInspectorNotesEn {
-	TranslationsSessionsInspectorNotesEn.internal(this._root);
+class Translations$sessions$inspector$notes$en {
+	Translations$sessions$inspector$notes$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -13159,8 +13406,8 @@ class TranslationsSessionsInspectorNotesEn {
 }
 
 // Path: sessions.spawnSheet.bypass
-class TranslationsSessionsSpawnSheetBypassEn {
-	TranslationsSessionsSpawnSheetBypassEn.internal(this._root);
+class Translations$sessions$spawnSheet$bypass$en {
+	Translations$sessions$spawnSheet$bypass$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -13189,8 +13436,8 @@ class TranslationsSessionsSpawnSheetBypassEn {
 }
 
 // Path: sessions.spawnSheet.noProviders
-class TranslationsSessionsSpawnSheetNoProvidersEn {
-	TranslationsSessionsSpawnSheetNoProvidersEn.internal(this._root);
+class Translations$sessions$spawnSheet$noProviders$en {
+	Translations$sessions$spawnSheet$noProviders$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -13207,8 +13454,8 @@ class TranslationsSessionsSpawnSheetNoProvidersEn {
 }
 
 // Path: sessions.spawnSheet.providerLoadError
-class TranslationsSessionsSpawnSheetProviderLoadErrorEn {
-	TranslationsSessionsSpawnSheetProviderLoadErrorEn.internal(this._root);
+class Translations$sessions$spawnSheet$providerLoadError$en {
+	Translations$sessions$spawnSheet$providerLoadError$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -13228,8 +13475,8 @@ class TranslationsSessionsSpawnSheetProviderLoadErrorEn {
 }
 
 // Path: sessions.spawnSheet.claudeAccount
-class TranslationsSessionsSpawnSheetClaudeAccountEn {
-	TranslationsSessionsSpawnSheetClaudeAccountEn.internal(this._root);
+class Translations$sessions$spawnSheet$claudeAccount$en {
+	Translations$sessions$spawnSheet$claudeAccount$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -13261,8 +13508,8 @@ class TranslationsSessionsSpawnSheetClaudeAccountEn {
 }
 
 // Path: memoryWorkers.tasks.gatekeeper
-class TranslationsMemoryWorkersTasksGatekeeperEn {
-	TranslationsMemoryWorkersTasksGatekeeperEn.internal(this._root);
+class Translations$memoryWorkers$tasks$gatekeeper$en {
+	Translations$memoryWorkers$tasks$gatekeeper$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -13276,8 +13523,8 @@ class TranslationsMemoryWorkersTasksGatekeeperEn {
 }
 
 // Path: memoryWorkers.tasks.cleaner
-class TranslationsMemoryWorkersTasksCleanerEn {
-	TranslationsMemoryWorkersTasksCleanerEn.internal(this._root);
+class Translations$memoryWorkers$tasks$cleaner$en {
+	Translations$memoryWorkers$tasks$cleaner$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -13291,8 +13538,8 @@ class TranslationsMemoryWorkersTasksCleanerEn {
 }
 
 // Path: memoryWorkers.tasks.gitactivity
-class TranslationsMemoryWorkersTasksGitactivityEn {
-	TranslationsMemoryWorkersTasksGitactivityEn.internal(this._root);
+class Translations$memoryWorkers$tasks$gitactivity$en {
+	Translations$memoryWorkers$tasks$gitactivity$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -13306,8 +13553,8 @@ class TranslationsMemoryWorkersTasksGitactivityEn {
 }
 
 // Path: memoryWorkers.tasks.transcript
-class TranslationsMemoryWorkersTasksTranscriptEn {
-	TranslationsMemoryWorkersTasksTranscriptEn.internal(this._root);
+class Translations$memoryWorkers$tasks$transcript$en {
+	Translations$memoryWorkers$tasks$transcript$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -13321,8 +13568,8 @@ class TranslationsMemoryWorkersTasksTranscriptEn {
 }
 
 // Path: memoryWorkers.tasks.planDrift
-class TranslationsMemoryWorkersTasksPlanDriftEn {
-	TranslationsMemoryWorkersTasksPlanDriftEn.internal(this._root);
+class Translations$memoryWorkers$tasks$planDrift$en {
+	Translations$memoryWorkers$tasks$planDrift$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -13336,8 +13583,8 @@ class TranslationsMemoryWorkersTasksPlanDriftEn {
 }
 
 // Path: memoryWorkers.tasks.conflictDetector
-class TranslationsMemoryWorkersTasksConflictDetectorEn {
-	TranslationsMemoryWorkersTasksConflictDetectorEn.internal(this._root);
+class Translations$memoryWorkers$tasks$conflictDetector$en {
+	Translations$memoryWorkers$tasks$conflictDetector$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -13351,8 +13598,8 @@ class TranslationsMemoryWorkersTasksConflictDetectorEn {
 }
 
 // Path: memoryWorkers.tasks.capture
-class TranslationsMemoryWorkersTasksCaptureEn {
-	TranslationsMemoryWorkersTasksCaptureEn.internal(this._root);
+class Translations$memoryWorkers$tasks$capture$en {
+	Translations$memoryWorkers$tasks$capture$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -13366,8 +13613,8 @@ class TranslationsMemoryWorkersTasksCaptureEn {
 }
 
 // Path: project.conflicts.severity
-class TranslationsProjectConflictsSeverityEn {
-	TranslationsProjectConflictsSeverityEn.internal(this._root);
+class Translations$project$conflicts$severity$en {
+	Translations$project$conflicts$severity$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -13384,8 +13631,8 @@ class TranslationsProjectConflictsSeverityEn {
 }
 
 // Path: backups.health.tiles
-class TranslationsBackupsHealthTilesEn {
-	TranslationsBackupsHealthTilesEn.internal(this._root);
+class Translations$backups$health$tiles$en {
+	Translations$backups$health$tiles$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -13405,8 +13652,8 @@ class TranslationsBackupsHealthTilesEn {
 }
 
 // Path: backupTargetEditor.kinds.local
-class TranslationsBackupTargetEditorKindsLocalEn {
-	TranslationsBackupTargetEditorKindsLocalEn.internal(this._root);
+class Translations$backupTargetEditor$kinds$local$en {
+	Translations$backupTargetEditor$kinds$local$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -13420,8 +13667,8 @@ class TranslationsBackupTargetEditorKindsLocalEn {
 }
 
 // Path: backupTargetEditor.kinds.smb
-class TranslationsBackupTargetEditorKindsSmbEn {
-	TranslationsBackupTargetEditorKindsSmbEn.internal(this._root);
+class Translations$backupTargetEditor$kinds$smb$en {
+	Translations$backupTargetEditor$kinds$smb$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -13435,8 +13682,8 @@ class TranslationsBackupTargetEditorKindsSmbEn {
 }
 
 // Path: backupTargetEditor.kinds.webdav
-class TranslationsBackupTargetEditorKindsWebdavEn {
-	TranslationsBackupTargetEditorKindsWebdavEn.internal(this._root);
+class Translations$backupTargetEditor$kinds$webdav$en {
+	Translations$backupTargetEditor$kinds$webdav$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -13450,8 +13697,8 @@ class TranslationsBackupTargetEditorKindsWebdavEn {
 }
 
 // Path: backupTargetEditor.kinds.sftp
-class TranslationsBackupTargetEditorKindsSftpEn {
-	TranslationsBackupTargetEditorKindsSftpEn.internal(this._root);
+class Translations$backupTargetEditor$kinds$sftp$en {
+	Translations$backupTargetEditor$kinds$sftp$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -13465,8 +13712,8 @@ class TranslationsBackupTargetEditorKindsSftpEn {
 }
 
 // Path: backupTargetEditor.kinds.s3
-class TranslationsBackupTargetEditorKindsS3En {
-	TranslationsBackupTargetEditorKindsS3En.internal(this._root);
+class Translations$backupTargetEditor$kinds$s3$en {
+	Translations$backupTargetEditor$kinds$s3$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -13480,8 +13727,8 @@ class TranslationsBackupTargetEditorKindsS3En {
 }
 
 // Path: backupTargetEditor.kinds.rclone
-class TranslationsBackupTargetEditorKindsRcloneEn {
-	TranslationsBackupTargetEditorKindsRcloneEn.internal(this._root);
+class Translations$backupTargetEditor$kinds$rclone$en {
+	Translations$backupTargetEditor$kinds$rclone$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -13495,8 +13742,8 @@ class TranslationsBackupTargetEditorKindsRcloneEn {
 }
 
 // Path: githosts.form.kinds
-class TranslationsGithostsFormKindsEn {
-	TranslationsGithostsFormKindsEn.internal(this._root);
+class Translations$githosts$form$kinds$en {
+	Translations$githosts$form$kinds$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -13519,8 +13766,8 @@ class TranslationsGithostsFormKindsEn {
 }
 
 // Path: channels.notifications.modes
-class TranslationsChannelsNotificationsModesEn {
-	TranslationsChannelsNotificationsModesEn.internal(this._root);
+class Translations$channels$notifications$modes$en {
+	Translations$channels$notifications$modes$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -13546,8 +13793,8 @@ class TranslationsChannelsNotificationsModesEn {
 }
 
 // Path: channels.kinds.telegram
-class TranslationsChannelsKindsTelegramEn {
-	TranslationsChannelsKindsTelegramEn.internal(this._root);
+class Translations$channels$kinds$telegram$en {
+	Translations$channels$kinds$telegram$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -13600,8 +13847,8 @@ class TranslationsChannelsKindsTelegramEn {
 }
 
 // Path: channels.kinds.slack
-class TranslationsChannelsKindsSlackEn {
-	TranslationsChannelsKindsSlackEn.internal(this._root);
+class Translations$channels$kinds$slack$en {
+	Translations$channels$kinds$slack$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -13630,8 +13877,8 @@ class TranslationsChannelsKindsSlackEn {
 }
 
 // Path: channels.kinds.discord
-class TranslationsChannelsKindsDiscordEn {
-	TranslationsChannelsKindsDiscordEn.internal(this._root);
+class Translations$channels$kinds$discord$en {
+	Translations$channels$kinds$discord$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -13657,8 +13904,8 @@ class TranslationsChannelsKindsDiscordEn {
 }
 
 // Path: channels.kinds.feishu
-class TranslationsChannelsKindsFeishuEn {
-	TranslationsChannelsKindsFeishuEn.internal(this._root);
+class Translations$channels$kinds$feishu$en {
+	Translations$channels$kinds$feishu$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -13693,8 +13940,8 @@ class TranslationsChannelsKindsFeishuEn {
 }
 
 // Path: channels.kinds.dingtalk
-class TranslationsChannelsKindsDingtalkEn {
-	TranslationsChannelsKindsDingtalkEn.internal(this._root);
+class Translations$channels$kinds$dingtalk$en {
+	Translations$channels$kinds$dingtalk$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -13714,8 +13961,8 @@ class TranslationsChannelsKindsDingtalkEn {
 }
 
 // Path: channels.kinds.wecom
-class TranslationsChannelsKindsWecomEn {
-	TranslationsChannelsKindsWecomEn.internal(this._root);
+class Translations$channels$kinds$wecom$en {
+	Translations$channels$kinds$wecom$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -13738,8 +13985,8 @@ class TranslationsChannelsKindsWecomEn {
 }
 
 // Path: dataExport.form.integrationOptions
-class TranslationsDataExportFormIntegrationOptionsEn {
-	TranslationsDataExportFormIntegrationOptionsEn.internal(this._root);
+class Translations$dataExport$form$integrationOptions$en {
+	Translations$dataExport$form$integrationOptions$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -13765,8 +14012,8 @@ class TranslationsDataExportFormIntegrationOptionsEn {
 }
 
 // Path: dataExport.history.columns
-class TranslationsDataExportHistoryColumnsEn {
-	TranslationsDataExportHistoryColumnsEn.internal(this._root);
+class Translations$dataExport$history$columns$en {
+	Translations$dataExport$history$columns$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -13786,8 +14033,8 @@ class TranslationsDataExportHistoryColumnsEn {
 }
 
 // Path: dataExport.import.summaryCard
-class TranslationsDataExportImportSummaryCardEn {
-	TranslationsDataExportImportSummaryCardEn.internal(this._root);
+class Translations$dataExport$import$summaryCard$en {
+	Translations$dataExport$import$summaryCard$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -13813,8 +14060,8 @@ class TranslationsDataExportImportSummaryCardEn {
 }
 
 // Path: dataExport.imports.columns
-class TranslationsDataExportImportsColumnsEn {
-	TranslationsDataExportImportsColumnsEn.internal(this._root);
+class Translations$dataExport$imports$columns$en {
+	Translations$dataExport$imports$columns$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -13837,8 +14084,8 @@ class TranslationsDataExportImportsColumnsEn {
 }
 
 // Path: settings.logViewer.levels
-class TranslationsSettingsLogViewerLevelsEn {
-	TranslationsSettingsLogViewerLevelsEn.internal(this._root);
+class Translations$settings$logViewer$levels$en {
+	Translations$settings$logViewer$levels$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -13861,8 +14108,8 @@ class TranslationsSettingsLogViewerLevelsEn {
 }
 
 // Path: settings.serverSettings.sections
-class TranslationsSettingsServerSettingsSectionsEn {
-	TranslationsSettingsServerSettingsSectionsEn.internal(this._root);
+class Translations$settings$serverSettings$sections$en {
+	Translations$settings$serverSettings$sections$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -13900,8 +14147,8 @@ class TranslationsSettingsServerSettingsSectionsEn {
 }
 
 // Path: settings.serverSettings.sectionDescriptions
-class TranslationsSettingsServerSettingsSectionDescriptionsEn {
-	TranslationsSettingsServerSettingsSectionDescriptionsEn.internal(this._root);
+class Translations$settings$serverSettings$sectionDescriptions$en {
+	Translations$settings$serverSettings$sectionDescriptions$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -13939,8 +14186,8 @@ class TranslationsSettingsServerSettingsSectionDescriptionsEn {
 }
 
 // Path: settings.serverSettings.fields
-class TranslationsSettingsServerSettingsFieldsEn {
-	TranslationsSettingsServerSettingsFieldsEn.internal(this._root);
+class Translations$settings$serverSettings$fields$en {
+	Translations$settings$serverSettings$fields$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -14140,8 +14387,8 @@ class TranslationsSettingsServerSettingsFieldsEn {
 }
 
 // Path: settings.serverSettings.embedderModel
-class TranslationsSettingsServerSettingsEmbedderModelEn {
-	TranslationsSettingsServerSettingsEmbedderModelEn.internal(this._root);
+class Translations$settings$serverSettings$embedderModel$en {
+	Translations$settings$serverSettings$embedderModel$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -14164,8 +14411,8 @@ class TranslationsSettingsServerSettingsEmbedderModelEn {
 }
 
 // Path: web.sessions.list.row
-class TranslationsWebSessionsListRowEn {
-	TranslationsWebSessionsListRowEn.internal(this._root);
+class Translations$web$sessions$list$row$en {
+	Translations$web$sessions$list$row$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -14188,8 +14435,8 @@ class TranslationsWebSessionsListRowEn {
 }
 
 // Path: web.sessions.inspector.tabs
-class TranslationsWebSessionsInspectorTabsEn {
-	TranslationsWebSessionsInspectorTabsEn.internal(this._root);
+class Translations$web$sessions$inspector$tabs$en {
+	Translations$web$sessions$inspector$tabs$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -14221,8 +14468,8 @@ class TranslationsWebSessionsInspectorTabsEn {
 }
 
 // Path: web.sessions.inspector.vaultPanel
-class TranslationsWebSessionsInspectorVaultPanelEn {
-	TranslationsWebSessionsInspectorVaultPanelEn.internal(this._root);
+class Translations$web$sessions$inspector$vaultPanel$en {
+	Translations$web$sessions$inspector$vaultPanel$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -14296,8 +14543,8 @@ class TranslationsWebSessionsInspectorVaultPanelEn {
 }
 
 // Path: web.sessions.inspector.cortexPanel
-class TranslationsWebSessionsInspectorCortexPanelEn {
-	TranslationsWebSessionsInspectorCortexPanelEn.internal(this._root);
+class Translations$web$sessions$inspector$cortexPanel$en {
+	Translations$web$sessions$inspector$cortexPanel$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -14338,8 +14585,8 @@ class TranslationsWebSessionsInspectorCortexPanelEn {
 }
 
 // Path: web.memoryWorkers.tasks.gatekeeper
-class TranslationsWebMemoryWorkersTasksGatekeeperEn {
-	TranslationsWebMemoryWorkersTasksGatekeeperEn.internal(this._root);
+class Translations$web$memoryWorkers$tasks$gatekeeper$en {
+	Translations$web$memoryWorkers$tasks$gatekeeper$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -14356,8 +14603,8 @@ class TranslationsWebMemoryWorkersTasksGatekeeperEn {
 }
 
 // Path: web.memoryWorkers.tasks.cleaner
-class TranslationsWebMemoryWorkersTasksCleanerEn {
-	TranslationsWebMemoryWorkersTasksCleanerEn.internal(this._root);
+class Translations$web$memoryWorkers$tasks$cleaner$en {
+	Translations$web$memoryWorkers$tasks$cleaner$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -14374,8 +14621,8 @@ class TranslationsWebMemoryWorkersTasksCleanerEn {
 }
 
 // Path: web.memoryWorkers.tasks.gitactivity
-class TranslationsWebMemoryWorkersTasksGitactivityEn {
-	TranslationsWebMemoryWorkersTasksGitactivityEn.internal(this._root);
+class Translations$web$memoryWorkers$tasks$gitactivity$en {
+	Translations$web$memoryWorkers$tasks$gitactivity$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -14392,8 +14639,8 @@ class TranslationsWebMemoryWorkersTasksGitactivityEn {
 }
 
 // Path: web.memoryWorkers.tasks.transcript
-class TranslationsWebMemoryWorkersTasksTranscriptEn {
-	TranslationsWebMemoryWorkersTasksTranscriptEn.internal(this._root);
+class Translations$web$memoryWorkers$tasks$transcript$en {
+	Translations$web$memoryWorkers$tasks$transcript$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -14410,8 +14657,8 @@ class TranslationsWebMemoryWorkersTasksTranscriptEn {
 }
 
 // Path: web.memoryWorkers.tasks.plan_drift
-class TranslationsWebMemoryWorkersTasksPlanDriftEn {
-	TranslationsWebMemoryWorkersTasksPlanDriftEn.internal(this._root);
+class Translations$web$memoryWorkers$tasks$plan_drift$en {
+	Translations$web$memoryWorkers$tasks$plan_drift$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -14428,8 +14675,8 @@ class TranslationsWebMemoryWorkersTasksPlanDriftEn {
 }
 
 // Path: web.memoryWorkers.tasks.conflict_detector
-class TranslationsWebMemoryWorkersTasksConflictDetectorEn {
-	TranslationsWebMemoryWorkersTasksConflictDetectorEn.internal(this._root);
+class Translations$web$memoryWorkers$tasks$conflict_detector$en {
+	Translations$web$memoryWorkers$tasks$conflict_detector$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -14446,8 +14693,8 @@ class TranslationsWebMemoryWorkersTasksConflictDetectorEn {
 }
 
 // Path: web.memoryWorkers.tasks.capture
-class TranslationsWebMemoryWorkersTasksCaptureEn {
-	TranslationsWebMemoryWorkersTasksCaptureEn.internal(this._root);
+class Translations$web$memoryWorkers$tasks$capture$en {
+	Translations$web$memoryWorkers$tasks$capture$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -14464,8 +14711,8 @@ class TranslationsWebMemoryWorkersTasksCaptureEn {
 }
 
 // Path: web.memoryWorkers.tasks.blueprint
-class TranslationsWebMemoryWorkersTasksBlueprintEn {
-	TranslationsWebMemoryWorkersTasksBlueprintEn.internal(this._root);
+class Translations$web$memoryWorkers$tasks$blueprint$en {
+	Translations$web$memoryWorkers$tasks$blueprint$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -14482,8 +14729,8 @@ class TranslationsWebMemoryWorkersTasksBlueprintEn {
 }
 
 // Path: web.memoryWorkers.tasks.curation
-class TranslationsWebMemoryWorkersTasksCurationEn {
-	TranslationsWebMemoryWorkersTasksCurationEn.internal(this._root);
+class Translations$web$memoryWorkers$tasks$curation$en {
+	Translations$web$memoryWorkers$tasks$curation$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -14500,8 +14747,8 @@ class TranslationsWebMemoryWorkersTasksCurationEn {
 }
 
 // Path: web.project.readonly.tech_stack
-class TranslationsWebProjectReadonlyTechStackEn {
-	TranslationsWebProjectReadonlyTechStackEn.internal(this._root);
+class Translations$web$project$readonly$tech_stack$en {
+	Translations$web$project$readonly$tech_stack$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -14515,8 +14762,8 @@ class TranslationsWebProjectReadonlyTechStackEn {
 }
 
 // Path: web.project.readonly.recent_activity
-class TranslationsWebProjectReadonlyRecentActivityEn {
-	TranslationsWebProjectReadonlyRecentActivityEn.internal(this._root);
+class Translations$web$project$readonly$recent_activity$en {
+	Translations$web$project$readonly$recent_activity$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -14530,8 +14777,8 @@ class TranslationsWebProjectReadonlyRecentActivityEn {
 }
 
 // Path: web.project.reset.summary
-class TranslationsWebProjectResetSummaryEn {
-	TranslationsWebProjectResetSummaryEn.internal(this._root);
+class Translations$web$project$reset$summary$en {
+	Translations$web$project$reset$summary$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -14560,8 +14807,8 @@ class TranslationsWebProjectResetSummaryEn {
 }
 
 // Path: web.project.lifecycle.status
-class TranslationsWebProjectLifecycleStatusEn {
-	TranslationsWebProjectLifecycleStatusEn.internal(this._root);
+class Translations$web$project$lifecycle$status$en {
+	Translations$web$project$lifecycle$status$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -14578,8 +14825,8 @@ class TranslationsWebProjectLifecycleStatusEn {
 }
 
 // Path: web.project.lifecycle.applied
-class TranslationsWebProjectLifecycleAppliedEn {
-	TranslationsWebProjectLifecycleAppliedEn.internal(this._root);
+class Translations$web$project$lifecycle$applied$en {
+	Translations$web$project$lifecycle$applied$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -14596,8 +14843,8 @@ class TranslationsWebProjectLifecycleAppliedEn {
 }
 
 // Path: web.project.lifecycle.tooltip
-class TranslationsWebProjectLifecycleTooltipEn {
-	TranslationsWebProjectLifecycleTooltipEn.internal(this._root);
+class Translations$web$project$lifecycle$tooltip$en {
+	Translations$web$project$lifecycle$tooltip$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -14617,8 +14864,8 @@ class TranslationsWebProjectLifecycleTooltipEn {
 }
 
 // Path: web.project.docMeta.maintainer
-class TranslationsWebProjectDocMetaMaintainerEn {
-	TranslationsWebProjectDocMetaMaintainerEn.internal(this._root);
+class Translations$web$project$docMeta$maintainer$en {
+	Translations$web$project$docMeta$maintainer$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -14635,8 +14882,8 @@ class TranslationsWebProjectDocMetaMaintainerEn {
 }
 
 // Path: web.project.docMeta.purpose
-class TranslationsWebProjectDocMetaPurposeEn {
-	TranslationsWebProjectDocMetaPurposeEn.internal(this._root);
+class Translations$web$project$docMeta$purpose$en {
+	Translations$web$project$docMeta$purpose$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -14662,8 +14909,8 @@ class TranslationsWebProjectDocMetaPurposeEn {
 }
 
 // Path: web.memoryInspector.scope.values
-class TranslationsWebMemoryInspectorScopeValuesEn {
-	TranslationsWebMemoryInspectorScopeValuesEn.internal(this._root);
+class Translations$web$memoryInspector$scope$values$en {
+	Translations$web$memoryInspector$scope$values$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -14677,8 +14924,8 @@ class TranslationsWebMemoryInspectorScopeValuesEn {
 }
 
 // Path: web.notes.vaultSync.init
-class TranslationsWebNotesVaultSyncInitEn {
-	TranslationsWebNotesVaultSyncInitEn.internal(this._root);
+class Translations$web$notes$vaultSync$init$en {
+	Translations$web$notes$vaultSync$init$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -14701,8 +14948,8 @@ class TranslationsWebNotesVaultSyncInitEn {
 }
 
 // Path: web.notes.vaultSync.branch
-class TranslationsWebNotesVaultSyncBranchEn {
-	TranslationsWebNotesVaultSyncBranchEn.internal(this._root);
+class Translations$web$notes$vaultSync$branch$en {
+	Translations$web$notes$vaultSync$branch$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -14722,8 +14969,8 @@ class TranslationsWebNotesVaultSyncBranchEn {
 }
 
 // Path: web.notes.vaultSync.action
-class TranslationsWebNotesVaultSyncActionEn {
-	TranslationsWebNotesVaultSyncActionEn.internal(this._root);
+class Translations$web$notes$vaultSync$action$en {
+	Translations$web$notes$vaultSync$action$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -14773,8 +15020,8 @@ class TranslationsWebNotesVaultSyncActionEn {
 }
 
 // Path: web.notes.vaultSync.commit
-class TranslationsWebNotesVaultSyncCommitEn {
-	TranslationsWebNotesVaultSyncCommitEn.internal(this._root);
+class Translations$web$notes$vaultSync$commit$en {
+	Translations$web$notes$vaultSync$commit$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -14800,8 +15047,8 @@ class TranslationsWebNotesVaultSyncCommitEn {
 }
 
 // Path: web.notes.vaultSync.fileList
-class TranslationsWebNotesVaultSyncFileListEn {
-	TranslationsWebNotesVaultSyncFileListEn.internal(this._root);
+class Translations$web$notes$vaultSync$fileList$en {
+	Translations$web$notes$vaultSync$fileList$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -14815,8 +15062,8 @@ class TranslationsWebNotesVaultSyncFileListEn {
 }
 
 // Path: web.notes.vaultSync.remote
-class TranslationsWebNotesVaultSyncRemoteEn {
-	TranslationsWebNotesVaultSyncRemoteEn.internal(this._root);
+class Translations$web$notes$vaultSync$remote$en {
+	Translations$web$notes$vaultSync$remote$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -14854,8 +15101,8 @@ class TranslationsWebNotesVaultSyncRemoteEn {
 }
 
 // Path: web.notes.vaultSync.history
-class TranslationsWebNotesVaultSyncHistoryEn {
-	TranslationsWebNotesVaultSyncHistoryEn.internal(this._root);
+class Translations$web$notes$vaultSync$history$en {
+	Translations$web$notes$vaultSync$history$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -14872,13 +15119,13 @@ class TranslationsWebNotesVaultSyncHistoryEn {
 }
 
 // Path: web.notes.vaultSync.conflict
-class TranslationsWebNotesVaultSyncConflictEn {
-	TranslationsWebNotesVaultSyncConflictEn.internal(this._root);
+class Translations$web$notes$vaultSync$conflict$en {
+	Translations$web$notes$vaultSync$conflict$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	late final TranslationsWebNotesVaultSyncConflictKindsEn kinds = TranslationsWebNotesVaultSyncConflictKindsEn.internal(_root);
+	late final Translations$web$notes$vaultSync$conflict$kinds$en kinds = Translations$web$notes$vaultSync$conflict$kinds$en.internal(_root);
 
 	/// en: 'Vault has a paused {kind} with unresolved conflicts'
 	String headline({required Object kind}) => 'Vault has a paused ${kind} with unresolved conflicts';
@@ -14924,8 +15171,8 @@ class TranslationsWebNotesVaultSyncConflictEn {
 }
 
 // Path: web.notes.vaultSync.auth
-class TranslationsWebNotesVaultSyncAuthEn {
-	TranslationsWebNotesVaultSyncAuthEn.internal(this._root);
+class Translations$web$notes$vaultSync$auth$en {
+	Translations$web$notes$vaultSync$auth$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -14948,8 +15195,8 @@ class TranslationsWebNotesVaultSyncAuthEn {
 }
 
 // Path: web.notes.vaultSync.autoSync
-class TranslationsWebNotesVaultSyncAutoSyncEn {
-	TranslationsWebNotesVaultSyncAutoSyncEn.internal(this._root);
+class Translations$web$notes$vaultSync$autoSync$en {
+	Translations$web$notes$vaultSync$autoSync$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -15041,8 +15288,8 @@ class TranslationsWebNotesVaultSyncAutoSyncEn {
 }
 
 // Path: web.providers.detail.caps
-class TranslationsWebProvidersDetailCapsEn {
-	TranslationsWebProvidersDetailCapsEn.internal(this._root);
+class Translations$web$providers$detail$caps$en {
+	Translations$web$providers$detail$caps$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -15062,8 +15309,8 @@ class TranslationsWebProvidersDetailCapsEn {
 }
 
 // Path: web.channels.notifications.modes
-class TranslationsWebChannelsNotificationsModesEn {
-	TranslationsWebChannelsNotificationsModesEn.internal(this._root);
+class Translations$web$channels$notifications$modes$en {
+	Translations$web$channels$notifications$modes$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -15089,8 +15336,8 @@ class TranslationsWebChannelsNotificationsModesEn {
 }
 
 // Path: web.channels.notifications.cooldowns
-class TranslationsWebChannelsNotificationsCooldownsEn {
-	TranslationsWebChannelsNotificationsCooldownsEn.internal(this._root);
+class Translations$web$channels$notifications$cooldowns$en {
+	Translations$web$channels$notifications$cooldowns$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -15113,8 +15360,8 @@ class TranslationsWebChannelsNotificationsCooldownsEn {
 }
 
 // Path: web.channels.notifications.snippetCaps
-class TranslationsWebChannelsNotificationsSnippetCapsEn {
-	TranslationsWebChannelsNotificationsSnippetCapsEn.internal(this._root);
+class Translations$web$channels$notifications$snippetCaps$en {
+	Translations$web$channels$notifications$snippetCaps$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -15137,8 +15384,8 @@ class TranslationsWebChannelsNotificationsSnippetCapsEn {
 }
 
 // Path: web.plugins.mcp.columns
-class TranslationsWebPluginsMcpColumnsEn {
-	TranslationsWebPluginsMcpColumnsEn.internal(this._root);
+class Translations$web$plugins$mcp$columns$en {
+	Translations$web$plugins$mcp$columns$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -15158,8 +15405,8 @@ class TranslationsWebPluginsMcpColumnsEn {
 }
 
 // Path: web.plugins.mcp.editor
-class TranslationsWebPluginsMcpEditorEn {
-	TranslationsWebPluginsMcpEditorEn.internal(this._root);
+class Translations$web$plugins$mcp$editor$en {
+	Translations$web$plugins$mcp$editor$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -15218,8 +15465,8 @@ class TranslationsWebPluginsMcpEditorEn {
 }
 
 // Path: web.plugins.mcp.test
-class TranslationsWebPluginsMcpTestEn {
-	TranslationsWebPluginsMcpTestEn.internal(this._root);
+class Translations$web$plugins$mcp$test$en {
+	Translations$web$plugins$mcp$test$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -15242,8 +15489,8 @@ class TranslationsWebPluginsMcpTestEn {
 }
 
 // Path: web.plugins.mcpSecrets.columns
-class TranslationsWebPluginsMcpSecretsColumnsEn {
-	TranslationsWebPluginsMcpSecretsColumnsEn.internal(this._root);
+class Translations$web$plugins$mcpSecrets$columns$en {
+	Translations$web$plugins$mcpSecrets$columns$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -15257,8 +15504,8 @@ class TranslationsWebPluginsMcpSecretsColumnsEn {
 }
 
 // Path: web.plugins.mcpSecrets.editor
-class TranslationsWebPluginsMcpSecretsEditorEn {
-	TranslationsWebPluginsMcpSecretsEditorEn.internal(this._root);
+class Translations$web$plugins$mcpSecrets$editor$en {
+	Translations$web$plugins$mcpSecrets$editor$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -15305,8 +15552,8 @@ class TranslationsWebPluginsMcpSecretsEditorEn {
 }
 
 // Path: web.plugins.skills.columns
-class TranslationsWebPluginsSkillsColumnsEn {
-	TranslationsWebPluginsSkillsColumnsEn.internal(this._root);
+class Translations$web$plugins$skills$columns$en {
+	Translations$web$plugins$skills$columns$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -15323,8 +15570,8 @@ class TranslationsWebPluginsSkillsColumnsEn {
 }
 
 // Path: web.plugins.skills.editor
-class TranslationsWebPluginsSkillsEditorEn {
-	TranslationsWebPluginsSkillsEditorEn.internal(this._root);
+class Translations$web$plugins$skills$editor$en {
+	Translations$web$plugins$skills$editor$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -15377,8 +15624,8 @@ class TranslationsWebPluginsSkillsEditorEn {
 }
 
 // Path: web.plugins.customTasks.columns
-class TranslationsWebPluginsCustomTasksColumnsEn {
-	TranslationsWebPluginsCustomTasksColumnsEn.internal(this._root);
+class Translations$web$plugins$customTasks$columns$en {
+	Translations$web$plugins$customTasks$columns$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -15395,8 +15642,8 @@ class TranslationsWebPluginsCustomTasksColumnsEn {
 }
 
 // Path: web.plugins.customTasks.dialog
-class TranslationsWebPluginsCustomTasksDialogEn {
-	TranslationsWebPluginsCustomTasksDialogEn.internal(this._root);
+class Translations$web$plugins$customTasks$dialog$en {
+	Translations$web$plugins$customTasks$dialog$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -15452,8 +15699,8 @@ class TranslationsWebPluginsCustomTasksDialogEn {
 }
 
 // Path: web.plugins.gitHosts.columns
-class TranslationsWebPluginsGitHostsColumnsEn {
-	TranslationsWebPluginsGitHostsColumnsEn.internal(this._root);
+class Translations$web$plugins$gitHosts$columns$en {
+	Translations$web$plugins$gitHosts$columns$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -15473,8 +15720,8 @@ class TranslationsWebPluginsGitHostsColumnsEn {
 }
 
 // Path: web.plugins.gitHosts.dialog
-class TranslationsWebPluginsGitHostsDialogEn {
-	TranslationsWebPluginsGitHostsDialogEn.internal(this._root);
+class Translations$web$plugins$gitHosts$dialog$en {
+	Translations$web$plugins$gitHosts$dialog$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -15545,8 +15792,8 @@ class TranslationsWebPluginsGitHostsDialogEn {
 }
 
 // Path: web.backups.backupsTab.columns
-class TranslationsWebBackupsBackupsTabColumnsEn {
-	TranslationsWebBackupsBackupsTabColumnsEn.internal(this._root);
+class Translations$web$backups$backupsTab$columns$en {
+	Translations$web$backups$backupsTab$columns$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -15575,8 +15822,8 @@ class TranslationsWebBackupsBackupsTabColumnsEn {
 }
 
 // Path: web.backups.health.tiles
-class TranslationsWebBackupsHealthTilesEn {
-	TranslationsWebBackupsHealthTilesEn.internal(this._root);
+class Translations$web$backups$health$tiles$en {
+	Translations$web$backups$health$tiles$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -15596,8 +15843,8 @@ class TranslationsWebBackupsHealthTilesEn {
 }
 
 // Path: web.backups.schedulesTab.columns
-class TranslationsWebBackupsSchedulesTabColumnsEn {
-	TranslationsWebBackupsSchedulesTabColumnsEn.internal(this._root);
+class Translations$web$backups$schedulesTab$columns$en {
+	Translations$web$backups$schedulesTab$columns$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -15626,8 +15873,8 @@ class TranslationsWebBackupsSchedulesTabColumnsEn {
 }
 
 // Path: web.backups.targetsTab.columns
-class TranslationsWebBackupsTargetsTabColumnsEn {
-	TranslationsWebBackupsTargetsTabColumnsEn.internal(this._root);
+class Translations$web$backups$targetsTab$columns$en {
+	Translations$web$backups$targetsTab$columns$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -15650,8 +15897,8 @@ class TranslationsWebBackupsTargetsTabColumnsEn {
 }
 
 // Path: web.backups.targetEditor.local
-class TranslationsWebBackupsTargetEditorLocalEn {
-	TranslationsWebBackupsTargetEditorLocalEn.internal(this._root);
+class Translations$web$backups$targetEditor$local$en {
+	Translations$web$backups$targetEditor$local$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -15668,8 +15915,8 @@ class TranslationsWebBackupsTargetEditorLocalEn {
 }
 
 // Path: web.backups.targetEditor.smb
-class TranslationsWebBackupsTargetEditorSmbEn {
-	TranslationsWebBackupsTargetEditorSmbEn.internal(this._root);
+class Translations$web$backups$targetEditor$smb$en {
+	Translations$web$backups$targetEditor$smb$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -15710,8 +15957,8 @@ class TranslationsWebBackupsTargetEditorSmbEn {
 }
 
 // Path: web.backups.targetEditor.s3
-class TranslationsWebBackupsTargetEditorS3En {
-	TranslationsWebBackupsTargetEditorS3En.internal(this._root);
+class Translations$web$backups$targetEditor$s3$en {
+	Translations$web$backups$targetEditor$s3$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -15767,8 +16014,8 @@ class TranslationsWebBackupsTargetEditorS3En {
 }
 
 // Path: web.backups.targetEditor.webdav
-class TranslationsWebBackupsTargetEditorWebdavEn {
-	TranslationsWebBackupsTargetEditorWebdavEn.internal(this._root);
+class Translations$web$backups$targetEditor$webdav$en {
+	Translations$web$backups$targetEditor$webdav$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -15800,8 +16047,8 @@ class TranslationsWebBackupsTargetEditorWebdavEn {
 }
 
 // Path: web.backups.targetEditor.sftp
-class TranslationsWebBackupsTargetEditorSftpEn {
-	TranslationsWebBackupsTargetEditorSftpEn.internal(this._root);
+class Translations$web$backups$targetEditor$sftp$en {
+	Translations$web$backups$targetEditor$sftp$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -15854,8 +16101,8 @@ class TranslationsWebBackupsTargetEditorSftpEn {
 }
 
 // Path: web.backups.targetEditor.rclone
-class TranslationsWebBackupsTargetEditorRcloneEn {
-	TranslationsWebBackupsTargetEditorRcloneEn.internal(this._root);
+class Translations$web$backups$targetEditor$rclone$en {
+	Translations$web$backups$targetEditor$rclone$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -15902,8 +16149,8 @@ class TranslationsWebBackupsTargetEditorRcloneEn {
 }
 
 // Path: web.serverSettings.sections.general
-class TranslationsWebServerSettingsSectionsGeneralEn {
-	TranslationsWebServerSettingsSectionsGeneralEn.internal(this._root);
+class Translations$web$serverSettings$sections$general$en {
+	Translations$web$serverSettings$sections$general$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -15917,8 +16164,8 @@ class TranslationsWebServerSettingsSectionsGeneralEn {
 }
 
 // Path: web.serverSettings.sections.logging
-class TranslationsWebServerSettingsSectionsLoggingEn {
-	TranslationsWebServerSettingsSectionsLoggingEn.internal(this._root);
+class Translations$web$serverSettings$sections$logging$en {
+	Translations$web$serverSettings$sections$logging$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -15932,8 +16179,8 @@ class TranslationsWebServerSettingsSectionsLoggingEn {
 }
 
 // Path: web.serverSettings.sections.sessions
-class TranslationsWebServerSettingsSectionsSessionsEn {
-	TranslationsWebServerSettingsSectionsSessionsEn.internal(this._root);
+class Translations$web$serverSettings$sections$sessions$en {
+	Translations$web$serverSettings$sections$sessions$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -15947,8 +16194,8 @@ class TranslationsWebServerSettingsSectionsSessionsEn {
 }
 
 // Path: web.serverSettings.sections.vault
-class TranslationsWebServerSettingsSectionsVaultEn {
-	TranslationsWebServerSettingsSectionsVaultEn.internal(this._root);
+class Translations$web$serverSettings$sections$vault$en {
+	Translations$web$serverSettings$sections$vault$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -15962,8 +16209,8 @@ class TranslationsWebServerSettingsSectionsVaultEn {
 }
 
 // Path: web.serverSettings.sections.mcp
-class TranslationsWebServerSettingsSectionsMcpEn {
-	TranslationsWebServerSettingsSectionsMcpEn.internal(this._root);
+class Translations$web$serverSettings$sections$mcp$en {
+	Translations$web$serverSettings$sections$mcp$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -15977,8 +16224,8 @@ class TranslationsWebServerSettingsSectionsMcpEn {
 }
 
 // Path: web.serverSettings.sections.memory
-class TranslationsWebServerSettingsSectionsMemoryEn {
-	TranslationsWebServerSettingsSectionsMemoryEn.internal(this._root);
+class Translations$web$serverSettings$sections$memory$en {
+	Translations$web$serverSettings$sections$memory$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -15992,8 +16239,8 @@ class TranslationsWebServerSettingsSectionsMemoryEn {
 }
 
 // Path: web.serverSettings.sections.backup
-class TranslationsWebServerSettingsSectionsBackupEn {
-	TranslationsWebServerSettingsSectionsBackupEn.internal(this._root);
+class Translations$web$serverSettings$sections$backup$en {
+	Translations$web$serverSettings$sections$backup$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16007,8 +16254,8 @@ class TranslationsWebServerSettingsSectionsBackupEn {
 }
 
 // Path: web.serverSettings.sections.claude
-class TranslationsWebServerSettingsSectionsClaudeEn {
-	TranslationsWebServerSettingsSectionsClaudeEn.internal(this._root);
+class Translations$web$serverSettings$sections$claude$en {
+	Translations$web$serverSettings$sections$claude$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16022,8 +16269,8 @@ class TranslationsWebServerSettingsSectionsClaudeEn {
 }
 
 // Path: web.serverSettings.sections.codex
-class TranslationsWebServerSettingsSectionsCodexEn {
-	TranslationsWebServerSettingsSectionsCodexEn.internal(this._root);
+class Translations$web$serverSettings$sections$codex$en {
+	Translations$web$serverSettings$sections$codex$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16037,8 +16284,8 @@ class TranslationsWebServerSettingsSectionsCodexEn {
 }
 
 // Path: web.serverSettings.sections.antigravity
-class TranslationsWebServerSettingsSectionsAntigravityEn {
-	TranslationsWebServerSettingsSectionsAntigravityEn.internal(this._root);
+class Translations$web$serverSettings$sections$antigravity$en {
+	Translations$web$serverSettings$sections$antigravity$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16052,8 +16299,8 @@ class TranslationsWebServerSettingsSectionsAntigravityEn {
 }
 
 // Path: web.serverSettings.fields.listenAddress
-class TranslationsWebServerSettingsFieldsListenAddressEn {
-	TranslationsWebServerSettingsFieldsListenAddressEn.internal(this._root);
+class Translations$web$serverSettings$fields$listenAddress$en {
+	Translations$web$serverSettings$fields$listenAddress$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16067,8 +16314,8 @@ class TranslationsWebServerSettingsFieldsListenAddressEn {
 }
 
 // Path: web.serverSettings.fields.username
-class TranslationsWebServerSettingsFieldsUsernameEn {
-	TranslationsWebServerSettingsFieldsUsernameEn.internal(this._root);
+class Translations$web$serverSettings$fields$username$en {
+	Translations$web$serverSettings$fields$username$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16082,8 +16329,8 @@ class TranslationsWebServerSettingsFieldsUsernameEn {
 }
 
 // Path: web.serverSettings.fields.password
-class TranslationsWebServerSettingsFieldsPasswordEn {
-	TranslationsWebServerSettingsFieldsPasswordEn.internal(this._root);
+class Translations$web$serverSettings$fields$password$en {
+	Translations$web$serverSettings$fields$password$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16103,8 +16350,8 @@ class TranslationsWebServerSettingsFieldsPasswordEn {
 }
 
 // Path: web.serverSettings.fields.tokenTTL
-class TranslationsWebServerSettingsFieldsTokenTTLEn {
-	TranslationsWebServerSettingsFieldsTokenTTLEn.internal(this._root);
+class Translations$web$serverSettings$fields$tokenTTL$en {
+	Translations$web$serverSettings$fields$tokenTTL$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16118,8 +16365,8 @@ class TranslationsWebServerSettingsFieldsTokenTTLEn {
 }
 
 // Path: web.serverSettings.fields.logLevel
-class TranslationsWebServerSettingsFieldsLogLevelEn {
-	TranslationsWebServerSettingsFieldsLogLevelEn.internal(this._root);
+class Translations$web$serverSettings$fields$logLevel$en {
+	Translations$web$serverSettings$fields$logLevel$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16133,8 +16380,8 @@ class TranslationsWebServerSettingsFieldsLogLevelEn {
 }
 
 // Path: web.serverSettings.fields.logFormat
-class TranslationsWebServerSettingsFieldsLogFormatEn {
-	TranslationsWebServerSettingsFieldsLogFormatEn.internal(this._root);
+class Translations$web$serverSettings$fields$logFormat$en {
+	Translations$web$serverSettings$fields$logFormat$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16148,8 +16395,8 @@ class TranslationsWebServerSettingsFieldsLogFormatEn {
 }
 
 // Path: web.serverSettings.fields.logFile
-class TranslationsWebServerSettingsFieldsLogFileEn {
-	TranslationsWebServerSettingsFieldsLogFileEn.internal(this._root);
+class Translations$web$serverSettings$fields$logFile$en {
+	Translations$web$serverSettings$fields$logFile$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16163,8 +16410,8 @@ class TranslationsWebServerSettingsFieldsLogFileEn {
 }
 
 // Path: web.serverSettings.fields.idleThreshold
-class TranslationsWebServerSettingsFieldsIdleThresholdEn {
-	TranslationsWebServerSettingsFieldsIdleThresholdEn.internal(this._root);
+class Translations$web$serverSettings$fields$idleThreshold$en {
+	Translations$web$serverSettings$fields$idleThreshold$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16178,8 +16425,8 @@ class TranslationsWebServerSettingsFieldsIdleThresholdEn {
 }
 
 // Path: web.serverSettings.fields.idlePollInterval
-class TranslationsWebServerSettingsFieldsIdlePollIntervalEn {
-	TranslationsWebServerSettingsFieldsIdlePollIntervalEn.internal(this._root);
+class Translations$web$serverSettings$fields$idlePollInterval$en {
+	Translations$web$serverSettings$fields$idlePollInterval$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16193,8 +16440,8 @@ class TranslationsWebServerSettingsFieldsIdlePollIntervalEn {
 }
 
 // Path: web.serverSettings.fields.vaultRoot
-class TranslationsWebServerSettingsFieldsVaultRootEn {
-	TranslationsWebServerSettingsFieldsVaultRootEn.internal(this._root);
+class Translations$web$serverSettings$fields$vaultRoot$en {
+	Translations$web$serverSettings$fields$vaultRoot$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16208,8 +16455,8 @@ class TranslationsWebServerSettingsFieldsVaultRootEn {
 }
 
 // Path: web.serverSettings.fields.notesDirectory
-class TranslationsWebServerSettingsFieldsNotesDirectoryEn {
-	TranslationsWebServerSettingsFieldsNotesDirectoryEn.internal(this._root);
+class Translations$web$serverSettings$fields$notesDirectory$en {
+	Translations$web$serverSettings$fields$notesDirectory$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16223,8 +16470,8 @@ class TranslationsWebServerSettingsFieldsNotesDirectoryEn {
 }
 
 // Path: web.serverSettings.fields.skillsDirectory
-class TranslationsWebServerSettingsFieldsSkillsDirectoryEn {
-	TranslationsWebServerSettingsFieldsSkillsDirectoryEn.internal(this._root);
+class Translations$web$serverSettings$fields$skillsDirectory$en {
+	Translations$web$serverSettings$fields$skillsDirectory$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16238,8 +16485,8 @@ class TranslationsWebServerSettingsFieldsSkillsDirectoryEn {
 }
 
 // Path: web.serverSettings.fields.gitRoot
-class TranslationsWebServerSettingsFieldsGitRootEn {
-	TranslationsWebServerSettingsFieldsGitRootEn.internal(this._root);
+class Translations$web$serverSettings$fields$gitRoot$en {
+	Translations$web$serverSettings$fields$gitRoot$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16253,8 +16500,8 @@ class TranslationsWebServerSettingsFieldsGitRootEn {
 }
 
 // Path: web.serverSettings.fields.personalPrefix
-class TranslationsWebServerSettingsFieldsPersonalPrefixEn {
-	TranslationsWebServerSettingsFieldsPersonalPrefixEn.internal(this._root);
+class Translations$web$serverSettings$fields$personalPrefix$en {
+	Translations$web$serverSettings$fields$personalPrefix$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16268,8 +16515,8 @@ class TranslationsWebServerSettingsFieldsPersonalPrefixEn {
 }
 
 // Path: web.serverSettings.fields.projectsPrefix
-class TranslationsWebServerSettingsFieldsProjectsPrefixEn {
-	TranslationsWebServerSettingsFieldsProjectsPrefixEn.internal(this._root);
+class Translations$web$serverSettings$fields$projectsPrefix$en {
+	Translations$web$serverSettings$fields$projectsPrefix$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16283,8 +16530,8 @@ class TranslationsWebServerSettingsFieldsProjectsPrefixEn {
 }
 
 // Path: web.serverSettings.fields.registryRoot
-class TranslationsWebServerSettingsFieldsRegistryRootEn {
-	TranslationsWebServerSettingsFieldsRegistryRootEn.internal(this._root);
+class Translations$web$serverSettings$fields$registryRoot$en {
+	Translations$web$serverSettings$fields$registryRoot$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16298,8 +16545,8 @@ class TranslationsWebServerSettingsFieldsRegistryRootEn {
 }
 
 // Path: web.serverSettings.fields.secretsFile
-class TranslationsWebServerSettingsFieldsSecretsFileEn {
-	TranslationsWebServerSettingsFieldsSecretsFileEn.internal(this._root);
+class Translations$web$serverSettings$fields$secretsFile$en {
+	Translations$web$serverSettings$fields$secretsFile$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16313,8 +16560,8 @@ class TranslationsWebServerSettingsFieldsSecretsFileEn {
 }
 
 // Path: web.serverSettings.fields.memoryBackend
-class TranslationsWebServerSettingsFieldsMemoryBackendEn {
-	TranslationsWebServerSettingsFieldsMemoryBackendEn.internal(this._root);
+class Translations$web$serverSettings$fields$memoryBackend$en {
+	Translations$web$serverSettings$fields$memoryBackend$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16328,8 +16575,8 @@ class TranslationsWebServerSettingsFieldsMemoryBackendEn {
 }
 
 // Path: web.serverSettings.fields.memoryStore
-class TranslationsWebServerSettingsFieldsMemoryStoreEn {
-	TranslationsWebServerSettingsFieldsMemoryStoreEn.internal(this._root);
+class Translations$web$serverSettings$fields$memoryStore$en {
+	Translations$web$serverSettings$fields$memoryStore$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16343,8 +16590,8 @@ class TranslationsWebServerSettingsFieldsMemoryStoreEn {
 }
 
 // Path: web.serverSettings.fields.memoryTopK
-class TranslationsWebServerSettingsFieldsMemoryTopKEn {
-	TranslationsWebServerSettingsFieldsMemoryTopKEn.internal(this._root);
+class Translations$web$serverSettings$fields$memoryTopK$en {
+	Translations$web$serverSettings$fields$memoryTopK$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16358,8 +16605,8 @@ class TranslationsWebServerSettingsFieldsMemoryTopKEn {
 }
 
 // Path: web.serverSettings.fields.memoryThreshold
-class TranslationsWebServerSettingsFieldsMemoryThresholdEn {
-	TranslationsWebServerSettingsFieldsMemoryThresholdEn.internal(this._root);
+class Translations$web$serverSettings$fields$memoryThreshold$en {
+	Translations$web$serverSettings$fields$memoryThreshold$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16373,8 +16620,8 @@ class TranslationsWebServerSettingsFieldsMemoryThresholdEn {
 }
 
 // Path: web.serverSettings.fields.memoryScope
-class TranslationsWebServerSettingsFieldsMemoryScopeEn {
-	TranslationsWebServerSettingsFieldsMemoryScopeEn.internal(this._root);
+class Translations$web$serverSettings$fields$memoryScope$en {
+	Translations$web$serverSettings$fields$memoryScope$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16388,8 +16635,8 @@ class TranslationsWebServerSettingsFieldsMemoryScopeEn {
 }
 
 // Path: web.serverSettings.fields.memoryBaseUrl
-class TranslationsWebServerSettingsFieldsMemoryBaseUrlEn {
-	TranslationsWebServerSettingsFieldsMemoryBaseUrlEn.internal(this._root);
+class Translations$web$serverSettings$fields$memoryBaseUrl$en {
+	Translations$web$serverSettings$fields$memoryBaseUrl$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16403,8 +16650,8 @@ class TranslationsWebServerSettingsFieldsMemoryBaseUrlEn {
 }
 
 // Path: web.serverSettings.fields.memoryModel
-class TranslationsWebServerSettingsFieldsMemoryModelEn {
-	TranslationsWebServerSettingsFieldsMemoryModelEn.internal(this._root);
+class Translations$web$serverSettings$fields$memoryModel$en {
+	Translations$web$serverSettings$fields$memoryModel$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16418,8 +16665,8 @@ class TranslationsWebServerSettingsFieldsMemoryModelEn {
 }
 
 // Path: web.serverSettings.fields.memoryApiKey
-class TranslationsWebServerSettingsFieldsMemoryApiKeyEn {
-	TranslationsWebServerSettingsFieldsMemoryApiKeyEn.internal(this._root);
+class Translations$web$serverSettings$fields$memoryApiKey$en {
+	Translations$web$serverSettings$fields$memoryApiKey$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16433,8 +16680,8 @@ class TranslationsWebServerSettingsFieldsMemoryApiKeyEn {
 }
 
 // Path: web.serverSettings.fields.memoryLocalModel
-class TranslationsWebServerSettingsFieldsMemoryLocalModelEn {
-	TranslationsWebServerSettingsFieldsMemoryLocalModelEn.internal(this._root);
+class Translations$web$serverSettings$fields$memoryLocalModel$en {
+	Translations$web$serverSettings$fields$memoryLocalModel$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16448,8 +16695,8 @@ class TranslationsWebServerSettingsFieldsMemoryLocalModelEn {
 }
 
 // Path: web.serverSettings.fields.memoryLibraryPath
-class TranslationsWebServerSettingsFieldsMemoryLibraryPathEn {
-	TranslationsWebServerSettingsFieldsMemoryLibraryPathEn.internal(this._root);
+class Translations$web$serverSettings$fields$memoryLibraryPath$en {
+	Translations$web$serverSettings$fields$memoryLibraryPath$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16463,8 +16710,8 @@ class TranslationsWebServerSettingsFieldsMemoryLibraryPathEn {
 }
 
 // Path: web.serverSettings.fields.memoryModelPath
-class TranslationsWebServerSettingsFieldsMemoryModelPathEn {
-	TranslationsWebServerSettingsFieldsMemoryModelPathEn.internal(this._root);
+class Translations$web$serverSettings$fields$memoryModelPath$en {
+	Translations$web$serverSettings$fields$memoryModelPath$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16478,8 +16725,8 @@ class TranslationsWebServerSettingsFieldsMemoryModelPathEn {
 }
 
 // Path: web.serverSettings.fields.memoryTokenizerPath
-class TranslationsWebServerSettingsFieldsMemoryTokenizerPathEn {
-	TranslationsWebServerSettingsFieldsMemoryTokenizerPathEn.internal(this._root);
+class Translations$web$serverSettings$fields$memoryTokenizerPath$en {
+	Translations$web$serverSettings$fields$memoryTokenizerPath$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16493,8 +16740,8 @@ class TranslationsWebServerSettingsFieldsMemoryTokenizerPathEn {
 }
 
 // Path: web.serverSettings.fields.memoryMaxSeqLen
-class TranslationsWebServerSettingsFieldsMemoryMaxSeqLenEn {
-	TranslationsWebServerSettingsFieldsMemoryMaxSeqLenEn.internal(this._root);
+class Translations$web$serverSettings$fields$memoryMaxSeqLen$en {
+	Translations$web$serverSettings$fields$memoryMaxSeqLen$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16508,8 +16755,8 @@ class TranslationsWebServerSettingsFieldsMemoryMaxSeqLenEn {
 }
 
 // Path: web.serverSettings.fields.claudeHistoryRoots
-class TranslationsWebServerSettingsFieldsClaudeHistoryRootsEn {
-	TranslationsWebServerSettingsFieldsClaudeHistoryRootsEn.internal(this._root);
+class Translations$web$serverSettings$fields$claudeHistoryRoots$en {
+	Translations$web$serverSettings$fields$claudeHistoryRoots$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16523,8 +16770,8 @@ class TranslationsWebServerSettingsFieldsClaudeHistoryRootsEn {
 }
 
 // Path: web.serverSettings.fields.claudeAccountsDir
-class TranslationsWebServerSettingsFieldsClaudeAccountsDirEn {
-	TranslationsWebServerSettingsFieldsClaudeAccountsDirEn.internal(this._root);
+class Translations$web$serverSettings$fields$claudeAccountsDir$en {
+	Translations$web$serverSettings$fields$claudeAccountsDir$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16538,8 +16785,8 @@ class TranslationsWebServerSettingsFieldsClaudeAccountsDirEn {
 }
 
 // Path: web.serverSettings.fields.codexSessionsRoot
-class TranslationsWebServerSettingsFieldsCodexSessionsRootEn {
-	TranslationsWebServerSettingsFieldsCodexSessionsRootEn.internal(this._root);
+class Translations$web$serverSettings$fields$codexSessionsRoot$en {
+	Translations$web$serverSettings$fields$codexSessionsRoot$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16553,8 +16800,8 @@ class TranslationsWebServerSettingsFieldsCodexSessionsRootEn {
 }
 
 // Path: web.serverSettings.fields.antigravityConversationsRoot
-class TranslationsWebServerSettingsFieldsAntigravityConversationsRootEn {
-	TranslationsWebServerSettingsFieldsAntigravityConversationsRootEn.internal(this._root);
+class Translations$web$serverSettings$fields$antigravityConversationsRoot$en {
+	Translations$web$serverSettings$fields$antigravityConversationsRoot$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16568,8 +16815,8 @@ class TranslationsWebServerSettingsFieldsAntigravityConversationsRootEn {
 }
 
 // Path: web.serverSettings.fields.backupLocalDir
-class TranslationsWebServerSettingsFieldsBackupLocalDirEn {
-	TranslationsWebServerSettingsFieldsBackupLocalDirEn.internal(this._root);
+class Translations$web$serverSettings$fields$backupLocalDir$en {
+	Translations$web$serverSettings$fields$backupLocalDir$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16583,8 +16830,8 @@ class TranslationsWebServerSettingsFieldsBackupLocalDirEn {
 }
 
 // Path: web.serverSettings.fields.backupExportDir
-class TranslationsWebServerSettingsFieldsBackupExportDirEn {
-	TranslationsWebServerSettingsFieldsBackupExportDirEn.internal(this._root);
+class Translations$web$serverSettings$fields$backupExportDir$en {
+	Translations$web$serverSettings$fields$backupExportDir$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16598,8 +16845,8 @@ class TranslationsWebServerSettingsFieldsBackupExportDirEn {
 }
 
 // Path: web.serverSettings.fields.backupPgDumpPath
-class TranslationsWebServerSettingsFieldsBackupPgDumpPathEn {
-	TranslationsWebServerSettingsFieldsBackupPgDumpPathEn.internal(this._root);
+class Translations$web$serverSettings$fields$backupPgDumpPath$en {
+	Translations$web$serverSettings$fields$backupPgDumpPath$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16613,8 +16860,8 @@ class TranslationsWebServerSettingsFieldsBackupPgDumpPathEn {
 }
 
 // Path: web.serverSettings.fields.backupPgRestorePath
-class TranslationsWebServerSettingsFieldsBackupPgRestorePathEn {
-	TranslationsWebServerSettingsFieldsBackupPgRestorePathEn.internal(this._root);
+class Translations$web$serverSettings$fields$backupPgRestorePath$en {
+	Translations$web$serverSettings$fields$backupPgRestorePath$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16628,8 +16875,8 @@ class TranslationsWebServerSettingsFieldsBackupPgRestorePathEn {
 }
 
 // Path: web.serverSettings.fields.memoryDedup
-class TranslationsWebServerSettingsFieldsMemoryDedupEn {
-	TranslationsWebServerSettingsFieldsMemoryDedupEn.internal(this._root);
+class Translations$web$serverSettings$fields$memoryDedup$en {
+	Translations$web$serverSettings$fields$memoryDedup$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16643,8 +16890,8 @@ class TranslationsWebServerSettingsFieldsMemoryDedupEn {
 }
 
 // Path: web.serverSettings.fields.gatekeeperEnabled
-class TranslationsWebServerSettingsFieldsGatekeeperEnabledEn {
-	TranslationsWebServerSettingsFieldsGatekeeperEnabledEn.internal(this._root);
+class Translations$web$serverSettings$fields$gatekeeperEnabled$en {
+	Translations$web$serverSettings$fields$gatekeeperEnabled$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16658,8 +16905,8 @@ class TranslationsWebServerSettingsFieldsGatekeeperEnabledEn {
 }
 
 // Path: web.serverSettings.fields.gatekeeperLatency
-class TranslationsWebServerSettingsFieldsGatekeeperLatencyEn {
-	TranslationsWebServerSettingsFieldsGatekeeperLatencyEn.internal(this._root);
+class Translations$web$serverSettings$fields$gatekeeperLatency$en {
+	Translations$web$serverSettings$fields$gatekeeperLatency$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16673,8 +16920,8 @@ class TranslationsWebServerSettingsFieldsGatekeeperLatencyEn {
 }
 
 // Path: web.serverSettings.fields.cleanerEnabled
-class TranslationsWebServerSettingsFieldsCleanerEnabledEn {
-	TranslationsWebServerSettingsFieldsCleanerEnabledEn.internal(this._root);
+class Translations$web$serverSettings$fields$cleanerEnabled$en {
+	Translations$web$serverSettings$fields$cleanerEnabled$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16688,8 +16935,8 @@ class TranslationsWebServerSettingsFieldsCleanerEnabledEn {
 }
 
 // Path: web.serverSettings.fields.cleanerInterval
-class TranslationsWebServerSettingsFieldsCleanerIntervalEn {
-	TranslationsWebServerSettingsFieldsCleanerIntervalEn.internal(this._root);
+class Translations$web$serverSettings$fields$cleanerInterval$en {
+	Translations$web$serverSettings$fields$cleanerInterval$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16703,8 +16950,8 @@ class TranslationsWebServerSettingsFieldsCleanerIntervalEn {
 }
 
 // Path: web.serverSettings.fields.cleanerGlobalScope
-class TranslationsWebServerSettingsFieldsCleanerGlobalScopeEn {
-	TranslationsWebServerSettingsFieldsCleanerGlobalScopeEn.internal(this._root);
+class Translations$web$serverSettings$fields$cleanerGlobalScope$en {
+	Translations$web$serverSettings$fields$cleanerGlobalScope$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16718,8 +16965,8 @@ class TranslationsWebServerSettingsFieldsCleanerGlobalScopeEn {
 }
 
 // Path: web.serverSettings.fields.knowledgeEnabled
-class TranslationsWebServerSettingsFieldsKnowledgeEnabledEn {
-	TranslationsWebServerSettingsFieldsKnowledgeEnabledEn.internal(this._root);
+class Translations$web$serverSettings$fields$knowledgeEnabled$en {
+	Translations$web$serverSettings$fields$knowledgeEnabled$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16733,8 +16980,8 @@ class TranslationsWebServerSettingsFieldsKnowledgeEnabledEn {
 }
 
 // Path: web.serverSettings.fields.claudeWatcher
-class TranslationsWebServerSettingsFieldsClaudeWatcherEn {
-	TranslationsWebServerSettingsFieldsClaudeWatcherEn.internal(this._root);
+class Translations$web$serverSettings$fields$claudeWatcher$en {
+	Translations$web$serverSettings$fields$claudeWatcher$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16748,8 +16995,8 @@ class TranslationsWebServerSettingsFieldsClaudeWatcherEn {
 }
 
 // Path: web.serverSettings.fields.claudeAutoFailover
-class TranslationsWebServerSettingsFieldsClaudeAutoFailoverEn {
-	TranslationsWebServerSettingsFieldsClaudeAutoFailoverEn.internal(this._root);
+class Translations$web$serverSettings$fields$claudeAutoFailover$en {
+	Translations$web$serverSettings$fields$claudeAutoFailover$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16763,8 +17010,8 @@ class TranslationsWebServerSettingsFieldsClaudeAutoFailoverEn {
 }
 
 // Path: web.serverSettings.fields.mobileTokenTTL
-class TranslationsWebServerSettingsFieldsMobileTokenTTLEn {
-	TranslationsWebServerSettingsFieldsMobileTokenTTLEn.internal(this._root);
+class Translations$web$serverSettings$fields$mobileTokenTTL$en {
+	Translations$web$serverSettings$fields$mobileTokenTTL$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16778,8 +17025,8 @@ class TranslationsWebServerSettingsFieldsMobileTokenTTLEn {
 }
 
 // Path: web.serverSettings.fields.dbMaxConns
-class TranslationsWebServerSettingsFieldsDbMaxConnsEn {
-	TranslationsWebServerSettingsFieldsDbMaxConnsEn.internal(this._root);
+class Translations$web$serverSettings$fields$dbMaxConns$en {
+	Translations$web$serverSettings$fields$dbMaxConns$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16793,8 +17040,8 @@ class TranslationsWebServerSettingsFieldsDbMaxConnsEn {
 }
 
 // Path: web.serverSettings.httpHelpers.presetTip
-class TranslationsWebServerSettingsHttpHelpersPresetTipEn {
-	TranslationsWebServerSettingsHttpHelpersPresetTipEn.internal(this._root);
+class Translations$web$serverSettings$httpHelpers$presetTip$en {
+	Translations$web$serverSettings$httpHelpers$presetTip$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16811,8 +17058,8 @@ class TranslationsWebServerSettingsHttpHelpersPresetTipEn {
 }
 
 // Path: web.serverSettings.backup.scheduleHeaders
-class TranslationsWebServerSettingsBackupScheduleHeadersEn {
-	TranslationsWebServerSettingsBackupScheduleHeadersEn.internal(this._root);
+class Translations$web$serverSettings$backup$scheduleHeaders$en {
+	Translations$web$serverSettings$backup$scheduleHeaders$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16835,8 +17082,8 @@ class TranslationsWebServerSettingsBackupScheduleHeadersEn {
 }
 
 // Path: web.settings.appearance.options
-class TranslationsWebSettingsAppearanceOptionsEn {
-	TranslationsWebSettingsAppearanceOptionsEn.internal(this._root);
+class Translations$web$settings$appearance$options$en {
+	Translations$web$settings$appearance$options$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16862,8 +17109,8 @@ class TranslationsWebSettingsAppearanceOptionsEn {
 }
 
 // Path: web.settings.font.options
-class TranslationsWebSettingsFontOptionsEn {
-	TranslationsWebSettingsFontOptionsEn.internal(this._root);
+class Translations$web$settings$font$options$en {
+	Translations$web$settings$font$options$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16883,8 +17130,8 @@ class TranslationsWebSettingsFontOptionsEn {
 }
 
 // Path: web.memoryAmbient.providers.row
-class TranslationsWebMemoryAmbientProvidersRowEn {
-	TranslationsWebMemoryAmbientProvidersRowEn.internal(this._root);
+class Translations$web$memoryAmbient$providers$row$en {
+	Translations$web$memoryAmbient$providers$row$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16928,8 +17175,8 @@ class TranslationsWebMemoryAmbientProvidersRowEn {
 }
 
 // Path: web.memoryAmbient.providers.dialog
-class TranslationsWebMemoryAmbientProvidersDialogEn {
-	TranslationsWebMemoryAmbientProvidersDialogEn.internal(this._root);
+class Translations$web$memoryAmbient$providers$dialog$en {
+	Translations$web$memoryAmbient$providers$dialog$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -16979,8 +17226,8 @@ class TranslationsWebMemoryAmbientProvidersDialogEn {
 }
 
 // Path: web.memoryAmbient.providers.modelSelect
-class TranslationsWebMemoryAmbientProvidersModelSelectEn {
-	TranslationsWebMemoryAmbientProvidersModelSelectEn.internal(this._root);
+class Translations$web$memoryAmbient$providers$modelSelect$en {
+	Translations$web$memoryAmbient$providers$modelSelect$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -17018,8 +17265,8 @@ class TranslationsWebMemoryAmbientProvidersModelSelectEn {
 }
 
 // Path: web.memoryAmbient.rules.row
-class TranslationsWebMemoryAmbientRulesRowEn {
-	TranslationsWebMemoryAmbientRulesRowEn.internal(this._root);
+class Translations$web$memoryAmbient$rules$row$en {
+	Translations$web$memoryAmbient$rules$row$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -17058,12 +17305,12 @@ class TranslationsWebMemoryAmbientRulesRowEn {
 	/// en: 'Delete failed'
 	String get deleteFailedToast => 'Delete failed';
 
-	late final TranslationsWebMemoryAmbientRulesRowSummaryEn summary = TranslationsWebMemoryAmbientRulesRowSummaryEn.internal(_root);
+	late final Translations$web$memoryAmbient$rules$row$summary$en summary = Translations$web$memoryAmbient$rules$row$summary$en.internal(_root);
 }
 
 // Path: web.memoryAmbient.rules.dialog
-class TranslationsWebMemoryAmbientRulesDialogEn {
-	TranslationsWebMemoryAmbientRulesDialogEn.internal(this._root);
+class Translations$web$memoryAmbient$rules$dialog$en {
+	Translations$web$memoryAmbient$rules$dialog$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -17116,8 +17363,8 @@ class TranslationsWebMemoryAmbientRulesDialogEn {
 }
 
 // Path: web.memoryAmbient.profiles.row
-class TranslationsWebMemoryAmbientProfilesRowEn {
-	TranslationsWebMemoryAmbientProfilesRowEn.internal(this._root);
+class Translations$web$memoryAmbient$profiles$row$en {
+	Translations$web$memoryAmbient$profiles$row$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -17140,8 +17387,8 @@ class TranslationsWebMemoryAmbientProfilesRowEn {
 }
 
 // Path: web.memoryAmbient.profiles.dialog
-class TranslationsWebMemoryAmbientProfilesDialogEn {
-	TranslationsWebMemoryAmbientProfilesDialogEn.internal(this._root);
+class Translations$web$memoryAmbient$profiles$dialog$en {
+	Translations$web$memoryAmbient$profiles$dialog$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -17170,8 +17417,8 @@ class TranslationsWebMemoryAmbientProfilesDialogEn {
 }
 
 // Path: web.memoryAmbient.cost.columns
-class TranslationsWebMemoryAmbientCostColumnsEn {
-	TranslationsWebMemoryAmbientCostColumnsEn.internal(this._root);
+class Translations$web$memoryAmbient$cost$columns$en {
+	Translations$web$memoryAmbient$cost$columns$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -17194,8 +17441,8 @@ class TranslationsWebMemoryAmbientCostColumnsEn {
 }
 
 // Path: web.export.form.integrationOptions
-class TranslationsWebExportFormIntegrationOptionsEn {
-	TranslationsWebExportFormIntegrationOptionsEn.internal(this._root);
+class Translations$web$export$form$integrationOptions$en {
+	Translations$web$export$form$integrationOptions$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -17221,8 +17468,8 @@ class TranslationsWebExportFormIntegrationOptionsEn {
 }
 
 // Path: web.export.history.columns
-class TranslationsWebExportHistoryColumnsEn {
-	TranslationsWebExportHistoryColumnsEn.internal(this._root);
+class Translations$web$export$history$columns$en {
+	Translations$web$export$history$columns$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -17248,8 +17495,8 @@ class TranslationsWebExportHistoryColumnsEn {
 }
 
 // Path: web.export.import.summaryCard
-class TranslationsWebExportImportSummaryCardEn {
-	TranslationsWebExportImportSummaryCardEn.internal(this._root);
+class Translations$web$export$import$summaryCard$en {
+	Translations$web$export$import$summaryCard$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -17275,8 +17522,8 @@ class TranslationsWebExportImportSummaryCardEn {
 }
 
 // Path: web.export.imports.columns
-class TranslationsWebExportImportsColumnsEn {
-	TranslationsWebExportImportsColumnsEn.internal(this._root);
+class Translations$web$export$imports$columns$en {
+	Translations$web$export$imports$columns$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -17299,8 +17546,8 @@ class TranslationsWebExportImportsColumnsEn {
 }
 
 // Path: web.knowledge.kb.kinds
-class TranslationsWebKnowledgeKbKindsEn {
-	TranslationsWebKnowledgeKbKindsEn.internal(this._root);
+class Translations$web$knowledge$kb$kinds$en {
+	Translations$web$knowledge$kb$kinds$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -17320,8 +17567,8 @@ class TranslationsWebKnowledgeKbKindsEn {
 }
 
 // Path: web.knowledge.kb.proposal
-class TranslationsWebKnowledgeKbProposalEn {
-	TranslationsWebKnowledgeKbProposalEn.internal(this._root);
+class Translations$web$knowledge$kb$proposal$en {
+	Translations$web$knowledge$kb$proposal$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -17350,8 +17597,8 @@ class TranslationsWebKnowledgeKbProposalEn {
 }
 
 // Path: web.knowledge.kb.newPage
-class TranslationsWebKnowledgeKbNewPageEn {
-	TranslationsWebKnowledgeKbNewPageEn.internal(this._root);
+class Translations$web$knowledge$kb$newPage$en {
+	Translations$web$knowledge$kb$newPage$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -17389,8 +17636,8 @@ class TranslationsWebKnowledgeKbNewPageEn {
 }
 
 // Path: web.knowledge.kb.pageSettings
-class TranslationsWebKnowledgeKbPageSettingsEn {
-	TranslationsWebKnowledgeKbPageSettingsEn.internal(this._root);
+class Translations$web$knowledge$kb$pageSettings$en {
+	Translations$web$knowledge$kb$pageSettings$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -17416,8 +17663,8 @@ class TranslationsWebKnowledgeKbPageSettingsEn {
 }
 
 // Path: web.knowledge.kb.librarian
-class TranslationsWebKnowledgeKbLibrarianEn {
-	TranslationsWebKnowledgeKbLibrarianEn.internal(this._root);
+class Translations$web$knowledge$kb$librarian$en {
+	Translations$web$knowledge$kb$librarian$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -17449,8 +17696,8 @@ class TranslationsWebKnowledgeKbLibrarianEn {
 }
 
 // Path: web.knowledge.distill.retirement
-class TranslationsWebKnowledgeDistillRetirementEn {
-	TranslationsWebKnowledgeDistillRetirementEn.internal(this._root);
+class Translations$web$knowledge$distill$retirement$en {
+	Translations$web$knowledge$distill$retirement$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -17476,8 +17723,8 @@ class TranslationsWebKnowledgeDistillRetirementEn {
 }
 
 // Path: web.knowledge.graph.legend
-class TranslationsWebKnowledgeGraphLegendEn {
-	TranslationsWebKnowledgeGraphLegendEn.internal(this._root);
+class Translations$web$knowledge$graph$legend$en {
+	Translations$web$knowledge$graph$legend$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -17497,8 +17744,8 @@ class TranslationsWebKnowledgeGraphLegendEn {
 }
 
 // Path: web.cortex.home.memory
-class TranslationsWebCortexHomeMemoryEn {
-	TranslationsWebCortexHomeMemoryEn.internal(this._root);
+class Translations$web$cortex$home$memory$en {
+	Translations$web$cortex$home$memory$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -17515,8 +17762,8 @@ class TranslationsWebCortexHomeMemoryEn {
 }
 
 // Path: web.cortex.home.notes
-class TranslationsWebCortexHomeNotesEn {
-	TranslationsWebCortexHomeNotesEn.internal(this._root);
+class Translations$web$cortex$home$notes$en {
+	Translations$web$cortex$home$notes$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -17533,8 +17780,8 @@ class TranslationsWebCortexHomeNotesEn {
 }
 
 // Path: web.cortex.home.knowledge
-class TranslationsWebCortexHomeKnowledgeEn {
-	TranslationsWebCortexHomeKnowledgeEn.internal(this._root);
+class Translations$web$cortex$home$knowledge$en {
+	Translations$web$cortex$home$knowledge$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -17548,8 +17795,8 @@ class TranslationsWebCortexHomeKnowledgeEn {
 }
 
 // Path: web.cortex.home.proposals
-class TranslationsWebCortexHomeProposalsEn {
-	TranslationsWebCortexHomeProposalsEn.internal(this._root);
+class Translations$web$cortex$home$proposals$en {
+	Translations$web$cortex$home$proposals$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -17590,8 +17837,8 @@ class TranslationsWebCortexHomeProposalsEn {
 }
 
 // Path: web.cortex.blueprint.mode
-class TranslationsWebCortexBlueprintModeEn {
-	TranslationsWebCortexBlueprintModeEn.internal(this._root);
+class Translations$web$cortex$blueprint$mode$en {
+	Translations$web$cortex$blueprint$mode$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -17608,8 +17855,8 @@ class TranslationsWebCortexBlueprintModeEn {
 }
 
 // Path: web.cortex.blueprint.writePolicy
-class TranslationsWebCortexBlueprintWritePolicyEn {
-	TranslationsWebCortexBlueprintWritePolicyEn.internal(this._root);
+class Translations$web$cortex$blueprint$writePolicy$en {
+	Translations$web$cortex$blueprint$writePolicy$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -17626,8 +17873,8 @@ class TranslationsWebCortexBlueprintWritePolicyEn {
 }
 
 // Path: web.cortex.settings.injection
-class TranslationsWebCortexSettingsInjectionEn {
-	TranslationsWebCortexSettingsInjectionEn.internal(this._root);
+class Translations$web$cortex$settings$injection$en {
+	Translations$web$cortex$settings$injection$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -17642,7 +17889,7 @@ class TranslationsWebCortexSettingsInjectionEn {
 	/// en: 'active'
 	String get active => 'active';
 
-	late final TranslationsWebCortexSettingsInjectionModeEn mode = TranslationsWebCortexSettingsInjectionModeEn.internal(_root);
+	late final Translations$web$cortex$settings$injection$mode$en mode = Translations$web$cortex$settings$injection$mode$en.internal(_root);
 
 	/// en: 'Injection mode saved — new sessions use it immediately (no backend restart)'
 	String get savedToast => 'Injection mode saved — new sessions use it immediately (no backend restart)';
@@ -17655,8 +17902,8 @@ class TranslationsWebCortexSettingsInjectionEn {
 }
 
 // Path: web.database.dialog.drivers
-class TranslationsWebDatabaseDialogDriversEn {
-	TranslationsWebDatabaseDialogDriversEn.internal(this._root);
+class Translations$web$database$dialog$drivers$en {
+	Translations$web$database$dialog$drivers$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -17676,8 +17923,8 @@ class TranslationsWebDatabaseDialogDriversEn {
 }
 
 // Path: web.roundTable.dialog.personaPresets
-class TranslationsWebRoundTableDialogPersonaPresetsEn {
-	TranslationsWebRoundTableDialogPersonaPresetsEn.internal(this._root);
+class Translations$web$roundTable$dialog$personaPresets$en {
+	Translations$web$roundTable$dialog$personaPresets$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -17703,8 +17950,8 @@ class TranslationsWebRoundTableDialogPersonaPresetsEn {
 }
 
 // Path: sessions.inspector.shell.tabs
-class TranslationsSessionsInspectorShellTabsEn {
-	TranslationsSessionsInspectorShellTabsEn.internal(this._root);
+class Translations$sessions$inspector$shell$tabs$en {
+	Translations$sessions$inspector$shell$tabs$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -17733,8 +17980,8 @@ class TranslationsSessionsInspectorShellTabsEn {
 }
 
 // Path: web.notes.vaultSync.conflict.kinds
-class TranslationsWebNotesVaultSyncConflictKindsEn {
-	TranslationsWebNotesVaultSyncConflictKindsEn.internal(this._root);
+class Translations$web$notes$vaultSync$conflict$kinds$en {
+	Translations$web$notes$vaultSync$conflict$kinds$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -17754,8 +18001,8 @@ class TranslationsWebNotesVaultSyncConflictKindsEn {
 }
 
 // Path: web.memoryAmbient.rules.row.summary
-class TranslationsWebMemoryAmbientRulesRowSummaryEn {
-	TranslationsWebMemoryAmbientRulesRowSummaryEn.internal(this._root);
+class Translations$web$memoryAmbient$rules$row$summary$en {
+	Translations$web$memoryAmbient$rules$row$summary$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -17775,19 +18022,19 @@ class TranslationsWebMemoryAmbientRulesRowSummaryEn {
 }
 
 // Path: web.cortex.settings.injection.mode
-class TranslationsWebCortexSettingsInjectionModeEn {
-	TranslationsWebCortexSettingsInjectionModeEn.internal(this._root);
+class Translations$web$cortex$settings$injection$mode$en {
+	Translations$web$cortex$settings$injection$mode$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	late final TranslationsWebCortexSettingsInjectionModeLeanEn lean = TranslationsWebCortexSettingsInjectionModeLeanEn.internal(_root);
-	late final TranslationsWebCortexSettingsInjectionModeFullEn full = TranslationsWebCortexSettingsInjectionModeFullEn.internal(_root);
+	late final Translations$web$cortex$settings$injection$mode$lean$en lean = Translations$web$cortex$settings$injection$mode$lean$en.internal(_root);
+	late final Translations$web$cortex$settings$injection$mode$full$en full = Translations$web$cortex$settings$injection$mode$full$en.internal(_root);
 }
 
 // Path: web.cortex.settings.injection.mode.lean
-class TranslationsWebCortexSettingsInjectionModeLeanEn {
-	TranslationsWebCortexSettingsInjectionModeLeanEn.internal(this._root);
+class Translations$web$cortex$settings$injection$mode$lean$en {
+	Translations$web$cortex$settings$injection$mode$lean$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -17801,8 +18048,8 @@ class TranslationsWebCortexSettingsInjectionModeLeanEn {
 }
 
 // Path: web.cortex.settings.injection.mode.full
-class TranslationsWebCortexSettingsInjectionModeFullEn {
-	TranslationsWebCortexSettingsInjectionModeFullEn.internal(this._root);
+class Translations$web$cortex$settings$injection$mode$full$en {
+	Translations$web$cortex$settings$injection$mode$full$en.internal(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -21967,6 +22214,85 @@ extension on Translations {
 			'cortexSettings.providersManageOnWeb' => 'Add or edit providers on the web admin.',
 			'cortexSettings.providersLoadFailed' => 'Failed to load providers',
 			'cortexSettings.defaultBadge' => 'default',
+			'agentTasks.navLabel' => 'Tasks',
+			'agentTasks.title' => 'Agent Tasks',
+			'agentTasks.create' => 'New task',
+			'agentTasks.emptyTitle' => 'No agent tasks',
+			'agentTasks.emptyBody' => 'Create a non-interactive agent task. Terminal sessions remain separate.',
+			'agentTasks.refresh' => 'Refresh',
+			'agentTasks.all' => 'All',
+			'agentTasks.loadMore' => 'Load more',
+			'agentTasks.offline' => 'Offline. Showing the last loaded state.',
+			'agentTasks.retry' => 'Retry',
+			'agentTasks.project' => 'Project',
+			'agentTasks.provider' => 'Provider',
+			'agentTasks.prompt' => 'Prompt',
+			'agentTasks.workspace' => 'Workspace',
+			'agentTasks.contextMode' => 'Context',
+			'agentTasks.newContext' => 'New context',
+			'agentTasks.continueContext' => 'Continue context',
+			'agentTasks.attachments' => 'Attachments',
+			'agentTasks.timeout' => 'Timeout (seconds)',
+			'agentTasks.telegramNotify' => 'Notify in Telegram',
+			'agentTasks.submit' => 'Create task',
+			'agentTasks.creating' => 'Creating…',
+			'agentTasks.required' => 'This field is required',
+			'agentTasks.invalidTimeout' => 'Enter a timeout between 30 and 86400 seconds',
+			'agentTasks.details' => 'Task details',
+			'agentTasks.runs' => 'Runs',
+			'agentTasks.events' => 'Output',
+			'agentTasks.artifacts' => 'Artifacts',
+			'agentTasks.continueAction' => 'Continue',
+			'agentTasks.cancelAction' => 'Cancel',
+			'agentTasks.confirm' => 'Confirm',
+			'agentTasks.retryAction' => 'Retry',
+			'agentTasks.confirmCancel' => 'Cancel this task and terminate its active process tree?',
+			'agentTasks.confirmRetry' => 'Create a new retry run?',
+			'agentTasks.waitingInput' => 'Input required',
+			'agentTasks.continueHint' => 'Enter follow-up instructions',
+			'agentTasks.send' => 'Send',
+			'agentTasks.stdout' => 'stdout',
+			'agentTasks.stderr' => 'stderr',
+			'agentTasks.raw' => 'raw',
+			'agentTasks.download' => 'Download',
+			'agentTasks.verified' => 'Integrity verified',
+			'agentTasks.downloadFailed' => 'Artifact download failed',
+			'agentTasks.noRuns' => 'No runs yet',
+			'agentTasks.noOutput' => 'No output yet',
+			'agentTasks.source' => 'Source',
+			'agentTasks.status' => 'Status',
+			'agentTasks.created' => 'Created',
+			'agentTasks.updated' => 'Updated',
+			'agentTasks.context' => 'Runtime context',
+			'agentTasks.currentRun' => 'Current run',
+			'agentTasks.networkError' => 'Network request failed',
+			'agentTasks.permissionError' => 'You do not have permission for this operation',
+			'agentTasks.sessionIsolation' => 'One-shot tasks do not open or write to terminal sessions.',
+			'agentTasks.capabilityResume' => 'Resume',
+			'agentTasks.capabilityAttachment' => 'Attachments',
+			'agentTasks.smallScreenHint' => 'Fields are stacked for small screens.',
+			'agentTasks.filterStatus' => 'Status filter',
+			'agentTasks.taskCreated' => 'Task created',
+			'agentTasks.actionFailed' => 'Action failed',
+			'agentTasks.loading' => 'Loading…',
+			'agentTasks.open' => 'Open',
+			'agentTasks.timeline' => 'Timeline',
+			'agentTasks.result' => 'Result',
+			'agentTasks.idempotent' => 'Duplicate taps reuse the same idempotency key.',
+			'agentTasks.telegramSource' => 'Telegram',
+			'agentTasks.mobileSource' => 'Mobile',
+			'agentTasks.apiSource' => 'API',
+			'agentTasks.unknownSource' => 'Unknown',
+			'agentTasks.cancelled' => 'Cancelled',
+			'agentTasks.completed' => 'Completed',
+			'agentTasks.failed' => 'Failed',
+			'agentTasks.timedOut' => 'Timed out',
+			'agentTasks.running' => 'Running',
+			'agentTasks.queued' => 'Queued',
+			'agentTasks.pending' => 'Pending',
+			'agentTasks.waiting' => 'Waiting for input',
+			'agentTasks.unknown' => 'Unknown',
+			'agentTasks.allProjects' => 'All projects',
 			_ => null,
 		};
 	}

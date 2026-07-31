@@ -34,8 +34,8 @@ dependencies:
   path: ^1.9.1
   pretty_dio_logger: ^1.4.0
   shared_preferences: ^2.3.4
-  slang: ^4.14.0
-  slang_flutter: ^4.14.0
+  slang: 4.18.0
+  slang_flutter: 4.18.0
   url_launcher: ^6.3.1
   web_socket_channel: ^3.0.1
   xterm: ^4.0.0
@@ -47,7 +47,7 @@ dev_dependencies:
     sdk: flutter
   freezed: ^2.5.7
   json_serializable: ^6.9.0
-  slang_build_runner: ^4.14.0
+  slang_build_runner: 4.18.0
   very_good_analysis: ^7.0.0
 
 # Use the in-repo xterm fork (third_party/xterm) which enables IME features

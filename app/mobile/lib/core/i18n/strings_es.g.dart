@@ -39,42 +39,43 @@ class TranslationsEs extends Translations with BaseTranslations<AppLocale, Trans
 	TranslationsEs $copyWith({TranslationMetadata<AppLocale, Translations>? meta}) => TranslationsEs(meta: meta ?? this.$meta);
 
 	// Translations
-	@override late final _TranslationsCommonEs common = _TranslationsCommonEs._(_root);
-	@override late final _TranslationsAuthEs auth = _TranslationsAuthEs._(_root);
-	@override late final _TranslationsNavEs nav = _TranslationsNavEs._(_root);
-	@override late final _TranslationsWebEs web = _TranslationsWebEs._(_root);
-	@override late final _TranslationsMoreEs more = _TranslationsMoreEs._(_root);
-	@override late final _TranslationsActivityEs activity = _TranslationsActivityEs._(_root);
-	@override late final _TranslationsMemoryAmbientEs memoryAmbient = _TranslationsMemoryAmbientEs._(_root);
-	@override late final _TranslationsSessionsEs sessions = _TranslationsSessionsEs._(_root);
-	@override late final _TranslationsMcpEs mcp = _TranslationsMcpEs._(_root);
-	@override late final _TranslationsProvidersEs providers = _TranslationsProvidersEs._(_root);
-	@override late final _TranslationsIntegrationsEs integrations = _TranslationsIntegrationsEs._(_root);
-	@override late final _TranslationsMemoryWorkersEs memoryWorkers = _TranslationsMemoryWorkersEs._(_root);
-	@override late final _TranslationsMemoryArchivedEs memoryArchived = _TranslationsMemoryArchivedEs._(_root);
-	@override late final _TranslationsProjectEs project = _TranslationsProjectEs._(_root);
-	@override late final _TranslationsBackupsEs backups = _TranslationsBackupsEs._(_root);
-	@override late final _TranslationsBackupTargetsEs backupTargets = _TranslationsBackupTargetsEs._(_root);
-	@override late final _TranslationsBackupSchedulesEs backupSchedules = _TranslationsBackupSchedulesEs._(_root);
-	@override late final _TranslationsBackupTargetEditorEs backupTargetEditor = _TranslationsBackupTargetEditorEs._(_root);
-	@override late final _TranslationsGithostsEs githosts = _TranslationsGithostsEs._(_root);
-	@override late final _TranslationsChannelsEs channels = _TranslationsChannelsEs._(_root);
-	@override late final _TranslationsOnboardingEs onboarding = _TranslationsOnboardingEs._(_root);
-	@override late final _TranslationsSkillsEs skills = _TranslationsSkillsEs._(_root);
-	@override late final _TranslationsCustomTasksEs customTasks = _TranslationsCustomTasksEs._(_root);
-	@override late final _TranslationsNotesPageEs notesPage = _TranslationsNotesPageEs._(_root);
-	@override late final _TranslationsDataExportEs dataExport = _TranslationsDataExportEs._(_root);
-	@override late final _TranslationsMemoryEs memory = _TranslationsMemoryEs._(_root);
-	@override late final _TranslationsAboutEs about = _TranslationsAboutEs._(_root);
-	@override late final _TranslationsSettingsEs settings = _TranslationsSettingsEs._(_root);
-	@override late final _TranslationsMemoryQuarantineEs memoryQuarantine = _TranslationsMemoryQuarantineEs._(_root);
-	@override late final _TranslationsCortexHubEs cortexHub = _TranslationsCortexHubEs._(_root);
-	@override late final _TranslationsCortexSettingsEs cortexSettings = _TranslationsCortexSettingsEs._(_root);
+	@override late final _Translations$common$es common = _Translations$common$es._(_root);
+	@override late final _Translations$auth$es auth = _Translations$auth$es._(_root);
+	@override late final _Translations$nav$es nav = _Translations$nav$es._(_root);
+	@override late final _Translations$web$es web = _Translations$web$es._(_root);
+	@override late final _Translations$more$es more = _Translations$more$es._(_root);
+	@override late final _Translations$activity$es activity = _Translations$activity$es._(_root);
+	@override late final _Translations$memoryAmbient$es memoryAmbient = _Translations$memoryAmbient$es._(_root);
+	@override late final _Translations$sessions$es sessions = _Translations$sessions$es._(_root);
+	@override late final _Translations$mcp$es mcp = _Translations$mcp$es._(_root);
+	@override late final _Translations$providers$es providers = _Translations$providers$es._(_root);
+	@override late final _Translations$integrations$es integrations = _Translations$integrations$es._(_root);
+	@override late final _Translations$memoryWorkers$es memoryWorkers = _Translations$memoryWorkers$es._(_root);
+	@override late final _Translations$memoryArchived$es memoryArchived = _Translations$memoryArchived$es._(_root);
+	@override late final _Translations$project$es project = _Translations$project$es._(_root);
+	@override late final _Translations$backups$es backups = _Translations$backups$es._(_root);
+	@override late final _Translations$backupTargets$es backupTargets = _Translations$backupTargets$es._(_root);
+	@override late final _Translations$backupSchedules$es backupSchedules = _Translations$backupSchedules$es._(_root);
+	@override late final _Translations$backupTargetEditor$es backupTargetEditor = _Translations$backupTargetEditor$es._(_root);
+	@override late final _Translations$githosts$es githosts = _Translations$githosts$es._(_root);
+	@override late final _Translations$channels$es channels = _Translations$channels$es._(_root);
+	@override late final _Translations$onboarding$es onboarding = _Translations$onboarding$es._(_root);
+	@override late final _Translations$skills$es skills = _Translations$skills$es._(_root);
+	@override late final _Translations$customTasks$es customTasks = _Translations$customTasks$es._(_root);
+	@override late final _Translations$notesPage$es notesPage = _Translations$notesPage$es._(_root);
+	@override late final _Translations$dataExport$es dataExport = _Translations$dataExport$es._(_root);
+	@override late final _Translations$memory$es memory = _Translations$memory$es._(_root);
+	@override late final _Translations$about$es about = _Translations$about$es._(_root);
+	@override late final _Translations$settings$es settings = _Translations$settings$es._(_root);
+	@override late final _Translations$memoryQuarantine$es memoryQuarantine = _Translations$memoryQuarantine$es._(_root);
+	@override late final _Translations$cortexHub$es cortexHub = _Translations$cortexHub$es._(_root);
+	@override late final _Translations$cortexSettings$es cortexSettings = _Translations$cortexSettings$es._(_root);
+	@override late final _Translations$agentTasks$es agentTasks = _Translations$agentTasks$es._(_root);
 }
 
 // Path: common
-class _TranslationsCommonEs extends TranslationsCommonEn {
-	_TranslationsCommonEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$common$es extends Translations$common$en {
+	_Translations$common$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -96,8 +97,8 @@ class _TranslationsCommonEs extends TranslationsCommonEn {
 }
 
 // Path: auth
-class _TranslationsAuthEs extends TranslationsAuthEn {
-	_TranslationsAuthEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$auth$es extends Translations$auth$en {
+	_Translations$auth$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -115,8 +116,8 @@ class _TranslationsAuthEs extends TranslationsAuthEn {
 }
 
 // Path: nav
-class _TranslationsNavEs extends TranslationsNavEn {
-	_TranslationsNavEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$nav$es extends Translations$nav$en {
+	_Translations$nav$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -141,67 +142,67 @@ class _TranslationsNavEs extends TranslationsNavEn {
 	@override String get docs => 'Docs y setup';
 	@override String get community => 'Comunidad';
 	@override String get sponsor => 'Patrocinar';
-	@override late final _TranslationsNavUpdatesEs updates = _TranslationsNavUpdatesEs._(_root);
+	@override late final _Translations$nav$updates$es updates = _Translations$nav$updates$es._(_root);
 	@override String get roundTable => 'Mesa redonda';
 }
 
 // Path: web
-class _TranslationsWebEs extends TranslationsWebEn {
-	_TranslationsWebEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$es extends Translations$web$en {
+	_Translations$web$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
 	// Translations
 	@override String get brand => 'opendray';
 	@override String get loading => 'Cargando…';
-	@override late final _TranslationsWebTopbarEs topbar = _TranslationsWebTopbarEs._(_root);
-	@override late final _TranslationsWebSessionsEs sessions = _TranslationsWebSessionsEs._(_root);
-	@override late final _TranslationsWebMemoryEs memory = _TranslationsWebMemoryEs._(_root);
-	@override late final _TranslationsWebJournalStaleEs journalStale = _TranslationsWebJournalStaleEs._(_root);
-	@override late final _TranslationsWebConflictsEs conflicts = _TranslationsWebConflictsEs._(_root);
-	@override late final _TranslationsWebMemoryHealthEs memoryHealth = _TranslationsWebMemoryHealthEs._(_root);
-	@override late final _TranslationsWebMemoryConfigEs memoryConfig = _TranslationsWebMemoryConfigEs._(_root);
-	@override late final _TranslationsWebMemoryWorkersEs memoryWorkers = _TranslationsWebMemoryWorkersEs._(_root);
-	@override late final _TranslationsWebArchivedEs archived = _TranslationsWebArchivedEs._(_root);
-	@override late final _TranslationsWebProjectEs project = _TranslationsWebProjectEs._(_root);
-	@override late final _TranslationsWebMemoryInspectorEs memoryInspector = _TranslationsWebMemoryInspectorEs._(_root);
-	@override late final _TranslationsWebNotesEs notes = _TranslationsWebNotesEs._(_root);
-	@override late final _TranslationsWebActivityEs activity = _TranslationsWebActivityEs._(_root);
-	@override late final _TranslationsWebProvidersEs providers = _TranslationsWebProvidersEs._(_root);
-	@override late final _TranslationsWebChannelsEs channels = _TranslationsWebChannelsEs._(_root);
-	@override late final _TranslationsWebIntegrationsEs integrations = _TranslationsWebIntegrationsEs._(_root);
-	@override late final _TranslationsWebPluginsEs plugins = _TranslationsWebPluginsEs._(_root);
-	@override late final _TranslationsWebBackupsEs backups = _TranslationsWebBackupsEs._(_root);
-	@override late final _TranslationsWebServerSettingsEs serverSettings = _TranslationsWebServerSettingsEs._(_root);
-	@override late final _TranslationsWebSettingsEs settings = _TranslationsWebSettingsEs._(_root);
-	@override late final _TranslationsWebLogViewerEs logViewer = _TranslationsWebLogViewerEs._(_root);
-	@override late final _TranslationsWebPathInputEs pathInput = _TranslationsWebPathInputEs._(_root);
-	@override late final _TranslationsWebMemoryAmbientEs memoryAmbient = _TranslationsWebMemoryAmbientEs._(_root);
-	@override late final _TranslationsWebNoteEditorEs noteEditor = _TranslationsWebNoteEditorEs._(_root);
-	@override late final _TranslationsWebExportEs export = _TranslationsWebExportEs._(_root);
-	@override late final _TranslationsWebKnowledgeEs knowledge = _TranslationsWebKnowledgeEs._(_root);
-	@override late final _TranslationsWebCortexEs cortex = _TranslationsWebCortexEs._(_root);
-	@override late final _TranslationsWebDatabaseEs database = _TranslationsWebDatabaseEs._(_root);
-	@override late final _TranslationsWebRoundTableEs roundTable = _TranslationsWebRoundTableEs._(_root);
+	@override late final _Translations$web$topbar$es topbar = _Translations$web$topbar$es._(_root);
+	@override late final _Translations$web$sessions$es sessions = _Translations$web$sessions$es._(_root);
+	@override late final _Translations$web$memory$es memory = _Translations$web$memory$es._(_root);
+	@override late final _Translations$web$journalStale$es journalStale = _Translations$web$journalStale$es._(_root);
+	@override late final _Translations$web$conflicts$es conflicts = _Translations$web$conflicts$es._(_root);
+	@override late final _Translations$web$memoryHealth$es memoryHealth = _Translations$web$memoryHealth$es._(_root);
+	@override late final _Translations$web$memoryConfig$es memoryConfig = _Translations$web$memoryConfig$es._(_root);
+	@override late final _Translations$web$memoryWorkers$es memoryWorkers = _Translations$web$memoryWorkers$es._(_root);
+	@override late final _Translations$web$archived$es archived = _Translations$web$archived$es._(_root);
+	@override late final _Translations$web$project$es project = _Translations$web$project$es._(_root);
+	@override late final _Translations$web$memoryInspector$es memoryInspector = _Translations$web$memoryInspector$es._(_root);
+	@override late final _Translations$web$notes$es notes = _Translations$web$notes$es._(_root);
+	@override late final _Translations$web$activity$es activity = _Translations$web$activity$es._(_root);
+	@override late final _Translations$web$providers$es providers = _Translations$web$providers$es._(_root);
+	@override late final _Translations$web$channels$es channels = _Translations$web$channels$es._(_root);
+	@override late final _Translations$web$integrations$es integrations = _Translations$web$integrations$es._(_root);
+	@override late final _Translations$web$plugins$es plugins = _Translations$web$plugins$es._(_root);
+	@override late final _Translations$web$backups$es backups = _Translations$web$backups$es._(_root);
+	@override late final _Translations$web$serverSettings$es serverSettings = _Translations$web$serverSettings$es._(_root);
+	@override late final _Translations$web$settings$es settings = _Translations$web$settings$es._(_root);
+	@override late final _Translations$web$logViewer$es logViewer = _Translations$web$logViewer$es._(_root);
+	@override late final _Translations$web$pathInput$es pathInput = _Translations$web$pathInput$es._(_root);
+	@override late final _Translations$web$memoryAmbient$es memoryAmbient = _Translations$web$memoryAmbient$es._(_root);
+	@override late final _Translations$web$noteEditor$es noteEditor = _Translations$web$noteEditor$es._(_root);
+	@override late final _Translations$web$export$es export = _Translations$web$export$es._(_root);
+	@override late final _Translations$web$knowledge$es knowledge = _Translations$web$knowledge$es._(_root);
+	@override late final _Translations$web$cortex$es cortex = _Translations$web$cortex$es._(_root);
+	@override late final _Translations$web$database$es database = _Translations$web$database$es._(_root);
+	@override late final _Translations$web$roundTable$es roundTable = _Translations$web$roundTable$es._(_root);
 }
 
 // Path: more
-class _TranslationsMoreEs extends TranslationsMoreEn {
-	_TranslationsMoreEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$more$es extends Translations$more$en {
+	_Translations$more$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
 	// Translations
 	@override String get title => 'Más';
-	@override late final _TranslationsMoreIdentityEs identity = _TranslationsMoreIdentityEs._(_root);
-	@override late final _TranslationsMoreSectionsEs sections = _TranslationsMoreSectionsEs._(_root);
-	@override late final _TranslationsMoreItemsEs items = _TranslationsMoreItemsEs._(_root);
+	@override late final _Translations$more$identity$es identity = _Translations$more$identity$es._(_root);
+	@override late final _Translations$more$sections$es sections = _Translations$more$sections$es._(_root);
+	@override late final _Translations$more$items$es items = _Translations$more$items$es._(_root);
 	@override String get signOut => 'Cerrar sesión';
 }
 
 // Path: activity
-class _TranslationsActivityEs extends TranslationsActivityEn {
-	_TranslationsActivityEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$activity$es extends Translations$activity$en {
+	_Translations$activity$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -212,13 +213,13 @@ class _TranslationsActivityEs extends TranslationsActivityEn {
 	@override String callsCount({required Object count}) => '${count} llamadas';
 	@override String get directionInbound => 'entrante';
 	@override String get directionOutbound => 'saliente';
-	@override late final _TranslationsActivityFilterEs filter = _TranslationsActivityFilterEs._(_root);
-	@override late final _TranslationsActivityDetailEs detail = _TranslationsActivityDetailEs._(_root);
+	@override late final _Translations$activity$filter$es filter = _Translations$activity$filter$es._(_root);
+	@override late final _Translations$activity$detail$es detail = _Translations$activity$detail$es._(_root);
 }
 
 // Path: memoryAmbient
-class _TranslationsMemoryAmbientEs extends TranslationsMemoryAmbientEn {
-	_TranslationsMemoryAmbientEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$memoryAmbient$es extends Translations$memoryAmbient$en {
+	_Translations$memoryAmbient$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -250,34 +251,34 @@ class _TranslationsMemoryAmbientEs extends TranslationsMemoryAmbientEn {
 }
 
 // Path: sessions
-class _TranslationsSessionsEs extends TranslationsSessionsEn {
-	_TranslationsSessionsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$sessions$es extends Translations$sessions$en {
+	_Translations$sessions$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsSessionsDockEs dock = _TranslationsSessionsDockEs._(_root);
-	@override late final _TranslationsSessionsToolsEs tools = _TranslationsSessionsToolsEs._(_root);
+	@override late final _Translations$sessions$dock$es dock = _Translations$sessions$dock$es._(_root);
+	@override late final _Translations$sessions$tools$es tools = _Translations$sessions$tools$es._(_root);
 	@override String get title => 'Sesiones';
 	@override String get refresh => 'Actualizar';
 	@override String get actions => 'Acciones';
 	@override String get spawn => 'Crear';
-	@override late final _TranslationsSessionsFiltersEs filters = _TranslationsSessionsFiltersEs._(_root);
-	@override late final _TranslationsSessionsCardEs card = _TranslationsSessionsCardEs._(_root);
-	@override late final _TranslationsSessionsEmptyEs empty = _TranslationsSessionsEmptyEs._(_root);
+	@override late final _Translations$sessions$filters$es filters = _Translations$sessions$filters$es._(_root);
+	@override late final _Translations$sessions$card$es card = _Translations$sessions$card$es._(_root);
+	@override late final _Translations$sessions$empty$es empty = _Translations$sessions$empty$es._(_root);
 	@override String get errorTitle => 'No se pudieron cargar las sesiones';
-	@override late final _TranslationsSessionsRelativeEs relative = _TranslationsSessionsRelativeEs._(_root);
-	@override late final _TranslationsSessionsDetailEs detail = _TranslationsSessionsDetailEs._(_root);
-	@override late final _TranslationsSessionsTerminalEs terminal = _TranslationsSessionsTerminalEs._(_root);
-	@override late final _TranslationsSessionsActionEs action = _TranslationsSessionsActionEs._(_root);
-	@override late final _TranslationsSessionsDirPickerEs dirPicker = _TranslationsSessionsDirPickerEs._(_root);
-	@override late final _TranslationsSessionsInspectorEs inspector = _TranslationsSessionsInspectorEs._(_root);
-	@override late final _TranslationsSessionsSpawnSheetEs spawnSheet = _TranslationsSessionsSpawnSheetEs._(_root);
+	@override late final _Translations$sessions$relative$es relative = _Translations$sessions$relative$es._(_root);
+	@override late final _Translations$sessions$detail$es detail = _Translations$sessions$detail$es._(_root);
+	@override late final _Translations$sessions$terminal$es terminal = _Translations$sessions$terminal$es._(_root);
+	@override late final _Translations$sessions$action$es action = _Translations$sessions$action$es._(_root);
+	@override late final _Translations$sessions$dirPicker$es dirPicker = _Translations$sessions$dirPicker$es._(_root);
+	@override late final _Translations$sessions$inspector$es inspector = _Translations$sessions$inspector$es._(_root);
+	@override late final _Translations$sessions$spawnSheet$es spawnSheet = _Translations$sessions$spawnSheet$es._(_root);
 }
 
 // Path: mcp
-class _TranslationsMcpEs extends TranslationsMcpEn {
-	_TranslationsMcpEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$mcp$es extends Translations$mcp$en {
+	_Translations$mcp$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -291,12 +292,12 @@ class _TranslationsMcpEs extends TranslationsMcpEn {
 	@override String copiedSnack({required Object id}) => 'Copiado ${id}';
 	@override String get deleteServerTitle => '¿Eliminar servidor MCP?';
 	@override String get deleteSecretTitle => '¿Eliminar secreto?';
-	@override late final _TranslationsMcpErrorPrefixEs errorPrefix = _TranslationsMcpErrorPrefixEs._(_root);
+	@override late final _Translations$mcp$errorPrefix$es errorPrefix = _Translations$mcp$errorPrefix$es._(_root);
 	@override String errorWithMessage({required Object prefix, required Object error}) => '${prefix}: ${error}';
-	@override late final _TranslationsMcpEditorEs editor = _TranslationsMcpEditorEs._(_root);
-	@override late final _TranslationsMcpSecretEs secret = _TranslationsMcpSecretEs._(_root);
-	@override late final _TranslationsMcpPopupEs popup = _TranslationsMcpPopupEs._(_root);
-	@override late final _TranslationsMcpKvEs kv = _TranslationsMcpKvEs._(_root);
+	@override late final _Translations$mcp$editor$es editor = _Translations$mcp$editor$es._(_root);
+	@override late final _Translations$mcp$secret$es secret = _Translations$mcp$secret$es._(_root);
+	@override late final _Translations$mcp$popup$es popup = _Translations$mcp$popup$es._(_root);
+	@override late final _Translations$mcp$kv$es kv = _Translations$mcp$kv$es._(_root);
 	@override String deleteServerBody({required Object id}) => 'Elimina el directorio del vault para ${id}. Las sesiones que referencian este servidor dejan de poder iniciarlo.';
 	@override String deleteServerSnack({required Object id}) => 'Eliminado ${id}.';
 	@override String serversCount({required Object count}) => 'Servidores (${count})';
@@ -319,8 +320,8 @@ class _TranslationsMcpEs extends TranslationsMcpEn {
 }
 
 // Path: providers
-class _TranslationsProvidersEs extends TranslationsProvidersEn {
-	_TranslationsProvidersEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$providers$es extends Translations$providers$en {
+	_Translations$providers$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -330,11 +331,11 @@ class _TranslationsProvidersEs extends TranslationsProvidersEn {
 	@override String saveFailedApi({required Object error}) => 'Error al guardar: ${error}';
 	@override String saveFailedGeneric({required Object error}) => 'Error al guardar: ${error}';
 	@override String get reload => 'Recargar';
-	@override late final _TranslationsProvidersErrorPrefixEs errorPrefix = _TranslationsProvidersErrorPrefixEs._(_root);
+	@override late final _Translations$providers$errorPrefix$es errorPrefix = _Translations$providers$errorPrefix$es._(_root);
 	@override String errorWithMessage({required Object prefix, required Object error}) => '${prefix}: ${error}';
-	@override late final _TranslationsProvidersUpdateCheckEs updateCheck = _TranslationsProvidersUpdateCheckEs._(_root);
-	@override late final _TranslationsProvidersAccountsEs accounts = _TranslationsProvidersAccountsEs._(_root);
-	@override late final _TranslationsProvidersAntigravityAccountsEs antigravityAccounts = _TranslationsProvidersAntigravityAccountsEs._(_root);
+	@override late final _Translations$providers$updateCheck$es updateCheck = _Translations$providers$updateCheck$es._(_root);
+	@override late final _Translations$providers$accounts$es accounts = _Translations$providers$accounts$es._(_root);
+	@override late final _Translations$providers$antigravityAccounts$es antigravityAccounts = _Translations$providers$antigravityAccounts$es._(_root);
 	@override String get configFallbackTitle => 'Configuración del proveedor';
 	@override String get saving => 'Guardando…';
 	@override String get save => 'Guardar';
@@ -349,8 +350,8 @@ class _TranslationsProvidersEs extends TranslationsProvidersEn {
 }
 
 // Path: integrations
-class _TranslationsIntegrationsEs extends TranslationsIntegrationsEn {
-	_TranslationsIntegrationsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$integrations$es extends Translations$integrations$en {
+	_Translations$integrations$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -399,8 +400,8 @@ class _TranslationsIntegrationsEs extends TranslationsIntegrationsEn {
 	@override String get directionAll => 'Todas';
 	@override String get directionInbound => 'Entrantes';
 	@override String get directionOutbound => 'Salientes';
-	@override late final _TranslationsIntegrationsFormEs form = _TranslationsIntegrationsFormEs._(_root);
-	@override late final _TranslationsIntegrationsDefaultAgentEs defaultAgent = _TranslationsIntegrationsDefaultAgentEs._(_root);
+	@override late final _Translations$integrations$form$es form = _Translations$integrations$form$es._(_root);
+	@override late final _Translations$integrations$defaultAgent$es defaultAgent = _Translations$integrations$defaultAgent$es._(_root);
 	@override String get emptyState => 'Regístrala desde el admin web: Integraciones → Nueva.';
 	@override String get sectionRegistered => 'Registradas';
 	@override String get sectionSystem => 'Sistema';
@@ -408,8 +409,8 @@ class _TranslationsIntegrationsEs extends TranslationsIntegrationsEn {
 }
 
 // Path: memoryWorkers
-class _TranslationsMemoryWorkersEs extends TranslationsMemoryWorkersEn {
-	_TranslationsMemoryWorkersEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$memoryWorkers$es extends Translations$memoryWorkers$en {
+	_Translations$memoryWorkers$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -446,12 +447,12 @@ class _TranslationsMemoryWorkersEs extends TranslationsMemoryWorkersEn {
 	@override String testOkSnack({required Object label, required Object duration}) => '${label} OK, ${duration}ms';
 	@override String testFailedReturnedSnack({required Object label, required Object error}) => '${label} falló: ${error}';
 	@override String get unknownError => 'desconocido';
-	@override late final _TranslationsMemoryWorkersTasksEs tasks = _TranslationsMemoryWorkersTasksEs._(_root);
+	@override late final _Translations$memoryWorkers$tasks$es tasks = _Translations$memoryWorkers$tasks$es._(_root);
 }
 
 // Path: memoryArchived
-class _TranslationsMemoryArchivedEs extends TranslationsMemoryArchivedEn {
-	_TranslationsMemoryArchivedEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$memoryArchived$es extends Translations$memoryArchived$en {
+	_Translations$memoryArchived$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -479,17 +480,17 @@ class _TranslationsMemoryArchivedEs extends TranslationsMemoryArchivedEn {
 }
 
 // Path: project
-class _TranslationsProjectEs extends TranslationsProjectEn {
-	_TranslationsProjectEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$project$es extends Translations$project$en {
+	_Translations$project$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
 	// Translations
 	@override String get title => 'Proyecto';
 	@override String get pickFirst => 'Elige primero un proyecto.';
-	@override late final _TranslationsProjectHealthEs health = _TranslationsProjectHealthEs._(_root);
-	@override late final _TranslationsProjectConflictsEs conflicts = _TranslationsProjectConflictsEs._(_root);
-	@override late final _TranslationsProjectJournalPruneEs journalPrune = _TranslationsProjectJournalPruneEs._(_root);
+	@override late final _Translations$project$health$es health = _Translations$project$health$es._(_root);
+	@override late final _Translations$project$conflicts$es conflicts = _Translations$project$conflicts$es._(_root);
+	@override late final _Translations$project$journalPrune$es journalPrune = _Translations$project$journalPrune$es._(_root);
 	@override String loadFailed({required Object error}) => 'Error al cargar: ${error}';
 	@override String projectsLoadFailed({required Object error}) => 'Error al cargar los proyectos: ${error}';
 	@override String get projectLabel => 'Proyecto';
@@ -517,12 +518,12 @@ class _TranslationsProjectEs extends TranslationsProjectEn {
 	@override String get approve => 'Aprobar';
 	@override String replaceConfirmTitle({required Object kind}) => '¿Reemplazar el ${kind} actual?';
 	@override String replaceKind({required Object kind}) => 'Reemplazar ${kind}';
-	@override late final _TranslationsProjectArchivedEs archived = _TranslationsProjectArchivedEs._(_root);
+	@override late final _Translations$project$archived$es archived = _Translations$project$archived$es._(_root);
 }
 
 // Path: backups
-class _TranslationsBackupsEs extends TranslationsBackupsEn {
-	_TranslationsBackupsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$backups$es extends Translations$backups$en {
+	_Translations$backups$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -555,33 +556,33 @@ class _TranslationsBackupsEs extends TranslationsBackupsEn {
 	@override String deleteFailedGeneric({required Object error}) => 'Error al eliminar: ${error}';
 	@override String get menuSchedules => 'Programaciones';
 	@override String get menuTargets => 'Destinos';
-	@override late final _TranslationsBackupsKvEs kv = _TranslationsBackupsKvEs._(_root);
-	@override late final _TranslationsBackupsRecoveryKitEs recoveryKit = _TranslationsBackupsRecoveryKitEs._(_root);
-	@override late final _TranslationsBackupsEmptyMissingDepsEs emptyMissingDeps = _TranslationsBackupsEmptyMissingDepsEs._(_root);
-	@override late final _TranslationsBackupsEmptyNoTargetsEs emptyNoTargets = _TranslationsBackupsEmptyNoTargetsEs._(_root);
-	@override late final _TranslationsBackupsEmptyNoBackupsEs emptyNoBackups = _TranslationsBackupsEmptyNoBackupsEs._(_root);
+	@override late final _Translations$backups$kv$es kv = _Translations$backups$kv$es._(_root);
+	@override late final _Translations$backups$recoveryKit$es recoveryKit = _Translations$backups$recoveryKit$es._(_root);
+	@override late final _Translations$backups$emptyMissingDeps$es emptyMissingDeps = _Translations$backups$emptyMissingDeps$es._(_root);
+	@override late final _Translations$backups$emptyNoTargets$es emptyNoTargets = _Translations$backups$emptyNoTargets$es._(_root);
+	@override late final _Translations$backups$emptyNoBackups$es emptyNoBackups = _Translations$backups$emptyNoBackups$es._(_root);
 	@override String get restartToActivate => 'Reinicia opendray para activar las copias de seguridad';
 	@override String get passphraseSaved => 'Tu passphrase está guardada. El gateway solo la carga al iniciarse, así que los cambios solo surten efecto tras un reinicio.';
 	@override String get keyFileLabel => 'Archivo de clave';
 	@override String get configuredViaLabel => 'Configurado mediante';
-	@override late final _TranslationsBackupsWizardEs wizard = _TranslationsBackupsWizardEs._(_root);
+	@override late final _Translations$backups$wizard$es wizard = _Translations$backups$wizard$es._(_root);
 	@override String get overviewTargets => 'Destinos';
 	@override String get overviewSchedules => 'Programaciones';
 	@override String get overviewBackups => 'Copias de seguridad';
-	@override late final _TranslationsBackupsHealthEs health = _TranslationsBackupsHealthEs._(_root);
+	@override late final _Translations$backups$health$es health = _Translations$backups$health$es._(_root);
 	@override String get failedToLoad => 'Error al cargar las copias de seguridad';
 	@override String get envVarConfigured => 'variable de entorno OPENDRAY_BACKUP_KEY';
 	@override String get savedConfirmCheckbox => 'He guardado esta passphrase en mi gestor de contraseñas';
 	@override String get pgDumpMissing => 'pg_dump no está en el PATH. Instala postgresql-client y reinicia opendray.';
-	@override late final _TranslationsBackupsEncryptionEs encryption = _TranslationsBackupsEncryptionEs._(_root);
+	@override late final _Translations$backups$encryption$es encryption = _Translations$backups$encryption$es._(_root);
 	@override String get restoreFromFile => 'Restaurar desde archivo';
-	@override late final _TranslationsBackupsRestoreEs restore = _TranslationsBackupsRestoreEs._(_root);
-	@override late final _TranslationsBackupsInventoryEs inventory = _TranslationsBackupsInventoryEs._(_root);
+	@override late final _Translations$backups$restore$es restore = _Translations$backups$restore$es._(_root);
+	@override late final _Translations$backups$inventory$es inventory = _Translations$backups$inventory$es._(_root);
 }
 
 // Path: backupTargets
-class _TranslationsBackupTargetsEs extends TranslationsBackupTargetsEn {
-	_TranslationsBackupTargetsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$backupTargets$es extends Translations$backupTargets$en {
+	_Translations$backupTargets$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -597,8 +598,8 @@ class _TranslationsBackupTargetsEs extends TranslationsBackupTargetsEn {
 }
 
 // Path: backupSchedules
-class _TranslationsBackupSchedulesEs extends TranslationsBackupSchedulesEn {
-	_TranslationsBackupSchedulesEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$backupSchedules$es extends Translations$backupSchedules$en {
+	_Translations$backupSchedules$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -638,8 +639,8 @@ class _TranslationsBackupSchedulesEs extends TranslationsBackupSchedulesEn {
 }
 
 // Path: backupTargetEditor
-class _TranslationsBackupTargetEditorEs extends TranslationsBackupTargetEditorEn {
-	_TranslationsBackupTargetEditorEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$backupTargetEditor$es extends Translations$backupTargetEditor$en {
+	_Translations$backupTargetEditor$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -647,7 +648,7 @@ class _TranslationsBackupTargetEditorEs extends TranslationsBackupTargetEditorEn
 	@override String get useHttps => 'Usar HTTPS';
 	@override String get pathStyle => 'Direccionamiento por ruta (path-style)';
 	@override String get pathStyleSubtitle => 'Heredado / MinIO';
-	@override late final _TranslationsBackupTargetEditorKindsEs kinds = _TranslationsBackupTargetEditorKindsEs._(_root);
+	@override late final _Translations$backupTargetEditor$kinds$es kinds = _Translations$backupTargetEditor$kinds$es._(_root);
 	@override String get formTitleEdit => 'Editar destino';
 	@override String get formTitleNew => 'Nuevo destino de backup';
 	@override String idHintAuto({required Object prefix}) => 'Automático: ${prefix}-1';
@@ -699,8 +700,8 @@ class _TranslationsBackupTargetEditorEs extends TranslationsBackupTargetEditorEn
 }
 
 // Path: githosts
-class _TranslationsGithostsEs extends TranslationsGithostsEn {
-	_TranslationsGithostsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$githosts$es extends Translations$githosts$en {
+	_Translations$githosts$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -709,8 +710,8 @@ class _TranslationsGithostsEs extends TranslationsGithostsEn {
 	@override String get addHost => 'Añadir host';
 	@override String get deleteTitle => '¿Eliminar host de Git?';
 	@override String errorWithMessage({required Object prefix, required Object error}) => '${prefix}: ${error}';
-	@override late final _TranslationsGithostsErrorPrefixEs errorPrefix = _TranslationsGithostsErrorPrefixEs._(_root);
-	@override late final _TranslationsGithostsFormEs form = _TranslationsGithostsFormEs._(_root);
+	@override late final _Translations$githosts$errorPrefix$es errorPrefix = _Translations$githosts$errorPrefix$es._(_root);
+	@override late final _Translations$githosts$form$es form = _Translations$githosts$form$es._(_root);
 	@override String deleteBody({required Object host}) => 'Elimina la credencial. Las sessions que intenten listar PRs de ${host} recurrirán a la API sin autenticar.';
 	@override String deletedSnack({required Object name}) => '${name} eliminado.';
 	@override String enabledSnack({required Object name}) => '${name} habilitado.';
@@ -720,8 +721,8 @@ class _TranslationsGithostsEs extends TranslationsGithostsEn {
 }
 
 // Path: channels
-class _TranslationsChannelsEs extends TranslationsChannelsEn {
-	_TranslationsChannelsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$channels$es extends Translations$channels$en {
+	_Translations$channels$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -738,25 +739,25 @@ class _TranslationsChannelsEs extends TranslationsChannelsEn {
 	@override String createFailedApi({required Object error}) => 'Error al crear: ${error}';
 	@override String createFailedGeneric({required Object error}) => 'Error al crear: ${error}';
 	@override String get deleteTitle => '¿Eliminar canal?';
-	@override late final _TranslationsChannelsConfigDialogEs configDialog = _TranslationsChannelsConfigDialogEs._(_root);
-	@override late final _TranslationsChannelsWebhookDialogEs webhookDialog = _TranslationsChannelsWebhookDialogEs._(_root);
+	@override late final _Translations$channels$configDialog$es configDialog = _Translations$channels$configDialog$es._(_root);
+	@override late final _Translations$channels$webhookDialog$es webhookDialog = _Translations$channels$webhookDialog$es._(_root);
 	@override String errorWithMessage({required Object prefix, required Object error}) => '${prefix}: ${error}';
-	@override late final _TranslationsChannelsNotificationsEs notifications = _TranslationsChannelsNotificationsEs._(_root);
-	@override late final _TranslationsChannelsPopupEs popup = _TranslationsChannelsPopupEs._(_root);
-	@override late final _TranslationsChannelsBadgesEs badges = _TranslationsChannelsBadgesEs._(_root);
+	@override late final _Translations$channels$notifications$es notifications = _Translations$channels$notifications$es._(_root);
+	@override late final _Translations$channels$popup$es popup = _Translations$channels$popup$es._(_root);
+	@override late final _Translations$channels$badges$es badges = _Translations$channels$badges$es._(_root);
 	@override String capsLabel({required Object list}) => '· caps: ${list}';
 	@override String get bridgeWebOnly => 'Los canales bridge solo están disponibles en la web';
 	@override String get bridgeEmptyAdd => 'Añade uno desde el admin web: Canales → Nuevo.';
 	@override String get deleteBody => 'Detiene el canal y elimina su configuración. Las notificaciones en curso dirigidas a él se descartarán de forma silenciosa.';
-	@override late final _TranslationsChannelsSnacksEs snacks = _TranslationsChannelsSnacksEs._(_root);
-	@override late final _TranslationsChannelsErrorPrefixEs errorPrefix = _TranslationsChannelsErrorPrefixEs._(_root);
+	@override late final _Translations$channels$snacks$es snacks = _Translations$channels$snacks$es._(_root);
+	@override late final _Translations$channels$errorPrefix$es errorPrefix = _Translations$channels$errorPrefix$es._(_root);
 	@override String get failedToLoad => 'Error al cargar los canales';
-	@override late final _TranslationsChannelsKindsEs kinds = _TranslationsChannelsKindsEs._(_root);
+	@override late final _Translations$channels$kinds$es kinds = _Translations$channels$kinds$es._(_root);
 }
 
 // Path: onboarding
-class _TranslationsOnboardingEs extends TranslationsOnboardingEn {
-	_TranslationsOnboardingEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$onboarding$es extends Translations$onboarding$en {
+	_Translations$onboarding$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -767,8 +768,8 @@ class _TranslationsOnboardingEs extends TranslationsOnboardingEn {
 }
 
 // Path: skills
-class _TranslationsSkillsEs extends TranslationsSkillsEn {
-	_TranslationsSkillsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$skills$es extends Translations$skills$en {
+	_Translations$skills$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -814,8 +815,8 @@ class _TranslationsSkillsEs extends TranslationsSkillsEn {
 }
 
 // Path: customTasks
-class _TranslationsCustomTasksEs extends TranslationsCustomTasksEn {
-	_TranslationsCustomTasksEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$customTasks$es extends Translations$customTasks$en {
+	_Translations$customTasks$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -860,8 +861,8 @@ class _TranslationsCustomTasksEs extends TranslationsCustomTasksEn {
 }
 
 // Path: notesPage
-class _TranslationsNotesPageEs extends TranslationsNotesPageEn {
-	_TranslationsNotesPageEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$notesPage$es extends Translations$notesPage$en {
+	_Translations$notesPage$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -891,100 +892,100 @@ class _TranslationsNotesPageEs extends TranslationsNotesPageEn {
 	@override String get validatePath => 'La ruta es obligatoria';
 	@override String get validatePathDots => 'La ruta no puede contener ".."';
 	@override String get pathHelper => 'Añade .md automáticamente si falta.';
-	@override late final _TranslationsNotesPageEditorEs editor = _TranslationsNotesPageEditorEs._(_root);
+	@override late final _Translations$notesPage$editor$es editor = _Translations$notesPage$editor$es._(_root);
 }
 
 // Path: dataExport
-class _TranslationsDataExportEs extends TranslationsDataExportEn {
-	_TranslationsDataExportEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$dataExport$es extends Translations$dataExport$en {
+	_Translations$dataExport$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
 	// Translations
 	@override String get title => 'Exportación e importación de datos';
 	@override String get subtitle => 'Paquetes a nivel de usuario para migración o verificación, independientes de /backups (recuperación ante desastres).';
-	@override late final _TranslationsDataExportSectionsEs sections = _TranslationsDataExportSectionsEs._(_root);
-	@override late final _TranslationsDataExportFormEs form = _TranslationsDataExportFormEs._(_root);
-	@override late final _TranslationsDataExportHistoryEs history = _TranslationsDataExportHistoryEs._(_root);
-	@override late final _TranslationsDataExportImportEs import = _TranslationsDataExportImportEs._(_root);
-	@override late final _TranslationsDataExportImportsEs imports = _TranslationsDataExportImportsEs._(_root);
-	@override late final _TranslationsDataExportRelativeEs relative = _TranslationsDataExportRelativeEs._(_root);
-	@override late final _TranslationsDataExportStatusEs status = _TranslationsDataExportStatusEs._(_root);
+	@override late final _Translations$dataExport$sections$es sections = _Translations$dataExport$sections$es._(_root);
+	@override late final _Translations$dataExport$form$es form = _Translations$dataExport$form$es._(_root);
+	@override late final _Translations$dataExport$history$es history = _Translations$dataExport$history$es._(_root);
+	@override late final _Translations$dataExport$import$es import = _Translations$dataExport$import$es._(_root);
+	@override late final _Translations$dataExport$imports$es imports = _Translations$dataExport$imports$es._(_root);
+	@override late final _Translations$dataExport$relative$es relative = _Translations$dataExport$relative$es._(_root);
+	@override late final _Translations$dataExport$status$es status = _Translations$dataExport$status$es._(_root);
 }
 
 // Path: memory
-class _TranslationsMemoryEs extends TranslationsMemoryEn {
-	_TranslationsMemoryEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$memory$es extends Translations$memory$en {
+	_Translations$memory$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsMemoryStatusEs status = _TranslationsMemoryStatusEs._(_root);
+	@override late final _Translations$memory$status$es status = _Translations$memory$status$es._(_root);
 	@override String get title => 'Memoria';
 	@override String get more => 'Más';
 	@override String get workers => 'Workers de memoria';
-	@override late final _TranslationsMemoryRankEs rank = _TranslationsMemoryRankEs._(_root);
+	@override late final _Translations$memory$rank$es rank = _Translations$memory$rank$es._(_root);
 	@override String get kNew => 'Nuevo';
 	@override String get searchHint => 'Buscar…';
 	@override String get projectLabel => 'Proyecto';
 	@override String get filterHint => 'Filtrar por nombre o ruta…';
 	@override String get copied => 'Copiado';
 	@override String get copyTooltip => 'Copiar texto';
-	@override late final _TranslationsMemoryDeleteAllConfirmEs deleteAllConfirm = _TranslationsMemoryDeleteAllConfirmEs._(_root);
+	@override late final _Translations$memory$deleteAllConfirm$es deleteAllConfirm = _Translations$memory$deleteAllConfirm$es._(_root);
 	@override String deletedSnackOne({required Object n}) => 'Se eliminó ${n} elemento de memoria';
 	@override String deletedSnackOther({required Object n}) => 'Se eliminaron ${n} elementos de memoria';
 	@override String bulkDeleteFailedApi({required Object error}) => 'Error al eliminar en bloque: ${error}';
 	@override String bulkDeleteFailedGeneric({required Object error}) => 'Error al eliminar en bloque: ${error}';
-	@override late final _TranslationsMemoryDeleteOneEs deleteOne = _TranslationsMemoryDeleteOneEs._(_root);
-	@override late final _TranslationsMemoryScopeEs scope = _TranslationsMemoryScopeEs._(_root);
-	@override late final _TranslationsMemoryCreateEs create = _TranslationsMemoryCreateEs._(_root);
+	@override late final _Translations$memory$deleteOne$es deleteOne = _Translations$memory$deleteOne$es._(_root);
+	@override late final _Translations$memory$scope$es scope = _Translations$memory$scope$es._(_root);
+	@override late final _Translations$memory$create$es create = _Translations$memory$create$es._(_root);
 	@override String get archive => 'Archivar';
 	@override String get quarantine => 'Cuarentena';
 	@override String get archivedToast => 'Memoria archivada — restaurable desde Archivado';
 	@override String get quarantinedToast => 'Memoria en cuarentena — revísala en Cortex → Cuarentena';
 	@override String archiveFailed({required Object error}) => 'Error al archivar: ${error}';
 	@override String quarantineFailed({required Object error}) => 'Error al poner en cuarentena: ${error}';
-	@override late final _TranslationsMemoryReembedEs reembed = _TranslationsMemoryReembedEs._(_root);
+	@override late final _Translations$memory$reembed$es reembed = _Translations$memory$reembed$es._(_root);
 }
 
 // Path: about
-class _TranslationsAboutEs extends TranslationsAboutEn {
-	_TranslationsAboutEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$about$es extends Translations$about$en {
+	_Translations$about$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
 	// Translations
 	@override String get title => 'Acerca de';
 	@override String get loading => 'Cargando…';
-	@override late final _TranslationsAboutSectionsEs sections = _TranslationsAboutSectionsEs._(_root);
-	@override late final _TranslationsAboutFieldsEs fields = _TranslationsAboutFieldsEs._(_root);
+	@override late final _Translations$about$sections$es sections = _Translations$about$sections$es._(_root);
+	@override late final _Translations$about$fields$es fields = _Translations$about$fields$es._(_root);
 	@override String copied({required Object label}) => '${label} copiado';
 	@override String get copyTooltip => 'Copiar';
-	@override late final _TranslationsAboutCopyLabelsEs copyLabels = _TranslationsAboutCopyLabelsEs._(_root);
+	@override late final _Translations$about$copyLabels$es copyLabels = _Translations$about$copyLabels$es._(_root);
 	@override String get tagline => 'opendray móvil, control del gateway multi-CLI.\nFuente: github.com/Opendray/opendray';
-	@override late final _TranslationsAboutGatewayEs gateway = _TranslationsAboutGatewayEs._(_root);
+	@override late final _Translations$about$gateway$es gateway = _Translations$about$gateway$es._(_root);
 }
 
 // Path: settings
-class _TranslationsSettingsEs extends TranslationsSettingsEn {
-	_TranslationsSettingsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$settings$es extends Translations$settings$en {
+	_Translations$settings$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
 	// Translations
 	@override String get title => 'Ajustes';
-	@override late final _TranslationsSettingsLanguageEs language = _TranslationsSettingsLanguageEs._(_root);
-	@override late final _TranslationsSettingsAppearanceEs appearance = _TranslationsSettingsAppearanceEs._(_root);
-	@override late final _TranslationsSettingsAccountEs account = _TranslationsSettingsAccountEs._(_root);
-	@override late final _TranslationsSettingsGatewayEs gateway = _TranslationsSettingsGatewayEs._(_root);
-	@override late final _TranslationsSettingsChangeCredentialsEs changeCredentials = _TranslationsSettingsChangeCredentialsEs._(_root);
-	@override late final _TranslationsSettingsLogViewerEs logViewer = _TranslationsSettingsLogViewerEs._(_root);
-	@override late final _TranslationsSettingsServerSettingsEs serverSettings = _TranslationsSettingsServerSettingsEs._(_root);
+	@override late final _Translations$settings$language$es language = _Translations$settings$language$es._(_root);
+	@override late final _Translations$settings$appearance$es appearance = _Translations$settings$appearance$es._(_root);
+	@override late final _Translations$settings$account$es account = _Translations$settings$account$es._(_root);
+	@override late final _Translations$settings$gateway$es gateway = _Translations$settings$gateway$es._(_root);
+	@override late final _Translations$settings$changeCredentials$es changeCredentials = _Translations$settings$changeCredentials$es._(_root);
+	@override late final _Translations$settings$logViewer$es logViewer = _Translations$settings$logViewer$es._(_root);
+	@override late final _Translations$settings$serverSettings$es serverSettings = _Translations$settings$serverSettings$es._(_root);
 }
 
 // Path: memoryQuarantine
-class _TranslationsMemoryQuarantineEs extends TranslationsMemoryQuarantineEn {
-	_TranslationsMemoryQuarantineEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$memoryQuarantine$es extends Translations$memoryQuarantine$en {
+	_Translations$memoryQuarantine$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -1003,8 +1004,8 @@ class _TranslationsMemoryQuarantineEs extends TranslationsMemoryQuarantineEn {
 }
 
 // Path: cortexHub
-class _TranslationsCortexHubEs extends TranslationsCortexHubEn {
-	_TranslationsCortexHubEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$cortexHub$es extends Translations$cortexHub$en {
+	_Translations$cortexHub$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -1039,8 +1040,8 @@ class _TranslationsCortexHubEs extends TranslationsCortexHubEn {
 }
 
 // Path: cortexSettings
-class _TranslationsCortexSettingsEs extends TranslationsCortexSettingsEn {
-	_TranslationsCortexSettingsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$cortexSettings$es extends Translations$cortexSettings$en {
+	_Translations$cortexSettings$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -1056,9 +1057,97 @@ class _TranslationsCortexSettingsEs extends TranslationsCortexSettingsEn {
 	@override String get defaultBadge => 'predeterminado';
 }
 
+// Path: agentTasks
+class _Translations$agentTasks$es extends Translations$agentTasks$en {
+	_Translations$agentTasks$es._(TranslationsEs root) : this._root = root, super.internal(root);
+
+	final TranslationsEs _root; // ignore: unused_field
+
+	// Translations
+	@override String get navLabel => 'Tareas';
+	@override String get title => 'Tareas de agente';
+	@override String get create => 'Nueva tarea';
+	@override String get emptyTitle => 'No hay tareas de agente';
+	@override String get emptyBody => 'Crea una tarea de agente no interactiva. Las sesiones de terminal permanecen separadas.';
+	@override String get refresh => 'Actualizar';
+	@override String get all => 'Todas';
+	@override String get loadMore => 'Cargar más';
+	@override String get offline => 'Sin conexión. Se muestra el último estado cargado.';
+	@override String get retry => 'Reintentar';
+	@override String get project => 'Proyecto';
+	@override String get provider => 'Proveedor';
+	@override String get prompt => 'Instrucción';
+	@override String get workspace => 'Espacio de trabajo';
+	@override String get contextMode => 'Contexto';
+	@override String get newContext => 'Contexto nuevo';
+	@override String get continueContext => 'Continuar contexto';
+	@override String get attachments => 'Adjuntos';
+	@override String get timeout => 'Tiempo límite (segundos)';
+	@override String get telegramNotify => 'Notificar en Telegram';
+	@override String get submit => 'Crear tarea';
+	@override String get creating => 'Creando…';
+	@override String get required => 'Este campo es obligatorio';
+	@override String get invalidTimeout => 'Introduce un tiempo entre 30 y 86400 segundos';
+	@override String get details => 'Detalles de la tarea';
+	@override String get runs => 'Ejecuciones';
+	@override String get events => 'Salida';
+	@override String get artifacts => 'Artefactos';
+	@override String get continueAction => 'Continuar';
+	@override String get cancelAction => 'Cancelar';
+	@override String get confirm => 'Confirmar';
+	@override String get retryAction => 'Reintentar';
+	@override String get confirmCancel => '¿Cancelar esta tarea y terminar su árbol de procesos activo?';
+	@override String get confirmRetry => '¿Crear una nueva ejecución de reintento?';
+	@override String get waitingInput => 'Se requiere entrada';
+	@override String get continueHint => 'Introduce instrucciones de seguimiento';
+	@override String get send => 'Enviar';
+	@override String get stdout => 'stdout';
+	@override String get stderr => 'stderr';
+	@override String get raw => 'raw';
+	@override String get download => 'Descargar';
+	@override String get verified => 'Integridad verificada';
+	@override String get downloadFailed => 'Falló la descarga del artefacto';
+	@override String get noRuns => 'Aún no hay ejecuciones';
+	@override String get noOutput => 'Aún no hay salida';
+	@override String get source => 'Origen';
+	@override String get status => 'Estado';
+	@override String get created => 'Creada';
+	@override String get updated => 'Actualizada';
+	@override String get context => 'Contexto de ejecución';
+	@override String get currentRun => 'Ejecución actual';
+	@override String get networkError => 'Falló la solicitud de red';
+	@override String get permissionError => 'No tienes permiso para esta operación';
+	@override String get sessionIsolation => 'Las tareas One-shot no abren ni escriben en sesiones de terminal.';
+	@override String get capabilityResume => 'Reanudar';
+	@override String get capabilityAttachment => 'Adjuntos';
+	@override String get smallScreenHint => 'Los campos se apilan en pantallas pequeñas.';
+	@override String get filterStatus => 'Filtro de estado';
+	@override String get taskCreated => 'Tarea creada';
+	@override String get actionFailed => 'La acción falló';
+	@override String get loading => 'Cargando…';
+	@override String get open => 'Abrir';
+	@override String get timeline => 'Cronología';
+	@override String get result => 'Resultado';
+	@override String get idempotent => 'Los toques duplicados reutilizan la misma clave de idempotencia.';
+	@override String get telegramSource => 'Telegram';
+	@override String get mobileSource => 'Móvil';
+	@override String get apiSource => 'API';
+	@override String get unknownSource => 'Desconocido';
+	@override String get cancelled => 'Cancelada';
+	@override String get completed => 'Completada';
+	@override String get failed => 'Fallida';
+	@override String get timedOut => 'Tiempo agotado';
+	@override String get running => 'En ejecución';
+	@override String get queued => 'En cola';
+	@override String get pending => 'Pendiente';
+	@override String get waiting => 'Esperando entrada';
+	@override String get unknown => 'Desconocido';
+	@override String get allProjects => 'Todos los proyectos';
+}
+
 // Path: nav.updates
-class _TranslationsNavUpdatesEs extends TranslationsNavUpdatesEn {
-	_TranslationsNavUpdatesEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$nav$updates$es extends Translations$nav$updates$en {
+	_Translations$nav$updates$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -1076,8 +1165,8 @@ class _TranslationsNavUpdatesEs extends TranslationsNavUpdatesEn {
 }
 
 // Path: web.topbar
-class _TranslationsWebTopbarEs extends TranslationsWebTopbarEn {
-	_TranslationsWebTopbarEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$topbar$es extends Translations$web$topbar$en {
+	_Translations$web$topbar$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -1102,28 +1191,28 @@ class _TranslationsWebTopbarEs extends TranslationsWebTopbarEn {
 }
 
 // Path: web.sessions
-class _TranslationsWebSessionsEs extends TranslationsWebSessionsEn {
-	_TranslationsWebSessionsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$sessions$es extends Translations$web$sessions$en {
+	_Translations$web$sessions$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsWebSessionsListEs list = _TranslationsWebSessionsListEs._(_root);
-	@override late final _TranslationsWebSessionsTabsEs tabs = _TranslationsWebSessionsTabsEs._(_root);
-	@override late final _TranslationsWebSessionsPageEs page = _TranslationsWebSessionsPageEs._(_root);
-	@override late final _TranslationsWebSessionsEmptyEs empty = _TranslationsWebSessionsEmptyEs._(_root);
-	@override late final _TranslationsWebSessionsHeaderEs header = _TranslationsWebSessionsHeaderEs._(_root);
-	@override late final _TranslationsWebSessionsTerminalEs terminal = _TranslationsWebSessionsTerminalEs._(_root);
-	@override late final _TranslationsWebSessionsSpawnEs spawn = _TranslationsWebSessionsSpawnEs._(_root);
-	@override late final _TranslationsWebSessionsAccountSwitcherEs accountSwitcher = _TranslationsWebSessionsAccountSwitcherEs._(_root);
-	@override late final _TranslationsWebSessionsInspectorEs inspector = _TranslationsWebSessionsInspectorEs._(_root);
-	@override late final _TranslationsWebSessionsEndedEs ended = _TranslationsWebSessionsEndedEs._(_root);
-	@override late final _TranslationsWebSessionsFileBrowserEs fileBrowser = _TranslationsWebSessionsFileBrowserEs._(_root);
+	@override late final _Translations$web$sessions$list$es list = _Translations$web$sessions$list$es._(_root);
+	@override late final _Translations$web$sessions$tabs$es tabs = _Translations$web$sessions$tabs$es._(_root);
+	@override late final _Translations$web$sessions$page$es page = _Translations$web$sessions$page$es._(_root);
+	@override late final _Translations$web$sessions$empty$es empty = _Translations$web$sessions$empty$es._(_root);
+	@override late final _Translations$web$sessions$header$es header = _Translations$web$sessions$header$es._(_root);
+	@override late final _Translations$web$sessions$terminal$es terminal = _Translations$web$sessions$terminal$es._(_root);
+	@override late final _Translations$web$sessions$spawn$es spawn = _Translations$web$sessions$spawn$es._(_root);
+	@override late final _Translations$web$sessions$accountSwitcher$es accountSwitcher = _Translations$web$sessions$accountSwitcher$es._(_root);
+	@override late final _Translations$web$sessions$inspector$es inspector = _Translations$web$sessions$inspector$es._(_root);
+	@override late final _Translations$web$sessions$ended$es ended = _Translations$web$sessions$ended$es._(_root);
+	@override late final _Translations$web$sessions$fileBrowser$es fileBrowser = _Translations$web$sessions$fileBrowser$es._(_root);
 }
 
 // Path: web.memory
-class _TranslationsWebMemoryEs extends TranslationsWebMemoryEn {
-	_TranslationsWebMemoryEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$memory$es extends Translations$web$memory$en {
+	_Translations$web$memory$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -1138,8 +1227,8 @@ class _TranslationsWebMemoryEs extends TranslationsWebMemoryEn {
 }
 
 // Path: web.journalStale
-class _TranslationsWebJournalStaleEs extends TranslationsWebJournalStaleEn {
-	_TranslationsWebJournalStaleEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$journalStale$es extends Translations$web$journalStale$en {
+	_Translations$web$journalStale$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -1157,8 +1246,8 @@ class _TranslationsWebJournalStaleEs extends TranslationsWebJournalStaleEn {
 }
 
 // Path: web.conflicts
-class _TranslationsWebConflictsEs extends TranslationsWebConflictsEn {
-	_TranslationsWebConflictsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$conflicts$es extends Translations$web$conflicts$en {
+	_Translations$web$conflicts$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -1178,14 +1267,14 @@ class _TranslationsWebConflictsEs extends TranslationsWebConflictsEn {
 	@override String get quickActions => 'Corrección:';
 	@override String get deleteFact => 'Eliminar hecho';
 	@override String deleteFactSide({required Object side, required Object ref}) => 'Eliminar ${side}: ${ref}';
-	@override late final _TranslationsWebConflictsConfirmDeleteEs confirmDelete = _TranslationsWebConflictsConfirmDeleteEs._(_root);
-	@override late final _TranslationsWebConflictsOpenLayerEs openLayer = _TranslationsWebConflictsOpenLayerEs._(_root);
-	@override late final _TranslationsWebConflictsSeverityEs severity = _TranslationsWebConflictsSeverityEs._(_root);
+	@override late final _Translations$web$conflicts$confirmDelete$es confirmDelete = _Translations$web$conflicts$confirmDelete$es._(_root);
+	@override late final _Translations$web$conflicts$openLayer$es openLayer = _Translations$web$conflicts$openLayer$es._(_root);
+	@override late final _Translations$web$conflicts$severity$es severity = _Translations$web$conflicts$severity$es._(_root);
 }
 
 // Path: web.memoryHealth
-class _TranslationsWebMemoryHealthEs extends TranslationsWebMemoryHealthEn {
-	_TranslationsWebMemoryHealthEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$memoryHealth$es extends Translations$web$memoryHealth$en {
+	_Translations$web$memoryHealth$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -1216,23 +1305,23 @@ class _TranslationsWebMemoryHealthEs extends TranslationsWebMemoryHealthEn {
 }
 
 // Path: web.memoryConfig
-class _TranslationsWebMemoryConfigEs extends TranslationsWebMemoryConfigEn {
-	_TranslationsWebMemoryConfigEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$memoryConfig$es extends Translations$web$memoryConfig$en {
+	_Translations$web$memoryConfig$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
 	// Translations
 	@override String get title => 'Ajustes de Cortex';
 	@override String get subtitle => 'Todos los mandos de runtime del ciclo de IA en un solo lugar — inyección de spawn, providers LLM, workers por tarea, triggers de captura, perfiles de inyección, costes de tokens. Los cambios aplican al instante; sin reinicio.';
-	@override late final _TranslationsWebMemoryConfigSectionsEs sections = _TranslationsWebMemoryConfigSectionsEs._(_root);
-	@override late final _TranslationsWebMemoryConfigSectionHintsEs sectionHints = _TranslationsWebMemoryConfigSectionHintsEs._(_root);
-	@override late final _TranslationsWebMemoryConfigMoveBannerEs moveBanner = _TranslationsWebMemoryConfigMoveBannerEs._(_root);
-	@override late final _TranslationsWebMemoryConfigInfraEs infra = _TranslationsWebMemoryConfigInfraEs._(_root);
+	@override late final _Translations$web$memoryConfig$sections$es sections = _Translations$web$memoryConfig$sections$es._(_root);
+	@override late final _Translations$web$memoryConfig$sectionHints$es sectionHints = _Translations$web$memoryConfig$sectionHints$es._(_root);
+	@override late final _Translations$web$memoryConfig$moveBanner$es moveBanner = _Translations$web$memoryConfig$moveBanner$es._(_root);
+	@override late final _Translations$web$memoryConfig$infra$es infra = _Translations$web$memoryConfig$infra$es._(_root);
 }
 
 // Path: web.memoryWorkers
-class _TranslationsWebMemoryWorkersEs extends TranslationsWebMemoryWorkersEn {
-	_TranslationsWebMemoryWorkersEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$memoryWorkers$es extends Translations$web$memoryWorkers$en {
+	_Translations$web$memoryWorkers$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -1273,7 +1362,7 @@ class _TranslationsWebMemoryWorkersEs extends TranslationsWebMemoryWorkersEn {
 	@override String testFailedToast({required Object label}) => '${label} falló';
 	@override String get testCallFailedToast => 'La llamada de prueba falló';
 	@override String get unknownError => 'error desconocido';
-	@override late final _TranslationsWebMemoryWorkersTasksEs tasks = _TranslationsWebMemoryWorkersTasksEs._(_root);
+	@override late final _Translations$web$memoryWorkers$tasks$es tasks = _Translations$web$memoryWorkers$tasks$es._(_root);
 	@override String get modelLabel => 'Modelo';
 	@override String get modelHint => 'Fija el modelo del CLI para esta tarea (p. ej. haiku para tareas básicas). Vacío = predeterminado del CLI.';
 	@override String get modelCliDefault => 'Predeterminado del CLI (último)';
@@ -1290,8 +1379,8 @@ class _TranslationsWebMemoryWorkersEs extends TranslationsWebMemoryWorkersEn {
 }
 
 // Path: web.archived
-class _TranslationsWebArchivedEs extends TranslationsWebArchivedEn {
-	_TranslationsWebArchivedEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$archived$es extends Translations$web$archived$en {
+	_Translations$web$archived$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -1325,72 +1414,72 @@ class _TranslationsWebArchivedEs extends TranslationsWebArchivedEn {
 }
 
 // Path: web.project
-class _TranslationsWebProjectEs extends TranslationsWebProjectEn {
-	_TranslationsWebProjectEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$project$es extends Translations$web$project$en {
+	_Translations$web$project$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsWebProjectPickerEs picker = _TranslationsWebProjectPickerEs._(_root);
+	@override late final _Translations$web$project$picker$es picker = _Translations$web$project$picker$es._(_root);
 	@override String get noCwd => 'Elige un proyecto para gestionar su memoria.';
-	@override late final _TranslationsWebProjectHeaderEs header = _TranslationsWebProjectHeaderEs._(_root);
-	@override late final _TranslationsWebProjectTabsEs tabs = _TranslationsWebProjectTabsEs._(_root);
-	@override late final _TranslationsWebProjectDocLabelEs docLabel = _TranslationsWebProjectDocLabelEs._(_root);
-	@override late final _TranslationsWebProjectEditorEs editor = _TranslationsWebProjectEditorEs._(_root);
-	@override late final _TranslationsWebProjectReadonlyEs readonly = _TranslationsWebProjectReadonlyEs._(_root);
-	@override late final _TranslationsWebProjectJournalEs journal = _TranslationsWebProjectJournalEs._(_root);
-	@override late final _TranslationsWebProjectInboxEs inbox = _TranslationsWebProjectInboxEs._(_root);
-	@override late final _TranslationsWebProjectArchivedEs archived = _TranslationsWebProjectArchivedEs._(_root);
-	@override late final _TranslationsWebProjectResetEs reset = _TranslationsWebProjectResetEs._(_root);
-	@override late final _TranslationsWebProjectLifecycleEs lifecycle = _TranslationsWebProjectLifecycleEs._(_root);
-	@override late final _TranslationsWebProjectDocMetaEs docMeta = _TranslationsWebProjectDocMetaEs._(_root);
-	@override late final _TranslationsWebProjectProposalBannerEs proposalBanner = _TranslationsWebProjectProposalBannerEs._(_root);
-	@override late final _TranslationsWebProjectOverviewEs overview = _TranslationsWebProjectOverviewEs._(_root);
+	@override late final _Translations$web$project$header$es header = _Translations$web$project$header$es._(_root);
+	@override late final _Translations$web$project$tabs$es tabs = _Translations$web$project$tabs$es._(_root);
+	@override late final _Translations$web$project$docLabel$es docLabel = _Translations$web$project$docLabel$es._(_root);
+	@override late final _Translations$web$project$editor$es editor = _Translations$web$project$editor$es._(_root);
+	@override late final _Translations$web$project$readonly$es readonly = _Translations$web$project$readonly$es._(_root);
+	@override late final _Translations$web$project$journal$es journal = _Translations$web$project$journal$es._(_root);
+	@override late final _Translations$web$project$inbox$es inbox = _Translations$web$project$inbox$es._(_root);
+	@override late final _Translations$web$project$archived$es archived = _Translations$web$project$archived$es._(_root);
+	@override late final _Translations$web$project$reset$es reset = _Translations$web$project$reset$es._(_root);
+	@override late final _Translations$web$project$lifecycle$es lifecycle = _Translations$web$project$lifecycle$es._(_root);
+	@override late final _Translations$web$project$docMeta$es docMeta = _Translations$web$project$docMeta$es._(_root);
+	@override late final _Translations$web$project$proposalBanner$es proposalBanner = _Translations$web$project$proposalBanner$es._(_root);
+	@override late final _Translations$web$project$overview$es overview = _Translations$web$project$overview$es._(_root);
 }
 
 // Path: web.memoryInspector
-class _TranslationsWebMemoryInspectorEs extends TranslationsWebMemoryInspectorEn {
-	_TranslationsWebMemoryInspectorEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$memoryInspector$es extends Translations$web$memoryInspector$en {
+	_Translations$web$memoryInspector$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsWebMemoryInspectorStatusEs status = _TranslationsWebMemoryInspectorStatusEs._(_root);
-	@override late final _TranslationsWebMemoryInspectorScopeEs scope = _TranslationsWebMemoryInspectorScopeEs._(_root);
-	@override late final _TranslationsWebMemoryInspectorSearchEs search = _TranslationsWebMemoryInspectorSearchEs._(_root);
-	@override late final _TranslationsWebMemoryInspectorRecordsEs records = _TranslationsWebMemoryInspectorRecordsEs._(_root);
-	@override late final _TranslationsWebMemoryInspectorRowEs row = _TranslationsWebMemoryInspectorRowEs._(_root);
-	@override late final _TranslationsWebMemoryInspectorToastsEs toasts = _TranslationsWebMemoryInspectorToastsEs._(_root);
-	@override late final _TranslationsWebMemoryInspectorBulkDeleteEs bulkDelete = _TranslationsWebMemoryInspectorBulkDeleteEs._(_root);
-	@override late final _TranslationsWebMemoryInspectorAddMemEs addMem = _TranslationsWebMemoryInspectorAddMemEs._(_root);
-	@override late final _TranslationsWebMemoryInspectorPickerEs picker = _TranslationsWebMemoryInspectorPickerEs._(_root);
-	@override late final _TranslationsWebMemoryInspectorMigrationBannerEs migrationBanner = _TranslationsWebMemoryInspectorMigrationBannerEs._(_root);
-	@override late final _TranslationsWebMemoryInspectorReembedEs reembed = _TranslationsWebMemoryInspectorReembedEs._(_root);
+	@override late final _Translations$web$memoryInspector$status$es status = _Translations$web$memoryInspector$status$es._(_root);
+	@override late final _Translations$web$memoryInspector$scope$es scope = _Translations$web$memoryInspector$scope$es._(_root);
+	@override late final _Translations$web$memoryInspector$search$es search = _Translations$web$memoryInspector$search$es._(_root);
+	@override late final _Translations$web$memoryInspector$records$es records = _Translations$web$memoryInspector$records$es._(_root);
+	@override late final _Translations$web$memoryInspector$row$es row = _Translations$web$memoryInspector$row$es._(_root);
+	@override late final _Translations$web$memoryInspector$toasts$es toasts = _Translations$web$memoryInspector$toasts$es._(_root);
+	@override late final _Translations$web$memoryInspector$bulkDelete$es bulkDelete = _Translations$web$memoryInspector$bulkDelete$es._(_root);
+	@override late final _Translations$web$memoryInspector$addMem$es addMem = _Translations$web$memoryInspector$addMem$es._(_root);
+	@override late final _Translations$web$memoryInspector$picker$es picker = _Translations$web$memoryInspector$picker$es._(_root);
+	@override late final _Translations$web$memoryInspector$migrationBanner$es migrationBanner = _Translations$web$memoryInspector$migrationBanner$es._(_root);
+	@override late final _Translations$web$memoryInspector$reembed$es reembed = _Translations$web$memoryInspector$reembed$es._(_root);
 }
 
 // Path: web.notes
-class _TranslationsWebNotesEs extends TranslationsWebNotesEn {
-	_TranslationsWebNotesEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$notes$es extends Translations$web$notes$en {
+	_Translations$web$notes$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
 	// Translations
 	@override String get title => 'Notas';
-	@override late final _TranslationsWebNotesHeaderEs header = _TranslationsWebNotesHeaderEs._(_root);
-	@override late final _TranslationsWebNotesLeftEs left = _TranslationsWebNotesLeftEs._(_root);
-	@override late final _TranslationsWebNotesTagsEs tags = _TranslationsWebNotesTagsEs._(_root);
-	@override late final _TranslationsWebNotesTreeEs tree = _TranslationsWebNotesTreeEs._(_root);
-	@override late final _TranslationsWebNotesOutlineEs outline = _TranslationsWebNotesOutlineEs._(_root);
-	@override late final _TranslationsWebNotesNewNoteEs newNote = _TranslationsWebNotesNewNoteEs._(_root);
-	@override late final _TranslationsWebNotesEmptyEs empty = _TranslationsWebNotesEmptyEs._(_root);
-	@override late final _TranslationsWebNotesPickerEs picker = _TranslationsWebNotesPickerEs._(_root);
-	@override late final _TranslationsWebNotesVaultSyncEs vaultSync = _TranslationsWebNotesVaultSyncEs._(_root);
-	@override late final _TranslationsWebNotesSyncBadgeEs syncBadge = _TranslationsWebNotesSyncBadgeEs._(_root);
+	@override late final _Translations$web$notes$header$es header = _Translations$web$notes$header$es._(_root);
+	@override late final _Translations$web$notes$left$es left = _Translations$web$notes$left$es._(_root);
+	@override late final _Translations$web$notes$tags$es tags = _Translations$web$notes$tags$es._(_root);
+	@override late final _Translations$web$notes$tree$es tree = _Translations$web$notes$tree$es._(_root);
+	@override late final _Translations$web$notes$outline$es outline = _Translations$web$notes$outline$es._(_root);
+	@override late final _Translations$web$notes$newNote$es newNote = _Translations$web$notes$newNote$es._(_root);
+	@override late final _Translations$web$notes$empty$es empty = _Translations$web$notes$empty$es._(_root);
+	@override late final _Translations$web$notes$picker$es picker = _Translations$web$notes$picker$es._(_root);
+	@override late final _Translations$web$notes$vaultSync$es vaultSync = _Translations$web$notes$vaultSync$es._(_root);
+	@override late final _Translations$web$notes$syncBadge$es syncBadge = _Translations$web$notes$syncBadge$es._(_root);
 }
 
 // Path: web.activity
-class _TranslationsWebActivityEs extends TranslationsWebActivityEn {
-	_TranslationsWebActivityEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$activity$es extends Translations$web$activity$en {
+	_Translations$web$activity$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -1399,33 +1488,33 @@ class _TranslationsWebActivityEs extends TranslationsWebActivityEn {
 	@override String get subtitle => 'Auditoría por llamada de las solicitudes API realizadas por las integraciones registradas. Incluye tanto las llamadas entrantes (una app de terceros que llama a opendray con su clave de API) como las llamadas salientes a través del proxy (admin → proxy de opendray → integración). Las llamadas hechas directamente por esta UI de administración no se registran.';
 	@override String get refresh => 'Actualizar';
 	@override String get refreshTooltip => 'Actualizar';
-	@override late final _TranslationsWebActivityFiltersEs filters = _TranslationsWebActivityFiltersEs._(_root);
+	@override late final _Translations$web$activity$filters$es filters = _Translations$web$activity$filters$es._(_root);
 	@override String callsCount_one({required Object count}) => '${count} llamada';
 	@override String callsCount_other({required Object count}) => '${count} llamadas';
 	@override String get loading => 'Cargando…';
-	@override late final _TranslationsWebActivityTableEs table = _TranslationsWebActivityTableEs._(_root);
-	@override late final _TranslationsWebActivityEmptyEs empty = _TranslationsWebActivityEmptyEs._(_root);
-	@override late final _TranslationsWebActivityEventsEs events = _TranslationsWebActivityEventsEs._(_root);
+	@override late final _Translations$web$activity$table$es table = _Translations$web$activity$table$es._(_root);
+	@override late final _Translations$web$activity$empty$es empty = _Translations$web$activity$empty$es._(_root);
+	@override late final _Translations$web$activity$events$es events = _Translations$web$activity$events$es._(_root);
 }
 
 // Path: web.providers
-class _TranslationsWebProvidersEs extends TranslationsWebProvidersEn {
-	_TranslationsWebProvidersEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$providers$es extends Translations$web$providers$en {
+	_Translations$web$providers$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsWebProvidersListEs list = _TranslationsWebProvidersListEs._(_root);
-	@override late final _TranslationsWebProvidersDetailEs detail = _TranslationsWebProvidersDetailEs._(_root);
-	@override late final _TranslationsWebProvidersConfigFormEs configForm = _TranslationsWebProvidersConfigFormEs._(_root);
-	@override late final _TranslationsWebProvidersClaudeAccountsEs claudeAccounts = _TranslationsWebProvidersClaudeAccountsEs._(_root);
-	@override late final _TranslationsWebProvidersAntigravityAccountsEs antigravityAccounts = _TranslationsWebProvidersAntigravityAccountsEs._(_root);
-	@override late final _TranslationsWebProvidersModelsEs models = _TranslationsWebProvidersModelsEs._(_root);
+	@override late final _Translations$web$providers$list$es list = _Translations$web$providers$list$es._(_root);
+	@override late final _Translations$web$providers$detail$es detail = _Translations$web$providers$detail$es._(_root);
+	@override late final _Translations$web$providers$configForm$es configForm = _Translations$web$providers$configForm$es._(_root);
+	@override late final _Translations$web$providers$claudeAccounts$es claudeAccounts = _Translations$web$providers$claudeAccounts$es._(_root);
+	@override late final _Translations$web$providers$antigravityAccounts$es antigravityAccounts = _Translations$web$providers$antigravityAccounts$es._(_root);
+	@override late final _Translations$web$providers$models$es models = _Translations$web$providers$models$es._(_root);
 }
 
 // Path: web.channels
-class _TranslationsWebChannelsEs extends TranslationsWebChannelsEn {
-	_TranslationsWebChannelsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$channels$es extends Translations$web$channels$en {
+	_Translations$web$channels$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -1434,18 +1523,18 @@ class _TranslationsWebChannelsEs extends TranslationsWebChannelsEn {
 	@override String get subtitle => 'Integraciones de mensajería bidireccional. Cada canal habilitado y no silenciado recibe notificaciones de sesión.';
 	@override String get newButton => 'Nuevo canal';
 	@override String get loading => 'Cargando…';
-	@override late final _TranslationsWebChannelsEmptyEs empty = _TranslationsWebChannelsEmptyEs._(_root);
-	@override late final _TranslationsWebChannelsCardEs card = _TranslationsWebChannelsCardEs._(_root);
-	@override late final _TranslationsWebChannelsToastsEs toasts = _TranslationsWebChannelsToastsEs._(_root);
-	@override late final _TranslationsWebChannelsDialogEs dialog = _TranslationsWebChannelsDialogEs._(_root);
-	@override late final _TranslationsWebChannelsNotificationsEs notifications = _TranslationsWebChannelsNotificationsEs._(_root);
-	@override late final _TranslationsWebChannelsBridgeEs bridge = _TranslationsWebChannelsBridgeEs._(_root);
-	@override late final _TranslationsWebChannelsSetupEs setup = _TranslationsWebChannelsSetupEs._(_root);
+	@override late final _Translations$web$channels$empty$es empty = _Translations$web$channels$empty$es._(_root);
+	@override late final _Translations$web$channels$card$es card = _Translations$web$channels$card$es._(_root);
+	@override late final _Translations$web$channels$toasts$es toasts = _Translations$web$channels$toasts$es._(_root);
+	@override late final _Translations$web$channels$dialog$es dialog = _Translations$web$channels$dialog$es._(_root);
+	@override late final _Translations$web$channels$notifications$es notifications = _Translations$web$channels$notifications$es._(_root);
+	@override late final _Translations$web$channels$bridge$es bridge = _Translations$web$channels$bridge$es._(_root);
+	@override late final _Translations$web$channels$setup$es setup = _Translations$web$channels$setup$es._(_root);
 }
 
 // Path: web.integrations
-class _TranslationsWebIntegrationsEs extends TranslationsWebIntegrationsEn {
-	_TranslationsWebIntegrationsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$integrations$es extends Translations$web$integrations$en {
+	_Translations$web$integrations$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -1454,38 +1543,38 @@ class _TranslationsWebIntegrationsEs extends TranslationsWebIntegrationsEn {
 	@override String get subtitle => 'Aplicaciones externas que consumen opendray. Reenvían mediante reverse-proxy a través de <1>/api/v1/proxy/&lt;prefix&gt;/…</1> y se suscriben a eventos a través del endpoint WS.';
 	@override String get register => 'Registrar';
 	@override String get loading => 'Cargando…';
-	@override late final _TranslationsWebIntegrationsTabsEs tabs = _TranslationsWebIntegrationsTabsEs._(_root);
-	@override late final _TranslationsWebIntegrationsEmptyEs empty = _TranslationsWebIntegrationsEmptyEs._(_root);
+	@override late final _Translations$web$integrations$tabs$es tabs = _Translations$web$integrations$tabs$es._(_root);
+	@override late final _Translations$web$integrations$empty$es empty = _Translations$web$integrations$empty$es._(_root);
 	@override String get groupSystem => 'Sistema (gestionado por opendray)';
 	@override String get groupOperator => 'Registradas por el operador';
-	@override late final _TranslationsWebIntegrationsCardEs card = _TranslationsWebIntegrationsCardEs._(_root);
-	@override late final _TranslationsWebIntegrationsDefaultAgentEs defaultAgent = _TranslationsWebIntegrationsDefaultAgentEs._(_root);
-	@override late final _TranslationsWebIntegrationsRegisterDialogEs register_dialog = _TranslationsWebIntegrationsRegisterDialogEs._(_root);
-	@override late final _TranslationsWebIntegrationsRevealEs reveal = _TranslationsWebIntegrationsRevealEs._(_root);
-	@override late final _TranslationsWebIntegrationsEditDialogEs edit_dialog = _TranslationsWebIntegrationsEditDialogEs._(_root);
-	@override late final _TranslationsWebIntegrationsProxyEs proxy = _TranslationsWebIntegrationsProxyEs._(_root);
+	@override late final _Translations$web$integrations$card$es card = _Translations$web$integrations$card$es._(_root);
+	@override late final _Translations$web$integrations$defaultAgent$es defaultAgent = _Translations$web$integrations$defaultAgent$es._(_root);
+	@override late final _Translations$web$integrations$register_dialog$es register_dialog = _Translations$web$integrations$register_dialog$es._(_root);
+	@override late final _Translations$web$integrations$reveal$es reveal = _Translations$web$integrations$reveal$es._(_root);
+	@override late final _Translations$web$integrations$edit_dialog$es edit_dialog = _Translations$web$integrations$edit_dialog$es._(_root);
+	@override late final _Translations$web$integrations$proxy$es proxy = _Translations$web$integrations$proxy$es._(_root);
 }
 
 // Path: web.plugins
-class _TranslationsWebPluginsEs extends TranslationsWebPluginsEn {
-	_TranslationsWebPluginsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$plugins$es extends Translations$web$plugins$en {
+	_Translations$web$plugins$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
 	// Translations
 	@override String get title => 'Plugins del Inspector';
 	@override String get subtitle => 'Configura las fuentes de datos que se muestran en el panel Inspector de la derecha cuando hay una session abierta. Cada plugin es solo para administradores y se comparte entre todas las sessions. Haz clic en el encabezado de una sección para contraerla.';
-	@override late final _TranslationsWebPluginsCommonEs common = _TranslationsWebPluginsCommonEs._(_root);
-	@override late final _TranslationsWebPluginsMcpEs mcp = _TranslationsWebPluginsMcpEs._(_root);
-	@override late final _TranslationsWebPluginsMcpSecretsEs mcpSecrets = _TranslationsWebPluginsMcpSecretsEs._(_root);
-	@override late final _TranslationsWebPluginsSkillsEs skills = _TranslationsWebPluginsSkillsEs._(_root);
-	@override late final _TranslationsWebPluginsCustomTasksEs customTasks = _TranslationsWebPluginsCustomTasksEs._(_root);
-	@override late final _TranslationsWebPluginsGitHostsEs gitHosts = _TranslationsWebPluginsGitHostsEs._(_root);
+	@override late final _Translations$web$plugins$common$es common = _Translations$web$plugins$common$es._(_root);
+	@override late final _Translations$web$plugins$mcp$es mcp = _Translations$web$plugins$mcp$es._(_root);
+	@override late final _Translations$web$plugins$mcpSecrets$es mcpSecrets = _Translations$web$plugins$mcpSecrets$es._(_root);
+	@override late final _Translations$web$plugins$skills$es skills = _Translations$web$plugins$skills$es._(_root);
+	@override late final _Translations$web$plugins$customTasks$es customTasks = _Translations$web$plugins$customTasks$es._(_root);
+	@override late final _Translations$web$plugins$gitHosts$es gitHosts = _Translations$web$plugins$gitHosts$es._(_root);
 }
 
 // Path: web.backups
-class _TranslationsWebBackupsEs extends TranslationsWebBackupsEn {
-	_TranslationsWebBackupsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$backups$es extends Translations$web$backups$en {
+	_Translations$web$backups$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -1495,35 +1584,35 @@ class _TranslationsWebBackupsEs extends TranslationsWebBackupsEn {
 	@override String get exportData => 'Exportar datos';
 	@override String get loading => 'Cargando…';
 	@override String get loadStatusFailedToast => 'No se pudo cargar el estado de la copia de seguridad';
-	@override late final _TranslationsWebBackupsTabsEs tabs = _TranslationsWebBackupsTabsEs._(_root);
-	@override late final _TranslationsWebBackupsInventoryEs inventory = _TranslationsWebBackupsInventoryEs._(_root);
-	@override late final _TranslationsWebBackupsRestartEs restart = _TranslationsWebBackupsRestartEs._(_root);
-	@override late final _TranslationsWebBackupsSetupEs setup = _TranslationsWebBackupsSetupEs._(_root);
-	@override late final _TranslationsWebBackupsGeneratedEs generated = _TranslationsWebBackupsGeneratedEs._(_root);
-	@override late final _TranslationsWebBackupsStatusEs status = _TranslationsWebBackupsStatusEs._(_root);
-	@override late final _TranslationsWebBackupsBackupsTabEs backupsTab = _TranslationsWebBackupsBackupsTabEs._(_root);
-	@override late final _TranslationsWebBackupsRestoreEs restore = _TranslationsWebBackupsRestoreEs._(_root);
-	@override late final _TranslationsWebBackupsKindEs kind = _TranslationsWebBackupsKindEs._(_root);
-	@override late final _TranslationsWebBackupsVerifyEs verify = _TranslationsWebBackupsVerifyEs._(_root);
-	@override late final _TranslationsWebBackupsHealthEs health = _TranslationsWebBackupsHealthEs._(_root);
-	@override late final _TranslationsWebBackupsTriggerEs trigger = _TranslationsWebBackupsTriggerEs._(_root);
-	@override late final _TranslationsWebBackupsRecoveryKitEs recoveryKit = _TranslationsWebBackupsRecoveryKitEs._(_root);
-	@override late final _TranslationsWebBackupsSchedulesTabEs schedulesTab = _TranslationsWebBackupsSchedulesTabEs._(_root);
-	@override late final _TranslationsWebBackupsNewScheduleEs newSchedule = _TranslationsWebBackupsNewScheduleEs._(_root);
-	@override late final _TranslationsWebBackupsFanoutEs fanout = _TranslationsWebBackupsFanoutEs._(_root);
-	@override late final _TranslationsWebBackupsDedupEs dedup = _TranslationsWebBackupsDedupEs._(_root);
-	@override late final _TranslationsWebBackupsTargetsTabEs targetsTab = _TranslationsWebBackupsTargetsTabEs._(_root);
-	@override late final _TranslationsWebBackupsTargetEditorEs targetEditor = _TranslationsWebBackupsTargetEditorEs._(_root);
+	@override late final _Translations$web$backups$tabs$es tabs = _Translations$web$backups$tabs$es._(_root);
+	@override late final _Translations$web$backups$inventory$es inventory = _Translations$web$backups$inventory$es._(_root);
+	@override late final _Translations$web$backups$restart$es restart = _Translations$web$backups$restart$es._(_root);
+	@override late final _Translations$web$backups$setup$es setup = _Translations$web$backups$setup$es._(_root);
+	@override late final _Translations$web$backups$generated$es generated = _Translations$web$backups$generated$es._(_root);
+	@override late final _Translations$web$backups$status$es status = _Translations$web$backups$status$es._(_root);
+	@override late final _Translations$web$backups$backupsTab$es backupsTab = _Translations$web$backups$backupsTab$es._(_root);
+	@override late final _Translations$web$backups$restore$es restore = _Translations$web$backups$restore$es._(_root);
+	@override late final _Translations$web$backups$kind$es kind = _Translations$web$backups$kind$es._(_root);
+	@override late final _Translations$web$backups$verify$es verify = _Translations$web$backups$verify$es._(_root);
+	@override late final _Translations$web$backups$health$es health = _Translations$web$backups$health$es._(_root);
+	@override late final _Translations$web$backups$trigger$es trigger = _Translations$web$backups$trigger$es._(_root);
+	@override late final _Translations$web$backups$recoveryKit$es recoveryKit = _Translations$web$backups$recoveryKit$es._(_root);
+	@override late final _Translations$web$backups$schedulesTab$es schedulesTab = _Translations$web$backups$schedulesTab$es._(_root);
+	@override late final _Translations$web$backups$newSchedule$es newSchedule = _Translations$web$backups$newSchedule$es._(_root);
+	@override late final _Translations$web$backups$fanout$es fanout = _Translations$web$backups$fanout$es._(_root);
+	@override late final _Translations$web$backups$dedup$es dedup = _Translations$web$backups$dedup$es._(_root);
+	@override late final _Translations$web$backups$targetsTab$es targetsTab = _Translations$web$backups$targetsTab$es._(_root);
+	@override late final _Translations$web$backups$targetEditor$es targetEditor = _Translations$web$backups$targetEditor$es._(_root);
 }
 
 // Path: web.serverSettings
-class _TranslationsWebServerSettingsEs extends TranslationsWebServerSettingsEn {
-	_TranslationsWebServerSettingsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$es extends Translations$web$serverSettings$en {
+	_Translations$web$serverSettings$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsWebServerSettingsSectionsEs sections = _TranslationsWebServerSettingsSectionsEs._(_root);
+	@override late final _Translations$web$serverSettings$sections$es sections = _Translations$web$serverSettings$sections$es._(_root);
 	@override String get loading => 'Cargando ajustes del servidor…';
 	@override String loadFailed({required Object message}) => 'Error al cargar: ${message}';
 	@override String get noConfigFlag => 'opendray se inició sin la opción -config. Los ajustes se cargan únicamente desde variables de entorno y no pueden editarse aquí.';
@@ -1540,46 +1629,46 @@ class _TranslationsWebServerSettingsEs extends TranslationsWebServerSettingsEn {
 	@override String get unsavedHint => 'Tienes cambios sin guardar';
 	@override String get savedHint => 'Todos los cambios guardados';
 	@override String get searchPlaceholder => 'Filtrar campos…';
-	@override late final _TranslationsWebServerSettingsRestartEs restart = _TranslationsWebServerSettingsRestartEs._(_root);
-	@override late final _TranslationsWebServerSettingsFormGroupsEs formGroups = _TranslationsWebServerSettingsFormGroupsEs._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsEs fields = _TranslationsWebServerSettingsFieldsEs._(_root);
-	@override late final _TranslationsWebServerSettingsLiveTailEs liveTail = _TranslationsWebServerSettingsLiveTailEs._(_root);
-	@override late final _TranslationsWebServerSettingsMemoryInspectorCardEs memoryInspectorCard = _TranslationsWebServerSettingsMemoryInspectorCardEs._(_root);
+	@override late final _Translations$web$serverSettings$restart$es restart = _Translations$web$serverSettings$restart$es._(_root);
+	@override late final _Translations$web$serverSettings$formGroups$es formGroups = _Translations$web$serverSettings$formGroups$es._(_root);
+	@override late final _Translations$web$serverSettings$fields$es fields = _Translations$web$serverSettings$fields$es._(_root);
+	@override late final _Translations$web$serverSettings$liveTail$es liveTail = _Translations$web$serverSettings$liveTail$es._(_root);
+	@override late final _Translations$web$serverSettings$memoryInspectorCard$es memoryInspectorCard = _Translations$web$serverSettings$memoryInspectorCard$es._(_root);
 	@override String get localOnnxBanner => 'Requiere que el binario se compile con <1>-tags local_onnx</1>. La compilación estándar devuelve un error de stub claro cuando se selecciona este backend. Consulta el tutorial <3>Memory → ONNX local</3> para los pasos de configuración.';
-	@override late final _TranslationsWebServerSettingsStringListEs stringList = _TranslationsWebServerSettingsStringListEs._(_root);
-	@override late final _TranslationsWebServerSettingsHttpHelpersEs httpHelpers = _TranslationsWebServerSettingsHttpHelpersEs._(_root);
-	@override late final _TranslationsWebServerSettingsProbeEs probe = _TranslationsWebServerSettingsProbeEs._(_root);
-	@override late final _TranslationsWebServerSettingsBackupEs backup = _TranslationsWebServerSettingsBackupEs._(_root);
-	@override late final _TranslationsWebServerSettingsTargetRowEs targetRow = _TranslationsWebServerSettingsTargetRowEs._(_root);
-	@override late final _TranslationsWebServerSettingsToggleEs toggle = _TranslationsWebServerSettingsToggleEs._(_root);
+	@override late final _Translations$web$serverSettings$stringList$es stringList = _Translations$web$serverSettings$stringList$es._(_root);
+	@override late final _Translations$web$serverSettings$httpHelpers$es httpHelpers = _Translations$web$serverSettings$httpHelpers$es._(_root);
+	@override late final _Translations$web$serverSettings$probe$es probe = _Translations$web$serverSettings$probe$es._(_root);
+	@override late final _Translations$web$serverSettings$backup$es backup = _Translations$web$serverSettings$backup$es._(_root);
+	@override late final _Translations$web$serverSettings$targetRow$es targetRow = _Translations$web$serverSettings$targetRow$es._(_root);
+	@override late final _Translations$web$serverSettings$toggle$es toggle = _Translations$web$serverSettings$toggle$es._(_root);
 	@override String get memoryRuntimeBanner => 'El comportamiento de IA en runtime — workers, reglas de captura, perfiles de inyección y modo de spawn — vive en los ajustes de Cortex y se aplica al instante. Esta sección es la mitad de infraestructura: embedder, almacenamiento y gobernanza de fondo (requiere reinicio).';
 	@override String get memoryRuntimeBannerButton => 'Abrir ajustes de Cortex';
 }
 
 // Path: web.settings
-class _TranslationsWebSettingsEs extends TranslationsWebSettingsEn {
-	_TranslationsWebSettingsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$settings$es extends Translations$web$settings$en {
+	_Translations$web$settings$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
 	// Translations
 	@override String get title => 'Ajustes';
 	@override String get subtitle => 'Configuración del espacio de trabajo, la cuenta y el gateway.';
-	@override late final _TranslationsWebSettingsGroupsEs groups = _TranslationsWebSettingsGroupsEs._(_root);
-	@override late final _TranslationsWebSettingsItemsEs items = _TranslationsWebSettingsItemsEs._(_root);
-	@override late final _TranslationsWebSettingsHealthEs health = _TranslationsWebSettingsHealthEs._(_root);
-	@override late final _TranslationsWebSettingsBreadcrumbEs breadcrumb = _TranslationsWebSettingsBreadcrumbEs._(_root);
-	@override late final _TranslationsWebSettingsAppearanceEs appearance = _TranslationsWebSettingsAppearanceEs._(_root);
-	@override late final _TranslationsWebSettingsFontEs font = _TranslationsWebSettingsFontEs._(_root);
-	@override late final _TranslationsWebSettingsAccountEs account = _TranslationsWebSettingsAccountEs._(_root);
-	@override late final _TranslationsWebSettingsChangeCredentialsEs changeCredentials = _TranslationsWebSettingsChangeCredentialsEs._(_root);
-	@override late final _TranslationsWebSettingsSystemEs system = _TranslationsWebSettingsSystemEs._(_root);
-	@override late final _TranslationsWebSettingsAboutEs about = _TranslationsWebSettingsAboutEs._(_root);
+	@override late final _Translations$web$settings$groups$es groups = _Translations$web$settings$groups$es._(_root);
+	@override late final _Translations$web$settings$items$es items = _Translations$web$settings$items$es._(_root);
+	@override late final _Translations$web$settings$health$es health = _Translations$web$settings$health$es._(_root);
+	@override late final _Translations$web$settings$breadcrumb$es breadcrumb = _Translations$web$settings$breadcrumb$es._(_root);
+	@override late final _Translations$web$settings$appearance$es appearance = _Translations$web$settings$appearance$es._(_root);
+	@override late final _Translations$web$settings$font$es font = _Translations$web$settings$font$es._(_root);
+	@override late final _Translations$web$settings$account$es account = _Translations$web$settings$account$es._(_root);
+	@override late final _Translations$web$settings$changeCredentials$es changeCredentials = _Translations$web$settings$changeCredentials$es._(_root);
+	@override late final _Translations$web$settings$system$es system = _Translations$web$settings$system$es._(_root);
+	@override late final _Translations$web$settings$about$es about = _Translations$web$settings$about$es._(_root);
 }
 
 // Path: web.logViewer
-class _TranslationsWebLogViewerEs extends TranslationsWebLogViewerEn {
-	_TranslationsWebLogViewerEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$logViewer$es extends Translations$web$logViewer$en {
+	_Translations$web$logViewer$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -1602,8 +1691,8 @@ class _TranslationsWebLogViewerEs extends TranslationsWebLogViewerEn {
 }
 
 // Path: web.pathInput
-class _TranslationsWebPathInputEs extends TranslationsWebPathInputEn {
-	_TranslationsWebPathInputEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$pathInput$es extends Translations$web$pathInput$en {
+	_Translations$web$pathInput$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -1616,23 +1705,23 @@ class _TranslationsWebPathInputEs extends TranslationsWebPathInputEn {
 }
 
 // Path: web.memoryAmbient
-class _TranslationsWebMemoryAmbientEs extends TranslationsWebMemoryAmbientEn {
-	_TranslationsWebMemoryAmbientEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$memoryAmbient$es extends Translations$web$memoryAmbient$en {
+	_Translations$web$memoryAmbient$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsWebMemoryAmbientHeaderEs header = _TranslationsWebMemoryAmbientHeaderEs._(_root);
+	@override late final _Translations$web$memoryAmbient$header$es header = _Translations$web$memoryAmbient$header$es._(_root);
 	@override String get loading => 'Cargando…';
-	@override late final _TranslationsWebMemoryAmbientProvidersEs providers = _TranslationsWebMemoryAmbientProvidersEs._(_root);
-	@override late final _TranslationsWebMemoryAmbientRulesEs rules = _TranslationsWebMemoryAmbientRulesEs._(_root);
-	@override late final _TranslationsWebMemoryAmbientProfilesEs profiles = _TranslationsWebMemoryAmbientProfilesEs._(_root);
-	@override late final _TranslationsWebMemoryAmbientCostEs cost = _TranslationsWebMemoryAmbientCostEs._(_root);
+	@override late final _Translations$web$memoryAmbient$providers$es providers = _Translations$web$memoryAmbient$providers$es._(_root);
+	@override late final _Translations$web$memoryAmbient$rules$es rules = _Translations$web$memoryAmbient$rules$es._(_root);
+	@override late final _Translations$web$memoryAmbient$profiles$es profiles = _Translations$web$memoryAmbient$profiles$es._(_root);
+	@override late final _Translations$web$memoryAmbient$cost$es cost = _Translations$web$memoryAmbient$cost$es._(_root);
 }
 
 // Path: web.noteEditor
-class _TranslationsWebNoteEditorEs extends TranslationsWebNoteEditorEn {
-	_TranslationsWebNoteEditorEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$noteEditor$es extends Translations$web$noteEditor$en {
+	_Translations$web$noteEditor$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -1643,12 +1732,12 @@ class _TranslationsWebNoteEditorEs extends TranslationsWebNoteEditorEn {
 	@override String tagTitle({required Object tag}) => 'etiqueta #${tag}';
 	@override String get emptyNote => 'Nota vacía. Cambia a Origen para empezar a escribir.';
 	@override String get saveFailedToast => 'Error al guardar';
-	@override late final _TranslationsWebNoteEditorStatusEs status = _TranslationsWebNoteEditorStatusEs._(_root);
+	@override late final _Translations$web$noteEditor$status$es status = _Translations$web$noteEditor$status$es._(_root);
 }
 
 // Path: web.export
-class _TranslationsWebExportEs extends TranslationsWebExportEn {
-	_TranslationsWebExportEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$export$es extends Translations$web$export$en {
+	_Translations$web$export$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -1656,16 +1745,16 @@ class _TranslationsWebExportEs extends TranslationsWebExportEn {
 	@override String get title => 'Exportar datos';
 	@override String get subtitle => 'Genera un paquete zip puntual de las entidades lógicas seleccionadas. Los paquetes se conservan en el servidor durante 24 horas y luego se eliminan automáticamente.';
 	@override String get backToBackups => '← Backups';
-	@override late final _TranslationsWebExportSectionsEs sections = _TranslationsWebExportSectionsEs._(_root);
-	@override late final _TranslationsWebExportFormEs form = _TranslationsWebExportFormEs._(_root);
-	@override late final _TranslationsWebExportHistoryEs history = _TranslationsWebExportHistoryEs._(_root);
-	@override late final _TranslationsWebExportImportEs import = _TranslationsWebExportImportEs._(_root);
-	@override late final _TranslationsWebExportImportsEs imports = _TranslationsWebExportImportsEs._(_root);
+	@override late final _Translations$web$export$sections$es sections = _Translations$web$export$sections$es._(_root);
+	@override late final _Translations$web$export$form$es form = _Translations$web$export$form$es._(_root);
+	@override late final _Translations$web$export$history$es history = _Translations$web$export$history$es._(_root);
+	@override late final _Translations$web$export$import$es import = _Translations$web$export$import$es._(_root);
+	@override late final _Translations$web$export$imports$es imports = _Translations$web$export$imports$es._(_root);
 }
 
 // Path: web.knowledge
-class _TranslationsWebKnowledgeEs extends TranslationsWebKnowledgeEn {
-	_TranslationsWebKnowledgeEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$knowledge$es extends Translations$web$knowledge$en {
+	_Translations$web$knowledge$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -1689,47 +1778,47 @@ class _TranslationsWebKnowledgeEs extends TranslationsWebKnowledgeEn {
 	@override String get delete => 'Eliminar';
 	@override String get deleted => 'Eliminado';
 	@override String get deleteConfirm => '¿Eliminar este nodo? Las habilidades quedan eliminadas; los hechos/entidades derivados automáticamente pueden reaparecer en el próximo barrido.';
-	@override late final _TranslationsWebKnowledgeScopesEs scopes = _TranslationsWebKnowledgeScopesEs._(_root);
-	@override late final _TranslationsWebKnowledgeKbEs kb = _TranslationsWebKnowledgeKbEs._(_root);
-	@override late final _TranslationsWebKnowledgeKindsEs kinds = _TranslationsWebKnowledgeKindsEs._(_root);
-	@override late final _TranslationsWebKnowledgeDistillEs distill = _TranslationsWebKnowledgeDistillEs._(_root);
-	@override late final _TranslationsWebKnowledgeGraphEs graph = _TranslationsWebKnowledgeGraphEs._(_root);
+	@override late final _Translations$web$knowledge$scopes$es scopes = _Translations$web$knowledge$scopes$es._(_root);
+	@override late final _Translations$web$knowledge$kb$es kb = _Translations$web$knowledge$kb$es._(_root);
+	@override late final _Translations$web$knowledge$kinds$es kinds = _Translations$web$knowledge$kinds$es._(_root);
+	@override late final _Translations$web$knowledge$distill$es distill = _Translations$web$knowledge$distill$es._(_root);
+	@override late final _Translations$web$knowledge$graph$es graph = _Translations$web$knowledge$graph$es._(_root);
 }
 
 // Path: web.cortex
-class _TranslationsWebCortexEs extends TranslationsWebCortexEn {
-	_TranslationsWebCortexEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$cortex$es extends Translations$web$cortex$en {
+	_Translations$web$cortex$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsWebCortexHomeEs home = _TranslationsWebCortexHomeEs._(_root);
-	@override late final _TranslationsWebCortexChatEs chat = _TranslationsWebCortexChatEs._(_root);
-	@override late final _TranslationsWebCortexBlueprintEs blueprint = _TranslationsWebCortexBlueprintEs._(_root);
-	@override late final _TranslationsWebCortexQuarantineEs quarantine = _TranslationsWebCortexQuarantineEs._(_root);
-	@override late final _TranslationsWebCortexSettingsEs settings = _TranslationsWebCortexSettingsEs._(_root);
+	@override late final _Translations$web$cortex$home$es home = _Translations$web$cortex$home$es._(_root);
+	@override late final _Translations$web$cortex$chat$es chat = _Translations$web$cortex$chat$es._(_root);
+	@override late final _Translations$web$cortex$blueprint$es blueprint = _Translations$web$cortex$blueprint$es._(_root);
+	@override late final _Translations$web$cortex$quarantine$es quarantine = _Translations$web$cortex$quarantine$es._(_root);
+	@override late final _Translations$web$cortex$settings$es settings = _Translations$web$cortex$settings$es._(_root);
 }
 
 // Path: web.database
-class _TranslationsWebDatabaseEs extends TranslationsWebDatabaseEn {
-	_TranslationsWebDatabaseEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$database$es extends Translations$web$database$en {
+	_Translations$web$database$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsWebDatabaseDialogEs dialog = _TranslationsWebDatabaseDialogEs._(_root);
-	@override late final _TranslationsWebDatabaseResultsEs results = _TranslationsWebDatabaseResultsEs._(_root);
-	@override late final _TranslationsWebDatabaseTreeEs tree = _TranslationsWebDatabaseTreeEs._(_root);
-	@override late final _TranslationsWebDatabaseRowEs row = _TranslationsWebDatabaseRowEs._(_root);
-	@override late final _TranslationsWebDatabaseGridEs grid = _TranslationsWebDatabaseGridEs._(_root);
-	@override late final _TranslationsWebDatabaseConsoleEs console = _TranslationsWebDatabaseConsoleEs._(_root);
-	@override late final _TranslationsWebDatabasePanelEs panel = _TranslationsWebDatabasePanelEs._(_root);
-	@override late final _TranslationsWebDatabaseWorkbenchEs workbench = _TranslationsWebDatabaseWorkbenchEs._(_root);
+	@override late final _Translations$web$database$dialog$es dialog = _Translations$web$database$dialog$es._(_root);
+	@override late final _Translations$web$database$results$es results = _Translations$web$database$results$es._(_root);
+	@override late final _Translations$web$database$tree$es tree = _Translations$web$database$tree$es._(_root);
+	@override late final _Translations$web$database$row$es row = _Translations$web$database$row$es._(_root);
+	@override late final _Translations$web$database$grid$es grid = _Translations$web$database$grid$es._(_root);
+	@override late final _Translations$web$database$console$es console = _Translations$web$database$console$es._(_root);
+	@override late final _Translations$web$database$panel$es panel = _Translations$web$database$panel$es._(_root);
+	@override late final _Translations$web$database$workbench$es workbench = _Translations$web$database$workbench$es._(_root);
 }
 
 // Path: web.roundTable
-class _TranslationsWebRoundTableEs extends TranslationsWebRoundTableEn {
-	_TranslationsWebRoundTableEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$roundTable$es extends Translations$web$roundTable$en {
+	_Translations$web$roundTable$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -1743,17 +1832,17 @@ class _TranslationsWebRoundTableEs extends TranslationsWebRoundTableEn {
 	@override String get selectHint => 'Selecciona una mesa redonda para abrir el chat.';
 	@override String get you => 'Tú';
 	@override String get summary => 'Resumen';
-	@override late final _TranslationsWebRoundTableDialogEs dialog = _TranslationsWebRoundTableDialogEs._(_root);
-	@override late final _TranslationsWebRoundTableDetailEs detail = _TranslationsWebRoundTableDetailEs._(_root);
-	@override late final _TranslationsWebRoundTableStatusEs status = _TranslationsWebRoundTableStatusEs._(_root);
+	@override late final _Translations$web$roundTable$dialog$es dialog = _Translations$web$roundTable$dialog$es._(_root);
+	@override late final _Translations$web$roundTable$detail$es detail = _Translations$web$roundTable$detail$es._(_root);
+	@override late final _Translations$web$roundTable$status$es status = _Translations$web$roundTable$status$es._(_root);
 	@override String get untitled => 'Chat nuevo';
-	@override late final _TranslationsWebRoundTableHandoffEs handoff = _TranslationsWebRoundTableHandoffEs._(_root);
-	@override late final _TranslationsWebRoundTablePlanEs plan = _TranslationsWebRoundTablePlanEs._(_root);
+	@override late final _Translations$web$roundTable$handoff$es handoff = _Translations$web$roundTable$handoff$es._(_root);
+	@override late final _Translations$web$roundTable$plan$es plan = _Translations$web$roundTable$plan$es._(_root);
 }
 
 // Path: more.identity
-class _TranslationsMoreIdentityEs extends TranslationsMoreIdentityEn {
-	_TranslationsMoreIdentityEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$more$identity$es extends Translations$more$identity$en {
+	_Translations$more$identity$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -1764,8 +1853,8 @@ class _TranslationsMoreIdentityEs extends TranslationsMoreIdentityEn {
 }
 
 // Path: more.sections
-class _TranslationsMoreSectionsEs extends TranslationsMoreSectionsEn {
-	_TranslationsMoreSectionsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$more$sections$es extends Translations$more$sections$en {
+	_Translations$more$sections$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -1777,36 +1866,36 @@ class _TranslationsMoreSectionsEs extends TranslationsMoreSectionsEn {
 }
 
 // Path: more.items
-class _TranslationsMoreItemsEs extends TranslationsMoreItemsEn {
-	_TranslationsMoreItemsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$more$items$es extends Translations$more$items$en {
+	_Translations$more$items$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsMoreItemsIntegrationsEs integrations = _TranslationsMoreItemsIntegrationsEs._(_root);
-	@override late final _TranslationsMoreItemsActivityEs activity = _TranslationsMoreItemsActivityEs._(_root);
-	@override late final _TranslationsMoreItemsMemoryAmbientEs memoryAmbient = _TranslationsMoreItemsMemoryAmbientEs._(_root);
-	@override late final _TranslationsMoreItemsChannelsEs channels = _TranslationsMoreItemsChannelsEs._(_root);
-	@override late final _TranslationsMoreItemsProvidersEs providers = _TranslationsMoreItemsProvidersEs._(_root);
-	@override late final _TranslationsMoreItemsMcpEs mcp = _TranslationsMoreItemsMcpEs._(_root);
-	@override late final _TranslationsMoreItemsSkillsEs skills = _TranslationsMoreItemsSkillsEs._(_root);
-	@override late final _TranslationsMoreItemsGitHostsEs gitHosts = _TranslationsMoreItemsGitHostsEs._(_root);
-	@override late final _TranslationsMoreItemsCustomTasksEs customTasks = _TranslationsMoreItemsCustomTasksEs._(_root);
-	@override late final _TranslationsMoreItemsCortexHubEs cortexHub = _TranslationsMoreItemsCortexHubEs._(_root);
-	@override late final _TranslationsMoreItemsProjectMemoryEs projectMemory = _TranslationsMoreItemsProjectMemoryEs._(_root);
-	@override late final _TranslationsMoreItemsArchivedEs archived = _TranslationsMoreItemsArchivedEs._(_root);
-	@override late final _TranslationsMoreItemsQuarantineEs quarantine = _TranslationsMoreItemsQuarantineEs._(_root);
-	@override late final _TranslationsMoreItemsBackupsEs backups = _TranslationsMoreItemsBackupsEs._(_root);
-	@override late final _TranslationsMoreItemsDataExportEs dataExport = _TranslationsMoreItemsDataExportEs._(_root);
-	@override late final _TranslationsMoreItemsSettingsEs settings = _TranslationsMoreItemsSettingsEs._(_root);
-	@override late final _TranslationsMoreItemsAboutEs about = _TranslationsMoreItemsAboutEs._(_root);
-	@override late final _TranslationsMoreItemsVaultEs vault = _TranslationsMoreItemsVaultEs._(_root);
-	@override late final _TranslationsMoreItemsRoundTableEs roundTable = _TranslationsMoreItemsRoundTableEs._(_root);
+	@override late final _Translations$more$items$integrations$es integrations = _Translations$more$items$integrations$es._(_root);
+	@override late final _Translations$more$items$activity$es activity = _Translations$more$items$activity$es._(_root);
+	@override late final _Translations$more$items$memoryAmbient$es memoryAmbient = _Translations$more$items$memoryAmbient$es._(_root);
+	@override late final _Translations$more$items$channels$es channels = _Translations$more$items$channels$es._(_root);
+	@override late final _Translations$more$items$providers$es providers = _Translations$more$items$providers$es._(_root);
+	@override late final _Translations$more$items$mcp$es mcp = _Translations$more$items$mcp$es._(_root);
+	@override late final _Translations$more$items$skills$es skills = _Translations$more$items$skills$es._(_root);
+	@override late final _Translations$more$items$gitHosts$es gitHosts = _Translations$more$items$gitHosts$es._(_root);
+	@override late final _Translations$more$items$customTasks$es customTasks = _Translations$more$items$customTasks$es._(_root);
+	@override late final _Translations$more$items$cortexHub$es cortexHub = _Translations$more$items$cortexHub$es._(_root);
+	@override late final _Translations$more$items$projectMemory$es projectMemory = _Translations$more$items$projectMemory$es._(_root);
+	@override late final _Translations$more$items$archived$es archived = _Translations$more$items$archived$es._(_root);
+	@override late final _Translations$more$items$quarantine$es quarantine = _Translations$more$items$quarantine$es._(_root);
+	@override late final _Translations$more$items$backups$es backups = _Translations$more$items$backups$es._(_root);
+	@override late final _Translations$more$items$dataExport$es dataExport = _Translations$more$items$dataExport$es._(_root);
+	@override late final _Translations$more$items$settings$es settings = _Translations$more$items$settings$es._(_root);
+	@override late final _Translations$more$items$about$es about = _Translations$more$items$about$es._(_root);
+	@override late final _Translations$more$items$vault$es vault = _Translations$more$items$vault$es._(_root);
+	@override late final _Translations$more$items$roundTable$es roundTable = _Translations$more$items$roundTable$es._(_root);
 }
 
 // Path: activity.filter
-class _TranslationsActivityFilterEs extends TranslationsActivityFilterEn {
-	_TranslationsActivityFilterEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$activity$filter$es extends Translations$activity$filter$en {
+	_Translations$activity$filter$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -1824,8 +1913,8 @@ class _TranslationsActivityFilterEs extends TranslationsActivityFilterEn {
 }
 
 // Path: activity.detail
-class _TranslationsActivityDetailEs extends TranslationsActivityDetailEn {
-	_TranslationsActivityDetailEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$activity$detail$es extends Translations$activity$detail$en {
+	_Translations$activity$detail$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -1842,8 +1931,8 @@ class _TranslationsActivityDetailEs extends TranslationsActivityDetailEn {
 }
 
 // Path: sessions.dock
-class _TranslationsSessionsDockEs extends TranslationsSessionsDockEn {
-	_TranslationsSessionsDockEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$sessions$dock$es extends Translations$sessions$dock$en {
+	_Translations$sessions$dock$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -1852,8 +1941,8 @@ class _TranslationsSessionsDockEs extends TranslationsSessionsDockEn {
 }
 
 // Path: sessions.tools
-class _TranslationsSessionsToolsEs extends TranslationsSessionsToolsEn {
-	_TranslationsSessionsToolsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$sessions$tools$es extends Translations$sessions$tools$en {
+	_Translations$sessions$tools$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -1864,8 +1953,8 @@ class _TranslationsSessionsToolsEs extends TranslationsSessionsToolsEn {
 }
 
 // Path: sessions.filters
-class _TranslationsSessionsFiltersEs extends TranslationsSessionsFiltersEn {
-	_TranslationsSessionsFiltersEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$sessions$filters$es extends Translations$sessions$filters$en {
+	_Translations$sessions$filters$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -1877,8 +1966,8 @@ class _TranslationsSessionsFiltersEs extends TranslationsSessionsFiltersEn {
 }
 
 // Path: sessions.card
-class _TranslationsSessionsCardEs extends TranslationsSessionsCardEn {
-	_TranslationsSessionsCardEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$sessions$card$es extends Translations$sessions$card$en {
+	_Translations$sessions$card$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -1887,8 +1976,8 @@ class _TranslationsSessionsCardEs extends TranslationsSessionsCardEn {
 }
 
 // Path: sessions.empty
-class _TranslationsSessionsEmptyEs extends TranslationsSessionsEmptyEn {
-	_TranslationsSessionsEmptyEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$sessions$empty$es extends Translations$sessions$empty$en {
+	_Translations$sessions$empty$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -1900,8 +1989,8 @@ class _TranslationsSessionsEmptyEs extends TranslationsSessionsEmptyEn {
 }
 
 // Path: sessions.relative
-class _TranslationsSessionsRelativeEs extends TranslationsSessionsRelativeEn {
-	_TranslationsSessionsRelativeEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$sessions$relative$es extends Translations$sessions$relative$en {
+	_Translations$sessions$relative$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -1913,8 +2002,8 @@ class _TranslationsSessionsRelativeEs extends TranslationsSessionsRelativeEn {
 }
 
 // Path: sessions.detail
-class _TranslationsSessionsDetailEs extends TranslationsSessionsDetailEn {
-	_TranslationsSessionsDetailEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$sessions$detail$es extends Translations$sessions$detail$en {
+	_Translations$sessions$detail$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -1928,27 +2017,27 @@ class _TranslationsSessionsDetailEs extends TranslationsSessionsDetailEn {
 	@override String startedEnded({required Object started, required Object ended}) => 'iniciada ${started}  ·  finalizada ${ended}';
 	@override String idPrefix({required Object id}) => 'id: ${id}';
 	@override String get errorTitle => 'No se pudo cargar la sesión';
-	@override late final _TranslationsSessionsDetailAccountSwitcherEs accountSwitcher = _TranslationsSessionsDetailAccountSwitcherEs._(_root);
+	@override late final _Translations$sessions$detail$accountSwitcher$es accountSwitcher = _Translations$sessions$detail$accountSwitcher$es._(_root);
 }
 
 // Path: sessions.terminal
-class _TranslationsSessionsTerminalEs extends TranslationsSessionsTerminalEn {
-	_TranslationsSessionsTerminalEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$sessions$terminal$es extends Translations$sessions$terminal$en {
+	_Translations$sessions$terminal$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsSessionsTerminalSnackbarEs snackbar = _TranslationsSessionsTerminalSnackbarEs._(_root);
-	@override late final _TranslationsSessionsTerminalImageSourceEs imageSource = _TranslationsSessionsTerminalImageSourceEs._(_root);
-	@override late final _TranslationsSessionsTerminalKeyboardEs keyboard = _TranslationsSessionsTerminalKeyboardEs._(_root);
-	@override late final _TranslationsSessionsTerminalAttachmentsEs attachments = _TranslationsSessionsTerminalAttachmentsEs._(_root);
-	@override late final _TranslationsSessionsTerminalConnectionEs connection = _TranslationsSessionsTerminalConnectionEs._(_root);
-	@override late final _TranslationsSessionsTerminalSelectCopyEs selectCopy = _TranslationsSessionsTerminalSelectCopyEs._(_root);
+	@override late final _Translations$sessions$terminal$snackbar$es snackbar = _Translations$sessions$terminal$snackbar$es._(_root);
+	@override late final _Translations$sessions$terminal$imageSource$es imageSource = _Translations$sessions$terminal$imageSource$es._(_root);
+	@override late final _Translations$sessions$terminal$keyboard$es keyboard = _Translations$sessions$terminal$keyboard$es._(_root);
+	@override late final _Translations$sessions$terminal$attachments$es attachments = _Translations$sessions$terminal$attachments$es._(_root);
+	@override late final _Translations$sessions$terminal$connection$es connection = _Translations$sessions$terminal$connection$es._(_root);
+	@override late final _Translations$sessions$terminal$selectCopy$es selectCopy = _Translations$sessions$terminal$selectCopy$es._(_root);
 }
 
 // Path: sessions.action
-class _TranslationsSessionsActionEs extends TranslationsSessionsActionEn {
-	_TranslationsSessionsActionEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$sessions$action$es extends Translations$sessions$action$en {
+	_Translations$sessions$action$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -1962,12 +2051,12 @@ class _TranslationsSessionsActionEs extends TranslationsSessionsActionEn {
 	@override String get delete => 'Eliminar';
 	@override String get deleteDescription => 'Elimina la session y su historial';
 	@override String get deleteConfirm => '¿Eliminar esta session de forma permanente? Su ring buffer y su historial desaparecerán.';
-	@override late final _TranslationsSessionsActionErrorsEs errors = _TranslationsSessionsActionErrorsEs._(_root);
+	@override late final _Translations$sessions$action$errors$es errors = _Translations$sessions$action$errors$es._(_root);
 }
 
 // Path: sessions.dirPicker
-class _TranslationsSessionsDirPickerEs extends TranslationsSessionsDirPickerEn {
-	_TranslationsSessionsDirPickerEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$sessions$dirPicker$es extends Translations$sessions$dirPicker$en {
+	_Translations$sessions$dirPicker$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -1979,29 +2068,29 @@ class _TranslationsSessionsDirPickerEs extends TranslationsSessionsDirPickerEn {
 	@override String get empty => 'No hay subcarpetas aquí.\nElige esta carpeta o crea una nueva.';
 	@override String createdSnack({required Object path}) => 'Creada ${path}';
 	@override String mkdirFailedSnack({required Object error}) => 'Falló mkdir: ${error}';
-	@override late final _TranslationsSessionsDirPickerDialogEs dialog = _TranslationsSessionsDirPickerDialogEs._(_root);
+	@override late final _Translations$sessions$dirPicker$dialog$es dialog = _Translations$sessions$dirPicker$dialog$es._(_root);
 }
 
 // Path: sessions.inspector
-class _TranslationsSessionsInspectorEs extends TranslationsSessionsInspectorEn {
-	_TranslationsSessionsInspectorEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$sessions$inspector$es extends Translations$sessions$inspector$en {
+	_Translations$sessions$inspector$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsSessionsInspectorShellEs shell = _TranslationsSessionsInspectorShellEs._(_root);
-	@override late final _TranslationsSessionsInspectorCortexEs cortex = _TranslationsSessionsInspectorCortexEs._(_root);
-	@override late final _TranslationsSessionsInspectorSharedEs shared = _TranslationsSessionsInspectorSharedEs._(_root);
-	@override late final _TranslationsSessionsInspectorHistoryEs history = _TranslationsSessionsInspectorHistoryEs._(_root);
-	@override late final _TranslationsSessionsInspectorFilesEs files = _TranslationsSessionsInspectorFilesEs._(_root);
-	@override late final _TranslationsSessionsInspectorGitEs git = _TranslationsSessionsInspectorGitEs._(_root);
-	@override late final _TranslationsSessionsInspectorTasksEs tasks = _TranslationsSessionsInspectorTasksEs._(_root);
-	@override late final _TranslationsSessionsInspectorNotesEs notes = _TranslationsSessionsInspectorNotesEs._(_root);
+	@override late final _Translations$sessions$inspector$shell$es shell = _Translations$sessions$inspector$shell$es._(_root);
+	@override late final _Translations$sessions$inspector$cortex$es cortex = _Translations$sessions$inspector$cortex$es._(_root);
+	@override late final _Translations$sessions$inspector$shared$es shared = _Translations$sessions$inspector$shared$es._(_root);
+	@override late final _Translations$sessions$inspector$history$es history = _Translations$sessions$inspector$history$es._(_root);
+	@override late final _Translations$sessions$inspector$files$es files = _Translations$sessions$inspector$files$es._(_root);
+	@override late final _Translations$sessions$inspector$git$es git = _Translations$sessions$inspector$git$es._(_root);
+	@override late final _Translations$sessions$inspector$tasks$es tasks = _Translations$sessions$inspector$tasks$es._(_root);
+	@override late final _Translations$sessions$inspector$notes$es notes = _Translations$sessions$inspector$notes$es._(_root);
 }
 
 // Path: sessions.spawnSheet
-class _TranslationsSessionsSpawnSheetEs extends TranslationsSessionsSpawnSheetEn {
-	_TranslationsSessionsSpawnSheetEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$sessions$spawnSheet$es extends Translations$sessions$spawnSheet$en {
+	_Translations$sessions$spawnSheet$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -2022,15 +2111,15 @@ class _TranslationsSessionsSpawnSheetEs extends TranslationsSessionsSpawnSheetEn
 	@override String get argsLabel => 'Argumentos adicionales (opcional)';
 	@override String get argsHint => '--continue --verbose';
 	@override String get argsHelper => 'Separados por espacios; en blanco usa los valores predeterminados del proveedor.';
-	@override late final _TranslationsSessionsSpawnSheetBypassEs bypass = _TranslationsSessionsSpawnSheetBypassEs._(_root);
-	@override late final _TranslationsSessionsSpawnSheetNoProvidersEs noProviders = _TranslationsSessionsSpawnSheetNoProvidersEs._(_root);
-	@override late final _TranslationsSessionsSpawnSheetProviderLoadErrorEs providerLoadError = _TranslationsSessionsSpawnSheetProviderLoadErrorEs._(_root);
-	@override late final _TranslationsSessionsSpawnSheetClaudeAccountEs claudeAccount = _TranslationsSessionsSpawnSheetClaudeAccountEs._(_root);
+	@override late final _Translations$sessions$spawnSheet$bypass$es bypass = _Translations$sessions$spawnSheet$bypass$es._(_root);
+	@override late final _Translations$sessions$spawnSheet$noProviders$es noProviders = _Translations$sessions$spawnSheet$noProviders$es._(_root);
+	@override late final _Translations$sessions$spawnSheet$providerLoadError$es providerLoadError = _Translations$sessions$spawnSheet$providerLoadError$es._(_root);
+	@override late final _Translations$sessions$spawnSheet$claudeAccount$es claudeAccount = _Translations$sessions$spawnSheet$claudeAccount$es._(_root);
 }
 
 // Path: mcp.errorPrefix
-class _TranslationsMcpErrorPrefixEs extends TranslationsMcpErrorPrefixEn {
-	_TranslationsMcpErrorPrefixEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$mcp$errorPrefix$es extends Translations$mcp$errorPrefix$en {
+	_Translations$mcp$errorPrefix$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -2042,8 +2131,8 @@ class _TranslationsMcpErrorPrefixEs extends TranslationsMcpErrorPrefixEn {
 }
 
 // Path: mcp.editor
-class _TranslationsMcpEditorEs extends TranslationsMcpEditorEn {
-	_TranslationsMcpEditorEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$mcp$editor$es extends Translations$mcp$editor$en {
+	_Translations$mcp$editor$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -2066,8 +2155,8 @@ class _TranslationsMcpEditorEs extends TranslationsMcpEditorEn {
 }
 
 // Path: mcp.secret
-class _TranslationsMcpSecretEs extends TranslationsMcpSecretEn {
-	_TranslationsMcpSecretEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$mcp$secret$es extends Translations$mcp$secret$en {
+	_Translations$mcp$secret$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -2092,8 +2181,8 @@ class _TranslationsMcpSecretEs extends TranslationsMcpSecretEn {
 }
 
 // Path: mcp.popup
-class _TranslationsMcpPopupEs extends TranslationsMcpPopupEn {
-	_TranslationsMcpPopupEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$mcp$popup$es extends Translations$mcp$popup$en {
+	_Translations$mcp$popup$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -2104,8 +2193,8 @@ class _TranslationsMcpPopupEs extends TranslationsMcpPopupEn {
 }
 
 // Path: mcp.kv
-class _TranslationsMcpKvEs extends TranslationsMcpKvEn {
-	_TranslationsMcpKvEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$mcp$kv$es extends Translations$mcp$kv$en {
+	_Translations$mcp$kv$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -2118,8 +2207,8 @@ class _TranslationsMcpKvEs extends TranslationsMcpKvEn {
 }
 
 // Path: providers.errorPrefix
-class _TranslationsProvidersErrorPrefixEs extends TranslationsProvidersErrorPrefixEn {
-	_TranslationsProvidersErrorPrefixEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$providers$errorPrefix$es extends Translations$providers$errorPrefix$en {
+	_Translations$providers$errorPrefix$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -2130,8 +2219,8 @@ class _TranslationsProvidersErrorPrefixEs extends TranslationsProvidersErrorPref
 }
 
 // Path: providers.updateCheck
-class _TranslationsProvidersUpdateCheckEs extends TranslationsProvidersUpdateCheckEn {
-	_TranslationsProvidersUpdateCheckEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$providers$updateCheck$es extends Translations$providers$updateCheck$en {
+	_Translations$providers$updateCheck$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -2154,8 +2243,8 @@ class _TranslationsProvidersUpdateCheckEs extends TranslationsProvidersUpdateChe
 }
 
 // Path: providers.accounts
-class _TranslationsProvidersAccountsEs extends TranslationsProvidersAccountsEn {
-	_TranslationsProvidersAccountsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$providers$accounts$es extends Translations$providers$accounts$en {
+	_Translations$providers$accounts$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -2194,8 +2283,8 @@ class _TranslationsProvidersAccountsEs extends TranslationsProvidersAccountsEn {
 }
 
 // Path: providers.antigravityAccounts
-class _TranslationsProvidersAntigravityAccountsEs extends TranslationsProvidersAntigravityAccountsEn {
-	_TranslationsProvidersAntigravityAccountsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$providers$antigravityAccounts$es extends Translations$providers$antigravityAccounts$en {
+	_Translations$providers$antigravityAccounts$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -2212,8 +2301,8 @@ class _TranslationsProvidersAntigravityAccountsEs extends TranslationsProvidersA
 }
 
 // Path: integrations.form
-class _TranslationsIntegrationsFormEs extends TranslationsIntegrationsFormEn {
-	_TranslationsIntegrationsFormEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$integrations$form$es extends Translations$integrations$form$en {
+	_Translations$integrations$form$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -2233,8 +2322,8 @@ class _TranslationsIntegrationsFormEs extends TranslationsIntegrationsFormEn {
 }
 
 // Path: integrations.defaultAgent
-class _TranslationsIntegrationsDefaultAgentEs extends TranslationsIntegrationsDefaultAgentEn {
-	_TranslationsIntegrationsDefaultAgentEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$integrations$defaultAgent$es extends Translations$integrations$defaultAgent$en {
+	_Translations$integrations$defaultAgent$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -2252,24 +2341,24 @@ class _TranslationsIntegrationsDefaultAgentEs extends TranslationsIntegrationsDe
 }
 
 // Path: memoryWorkers.tasks
-class _TranslationsMemoryWorkersTasksEs extends TranslationsMemoryWorkersTasksEn {
-	_TranslationsMemoryWorkersTasksEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$memoryWorkers$tasks$es extends Translations$memoryWorkers$tasks$en {
+	_Translations$memoryWorkers$tasks$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsMemoryWorkersTasksGatekeeperEs gatekeeper = _TranslationsMemoryWorkersTasksGatekeeperEs._(_root);
-	@override late final _TranslationsMemoryWorkersTasksCleanerEs cleaner = _TranslationsMemoryWorkersTasksCleanerEs._(_root);
-	@override late final _TranslationsMemoryWorkersTasksGitactivityEs gitactivity = _TranslationsMemoryWorkersTasksGitactivityEs._(_root);
-	@override late final _TranslationsMemoryWorkersTasksTranscriptEs transcript = _TranslationsMemoryWorkersTasksTranscriptEs._(_root);
-	@override late final _TranslationsMemoryWorkersTasksPlanDriftEs planDrift = _TranslationsMemoryWorkersTasksPlanDriftEs._(_root);
-	@override late final _TranslationsMemoryWorkersTasksConflictDetectorEs conflictDetector = _TranslationsMemoryWorkersTasksConflictDetectorEs._(_root);
-	@override late final _TranslationsMemoryWorkersTasksCaptureEs capture = _TranslationsMemoryWorkersTasksCaptureEs._(_root);
+	@override late final _Translations$memoryWorkers$tasks$gatekeeper$es gatekeeper = _Translations$memoryWorkers$tasks$gatekeeper$es._(_root);
+	@override late final _Translations$memoryWorkers$tasks$cleaner$es cleaner = _Translations$memoryWorkers$tasks$cleaner$es._(_root);
+	@override late final _Translations$memoryWorkers$tasks$gitactivity$es gitactivity = _Translations$memoryWorkers$tasks$gitactivity$es._(_root);
+	@override late final _Translations$memoryWorkers$tasks$transcript$es transcript = _Translations$memoryWorkers$tasks$transcript$es._(_root);
+	@override late final _Translations$memoryWorkers$tasks$planDrift$es planDrift = _Translations$memoryWorkers$tasks$planDrift$es._(_root);
+	@override late final _Translations$memoryWorkers$tasks$conflictDetector$es conflictDetector = _Translations$memoryWorkers$tasks$conflictDetector$es._(_root);
+	@override late final _Translations$memoryWorkers$tasks$capture$es capture = _Translations$memoryWorkers$tasks$capture$es._(_root);
 }
 
 // Path: project.health
-class _TranslationsProjectHealthEs extends TranslationsProjectHealthEn {
-	_TranslationsProjectHealthEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$project$health$es extends Translations$project$health$en {
+	_Translations$project$health$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -2296,8 +2385,8 @@ class _TranslationsProjectHealthEs extends TranslationsProjectHealthEn {
 }
 
 // Path: project.conflicts
-class _TranslationsProjectConflictsEs extends TranslationsProjectConflictsEn {
-	_TranslationsProjectConflictsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$project$conflicts$es extends Translations$project$conflicts$en {
+	_Translations$project$conflicts$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -2319,12 +2408,12 @@ class _TranslationsProjectConflictsEs extends TranslationsProjectConflictsEn {
 	@override String get deletedFact => 'Hecho eliminado y conflicto aceptado';
 	@override String get openPlanEditor => 'Abrir el editor del plan';
 	@override String get openGoalEditor => 'Abrir el editor del objetivo';
-	@override late final _TranslationsProjectConflictsSeverityEs severity = _TranslationsProjectConflictsSeverityEs._(_root);
+	@override late final _Translations$project$conflicts$severity$es severity = _Translations$project$conflicts$severity$es._(_root);
 }
 
 // Path: project.journalPrune
-class _TranslationsProjectJournalPruneEs extends TranslationsProjectJournalPruneEn {
-	_TranslationsProjectJournalPruneEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$project$journalPrune$es extends Translations$project$journalPrune$en {
+	_Translations$project$journalPrune$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -2340,8 +2429,8 @@ class _TranslationsProjectJournalPruneEs extends TranslationsProjectJournalPrune
 }
 
 // Path: project.archived
-class _TranslationsProjectArchivedEs extends TranslationsProjectArchivedEn {
-	_TranslationsProjectArchivedEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$project$archived$es extends Translations$project$archived$en {
+	_Translations$project$archived$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -2353,8 +2442,8 @@ class _TranslationsProjectArchivedEs extends TranslationsProjectArchivedEn {
 }
 
 // Path: backups.kv
-class _TranslationsBackupsKvEs extends TranslationsBackupsKvEn {
-	_TranslationsBackupsKvEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$backups$kv$es extends Translations$backups$kv$en {
+	_Translations$backups$kv$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -2377,8 +2466,8 @@ class _TranslationsBackupsKvEs extends TranslationsBackupsKvEn {
 }
 
 // Path: backups.recoveryKit
-class _TranslationsBackupsRecoveryKitEs extends TranslationsBackupsRecoveryKitEn {
-	_TranslationsBackupsRecoveryKitEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$backups$recoveryKit$es extends Translations$backups$recoveryKit$en {
+	_Translations$backups$recoveryKit$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -2395,8 +2484,8 @@ class _TranslationsBackupsRecoveryKitEs extends TranslationsBackupsRecoveryKitEn
 }
 
 // Path: backups.emptyMissingDeps
-class _TranslationsBackupsEmptyMissingDepsEs extends TranslationsBackupsEmptyMissingDepsEn {
-	_TranslationsBackupsEmptyMissingDepsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$backups$emptyMissingDeps$es extends Translations$backups$emptyMissingDeps$en {
+	_Translations$backups$emptyMissingDeps$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -2406,8 +2495,8 @@ class _TranslationsBackupsEmptyMissingDepsEs extends TranslationsBackupsEmptyMis
 }
 
 // Path: backups.emptyNoTargets
-class _TranslationsBackupsEmptyNoTargetsEs extends TranslationsBackupsEmptyNoTargetsEn {
-	_TranslationsBackupsEmptyNoTargetsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$backups$emptyNoTargets$es extends Translations$backups$emptyNoTargets$en {
+	_Translations$backups$emptyNoTargets$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -2417,8 +2506,8 @@ class _TranslationsBackupsEmptyNoTargetsEs extends TranslationsBackupsEmptyNoTar
 }
 
 // Path: backups.emptyNoBackups
-class _TranslationsBackupsEmptyNoBackupsEs extends TranslationsBackupsEmptyNoBackupsEn {
-	_TranslationsBackupsEmptyNoBackupsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$backups$emptyNoBackups$es extends Translations$backups$emptyNoBackups$en {
+	_Translations$backups$emptyNoBackups$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -2428,8 +2517,8 @@ class _TranslationsBackupsEmptyNoBackupsEs extends TranslationsBackupsEmptyNoBac
 }
 
 // Path: backups.wizard
-class _TranslationsBackupsWizardEs extends TranslationsBackupsWizardEn {
-	_TranslationsBackupsWizardEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$backups$wizard$es extends Translations$backups$wizard$en {
+	_Translations$backups$wizard$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -2446,8 +2535,8 @@ class _TranslationsBackupsWizardEs extends TranslationsBackupsWizardEn {
 }
 
 // Path: backups.health
-class _TranslationsBackupsHealthEs extends TranslationsBackupsHealthEn {
-	_TranslationsBackupsHealthEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$backups$health$es extends Translations$backups$health$en {
+	_Translations$backups$health$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -2457,12 +2546,12 @@ class _TranslationsBackupsHealthEs extends TranslationsBackupsHealthEn {
 	@override String get headlineNever => 'Aún sin copias';
 	@override String get lastSuccess => 'Última copia correcta';
 	@override String get never => 'nunca';
-	@override late final _TranslationsBackupsHealthTilesEs tiles = _TranslationsBackupsHealthTilesEs._(_root);
+	@override late final _Translations$backups$health$tiles$es tiles = _Translations$backups$health$tiles$es._(_root);
 }
 
 // Path: backups.encryption
-class _TranslationsBackupsEncryptionEs extends TranslationsBackupsEncryptionEn {
-	_TranslationsBackupsEncryptionEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$backups$encryption$es extends Translations$backups$encryption$en {
+	_Translations$backups$encryption$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -2477,8 +2566,8 @@ class _TranslationsBackupsEncryptionEs extends TranslationsBackupsEncryptionEn {
 }
 
 // Path: backups.restore
-class _TranslationsBackupsRestoreEs extends TranslationsBackupsRestoreEn {
-	_TranslationsBackupsRestoreEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$backups$restore$es extends Translations$backups$restore$en {
+	_Translations$backups$restore$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -2534,8 +2623,8 @@ class _TranslationsBackupsRestoreEs extends TranslationsBackupsRestoreEn {
 }
 
 // Path: backups.inventory
-class _TranslationsBackupsInventoryEs extends TranslationsBackupsInventoryEn {
-	_TranslationsBackupsInventoryEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$backups$inventory$es extends Translations$backups$inventory$en {
+	_Translations$backups$inventory$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -2550,23 +2639,23 @@ class _TranslationsBackupsInventoryEs extends TranslationsBackupsInventoryEn {
 }
 
 // Path: backupTargetEditor.kinds
-class _TranslationsBackupTargetEditorKindsEs extends TranslationsBackupTargetEditorKindsEn {
-	_TranslationsBackupTargetEditorKindsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$backupTargetEditor$kinds$es extends Translations$backupTargetEditor$kinds$en {
+	_Translations$backupTargetEditor$kinds$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsBackupTargetEditorKindsLocalEs local = _TranslationsBackupTargetEditorKindsLocalEs._(_root);
-	@override late final _TranslationsBackupTargetEditorKindsSmbEs smb = _TranslationsBackupTargetEditorKindsSmbEs._(_root);
-	@override late final _TranslationsBackupTargetEditorKindsWebdavEs webdav = _TranslationsBackupTargetEditorKindsWebdavEs._(_root);
-	@override late final _TranslationsBackupTargetEditorKindsSftpEs sftp = _TranslationsBackupTargetEditorKindsSftpEs._(_root);
-	@override late final _TranslationsBackupTargetEditorKindsS3Es s3 = _TranslationsBackupTargetEditorKindsS3Es._(_root);
-	@override late final _TranslationsBackupTargetEditorKindsRcloneEs rclone = _TranslationsBackupTargetEditorKindsRcloneEs._(_root);
+	@override late final _Translations$backupTargetEditor$kinds$local$es local = _Translations$backupTargetEditor$kinds$local$es._(_root);
+	@override late final _Translations$backupTargetEditor$kinds$smb$es smb = _Translations$backupTargetEditor$kinds$smb$es._(_root);
+	@override late final _Translations$backupTargetEditor$kinds$webdav$es webdav = _Translations$backupTargetEditor$kinds$webdav$es._(_root);
+	@override late final _Translations$backupTargetEditor$kinds$sftp$es sftp = _Translations$backupTargetEditor$kinds$sftp$es._(_root);
+	@override late final _Translations$backupTargetEditor$kinds$s3$es s3 = _Translations$backupTargetEditor$kinds$s3$es._(_root);
+	@override late final _Translations$backupTargetEditor$kinds$rclone$es rclone = _Translations$backupTargetEditor$kinds$rclone$es._(_root);
 }
 
 // Path: githosts.errorPrefix
-class _TranslationsGithostsErrorPrefixEs extends TranslationsGithostsErrorPrefixEn {
-	_TranslationsGithostsErrorPrefixEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$githosts$errorPrefix$es extends Translations$githosts$errorPrefix$en {
+	_Translations$githosts$errorPrefix$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -2576,8 +2665,8 @@ class _TranslationsGithostsErrorPrefixEs extends TranslationsGithostsErrorPrefix
 }
 
 // Path: githosts.form
-class _TranslationsGithostsFormEs extends TranslationsGithostsFormEn {
-	_TranslationsGithostsFormEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$githosts$form$es extends Translations$githosts$form$en {
+	_Translations$githosts$form$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -2586,7 +2675,7 @@ class _TranslationsGithostsFormEs extends TranslationsGithostsFormEn {
 	@override String get hostLabel => 'Host';
 	@override String get nameLabel => 'Nombre';
 	@override String get nameHint => 'work-github, personal-gitlab, …';
-	@override late final _TranslationsGithostsFormKindsEs kinds = _TranslationsGithostsFormKindsEs._(_root);
+	@override late final _Translations$githosts$form$kinds$es kinds = _Translations$githosts$form$kinds$es._(_root);
 	@override String get validateHost => 'El host es obligatorio.';
 	@override String get validateName => 'El nombre es obligatorio.';
 	@override String get snackAdded => 'Host añadido.';
@@ -2611,8 +2700,8 @@ class _TranslationsGithostsFormEs extends TranslationsGithostsFormEn {
 }
 
 // Path: channels.configDialog
-class _TranslationsChannelsConfigDialogEs extends TranslationsChannelsConfigDialogEn {
-	_TranslationsChannelsConfigDialogEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$channels$configDialog$es extends Translations$channels$configDialog$en {
+	_Translations$channels$configDialog$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -2621,8 +2710,8 @@ class _TranslationsChannelsConfigDialogEs extends TranslationsChannelsConfigDial
 }
 
 // Path: channels.webhookDialog
-class _TranslationsChannelsWebhookDialogEs extends TranslationsChannelsWebhookDialogEn {
-	_TranslationsChannelsWebhookDialogEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$channels$webhookDialog$es extends Translations$channels$webhookDialog$en {
+	_Translations$channels$webhookDialog$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -2632,8 +2721,8 @@ class _TranslationsChannelsWebhookDialogEs extends TranslationsChannelsWebhookDi
 }
 
 // Path: channels.notifications
-class _TranslationsChannelsNotificationsEs extends TranslationsChannelsNotificationsEn {
-	_TranslationsChannelsNotificationsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$channels$notifications$es extends Translations$channels$notifications$en {
+	_Translations$channels$notifications$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -2647,12 +2736,12 @@ class _TranslationsChannelsNotificationsEs extends TranslationsChannelsNotificat
 	@override String get snippetNoCap => 'sin límite';
 	@override String snippetChars({required Object n}) => '${n} caracteres';
 	@override String get updatedSnack => 'Preferencias de notificación actualizadas.';
-	@override late final _TranslationsChannelsNotificationsModesEs modes = _TranslationsChannelsNotificationsModesEs._(_root);
+	@override late final _Translations$channels$notifications$modes$es modes = _Translations$channels$notifications$modes$es._(_root);
 }
 
 // Path: channels.popup
-class _TranslationsChannelsPopupEs extends TranslationsChannelsPopupEn {
-	_TranslationsChannelsPopupEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$channels$popup$es extends Translations$channels$popup$en {
+	_Translations$channels$popup$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -2665,8 +2754,8 @@ class _TranslationsChannelsPopupEs extends TranslationsChannelsPopupEn {
 }
 
 // Path: channels.badges
-class _TranslationsChannelsBadgesEs extends TranslationsChannelsBadgesEn {
-	_TranslationsChannelsBadgesEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$channels$badges$es extends Translations$channels$badges$en {
+	_Translations$channels$badges$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -2678,8 +2767,8 @@ class _TranslationsChannelsBadgesEs extends TranslationsChannelsBadgesEn {
 }
 
 // Path: channels.snacks
-class _TranslationsChannelsSnacksEs extends TranslationsChannelsSnacksEn {
-	_TranslationsChannelsSnacksEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$channels$snacks$es extends Translations$channels$snacks$en {
+	_Translations$channels$snacks$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -2694,8 +2783,8 @@ class _TranslationsChannelsSnacksEs extends TranslationsChannelsSnacksEn {
 }
 
 // Path: channels.errorPrefix
-class _TranslationsChannelsErrorPrefixEs extends TranslationsChannelsErrorPrefixEn {
-	_TranslationsChannelsErrorPrefixEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$channels$errorPrefix$es extends Translations$channels$errorPrefix$en {
+	_Translations$channels$errorPrefix$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -2708,23 +2797,23 @@ class _TranslationsChannelsErrorPrefixEs extends TranslationsChannelsErrorPrefix
 }
 
 // Path: channels.kinds
-class _TranslationsChannelsKindsEs extends TranslationsChannelsKindsEn {
-	_TranslationsChannelsKindsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$channels$kinds$es extends Translations$channels$kinds$en {
+	_Translations$channels$kinds$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsChannelsKindsTelegramEs telegram = _TranslationsChannelsKindsTelegramEs._(_root);
-	@override late final _TranslationsChannelsKindsSlackEs slack = _TranslationsChannelsKindsSlackEs._(_root);
-	@override late final _TranslationsChannelsKindsDiscordEs discord = _TranslationsChannelsKindsDiscordEs._(_root);
-	@override late final _TranslationsChannelsKindsFeishuEs feishu = _TranslationsChannelsKindsFeishuEs._(_root);
-	@override late final _TranslationsChannelsKindsDingtalkEs dingtalk = _TranslationsChannelsKindsDingtalkEs._(_root);
-	@override late final _TranslationsChannelsKindsWecomEs wecom = _TranslationsChannelsKindsWecomEs._(_root);
+	@override late final _Translations$channels$kinds$telegram$es telegram = _Translations$channels$kinds$telegram$es._(_root);
+	@override late final _Translations$channels$kinds$slack$es slack = _Translations$channels$kinds$slack$es._(_root);
+	@override late final _Translations$channels$kinds$discord$es discord = _Translations$channels$kinds$discord$es._(_root);
+	@override late final _Translations$channels$kinds$feishu$es feishu = _Translations$channels$kinds$feishu$es._(_root);
+	@override late final _Translations$channels$kinds$dingtalk$es dingtalk = _Translations$channels$kinds$dingtalk$es._(_root);
+	@override late final _Translations$channels$kinds$wecom$es wecom = _Translations$channels$kinds$wecom$es._(_root);
 }
 
 // Path: notesPage.editor
-class _TranslationsNotesPageEditorEs extends TranslationsNotesPageEditorEn {
-	_TranslationsNotesPageEditorEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$notesPage$editor$es extends Translations$notesPage$editor$en {
+	_Translations$notesPage$editor$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -2740,8 +2829,8 @@ class _TranslationsNotesPageEditorEs extends TranslationsNotesPageEditorEn {
 }
 
 // Path: dataExport.sections
-class _TranslationsDataExportSectionsEs extends TranslationsDataExportSectionsEn {
-	_TranslationsDataExportSectionsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$dataExport$sections$es extends Translations$dataExport$sections$en {
+	_Translations$dataExport$sections$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -2751,8 +2840,8 @@ class _TranslationsDataExportSectionsEs extends TranslationsDataExportSectionsEn
 }
 
 // Path: dataExport.form
-class _TranslationsDataExportFormEs extends TranslationsDataExportFormEn {
-	_TranslationsDataExportFormEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$dataExport$form$es extends Translations$dataExport$form$en {
+	_Translations$dataExport$form$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -2761,7 +2850,7 @@ class _TranslationsDataExportFormEs extends TranslationsDataExportFormEn {
 	@override String get memories => 'Memorias';
 	@override String get memoriesHint => 'Todas las memorias persistidas y sus embeddings.';
 	@override String get integrations => 'Integraciones';
-	@override late final _TranslationsDataExportFormIntegrationOptionsEs integrationOptions = _TranslationsDataExportFormIntegrationOptionsEs._(_root);
+	@override late final _Translations$dataExport$form$integrationOptions$es integrationOptions = _Translations$dataExport$form$integrationOptions$es._(_root);
 	@override String get confirmWarning => 'La exportación de claves en texto plano contiene secretos descifrables. Escribe "Lo entiendo" para confirmar.';
 	@override String get confirmPlaceholder => 'Escribe "Lo entiendo"';
 	@override String get confirmSentinel => 'Lo entiendo';
@@ -2776,8 +2865,8 @@ class _TranslationsDataExportFormEs extends TranslationsDataExportFormEn {
 }
 
 // Path: dataExport.history
-class _TranslationsDataExportHistoryEs extends TranslationsDataExportHistoryEn {
-	_TranslationsDataExportHistoryEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$dataExport$history$es extends Translations$dataExport$history$en {
+	_Translations$dataExport$history$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -2795,7 +2884,7 @@ class _TranslationsDataExportHistoryEs extends TranslationsDataExportHistoryEn {
 	@override String get download => 'Descargar';
 	@override String get delete => 'Eliminar';
 	@override String get downloadCopiedToast => 'URL de descarga copiada al portapapeles. Pégala en un navegador para obtenerla (un solo uso).';
-	@override late final _TranslationsDataExportHistoryColumnsEs columns = _TranslationsDataExportHistoryColumnsEs._(_root);
+	@override late final _Translations$dataExport$history$columns$es columns = _Translations$dataExport$history$columns$es._(_root);
 	@override String get scopeEmpty => '(vacío)';
 	@override String get scopeMemories => 'memorias';
 	@override String scopeIntegrations({required Object mode}) => 'integraciones(${mode})';
@@ -2803,8 +2892,8 @@ class _TranslationsDataExportHistoryEs extends TranslationsDataExportHistoryEn {
 }
 
 // Path: dataExport.import
-class _TranslationsDataExportImportEs extends TranslationsDataExportImportEn {
-	_TranslationsDataExportImportEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$dataExport$import$es extends Translations$dataExport$import$en {
+	_Translations$dataExport$import$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -2823,12 +2912,12 @@ class _TranslationsDataExportImportEs extends TranslationsDataExportImportEn {
 	@override String get doneToast => 'Importación completada';
 	@override String get finishedWithErrors => 'Importación finalizada con errores';
 	@override String failedToast({required Object error}) => 'Error en la importación: ${error}';
-	@override late final _TranslationsDataExportImportSummaryCardEs summaryCard = _TranslationsDataExportImportSummaryCardEs._(_root);
+	@override late final _Translations$dataExport$import$summaryCard$es summaryCard = _Translations$dataExport$import$summaryCard$es._(_root);
 }
 
 // Path: dataExport.imports
-class _TranslationsDataExportImportsEs extends TranslationsDataExportImportsEn {
-	_TranslationsDataExportImportsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$dataExport$imports$es extends Translations$dataExport$imports$en {
+	_Translations$dataExport$imports$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -2839,12 +2928,12 @@ class _TranslationsDataExportImportsEs extends TranslationsDataExportImportsEn {
 	@override String listFailedToast({required Object error}) => 'Error al cargar las importaciones: ${error}';
 	@override String get noneCounts => '(sin recuentos)';
 	@override String get sourceUnknown => '(origen desconocido)';
-	@override late final _TranslationsDataExportImportsColumnsEs columns = _TranslationsDataExportImportsColumnsEs._(_root);
+	@override late final _Translations$dataExport$imports$columns$es columns = _Translations$dataExport$imports$columns$es._(_root);
 }
 
 // Path: dataExport.relative
-class _TranslationsDataExportRelativeEs extends TranslationsDataExportRelativeEn {
-	_TranslationsDataExportRelativeEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$dataExport$relative$es extends Translations$dataExport$relative$en {
+	_Translations$dataExport$relative$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -2859,8 +2948,8 @@ class _TranslationsDataExportRelativeEs extends TranslationsDataExportRelativeEn
 }
 
 // Path: dataExport.status
-class _TranslationsDataExportStatusEs extends TranslationsDataExportStatusEn {
-	_TranslationsDataExportStatusEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$dataExport$status$es extends Translations$dataExport$status$en {
+	_Translations$dataExport$status$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -2874,8 +2963,8 @@ class _TranslationsDataExportStatusEs extends TranslationsDataExportStatusEn {
 }
 
 // Path: memory.status
-class _TranslationsMemoryStatusEs extends TranslationsMemoryStatusEn {
-	_TranslationsMemoryStatusEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$memory$status$es extends Translations$memory$status$en {
+	_Translations$memory$status$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -2891,8 +2980,8 @@ class _TranslationsMemoryStatusEs extends TranslationsMemoryStatusEn {
 }
 
 // Path: memory.rank
-class _TranslationsMemoryRankEs extends TranslationsMemoryRankEn {
-	_TranslationsMemoryRankEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$memory$rank$es extends Translations$memory$rank$en {
+	_Translations$memory$rank$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -2908,8 +2997,8 @@ class _TranslationsMemoryRankEs extends TranslationsMemoryRankEn {
 }
 
 // Path: memory.deleteAllConfirm
-class _TranslationsMemoryDeleteAllConfirmEs extends TranslationsMemoryDeleteAllConfirmEn {
-	_TranslationsMemoryDeleteAllConfirmEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$memory$deleteAllConfirm$es extends Translations$memory$deleteAllConfirm$en {
+	_Translations$memory$deleteAllConfirm$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -2919,8 +3008,8 @@ class _TranslationsMemoryDeleteAllConfirmEs extends TranslationsMemoryDeleteAllC
 }
 
 // Path: memory.deleteOne
-class _TranslationsMemoryDeleteOneEs extends TranslationsMemoryDeleteOneEn {
-	_TranslationsMemoryDeleteOneEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$memory$deleteOne$es extends Translations$memory$deleteOne$en {
+	_Translations$memory$deleteOne$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -2930,8 +3019,8 @@ class _TranslationsMemoryDeleteOneEs extends TranslationsMemoryDeleteOneEn {
 }
 
 // Path: memory.scope
-class _TranslationsMemoryScopeEs extends TranslationsMemoryScopeEn {
-	_TranslationsMemoryScopeEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$memory$scope$es extends Translations$memory$scope$en {
+	_Translations$memory$scope$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -2941,8 +3030,8 @@ class _TranslationsMemoryScopeEs extends TranslationsMemoryScopeEn {
 }
 
 // Path: memory.create
-class _TranslationsMemoryCreateEs extends TranslationsMemoryCreateEn {
-	_TranslationsMemoryCreateEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$memory$create$es extends Translations$memory$create$en {
+	_Translations$memory$create$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -2954,8 +3043,8 @@ class _TranslationsMemoryCreateEs extends TranslationsMemoryCreateEn {
 }
 
 // Path: memory.reembed
-class _TranslationsMemoryReembedEs extends TranslationsMemoryReembedEn {
-	_TranslationsMemoryReembedEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$memory$reembed$es extends Translations$memory$reembed$en {
+	_Translations$memory$reembed$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -2970,8 +3059,8 @@ class _TranslationsMemoryReembedEs extends TranslationsMemoryReembedEn {
 }
 
 // Path: about.sections
-class _TranslationsAboutSectionsEs extends TranslationsAboutSectionsEn {
-	_TranslationsAboutSectionsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$about$sections$es extends Translations$about$sections$en {
+	_Translations$about$sections$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -2982,8 +3071,8 @@ class _TranslationsAboutSectionsEs extends TranslationsAboutSectionsEn {
 }
 
 // Path: about.fields
-class _TranslationsAboutFieldsEs extends TranslationsAboutFieldsEn {
-	_TranslationsAboutFieldsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$about$fields$es extends Translations$about$fields$en {
+	_Translations$about$fields$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -2998,8 +3087,8 @@ class _TranslationsAboutFieldsEs extends TranslationsAboutFieldsEn {
 }
 
 // Path: about.copyLabels
-class _TranslationsAboutCopyLabelsEs extends TranslationsAboutCopyLabelsEn {
-	_TranslationsAboutCopyLabelsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$about$copyLabels$es extends Translations$about$copyLabels$en {
+	_Translations$about$copyLabels$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -3009,8 +3098,8 @@ class _TranslationsAboutCopyLabelsEs extends TranslationsAboutCopyLabelsEn {
 }
 
 // Path: about.gateway
-class _TranslationsAboutGatewayEs extends TranslationsAboutGatewayEn {
-	_TranslationsAboutGatewayEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$about$gateway$es extends Translations$about$gateway$en {
+	_Translations$about$gateway$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -3025,8 +3114,8 @@ class _TranslationsAboutGatewayEs extends TranslationsAboutGatewayEn {
 }
 
 // Path: settings.language
-class _TranslationsSettingsLanguageEs extends TranslationsSettingsLanguageEn {
-	_TranslationsSettingsLanguageEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$settings$language$es extends Translations$settings$language$en {
+	_Translations$settings$language$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -3040,8 +3129,8 @@ class _TranslationsSettingsLanguageEs extends TranslationsSettingsLanguageEn {
 }
 
 // Path: settings.appearance
-class _TranslationsSettingsAppearanceEs extends TranslationsSettingsAppearanceEn {
-	_TranslationsSettingsAppearanceEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$settings$appearance$es extends Translations$settings$appearance$en {
+	_Translations$settings$appearance$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -3056,8 +3145,8 @@ class _TranslationsSettingsAppearanceEs extends TranslationsSettingsAppearanceEn
 }
 
 // Path: settings.account
-class _TranslationsSettingsAccountEs extends TranslationsSettingsAccountEn {
-	_TranslationsSettingsAccountEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$settings$account$es extends Translations$settings$account$en {
+	_Translations$settings$account$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -3068,8 +3157,8 @@ class _TranslationsSettingsAccountEs extends TranslationsSettingsAccountEn {
 }
 
 // Path: settings.gateway
-class _TranslationsSettingsGatewayEs extends TranslationsSettingsGatewayEn {
-	_TranslationsSettingsGatewayEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$settings$gateway$es extends Translations$settings$gateway$en {
+	_Translations$settings$gateway$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -3082,8 +3171,8 @@ class _TranslationsSettingsGatewayEs extends TranslationsSettingsGatewayEn {
 }
 
 // Path: settings.changeCredentials
-class _TranslationsSettingsChangeCredentialsEs extends TranslationsSettingsChangeCredentialsEn {
-	_TranslationsSettingsChangeCredentialsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$settings$changeCredentials$es extends Translations$settings$changeCredentials$en {
+	_Translations$settings$changeCredentials$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -3105,8 +3194,8 @@ class _TranslationsSettingsChangeCredentialsEs extends TranslationsSettingsChang
 }
 
 // Path: settings.logViewer
-class _TranslationsSettingsLogViewerEs extends TranslationsSettingsLogViewerEn {
-	_TranslationsSettingsLogViewerEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$settings$logViewer$es extends Translations$settings$logViewer$en {
+	_Translations$settings$logViewer$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -3117,12 +3206,12 @@ class _TranslationsSettingsLogViewerEs extends TranslationsSettingsLogViewerEn {
 	@override String get clearLocal => 'Borrar vista local';
 	@override String get copiedSnack => 'Búfer copiado al portapapeles';
 	@override String get filterHint => 'Filtrar subcadena…';
-	@override late final _TranslationsSettingsLogViewerLevelsEs levels = _TranslationsSettingsLogViewerLevelsEs._(_root);
+	@override late final _Translations$settings$logViewer$levels$es levels = _Translations$settings$logViewer$levels$es._(_root);
 }
 
 // Path: settings.serverSettings
-class _TranslationsSettingsServerSettingsEs extends TranslationsSettingsServerSettingsEn {
-	_TranslationsSettingsServerSettingsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$settings$serverSettings$es extends Translations$settings$serverSettings$en {
+	_Translations$settings$serverSettings$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -3142,17 +3231,17 @@ class _TranslationsSettingsServerSettingsEs extends TranslationsSettingsServerSe
 	@override String get savedSimple => 'Guardado.';
 	@override String get changesNeedRestart => 'Los cambios en esta sección necesitan un reinicio del gateway.';
 	@override String get loadFailed => 'No se pudieron cargar los ajustes del servidor';
-	@override late final _TranslationsSettingsServerSettingsSectionsEs sections = _TranslationsSettingsServerSettingsSectionsEs._(_root);
-	@override late final _TranslationsSettingsServerSettingsSectionDescriptionsEs sectionDescriptions = _TranslationsSettingsServerSettingsSectionDescriptionsEs._(_root);
-	@override late final _TranslationsSettingsServerSettingsFieldsEs fields = _TranslationsSettingsServerSettingsFieldsEs._(_root);
+	@override late final _Translations$settings$serverSettings$sections$es sections = _Translations$settings$serverSettings$sections$es._(_root);
+	@override late final _Translations$settings$serverSettings$sectionDescriptions$es sectionDescriptions = _Translations$settings$serverSettings$sectionDescriptions$es._(_root);
+	@override late final _Translations$settings$serverSettings$fields$es fields = _Translations$settings$serverSettings$fields$es._(_root);
 	@override String validateInteger({required Object field}) => '"${field}" debe ser un entero';
 	@override String validateNumber({required Object field}) => '"${field}" debe ser un número';
-	@override late final _TranslationsSettingsServerSettingsEmbedderModelEs embedderModel = _TranslationsSettingsServerSettingsEmbedderModelEs._(_root);
+	@override late final _Translations$settings$serverSettings$embedderModel$es embedderModel = _Translations$settings$serverSettings$embedderModel$es._(_root);
 }
 
 // Path: web.sessions.list
-class _TranslationsWebSessionsListEs extends TranslationsWebSessionsListEn {
-	_TranslationsWebSessionsListEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$sessions$list$es extends Translations$web$sessions$list$en {
+	_Translations$web$sessions$list$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -3171,13 +3260,13 @@ class _TranslationsWebSessionsListEs extends TranslationsWebSessionsListEn {
 	@override String childPromoted({required Object count}) => ' ${count} session de tarea secundaria pasará al nivel superior.';
 	@override String childPromotedPlural({required Object count}) => ' ${count} sesiones de tarea secundaria pasarán al nivel superior.';
 	@override String footer({required Object live, required Object ended}) => '${live} activas · ${ended} finalizadas';
-	@override late final _TranslationsWebSessionsListRowEs row = _TranslationsWebSessionsListRowEs._(_root);
+	@override late final _Translations$web$sessions$list$row$es row = _Translations$web$sessions$list$row$es._(_root);
 	@override String get deleteFailedToast => 'Error al eliminar';
 }
 
 // Path: web.sessions.tabs
-class _TranslationsWebSessionsTabsEs extends TranslationsWebSessionsTabsEn {
-	_TranslationsWebSessionsTabsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$sessions$tabs$es extends Translations$web$sessions$tabs$en {
+	_Translations$web$sessions$tabs$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -3187,8 +3276,8 @@ class _TranslationsWebSessionsTabsEs extends TranslationsWebSessionsTabsEn {
 }
 
 // Path: web.sessions.page
-class _TranslationsWebSessionsPageEs extends TranslationsWebSessionsPageEn {
-	_TranslationsWebSessionsPageEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$sessions$page$es extends Translations$web$sessions$page$en {
+	_Translations$web$sessions$page$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -3209,8 +3298,8 @@ class _TranslationsWebSessionsPageEs extends TranslationsWebSessionsPageEn {
 }
 
 // Path: web.sessions.empty
-class _TranslationsWebSessionsEmptyEs extends TranslationsWebSessionsEmptyEn {
-	_TranslationsWebSessionsEmptyEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$sessions$empty$es extends Translations$web$sessions$empty$en {
+	_Translations$web$sessions$empty$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -3221,8 +3310,8 @@ class _TranslationsWebSessionsEmptyEs extends TranslationsWebSessionsEmptyEn {
 }
 
 // Path: web.sessions.header
-class _TranslationsWebSessionsHeaderEs extends TranslationsWebSessionsHeaderEn {
-	_TranslationsWebSessionsHeaderEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$sessions$header$es extends Translations$web$sessions$header$en {
+	_Translations$web$sessions$header$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -3248,8 +3337,8 @@ class _TranslationsWebSessionsHeaderEs extends TranslationsWebSessionsHeaderEn {
 }
 
 // Path: web.sessions.terminal
-class _TranslationsWebSessionsTerminalEs extends TranslationsWebSessionsTerminalEn {
-	_TranslationsWebSessionsTerminalEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$sessions$terminal$es extends Translations$web$sessions$terminal$en {
+	_Translations$web$sessions$terminal$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -3278,8 +3367,8 @@ class _TranslationsWebSessionsTerminalEs extends TranslationsWebSessionsTerminal
 }
 
 // Path: web.sessions.spawn
-class _TranslationsWebSessionsSpawnEs extends TranslationsWebSessionsSpawnEn {
-	_TranslationsWebSessionsSpawnEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$sessions$spawn$es extends Translations$web$sessions$spawn$en {
+	_Translations$web$sessions$spawn$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -3319,8 +3408,8 @@ class _TranslationsWebSessionsSpawnEs extends TranslationsWebSessionsSpawnEn {
 }
 
 // Path: web.sessions.accountSwitcher
-class _TranslationsWebSessionsAccountSwitcherEs extends TranslationsWebSessionsAccountSwitcherEn {
-	_TranslationsWebSessionsAccountSwitcherEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$sessions$accountSwitcher$es extends Translations$web$sessions$accountSwitcher$en {
+	_Translations$web$sessions$accountSwitcher$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -3345,20 +3434,20 @@ class _TranslationsWebSessionsAccountSwitcherEs extends TranslationsWebSessionsA
 }
 
 // Path: web.sessions.inspector
-class _TranslationsWebSessionsInspectorEs extends TranslationsWebSessionsInspectorEn {
-	_TranslationsWebSessionsInspectorEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$sessions$inspector$es extends Translations$web$sessions$inspector$en {
+	_Translations$web$sessions$inspector$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsWebSessionsInspectorTabsEs tabs = _TranslationsWebSessionsInspectorTabsEs._(_root);
-	@override late final _TranslationsWebSessionsInspectorVaultPanelEs vaultPanel = _TranslationsWebSessionsInspectorVaultPanelEs._(_root);
-	@override late final _TranslationsWebSessionsInspectorCortexPanelEs cortexPanel = _TranslationsWebSessionsInspectorCortexPanelEs._(_root);
+	@override late final _Translations$web$sessions$inspector$tabs$es tabs = _Translations$web$sessions$inspector$tabs$es._(_root);
+	@override late final _Translations$web$sessions$inspector$vaultPanel$es vaultPanel = _Translations$web$sessions$inspector$vaultPanel$es._(_root);
+	@override late final _Translations$web$sessions$inspector$cortexPanel$es cortexPanel = _Translations$web$sessions$inspector$cortexPanel$es._(_root);
 }
 
 // Path: web.sessions.ended
-class _TranslationsWebSessionsEndedEs extends TranslationsWebSessionsEndedEn {
-	_TranslationsWebSessionsEndedEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$sessions$ended$es extends Translations$web$sessions$ended$en {
+	_Translations$web$sessions$ended$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -3368,8 +3457,8 @@ class _TranslationsWebSessionsEndedEs extends TranslationsWebSessionsEndedEn {
 }
 
 // Path: web.sessions.fileBrowser
-class _TranslationsWebSessionsFileBrowserEs extends TranslationsWebSessionsFileBrowserEn {
-	_TranslationsWebSessionsFileBrowserEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$sessions$fileBrowser$es extends Translations$web$sessions$fileBrowser$en {
+	_Translations$web$sessions$fileBrowser$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -3393,8 +3482,8 @@ class _TranslationsWebSessionsFileBrowserEs extends TranslationsWebSessionsFileB
 }
 
 // Path: web.conflicts.confirmDelete
-class _TranslationsWebConflictsConfirmDeleteEs extends TranslationsWebConflictsConfirmDeleteEn {
-	_TranslationsWebConflictsConfirmDeleteEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$conflicts$confirmDelete$es extends Translations$web$conflicts$confirmDelete$en {
+	_Translations$web$conflicts$confirmDelete$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -3412,8 +3501,8 @@ class _TranslationsWebConflictsConfirmDeleteEs extends TranslationsWebConflictsC
 }
 
 // Path: web.conflicts.openLayer
-class _TranslationsWebConflictsOpenLayerEs extends TranslationsWebConflictsOpenLayerEn {
-	_TranslationsWebConflictsOpenLayerEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$conflicts$openLayer$es extends Translations$web$conflicts$openLayer$en {
+	_Translations$web$conflicts$openLayer$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -3423,8 +3512,8 @@ class _TranslationsWebConflictsOpenLayerEs extends TranslationsWebConflictsOpenL
 }
 
 // Path: web.conflicts.severity
-class _TranslationsWebConflictsSeverityEs extends TranslationsWebConflictsSeverityEn {
-	_TranslationsWebConflictsSeverityEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$conflicts$severity$es extends Translations$web$conflicts$severity$en {
+	_Translations$web$conflicts$severity$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -3435,8 +3524,8 @@ class _TranslationsWebConflictsSeverityEs extends TranslationsWebConflictsSeveri
 }
 
 // Path: web.memoryConfig.sections
-class _TranslationsWebMemoryConfigSectionsEs extends TranslationsWebMemoryConfigSectionsEn {
-	_TranslationsWebMemoryConfigSectionsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$memoryConfig$sections$es extends Translations$web$memoryConfig$sections$en {
+	_Translations$web$memoryConfig$sections$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -3449,8 +3538,8 @@ class _TranslationsWebMemoryConfigSectionsEs extends TranslationsWebMemoryConfig
 }
 
 // Path: web.memoryConfig.sectionHints
-class _TranslationsWebMemoryConfigSectionHintsEs extends TranslationsWebMemoryConfigSectionHintsEn {
-	_TranslationsWebMemoryConfigSectionHintsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$memoryConfig$sectionHints$es extends Translations$web$memoryConfig$sectionHints$en {
+	_Translations$web$memoryConfig$sectionHints$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -3463,8 +3552,8 @@ class _TranslationsWebMemoryConfigSectionHintsEs extends TranslationsWebMemoryCo
 }
 
 // Path: web.memoryConfig.moveBanner
-class _TranslationsWebMemoryConfigMoveBannerEs extends TranslationsWebMemoryConfigMoveBannerEn {
-	_TranslationsWebMemoryConfigMoveBannerEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$memoryConfig$moveBanner$es extends Translations$web$memoryConfig$moveBanner$en {
+	_Translations$web$memoryConfig$moveBanner$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -3475,8 +3564,8 @@ class _TranslationsWebMemoryConfigMoveBannerEs extends TranslationsWebMemoryConf
 }
 
 // Path: web.memoryConfig.infra
-class _TranslationsWebMemoryConfigInfraEs extends TranslationsWebMemoryConfigInfraEn {
-	_TranslationsWebMemoryConfigInfraEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$memoryConfig$infra$es extends Translations$web$memoryConfig$infra$en {
+	_Translations$web$memoryConfig$infra$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -3493,26 +3582,26 @@ class _TranslationsWebMemoryConfigInfraEs extends TranslationsWebMemoryConfigInf
 }
 
 // Path: web.memoryWorkers.tasks
-class _TranslationsWebMemoryWorkersTasksEs extends TranslationsWebMemoryWorkersTasksEn {
-	_TranslationsWebMemoryWorkersTasksEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$memoryWorkers$tasks$es extends Translations$web$memoryWorkers$tasks$en {
+	_Translations$web$memoryWorkers$tasks$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsWebMemoryWorkersTasksGatekeeperEs gatekeeper = _TranslationsWebMemoryWorkersTasksGatekeeperEs._(_root);
-	@override late final _TranslationsWebMemoryWorkersTasksCleanerEs cleaner = _TranslationsWebMemoryWorkersTasksCleanerEs._(_root);
-	@override late final _TranslationsWebMemoryWorkersTasksGitactivityEs gitactivity = _TranslationsWebMemoryWorkersTasksGitactivityEs._(_root);
-	@override late final _TranslationsWebMemoryWorkersTasksTranscriptEs transcript = _TranslationsWebMemoryWorkersTasksTranscriptEs._(_root);
-	@override late final _TranslationsWebMemoryWorkersTasksPlanDriftEs plan_drift = _TranslationsWebMemoryWorkersTasksPlanDriftEs._(_root);
-	@override late final _TranslationsWebMemoryWorkersTasksConflictDetectorEs conflict_detector = _TranslationsWebMemoryWorkersTasksConflictDetectorEs._(_root);
-	@override late final _TranslationsWebMemoryWorkersTasksCaptureEs capture = _TranslationsWebMemoryWorkersTasksCaptureEs._(_root);
-	@override late final _TranslationsWebMemoryWorkersTasksBlueprintEs blueprint = _TranslationsWebMemoryWorkersTasksBlueprintEs._(_root);
-	@override late final _TranslationsWebMemoryWorkersTasksCurationEs curation = _TranslationsWebMemoryWorkersTasksCurationEs._(_root);
+	@override late final _Translations$web$memoryWorkers$tasks$gatekeeper$es gatekeeper = _Translations$web$memoryWorkers$tasks$gatekeeper$es._(_root);
+	@override late final _Translations$web$memoryWorkers$tasks$cleaner$es cleaner = _Translations$web$memoryWorkers$tasks$cleaner$es._(_root);
+	@override late final _Translations$web$memoryWorkers$tasks$gitactivity$es gitactivity = _Translations$web$memoryWorkers$tasks$gitactivity$es._(_root);
+	@override late final _Translations$web$memoryWorkers$tasks$transcript$es transcript = _Translations$web$memoryWorkers$tasks$transcript$es._(_root);
+	@override late final _Translations$web$memoryWorkers$tasks$plan_drift$es plan_drift = _Translations$web$memoryWorkers$tasks$plan_drift$es._(_root);
+	@override late final _Translations$web$memoryWorkers$tasks$conflict_detector$es conflict_detector = _Translations$web$memoryWorkers$tasks$conflict_detector$es._(_root);
+	@override late final _Translations$web$memoryWorkers$tasks$capture$es capture = _Translations$web$memoryWorkers$tasks$capture$es._(_root);
+	@override late final _Translations$web$memoryWorkers$tasks$blueprint$es blueprint = _Translations$web$memoryWorkers$tasks$blueprint$es._(_root);
+	@override late final _Translations$web$memoryWorkers$tasks$curation$es curation = _Translations$web$memoryWorkers$tasks$curation$es._(_root);
 }
 
 // Path: web.project.picker
-class _TranslationsWebProjectPickerEs extends TranslationsWebProjectPickerEn {
-	_TranslationsWebProjectPickerEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$project$picker$es extends Translations$web$project$picker$en {
+	_Translations$web$project$picker$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -3529,8 +3618,8 @@ class _TranslationsWebProjectPickerEs extends TranslationsWebProjectPickerEn {
 }
 
 // Path: web.project.header
-class _TranslationsWebProjectHeaderEs extends TranslationsWebProjectHeaderEn {
-	_TranslationsWebProjectHeaderEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$project$header$es extends Translations$web$project$header$en {
+	_Translations$web$project$header$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -3545,8 +3634,8 @@ class _TranslationsWebProjectHeaderEs extends TranslationsWebProjectHeaderEn {
 }
 
 // Path: web.project.tabs
-class _TranslationsWebProjectTabsEs extends TranslationsWebProjectTabsEn {
-	_TranslationsWebProjectTabsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$project$tabs$es extends Translations$web$project$tabs$en {
+	_Translations$web$project$tabs$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -3566,8 +3655,8 @@ class _TranslationsWebProjectTabsEs extends TranslationsWebProjectTabsEn {
 }
 
 // Path: web.project.docLabel
-class _TranslationsWebProjectDocLabelEs extends TranslationsWebProjectDocLabelEn {
-	_TranslationsWebProjectDocLabelEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$project$docLabel$es extends Translations$web$project$docLabel$en {
+	_Translations$web$project$docLabel$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -3580,8 +3669,8 @@ class _TranslationsWebProjectDocLabelEs extends TranslationsWebProjectDocLabelEn
 }
 
 // Path: web.project.editor
-class _TranslationsWebProjectEditorEs extends TranslationsWebProjectEditorEn {
-	_TranslationsWebProjectEditorEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$project$editor$es extends Translations$web$project$editor$en {
+	_Translations$web$project$editor$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -3597,14 +3686,14 @@ class _TranslationsWebProjectEditorEs extends TranslationsWebProjectEditorEn {
 }
 
 // Path: web.project.readonly
-class _TranslationsWebProjectReadonlyEs extends TranslationsWebProjectReadonlyEn {
-	_TranslationsWebProjectReadonlyEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$project$readonly$es extends Translations$web$project$readonly$en {
+	_Translations$web$project$readonly$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsWebProjectReadonlyTechStackEs tech_stack = _TranslationsWebProjectReadonlyTechStackEs._(_root);
-	@override late final _TranslationsWebProjectReadonlyRecentActivityEs recent_activity = _TranslationsWebProjectReadonlyRecentActivityEs._(_root);
+	@override late final _Translations$web$project$readonly$tech_stack$es tech_stack = _Translations$web$project$readonly$tech_stack$es._(_root);
+	@override late final _Translations$web$project$readonly$recent_activity$es recent_activity = _Translations$web$project$readonly$recent_activity$es._(_root);
 	@override String noneCaptured({required Object label}) => 'Aún no se ha capturado ningún ${label}.';
 	@override String get generatedBy => 'Generado por';
 	@override String get lastRefresh => 'última actualización';
@@ -3612,8 +3701,8 @@ class _TranslationsWebProjectReadonlyEs extends TranslationsWebProjectReadonlyEn
 }
 
 // Path: web.project.journal
-class _TranslationsWebProjectJournalEs extends TranslationsWebProjectJournalEn {
-	_TranslationsWebProjectJournalEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$project$journal$es extends Translations$web$project$journal$en {
+	_Translations$web$project$journal$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -3623,8 +3712,8 @@ class _TranslationsWebProjectJournalEs extends TranslationsWebProjectJournalEn {
 }
 
 // Path: web.project.inbox
-class _TranslationsWebProjectInboxEs extends TranslationsWebProjectInboxEn {
-	_TranslationsWebProjectInboxEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$project$inbox$es extends Translations$web$project$inbox$en {
+	_Translations$web$project$inbox$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -3651,8 +3740,8 @@ class _TranslationsWebProjectInboxEs extends TranslationsWebProjectInboxEn {
 }
 
 // Path: web.project.archived
-class _TranslationsWebProjectArchivedEs extends TranslationsWebProjectArchivedEn {
-	_TranslationsWebProjectArchivedEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$project$archived$es extends Translations$web$project$archived$en {
+	_Translations$web$project$archived$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -3666,8 +3755,8 @@ class _TranslationsWebProjectArchivedEs extends TranslationsWebProjectArchivedEn
 }
 
 // Path: web.project.reset
-class _TranslationsWebProjectResetEs extends TranslationsWebProjectResetEn {
-	_TranslationsWebProjectResetEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$project$reset$es extends Translations$web$project$reset$en {
+	_Translations$web$project$reset$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -3685,42 +3774,42 @@ class _TranslationsWebProjectResetEs extends TranslationsWebProjectResetEn {
 	@override String get cancel => 'Cancelar';
 	@override String get deleteForever => 'Eliminar para siempre';
 	@override String successToast({required Object summary}) => 'Restablecido: se eliminó ${summary}';
-	@override late final _TranslationsWebProjectResetSummaryEs summary = _TranslationsWebProjectResetSummaryEs._(_root);
+	@override late final _Translations$web$project$reset$summary$es summary = _Translations$web$project$reset$summary$es._(_root);
 	@override String get failedToast => 'Error al restablecer';
 }
 
 // Path: web.project.lifecycle
-class _TranslationsWebProjectLifecycleEs extends TranslationsWebProjectLifecycleEn {
-	_TranslationsWebProjectLifecycleEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$project$lifecycle$es extends Translations$web$project$lifecycle$en {
+	_Translations$web$project$lifecycle$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsWebProjectLifecycleStatusEs status = _TranslationsWebProjectLifecycleStatusEs._(_root);
+	@override late final _Translations$web$project$lifecycle$status$es status = _Translations$web$project$lifecycle$status$es._(_root);
 	@override String get activate => 'Activar';
 	@override String get pause => 'Pausar';
 	@override String get archive => 'Archivar';
 	@override String get idleSuggest => 'Inactivo — considera archivar';
 	@override String idleHint({required Object days}) => 'Sin actividad durante ${days} días';
 	@override String get failedToast => 'No se pudo cambiar el estado del proyecto';
-	@override late final _TranslationsWebProjectLifecycleAppliedEs applied = _TranslationsWebProjectLifecycleAppliedEs._(_root);
-	@override late final _TranslationsWebProjectLifecycleTooltipEs tooltip = _TranslationsWebProjectLifecycleTooltipEs._(_root);
+	@override late final _Translations$web$project$lifecycle$applied$es applied = _Translations$web$project$lifecycle$applied$es._(_root);
+	@override late final _Translations$web$project$lifecycle$tooltip$es tooltip = _Translations$web$project$lifecycle$tooltip$es._(_root);
 }
 
 // Path: web.project.docMeta
-class _TranslationsWebProjectDocMetaEs extends TranslationsWebProjectDocMetaEn {
-	_TranslationsWebProjectDocMetaEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$project$docMeta$es extends Translations$web$project$docMeta$en {
+	_Translations$web$project$docMeta$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsWebProjectDocMetaMaintainerEs maintainer = _TranslationsWebProjectDocMetaMaintainerEs._(_root);
-	@override late final _TranslationsWebProjectDocMetaPurposeEs purpose = _TranslationsWebProjectDocMetaPurposeEs._(_root);
+	@override late final _Translations$web$project$docMeta$maintainer$es maintainer = _Translations$web$project$docMeta$maintainer$es._(_root);
+	@override late final _Translations$web$project$docMeta$purpose$es purpose = _Translations$web$project$docMeta$purpose$es._(_root);
 }
 
 // Path: web.project.proposalBanner
-class _TranslationsWebProjectProposalBannerEs extends TranslationsWebProjectProposalBannerEn {
-	_TranslationsWebProjectProposalBannerEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$project$proposalBanner$es extends Translations$web$project$proposalBanner$en {
+	_Translations$web$project$proposalBanner$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -3730,8 +3819,8 @@ class _TranslationsWebProjectProposalBannerEs extends TranslationsWebProjectProp
 }
 
 // Path: web.project.overview
-class _TranslationsWebProjectOverviewEs extends TranslationsWebProjectOverviewEn {
-	_TranslationsWebProjectOverviewEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$project$overview$es extends Translations$web$project$overview$en {
+	_Translations$web$project$overview$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -3753,8 +3842,8 @@ class _TranslationsWebProjectOverviewEs extends TranslationsWebProjectOverviewEn
 }
 
 // Path: web.memoryInspector.status
-class _TranslationsWebMemoryInspectorStatusEs extends TranslationsWebMemoryInspectorStatusEn {
-	_TranslationsWebMemoryInspectorStatusEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$memoryInspector$status$es extends Translations$web$memoryInspector$status$en {
+	_Translations$web$memoryInspector$status$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -3772,8 +3861,8 @@ class _TranslationsWebMemoryInspectorStatusEs extends TranslationsWebMemoryInspe
 }
 
 // Path: web.memoryInspector.scope
-class _TranslationsWebMemoryInspectorScopeEs extends TranslationsWebMemoryInspectorScopeEn {
-	_TranslationsWebMemoryInspectorScopeEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$memoryInspector$scope$es extends Translations$web$memoryInspector$scope$en {
+	_Translations$web$memoryInspector$scope$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -3787,12 +3876,12 @@ class _TranslationsWebMemoryInspectorScopeEs extends TranslationsWebMemoryInspec
 	@override String get syncTooltip => 'Reimportar los archivos <cwd>/.claude/memory/*.md de Claude a pgvector';
 	@override String get browse => 'Explorar';
 	@override String get browseTooltip => 'Explora el sistema de archivos del host del gateway para elegir cualquier directorio de proyecto';
-	@override late final _TranslationsWebMemoryInspectorScopeValuesEs values = _TranslationsWebMemoryInspectorScopeValuesEs._(_root);
+	@override late final _Translations$web$memoryInspector$scope$values$es values = _Translations$web$memoryInspector$scope$values$es._(_root);
 }
 
 // Path: web.memoryInspector.search
-class _TranslationsWebMemoryInspectorSearchEs extends TranslationsWebMemoryInspectorSearchEn {
-	_TranslationsWebMemoryInspectorSearchEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$memoryInspector$search$es extends Translations$web$memoryInspector$search$en {
+	_Translations$web$memoryInspector$search$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -3804,8 +3893,8 @@ class _TranslationsWebMemoryInspectorSearchEs extends TranslationsWebMemoryInspe
 }
 
 // Path: web.memoryInspector.records
-class _TranslationsWebMemoryInspectorRecordsEs extends TranslationsWebMemoryInspectorRecordsEn {
-	_TranslationsWebMemoryInspectorRecordsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$memoryInspector$records$es extends Translations$web$memoryInspector$records$en {
+	_Translations$web$memoryInspector$records$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -3828,8 +3917,8 @@ class _TranslationsWebMemoryInspectorRecordsEs extends TranslationsWebMemoryInsp
 }
 
 // Path: web.memoryInspector.row
-class _TranslationsWebMemoryInspectorRowEs extends TranslationsWebMemoryInspectorRowEn {
-	_TranslationsWebMemoryInspectorRowEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$memoryInspector$row$es extends Translations$web$memoryInspector$row$en {
+	_Translations$web$memoryInspector$row$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -3852,8 +3941,8 @@ class _TranslationsWebMemoryInspectorRowEs extends TranslationsWebMemoryInspecto
 }
 
 // Path: web.memoryInspector.toasts
-class _TranslationsWebMemoryInspectorToastsEs extends TranslationsWebMemoryInspectorToastsEn {
-	_TranslationsWebMemoryInspectorToastsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$memoryInspector$toasts$es extends Translations$web$memoryInspector$toasts$en {
+	_Translations$web$memoryInspector$toasts$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -3881,8 +3970,8 @@ class _TranslationsWebMemoryInspectorToastsEs extends TranslationsWebMemoryInspe
 }
 
 // Path: web.memoryInspector.bulkDelete
-class _TranslationsWebMemoryInspectorBulkDeleteEs extends TranslationsWebMemoryInspectorBulkDeleteEn {
-	_TranslationsWebMemoryInspectorBulkDeleteEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$memoryInspector$bulkDelete$es extends Translations$web$memoryInspector$bulkDelete$en {
+	_Translations$web$memoryInspector$bulkDelete$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -3899,8 +3988,8 @@ class _TranslationsWebMemoryInspectorBulkDeleteEs extends TranslationsWebMemoryI
 }
 
 // Path: web.memoryInspector.addMem
-class _TranslationsWebMemoryInspectorAddMemEs extends TranslationsWebMemoryInspectorAddMemEn {
-	_TranslationsWebMemoryInspectorAddMemEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$memoryInspector$addMem$es extends Translations$web$memoryInspector$addMem$en {
+	_Translations$web$memoryInspector$addMem$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -3914,8 +4003,8 @@ class _TranslationsWebMemoryInspectorAddMemEs extends TranslationsWebMemoryInspe
 }
 
 // Path: web.memoryInspector.picker
-class _TranslationsWebMemoryInspectorPickerEs extends TranslationsWebMemoryInspectorPickerEn {
-	_TranslationsWebMemoryInspectorPickerEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$memoryInspector$picker$es extends Translations$web$memoryInspector$picker$en {
+	_Translations$web$memoryInspector$picker$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -3929,8 +4018,8 @@ class _TranslationsWebMemoryInspectorPickerEs extends TranslationsWebMemoryInspe
 }
 
 // Path: web.memoryInspector.migrationBanner
-class _TranslationsWebMemoryInspectorMigrationBannerEs extends TranslationsWebMemoryInspectorMigrationBannerEn {
-	_TranslationsWebMemoryInspectorMigrationBannerEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$memoryInspector$migrationBanner$es extends Translations$web$memoryInspector$migrationBanner$en {
+	_Translations$web$memoryInspector$migrationBanner$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -3943,8 +4032,8 @@ class _TranslationsWebMemoryInspectorMigrationBannerEs extends TranslationsWebMe
 }
 
 // Path: web.memoryInspector.reembed
-class _TranslationsWebMemoryInspectorReembedEs extends TranslationsWebMemoryInspectorReembedEn {
-	_TranslationsWebMemoryInspectorReembedEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$memoryInspector$reembed$es extends Translations$web$memoryInspector$reembed$en {
+	_Translations$web$memoryInspector$reembed$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -3968,8 +4057,8 @@ class _TranslationsWebMemoryInspectorReembedEs extends TranslationsWebMemoryInsp
 }
 
 // Path: web.notes.header
-class _TranslationsWebNotesHeaderEs extends TranslationsWebNotesHeaderEn {
-	_TranslationsWebNotesHeaderEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$notes$header$es extends Translations$web$notes$header$en {
+	_Translations$web$notes$header$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -3983,8 +4072,8 @@ class _TranslationsWebNotesHeaderEs extends TranslationsWebNotesHeaderEn {
 }
 
 // Path: web.notes.left
-class _TranslationsWebNotesLeftEs extends TranslationsWebNotesLeftEn {
-	_TranslationsWebNotesLeftEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$notes$left$es extends Translations$web$notes$left$en {
+	_Translations$web$notes$left$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -4004,8 +4093,8 @@ class _TranslationsWebNotesLeftEs extends TranslationsWebNotesLeftEn {
 }
 
 // Path: web.notes.tags
-class _TranslationsWebNotesTagsEs extends TranslationsWebNotesTagsEn {
-	_TranslationsWebNotesTagsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$notes$tags$es extends Translations$web$notes$tags$en {
+	_Translations$web$notes$tags$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -4015,8 +4104,8 @@ class _TranslationsWebNotesTagsEs extends TranslationsWebNotesTagsEn {
 }
 
 // Path: web.notes.tree
-class _TranslationsWebNotesTreeEs extends TranslationsWebNotesTreeEn {
-	_TranslationsWebNotesTreeEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$notes$tree$es extends Translations$web$notes$tree$en {
+	_Translations$web$notes$tree$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -4025,8 +4114,8 @@ class _TranslationsWebNotesTreeEs extends TranslationsWebNotesTreeEn {
 }
 
 // Path: web.notes.outline
-class _TranslationsWebNotesOutlineEs extends TranslationsWebNotesOutlineEn {
-	_TranslationsWebNotesOutlineEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$notes$outline$es extends Translations$web$notes$outline$en {
+	_Translations$web$notes$outline$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -4036,8 +4125,8 @@ class _TranslationsWebNotesOutlineEs extends TranslationsWebNotesOutlineEn {
 }
 
 // Path: web.notes.newNote
-class _TranslationsWebNotesNewNoteEs extends TranslationsWebNotesNewNoteEn {
-	_TranslationsWebNotesNewNoteEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$notes$newNote$es extends Translations$web$notes$newNote$en {
+	_Translations$web$notes$newNote$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -4050,8 +4139,8 @@ class _TranslationsWebNotesNewNoteEs extends TranslationsWebNotesNewNoteEn {
 }
 
 // Path: web.notes.empty
-class _TranslationsWebNotesEmptyEs extends TranslationsWebNotesEmptyEn {
-	_TranslationsWebNotesEmptyEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$notes$empty$es extends Translations$web$notes$empty$en {
+	_Translations$web$notes$empty$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -4063,8 +4152,8 @@ class _TranslationsWebNotesEmptyEs extends TranslationsWebNotesEmptyEn {
 }
 
 // Path: web.notes.picker
-class _TranslationsWebNotesPickerEs extends TranslationsWebNotesPickerEn {
-	_TranslationsWebNotesPickerEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$notes$picker$es extends Translations$web$notes$picker$en {
+	_Translations$web$notes$picker$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -4077,8 +4166,8 @@ class _TranslationsWebNotesPickerEs extends TranslationsWebNotesPickerEn {
 }
 
 // Path: web.notes.vaultSync
-class _TranslationsWebNotesVaultSyncEs extends TranslationsWebNotesVaultSyncEn {
-	_TranslationsWebNotesVaultSyncEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$notes$vaultSync$es extends Translations$web$notes$vaultSync$en {
+	_Translations$web$notes$vaultSync$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -4086,21 +4175,21 @@ class _TranslationsWebNotesVaultSyncEs extends TranslationsWebNotesVaultSyncEn {
 	@override String get title => 'Sincronización del vault';
 	@override String get description => 'Haz commit, pull y push del vault de notas como un repositorio git. La autenticación usa las credenciales de git del host de tu gateway (agente SSH / asistente de credenciales).';
 	@override String get reading => 'Leyendo el estado del vault…';
-	@override late final _TranslationsWebNotesVaultSyncInitEs init = _TranslationsWebNotesVaultSyncInitEs._(_root);
-	@override late final _TranslationsWebNotesVaultSyncBranchEs branch = _TranslationsWebNotesVaultSyncBranchEs._(_root);
-	@override late final _TranslationsWebNotesVaultSyncActionEs action = _TranslationsWebNotesVaultSyncActionEs._(_root);
-	@override late final _TranslationsWebNotesVaultSyncCommitEs commit = _TranslationsWebNotesVaultSyncCommitEs._(_root);
-	@override late final _TranslationsWebNotesVaultSyncFileListEs fileList = _TranslationsWebNotesVaultSyncFileListEs._(_root);
-	@override late final _TranslationsWebNotesVaultSyncRemoteEs remote = _TranslationsWebNotesVaultSyncRemoteEs._(_root);
-	@override late final _TranslationsWebNotesVaultSyncHistoryEs history = _TranslationsWebNotesVaultSyncHistoryEs._(_root);
-	@override late final _TranslationsWebNotesVaultSyncConflictEs conflict = _TranslationsWebNotesVaultSyncConflictEs._(_root);
-	@override late final _TranslationsWebNotesVaultSyncAuthEs auth = _TranslationsWebNotesVaultSyncAuthEs._(_root);
-	@override late final _TranslationsWebNotesVaultSyncAutoSyncEs autoSync = _TranslationsWebNotesVaultSyncAutoSyncEs._(_root);
+	@override late final _Translations$web$notes$vaultSync$init$es init = _Translations$web$notes$vaultSync$init$es._(_root);
+	@override late final _Translations$web$notes$vaultSync$branch$es branch = _Translations$web$notes$vaultSync$branch$es._(_root);
+	@override late final _Translations$web$notes$vaultSync$action$es action = _Translations$web$notes$vaultSync$action$es._(_root);
+	@override late final _Translations$web$notes$vaultSync$commit$es commit = _Translations$web$notes$vaultSync$commit$es._(_root);
+	@override late final _Translations$web$notes$vaultSync$fileList$es fileList = _Translations$web$notes$vaultSync$fileList$es._(_root);
+	@override late final _Translations$web$notes$vaultSync$remote$es remote = _Translations$web$notes$vaultSync$remote$es._(_root);
+	@override late final _Translations$web$notes$vaultSync$history$es history = _Translations$web$notes$vaultSync$history$es._(_root);
+	@override late final _Translations$web$notes$vaultSync$conflict$es conflict = _Translations$web$notes$vaultSync$conflict$es._(_root);
+	@override late final _Translations$web$notes$vaultSync$auth$es auth = _Translations$web$notes$vaultSync$auth$es._(_root);
+	@override late final _Translations$web$notes$vaultSync$autoSync$es autoSync = _Translations$web$notes$vaultSync$autoSync$es._(_root);
 }
 
 // Path: web.notes.syncBadge
-class _TranslationsWebNotesSyncBadgeEs extends TranslationsWebNotesSyncBadgeEn {
-	_TranslationsWebNotesSyncBadgeEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$notes$syncBadge$es extends Translations$web$notes$syncBadge$en {
+	_Translations$web$notes$syncBadge$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -4119,8 +4208,8 @@ class _TranslationsWebNotesSyncBadgeEs extends TranslationsWebNotesSyncBadgeEn {
 }
 
 // Path: web.activity.filters
-class _TranslationsWebActivityFiltersEs extends TranslationsWebActivityFiltersEn {
-	_TranslationsWebActivityFiltersEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$activity$filters$es extends Translations$web$activity$filters$en {
+	_Translations$web$activity$filters$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -4140,8 +4229,8 @@ class _TranslationsWebActivityFiltersEs extends TranslationsWebActivityFiltersEn
 }
 
 // Path: web.activity.table
-class _TranslationsWebActivityTableEs extends TranslationsWebActivityTableEn {
-	_TranslationsWebActivityTableEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$activity$table$es extends Translations$web$activity$table$en {
+	_Translations$web$activity$table$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -4158,8 +4247,8 @@ class _TranslationsWebActivityTableEs extends TranslationsWebActivityTableEn {
 }
 
 // Path: web.activity.empty
-class _TranslationsWebActivityEmptyEs extends TranslationsWebActivityEmptyEn {
-	_TranslationsWebActivityEmptyEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$activity$empty$es extends Translations$web$activity$empty$en {
+	_Translations$web$activity$empty$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -4175,8 +4264,8 @@ class _TranslationsWebActivityEmptyEs extends TranslationsWebActivityEmptyEn {
 }
 
 // Path: web.activity.events
-class _TranslationsWebActivityEventsEs extends TranslationsWebActivityEventsEn {
-	_TranslationsWebActivityEventsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$activity$events$es extends Translations$web$activity$events$en {
+	_Translations$web$activity$events$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -4190,8 +4279,8 @@ class _TranslationsWebActivityEventsEs extends TranslationsWebActivityEventsEn {
 }
 
 // Path: web.providers.list
-class _TranslationsWebProvidersListEs extends TranslationsWebProvidersListEn {
-	_TranslationsWebProvidersListEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$providers$list$es extends Translations$web$providers$list$en {
+	_Translations$web$providers$list$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -4203,8 +4292,8 @@ class _TranslationsWebProvidersListEs extends TranslationsWebProvidersListEn {
 }
 
 // Path: web.providers.detail
-class _TranslationsWebProvidersDetailEs extends TranslationsWebProvidersDetailEn {
-	_TranslationsWebProvidersDetailEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$providers$detail$es extends Translations$web$providers$detail$en {
+	_Translations$web$providers$detail$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -4222,7 +4311,7 @@ class _TranslationsWebProvidersDetailEs extends TranslationsWebProvidersDetailEn
 	@override String get savedToast => 'Configuración del proveedor guardada';
 	@override String get saveFailedToast => 'Error al guardar';
 	@override String get toggleFailedToast => 'Error al alternar';
-	@override late final _TranslationsWebProvidersDetailCapsEs caps = _TranslationsWebProvidersDetailCapsEs._(_root);
+	@override late final _Translations$web$providers$detail$caps$es caps = _Translations$web$providers$detail$caps$es._(_root);
 	@override String get notInstalled => 'no instalado';
 	@override String get brokenCli => 'Instalado pero no ejecutable';
 	@override String updateAvailable({required Object version}) => 'actualización disponible → ${version}';
@@ -4236,8 +4325,8 @@ class _TranslationsWebProvidersDetailEs extends TranslationsWebProvidersDetailEn
 }
 
 // Path: web.providers.configForm
-class _TranslationsWebProvidersConfigFormEs extends TranslationsWebProvidersConfigFormEn {
-	_TranslationsWebProvidersConfigFormEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$providers$configForm$es extends Translations$web$providers$configForm$en {
+	_Translations$web$providers$configForm$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -4251,8 +4340,8 @@ class _TranslationsWebProvidersConfigFormEs extends TranslationsWebProvidersConf
 }
 
 // Path: web.providers.claudeAccounts
-class _TranslationsWebProvidersClaudeAccountsEs extends TranslationsWebProvidersClaudeAccountsEn {
-	_TranslationsWebProvidersClaudeAccountsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$providers$claudeAccounts$es extends Translations$web$providers$claudeAccounts$en {
+	_Translations$web$providers$claudeAccounts$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -4284,8 +4373,8 @@ class _TranslationsWebProvidersClaudeAccountsEs extends TranslationsWebProviders
 }
 
 // Path: web.providers.antigravityAccounts
-class _TranslationsWebProvidersAntigravityAccountsEs extends TranslationsWebProvidersAntigravityAccountsEn {
-	_TranslationsWebProvidersAntigravityAccountsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$providers$antigravityAccounts$es extends Translations$web$providers$antigravityAccounts$en {
+	_Translations$web$providers$antigravityAccounts$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -4313,8 +4402,8 @@ class _TranslationsWebProvidersAntigravityAccountsEs extends TranslationsWebProv
 }
 
 // Path: web.providers.models
-class _TranslationsWebProvidersModelsEs extends TranslationsWebProvidersModelsEn {
-	_TranslationsWebProvidersModelsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$providers$models$es extends Translations$web$providers$models$en {
+	_Translations$web$providers$models$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -4332,8 +4421,8 @@ class _TranslationsWebProvidersModelsEs extends TranslationsWebProvidersModelsEn
 }
 
 // Path: web.channels.empty
-class _TranslationsWebChannelsEmptyEs extends TranslationsWebChannelsEmptyEn {
-	_TranslationsWebChannelsEmptyEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$channels$empty$es extends Translations$web$channels$empty$en {
+	_Translations$web$channels$empty$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -4343,8 +4432,8 @@ class _TranslationsWebChannelsEmptyEs extends TranslationsWebChannelsEmptyEn {
 }
 
 // Path: web.channels.card
-class _TranslationsWebChannelsCardEs extends TranslationsWebChannelsCardEn {
-	_TranslationsWebChannelsCardEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$channels$card$es extends Translations$web$channels$card$en {
+	_Translations$web$channels$card$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -4374,8 +4463,8 @@ class _TranslationsWebChannelsCardEs extends TranslationsWebChannelsCardEn {
 }
 
 // Path: web.channels.toasts
-class _TranslationsWebChannelsToastsEs extends TranslationsWebChannelsToastsEn {
-	_TranslationsWebChannelsToastsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$channels$toasts$es extends Translations$web$channels$toasts$en {
+	_Translations$web$channels$toasts$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -4391,8 +4480,8 @@ class _TranslationsWebChannelsToastsEs extends TranslationsWebChannelsToastsEn {
 }
 
 // Path: web.channels.dialog
-class _TranslationsWebChannelsDialogEs extends TranslationsWebChannelsDialogEn {
-	_TranslationsWebChannelsDialogEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$channels$dialog$es extends Translations$web$channels$dialog$en {
+	_Translations$web$channels$dialog$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -4422,8 +4511,8 @@ class _TranslationsWebChannelsDialogEs extends TranslationsWebChannelsDialogEn {
 }
 
 // Path: web.channels.notifications
-class _TranslationsWebChannelsNotificationsEs extends TranslationsWebChannelsNotificationsEn {
-	_TranslationsWebChannelsNotificationsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$channels$notifications$es extends Translations$web$channels$notifications$en {
+	_Translations$web$channels$notifications$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -4435,14 +4524,14 @@ class _TranslationsWebChannelsNotificationsEs extends TranslationsWebChannelsNot
 	@override String get terminalSnippetLabel => 'Fragmento de terminal';
 	@override String get embedSnippetLabel => 'Incrustar la pantalla reciente del terminal en las notificaciones de inactividad';
 	@override String get snippetExplainer => 'Cuando está activado, la tarjeta de inactividad incluye un fragmento en bloque de código de lo que el usuario vería en el terminal web en vivo, los elementos de la interfaz del TUI de Claude (indicador de estado, aviso de "bypass permissions", líneas separadoras) se filtran automáticamente.';
-	@override late final _TranslationsWebChannelsNotificationsModesEs modes = _TranslationsWebChannelsNotificationsModesEs._(_root);
-	@override late final _TranslationsWebChannelsNotificationsCooldownsEs cooldowns = _TranslationsWebChannelsNotificationsCooldownsEs._(_root);
-	@override late final _TranslationsWebChannelsNotificationsSnippetCapsEs snippetCaps = _TranslationsWebChannelsNotificationsSnippetCapsEs._(_root);
+	@override late final _Translations$web$channels$notifications$modes$es modes = _Translations$web$channels$notifications$modes$es._(_root);
+	@override late final _Translations$web$channels$notifications$cooldowns$es cooldowns = _Translations$web$channels$notifications$cooldowns$es._(_root);
+	@override late final _Translations$web$channels$notifications$snippetCaps$es snippetCaps = _Translations$web$channels$notifications$snippetCaps$es._(_root);
 }
 
 // Path: web.channels.bridge
-class _TranslationsWebChannelsBridgeEs extends TranslationsWebChannelsBridgeEn {
-	_TranslationsWebChannelsBridgeEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$channels$bridge$es extends Translations$web$channels$bridge$en {
+	_Translations$web$channels$bridge$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -4461,8 +4550,8 @@ class _TranslationsWebChannelsBridgeEs extends TranslationsWebChannelsBridgeEn {
 }
 
 // Path: web.channels.setup
-class _TranslationsWebChannelsSetupEs extends TranslationsWebChannelsSetupEn {
-	_TranslationsWebChannelsSetupEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$channels$setup$es extends Translations$web$channels$setup$en {
+	_Translations$web$channels$setup$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -4485,8 +4574,8 @@ class _TranslationsWebChannelsSetupEs extends TranslationsWebChannelsSetupEn {
 }
 
 // Path: web.integrations.tabs
-class _TranslationsWebIntegrationsTabsEs extends TranslationsWebIntegrationsTabsEn {
-	_TranslationsWebIntegrationsTabsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$integrations$tabs$es extends Translations$web$integrations$tabs$en {
+	_Translations$web$integrations$tabs$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -4496,8 +4585,8 @@ class _TranslationsWebIntegrationsTabsEs extends TranslationsWebIntegrationsTabs
 }
 
 // Path: web.integrations.empty
-class _TranslationsWebIntegrationsEmptyEs extends TranslationsWebIntegrationsEmptyEn {
-	_TranslationsWebIntegrationsEmptyEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$integrations$empty$es extends Translations$web$integrations$empty$en {
+	_Translations$web$integrations$empty$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -4508,8 +4597,8 @@ class _TranslationsWebIntegrationsEmptyEs extends TranslationsWebIntegrationsEmp
 }
 
 // Path: web.integrations.card
-class _TranslationsWebIntegrationsCardEs extends TranslationsWebIntegrationsCardEn {
-	_TranslationsWebIntegrationsCardEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$integrations$card$es extends Translations$web$integrations$card$en {
+	_Translations$web$integrations$card$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -4534,8 +4623,8 @@ class _TranslationsWebIntegrationsCardEs extends TranslationsWebIntegrationsCard
 }
 
 // Path: web.integrations.defaultAgent
-class _TranslationsWebIntegrationsDefaultAgentEs extends TranslationsWebIntegrationsDefaultAgentEn {
-	_TranslationsWebIntegrationsDefaultAgentEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$integrations$defaultAgent$es extends Translations$web$integrations$defaultAgent$en {
+	_Translations$web$integrations$defaultAgent$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -4554,8 +4643,8 @@ class _TranslationsWebIntegrationsDefaultAgentEs extends TranslationsWebIntegrat
 }
 
 // Path: web.integrations.register_dialog
-class _TranslationsWebIntegrationsRegisterDialogEs extends TranslationsWebIntegrationsRegisterDialogEn {
-	_TranslationsWebIntegrationsRegisterDialogEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$integrations$register_dialog$es extends Translations$web$integrations$register_dialog$en {
+	_Translations$web$integrations$register_dialog$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -4584,8 +4673,8 @@ class _TranslationsWebIntegrationsRegisterDialogEs extends TranslationsWebIntegr
 }
 
 // Path: web.integrations.reveal
-class _TranslationsWebIntegrationsRevealEs extends TranslationsWebIntegrationsRevealEn {
-	_TranslationsWebIntegrationsRevealEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$integrations$reveal$es extends Translations$web$integrations$reveal$en {
+	_Translations$web$integrations$reveal$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -4605,8 +4694,8 @@ class _TranslationsWebIntegrationsRevealEs extends TranslationsWebIntegrationsRe
 }
 
 // Path: web.integrations.edit_dialog
-class _TranslationsWebIntegrationsEditDialogEs extends TranslationsWebIntegrationsEditDialogEn {
-	_TranslationsWebIntegrationsEditDialogEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$integrations$edit_dialog$es extends Translations$web$integrations$edit_dialog$en {
+	_Translations$web$integrations$edit_dialog$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -4640,8 +4729,8 @@ class _TranslationsWebIntegrationsEditDialogEs extends TranslationsWebIntegratio
 }
 
 // Path: web.integrations.proxy
-class _TranslationsWebIntegrationsProxyEs extends TranslationsWebIntegrationsProxyEn {
-	_TranslationsWebIntegrationsProxyEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$integrations$proxy$es extends Translations$web$integrations$proxy$en {
+	_Translations$web$integrations$proxy$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -4667,8 +4756,8 @@ class _TranslationsWebIntegrationsProxyEs extends TranslationsWebIntegrationsPro
 }
 
 // Path: web.plugins.common
-class _TranslationsWebPluginsCommonEs extends TranslationsWebPluginsCommonEn {
-	_TranslationsWebPluginsCommonEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$plugins$common$es extends Translations$web$plugins$common$en {
+	_Translations$web$plugins$common$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -4682,8 +4771,8 @@ class _TranslationsWebPluginsCommonEs extends TranslationsWebPluginsCommonEn {
 }
 
 // Path: web.plugins.mcp
-class _TranslationsWebPluginsMcpEs extends TranslationsWebPluginsMcpEn {
-	_TranslationsWebPluginsMcpEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$plugins$mcp$es extends Translations$web$plugins$mcp$en {
+	_Translations$web$plugins$mcp$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -4692,7 +4781,7 @@ class _TranslationsWebPluginsMcpEs extends TranslationsWebPluginsMcpEn {
 	@override String description({required Object KEY}) => 'Servidores Model Context Protocol inyectados en cada spawn (claude / codex). Las entradas del vault están en <1>~/.opendray/vault/mcp/&lt;id&gt;/mcp.json</1>; los secretos (referenciados como <3>\$${KEY}</3> en env / headers) provienen de la sección <5>secretos MCP</5> de abajo.';
 	@override String get newServer => 'Nuevo servidor';
 	@override String get empty => 'Aún no hay servidores MCP. Añade uno para exponer herramientas adicionales a tus sessions de agente.';
-	@override late final _TranslationsWebPluginsMcpColumnsEs columns = _TranslationsWebPluginsMcpColumnsEs._(_root);
+	@override late final _Translations$web$plugins$mcp$columns$es columns = _Translations$web$plugins$mcp$columns$es._(_root);
 	@override String get noUrl => 'sin url';
 	@override String get noCommand => 'sin comando';
 	@override String deleteConfirm({required Object id}) => '¿Eliminar el servidor MCP "${id}"?';
@@ -4705,13 +4794,13 @@ class _TranslationsWebPluginsMcpEs extends TranslationsWebPluginsMcpEn {
 	@override String get builtinTooltip => 'Provisto por el propio opendray — se adjunta automáticamente a cada session que admite MCP. No se puede editar ni eliminar.';
 	@override String get builtinDescription => 'El servidor compartido de memoria y conocimiento de opendray: memory_search / memory_store, project_goal y project_plan get/set, session_log_append, decision_record, doc_read, skill_distill, project_search. Se adjunta automáticamente a cada session de Claude / Codex / Antigravity.';
 	@override String get builtinAutoAttach => 'siempre activo';
-	@override late final _TranslationsWebPluginsMcpEditorEs editor = _TranslationsWebPluginsMcpEditorEs._(_root);
-	@override late final _TranslationsWebPluginsMcpTestEs test = _TranslationsWebPluginsMcpTestEs._(_root);
+	@override late final _Translations$web$plugins$mcp$editor$es editor = _Translations$web$plugins$mcp$editor$es._(_root);
+	@override late final _Translations$web$plugins$mcp$test$es test = _Translations$web$plugins$mcp$test$es._(_root);
 }
 
 // Path: web.plugins.mcpSecrets
-class _TranslationsWebPluginsMcpSecretsEs extends TranslationsWebPluginsMcpSecretsEn {
-	_TranslationsWebPluginsMcpSecretsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$plugins$mcpSecrets$es extends Translations$web$plugins$mcpSecrets$en {
+	_Translations$web$plugins$mcpSecrets$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -4725,17 +4814,17 @@ class _TranslationsWebPluginsMcpSecretsEs extends TranslationsWebPluginsMcpSecre
 	@override String descriptionStored({required Object path}) => ' Almacenado en <1>${path}</1>.';
 	@override String get addSecret => 'Añadir secreto';
 	@override String empty({required Object KEY}) => 'No hay secretos almacenados. Añade uno para empezar a referenciarlo como <1>\$${KEY}</1> en las configuraciones de tus servidores MCP.';
-	@override late final _TranslationsWebPluginsMcpSecretsColumnsEs columns = _TranslationsWebPluginsMcpSecretsColumnsEs._(_root);
+	@override late final _Translations$web$plugins$mcpSecrets$columns$es columns = _Translations$web$plugins$mcpSecrets$columns$es._(_root);
 	@override String get editTooltip => 'Sobrescribir el valor almacenado';
 	@override String deleteConfirm({required Object key}) => '¿Eliminar el secreto "${key}"? Cualquier mcp.json que referencie \$${key} recurrirá al marcador literal hasta que establezcas un nuevo valor.';
 	@override String get removedToast => 'Secreto eliminado';
 	@override String get deleteFailedToast => 'Error al eliminar';
-	@override late final _TranslationsWebPluginsMcpSecretsEditorEs editor = _TranslationsWebPluginsMcpSecretsEditorEs._(_root);
+	@override late final _Translations$web$plugins$mcpSecrets$editor$es editor = _Translations$web$plugins$mcpSecrets$editor$es._(_root);
 }
 
 // Path: web.plugins.skills
-class _TranslationsWebPluginsSkillsEs extends TranslationsWebPluginsSkillsEn {
-	_TranslationsWebPluginsSkillsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$plugins$skills$es extends Translations$web$plugins$skills$en {
+	_Translations$web$plugins$skills$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -4744,7 +4833,7 @@ class _TranslationsWebPluginsSkillsEs extends TranslationsWebPluginsSkillsEn {
 	@override String get description => 'Capacidades reutilizables inyectadas en las sessions de Claude como un índice de Tier 1, el agente carga el SKILL.md completo bajo demanda mediante <1>opendray skill describe &lt;id&gt;</1>. Las integradas vienen en el binario pero se pueden <3>personalizar</3>, tus ediciones se guardan en <5>~/.opendray/vault/skills/&lt;id&gt;/SKILL.md</5> y anulan la versión incorporada. Usa Restablecer para revertir.';
 	@override String get newSkill => 'Nueva habilidad';
 	@override String get empty => 'No se encontraron habilidades.';
-	@override late final _TranslationsWebPluginsSkillsColumnsEs columns = _TranslationsWebPluginsSkillsColumnsEs._(_root);
+	@override late final _Translations$web$plugins$skills$columns$es columns = _Translations$web$plugins$skills$columns$es._(_root);
 	@override String get noDescription => 'sin descripción';
 	@override String get builtinBadge => 'integrada';
 	@override String get builtinTooltip => 'Incorporada en el binario de opendray, haz clic en Personalizar para anularla en tu vault';
@@ -4760,7 +4849,7 @@ class _TranslationsWebPluginsSkillsEs extends TranslationsWebPluginsSkillsEn {
 	@override String deleteConfirm({required Object id}) => '¿Eliminar la habilidad "${id}" de tu vault? Esto elimina el archivo SKILL.md.';
 	@override String get removedToast => 'Habilidad eliminada';
 	@override String get deleteFailedToast => 'Error al eliminar';
-	@override late final _TranslationsWebPluginsSkillsEditorEs editor = _TranslationsWebPluginsSkillsEditorEs._(_root);
+	@override late final _Translations$web$plugins$skills$editor$es editor = _Translations$web$plugins$skills$editor$es._(_root);
 	@override String get dropHint => 'O suelta un SKILL.md aquí para instalarlo.';
 	@override String get dropToInstall => 'Suelta el SKILL.md para instalar';
 	@override String get uploading => 'Instalando habilidad…';
@@ -4770,8 +4859,8 @@ class _TranslationsWebPluginsSkillsEs extends TranslationsWebPluginsSkillsEn {
 }
 
 // Path: web.plugins.customTasks
-class _TranslationsWebPluginsCustomTasksEs extends TranslationsWebPluginsCustomTasksEn {
-	_TranslationsWebPluginsCustomTasksEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$plugins$customTasks$es extends Translations$web$plugins$customTasks$en {
+	_Translations$web$plugins$customTasks$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -4780,17 +4869,17 @@ class _TranslationsWebPluginsCustomTasksEs extends TranslationsWebPluginsCustomT
 	@override String get description => 'Atajos de ejecución con un clic que se muestran en la pestaña Tareas. Deja cwd en blanco para tareas globales visibles en todas las sessions, o fíjalo a una ruta absoluta para acotarlo.';
 	@override String get addTask => 'Añadir tarea';
 	@override String get empty => 'Aún no hay tareas personalizadas.';
-	@override late final _TranslationsWebPluginsCustomTasksColumnsEs columns = _TranslationsWebPluginsCustomTasksColumnsEs._(_root);
+	@override late final _Translations$web$plugins$customTasks$columns$es columns = _Translations$web$plugins$customTasks$columns$es._(_root);
 	@override String get globalScope => 'global';
 	@override String deleteConfirm({required Object name}) => '¿Eliminar la tarea personalizada "${name}"?';
 	@override String get removedToast => 'Tarea eliminada';
 	@override String get deleteFailedToast => 'Error al eliminar';
-	@override late final _TranslationsWebPluginsCustomTasksDialogEs dialog = _TranslationsWebPluginsCustomTasksDialogEs._(_root);
+	@override late final _Translations$web$plugins$customTasks$dialog$es dialog = _Translations$web$plugins$customTasks$dialog$es._(_root);
 }
 
 // Path: web.plugins.gitHosts
-class _TranslationsWebPluginsGitHostsEs extends TranslationsWebPluginsGitHostsEn {
-	_TranslationsWebPluginsGitHostsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$plugins$gitHosts$es extends Translations$web$plugins$gitHosts$en {
+	_Translations$web$plugins$gitHosts$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -4799,18 +4888,18 @@ class _TranslationsWebPluginsGitHostsEs extends TranslationsWebPluginsGitHostsEn
 	@override String get description => 'Un token por host, usado por la pestaña Git para obtener los pull requests <1>y por la sincronización del vault de Notas</1> cuando su remoto usa HTTPS hacia un repo privado en el mismo host. Se admiten GitHub.com, GitHub Enterprise autoalojado, Gitea y GitLab.';
 	@override String get addHost => 'Añadir host';
 	@override String get empty => 'No hay hosts de git configurados.\nAñade uno para habilitar la lista de PR en la pestaña Git del inspector.';
-	@override late final _TranslationsWebPluginsGitHostsColumnsEs columns = _TranslationsWebPluginsGitHostsColumnsEs._(_root);
+	@override late final _Translations$web$plugins$gitHosts$columns$es columns = _Translations$web$plugins$gitHosts$columns$es._(_root);
 	@override String get statusEnabled => 'habilitado';
 	@override String get statusDisabled => 'deshabilitado';
 	@override String deleteConfirm({required Object host}) => '¿Eliminar el host de git ${host}? Las consultas de PR contra este host dejarán de funcionar.';
 	@override String get removedToast => 'Host de git eliminado';
 	@override String get deleteFailedToast => 'Error al eliminar';
-	@override late final _TranslationsWebPluginsGitHostsDialogEs dialog = _TranslationsWebPluginsGitHostsDialogEs._(_root);
+	@override late final _Translations$web$plugins$gitHosts$dialog$es dialog = _Translations$web$plugins$gitHosts$dialog$es._(_root);
 }
 
 // Path: web.backups.tabs
-class _TranslationsWebBackupsTabsEs extends TranslationsWebBackupsTabsEn {
-	_TranslationsWebBackupsTabsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$backups$tabs$es extends Translations$web$backups$tabs$en {
+	_Translations$web$backups$tabs$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -4821,8 +4910,8 @@ class _TranslationsWebBackupsTabsEs extends TranslationsWebBackupsTabsEn {
 }
 
 // Path: web.backups.inventory
-class _TranslationsWebBackupsInventoryEs extends TranslationsWebBackupsInventoryEn {
-	_TranslationsWebBackupsInventoryEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$backups$inventory$es extends Translations$web$backups$inventory$en {
+	_Translations$web$backups$inventory$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -4835,8 +4924,8 @@ class _TranslationsWebBackupsInventoryEs extends TranslationsWebBackupsInventory
 }
 
 // Path: web.backups.restart
-class _TranslationsWebBackupsRestartEs extends TranslationsWebBackupsRestartEn {
-	_TranslationsWebBackupsRestartEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$backups$restart$es extends Translations$web$backups$restart$en {
+	_Translations$web$backups$restart$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -4850,8 +4939,8 @@ class _TranslationsWebBackupsRestartEs extends TranslationsWebBackupsRestartEn {
 }
 
 // Path: web.backups.setup
-class _TranslationsWebBackupsSetupEs extends TranslationsWebBackupsSetupEn {
-	_TranslationsWebBackupsSetupEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$backups$setup$es extends Translations$web$backups$setup$en {
+	_Translations$web$backups$setup$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -4872,8 +4961,8 @@ class _TranslationsWebBackupsSetupEs extends TranslationsWebBackupsSetupEn {
 }
 
 // Path: web.backups.generated
-class _TranslationsWebBackupsGeneratedEs extends TranslationsWebBackupsGeneratedEn {
-	_TranslationsWebBackupsGeneratedEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$backups$generated$es extends Translations$web$backups$generated$en {
+	_Translations$web$backups$generated$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -4889,8 +4978,8 @@ class _TranslationsWebBackupsGeneratedEs extends TranslationsWebBackupsGenerated
 }
 
 // Path: web.backups.status
-class _TranslationsWebBackupsStatusEs extends TranslationsWebBackupsStatusEn {
-	_TranslationsWebBackupsStatusEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$backups$status$es extends Translations$web$backups$status$en {
+	_Translations$web$backups$status$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -4902,8 +4991,8 @@ class _TranslationsWebBackupsStatusEs extends TranslationsWebBackupsStatusEn {
 }
 
 // Path: web.backups.backupsTab
-class _TranslationsWebBackupsBackupsTabEs extends TranslationsWebBackupsBackupsTabEn {
-	_TranslationsWebBackupsBackupsTabEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$backups$backupsTab$es extends Translations$web$backups$backupsTab$en {
+	_Translations$web$backups$backupsTab$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -4922,14 +5011,14 @@ class _TranslationsWebBackupsBackupsTabEs extends TranslationsWebBackupsBackupsT
 	@override String get deletedToast => 'Copia de seguridad eliminada';
 	@override String get deleteFailedToast => 'Error al eliminar';
 	@override String get empty => 'Aún no hay copias de seguridad. Haz clic en "Hacer copia ahora" arriba para crear la primera.';
-	@override late final _TranslationsWebBackupsBackupsTabColumnsEs columns = _TranslationsWebBackupsBackupsTabColumnsEs._(_root);
+	@override late final _Translations$web$backups$backupsTab$columns$es columns = _Translations$web$backups$backupsTab$columns$es._(_root);
 	@override String get downloadTooltip => 'Descargar';
 	@override String get deleteTooltip => 'Eliminar';
 }
 
 // Path: web.backups.restore
-class _TranslationsWebBackupsRestoreEs extends TranslationsWebBackupsRestoreEn {
-	_TranslationsWebBackupsRestoreEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$backups$restore$es extends Translations$web$backups$restore$en {
+	_Translations$web$backups$restore$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -4966,8 +5055,8 @@ class _TranslationsWebBackupsRestoreEs extends TranslationsWebBackupsRestoreEn {
 }
 
 // Path: web.backups.kind
-class _TranslationsWebBackupsKindEs extends TranslationsWebBackupsKindEn {
-	_TranslationsWebBackupsKindEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$backups$kind$es extends Translations$web$backups$kind$en {
+	_Translations$web$backups$kind$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -4978,8 +5067,8 @@ class _TranslationsWebBackupsKindEs extends TranslationsWebBackupsKindEn {
 }
 
 // Path: web.backups.verify
-class _TranslationsWebBackupsVerifyEs extends TranslationsWebBackupsVerifyEn {
-	_TranslationsWebBackupsVerifyEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$backups$verify$es extends Translations$web$backups$verify$en {
+	_Translations$web$backups$verify$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -4990,8 +5079,8 @@ class _TranslationsWebBackupsVerifyEs extends TranslationsWebBackupsVerifyEn {
 }
 
 // Path: web.backups.health
-class _TranslationsWebBackupsHealthEs extends TranslationsWebBackupsHealthEn {
-	_TranslationsWebBackupsHealthEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$backups$health$es extends Translations$web$backups$health$en {
+	_Translations$web$backups$health$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -5001,13 +5090,13 @@ class _TranslationsWebBackupsHealthEs extends TranslationsWebBackupsHealthEn {
 	@override String get headlineNever => 'Aún sin copias';
 	@override String get lastSuccess => 'Última copia correcta';
 	@override String get never => 'nunca';
-	@override late final _TranslationsWebBackupsHealthTilesEs tiles = _TranslationsWebBackupsHealthTilesEs._(_root);
+	@override late final _Translations$web$backups$health$tiles$es tiles = _Translations$web$backups$health$tiles$es._(_root);
 	@override String get loadFailedToast => 'No se pudo cargar el estado de las copias';
 }
 
 // Path: web.backups.trigger
-class _TranslationsWebBackupsTriggerEs extends TranslationsWebBackupsTriggerEn {
-	_TranslationsWebBackupsTriggerEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$backups$trigger$es extends Translations$web$backups$trigger$en {
+	_Translations$web$backups$trigger$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -5019,8 +5108,8 @@ class _TranslationsWebBackupsTriggerEs extends TranslationsWebBackupsTriggerEn {
 }
 
 // Path: web.backups.recoveryKit
-class _TranslationsWebBackupsRecoveryKitEs extends TranslationsWebBackupsRecoveryKitEn {
-	_TranslationsWebBackupsRecoveryKitEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$backups$recoveryKit$es extends Translations$web$backups$recoveryKit$en {
+	_Translations$web$backups$recoveryKit$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -5039,8 +5128,8 @@ class _TranslationsWebBackupsRecoveryKitEs extends TranslationsWebBackupsRecover
 }
 
 // Path: web.backups.schedulesTab
-class _TranslationsWebBackupsSchedulesTabEs extends TranslationsWebBackupsSchedulesTabEn {
-	_TranslationsWebBackupsSchedulesTabEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$backups$schedulesTab$es extends Translations$web$backups$schedulesTab$en {
+	_Translations$web$backups$schedulesTab$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -5053,14 +5142,14 @@ class _TranslationsWebBackupsSchedulesTabEs extends TranslationsWebBackupsSchedu
 	@override String get deleteFailedToast => 'Error al eliminar';
 	@override String get toggleFailedToast => 'Error al alternar';
 	@override String get empty => 'No hay programaciones. Añade una para hacer copias de seguridad periódicas automáticas.';
-	@override late final _TranslationsWebBackupsSchedulesTabColumnsEs columns = _TranslationsWebBackupsSchedulesTabColumnsEs._(_root);
+	@override late final _Translations$web$backups$schedulesTab$columns$es columns = _Translations$web$backups$schedulesTab$columns$es._(_root);
 	@override String keepCount({required Object count}) => '${count} copias de seguridad';
 	@override String get deleteTooltip => 'Eliminar';
 }
 
 // Path: web.backups.newSchedule
-class _TranslationsWebBackupsNewScheduleEs extends TranslationsWebBackupsNewScheduleEn {
-	_TranslationsWebBackupsNewScheduleEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$backups$newSchedule$es extends Translations$web$backups$newSchedule$en {
+	_Translations$web$backups$newSchedule$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -5078,8 +5167,8 @@ class _TranslationsWebBackupsNewScheduleEs extends TranslationsWebBackupsNewSche
 }
 
 // Path: web.backups.fanout
-class _TranslationsWebBackupsFanoutEs extends TranslationsWebBackupsFanoutEn {
-	_TranslationsWebBackupsFanoutEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$backups$fanout$es extends Translations$web$backups$fanout$en {
+	_Translations$web$backups$fanout$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -5089,8 +5178,8 @@ class _TranslationsWebBackupsFanoutEs extends TranslationsWebBackupsFanoutEn {
 }
 
 // Path: web.backups.dedup
-class _TranslationsWebBackupsDedupEs extends TranslationsWebBackupsDedupEn {
-	_TranslationsWebBackupsDedupEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$backups$dedup$es extends Translations$web$backups$dedup$en {
+	_Translations$web$backups$dedup$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -5100,8 +5189,8 @@ class _TranslationsWebBackupsDedupEs extends TranslationsWebBackupsDedupEn {
 }
 
 // Path: web.backups.targetsTab
-class _TranslationsWebBackupsTargetsTabEs extends TranslationsWebBackupsTargetsTabEn {
-	_TranslationsWebBackupsTargetsTabEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$backups$targetsTab$es extends Translations$web$backups$targetsTab$en {
+	_Translations$web$backups$targetsTab$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -5115,7 +5204,7 @@ class _TranslationsWebBackupsTargetsTabEs extends TranslationsWebBackupsTargetsT
 	@override String get connectionOkToast => 'Conexión correcta';
 	@override String get connectionFailedToast => 'Error de conexión';
 	@override String get testFailedToast => 'Error en la prueba';
-	@override late final _TranslationsWebBackupsTargetsTabColumnsEs columns = _TranslationsWebBackupsTargetsTabColumnsEs._(_root);
+	@override late final _Translations$web$backups$targetsTab$columns$es columns = _Translations$web$backups$targetsTab$columns$es._(_root);
 	@override String get on => 'activado';
 	@override String get off => 'desactivado';
 	@override String get test => 'Probar';
@@ -5124,8 +5213,8 @@ class _TranslationsWebBackupsTargetsTabEs extends TranslationsWebBackupsTargetsT
 }
 
 // Path: web.backups.targetEditor
-class _TranslationsWebBackupsTargetEditorEs extends TranslationsWebBackupsTargetEditorEn {
-	_TranslationsWebBackupsTargetEditorEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$backups$targetEditor$es extends Translations$web$backups$targetEditor$en {
+	_Translations$web$backups$targetEditor$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -5139,36 +5228,36 @@ class _TranslationsWebBackupsTargetEditorEs extends TranslationsWebBackupsTarget
 	@override String get creating => 'Creando…';
 	@override String get create => 'Crear destino';
 	@override String get enableImmediately => 'Habilitar inmediatamente (de lo contrario se guarda como deshabilitado, útil para "configurar ahora, activar más tarde")';
-	@override late final _TranslationsWebBackupsTargetEditorLocalEs local = _TranslationsWebBackupsTargetEditorLocalEs._(_root);
-	@override late final _TranslationsWebBackupsTargetEditorSmbEs smb = _TranslationsWebBackupsTargetEditorSmbEs._(_root);
-	@override late final _TranslationsWebBackupsTargetEditorS3Es s3 = _TranslationsWebBackupsTargetEditorS3Es._(_root);
-	@override late final _TranslationsWebBackupsTargetEditorWebdavEs webdav = _TranslationsWebBackupsTargetEditorWebdavEs._(_root);
-	@override late final _TranslationsWebBackupsTargetEditorSftpEs sftp = _TranslationsWebBackupsTargetEditorSftpEs._(_root);
-	@override late final _TranslationsWebBackupsTargetEditorRcloneEs rclone = _TranslationsWebBackupsTargetEditorRcloneEs._(_root);
+	@override late final _Translations$web$backups$targetEditor$local$es local = _Translations$web$backups$targetEditor$local$es._(_root);
+	@override late final _Translations$web$backups$targetEditor$smb$es smb = _Translations$web$backups$targetEditor$smb$es._(_root);
+	@override late final _Translations$web$backups$targetEditor$s3$es s3 = _Translations$web$backups$targetEditor$s3$es._(_root);
+	@override late final _Translations$web$backups$targetEditor$webdav$es webdav = _Translations$web$backups$targetEditor$webdav$es._(_root);
+	@override late final _Translations$web$backups$targetEditor$sftp$es sftp = _Translations$web$backups$targetEditor$sftp$es._(_root);
+	@override late final _Translations$web$backups$targetEditor$rclone$es rclone = _Translations$web$backups$targetEditor$rclone$es._(_root);
 }
 
 // Path: web.serverSettings.sections
-class _TranslationsWebServerSettingsSectionsEs extends TranslationsWebServerSettingsSectionsEn {
-	_TranslationsWebServerSettingsSectionsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$sections$es extends Translations$web$serverSettings$sections$en {
+	_Translations$web$serverSettings$sections$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsWebServerSettingsSectionsGeneralEs general = _TranslationsWebServerSettingsSectionsGeneralEs._(_root);
-	@override late final _TranslationsWebServerSettingsSectionsLoggingEs logging = _TranslationsWebServerSettingsSectionsLoggingEs._(_root);
-	@override late final _TranslationsWebServerSettingsSectionsSessionsEs sessions = _TranslationsWebServerSettingsSectionsSessionsEs._(_root);
-	@override late final _TranslationsWebServerSettingsSectionsVaultEs vault = _TranslationsWebServerSettingsSectionsVaultEs._(_root);
-	@override late final _TranslationsWebServerSettingsSectionsMcpEs mcp = _TranslationsWebServerSettingsSectionsMcpEs._(_root);
-	@override late final _TranslationsWebServerSettingsSectionsMemoryEs memory = _TranslationsWebServerSettingsSectionsMemoryEs._(_root);
-	@override late final _TranslationsWebServerSettingsSectionsBackupEs backup = _TranslationsWebServerSettingsSectionsBackupEs._(_root);
-	@override late final _TranslationsWebServerSettingsSectionsClaudeEs claude = _TranslationsWebServerSettingsSectionsClaudeEs._(_root);
-	@override late final _TranslationsWebServerSettingsSectionsCodexEs codex = _TranslationsWebServerSettingsSectionsCodexEs._(_root);
-	@override late final _TranslationsWebServerSettingsSectionsAntigravityEs antigravity = _TranslationsWebServerSettingsSectionsAntigravityEs._(_root);
+	@override late final _Translations$web$serverSettings$sections$general$es general = _Translations$web$serverSettings$sections$general$es._(_root);
+	@override late final _Translations$web$serverSettings$sections$logging$es logging = _Translations$web$serverSettings$sections$logging$es._(_root);
+	@override late final _Translations$web$serverSettings$sections$sessions$es sessions = _Translations$web$serverSettings$sections$sessions$es._(_root);
+	@override late final _Translations$web$serverSettings$sections$vault$es vault = _Translations$web$serverSettings$sections$vault$es._(_root);
+	@override late final _Translations$web$serverSettings$sections$mcp$es mcp = _Translations$web$serverSettings$sections$mcp$es._(_root);
+	@override late final _Translations$web$serverSettings$sections$memory$es memory = _Translations$web$serverSettings$sections$memory$es._(_root);
+	@override late final _Translations$web$serverSettings$sections$backup$es backup = _Translations$web$serverSettings$sections$backup$es._(_root);
+	@override late final _Translations$web$serverSettings$sections$claude$es claude = _Translations$web$serverSettings$sections$claude$es._(_root);
+	@override late final _Translations$web$serverSettings$sections$codex$es codex = _Translations$web$serverSettings$sections$codex$es._(_root);
+	@override late final _Translations$web$serverSettings$sections$antigravity$es antigravity = _Translations$web$serverSettings$sections$antigravity$es._(_root);
 }
 
 // Path: web.serverSettings.restart
-class _TranslationsWebServerSettingsRestartEs extends TranslationsWebServerSettingsRestartEn {
-	_TranslationsWebServerSettingsRestartEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$restart$es extends Translations$web$serverSettings$restart$en {
+	_Translations$web$serverSettings$restart$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -5185,8 +5274,8 @@ class _TranslationsWebServerSettingsRestartEs extends TranslationsWebServerSetti
 }
 
 // Path: web.serverSettings.formGroups
-class _TranslationsWebServerSettingsFormGroupsEs extends TranslationsWebServerSettingsFormGroupsEn {
-	_TranslationsWebServerSettingsFormGroupsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$formGroups$es extends Translations$web$serverSettings$formGroups$en {
+	_Translations$web$serverSettings$formGroups$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -5206,66 +5295,66 @@ class _TranslationsWebServerSettingsFormGroupsEs extends TranslationsWebServerSe
 }
 
 // Path: web.serverSettings.fields
-class _TranslationsWebServerSettingsFieldsEs extends TranslationsWebServerSettingsFieldsEn {
-	_TranslationsWebServerSettingsFieldsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$es extends Translations$web$serverSettings$fields$en {
+	_Translations$web$serverSettings$fields$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsWebServerSettingsFieldsListenAddressEs listenAddress = _TranslationsWebServerSettingsFieldsListenAddressEs._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsUsernameEs username = _TranslationsWebServerSettingsFieldsUsernameEs._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsPasswordEs password = _TranslationsWebServerSettingsFieldsPasswordEs._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsTokenTTLEs tokenTTL = _TranslationsWebServerSettingsFieldsTokenTTLEs._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsLogLevelEs logLevel = _TranslationsWebServerSettingsFieldsLogLevelEs._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsLogFormatEs logFormat = _TranslationsWebServerSettingsFieldsLogFormatEs._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsLogFileEs logFile = _TranslationsWebServerSettingsFieldsLogFileEs._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsIdleThresholdEs idleThreshold = _TranslationsWebServerSettingsFieldsIdleThresholdEs._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsIdlePollIntervalEs idlePollInterval = _TranslationsWebServerSettingsFieldsIdlePollIntervalEs._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsVaultRootEs vaultRoot = _TranslationsWebServerSettingsFieldsVaultRootEs._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsNotesDirectoryEs notesDirectory = _TranslationsWebServerSettingsFieldsNotesDirectoryEs._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsSkillsDirectoryEs skillsDirectory = _TranslationsWebServerSettingsFieldsSkillsDirectoryEs._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsGitRootEs gitRoot = _TranslationsWebServerSettingsFieldsGitRootEs._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsPersonalPrefixEs personalPrefix = _TranslationsWebServerSettingsFieldsPersonalPrefixEs._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsProjectsPrefixEs projectsPrefix = _TranslationsWebServerSettingsFieldsProjectsPrefixEs._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsRegistryRootEs registryRoot = _TranslationsWebServerSettingsFieldsRegistryRootEs._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsSecretsFileEs secretsFile = _TranslationsWebServerSettingsFieldsSecretsFileEs._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsMemoryBackendEs memoryBackend = _TranslationsWebServerSettingsFieldsMemoryBackendEs._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsMemoryStoreEs memoryStore = _TranslationsWebServerSettingsFieldsMemoryStoreEs._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsMemoryTopKEs memoryTopK = _TranslationsWebServerSettingsFieldsMemoryTopKEs._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsMemoryThresholdEs memoryThreshold = _TranslationsWebServerSettingsFieldsMemoryThresholdEs._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsMemoryScopeEs memoryScope = _TranslationsWebServerSettingsFieldsMemoryScopeEs._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsMemoryBaseUrlEs memoryBaseUrl = _TranslationsWebServerSettingsFieldsMemoryBaseUrlEs._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsMemoryModelEs memoryModel = _TranslationsWebServerSettingsFieldsMemoryModelEs._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsMemoryApiKeyEs memoryApiKey = _TranslationsWebServerSettingsFieldsMemoryApiKeyEs._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsMemoryLocalModelEs memoryLocalModel = _TranslationsWebServerSettingsFieldsMemoryLocalModelEs._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsMemoryLibraryPathEs memoryLibraryPath = _TranslationsWebServerSettingsFieldsMemoryLibraryPathEs._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsMemoryModelPathEs memoryModelPath = _TranslationsWebServerSettingsFieldsMemoryModelPathEs._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsMemoryTokenizerPathEs memoryTokenizerPath = _TranslationsWebServerSettingsFieldsMemoryTokenizerPathEs._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsMemoryMaxSeqLenEs memoryMaxSeqLen = _TranslationsWebServerSettingsFieldsMemoryMaxSeqLenEs._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsClaudeHistoryRootsEs claudeHistoryRoots = _TranslationsWebServerSettingsFieldsClaudeHistoryRootsEs._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsClaudeAccountsDirEs claudeAccountsDir = _TranslationsWebServerSettingsFieldsClaudeAccountsDirEs._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsCodexSessionsRootEs codexSessionsRoot = _TranslationsWebServerSettingsFieldsCodexSessionsRootEs._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsAntigravityConversationsRootEs antigravityConversationsRoot = _TranslationsWebServerSettingsFieldsAntigravityConversationsRootEs._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsBackupLocalDirEs backupLocalDir = _TranslationsWebServerSettingsFieldsBackupLocalDirEs._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsBackupExportDirEs backupExportDir = _TranslationsWebServerSettingsFieldsBackupExportDirEs._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsBackupPgDumpPathEs backupPgDumpPath = _TranslationsWebServerSettingsFieldsBackupPgDumpPathEs._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsBackupPgRestorePathEs backupPgRestorePath = _TranslationsWebServerSettingsFieldsBackupPgRestorePathEs._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsMemoryDedupEs memoryDedup = _TranslationsWebServerSettingsFieldsMemoryDedupEs._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsGatekeeperEnabledEs gatekeeperEnabled = _TranslationsWebServerSettingsFieldsGatekeeperEnabledEs._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsGatekeeperLatencyEs gatekeeperLatency = _TranslationsWebServerSettingsFieldsGatekeeperLatencyEs._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsCleanerEnabledEs cleanerEnabled = _TranslationsWebServerSettingsFieldsCleanerEnabledEs._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsCleanerIntervalEs cleanerInterval = _TranslationsWebServerSettingsFieldsCleanerIntervalEs._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsCleanerGlobalScopeEs cleanerGlobalScope = _TranslationsWebServerSettingsFieldsCleanerGlobalScopeEs._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsKnowledgeEnabledEs knowledgeEnabled = _TranslationsWebServerSettingsFieldsKnowledgeEnabledEs._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsClaudeWatcherEs claudeWatcher = _TranslationsWebServerSettingsFieldsClaudeWatcherEs._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsClaudeAutoFailoverEs claudeAutoFailover = _TranslationsWebServerSettingsFieldsClaudeAutoFailoverEs._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsMobileTokenTTLEs mobileTokenTTL = _TranslationsWebServerSettingsFieldsMobileTokenTTLEs._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsDbMaxConnsEs dbMaxConns = _TranslationsWebServerSettingsFieldsDbMaxConnsEs._(_root);
+	@override late final _Translations$web$serverSettings$fields$listenAddress$es listenAddress = _Translations$web$serverSettings$fields$listenAddress$es._(_root);
+	@override late final _Translations$web$serverSettings$fields$username$es username = _Translations$web$serverSettings$fields$username$es._(_root);
+	@override late final _Translations$web$serverSettings$fields$password$es password = _Translations$web$serverSettings$fields$password$es._(_root);
+	@override late final _Translations$web$serverSettings$fields$tokenTTL$es tokenTTL = _Translations$web$serverSettings$fields$tokenTTL$es._(_root);
+	@override late final _Translations$web$serverSettings$fields$logLevel$es logLevel = _Translations$web$serverSettings$fields$logLevel$es._(_root);
+	@override late final _Translations$web$serverSettings$fields$logFormat$es logFormat = _Translations$web$serverSettings$fields$logFormat$es._(_root);
+	@override late final _Translations$web$serverSettings$fields$logFile$es logFile = _Translations$web$serverSettings$fields$logFile$es._(_root);
+	@override late final _Translations$web$serverSettings$fields$idleThreshold$es idleThreshold = _Translations$web$serverSettings$fields$idleThreshold$es._(_root);
+	@override late final _Translations$web$serverSettings$fields$idlePollInterval$es idlePollInterval = _Translations$web$serverSettings$fields$idlePollInterval$es._(_root);
+	@override late final _Translations$web$serverSettings$fields$vaultRoot$es vaultRoot = _Translations$web$serverSettings$fields$vaultRoot$es._(_root);
+	@override late final _Translations$web$serverSettings$fields$notesDirectory$es notesDirectory = _Translations$web$serverSettings$fields$notesDirectory$es._(_root);
+	@override late final _Translations$web$serverSettings$fields$skillsDirectory$es skillsDirectory = _Translations$web$serverSettings$fields$skillsDirectory$es._(_root);
+	@override late final _Translations$web$serverSettings$fields$gitRoot$es gitRoot = _Translations$web$serverSettings$fields$gitRoot$es._(_root);
+	@override late final _Translations$web$serverSettings$fields$personalPrefix$es personalPrefix = _Translations$web$serverSettings$fields$personalPrefix$es._(_root);
+	@override late final _Translations$web$serverSettings$fields$projectsPrefix$es projectsPrefix = _Translations$web$serverSettings$fields$projectsPrefix$es._(_root);
+	@override late final _Translations$web$serverSettings$fields$registryRoot$es registryRoot = _Translations$web$serverSettings$fields$registryRoot$es._(_root);
+	@override late final _Translations$web$serverSettings$fields$secretsFile$es secretsFile = _Translations$web$serverSettings$fields$secretsFile$es._(_root);
+	@override late final _Translations$web$serverSettings$fields$memoryBackend$es memoryBackend = _Translations$web$serverSettings$fields$memoryBackend$es._(_root);
+	@override late final _Translations$web$serverSettings$fields$memoryStore$es memoryStore = _Translations$web$serverSettings$fields$memoryStore$es._(_root);
+	@override late final _Translations$web$serverSettings$fields$memoryTopK$es memoryTopK = _Translations$web$serverSettings$fields$memoryTopK$es._(_root);
+	@override late final _Translations$web$serverSettings$fields$memoryThreshold$es memoryThreshold = _Translations$web$serverSettings$fields$memoryThreshold$es._(_root);
+	@override late final _Translations$web$serverSettings$fields$memoryScope$es memoryScope = _Translations$web$serverSettings$fields$memoryScope$es._(_root);
+	@override late final _Translations$web$serverSettings$fields$memoryBaseUrl$es memoryBaseUrl = _Translations$web$serverSettings$fields$memoryBaseUrl$es._(_root);
+	@override late final _Translations$web$serverSettings$fields$memoryModel$es memoryModel = _Translations$web$serverSettings$fields$memoryModel$es._(_root);
+	@override late final _Translations$web$serverSettings$fields$memoryApiKey$es memoryApiKey = _Translations$web$serverSettings$fields$memoryApiKey$es._(_root);
+	@override late final _Translations$web$serverSettings$fields$memoryLocalModel$es memoryLocalModel = _Translations$web$serverSettings$fields$memoryLocalModel$es._(_root);
+	@override late final _Translations$web$serverSettings$fields$memoryLibraryPath$es memoryLibraryPath = _Translations$web$serverSettings$fields$memoryLibraryPath$es._(_root);
+	@override late final _Translations$web$serverSettings$fields$memoryModelPath$es memoryModelPath = _Translations$web$serverSettings$fields$memoryModelPath$es._(_root);
+	@override late final _Translations$web$serverSettings$fields$memoryTokenizerPath$es memoryTokenizerPath = _Translations$web$serverSettings$fields$memoryTokenizerPath$es._(_root);
+	@override late final _Translations$web$serverSettings$fields$memoryMaxSeqLen$es memoryMaxSeqLen = _Translations$web$serverSettings$fields$memoryMaxSeqLen$es._(_root);
+	@override late final _Translations$web$serverSettings$fields$claudeHistoryRoots$es claudeHistoryRoots = _Translations$web$serverSettings$fields$claudeHistoryRoots$es._(_root);
+	@override late final _Translations$web$serverSettings$fields$claudeAccountsDir$es claudeAccountsDir = _Translations$web$serverSettings$fields$claudeAccountsDir$es._(_root);
+	@override late final _Translations$web$serverSettings$fields$codexSessionsRoot$es codexSessionsRoot = _Translations$web$serverSettings$fields$codexSessionsRoot$es._(_root);
+	@override late final _Translations$web$serverSettings$fields$antigravityConversationsRoot$es antigravityConversationsRoot = _Translations$web$serverSettings$fields$antigravityConversationsRoot$es._(_root);
+	@override late final _Translations$web$serverSettings$fields$backupLocalDir$es backupLocalDir = _Translations$web$serverSettings$fields$backupLocalDir$es._(_root);
+	@override late final _Translations$web$serverSettings$fields$backupExportDir$es backupExportDir = _Translations$web$serverSettings$fields$backupExportDir$es._(_root);
+	@override late final _Translations$web$serverSettings$fields$backupPgDumpPath$es backupPgDumpPath = _Translations$web$serverSettings$fields$backupPgDumpPath$es._(_root);
+	@override late final _Translations$web$serverSettings$fields$backupPgRestorePath$es backupPgRestorePath = _Translations$web$serverSettings$fields$backupPgRestorePath$es._(_root);
+	@override late final _Translations$web$serverSettings$fields$memoryDedup$es memoryDedup = _Translations$web$serverSettings$fields$memoryDedup$es._(_root);
+	@override late final _Translations$web$serverSettings$fields$gatekeeperEnabled$es gatekeeperEnabled = _Translations$web$serverSettings$fields$gatekeeperEnabled$es._(_root);
+	@override late final _Translations$web$serverSettings$fields$gatekeeperLatency$es gatekeeperLatency = _Translations$web$serverSettings$fields$gatekeeperLatency$es._(_root);
+	@override late final _Translations$web$serverSettings$fields$cleanerEnabled$es cleanerEnabled = _Translations$web$serverSettings$fields$cleanerEnabled$es._(_root);
+	@override late final _Translations$web$serverSettings$fields$cleanerInterval$es cleanerInterval = _Translations$web$serverSettings$fields$cleanerInterval$es._(_root);
+	@override late final _Translations$web$serverSettings$fields$cleanerGlobalScope$es cleanerGlobalScope = _Translations$web$serverSettings$fields$cleanerGlobalScope$es._(_root);
+	@override late final _Translations$web$serverSettings$fields$knowledgeEnabled$es knowledgeEnabled = _Translations$web$serverSettings$fields$knowledgeEnabled$es._(_root);
+	@override late final _Translations$web$serverSettings$fields$claudeWatcher$es claudeWatcher = _Translations$web$serverSettings$fields$claudeWatcher$es._(_root);
+	@override late final _Translations$web$serverSettings$fields$claudeAutoFailover$es claudeAutoFailover = _Translations$web$serverSettings$fields$claudeAutoFailover$es._(_root);
+	@override late final _Translations$web$serverSettings$fields$mobileTokenTTL$es mobileTokenTTL = _Translations$web$serverSettings$fields$mobileTokenTTL$es._(_root);
+	@override late final _Translations$web$serverSettings$fields$dbMaxConns$es dbMaxConns = _Translations$web$serverSettings$fields$dbMaxConns$es._(_root);
 }
 
 // Path: web.serverSettings.liveTail
-class _TranslationsWebServerSettingsLiveTailEs extends TranslationsWebServerSettingsLiveTailEn {
-	_TranslationsWebServerSettingsLiveTailEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$liveTail$es extends Translations$web$serverSettings$liveTail$en {
+	_Translations$web$serverSettings$liveTail$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -5275,8 +5364,8 @@ class _TranslationsWebServerSettingsLiveTailEs extends TranslationsWebServerSett
 }
 
 // Path: web.serverSettings.memoryInspectorCard
-class _TranslationsWebServerSettingsMemoryInspectorCardEs extends TranslationsWebServerSettingsMemoryInspectorCardEn {
-	_TranslationsWebServerSettingsMemoryInspectorCardEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$memoryInspectorCard$es extends Translations$web$serverSettings$memoryInspectorCard$en {
+	_Translations$web$serverSettings$memoryInspectorCard$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -5287,8 +5376,8 @@ class _TranslationsWebServerSettingsMemoryInspectorCardEs extends TranslationsWe
 }
 
 // Path: web.serverSettings.stringList
-class _TranslationsWebServerSettingsStringListEs extends TranslationsWebServerSettingsStringListEn {
-	_TranslationsWebServerSettingsStringListEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$stringList$es extends Translations$web$serverSettings$stringList$en {
+	_Translations$web$serverSettings$stringList$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -5299,8 +5388,8 @@ class _TranslationsWebServerSettingsStringListEs extends TranslationsWebServerSe
 }
 
 // Path: web.serverSettings.httpHelpers
-class _TranslationsWebServerSettingsHttpHelpersEs extends TranslationsWebServerSettingsHttpHelpersEn {
-	_TranslationsWebServerSettingsHttpHelpersEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$httpHelpers$es extends Translations$web$serverSettings$httpHelpers$en {
+	_Translations$web$serverSettings$httpHelpers$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -5309,12 +5398,12 @@ class _TranslationsWebServerSettingsHttpHelpersEs extends TranslationsWebServerS
 	@override String modelCount({required Object count}) => '${count} modelo(s), haz clic para usar';
 	@override String get presets => 'Preajustes:';
 	@override String get testConnection => 'Probar conexión';
-	@override late final _TranslationsWebServerSettingsHttpHelpersPresetTipEs presetTip = _TranslationsWebServerSettingsHttpHelpersPresetTipEs._(_root);
+	@override late final _Translations$web$serverSettings$httpHelpers$presetTip$es presetTip = _Translations$web$serverSettings$httpHelpers$presetTip$es._(_root);
 }
 
 // Path: web.serverSettings.probe
-class _TranslationsWebServerSettingsProbeEs extends TranslationsWebServerSettingsProbeEn {
-	_TranslationsWebServerSettingsProbeEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$probe$es extends Translations$web$serverSettings$probe$en {
+	_Translations$web$serverSettings$probe$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -5331,8 +5420,8 @@ class _TranslationsWebServerSettingsProbeEs extends TranslationsWebServerSetting
 }
 
 // Path: web.serverSettings.backup
-class _TranslationsWebServerSettingsBackupEs extends TranslationsWebServerSettingsBackupEn {
-	_TranslationsWebServerSettingsBackupEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$backup$es extends Translations$web$serverSettings$backup$en {
+	_Translations$web$serverSettings$backup$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -5355,7 +5444,7 @@ class _TranslationsWebServerSettingsBackupEs extends TranslationsWebServerSettin
 	@override String get noTargets => 'Aún no hay destinos. Añade uno para empezar a hacer copias de seguridad.';
 	@override String get addTarget => 'Añadir destino';
 	@override String get noSchedulesHint => 'No hay programaciones recurrentes. Añade una en <1>/backups → Programaciones</1> para hacer copias de seguridad automáticamente.';
-	@override late final _TranslationsWebServerSettingsBackupScheduleHeadersEs scheduleHeaders = _TranslationsWebServerSettingsBackupScheduleHeadersEs._(_root);
+	@override late final _Translations$web$serverSettings$backup$scheduleHeaders$es scheduleHeaders = _Translations$web$serverSettings$backup$scheduleHeaders$es._(_root);
 	@override String every({required Object interval}) => 'cada ${interval}';
 	@override String backupsKeep({required Object count}) => '${count} copias de seguridad';
 	@override String get stateEnabled => 'habilitado';
@@ -5366,8 +5455,8 @@ class _TranslationsWebServerSettingsBackupEs extends TranslationsWebServerSettin
 }
 
 // Path: web.serverSettings.targetRow
-class _TranslationsWebServerSettingsTargetRowEs extends TranslationsWebServerSettingsTargetRowEn {
-	_TranslationsWebServerSettingsTargetRowEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$targetRow$es extends Translations$web$serverSettings$targetRow$en {
+	_Translations$web$serverSettings$targetRow$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -5387,8 +5476,8 @@ class _TranslationsWebServerSettingsTargetRowEs extends TranslationsWebServerSet
 }
 
 // Path: web.serverSettings.toggle
-class _TranslationsWebServerSettingsToggleEs extends TranslationsWebServerSettingsToggleEn {
-	_TranslationsWebServerSettingsToggleEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$toggle$es extends Translations$web$serverSettings$toggle$en {
+	_Translations$web$serverSettings$toggle$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -5400,8 +5489,8 @@ class _TranslationsWebServerSettingsToggleEs extends TranslationsWebServerSettin
 }
 
 // Path: web.settings.groups
-class _TranslationsWebSettingsGroupsEs extends TranslationsWebSettingsGroupsEn {
-	_TranslationsWebSettingsGroupsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$settings$groups$es extends Translations$web$settings$groups$en {
+	_Translations$web$settings$groups$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -5412,8 +5501,8 @@ class _TranslationsWebSettingsGroupsEs extends TranslationsWebSettingsGroupsEn {
 }
 
 // Path: web.settings.items
-class _TranslationsWebSettingsItemsEs extends TranslationsWebSettingsItemsEn {
-	_TranslationsWebSettingsItemsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$settings$items$es extends Translations$web$settings$items$en {
+	_Translations$web$settings$items$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -5426,8 +5515,8 @@ class _TranslationsWebSettingsItemsEs extends TranslationsWebSettingsItemsEn {
 }
 
 // Path: web.settings.health
-class _TranslationsWebSettingsHealthEs extends TranslationsWebSettingsHealthEn {
-	_TranslationsWebSettingsHealthEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$settings$health$es extends Translations$web$settings$health$en {
+	_Translations$web$settings$health$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -5438,8 +5527,8 @@ class _TranslationsWebSettingsHealthEs extends TranslationsWebSettingsHealthEn {
 }
 
 // Path: web.settings.breadcrumb
-class _TranslationsWebSettingsBreadcrumbEs extends TranslationsWebSettingsBreadcrumbEn {
-	_TranslationsWebSettingsBreadcrumbEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$settings$breadcrumb$es extends Translations$web$settings$breadcrumb$en {
+	_Translations$web$settings$breadcrumb$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -5448,32 +5537,32 @@ class _TranslationsWebSettingsBreadcrumbEs extends TranslationsWebSettingsBreadc
 }
 
 // Path: web.settings.appearance
-class _TranslationsWebSettingsAppearanceEs extends TranslationsWebSettingsAppearanceEn {
-	_TranslationsWebSettingsAppearanceEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$settings$appearance$es extends Translations$web$settings$appearance$en {
+	_Translations$web$settings$appearance$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
 	// Translations
 	@override String get title => 'Apariencia';
 	@override String get description => 'Elige el aspecto de opendray.';
-	@override late final _TranslationsWebSettingsAppearanceOptionsEs options = _TranslationsWebSettingsAppearanceOptionsEs._(_root);
+	@override late final _Translations$web$settings$appearance$options$es options = _Translations$web$settings$appearance$options$es._(_root);
 }
 
 // Path: web.settings.font
-class _TranslationsWebSettingsFontEs extends TranslationsWebSettingsFontEn {
-	_TranslationsWebSettingsFontEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$settings$font$es extends Translations$web$settings$font$en {
+	_Translations$web$settings$font$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
 	// Translations
 	@override String get title => 'Tamaño de fuente';
 	@override String get description => 'Escala toda la interfaz. Se guarda por navegador.';
-	@override late final _TranslationsWebSettingsFontOptionsEs options = _TranslationsWebSettingsFontOptionsEs._(_root);
+	@override late final _Translations$web$settings$font$options$es options = _Translations$web$settings$font$options$es._(_root);
 }
 
 // Path: web.settings.account
-class _TranslationsWebSettingsAccountEs extends TranslationsWebSettingsAccountEn {
-	_TranslationsWebSettingsAccountEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$settings$account$es extends Translations$web$settings$account$en {
+	_Translations$web$settings$account$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -5486,8 +5575,8 @@ class _TranslationsWebSettingsAccountEs extends TranslationsWebSettingsAccountEn
 }
 
 // Path: web.settings.changeCredentials
-class _TranslationsWebSettingsChangeCredentialsEs extends TranslationsWebSettingsChangeCredentialsEn {
-	_TranslationsWebSettingsChangeCredentialsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$settings$changeCredentials$es extends Translations$web$settings$changeCredentials$en {
+	_Translations$web$settings$changeCredentials$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -5508,8 +5597,8 @@ class _TranslationsWebSettingsChangeCredentialsEs extends TranslationsWebSetting
 }
 
 // Path: web.settings.system
-class _TranslationsWebSettingsSystemEs extends TranslationsWebSettingsSystemEn {
-	_TranslationsWebSettingsSystemEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$settings$system$es extends Translations$web$settings$system$en {
+	_Translations$web$settings$system$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -5525,8 +5614,8 @@ class _TranslationsWebSettingsSystemEs extends TranslationsWebSettingsSystemEn {
 }
 
 // Path: web.settings.about
-class _TranslationsWebSettingsAboutEs extends TranslationsWebSettingsAboutEn {
-	_TranslationsWebSettingsAboutEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$settings$about$es extends Translations$web$settings$about$en {
+	_Translations$web$settings$about$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -5555,8 +5644,8 @@ class _TranslationsWebSettingsAboutEs extends TranslationsWebSettingsAboutEn {
 }
 
 // Path: web.memoryAmbient.header
-class _TranslationsWebMemoryAmbientHeaderEs extends TranslationsWebMemoryAmbientHeaderEn {
-	_TranslationsWebMemoryAmbientHeaderEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$memoryAmbient$header$es extends Translations$web$memoryAmbient$header$en {
+	_Translations$web$memoryAmbient$header$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -5566,8 +5655,8 @@ class _TranslationsWebMemoryAmbientHeaderEs extends TranslationsWebMemoryAmbient
 }
 
 // Path: web.memoryAmbient.providers
-class _TranslationsWebMemoryAmbientProvidersEs extends TranslationsWebMemoryAmbientProvidersEn {
-	_TranslationsWebMemoryAmbientProvidersEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$memoryAmbient$providers$es extends Translations$web$memoryAmbient$providers$en {
+	_Translations$web$memoryAmbient$providers$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -5576,14 +5665,14 @@ class _TranslationsWebMemoryAmbientProvidersEs extends TranslationsWebMemoryAmbi
 	@override String get addButton => 'Añadir proveedor';
 	@override String get intro => 'Se requiere al menos un proveedor habilitado para que la captura se active realmente. Las opciones locales (Ollama, LM Studio, Integración) mantienen tus transcripts fuera de redes externas.';
 	@override String get empty => 'Aún no hay proveedores configurados.';
-	@override late final _TranslationsWebMemoryAmbientProvidersRowEs row = _TranslationsWebMemoryAmbientProvidersRowEs._(_root);
-	@override late final _TranslationsWebMemoryAmbientProvidersDialogEs dialog = _TranslationsWebMemoryAmbientProvidersDialogEs._(_root);
-	@override late final _TranslationsWebMemoryAmbientProvidersModelSelectEs modelSelect = _TranslationsWebMemoryAmbientProvidersModelSelectEs._(_root);
+	@override late final _Translations$web$memoryAmbient$providers$row$es row = _Translations$web$memoryAmbient$providers$row$es._(_root);
+	@override late final _Translations$web$memoryAmbient$providers$dialog$es dialog = _Translations$web$memoryAmbient$providers$dialog$es._(_root);
+	@override late final _Translations$web$memoryAmbient$providers$modelSelect$es modelSelect = _Translations$web$memoryAmbient$providers$modelSelect$es._(_root);
 }
 
 // Path: web.memoryAmbient.rules
-class _TranslationsWebMemoryAmbientRulesEs extends TranslationsWebMemoryAmbientRulesEn {
-	_TranslationsWebMemoryAmbientRulesEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$memoryAmbient$rules$es extends Translations$web$memoryAmbient$rules$en {
+	_Translations$web$memoryAmbient$rules$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -5592,13 +5681,13 @@ class _TranslationsWebMemoryAmbientRulesEs extends TranslationsWebMemoryAmbientR
 	@override String get addButton => 'Añadir regla';
 	@override String get intro => 'Cada regla dice "cuando se active este disparador, resume los nuevos mensajes del transcript y almacena los hechos duraderos." Las reglas por session prevalecen sobre el valor predeterminado global. La v1 incluye 4 tipos de disparador.';
 	@override String get empty => 'Aún no hay reglas de captura. Añade una para habilitar la captura automática.';
-	@override late final _TranslationsWebMemoryAmbientRulesRowEs row = _TranslationsWebMemoryAmbientRulesRowEs._(_root);
-	@override late final _TranslationsWebMemoryAmbientRulesDialogEs dialog = _TranslationsWebMemoryAmbientRulesDialogEs._(_root);
+	@override late final _Translations$web$memoryAmbient$rules$row$es row = _Translations$web$memoryAmbient$rules$row$es._(_root);
+	@override late final _Translations$web$memoryAmbient$rules$dialog$es dialog = _Translations$web$memoryAmbient$rules$dialog$es._(_root);
 }
 
 // Path: web.memoryAmbient.profiles
-class _TranslationsWebMemoryAmbientProfilesEs extends TranslationsWebMemoryAmbientProfilesEn {
-	_TranslationsWebMemoryAmbientProfilesEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$memoryAmbient$profiles$es extends Translations$web$memoryAmbient$profiles$en {
+	_Translations$web$memoryAmbient$profiles$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -5607,13 +5696,13 @@ class _TranslationsWebMemoryAmbientProfilesEs extends TranslationsWebMemoryAmbie
 	@override String get addButton => 'Añadir perfil';
 	@override String get intro => 'Al arrancar, opendray antepone un banner en markdown con las memorias recientes del proyecto al system prompt del agente, SI hay un perfil configurado. Sin un perfil, el modelo sigue usando memory_search bajo demanda.';
 	@override String get empty => 'No hay perfil de inyección. Las memorias no se inyectan automáticamente al arrancar; el modelo sigue usando memory_search.';
-	@override late final _TranslationsWebMemoryAmbientProfilesRowEs row = _TranslationsWebMemoryAmbientProfilesRowEs._(_root);
-	@override late final _TranslationsWebMemoryAmbientProfilesDialogEs dialog = _TranslationsWebMemoryAmbientProfilesDialogEs._(_root);
+	@override late final _Translations$web$memoryAmbient$profiles$row$es row = _Translations$web$memoryAmbient$profiles$row$es._(_root);
+	@override late final _Translations$web$memoryAmbient$profiles$dialog$es dialog = _Translations$web$memoryAmbient$profiles$dialog$es._(_root);
 }
 
 // Path: web.memoryAmbient.cost
-class _TranslationsWebMemoryAmbientCostEs extends TranslationsWebMemoryAmbientCostEn {
-	_TranslationsWebMemoryAmbientCostEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$memoryAmbient$cost$es extends Translations$web$memoryAmbient$cost$en {
+	_Translations$web$memoryAmbient$cost$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -5621,12 +5710,12 @@ class _TranslationsWebMemoryAmbientCostEs extends TranslationsWebMemoryAmbientCo
 	@override String get title => 'Coste de tokens (histórico total)';
 	@override String get intro => 'Resumen por proveedor agregado a partir de <1>memory_summarizer_calls</1>. Los proveedores locales (Ollama, LM Studio, Integración) tienen precio de \$0: el operador asume el coste del hardware.';
 	@override String get empty => 'No hay proveedores habilitados: no hay datos de coste.';
-	@override late final _TranslationsWebMemoryAmbientCostColumnsEs columns = _TranslationsWebMemoryAmbientCostColumnsEs._(_root);
+	@override late final _Translations$web$memoryAmbient$cost$columns$es columns = _Translations$web$memoryAmbient$cost$columns$es._(_root);
 }
 
 // Path: web.noteEditor.status
-class _TranslationsWebNoteEditorStatusEs extends TranslationsWebNoteEditorStatusEn {
-	_TranslationsWebNoteEditorStatusEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$noteEditor$status$es extends Translations$web$noteEditor$status$en {
+	_Translations$web$noteEditor$status$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -5639,8 +5728,8 @@ class _TranslationsWebNoteEditorStatusEs extends TranslationsWebNoteEditorStatus
 }
 
 // Path: web.export.sections
-class _TranslationsWebExportSectionsEs extends TranslationsWebExportSectionsEn {
-	_TranslationsWebExportSectionsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$export$sections$es extends Translations$web$export$sections$en {
+	_Translations$web$export$sections$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -5650,8 +5739,8 @@ class _TranslationsWebExportSectionsEs extends TranslationsWebExportSectionsEn {
 }
 
 // Path: web.export.form
-class _TranslationsWebExportFormEs extends TranslationsWebExportFormEn {
-	_TranslationsWebExportFormEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$export$form$es extends Translations$web$export$form$en {
+	_Translations$web$export$form$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -5662,7 +5751,7 @@ class _TranslationsWebExportFormEs extends TranslationsWebExportFormEn {
 	@override String get integrations => 'Integraciones';
 	@override String get customTasks => 'Tareas personalizadas';
 	@override String get customTasksHint => 'Tareas definidas por el operador que se muestran en la pestaña Tareas del Inspector.';
-	@override late final _TranslationsWebExportFormIntegrationOptionsEs integrationOptions = _TranslationsWebExportFormIntegrationOptionsEs._(_root);
+	@override late final _Translations$web$export$form$integrationOptions$es integrationOptions = _Translations$web$export$form$integrationOptions$es._(_root);
 	@override String get confirmWarning => 'Escribe <1>Lo entiendo</1> para confirmar. opendray actualmente almacena solo hashes bcrypt, así que seleccionar texto plano NO exporta ningún texto plano (la función está reservada para una versión futura que mantenga cachés de texto plano).';
 	@override String get confirmPlaceholder => 'Lo entiendo';
 	@override String get confirmSentinel => 'lo entiendo';
@@ -5675,8 +5764,8 @@ class _TranslationsWebExportFormEs extends TranslationsWebExportFormEn {
 }
 
 // Path: web.export.history
-class _TranslationsWebExportHistoryEs extends TranslationsWebExportHistoryEn {
-	_TranslationsWebExportHistoryEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$export$history$es extends Translations$web$export$history$en {
+	_Translations$web$export$history$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -5684,7 +5773,7 @@ class _TranslationsWebExportHistoryEs extends TranslationsWebExportHistoryEn {
 	@override String get loading => 'Cargando…';
 	@override String get empty => 'Aún no hay exportaciones. Usa el formulario de arriba para crear una.';
 	@override String get title => 'Historial';
-	@override late final _TranslationsWebExportHistoryColumnsEs columns = _TranslationsWebExportHistoryColumnsEs._(_root);
+	@override late final _Translations$web$export$history$columns$es columns = _Translations$web$export$history$columns$es._(_root);
 	@override String get download => 'Descargar';
 	@override String get deleteTooltip => 'Eliminar';
 	@override String get listFailedToast => 'No se pudieron listar las exportaciones';
@@ -5697,8 +5786,8 @@ class _TranslationsWebExportHistoryEs extends TranslationsWebExportHistoryEn {
 }
 
 // Path: web.export.import
-class _TranslationsWebExportImportEs extends TranslationsWebExportImportEn {
-	_TranslationsWebExportImportEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$export$import$es extends Translations$web$export$import$en {
+	_Translations$web$export$import$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -5715,12 +5804,12 @@ class _TranslationsWebExportImportEs extends TranslationsWebExportImportEn {
 	@override String get doneToast => 'Importación completada';
 	@override String get finishedWithErrors => 'La importación terminó con errores';
 	@override String get failedToast => 'Falló la importación';
-	@override late final _TranslationsWebExportImportSummaryCardEs summaryCard = _TranslationsWebExportImportSummaryCardEs._(_root);
+	@override late final _Translations$web$export$import$summaryCard$es summaryCard = _Translations$web$export$import$summaryCard$es._(_root);
 }
 
 // Path: web.export.imports
-class _TranslationsWebExportImportsEs extends TranslationsWebExportImportsEn {
-	_TranslationsWebExportImportsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$export$imports$es extends Translations$web$export$imports$en {
+	_Translations$web$export$imports$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -5728,14 +5817,14 @@ class _TranslationsWebExportImportsEs extends TranslationsWebExportImportsEn {
 	@override String get loading => 'Cargando…';
 	@override String get empty => 'Aún no hay importaciones.';
 	@override String get title => 'Historial';
-	@override late final _TranslationsWebExportImportsColumnsEs columns = _TranslationsWebExportImportsColumnsEs._(_root);
+	@override late final _Translations$web$export$imports$columns$es columns = _Translations$web$export$imports$columns$es._(_root);
 	@override String get noneCounts => '(ninguno)';
 	@override String get listFailedToast => 'No se pudieron listar las importaciones';
 }
 
 // Path: web.knowledge.scopes
-class _TranslationsWebKnowledgeScopesEs extends TranslationsWebKnowledgeScopesEn {
-	_TranslationsWebKnowledgeScopesEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$knowledge$scopes$es extends Translations$web$knowledge$scopes$en {
+	_Translations$web$knowledge$scopes$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -5747,8 +5836,8 @@ class _TranslationsWebKnowledgeScopesEs extends TranslationsWebKnowledgeScopesEn
 }
 
 // Path: web.knowledge.kb
-class _TranslationsWebKnowledgeKbEs extends TranslationsWebKnowledgeKbEn {
-	_TranslationsWebKnowledgeKbEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$knowledge$kb$es extends Translations$web$knowledge$kb$en {
+	_Translations$web$knowledge$kb$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -5770,14 +5859,14 @@ class _TranslationsWebKnowledgeKbEs extends TranslationsWebKnowledgeKbEn {
 	@override String get saved => 'Guardado';
 	@override String get unlocked => 'Desbloqueada — la IA volverá a gestionar esta página';
 	@override String get regenerating => 'Regenerando en segundo plano…';
-	@override late final _TranslationsWebKnowledgeKbKindsEs kinds = _TranslationsWebKnowledgeKbKindsEs._(_root);
+	@override late final _Translations$web$knowledge$kb$kinds$es kinds = _Translations$web$knowledge$kb$kinds$es._(_root);
 	@override String get foundational => 'Fundacional';
 	@override String get foundationalHint => 'Infraestructura y convenciones — reglas vinculantes inyectadas en cada proyecto.';
 	@override String get emergent => 'Emergente';
 	@override String get emergentHint => 'Lecciones y funciones reutilizables destiladas del trabajo previo — orientación.';
 	@override String get bindingBadge => 'Vinculante · obligatorio';
 	@override String get referenceBadge => 'Referencia';
-	@override late final _TranslationsWebKnowledgeKbProposalEs proposal = _TranslationsWebKnowledgeKbProposalEs._(_root);
+	@override late final _Translations$web$knowledge$kb$proposal$es proposal = _Translations$web$knowledge$kb$proposal$es._(_root);
 	@override String get discuss => 'Hablar con la IA';
 	@override String get discussHint => 'Redacta de nuevo esta política conversando con la IA — las páginas bloqueadas reciben propuestas, nunca sobrescrituras';
 	@override String get onDemand => 'bajo demanda';
@@ -5786,14 +5875,14 @@ class _TranslationsWebKnowledgeKbEs extends TranslationsWebKnowledgeKbEn {
 	@override String get removePage => 'Quitar página';
 	@override String get removePageHint => 'Quita esta página de la base de conocimiento (su contenido se conserva y vuelve si se re-añade el slug)';
 	@override String get pageRemovedToast => 'Página quitada';
-	@override late final _TranslationsWebKnowledgeKbNewPageEs newPage = _TranslationsWebKnowledgeKbNewPageEs._(_root);
-	@override late final _TranslationsWebKnowledgeKbPageSettingsEs pageSettings = _TranslationsWebKnowledgeKbPageSettingsEs._(_root);
-	@override late final _TranslationsWebKnowledgeKbLibrarianEs librarian = _TranslationsWebKnowledgeKbLibrarianEs._(_root);
+	@override late final _Translations$web$knowledge$kb$newPage$es newPage = _Translations$web$knowledge$kb$newPage$es._(_root);
+	@override late final _Translations$web$knowledge$kb$pageSettings$es pageSettings = _Translations$web$knowledge$kb$pageSettings$es._(_root);
+	@override late final _Translations$web$knowledge$kb$librarian$es librarian = _Translations$web$knowledge$kb$librarian$es._(_root);
 }
 
 // Path: web.knowledge.kinds
-class _TranslationsWebKnowledgeKindsEs extends TranslationsWebKnowledgeKindsEn {
-	_TranslationsWebKnowledgeKindsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$knowledge$kinds$es extends Translations$web$knowledge$kinds$en {
+	_Translations$web$knowledge$kinds$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -5806,8 +5895,8 @@ class _TranslationsWebKnowledgeKindsEs extends TranslationsWebKnowledgeKindsEn {
 }
 
 // Path: web.knowledge.distill
-class _TranslationsWebKnowledgeDistillEs extends TranslationsWebKnowledgeDistillEn {
-	_TranslationsWebKnowledgeDistillEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$knowledge$distill$es extends Translations$web$knowledge$distill$en {
+	_Translations$web$knowledge$distill$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -5844,15 +5933,15 @@ class _TranslationsWebKnowledgeDistillEs extends TranslationsWebKnowledgeDistill
 	@override String projectSpan({required Object count}) => '${count} proyectos';
 	@override String get scoreHint => 'Ordenado por recurrencia × coste de tiempo manual — lo que más tiempo ahorra se destila primero';
 	@override String outcomes({required Object ok, required Object failed}) => '${ok} ok / ${failed} fallidas tras cargarlo';
-	@override late final _TranslationsWebKnowledgeDistillRetirementEs retirement = _TranslationsWebKnowledgeDistillRetirementEs._(_root);
+	@override late final _Translations$web$knowledge$distill$retirement$es retirement = _Translations$web$knowledge$distill$retirement$es._(_root);
 	@override String get retirementEmpty => 'Sin candidatos a retiro: todas las habilidades aportan.';
 	@override String get retirementHint => 'Habilidades que el bucle de resultados propone descartar; desactiva las que consideres.';
 	@override String get retirementTitle => 'Candidatos a retiro';
 }
 
 // Path: web.knowledge.graph
-class _TranslationsWebKnowledgeGraphEs extends TranslationsWebKnowledgeGraphEn {
-	_TranslationsWebKnowledgeGraphEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$knowledge$graph$es extends Translations$web$knowledge$graph$en {
+	_Translations$web$knowledge$graph$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -5861,14 +5950,14 @@ class _TranslationsWebKnowledgeGraphEs extends TranslationsWebKnowledgeGraphEn {
 	@override String get intro => 'El mapa de relaciones de todo lo que la IA ha aprendido: qué proyectos comparten tecnología, qué skills y trampas se asocian a qué entidades. Comprueba aquí el radio de impacto de un nodo ANTES de tocar infraestructura compartida.';
 	@override String get empty => 'Sin conocimiento aún — el grafo se construye solo mientras corren las sessions: el barrido de anclaje extrae entidades del trabajo de proyecto y la destilación añade playbooks y skills. Vuelve tras unas cuantas sesiones de trabajo.';
 	@override String get hint => 'Rueda para zoom · arrastra el fondo para desplazarte · arrastra un nodo para desenredar · clic en un nodo para inspeccionarlo';
-	@override late final _TranslationsWebKnowledgeGraphLegendEs legend = _TranslationsWebKnowledgeGraphLegendEs._(_root);
+	@override late final _Translations$web$knowledge$graph$legend$es legend = _Translations$web$knowledge$graph$legend$es._(_root);
 	@override String connections({required Object count}) => '${count} nodos conectados';
 	@override String get noLinks => 'Nada enlaza con este nodo todavía.';
 }
 
 // Path: web.cortex.home
-class _TranslationsWebCortexHomeEs extends TranslationsWebCortexHomeEn {
-	_TranslationsWebCortexHomeEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$cortex$home$es extends Translations$web$cortex$home$en {
+	_Translations$web$cortex$home$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -5880,16 +5969,16 @@ class _TranslationsWebCortexHomeEs extends TranslationsWebCortexHomeEn {
 	@override String get loopHint => 'Memoria → Notas → Conocimiento → inyectado en cada arranque. Ascender es transformar, nunca copiar.';
 	@override String get activeProjects => 'Proyectos activos';
 	@override String idle({required Object days}) => 'inactivo ${days}d';
-	@override late final _TranslationsWebCortexHomeMemoryEs memory = _TranslationsWebCortexHomeMemoryEs._(_root);
-	@override late final _TranslationsWebCortexHomeNotesEs notes = _TranslationsWebCortexHomeNotesEs._(_root);
-	@override late final _TranslationsWebCortexHomeKnowledgeEs knowledge = _TranslationsWebCortexHomeKnowledgeEs._(_root);
+	@override late final _Translations$web$cortex$home$memory$es memory = _Translations$web$cortex$home$memory$es._(_root);
+	@override late final _Translations$web$cortex$home$notes$es notes = _Translations$web$cortex$home$notes$es._(_root);
+	@override late final _Translations$web$cortex$home$knowledge$es knowledge = _Translations$web$cortex$home$knowledge$es._(_root);
 	@override String get settings => 'Ajustes';
-	@override late final _TranslationsWebCortexHomeProposalsEs proposals = _TranslationsWebCortexHomeProposalsEs._(_root);
+	@override late final _Translations$web$cortex$home$proposals$es proposals = _Translations$web$cortex$home$proposals$es._(_root);
 }
 
 // Path: web.cortex.chat
-class _TranslationsWebCortexChatEs extends TranslationsWebCortexChatEn {
-	_TranslationsWebCortexChatEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$cortex$chat$es extends Translations$web$cortex$chat$en {
+	_Translations$web$cortex$chat$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -5923,8 +6012,8 @@ class _TranslationsWebCortexChatEs extends TranslationsWebCortexChatEn {
 }
 
 // Path: web.cortex.blueprint
-class _TranslationsWebCortexBlueprintEs extends TranslationsWebCortexBlueprintEn {
-	_TranslationsWebCortexBlueprintEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$cortex$blueprint$es extends Translations$web$cortex$blueprint$en {
+	_Translations$web$cortex$blueprint$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -5941,7 +6030,7 @@ class _TranslationsWebCortexBlueprintEs extends TranslationsWebCortexBlueprintEn
 	@override String get slugPlaceholder => 'slug';
 	@override String get titlePlaceholder => 'Título';
 	@override String get hintPlaceholder => 'Pista para el mantenedor — una frase que guíe a la IA (opcional)';
-	@override late final _TranslationsWebCortexBlueprintModeEs mode = _TranslationsWebCortexBlueprintModeEs._(_root);
+	@override late final _Translations$web$cortex$blueprint$mode$es mode = _Translations$web$cortex$blueprint$mode$es._(_root);
 	@override String get inject => 'inyectar';
 	@override String get reserved => 'reservada';
 	@override String get deleteNote => 'Quitar una sección la oculta sin borrar su contenido — vuelve a añadir el mismo slug para recuperarla.';
@@ -5949,12 +6038,12 @@ class _TranslationsWebCortexBlueprintEs extends TranslationsWebCortexBlueprintEn
 	@override String get apply => 'Aplicar plano';
 	@override String get applyFailed => 'Error al aplicar';
 	@override String get appliedToast => 'Plano aplicado';
-	@override late final _TranslationsWebCortexBlueprintWritePolicyEs writePolicy = _TranslationsWebCortexBlueprintWritePolicyEs._(_root);
+	@override late final _Translations$web$cortex$blueprint$writePolicy$es writePolicy = _Translations$web$cortex$blueprint$writePolicy$es._(_root);
 }
 
 // Path: web.cortex.quarantine
-class _TranslationsWebCortexQuarantineEs extends TranslationsWebCortexQuarantineEn {
-	_TranslationsWebCortexQuarantineEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$cortex$quarantine$es extends Translations$web$cortex$quarantine$en {
+	_Translations$web$cortex$quarantine$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -5972,18 +6061,18 @@ class _TranslationsWebCortexQuarantineEs extends TranslationsWebCortexQuarantine
 }
 
 // Path: web.cortex.settings
-class _TranslationsWebCortexSettingsEs extends TranslationsWebCortexSettingsEn {
-	_TranslationsWebCortexSettingsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$cortex$settings$es extends Translations$web$cortex$settings$en {
+	_Translations$web$cortex$settings$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsWebCortexSettingsInjectionEs injection = _TranslationsWebCortexSettingsInjectionEs._(_root);
+	@override late final _Translations$web$cortex$settings$injection$es injection = _Translations$web$cortex$settings$injection$es._(_root);
 }
 
 // Path: web.database.dialog
-class _TranslationsWebDatabaseDialogEs extends TranslationsWebDatabaseDialogEn {
-	_TranslationsWebDatabaseDialogEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$database$dialog$es extends Translations$web$database$dialog$en {
+	_Translations$web$database$dialog$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6009,14 +6098,14 @@ class _TranslationsWebDatabaseDialogEs extends TranslationsWebDatabaseDialogEn {
 	@override String get savedEdit => 'Conexión actualizada';
 	@override String get missingFields => 'El nombre y la base de datos son obligatorios (más host y usuario para motores de servidor)';
 	@override String get driver => 'Motor de base de datos';
-	@override late final _TranslationsWebDatabaseDialogDriversEs drivers = _TranslationsWebDatabaseDialogDriversEs._(_root);
+	@override late final _Translations$web$database$dialog$drivers$es drivers = _Translations$web$database$dialog$drivers$es._(_root);
 	@override String get filePath => 'Archivo de base de datos';
 	@override String get filePathHint => 'Ruta a un archivo SQLite, dentro del directorio del proyecto.';
 }
 
 // Path: web.database.results
-class _TranslationsWebDatabaseResultsEs extends TranslationsWebDatabaseResultsEn {
-	_TranslationsWebDatabaseResultsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$database$results$es extends Translations$web$database$results$en {
+	_Translations$web$database$results$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6025,8 +6114,8 @@ class _TranslationsWebDatabaseResultsEs extends TranslationsWebDatabaseResultsEn
 }
 
 // Path: web.database.tree
-class _TranslationsWebDatabaseTreeEs extends TranslationsWebDatabaseTreeEn {
-	_TranslationsWebDatabaseTreeEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$database$tree$es extends Translations$web$database$tree$en {
+	_Translations$web$database$tree$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6036,8 +6125,8 @@ class _TranslationsWebDatabaseTreeEs extends TranslationsWebDatabaseTreeEn {
 }
 
 // Path: web.database.row
-class _TranslationsWebDatabaseRowEs extends TranslationsWebDatabaseRowEn {
-	_TranslationsWebDatabaseRowEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$database$row$es extends Translations$web$database$row$en {
+	_Translations$web$database$row$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6052,8 +6141,8 @@ class _TranslationsWebDatabaseRowEs extends TranslationsWebDatabaseRowEn {
 }
 
 // Path: web.database.grid
-class _TranslationsWebDatabaseGridEs extends TranslationsWebDatabaseGridEn {
-	_TranslationsWebDatabaseGridEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$database$grid$es extends Translations$web$database$grid$en {
+	_Translations$web$database$grid$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6071,8 +6160,8 @@ class _TranslationsWebDatabaseGridEs extends TranslationsWebDatabaseGridEn {
 }
 
 // Path: web.database.console
-class _TranslationsWebDatabaseConsoleEs extends TranslationsWebDatabaseConsoleEn {
-	_TranslationsWebDatabaseConsoleEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$database$console$es extends Translations$web$database$console$en {
+	_Translations$web$database$console$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6087,8 +6176,8 @@ class _TranslationsWebDatabaseConsoleEs extends TranslationsWebDatabaseConsoleEn
 }
 
 // Path: web.database.panel
-class _TranslationsWebDatabasePanelEs extends TranslationsWebDatabasePanelEn {
-	_TranslationsWebDatabasePanelEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$database$panel$es extends Translations$web$database$panel$en {
+	_Translations$web$database$panel$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6107,8 +6196,8 @@ class _TranslationsWebDatabasePanelEs extends TranslationsWebDatabasePanelEn {
 }
 
 // Path: web.database.workbench
-class _TranslationsWebDatabaseWorkbenchEs extends TranslationsWebDatabaseWorkbenchEn {
-	_TranslationsWebDatabaseWorkbenchEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$database$workbench$es extends Translations$web$database$workbench$en {
+	_Translations$web$database$workbench$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6117,8 +6206,8 @@ class _TranslationsWebDatabaseWorkbenchEs extends TranslationsWebDatabaseWorkben
 }
 
 // Path: web.roundTable.dialog
-class _TranslationsWebRoundTableDialogEs extends TranslationsWebRoundTableDialogEn {
-	_TranslationsWebRoundTableDialogEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$roundTable$dialog$es extends Translations$web$roundTable$dialog$en {
+	_Translations$web$roundTable$dialog$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6141,14 +6230,14 @@ class _TranslationsWebRoundTableDialogEs extends TranslationsWebRoundTableDialog
 	@override String get accountDefault => 'Cuenta predeterminada';
 	@override String get accountNoToken => 'sin token';
 	@override String get personaPlaceholder => 'Rol / persona (opcional) — define cómo argumenta este miembro';
-	@override late final _TranslationsWebRoundTableDialogPersonaPresetsEs personaPresets = _TranslationsWebRoundTableDialogPersonaPresetsEs._(_root);
+	@override late final _Translations$web$roundTable$dialog$personaPresets$es personaPresets = _Translations$web$roundTable$dialog$personaPresets$es._(_root);
 	@override String get framing => 'Marco (opcional)';
 	@override String get framingPlaceholder => 'Tema actual + relación entre miembros — p. ej. "Tema: rediseño de auth. claude lidera arquitectura, codex solo busca fallos de seguridad."';
 }
 
 // Path: web.roundTable.detail
-class _TranslationsWebRoundTableDetailEs extends TranslationsWebRoundTableDetailEn {
-	_TranslationsWebRoundTableDetailEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$roundTable$detail$es extends Translations$web$roundTable$detail$en {
+	_Translations$web$roundTable$detail$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6180,8 +6269,8 @@ class _TranslationsWebRoundTableDetailEs extends TranslationsWebRoundTableDetail
 }
 
 // Path: web.roundTable.status
-class _TranslationsWebRoundTableStatusEs extends TranslationsWebRoundTableStatusEn {
-	_TranslationsWebRoundTableStatusEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$roundTable$status$es extends Translations$web$roundTable$status$en {
+	_Translations$web$roundTable$status$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6191,8 +6280,8 @@ class _TranslationsWebRoundTableStatusEs extends TranslationsWebRoundTableStatus
 }
 
 // Path: web.roundTable.handoff
-class _TranslationsWebRoundTableHandoffEs extends TranslationsWebRoundTableHandoffEn {
-	_TranslationsWebRoundTableHandoffEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$roundTable$handoff$es extends Translations$web$roundTable$handoff$en {
+	_Translations$web$roundTable$handoff$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6217,8 +6306,8 @@ class _TranslationsWebRoundTableHandoffEs extends TranslationsWebRoundTableHando
 }
 
 // Path: web.roundTable.plan
-class _TranslationsWebRoundTablePlanEs extends TranslationsWebRoundTablePlanEn {
-	_TranslationsWebRoundTablePlanEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$roundTable$plan$es extends Translations$web$roundTable$plan$en {
+	_Translations$web$roundTable$plan$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6252,8 +6341,8 @@ class _TranslationsWebRoundTablePlanEs extends TranslationsWebRoundTablePlanEn {
 }
 
 // Path: more.items.integrations
-class _TranslationsMoreItemsIntegrationsEs extends TranslationsMoreItemsIntegrationsEn {
-	_TranslationsMoreItemsIntegrationsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$more$items$integrations$es extends Translations$more$items$integrations$en {
+	_Translations$more$items$integrations$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6263,8 +6352,8 @@ class _TranslationsMoreItemsIntegrationsEs extends TranslationsMoreItemsIntegrat
 }
 
 // Path: more.items.activity
-class _TranslationsMoreItemsActivityEs extends TranslationsMoreItemsActivityEn {
-	_TranslationsMoreItemsActivityEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$more$items$activity$es extends Translations$more$items$activity$en {
+	_Translations$more$items$activity$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6274,8 +6363,8 @@ class _TranslationsMoreItemsActivityEs extends TranslationsMoreItemsActivityEn {
 }
 
 // Path: more.items.memoryAmbient
-class _TranslationsMoreItemsMemoryAmbientEs extends TranslationsMoreItemsMemoryAmbientEn {
-	_TranslationsMoreItemsMemoryAmbientEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$more$items$memoryAmbient$es extends Translations$more$items$memoryAmbient$en {
+	_Translations$more$items$memoryAmbient$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6285,8 +6374,8 @@ class _TranslationsMoreItemsMemoryAmbientEs extends TranslationsMoreItemsMemoryA
 }
 
 // Path: more.items.channels
-class _TranslationsMoreItemsChannelsEs extends TranslationsMoreItemsChannelsEn {
-	_TranslationsMoreItemsChannelsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$more$items$channels$es extends Translations$more$items$channels$en {
+	_Translations$more$items$channels$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6296,8 +6385,8 @@ class _TranslationsMoreItemsChannelsEs extends TranslationsMoreItemsChannelsEn {
 }
 
 // Path: more.items.providers
-class _TranslationsMoreItemsProvidersEs extends TranslationsMoreItemsProvidersEn {
-	_TranslationsMoreItemsProvidersEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$more$items$providers$es extends Translations$more$items$providers$en {
+	_Translations$more$items$providers$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6307,8 +6396,8 @@ class _TranslationsMoreItemsProvidersEs extends TranslationsMoreItemsProvidersEn
 }
 
 // Path: more.items.mcp
-class _TranslationsMoreItemsMcpEs extends TranslationsMoreItemsMcpEn {
-	_TranslationsMoreItemsMcpEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$more$items$mcp$es extends Translations$more$items$mcp$en {
+	_Translations$more$items$mcp$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6318,8 +6407,8 @@ class _TranslationsMoreItemsMcpEs extends TranslationsMoreItemsMcpEn {
 }
 
 // Path: more.items.skills
-class _TranslationsMoreItemsSkillsEs extends TranslationsMoreItemsSkillsEn {
-	_TranslationsMoreItemsSkillsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$more$items$skills$es extends Translations$more$items$skills$en {
+	_Translations$more$items$skills$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6329,8 +6418,8 @@ class _TranslationsMoreItemsSkillsEs extends TranslationsMoreItemsSkillsEn {
 }
 
 // Path: more.items.gitHosts
-class _TranslationsMoreItemsGitHostsEs extends TranslationsMoreItemsGitHostsEn {
-	_TranslationsMoreItemsGitHostsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$more$items$gitHosts$es extends Translations$more$items$gitHosts$en {
+	_Translations$more$items$gitHosts$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6340,8 +6429,8 @@ class _TranslationsMoreItemsGitHostsEs extends TranslationsMoreItemsGitHostsEn {
 }
 
 // Path: more.items.customTasks
-class _TranslationsMoreItemsCustomTasksEs extends TranslationsMoreItemsCustomTasksEn {
-	_TranslationsMoreItemsCustomTasksEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$more$items$customTasks$es extends Translations$more$items$customTasks$en {
+	_Translations$more$items$customTasks$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6351,8 +6440,8 @@ class _TranslationsMoreItemsCustomTasksEs extends TranslationsMoreItemsCustomTas
 }
 
 // Path: more.items.cortexHub
-class _TranslationsMoreItemsCortexHubEs extends TranslationsMoreItemsCortexHubEn {
-	_TranslationsMoreItemsCortexHubEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$more$items$cortexHub$es extends Translations$more$items$cortexHub$en {
+	_Translations$more$items$cortexHub$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6362,8 +6451,8 @@ class _TranslationsMoreItemsCortexHubEs extends TranslationsMoreItemsCortexHubEn
 }
 
 // Path: more.items.projectMemory
-class _TranslationsMoreItemsProjectMemoryEs extends TranslationsMoreItemsProjectMemoryEn {
-	_TranslationsMoreItemsProjectMemoryEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$more$items$projectMemory$es extends Translations$more$items$projectMemory$en {
+	_Translations$more$items$projectMemory$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6373,8 +6462,8 @@ class _TranslationsMoreItemsProjectMemoryEs extends TranslationsMoreItemsProject
 }
 
 // Path: more.items.archived
-class _TranslationsMoreItemsArchivedEs extends TranslationsMoreItemsArchivedEn {
-	_TranslationsMoreItemsArchivedEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$more$items$archived$es extends Translations$more$items$archived$en {
+	_Translations$more$items$archived$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6384,8 +6473,8 @@ class _TranslationsMoreItemsArchivedEs extends TranslationsMoreItemsArchivedEn {
 }
 
 // Path: more.items.quarantine
-class _TranslationsMoreItemsQuarantineEs extends TranslationsMoreItemsQuarantineEn {
-	_TranslationsMoreItemsQuarantineEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$more$items$quarantine$es extends Translations$more$items$quarantine$en {
+	_Translations$more$items$quarantine$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6395,8 +6484,8 @@ class _TranslationsMoreItemsQuarantineEs extends TranslationsMoreItemsQuarantine
 }
 
 // Path: more.items.backups
-class _TranslationsMoreItemsBackupsEs extends TranslationsMoreItemsBackupsEn {
-	_TranslationsMoreItemsBackupsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$more$items$backups$es extends Translations$more$items$backups$en {
+	_Translations$more$items$backups$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6406,8 +6495,8 @@ class _TranslationsMoreItemsBackupsEs extends TranslationsMoreItemsBackupsEn {
 }
 
 // Path: more.items.dataExport
-class _TranslationsMoreItemsDataExportEs extends TranslationsMoreItemsDataExportEn {
-	_TranslationsMoreItemsDataExportEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$more$items$dataExport$es extends Translations$more$items$dataExport$en {
+	_Translations$more$items$dataExport$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6417,8 +6506,8 @@ class _TranslationsMoreItemsDataExportEs extends TranslationsMoreItemsDataExport
 }
 
 // Path: more.items.settings
-class _TranslationsMoreItemsSettingsEs extends TranslationsMoreItemsSettingsEn {
-	_TranslationsMoreItemsSettingsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$more$items$settings$es extends Translations$more$items$settings$en {
+	_Translations$more$items$settings$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6428,8 +6517,8 @@ class _TranslationsMoreItemsSettingsEs extends TranslationsMoreItemsSettingsEn {
 }
 
 // Path: more.items.about
-class _TranslationsMoreItemsAboutEs extends TranslationsMoreItemsAboutEn {
-	_TranslationsMoreItemsAboutEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$more$items$about$es extends Translations$more$items$about$en {
+	_Translations$more$items$about$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6439,8 +6528,8 @@ class _TranslationsMoreItemsAboutEs extends TranslationsMoreItemsAboutEn {
 }
 
 // Path: more.items.vault
-class _TranslationsMoreItemsVaultEs extends TranslationsMoreItemsVaultEn {
-	_TranslationsMoreItemsVaultEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$more$items$vault$es extends Translations$more$items$vault$en {
+	_Translations$more$items$vault$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6450,8 +6539,8 @@ class _TranslationsMoreItemsVaultEs extends TranslationsMoreItemsVaultEn {
 }
 
 // Path: more.items.roundTable
-class _TranslationsMoreItemsRoundTableEs extends TranslationsMoreItemsRoundTableEn {
-	_TranslationsMoreItemsRoundTableEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$more$items$roundTable$es extends Translations$more$items$roundTable$en {
+	_Translations$more$items$roundTable$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6461,8 +6550,8 @@ class _TranslationsMoreItemsRoundTableEs extends TranslationsMoreItemsRoundTable
 }
 
 // Path: sessions.detail.accountSwitcher
-class _TranslationsSessionsDetailAccountSwitcherEs extends TranslationsSessionsDetailAccountSwitcherEn {
-	_TranslationsSessionsDetailAccountSwitcherEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$sessions$detail$accountSwitcher$es extends Translations$sessions$detail$accountSwitcher$en {
+	_Translations$sessions$detail$accountSwitcher$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6488,8 +6577,8 @@ class _TranslationsSessionsDetailAccountSwitcherEs extends TranslationsSessionsD
 }
 
 // Path: sessions.terminal.snackbar
-class _TranslationsSessionsTerminalSnackbarEs extends TranslationsSessionsTerminalSnackbarEn {
-	_TranslationsSessionsTerminalSnackbarEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$sessions$terminal$snackbar$es extends Translations$sessions$terminal$snackbar$en {
+	_Translations$sessions$terminal$snackbar$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6502,8 +6591,8 @@ class _TranslationsSessionsTerminalSnackbarEs extends TranslationsSessionsTermin
 }
 
 // Path: sessions.terminal.imageSource
-class _TranslationsSessionsTerminalImageSourceEs extends TranslationsSessionsTerminalImageSourceEn {
-	_TranslationsSessionsTerminalImageSourceEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$sessions$terminal$imageSource$es extends Translations$sessions$terminal$imageSource$en {
+	_Translations$sessions$terminal$imageSource$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6513,8 +6602,8 @@ class _TranslationsSessionsTerminalImageSourceEs extends TranslationsSessionsTer
 }
 
 // Path: sessions.terminal.keyboard
-class _TranslationsSessionsTerminalKeyboardEs extends TranslationsSessionsTerminalKeyboardEn {
-	_TranslationsSessionsTerminalKeyboardEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$sessions$terminal$keyboard$es extends Translations$sessions$terminal$keyboard$en {
+	_Translations$sessions$terminal$keyboard$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6526,8 +6615,8 @@ class _TranslationsSessionsTerminalKeyboardEs extends TranslationsSessionsTermin
 }
 
 // Path: sessions.terminal.attachments
-class _TranslationsSessionsTerminalAttachmentsEs extends TranslationsSessionsTerminalAttachmentsEn {
-	_TranslationsSessionsTerminalAttachmentsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$sessions$terminal$attachments$es extends Translations$sessions$terminal$attachments$en {
+	_Translations$sessions$terminal$attachments$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6538,8 +6627,8 @@ class _TranslationsSessionsTerminalAttachmentsEs extends TranslationsSessionsTer
 }
 
 // Path: sessions.terminal.connection
-class _TranslationsSessionsTerminalConnectionEs extends TranslationsSessionsTerminalConnectionEn {
-	_TranslationsSessionsTerminalConnectionEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$sessions$terminal$connection$es extends Translations$sessions$terminal$connection$en {
+	_Translations$sessions$terminal$connection$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6554,8 +6643,8 @@ class _TranslationsSessionsTerminalConnectionEs extends TranslationsSessionsTerm
 }
 
 // Path: sessions.terminal.selectCopy
-class _TranslationsSessionsTerminalSelectCopyEs extends TranslationsSessionsTerminalSelectCopyEn {
-	_TranslationsSessionsTerminalSelectCopyEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$sessions$terminal$selectCopy$es extends Translations$sessions$terminal$selectCopy$en {
+	_Translations$sessions$terminal$selectCopy$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6568,8 +6657,8 @@ class _TranslationsSessionsTerminalSelectCopyEs extends TranslationsSessionsTerm
 }
 
 // Path: sessions.action.errors
-class _TranslationsSessionsActionErrorsEs extends TranslationsSessionsActionErrorsEn {
-	_TranslationsSessionsActionErrorsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$sessions$action$errors$es extends Translations$sessions$action$errors$en {
+	_Translations$sessions$action$errors$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6580,8 +6669,8 @@ class _TranslationsSessionsActionErrorsEs extends TranslationsSessionsActionErro
 }
 
 // Path: sessions.dirPicker.dialog
-class _TranslationsSessionsDirPickerDialogEs extends TranslationsSessionsDirPickerDialogEn {
-	_TranslationsSessionsDirPickerDialogEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$sessions$dirPicker$dialog$es extends Translations$sessions$dirPicker$dialog$en {
+	_Translations$sessions$dirPicker$dialog$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6592,20 +6681,20 @@ class _TranslationsSessionsDirPickerDialogEs extends TranslationsSessionsDirPick
 }
 
 // Path: sessions.inspector.shell
-class _TranslationsSessionsInspectorShellEs extends TranslationsSessionsInspectorShellEn {
-	_TranslationsSessionsInspectorShellEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$sessions$inspector$shell$es extends Translations$sessions$inspector$shell$en {
+	_Translations$sessions$inspector$shell$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
 	// Translations
 	@override String get title => 'Inspector';
 	@override String loadError({required Object error}) => 'No se pudo cargar la sesión: ${error}';
-	@override late final _TranslationsSessionsInspectorShellTabsEs tabs = _TranslationsSessionsInspectorShellTabsEs._(_root);
+	@override late final _Translations$sessions$inspector$shell$tabs$es tabs = _Translations$sessions$inspector$shell$tabs$es._(_root);
 }
 
 // Path: sessions.inspector.cortex
-class _TranslationsSessionsInspectorCortexEs extends TranslationsSessionsInspectorCortexEn {
-	_TranslationsSessionsInspectorCortexEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$sessions$inspector$cortex$es extends Translations$sessions$inspector$cortex$en {
+	_Translations$sessions$inspector$cortex$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6616,8 +6705,8 @@ class _TranslationsSessionsInspectorCortexEs extends TranslationsSessionsInspect
 }
 
 // Path: sessions.inspector.shared
-class _TranslationsSessionsInspectorSharedEs extends TranslationsSessionsInspectorSharedEn {
-	_TranslationsSessionsInspectorSharedEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$sessions$inspector$shared$es extends Translations$sessions$inspector$shared$en {
+	_Translations$sessions$inspector$shared$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6630,8 +6719,8 @@ class _TranslationsSessionsInspectorSharedEs extends TranslationsSessionsInspect
 }
 
 // Path: sessions.inspector.history
-class _TranslationsSessionsInspectorHistoryEs extends TranslationsSessionsInspectorHistoryEn {
-	_TranslationsSessionsInspectorHistoryEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$sessions$inspector$history$es extends Translations$sessions$inspector$history$en {
+	_Translations$sessions$inspector$history$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6641,8 +6730,8 @@ class _TranslationsSessionsInspectorHistoryEs extends TranslationsSessionsInspec
 }
 
 // Path: sessions.inspector.files
-class _TranslationsSessionsInspectorFilesEs extends TranslationsSessionsInspectorFilesEn {
-	_TranslationsSessionsInspectorFilesEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$sessions$inspector$files$es extends Translations$sessions$inspector$files$en {
+	_Translations$sessions$inspector$files$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6662,8 +6751,8 @@ class _TranslationsSessionsInspectorFilesEs extends TranslationsSessionsInspecto
 }
 
 // Path: sessions.inspector.git
-class _TranslationsSessionsInspectorGitEs extends TranslationsSessionsInspectorGitEn {
-	_TranslationsSessionsInspectorGitEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$sessions$inspector$git$es extends Translations$sessions$inspector$git$en {
+	_Translations$sessions$inspector$git$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6682,8 +6771,8 @@ class _TranslationsSessionsInspectorGitEs extends TranslationsSessionsInspectorG
 }
 
 // Path: sessions.inspector.tasks
-class _TranslationsSessionsInspectorTasksEs extends TranslationsSessionsInspectorTasksEn {
-	_TranslationsSessionsInspectorTasksEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$sessions$inspector$tasks$es extends Translations$sessions$inspector$tasks$en {
+	_Translations$sessions$inspector$tasks$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6698,8 +6787,8 @@ class _TranslationsSessionsInspectorTasksEs extends TranslationsSessionsInspecto
 }
 
 // Path: sessions.inspector.notes
-class _TranslationsSessionsInspectorNotesEs extends TranslationsSessionsInspectorNotesEn {
-	_TranslationsSessionsInspectorNotesEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$sessions$inspector$notes$es extends Translations$sessions$inspector$notes$en {
+	_Translations$sessions$inspector$notes$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6745,8 +6834,8 @@ class _TranslationsSessionsInspectorNotesEs extends TranslationsSessionsInspecto
 }
 
 // Path: sessions.spawnSheet.bypass
-class _TranslationsSessionsSpawnSheetBypassEs extends TranslationsSessionsSpawnSheetBypassEn {
-	_TranslationsSessionsSpawnSheetBypassEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$sessions$spawnSheet$bypass$es extends Translations$sessions$spawnSheet$bypass$en {
+	_Translations$sessions$spawnSheet$bypass$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6761,8 +6850,8 @@ class _TranslationsSessionsSpawnSheetBypassEs extends TranslationsSessionsSpawnS
 }
 
 // Path: sessions.spawnSheet.noProviders
-class _TranslationsSessionsSpawnSheetNoProvidersEs extends TranslationsSessionsSpawnSheetNoProvidersEn {
-	_TranslationsSessionsSpawnSheetNoProvidersEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$sessions$spawnSheet$noProviders$es extends Translations$sessions$spawnSheet$noProviders$en {
+	_Translations$sessions$spawnSheet$noProviders$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6773,8 +6862,8 @@ class _TranslationsSessionsSpawnSheetNoProvidersEs extends TranslationsSessionsS
 }
 
 // Path: sessions.spawnSheet.providerLoadError
-class _TranslationsSessionsSpawnSheetProviderLoadErrorEs extends TranslationsSessionsSpawnSheetProviderLoadErrorEn {
-	_TranslationsSessionsSpawnSheetProviderLoadErrorEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$sessions$spawnSheet$providerLoadError$es extends Translations$sessions$spawnSheet$providerLoadError$en {
+	_Translations$sessions$spawnSheet$providerLoadError$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6786,8 +6875,8 @@ class _TranslationsSessionsSpawnSheetProviderLoadErrorEs extends TranslationsSes
 }
 
 // Path: sessions.spawnSheet.claudeAccount
-class _TranslationsSessionsSpawnSheetClaudeAccountEs extends TranslationsSessionsSpawnSheetClaudeAccountEn {
-	_TranslationsSessionsSpawnSheetClaudeAccountEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$sessions$spawnSheet$claudeAccount$es extends Translations$sessions$spawnSheet$claudeAccount$en {
+	_Translations$sessions$spawnSheet$claudeAccount$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6803,8 +6892,8 @@ class _TranslationsSessionsSpawnSheetClaudeAccountEs extends TranslationsSession
 }
 
 // Path: memoryWorkers.tasks.gatekeeper
-class _TranslationsMemoryWorkersTasksGatekeeperEs extends TranslationsMemoryWorkersTasksGatekeeperEn {
-	_TranslationsMemoryWorkersTasksGatekeeperEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$memoryWorkers$tasks$gatekeeper$es extends Translations$memoryWorkers$tasks$gatekeeper$en {
+	_Translations$memoryWorkers$tasks$gatekeeper$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6814,8 +6903,8 @@ class _TranslationsMemoryWorkersTasksGatekeeperEs extends TranslationsMemoryWork
 }
 
 // Path: memoryWorkers.tasks.cleaner
-class _TranslationsMemoryWorkersTasksCleanerEs extends TranslationsMemoryWorkersTasksCleanerEn {
-	_TranslationsMemoryWorkersTasksCleanerEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$memoryWorkers$tasks$cleaner$es extends Translations$memoryWorkers$tasks$cleaner$en {
+	_Translations$memoryWorkers$tasks$cleaner$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6825,8 +6914,8 @@ class _TranslationsMemoryWorkersTasksCleanerEs extends TranslationsMemoryWorkers
 }
 
 // Path: memoryWorkers.tasks.gitactivity
-class _TranslationsMemoryWorkersTasksGitactivityEs extends TranslationsMemoryWorkersTasksGitactivityEn {
-	_TranslationsMemoryWorkersTasksGitactivityEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$memoryWorkers$tasks$gitactivity$es extends Translations$memoryWorkers$tasks$gitactivity$en {
+	_Translations$memoryWorkers$tasks$gitactivity$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6836,8 +6925,8 @@ class _TranslationsMemoryWorkersTasksGitactivityEs extends TranslationsMemoryWor
 }
 
 // Path: memoryWorkers.tasks.transcript
-class _TranslationsMemoryWorkersTasksTranscriptEs extends TranslationsMemoryWorkersTasksTranscriptEn {
-	_TranslationsMemoryWorkersTasksTranscriptEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$memoryWorkers$tasks$transcript$es extends Translations$memoryWorkers$tasks$transcript$en {
+	_Translations$memoryWorkers$tasks$transcript$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6847,8 +6936,8 @@ class _TranslationsMemoryWorkersTasksTranscriptEs extends TranslationsMemoryWork
 }
 
 // Path: memoryWorkers.tasks.planDrift
-class _TranslationsMemoryWorkersTasksPlanDriftEs extends TranslationsMemoryWorkersTasksPlanDriftEn {
-	_TranslationsMemoryWorkersTasksPlanDriftEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$memoryWorkers$tasks$planDrift$es extends Translations$memoryWorkers$tasks$planDrift$en {
+	_Translations$memoryWorkers$tasks$planDrift$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6858,8 +6947,8 @@ class _TranslationsMemoryWorkersTasksPlanDriftEs extends TranslationsMemoryWorke
 }
 
 // Path: memoryWorkers.tasks.conflictDetector
-class _TranslationsMemoryWorkersTasksConflictDetectorEs extends TranslationsMemoryWorkersTasksConflictDetectorEn {
-	_TranslationsMemoryWorkersTasksConflictDetectorEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$memoryWorkers$tasks$conflictDetector$es extends Translations$memoryWorkers$tasks$conflictDetector$en {
+	_Translations$memoryWorkers$tasks$conflictDetector$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6869,8 +6958,8 @@ class _TranslationsMemoryWorkersTasksConflictDetectorEs extends TranslationsMemo
 }
 
 // Path: memoryWorkers.tasks.capture
-class _TranslationsMemoryWorkersTasksCaptureEs extends TranslationsMemoryWorkersTasksCaptureEn {
-	_TranslationsMemoryWorkersTasksCaptureEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$memoryWorkers$tasks$capture$es extends Translations$memoryWorkers$tasks$capture$en {
+	_Translations$memoryWorkers$tasks$capture$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6880,8 +6969,8 @@ class _TranslationsMemoryWorkersTasksCaptureEs extends TranslationsMemoryWorkers
 }
 
 // Path: project.conflicts.severity
-class _TranslationsProjectConflictsSeverityEs extends TranslationsProjectConflictsSeverityEn {
-	_TranslationsProjectConflictsSeverityEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$project$conflicts$severity$es extends Translations$project$conflicts$severity$en {
+	_Translations$project$conflicts$severity$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6892,8 +6981,8 @@ class _TranslationsProjectConflictsSeverityEs extends TranslationsProjectConflic
 }
 
 // Path: backups.health.tiles
-class _TranslationsBackupsHealthTilesEs extends TranslationsBackupsHealthTilesEn {
-	_TranslationsBackupsHealthTilesEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$backups$health$tiles$es extends Translations$backups$health$tiles$en {
+	_Translations$backups$health$tiles$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6905,8 +6994,8 @@ class _TranslationsBackupsHealthTilesEs extends TranslationsBackupsHealthTilesEn
 }
 
 // Path: backupTargetEditor.kinds.local
-class _TranslationsBackupTargetEditorKindsLocalEs extends TranslationsBackupTargetEditorKindsLocalEn {
-	_TranslationsBackupTargetEditorKindsLocalEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$backupTargetEditor$kinds$local$es extends Translations$backupTargetEditor$kinds$local$en {
+	_Translations$backupTargetEditor$kinds$local$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6916,8 +7005,8 @@ class _TranslationsBackupTargetEditorKindsLocalEs extends TranslationsBackupTarg
 }
 
 // Path: backupTargetEditor.kinds.smb
-class _TranslationsBackupTargetEditorKindsSmbEs extends TranslationsBackupTargetEditorKindsSmbEn {
-	_TranslationsBackupTargetEditorKindsSmbEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$backupTargetEditor$kinds$smb$es extends Translations$backupTargetEditor$kinds$smb$en {
+	_Translations$backupTargetEditor$kinds$smb$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6927,8 +7016,8 @@ class _TranslationsBackupTargetEditorKindsSmbEs extends TranslationsBackupTarget
 }
 
 // Path: backupTargetEditor.kinds.webdav
-class _TranslationsBackupTargetEditorKindsWebdavEs extends TranslationsBackupTargetEditorKindsWebdavEn {
-	_TranslationsBackupTargetEditorKindsWebdavEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$backupTargetEditor$kinds$webdav$es extends Translations$backupTargetEditor$kinds$webdav$en {
+	_Translations$backupTargetEditor$kinds$webdav$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6938,8 +7027,8 @@ class _TranslationsBackupTargetEditorKindsWebdavEs extends TranslationsBackupTar
 }
 
 // Path: backupTargetEditor.kinds.sftp
-class _TranslationsBackupTargetEditorKindsSftpEs extends TranslationsBackupTargetEditorKindsSftpEn {
-	_TranslationsBackupTargetEditorKindsSftpEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$backupTargetEditor$kinds$sftp$es extends Translations$backupTargetEditor$kinds$sftp$en {
+	_Translations$backupTargetEditor$kinds$sftp$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6949,8 +7038,8 @@ class _TranslationsBackupTargetEditorKindsSftpEs extends TranslationsBackupTarge
 }
 
 // Path: backupTargetEditor.kinds.s3
-class _TranslationsBackupTargetEditorKindsS3Es extends TranslationsBackupTargetEditorKindsS3En {
-	_TranslationsBackupTargetEditorKindsS3Es._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$backupTargetEditor$kinds$s3$es extends Translations$backupTargetEditor$kinds$s3$en {
+	_Translations$backupTargetEditor$kinds$s3$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6960,8 +7049,8 @@ class _TranslationsBackupTargetEditorKindsS3Es extends TranslationsBackupTargetE
 }
 
 // Path: backupTargetEditor.kinds.rclone
-class _TranslationsBackupTargetEditorKindsRcloneEs extends TranslationsBackupTargetEditorKindsRcloneEn {
-	_TranslationsBackupTargetEditorKindsRcloneEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$backupTargetEditor$kinds$rclone$es extends Translations$backupTargetEditor$kinds$rclone$en {
+	_Translations$backupTargetEditor$kinds$rclone$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6971,8 +7060,8 @@ class _TranslationsBackupTargetEditorKindsRcloneEs extends TranslationsBackupTar
 }
 
 // Path: githosts.form.kinds
-class _TranslationsGithostsFormKindsEs extends TranslationsGithostsFormKindsEn {
-	_TranslationsGithostsFormKindsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$githosts$form$kinds$es extends Translations$githosts$form$kinds$en {
+	_Translations$githosts$form$kinds$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -6985,8 +7074,8 @@ class _TranslationsGithostsFormKindsEs extends TranslationsGithostsFormKindsEn {
 }
 
 // Path: channels.notifications.modes
-class _TranslationsChannelsNotificationsModesEs extends TranslationsChannelsNotificationsModesEn {
-	_TranslationsChannelsNotificationsModesEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$channels$notifications$modes$es extends Translations$channels$notifications$modes$en {
+	_Translations$channels$notifications$modes$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7000,8 +7089,8 @@ class _TranslationsChannelsNotificationsModesEs extends TranslationsChannelsNoti
 }
 
 // Path: channels.kinds.telegram
-class _TranslationsChannelsKindsTelegramEs extends TranslationsChannelsKindsTelegramEn {
-	_TranslationsChannelsKindsTelegramEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$channels$kinds$telegram$es extends Translations$channels$kinds$telegram$en {
+	_Translations$channels$kinds$telegram$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7024,8 +7113,8 @@ class _TranslationsChannelsKindsTelegramEs extends TranslationsChannelsKindsTele
 }
 
 // Path: channels.kinds.slack
-class _TranslationsChannelsKindsSlackEs extends TranslationsChannelsKindsSlackEn {
-	_TranslationsChannelsKindsSlackEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$channels$kinds$slack$es extends Translations$channels$kinds$slack$en {
+	_Translations$channels$kinds$slack$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7040,8 +7129,8 @@ class _TranslationsChannelsKindsSlackEs extends TranslationsChannelsKindsSlackEn
 }
 
 // Path: channels.kinds.discord
-class _TranslationsChannelsKindsDiscordEs extends TranslationsChannelsKindsDiscordEn {
-	_TranslationsChannelsKindsDiscordEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$channels$kinds$discord$es extends Translations$channels$kinds$discord$en {
+	_Translations$channels$kinds$discord$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7055,8 +7144,8 @@ class _TranslationsChannelsKindsDiscordEs extends TranslationsChannelsKindsDisco
 }
 
 // Path: channels.kinds.feishu
-class _TranslationsChannelsKindsFeishuEs extends TranslationsChannelsKindsFeishuEn {
-	_TranslationsChannelsKindsFeishuEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$channels$kinds$feishu$es extends Translations$channels$kinds$feishu$en {
+	_Translations$channels$kinds$feishu$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7073,8 +7162,8 @@ class _TranslationsChannelsKindsFeishuEs extends TranslationsChannelsKindsFeishu
 }
 
 // Path: channels.kinds.dingtalk
-class _TranslationsChannelsKindsDingtalkEs extends TranslationsChannelsKindsDingtalkEn {
-	_TranslationsChannelsKindsDingtalkEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$channels$kinds$dingtalk$es extends Translations$channels$kinds$dingtalk$en {
+	_Translations$channels$kinds$dingtalk$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7086,8 +7175,8 @@ class _TranslationsChannelsKindsDingtalkEs extends TranslationsChannelsKindsDing
 }
 
 // Path: channels.kinds.wecom
-class _TranslationsChannelsKindsWecomEs extends TranslationsChannelsKindsWecomEn {
-	_TranslationsChannelsKindsWecomEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$channels$kinds$wecom$es extends Translations$channels$kinds$wecom$en {
+	_Translations$channels$kinds$wecom$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7100,8 +7189,8 @@ class _TranslationsChannelsKindsWecomEs extends TranslationsChannelsKindsWecomEn
 }
 
 // Path: dataExport.form.integrationOptions
-class _TranslationsDataExportFormIntegrationOptionsEs extends TranslationsDataExportFormIntegrationOptionsEn {
-	_TranslationsDataExportFormIntegrationOptionsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$dataExport$form$integrationOptions$es extends Translations$dataExport$form$integrationOptions$en {
+	_Translations$dataExport$form$integrationOptions$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7115,8 +7204,8 @@ class _TranslationsDataExportFormIntegrationOptionsEs extends TranslationsDataEx
 }
 
 // Path: dataExport.history.columns
-class _TranslationsDataExportHistoryColumnsEs extends TranslationsDataExportHistoryColumnsEn {
-	_TranslationsDataExportHistoryColumnsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$dataExport$history$columns$es extends Translations$dataExport$history$columns$en {
+	_Translations$dataExport$history$columns$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7128,8 +7217,8 @@ class _TranslationsDataExportHistoryColumnsEs extends TranslationsDataExportHist
 }
 
 // Path: dataExport.import.summaryCard
-class _TranslationsDataExportImportSummaryCardEs extends TranslationsDataExportImportSummaryCardEn {
-	_TranslationsDataExportImportSummaryCardEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$dataExport$import$summaryCard$es extends Translations$dataExport$import$summaryCard$en {
+	_Translations$dataExport$import$summaryCard$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7143,8 +7232,8 @@ class _TranslationsDataExportImportSummaryCardEs extends TranslationsDataExportI
 }
 
 // Path: dataExport.imports.columns
-class _TranslationsDataExportImportsColumnsEs extends TranslationsDataExportImportsColumnsEn {
-	_TranslationsDataExportImportsColumnsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$dataExport$imports$columns$es extends Translations$dataExport$imports$columns$en {
+	_Translations$dataExport$imports$columns$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7157,8 +7246,8 @@ class _TranslationsDataExportImportsColumnsEs extends TranslationsDataExportImpo
 }
 
 // Path: settings.logViewer.levels
-class _TranslationsSettingsLogViewerLevelsEs extends TranslationsSettingsLogViewerLevelsEn {
-	_TranslationsSettingsLogViewerLevelsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$settings$logViewer$levels$es extends Translations$settings$logViewer$levels$en {
+	_Translations$settings$logViewer$levels$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7171,8 +7260,8 @@ class _TranslationsSettingsLogViewerLevelsEs extends TranslationsSettingsLogView
 }
 
 // Path: settings.serverSettings.sections
-class _TranslationsSettingsServerSettingsSectionsEs extends TranslationsSettingsServerSettingsSectionsEn {
-	_TranslationsSettingsServerSettingsSectionsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$settings$serverSettings$sections$es extends Translations$settings$serverSettings$sections$en {
+	_Translations$settings$serverSettings$sections$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7190,8 +7279,8 @@ class _TranslationsSettingsServerSettingsSectionsEs extends TranslationsSettings
 }
 
 // Path: settings.serverSettings.sectionDescriptions
-class _TranslationsSettingsServerSettingsSectionDescriptionsEs extends TranslationsSettingsServerSettingsSectionDescriptionsEn {
-	_TranslationsSettingsServerSettingsSectionDescriptionsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$settings$serverSettings$sectionDescriptions$es extends Translations$settings$serverSettings$sectionDescriptions$en {
+	_Translations$settings$serverSettings$sectionDescriptions$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7209,8 +7298,8 @@ class _TranslationsSettingsServerSettingsSectionDescriptionsEs extends Translati
 }
 
 // Path: settings.serverSettings.fields
-class _TranslationsSettingsServerSettingsFieldsEs extends TranslationsSettingsServerSettingsFieldsEn {
-	_TranslationsSettingsServerSettingsFieldsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$settings$serverSettings$fields$es extends Translations$settings$serverSettings$fields$en {
+	_Translations$settings$serverSettings$fields$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7282,8 +7371,8 @@ class _TranslationsSettingsServerSettingsFieldsEs extends TranslationsSettingsSe
 }
 
 // Path: settings.serverSettings.embedderModel
-class _TranslationsSettingsServerSettingsEmbedderModelEs extends TranslationsSettingsServerSettingsEmbedderModelEn {
-	_TranslationsSettingsServerSettingsEmbedderModelEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$settings$serverSettings$embedderModel$es extends Translations$settings$serverSettings$embedderModel$en {
+	_Translations$settings$serverSettings$embedderModel$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7296,8 +7385,8 @@ class _TranslationsSettingsServerSettingsEmbedderModelEs extends TranslationsSet
 }
 
 // Path: web.sessions.list.row
-class _TranslationsWebSessionsListRowEs extends TranslationsWebSessionsListRowEn {
-	_TranslationsWebSessionsListRowEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$sessions$list$row$es extends Translations$web$sessions$list$row$en {
+	_Translations$web$sessions$list$row$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7310,8 +7399,8 @@ class _TranslationsWebSessionsListRowEs extends TranslationsWebSessionsListRowEn
 }
 
 // Path: web.sessions.inspector.tabs
-class _TranslationsWebSessionsInspectorTabsEs extends TranslationsWebSessionsInspectorTabsEn {
-	_TranslationsWebSessionsInspectorTabsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$sessions$inspector$tabs$es extends Translations$web$sessions$inspector$tabs$en {
+	_Translations$web$sessions$inspector$tabs$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7327,8 +7416,8 @@ class _TranslationsWebSessionsInspectorTabsEs extends TranslationsWebSessionsIns
 }
 
 // Path: web.sessions.inspector.vaultPanel
-class _TranslationsWebSessionsInspectorVaultPanelEs extends TranslationsWebSessionsInspectorVaultPanelEn {
-	_TranslationsWebSessionsInspectorVaultPanelEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$sessions$inspector$vaultPanel$es extends Translations$web$sessions$inspector$vaultPanel$en {
+	_Translations$web$sessions$inspector$vaultPanel$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7358,8 +7447,8 @@ class _TranslationsWebSessionsInspectorVaultPanelEs extends TranslationsWebSessi
 }
 
 // Path: web.sessions.inspector.cortexPanel
-class _TranslationsWebSessionsInspectorCortexPanelEs extends TranslationsWebSessionsInspectorCortexPanelEn {
-	_TranslationsWebSessionsInspectorCortexPanelEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$sessions$inspector$cortexPanel$es extends Translations$web$sessions$inspector$cortexPanel$en {
+	_Translations$web$sessions$inspector$cortexPanel$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7378,8 +7467,8 @@ class _TranslationsWebSessionsInspectorCortexPanelEs extends TranslationsWebSess
 }
 
 // Path: web.memoryWorkers.tasks.gatekeeper
-class _TranslationsWebMemoryWorkersTasksGatekeeperEs extends TranslationsWebMemoryWorkersTasksGatekeeperEn {
-	_TranslationsWebMemoryWorkersTasksGatekeeperEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$memoryWorkers$tasks$gatekeeper$es extends Translations$web$memoryWorkers$tasks$gatekeeper$en {
+	_Translations$web$memoryWorkers$tasks$gatekeeper$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7390,8 +7479,8 @@ class _TranslationsWebMemoryWorkersTasksGatekeeperEs extends TranslationsWebMemo
 }
 
 // Path: web.memoryWorkers.tasks.cleaner
-class _TranslationsWebMemoryWorkersTasksCleanerEs extends TranslationsWebMemoryWorkersTasksCleanerEn {
-	_TranslationsWebMemoryWorkersTasksCleanerEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$memoryWorkers$tasks$cleaner$es extends Translations$web$memoryWorkers$tasks$cleaner$en {
+	_Translations$web$memoryWorkers$tasks$cleaner$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7402,8 +7491,8 @@ class _TranslationsWebMemoryWorkersTasksCleanerEs extends TranslationsWebMemoryW
 }
 
 // Path: web.memoryWorkers.tasks.gitactivity
-class _TranslationsWebMemoryWorkersTasksGitactivityEs extends TranslationsWebMemoryWorkersTasksGitactivityEn {
-	_TranslationsWebMemoryWorkersTasksGitactivityEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$memoryWorkers$tasks$gitactivity$es extends Translations$web$memoryWorkers$tasks$gitactivity$en {
+	_Translations$web$memoryWorkers$tasks$gitactivity$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7414,8 +7503,8 @@ class _TranslationsWebMemoryWorkersTasksGitactivityEs extends TranslationsWebMem
 }
 
 // Path: web.memoryWorkers.tasks.transcript
-class _TranslationsWebMemoryWorkersTasksTranscriptEs extends TranslationsWebMemoryWorkersTasksTranscriptEn {
-	_TranslationsWebMemoryWorkersTasksTranscriptEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$memoryWorkers$tasks$transcript$es extends Translations$web$memoryWorkers$tasks$transcript$en {
+	_Translations$web$memoryWorkers$tasks$transcript$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7426,8 +7515,8 @@ class _TranslationsWebMemoryWorkersTasksTranscriptEs extends TranslationsWebMemo
 }
 
 // Path: web.memoryWorkers.tasks.plan_drift
-class _TranslationsWebMemoryWorkersTasksPlanDriftEs extends TranslationsWebMemoryWorkersTasksPlanDriftEn {
-	_TranslationsWebMemoryWorkersTasksPlanDriftEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$memoryWorkers$tasks$plan_drift$es extends Translations$web$memoryWorkers$tasks$plan_drift$en {
+	_Translations$web$memoryWorkers$tasks$plan_drift$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7438,8 +7527,8 @@ class _TranslationsWebMemoryWorkersTasksPlanDriftEs extends TranslationsWebMemor
 }
 
 // Path: web.memoryWorkers.tasks.conflict_detector
-class _TranslationsWebMemoryWorkersTasksConflictDetectorEs extends TranslationsWebMemoryWorkersTasksConflictDetectorEn {
-	_TranslationsWebMemoryWorkersTasksConflictDetectorEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$memoryWorkers$tasks$conflict_detector$es extends Translations$web$memoryWorkers$tasks$conflict_detector$en {
+	_Translations$web$memoryWorkers$tasks$conflict_detector$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7450,8 +7539,8 @@ class _TranslationsWebMemoryWorkersTasksConflictDetectorEs extends TranslationsW
 }
 
 // Path: web.memoryWorkers.tasks.capture
-class _TranslationsWebMemoryWorkersTasksCaptureEs extends TranslationsWebMemoryWorkersTasksCaptureEn {
-	_TranslationsWebMemoryWorkersTasksCaptureEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$memoryWorkers$tasks$capture$es extends Translations$web$memoryWorkers$tasks$capture$en {
+	_Translations$web$memoryWorkers$tasks$capture$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7462,8 +7551,8 @@ class _TranslationsWebMemoryWorkersTasksCaptureEs extends TranslationsWebMemoryW
 }
 
 // Path: web.memoryWorkers.tasks.blueprint
-class _TranslationsWebMemoryWorkersTasksBlueprintEs extends TranslationsWebMemoryWorkersTasksBlueprintEn {
-	_TranslationsWebMemoryWorkersTasksBlueprintEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$memoryWorkers$tasks$blueprint$es extends Translations$web$memoryWorkers$tasks$blueprint$en {
+	_Translations$web$memoryWorkers$tasks$blueprint$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7474,8 +7563,8 @@ class _TranslationsWebMemoryWorkersTasksBlueprintEs extends TranslationsWebMemor
 }
 
 // Path: web.memoryWorkers.tasks.curation
-class _TranslationsWebMemoryWorkersTasksCurationEs extends TranslationsWebMemoryWorkersTasksCurationEn {
-	_TranslationsWebMemoryWorkersTasksCurationEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$memoryWorkers$tasks$curation$es extends Translations$web$memoryWorkers$tasks$curation$en {
+	_Translations$web$memoryWorkers$tasks$curation$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7486,8 +7575,8 @@ class _TranslationsWebMemoryWorkersTasksCurationEs extends TranslationsWebMemory
 }
 
 // Path: web.project.readonly.tech_stack
-class _TranslationsWebProjectReadonlyTechStackEs extends TranslationsWebProjectReadonlyTechStackEn {
-	_TranslationsWebProjectReadonlyTechStackEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$project$readonly$tech_stack$es extends Translations$web$project$readonly$tech_stack$en {
+	_Translations$web$project$readonly$tech_stack$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7497,8 +7586,8 @@ class _TranslationsWebProjectReadonlyTechStackEs extends TranslationsWebProjectR
 }
 
 // Path: web.project.readonly.recent_activity
-class _TranslationsWebProjectReadonlyRecentActivityEs extends TranslationsWebProjectReadonlyRecentActivityEn {
-	_TranslationsWebProjectReadonlyRecentActivityEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$project$readonly$recent_activity$es extends Translations$web$project$readonly$recent_activity$en {
+	_Translations$web$project$readonly$recent_activity$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7508,8 +7597,8 @@ class _TranslationsWebProjectReadonlyRecentActivityEs extends TranslationsWebPro
 }
 
 // Path: web.project.reset.summary
-class _TranslationsWebProjectResetSummaryEs extends TranslationsWebProjectResetSummaryEn {
-	_TranslationsWebProjectResetSummaryEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$project$reset$summary$es extends Translations$web$project$reset$summary$en {
+	_Translations$web$project$reset$summary$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7524,8 +7613,8 @@ class _TranslationsWebProjectResetSummaryEs extends TranslationsWebProjectResetS
 }
 
 // Path: web.project.lifecycle.status
-class _TranslationsWebProjectLifecycleStatusEs extends TranslationsWebProjectLifecycleStatusEn {
-	_TranslationsWebProjectLifecycleStatusEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$project$lifecycle$status$es extends Translations$web$project$lifecycle$status$en {
+	_Translations$web$project$lifecycle$status$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7536,8 +7625,8 @@ class _TranslationsWebProjectLifecycleStatusEs extends TranslationsWebProjectLif
 }
 
 // Path: web.project.lifecycle.applied
-class _TranslationsWebProjectLifecycleAppliedEs extends TranslationsWebProjectLifecycleAppliedEn {
-	_TranslationsWebProjectLifecycleAppliedEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$project$lifecycle$applied$es extends Translations$web$project$lifecycle$applied$en {
+	_Translations$web$project$lifecycle$applied$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7548,8 +7637,8 @@ class _TranslationsWebProjectLifecycleAppliedEs extends TranslationsWebProjectLi
 }
 
 // Path: web.project.lifecycle.tooltip
-class _TranslationsWebProjectLifecycleTooltipEs extends TranslationsWebProjectLifecycleTooltipEn {
-	_TranslationsWebProjectLifecycleTooltipEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$project$lifecycle$tooltip$es extends Translations$web$project$lifecycle$tooltip$en {
+	_Translations$web$project$lifecycle$tooltip$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7561,8 +7650,8 @@ class _TranslationsWebProjectLifecycleTooltipEs extends TranslationsWebProjectLi
 }
 
 // Path: web.project.docMeta.maintainer
-class _TranslationsWebProjectDocMetaMaintainerEs extends TranslationsWebProjectDocMetaMaintainerEn {
-	_TranslationsWebProjectDocMetaMaintainerEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$project$docMeta$maintainer$es extends Translations$web$project$docMeta$maintainer$en {
+	_Translations$web$project$docMeta$maintainer$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7573,8 +7662,8 @@ class _TranslationsWebProjectDocMetaMaintainerEs extends TranslationsWebProjectD
 }
 
 // Path: web.project.docMeta.purpose
-class _TranslationsWebProjectDocMetaPurposeEs extends TranslationsWebProjectDocMetaPurposeEn {
-	_TranslationsWebProjectDocMetaPurposeEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$project$docMeta$purpose$es extends Translations$web$project$docMeta$purpose$en {
+	_Translations$web$project$docMeta$purpose$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7588,8 +7677,8 @@ class _TranslationsWebProjectDocMetaPurposeEs extends TranslationsWebProjectDocM
 }
 
 // Path: web.memoryInspector.scope.values
-class _TranslationsWebMemoryInspectorScopeValuesEs extends TranslationsWebMemoryInspectorScopeValuesEn {
-	_TranslationsWebMemoryInspectorScopeValuesEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$memoryInspector$scope$values$es extends Translations$web$memoryInspector$scope$values$en {
+	_Translations$web$memoryInspector$scope$values$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7599,8 +7688,8 @@ class _TranslationsWebMemoryInspectorScopeValuesEs extends TranslationsWebMemory
 }
 
 // Path: web.notes.vaultSync.init
-class _TranslationsWebNotesVaultSyncInitEs extends TranslationsWebNotesVaultSyncInitEn {
-	_TranslationsWebNotesVaultSyncInitEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$notes$vaultSync$init$es extends Translations$web$notes$vaultSync$init$en {
+	_Translations$web$notes$vaultSync$init$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7613,8 +7702,8 @@ class _TranslationsWebNotesVaultSyncInitEs extends TranslationsWebNotesVaultSync
 }
 
 // Path: web.notes.vaultSync.branch
-class _TranslationsWebNotesVaultSyncBranchEs extends TranslationsWebNotesVaultSyncBranchEn {
-	_TranslationsWebNotesVaultSyncBranchEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$notes$vaultSync$branch$es extends Translations$web$notes$vaultSync$branch$en {
+	_Translations$web$notes$vaultSync$branch$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7626,8 +7715,8 @@ class _TranslationsWebNotesVaultSyncBranchEs extends TranslationsWebNotesVaultSy
 }
 
 // Path: web.notes.vaultSync.action
-class _TranslationsWebNotesVaultSyncActionEs extends TranslationsWebNotesVaultSyncActionEn {
-	_TranslationsWebNotesVaultSyncActionEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$notes$vaultSync$action$es extends Translations$web$notes$vaultSync$action$en {
+	_Translations$web$notes$vaultSync$action$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7649,8 +7738,8 @@ class _TranslationsWebNotesVaultSyncActionEs extends TranslationsWebNotesVaultSy
 }
 
 // Path: web.notes.vaultSync.commit
-class _TranslationsWebNotesVaultSyncCommitEs extends TranslationsWebNotesVaultSyncCommitEn {
-	_TranslationsWebNotesVaultSyncCommitEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$notes$vaultSync$commit$es extends Translations$web$notes$vaultSync$commit$en {
+	_Translations$web$notes$vaultSync$commit$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7664,8 +7753,8 @@ class _TranslationsWebNotesVaultSyncCommitEs extends TranslationsWebNotesVaultSy
 }
 
 // Path: web.notes.vaultSync.fileList
-class _TranslationsWebNotesVaultSyncFileListEs extends TranslationsWebNotesVaultSyncFileListEn {
-	_TranslationsWebNotesVaultSyncFileListEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$notes$vaultSync$fileList$es extends Translations$web$notes$vaultSync$fileList$en {
+	_Translations$web$notes$vaultSync$fileList$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7675,8 +7764,8 @@ class _TranslationsWebNotesVaultSyncFileListEs extends TranslationsWebNotesVault
 }
 
 // Path: web.notes.vaultSync.remote
-class _TranslationsWebNotesVaultSyncRemoteEs extends TranslationsWebNotesVaultSyncRemoteEn {
-	_TranslationsWebNotesVaultSyncRemoteEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$notes$vaultSync$remote$es extends Translations$web$notes$vaultSync$remote$en {
+	_Translations$web$notes$vaultSync$remote$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7694,8 +7783,8 @@ class _TranslationsWebNotesVaultSyncRemoteEs extends TranslationsWebNotesVaultSy
 }
 
 // Path: web.notes.vaultSync.history
-class _TranslationsWebNotesVaultSyncHistoryEs extends TranslationsWebNotesVaultSyncHistoryEn {
-	_TranslationsWebNotesVaultSyncHistoryEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$notes$vaultSync$history$es extends Translations$web$notes$vaultSync$history$en {
+	_Translations$web$notes$vaultSync$history$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7706,13 +7795,13 @@ class _TranslationsWebNotesVaultSyncHistoryEs extends TranslationsWebNotesVaultS
 }
 
 // Path: web.notes.vaultSync.conflict
-class _TranslationsWebNotesVaultSyncConflictEs extends TranslationsWebNotesVaultSyncConflictEn {
-	_TranslationsWebNotesVaultSyncConflictEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$notes$vaultSync$conflict$es extends Translations$web$notes$vaultSync$conflict$en {
+	_Translations$web$notes$vaultSync$conflict$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsWebNotesVaultSyncConflictKindsEs kinds = _TranslationsWebNotesVaultSyncConflictKindsEs._(_root);
+	@override late final _Translations$web$notes$vaultSync$conflict$kinds$es kinds = _Translations$web$notes$vaultSync$conflict$kinds$es._(_root);
 	@override String headline({required Object kind}) => 'El vault tiene un ${kind} en pausa con conflictos sin resolver';
 	@override String explainer({required Object kind}) => 'Pull, push y commit están bloqueados hasta que termine el ${kind}. Puedes hacer <1>abort</1> (restaurar el árbol de trabajo a su estado anterior al ${kind}, conserva tus commits locales y descarta los remotos) o <3>forzar reset al remoto</3> (descartar TODOS los commits locales y los cambios sin confirmar; el vault se convierte en una copia exacta de origin).';
 	@override String conflictedHeader({required Object count}) => 'Archivos en conflicto · ${count}';
@@ -7730,8 +7819,8 @@ class _TranslationsWebNotesVaultSyncConflictEs extends TranslationsWebNotesVault
 }
 
 // Path: web.notes.vaultSync.auth
-class _TranslationsWebNotesVaultSyncAuthEs extends TranslationsWebNotesVaultSyncAuthEn {
-	_TranslationsWebNotesVaultSyncAuthEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$notes$vaultSync$auth$es extends Translations$web$notes$vaultSync$auth$en {
+	_Translations$web$notes$vaultSync$auth$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7744,8 +7833,8 @@ class _TranslationsWebNotesVaultSyncAuthEs extends TranslationsWebNotesVaultSync
 }
 
 // Path: web.notes.vaultSync.autoSync
-class _TranslationsWebNotesVaultSyncAutoSyncEs extends TranslationsWebNotesVaultSyncAutoSyncEn {
-	_TranslationsWebNotesVaultSyncAutoSyncEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$notes$vaultSync$autoSync$es extends Translations$web$notes$vaultSync$autoSync$en {
+	_Translations$web$notes$vaultSync$autoSync$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7781,8 +7870,8 @@ class _TranslationsWebNotesVaultSyncAutoSyncEs extends TranslationsWebNotesVault
 }
 
 // Path: web.providers.detail.caps
-class _TranslationsWebProvidersDetailCapsEs extends TranslationsWebProvidersDetailCapsEn {
-	_TranslationsWebProvidersDetailCapsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$providers$detail$caps$es extends Translations$web$providers$detail$caps$en {
+	_Translations$web$providers$detail$caps$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7794,8 +7883,8 @@ class _TranslationsWebProvidersDetailCapsEs extends TranslationsWebProvidersDeta
 }
 
 // Path: web.channels.notifications.modes
-class _TranslationsWebChannelsNotificationsModesEs extends TranslationsWebChannelsNotificationsModesEn {
-	_TranslationsWebChannelsNotificationsModesEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$channels$notifications$modes$es extends Translations$web$channels$notifications$modes$en {
+	_Translations$web$channels$notifications$modes$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7809,8 +7898,8 @@ class _TranslationsWebChannelsNotificationsModesEs extends TranslationsWebChanne
 }
 
 // Path: web.channels.notifications.cooldowns
-class _TranslationsWebChannelsNotificationsCooldownsEs extends TranslationsWebChannelsNotificationsCooldownsEn {
-	_TranslationsWebChannelsNotificationsCooldownsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$channels$notifications$cooldowns$es extends Translations$web$channels$notifications$cooldowns$en {
+	_Translations$web$channels$notifications$cooldowns$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7823,8 +7912,8 @@ class _TranslationsWebChannelsNotificationsCooldownsEs extends TranslationsWebCh
 }
 
 // Path: web.channels.notifications.snippetCaps
-class _TranslationsWebChannelsNotificationsSnippetCapsEs extends TranslationsWebChannelsNotificationsSnippetCapsEn {
-	_TranslationsWebChannelsNotificationsSnippetCapsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$channels$notifications$snippetCaps$es extends Translations$web$channels$notifications$snippetCaps$en {
+	_Translations$web$channels$notifications$snippetCaps$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7837,8 +7926,8 @@ class _TranslationsWebChannelsNotificationsSnippetCapsEs extends TranslationsWeb
 }
 
 // Path: web.plugins.mcp.columns
-class _TranslationsWebPluginsMcpColumnsEs extends TranslationsWebPluginsMcpColumnsEn {
-	_TranslationsWebPluginsMcpColumnsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$plugins$mcp$columns$es extends Translations$web$plugins$mcp$columns$en {
+	_Translations$web$plugins$mcp$columns$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7850,8 +7939,8 @@ class _TranslationsWebPluginsMcpColumnsEs extends TranslationsWebPluginsMcpColum
 }
 
 // Path: web.plugins.mcp.editor
-class _TranslationsWebPluginsMcpEditorEs extends TranslationsWebPluginsMcpEditorEn {
-	_TranslationsWebPluginsMcpEditorEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$plugins$mcp$editor$es extends Translations$web$plugins$mcp$editor$en {
+	_Translations$web$plugins$mcp$editor$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7876,8 +7965,8 @@ class _TranslationsWebPluginsMcpEditorEs extends TranslationsWebPluginsMcpEditor
 }
 
 // Path: web.plugins.mcp.test
-class _TranslationsWebPluginsMcpTestEs extends TranslationsWebPluginsMcpTestEn {
-	_TranslationsWebPluginsMcpTestEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$plugins$mcp$test$es extends Translations$web$plugins$mcp$test$en {
+	_Translations$web$plugins$mcp$test$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7890,8 +7979,8 @@ class _TranslationsWebPluginsMcpTestEs extends TranslationsWebPluginsMcpTestEn {
 }
 
 // Path: web.plugins.mcpSecrets.columns
-class _TranslationsWebPluginsMcpSecretsColumnsEs extends TranslationsWebPluginsMcpSecretsColumnsEn {
-	_TranslationsWebPluginsMcpSecretsColumnsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$plugins$mcpSecrets$columns$es extends Translations$web$plugins$mcpSecrets$columns$en {
+	_Translations$web$plugins$mcpSecrets$columns$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7901,8 +7990,8 @@ class _TranslationsWebPluginsMcpSecretsColumnsEs extends TranslationsWebPluginsM
 }
 
 // Path: web.plugins.mcpSecrets.editor
-class _TranslationsWebPluginsMcpSecretsEditorEs extends TranslationsWebPluginsMcpSecretsEditorEn {
-	_TranslationsWebPluginsMcpSecretsEditorEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$plugins$mcpSecrets$editor$es extends Translations$web$plugins$mcpSecrets$editor$en {
+	_Translations$web$plugins$mcpSecrets$editor$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7923,8 +8012,8 @@ class _TranslationsWebPluginsMcpSecretsEditorEs extends TranslationsWebPluginsMc
 }
 
 // Path: web.plugins.skills.columns
-class _TranslationsWebPluginsSkillsColumnsEs extends TranslationsWebPluginsSkillsColumnsEn {
-	_TranslationsWebPluginsSkillsColumnsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$plugins$skills$columns$es extends Translations$web$plugins$skills$columns$en {
+	_Translations$web$plugins$skills$columns$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7935,8 +8024,8 @@ class _TranslationsWebPluginsSkillsColumnsEs extends TranslationsWebPluginsSkill
 }
 
 // Path: web.plugins.skills.editor
-class _TranslationsWebPluginsSkillsEditorEs extends TranslationsWebPluginsSkillsEditorEn {
-	_TranslationsWebPluginsSkillsEditorEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$plugins$skills$editor$es extends Translations$web$plugins$skills$editor$en {
+	_Translations$web$plugins$skills$editor$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7959,8 +8048,8 @@ class _TranslationsWebPluginsSkillsEditorEs extends TranslationsWebPluginsSkills
 }
 
 // Path: web.plugins.customTasks.columns
-class _TranslationsWebPluginsCustomTasksColumnsEs extends TranslationsWebPluginsCustomTasksColumnsEn {
-	_TranslationsWebPluginsCustomTasksColumnsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$plugins$customTasks$columns$es extends Translations$web$plugins$customTasks$columns$en {
+	_Translations$web$plugins$customTasks$columns$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7971,8 +8060,8 @@ class _TranslationsWebPluginsCustomTasksColumnsEs extends TranslationsWebPlugins
 }
 
 // Path: web.plugins.customTasks.dialog
-class _TranslationsWebPluginsCustomTasksDialogEs extends TranslationsWebPluginsCustomTasksDialogEn {
-	_TranslationsWebPluginsCustomTasksDialogEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$plugins$customTasks$dialog$es extends Translations$web$plugins$customTasks$dialog$en {
+	_Translations$web$plugins$customTasks$dialog$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -7996,8 +8085,8 @@ class _TranslationsWebPluginsCustomTasksDialogEs extends TranslationsWebPluginsC
 }
 
 // Path: web.plugins.gitHosts.columns
-class _TranslationsWebPluginsGitHostsColumnsEs extends TranslationsWebPluginsGitHostsColumnsEn {
-	_TranslationsWebPluginsGitHostsColumnsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$plugins$gitHosts$columns$es extends Translations$web$plugins$gitHosts$columns$en {
+	_Translations$web$plugins$gitHosts$columns$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8009,8 +8098,8 @@ class _TranslationsWebPluginsGitHostsColumnsEs extends TranslationsWebPluginsGit
 }
 
 // Path: web.plugins.gitHosts.dialog
-class _TranslationsWebPluginsGitHostsDialogEs extends TranslationsWebPluginsGitHostsDialogEn {
-	_TranslationsWebPluginsGitHostsDialogEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$plugins$gitHosts$dialog$es extends Translations$web$plugins$gitHosts$dialog$en {
+	_Translations$web$plugins$gitHosts$dialog$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8039,8 +8128,8 @@ class _TranslationsWebPluginsGitHostsDialogEs extends TranslationsWebPluginsGitH
 }
 
 // Path: web.backups.backupsTab.columns
-class _TranslationsWebBackupsBackupsTabColumnsEs extends TranslationsWebBackupsBackupsTabColumnsEn {
-	_TranslationsWebBackupsBackupsTabColumnsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$backups$backupsTab$columns$es extends Translations$web$backups$backupsTab$columns$en {
+	_Translations$web$backups$backupsTab$columns$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8055,8 +8144,8 @@ class _TranslationsWebBackupsBackupsTabColumnsEs extends TranslationsWebBackupsB
 }
 
 // Path: web.backups.health.tiles
-class _TranslationsWebBackupsHealthTilesEs extends TranslationsWebBackupsHealthTilesEn {
-	_TranslationsWebBackupsHealthTilesEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$backups$health$tiles$es extends Translations$web$backups$health$tiles$en {
+	_Translations$web$backups$health$tiles$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8068,8 +8157,8 @@ class _TranslationsWebBackupsHealthTilesEs extends TranslationsWebBackupsHealthT
 }
 
 // Path: web.backups.schedulesTab.columns
-class _TranslationsWebBackupsSchedulesTabColumnsEs extends TranslationsWebBackupsSchedulesTabColumnsEn {
-	_TranslationsWebBackupsSchedulesTabColumnsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$backups$schedulesTab$columns$es extends Translations$web$backups$schedulesTab$columns$en {
+	_Translations$web$backups$schedulesTab$columns$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8084,8 +8173,8 @@ class _TranslationsWebBackupsSchedulesTabColumnsEs extends TranslationsWebBackup
 }
 
 // Path: web.backups.targetsTab.columns
-class _TranslationsWebBackupsTargetsTabColumnsEs extends TranslationsWebBackupsTargetsTabColumnsEn {
-	_TranslationsWebBackupsTargetsTabColumnsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$backups$targetsTab$columns$es extends Translations$web$backups$targetsTab$columns$en {
+	_Translations$web$backups$targetsTab$columns$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8098,8 +8187,8 @@ class _TranslationsWebBackupsTargetsTabColumnsEs extends TranslationsWebBackupsT
 }
 
 // Path: web.backups.targetEditor.local
-class _TranslationsWebBackupsTargetEditorLocalEs extends TranslationsWebBackupsTargetEditorLocalEn {
-	_TranslationsWebBackupsTargetEditorLocalEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$backups$targetEditor$local$es extends Translations$web$backups$targetEditor$local$en {
+	_Translations$web$backups$targetEditor$local$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8110,8 +8199,8 @@ class _TranslationsWebBackupsTargetEditorLocalEs extends TranslationsWebBackupsT
 }
 
 // Path: web.backups.targetEditor.smb
-class _TranslationsWebBackupsTargetEditorSmbEs extends TranslationsWebBackupsTargetEditorSmbEn {
-	_TranslationsWebBackupsTargetEditorSmbEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$backups$targetEditor$smb$es extends Translations$web$backups$targetEditor$smb$en {
+	_Translations$web$backups$targetEditor$smb$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8130,8 +8219,8 @@ class _TranslationsWebBackupsTargetEditorSmbEs extends TranslationsWebBackupsTar
 }
 
 // Path: web.backups.targetEditor.s3
-class _TranslationsWebBackupsTargetEditorS3Es extends TranslationsWebBackupsTargetEditorS3En {
-	_TranslationsWebBackupsTargetEditorS3Es._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$backups$targetEditor$s3$es extends Translations$web$backups$targetEditor$s3$en {
+	_Translations$web$backups$targetEditor$s3$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8155,8 +8244,8 @@ class _TranslationsWebBackupsTargetEditorS3Es extends TranslationsWebBackupsTarg
 }
 
 // Path: web.backups.targetEditor.webdav
-class _TranslationsWebBackupsTargetEditorWebdavEs extends TranslationsWebBackupsTargetEditorWebdavEn {
-	_TranslationsWebBackupsTargetEditorWebdavEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$backups$targetEditor$webdav$es extends Translations$web$backups$targetEditor$webdav$en {
+	_Translations$web$backups$targetEditor$webdav$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8172,8 +8261,8 @@ class _TranslationsWebBackupsTargetEditorWebdavEs extends TranslationsWebBackups
 }
 
 // Path: web.backups.targetEditor.sftp
-class _TranslationsWebBackupsTargetEditorSftpEs extends TranslationsWebBackupsTargetEditorSftpEn {
-	_TranslationsWebBackupsTargetEditorSftpEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$backups$targetEditor$sftp$es extends Translations$web$backups$targetEditor$sftp$en {
+	_Translations$web$backups$targetEditor$sftp$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8196,8 +8285,8 @@ class _TranslationsWebBackupsTargetEditorSftpEs extends TranslationsWebBackupsTa
 }
 
 // Path: web.backups.targetEditor.rclone
-class _TranslationsWebBackupsTargetEditorRcloneEs extends TranslationsWebBackupsTargetEditorRcloneEn {
-	_TranslationsWebBackupsTargetEditorRcloneEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$backups$targetEditor$rclone$es extends Translations$web$backups$targetEditor$rclone$en {
+	_Translations$web$backups$targetEditor$rclone$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8218,8 +8307,8 @@ class _TranslationsWebBackupsTargetEditorRcloneEs extends TranslationsWebBackups
 }
 
 // Path: web.serverSettings.sections.general
-class _TranslationsWebServerSettingsSectionsGeneralEs extends TranslationsWebServerSettingsSectionsGeneralEn {
-	_TranslationsWebServerSettingsSectionsGeneralEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$sections$general$es extends Translations$web$serverSettings$sections$general$en {
+	_Translations$web$serverSettings$sections$general$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8229,8 +8318,8 @@ class _TranslationsWebServerSettingsSectionsGeneralEs extends TranslationsWebSer
 }
 
 // Path: web.serverSettings.sections.logging
-class _TranslationsWebServerSettingsSectionsLoggingEs extends TranslationsWebServerSettingsSectionsLoggingEn {
-	_TranslationsWebServerSettingsSectionsLoggingEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$sections$logging$es extends Translations$web$serverSettings$sections$logging$en {
+	_Translations$web$serverSettings$sections$logging$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8240,8 +8329,8 @@ class _TranslationsWebServerSettingsSectionsLoggingEs extends TranslationsWebSer
 }
 
 // Path: web.serverSettings.sections.sessions
-class _TranslationsWebServerSettingsSectionsSessionsEs extends TranslationsWebServerSettingsSectionsSessionsEn {
-	_TranslationsWebServerSettingsSectionsSessionsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$sections$sessions$es extends Translations$web$serverSettings$sections$sessions$en {
+	_Translations$web$serverSettings$sections$sessions$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8251,8 +8340,8 @@ class _TranslationsWebServerSettingsSectionsSessionsEs extends TranslationsWebSe
 }
 
 // Path: web.serverSettings.sections.vault
-class _TranslationsWebServerSettingsSectionsVaultEs extends TranslationsWebServerSettingsSectionsVaultEn {
-	_TranslationsWebServerSettingsSectionsVaultEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$sections$vault$es extends Translations$web$serverSettings$sections$vault$en {
+	_Translations$web$serverSettings$sections$vault$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8262,8 +8351,8 @@ class _TranslationsWebServerSettingsSectionsVaultEs extends TranslationsWebServe
 }
 
 // Path: web.serverSettings.sections.mcp
-class _TranslationsWebServerSettingsSectionsMcpEs extends TranslationsWebServerSettingsSectionsMcpEn {
-	_TranslationsWebServerSettingsSectionsMcpEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$sections$mcp$es extends Translations$web$serverSettings$sections$mcp$en {
+	_Translations$web$serverSettings$sections$mcp$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8273,8 +8362,8 @@ class _TranslationsWebServerSettingsSectionsMcpEs extends TranslationsWebServerS
 }
 
 // Path: web.serverSettings.sections.memory
-class _TranslationsWebServerSettingsSectionsMemoryEs extends TranslationsWebServerSettingsSectionsMemoryEn {
-	_TranslationsWebServerSettingsSectionsMemoryEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$sections$memory$es extends Translations$web$serverSettings$sections$memory$en {
+	_Translations$web$serverSettings$sections$memory$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8284,8 +8373,8 @@ class _TranslationsWebServerSettingsSectionsMemoryEs extends TranslationsWebServ
 }
 
 // Path: web.serverSettings.sections.backup
-class _TranslationsWebServerSettingsSectionsBackupEs extends TranslationsWebServerSettingsSectionsBackupEn {
-	_TranslationsWebServerSettingsSectionsBackupEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$sections$backup$es extends Translations$web$serverSettings$sections$backup$en {
+	_Translations$web$serverSettings$sections$backup$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8295,8 +8384,8 @@ class _TranslationsWebServerSettingsSectionsBackupEs extends TranslationsWebServ
 }
 
 // Path: web.serverSettings.sections.claude
-class _TranslationsWebServerSettingsSectionsClaudeEs extends TranslationsWebServerSettingsSectionsClaudeEn {
-	_TranslationsWebServerSettingsSectionsClaudeEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$sections$claude$es extends Translations$web$serverSettings$sections$claude$en {
+	_Translations$web$serverSettings$sections$claude$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8306,8 +8395,8 @@ class _TranslationsWebServerSettingsSectionsClaudeEs extends TranslationsWebServ
 }
 
 // Path: web.serverSettings.sections.codex
-class _TranslationsWebServerSettingsSectionsCodexEs extends TranslationsWebServerSettingsSectionsCodexEn {
-	_TranslationsWebServerSettingsSectionsCodexEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$sections$codex$es extends Translations$web$serverSettings$sections$codex$en {
+	_Translations$web$serverSettings$sections$codex$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8317,8 +8406,8 @@ class _TranslationsWebServerSettingsSectionsCodexEs extends TranslationsWebServe
 }
 
 // Path: web.serverSettings.sections.antigravity
-class _TranslationsWebServerSettingsSectionsAntigravityEs extends TranslationsWebServerSettingsSectionsAntigravityEn {
-	_TranslationsWebServerSettingsSectionsAntigravityEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$sections$antigravity$es extends Translations$web$serverSettings$sections$antigravity$en {
+	_Translations$web$serverSettings$sections$antigravity$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8328,8 +8417,8 @@ class _TranslationsWebServerSettingsSectionsAntigravityEs extends TranslationsWe
 }
 
 // Path: web.serverSettings.fields.listenAddress
-class _TranslationsWebServerSettingsFieldsListenAddressEs extends TranslationsWebServerSettingsFieldsListenAddressEn {
-	_TranslationsWebServerSettingsFieldsListenAddressEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$listenAddress$es extends Translations$web$serverSettings$fields$listenAddress$en {
+	_Translations$web$serverSettings$fields$listenAddress$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8339,8 +8428,8 @@ class _TranslationsWebServerSettingsFieldsListenAddressEs extends TranslationsWe
 }
 
 // Path: web.serverSettings.fields.username
-class _TranslationsWebServerSettingsFieldsUsernameEs extends TranslationsWebServerSettingsFieldsUsernameEn {
-	_TranslationsWebServerSettingsFieldsUsernameEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$username$es extends Translations$web$serverSettings$fields$username$en {
+	_Translations$web$serverSettings$fields$username$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8350,8 +8439,8 @@ class _TranslationsWebServerSettingsFieldsUsernameEs extends TranslationsWebServ
 }
 
 // Path: web.serverSettings.fields.password
-class _TranslationsWebServerSettingsFieldsPasswordEs extends TranslationsWebServerSettingsFieldsPasswordEn {
-	_TranslationsWebServerSettingsFieldsPasswordEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$password$es extends Translations$web$serverSettings$fields$password$en {
+	_Translations$web$serverSettings$fields$password$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8363,8 +8452,8 @@ class _TranslationsWebServerSettingsFieldsPasswordEs extends TranslationsWebServ
 }
 
 // Path: web.serverSettings.fields.tokenTTL
-class _TranslationsWebServerSettingsFieldsTokenTTLEs extends TranslationsWebServerSettingsFieldsTokenTTLEn {
-	_TranslationsWebServerSettingsFieldsTokenTTLEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$tokenTTL$es extends Translations$web$serverSettings$fields$tokenTTL$en {
+	_Translations$web$serverSettings$fields$tokenTTL$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8374,8 +8463,8 @@ class _TranslationsWebServerSettingsFieldsTokenTTLEs extends TranslationsWebServ
 }
 
 // Path: web.serverSettings.fields.logLevel
-class _TranslationsWebServerSettingsFieldsLogLevelEs extends TranslationsWebServerSettingsFieldsLogLevelEn {
-	_TranslationsWebServerSettingsFieldsLogLevelEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$logLevel$es extends Translations$web$serverSettings$fields$logLevel$en {
+	_Translations$web$serverSettings$fields$logLevel$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8385,8 +8474,8 @@ class _TranslationsWebServerSettingsFieldsLogLevelEs extends TranslationsWebServ
 }
 
 // Path: web.serverSettings.fields.logFormat
-class _TranslationsWebServerSettingsFieldsLogFormatEs extends TranslationsWebServerSettingsFieldsLogFormatEn {
-	_TranslationsWebServerSettingsFieldsLogFormatEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$logFormat$es extends Translations$web$serverSettings$fields$logFormat$en {
+	_Translations$web$serverSettings$fields$logFormat$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8396,8 +8485,8 @@ class _TranslationsWebServerSettingsFieldsLogFormatEs extends TranslationsWebSer
 }
 
 // Path: web.serverSettings.fields.logFile
-class _TranslationsWebServerSettingsFieldsLogFileEs extends TranslationsWebServerSettingsFieldsLogFileEn {
-	_TranslationsWebServerSettingsFieldsLogFileEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$logFile$es extends Translations$web$serverSettings$fields$logFile$en {
+	_Translations$web$serverSettings$fields$logFile$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8407,8 +8496,8 @@ class _TranslationsWebServerSettingsFieldsLogFileEs extends TranslationsWebServe
 }
 
 // Path: web.serverSettings.fields.idleThreshold
-class _TranslationsWebServerSettingsFieldsIdleThresholdEs extends TranslationsWebServerSettingsFieldsIdleThresholdEn {
-	_TranslationsWebServerSettingsFieldsIdleThresholdEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$idleThreshold$es extends Translations$web$serverSettings$fields$idleThreshold$en {
+	_Translations$web$serverSettings$fields$idleThreshold$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8418,8 +8507,8 @@ class _TranslationsWebServerSettingsFieldsIdleThresholdEs extends TranslationsWe
 }
 
 // Path: web.serverSettings.fields.idlePollInterval
-class _TranslationsWebServerSettingsFieldsIdlePollIntervalEs extends TranslationsWebServerSettingsFieldsIdlePollIntervalEn {
-	_TranslationsWebServerSettingsFieldsIdlePollIntervalEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$idlePollInterval$es extends Translations$web$serverSettings$fields$idlePollInterval$en {
+	_Translations$web$serverSettings$fields$idlePollInterval$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8429,8 +8518,8 @@ class _TranslationsWebServerSettingsFieldsIdlePollIntervalEs extends Translation
 }
 
 // Path: web.serverSettings.fields.vaultRoot
-class _TranslationsWebServerSettingsFieldsVaultRootEs extends TranslationsWebServerSettingsFieldsVaultRootEn {
-	_TranslationsWebServerSettingsFieldsVaultRootEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$vaultRoot$es extends Translations$web$serverSettings$fields$vaultRoot$en {
+	_Translations$web$serverSettings$fields$vaultRoot$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8440,8 +8529,8 @@ class _TranslationsWebServerSettingsFieldsVaultRootEs extends TranslationsWebSer
 }
 
 // Path: web.serverSettings.fields.notesDirectory
-class _TranslationsWebServerSettingsFieldsNotesDirectoryEs extends TranslationsWebServerSettingsFieldsNotesDirectoryEn {
-	_TranslationsWebServerSettingsFieldsNotesDirectoryEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$notesDirectory$es extends Translations$web$serverSettings$fields$notesDirectory$en {
+	_Translations$web$serverSettings$fields$notesDirectory$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8451,8 +8540,8 @@ class _TranslationsWebServerSettingsFieldsNotesDirectoryEs extends TranslationsW
 }
 
 // Path: web.serverSettings.fields.skillsDirectory
-class _TranslationsWebServerSettingsFieldsSkillsDirectoryEs extends TranslationsWebServerSettingsFieldsSkillsDirectoryEn {
-	_TranslationsWebServerSettingsFieldsSkillsDirectoryEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$skillsDirectory$es extends Translations$web$serverSettings$fields$skillsDirectory$en {
+	_Translations$web$serverSettings$fields$skillsDirectory$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8462,8 +8551,8 @@ class _TranslationsWebServerSettingsFieldsSkillsDirectoryEs extends Translations
 }
 
 // Path: web.serverSettings.fields.gitRoot
-class _TranslationsWebServerSettingsFieldsGitRootEs extends TranslationsWebServerSettingsFieldsGitRootEn {
-	_TranslationsWebServerSettingsFieldsGitRootEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$gitRoot$es extends Translations$web$serverSettings$fields$gitRoot$en {
+	_Translations$web$serverSettings$fields$gitRoot$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8473,8 +8562,8 @@ class _TranslationsWebServerSettingsFieldsGitRootEs extends TranslationsWebServe
 }
 
 // Path: web.serverSettings.fields.personalPrefix
-class _TranslationsWebServerSettingsFieldsPersonalPrefixEs extends TranslationsWebServerSettingsFieldsPersonalPrefixEn {
-	_TranslationsWebServerSettingsFieldsPersonalPrefixEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$personalPrefix$es extends Translations$web$serverSettings$fields$personalPrefix$en {
+	_Translations$web$serverSettings$fields$personalPrefix$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8484,8 +8573,8 @@ class _TranslationsWebServerSettingsFieldsPersonalPrefixEs extends TranslationsW
 }
 
 // Path: web.serverSettings.fields.projectsPrefix
-class _TranslationsWebServerSettingsFieldsProjectsPrefixEs extends TranslationsWebServerSettingsFieldsProjectsPrefixEn {
-	_TranslationsWebServerSettingsFieldsProjectsPrefixEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$projectsPrefix$es extends Translations$web$serverSettings$fields$projectsPrefix$en {
+	_Translations$web$serverSettings$fields$projectsPrefix$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8495,8 +8584,8 @@ class _TranslationsWebServerSettingsFieldsProjectsPrefixEs extends TranslationsW
 }
 
 // Path: web.serverSettings.fields.registryRoot
-class _TranslationsWebServerSettingsFieldsRegistryRootEs extends TranslationsWebServerSettingsFieldsRegistryRootEn {
-	_TranslationsWebServerSettingsFieldsRegistryRootEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$registryRoot$es extends Translations$web$serverSettings$fields$registryRoot$en {
+	_Translations$web$serverSettings$fields$registryRoot$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8506,8 +8595,8 @@ class _TranslationsWebServerSettingsFieldsRegistryRootEs extends TranslationsWeb
 }
 
 // Path: web.serverSettings.fields.secretsFile
-class _TranslationsWebServerSettingsFieldsSecretsFileEs extends TranslationsWebServerSettingsFieldsSecretsFileEn {
-	_TranslationsWebServerSettingsFieldsSecretsFileEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$secretsFile$es extends Translations$web$serverSettings$fields$secretsFile$en {
+	_Translations$web$serverSettings$fields$secretsFile$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8517,8 +8606,8 @@ class _TranslationsWebServerSettingsFieldsSecretsFileEs extends TranslationsWebS
 }
 
 // Path: web.serverSettings.fields.memoryBackend
-class _TranslationsWebServerSettingsFieldsMemoryBackendEs extends TranslationsWebServerSettingsFieldsMemoryBackendEn {
-	_TranslationsWebServerSettingsFieldsMemoryBackendEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$memoryBackend$es extends Translations$web$serverSettings$fields$memoryBackend$en {
+	_Translations$web$serverSettings$fields$memoryBackend$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8528,8 +8617,8 @@ class _TranslationsWebServerSettingsFieldsMemoryBackendEs extends TranslationsWe
 }
 
 // Path: web.serverSettings.fields.memoryStore
-class _TranslationsWebServerSettingsFieldsMemoryStoreEs extends TranslationsWebServerSettingsFieldsMemoryStoreEn {
-	_TranslationsWebServerSettingsFieldsMemoryStoreEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$memoryStore$es extends Translations$web$serverSettings$fields$memoryStore$en {
+	_Translations$web$serverSettings$fields$memoryStore$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8539,8 +8628,8 @@ class _TranslationsWebServerSettingsFieldsMemoryStoreEs extends TranslationsWebS
 }
 
 // Path: web.serverSettings.fields.memoryTopK
-class _TranslationsWebServerSettingsFieldsMemoryTopKEs extends TranslationsWebServerSettingsFieldsMemoryTopKEn {
-	_TranslationsWebServerSettingsFieldsMemoryTopKEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$memoryTopK$es extends Translations$web$serverSettings$fields$memoryTopK$en {
+	_Translations$web$serverSettings$fields$memoryTopK$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8550,8 +8639,8 @@ class _TranslationsWebServerSettingsFieldsMemoryTopKEs extends TranslationsWebSe
 }
 
 // Path: web.serverSettings.fields.memoryThreshold
-class _TranslationsWebServerSettingsFieldsMemoryThresholdEs extends TranslationsWebServerSettingsFieldsMemoryThresholdEn {
-	_TranslationsWebServerSettingsFieldsMemoryThresholdEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$memoryThreshold$es extends Translations$web$serverSettings$fields$memoryThreshold$en {
+	_Translations$web$serverSettings$fields$memoryThreshold$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8561,8 +8650,8 @@ class _TranslationsWebServerSettingsFieldsMemoryThresholdEs extends Translations
 }
 
 // Path: web.serverSettings.fields.memoryScope
-class _TranslationsWebServerSettingsFieldsMemoryScopeEs extends TranslationsWebServerSettingsFieldsMemoryScopeEn {
-	_TranslationsWebServerSettingsFieldsMemoryScopeEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$memoryScope$es extends Translations$web$serverSettings$fields$memoryScope$en {
+	_Translations$web$serverSettings$fields$memoryScope$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8572,8 +8661,8 @@ class _TranslationsWebServerSettingsFieldsMemoryScopeEs extends TranslationsWebS
 }
 
 // Path: web.serverSettings.fields.memoryBaseUrl
-class _TranslationsWebServerSettingsFieldsMemoryBaseUrlEs extends TranslationsWebServerSettingsFieldsMemoryBaseUrlEn {
-	_TranslationsWebServerSettingsFieldsMemoryBaseUrlEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$memoryBaseUrl$es extends Translations$web$serverSettings$fields$memoryBaseUrl$en {
+	_Translations$web$serverSettings$fields$memoryBaseUrl$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8583,8 +8672,8 @@ class _TranslationsWebServerSettingsFieldsMemoryBaseUrlEs extends TranslationsWe
 }
 
 // Path: web.serverSettings.fields.memoryModel
-class _TranslationsWebServerSettingsFieldsMemoryModelEs extends TranslationsWebServerSettingsFieldsMemoryModelEn {
-	_TranslationsWebServerSettingsFieldsMemoryModelEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$memoryModel$es extends Translations$web$serverSettings$fields$memoryModel$en {
+	_Translations$web$serverSettings$fields$memoryModel$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8594,8 +8683,8 @@ class _TranslationsWebServerSettingsFieldsMemoryModelEs extends TranslationsWebS
 }
 
 // Path: web.serverSettings.fields.memoryApiKey
-class _TranslationsWebServerSettingsFieldsMemoryApiKeyEs extends TranslationsWebServerSettingsFieldsMemoryApiKeyEn {
-	_TranslationsWebServerSettingsFieldsMemoryApiKeyEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$memoryApiKey$es extends Translations$web$serverSettings$fields$memoryApiKey$en {
+	_Translations$web$serverSettings$fields$memoryApiKey$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8605,8 +8694,8 @@ class _TranslationsWebServerSettingsFieldsMemoryApiKeyEs extends TranslationsWeb
 }
 
 // Path: web.serverSettings.fields.memoryLocalModel
-class _TranslationsWebServerSettingsFieldsMemoryLocalModelEs extends TranslationsWebServerSettingsFieldsMemoryLocalModelEn {
-	_TranslationsWebServerSettingsFieldsMemoryLocalModelEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$memoryLocalModel$es extends Translations$web$serverSettings$fields$memoryLocalModel$en {
+	_Translations$web$serverSettings$fields$memoryLocalModel$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8616,8 +8705,8 @@ class _TranslationsWebServerSettingsFieldsMemoryLocalModelEs extends Translation
 }
 
 // Path: web.serverSettings.fields.memoryLibraryPath
-class _TranslationsWebServerSettingsFieldsMemoryLibraryPathEs extends TranslationsWebServerSettingsFieldsMemoryLibraryPathEn {
-	_TranslationsWebServerSettingsFieldsMemoryLibraryPathEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$memoryLibraryPath$es extends Translations$web$serverSettings$fields$memoryLibraryPath$en {
+	_Translations$web$serverSettings$fields$memoryLibraryPath$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8627,8 +8716,8 @@ class _TranslationsWebServerSettingsFieldsMemoryLibraryPathEs extends Translatio
 }
 
 // Path: web.serverSettings.fields.memoryModelPath
-class _TranslationsWebServerSettingsFieldsMemoryModelPathEs extends TranslationsWebServerSettingsFieldsMemoryModelPathEn {
-	_TranslationsWebServerSettingsFieldsMemoryModelPathEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$memoryModelPath$es extends Translations$web$serverSettings$fields$memoryModelPath$en {
+	_Translations$web$serverSettings$fields$memoryModelPath$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8638,8 +8727,8 @@ class _TranslationsWebServerSettingsFieldsMemoryModelPathEs extends Translations
 }
 
 // Path: web.serverSettings.fields.memoryTokenizerPath
-class _TranslationsWebServerSettingsFieldsMemoryTokenizerPathEs extends TranslationsWebServerSettingsFieldsMemoryTokenizerPathEn {
-	_TranslationsWebServerSettingsFieldsMemoryTokenizerPathEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$memoryTokenizerPath$es extends Translations$web$serverSettings$fields$memoryTokenizerPath$en {
+	_Translations$web$serverSettings$fields$memoryTokenizerPath$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8649,8 +8738,8 @@ class _TranslationsWebServerSettingsFieldsMemoryTokenizerPathEs extends Translat
 }
 
 // Path: web.serverSettings.fields.memoryMaxSeqLen
-class _TranslationsWebServerSettingsFieldsMemoryMaxSeqLenEs extends TranslationsWebServerSettingsFieldsMemoryMaxSeqLenEn {
-	_TranslationsWebServerSettingsFieldsMemoryMaxSeqLenEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$memoryMaxSeqLen$es extends Translations$web$serverSettings$fields$memoryMaxSeqLen$en {
+	_Translations$web$serverSettings$fields$memoryMaxSeqLen$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8660,8 +8749,8 @@ class _TranslationsWebServerSettingsFieldsMemoryMaxSeqLenEs extends Translations
 }
 
 // Path: web.serverSettings.fields.claudeHistoryRoots
-class _TranslationsWebServerSettingsFieldsClaudeHistoryRootsEs extends TranslationsWebServerSettingsFieldsClaudeHistoryRootsEn {
-	_TranslationsWebServerSettingsFieldsClaudeHistoryRootsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$claudeHistoryRoots$es extends Translations$web$serverSettings$fields$claudeHistoryRoots$en {
+	_Translations$web$serverSettings$fields$claudeHistoryRoots$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8671,8 +8760,8 @@ class _TranslationsWebServerSettingsFieldsClaudeHistoryRootsEs extends Translati
 }
 
 // Path: web.serverSettings.fields.claudeAccountsDir
-class _TranslationsWebServerSettingsFieldsClaudeAccountsDirEs extends TranslationsWebServerSettingsFieldsClaudeAccountsDirEn {
-	_TranslationsWebServerSettingsFieldsClaudeAccountsDirEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$claudeAccountsDir$es extends Translations$web$serverSettings$fields$claudeAccountsDir$en {
+	_Translations$web$serverSettings$fields$claudeAccountsDir$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8682,8 +8771,8 @@ class _TranslationsWebServerSettingsFieldsClaudeAccountsDirEs extends Translatio
 }
 
 // Path: web.serverSettings.fields.codexSessionsRoot
-class _TranslationsWebServerSettingsFieldsCodexSessionsRootEs extends TranslationsWebServerSettingsFieldsCodexSessionsRootEn {
-	_TranslationsWebServerSettingsFieldsCodexSessionsRootEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$codexSessionsRoot$es extends Translations$web$serverSettings$fields$codexSessionsRoot$en {
+	_Translations$web$serverSettings$fields$codexSessionsRoot$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8693,8 +8782,8 @@ class _TranslationsWebServerSettingsFieldsCodexSessionsRootEs extends Translatio
 }
 
 // Path: web.serverSettings.fields.antigravityConversationsRoot
-class _TranslationsWebServerSettingsFieldsAntigravityConversationsRootEs extends TranslationsWebServerSettingsFieldsAntigravityConversationsRootEn {
-	_TranslationsWebServerSettingsFieldsAntigravityConversationsRootEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$antigravityConversationsRoot$es extends Translations$web$serverSettings$fields$antigravityConversationsRoot$en {
+	_Translations$web$serverSettings$fields$antigravityConversationsRoot$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8704,8 +8793,8 @@ class _TranslationsWebServerSettingsFieldsAntigravityConversationsRootEs extends
 }
 
 // Path: web.serverSettings.fields.backupLocalDir
-class _TranslationsWebServerSettingsFieldsBackupLocalDirEs extends TranslationsWebServerSettingsFieldsBackupLocalDirEn {
-	_TranslationsWebServerSettingsFieldsBackupLocalDirEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$backupLocalDir$es extends Translations$web$serverSettings$fields$backupLocalDir$en {
+	_Translations$web$serverSettings$fields$backupLocalDir$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8715,8 +8804,8 @@ class _TranslationsWebServerSettingsFieldsBackupLocalDirEs extends TranslationsW
 }
 
 // Path: web.serverSettings.fields.backupExportDir
-class _TranslationsWebServerSettingsFieldsBackupExportDirEs extends TranslationsWebServerSettingsFieldsBackupExportDirEn {
-	_TranslationsWebServerSettingsFieldsBackupExportDirEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$backupExportDir$es extends Translations$web$serverSettings$fields$backupExportDir$en {
+	_Translations$web$serverSettings$fields$backupExportDir$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8726,8 +8815,8 @@ class _TranslationsWebServerSettingsFieldsBackupExportDirEs extends Translations
 }
 
 // Path: web.serverSettings.fields.backupPgDumpPath
-class _TranslationsWebServerSettingsFieldsBackupPgDumpPathEs extends TranslationsWebServerSettingsFieldsBackupPgDumpPathEn {
-	_TranslationsWebServerSettingsFieldsBackupPgDumpPathEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$backupPgDumpPath$es extends Translations$web$serverSettings$fields$backupPgDumpPath$en {
+	_Translations$web$serverSettings$fields$backupPgDumpPath$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8737,8 +8826,8 @@ class _TranslationsWebServerSettingsFieldsBackupPgDumpPathEs extends Translation
 }
 
 // Path: web.serverSettings.fields.backupPgRestorePath
-class _TranslationsWebServerSettingsFieldsBackupPgRestorePathEs extends TranslationsWebServerSettingsFieldsBackupPgRestorePathEn {
-	_TranslationsWebServerSettingsFieldsBackupPgRestorePathEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$backupPgRestorePath$es extends Translations$web$serverSettings$fields$backupPgRestorePath$en {
+	_Translations$web$serverSettings$fields$backupPgRestorePath$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8748,8 +8837,8 @@ class _TranslationsWebServerSettingsFieldsBackupPgRestorePathEs extends Translat
 }
 
 // Path: web.serverSettings.fields.memoryDedup
-class _TranslationsWebServerSettingsFieldsMemoryDedupEs extends TranslationsWebServerSettingsFieldsMemoryDedupEn {
-	_TranslationsWebServerSettingsFieldsMemoryDedupEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$memoryDedup$es extends Translations$web$serverSettings$fields$memoryDedup$en {
+	_Translations$web$serverSettings$fields$memoryDedup$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8759,8 +8848,8 @@ class _TranslationsWebServerSettingsFieldsMemoryDedupEs extends TranslationsWebS
 }
 
 // Path: web.serverSettings.fields.gatekeeperEnabled
-class _TranslationsWebServerSettingsFieldsGatekeeperEnabledEs extends TranslationsWebServerSettingsFieldsGatekeeperEnabledEn {
-	_TranslationsWebServerSettingsFieldsGatekeeperEnabledEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$gatekeeperEnabled$es extends Translations$web$serverSettings$fields$gatekeeperEnabled$en {
+	_Translations$web$serverSettings$fields$gatekeeperEnabled$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8770,8 +8859,8 @@ class _TranslationsWebServerSettingsFieldsGatekeeperEnabledEs extends Translatio
 }
 
 // Path: web.serverSettings.fields.gatekeeperLatency
-class _TranslationsWebServerSettingsFieldsGatekeeperLatencyEs extends TranslationsWebServerSettingsFieldsGatekeeperLatencyEn {
-	_TranslationsWebServerSettingsFieldsGatekeeperLatencyEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$gatekeeperLatency$es extends Translations$web$serverSettings$fields$gatekeeperLatency$en {
+	_Translations$web$serverSettings$fields$gatekeeperLatency$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8781,8 +8870,8 @@ class _TranslationsWebServerSettingsFieldsGatekeeperLatencyEs extends Translatio
 }
 
 // Path: web.serverSettings.fields.cleanerEnabled
-class _TranslationsWebServerSettingsFieldsCleanerEnabledEs extends TranslationsWebServerSettingsFieldsCleanerEnabledEn {
-	_TranslationsWebServerSettingsFieldsCleanerEnabledEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$cleanerEnabled$es extends Translations$web$serverSettings$fields$cleanerEnabled$en {
+	_Translations$web$serverSettings$fields$cleanerEnabled$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8792,8 +8881,8 @@ class _TranslationsWebServerSettingsFieldsCleanerEnabledEs extends TranslationsW
 }
 
 // Path: web.serverSettings.fields.cleanerInterval
-class _TranslationsWebServerSettingsFieldsCleanerIntervalEs extends TranslationsWebServerSettingsFieldsCleanerIntervalEn {
-	_TranslationsWebServerSettingsFieldsCleanerIntervalEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$cleanerInterval$es extends Translations$web$serverSettings$fields$cleanerInterval$en {
+	_Translations$web$serverSettings$fields$cleanerInterval$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8803,8 +8892,8 @@ class _TranslationsWebServerSettingsFieldsCleanerIntervalEs extends Translations
 }
 
 // Path: web.serverSettings.fields.cleanerGlobalScope
-class _TranslationsWebServerSettingsFieldsCleanerGlobalScopeEs extends TranslationsWebServerSettingsFieldsCleanerGlobalScopeEn {
-	_TranslationsWebServerSettingsFieldsCleanerGlobalScopeEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$cleanerGlobalScope$es extends Translations$web$serverSettings$fields$cleanerGlobalScope$en {
+	_Translations$web$serverSettings$fields$cleanerGlobalScope$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8814,8 +8903,8 @@ class _TranslationsWebServerSettingsFieldsCleanerGlobalScopeEs extends Translati
 }
 
 // Path: web.serverSettings.fields.knowledgeEnabled
-class _TranslationsWebServerSettingsFieldsKnowledgeEnabledEs extends TranslationsWebServerSettingsFieldsKnowledgeEnabledEn {
-	_TranslationsWebServerSettingsFieldsKnowledgeEnabledEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$knowledgeEnabled$es extends Translations$web$serverSettings$fields$knowledgeEnabled$en {
+	_Translations$web$serverSettings$fields$knowledgeEnabled$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8825,8 +8914,8 @@ class _TranslationsWebServerSettingsFieldsKnowledgeEnabledEs extends Translation
 }
 
 // Path: web.serverSettings.fields.claudeWatcher
-class _TranslationsWebServerSettingsFieldsClaudeWatcherEs extends TranslationsWebServerSettingsFieldsClaudeWatcherEn {
-	_TranslationsWebServerSettingsFieldsClaudeWatcherEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$claudeWatcher$es extends Translations$web$serverSettings$fields$claudeWatcher$en {
+	_Translations$web$serverSettings$fields$claudeWatcher$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8836,8 +8925,8 @@ class _TranslationsWebServerSettingsFieldsClaudeWatcherEs extends TranslationsWe
 }
 
 // Path: web.serverSettings.fields.claudeAutoFailover
-class _TranslationsWebServerSettingsFieldsClaudeAutoFailoverEs extends TranslationsWebServerSettingsFieldsClaudeAutoFailoverEn {
-	_TranslationsWebServerSettingsFieldsClaudeAutoFailoverEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$claudeAutoFailover$es extends Translations$web$serverSettings$fields$claudeAutoFailover$en {
+	_Translations$web$serverSettings$fields$claudeAutoFailover$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8847,8 +8936,8 @@ class _TranslationsWebServerSettingsFieldsClaudeAutoFailoverEs extends Translati
 }
 
 // Path: web.serverSettings.fields.mobileTokenTTL
-class _TranslationsWebServerSettingsFieldsMobileTokenTTLEs extends TranslationsWebServerSettingsFieldsMobileTokenTTLEn {
-	_TranslationsWebServerSettingsFieldsMobileTokenTTLEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$mobileTokenTTL$es extends Translations$web$serverSettings$fields$mobileTokenTTL$en {
+	_Translations$web$serverSettings$fields$mobileTokenTTL$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8858,8 +8947,8 @@ class _TranslationsWebServerSettingsFieldsMobileTokenTTLEs extends TranslationsW
 }
 
 // Path: web.serverSettings.fields.dbMaxConns
-class _TranslationsWebServerSettingsFieldsDbMaxConnsEs extends TranslationsWebServerSettingsFieldsDbMaxConnsEn {
-	_TranslationsWebServerSettingsFieldsDbMaxConnsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$dbMaxConns$es extends Translations$web$serverSettings$fields$dbMaxConns$en {
+	_Translations$web$serverSettings$fields$dbMaxConns$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8869,8 +8958,8 @@ class _TranslationsWebServerSettingsFieldsDbMaxConnsEs extends TranslationsWebSe
 }
 
 // Path: web.serverSettings.httpHelpers.presetTip
-class _TranslationsWebServerSettingsHttpHelpersPresetTipEs extends TranslationsWebServerSettingsHttpHelpersPresetTipEn {
-	_TranslationsWebServerSettingsHttpHelpersPresetTipEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$httpHelpers$presetTip$es extends Translations$web$serverSettings$httpHelpers$presetTip$en {
+	_Translations$web$serverSettings$httpHelpers$presetTip$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8881,8 +8970,8 @@ class _TranslationsWebServerSettingsHttpHelpersPresetTipEs extends TranslationsW
 }
 
 // Path: web.serverSettings.backup.scheduleHeaders
-class _TranslationsWebServerSettingsBackupScheduleHeadersEs extends TranslationsWebServerSettingsBackupScheduleHeadersEn {
-	_TranslationsWebServerSettingsBackupScheduleHeadersEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$backup$scheduleHeaders$es extends Translations$web$serverSettings$backup$scheduleHeaders$en {
+	_Translations$web$serverSettings$backup$scheduleHeaders$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8895,8 +8984,8 @@ class _TranslationsWebServerSettingsBackupScheduleHeadersEs extends Translations
 }
 
 // Path: web.settings.appearance.options
-class _TranslationsWebSettingsAppearanceOptionsEs extends TranslationsWebSettingsAppearanceOptionsEn {
-	_TranslationsWebSettingsAppearanceOptionsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$settings$appearance$options$es extends Translations$web$settings$appearance$options$en {
+	_Translations$web$settings$appearance$options$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8910,8 +8999,8 @@ class _TranslationsWebSettingsAppearanceOptionsEs extends TranslationsWebSetting
 }
 
 // Path: web.settings.font.options
-class _TranslationsWebSettingsFontOptionsEs extends TranslationsWebSettingsFontOptionsEn {
-	_TranslationsWebSettingsFontOptionsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$settings$font$options$es extends Translations$web$settings$font$options$en {
+	_Translations$web$settings$font$options$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8923,8 +9012,8 @@ class _TranslationsWebSettingsFontOptionsEs extends TranslationsWebSettingsFontO
 }
 
 // Path: web.memoryAmbient.providers.row
-class _TranslationsWebMemoryAmbientProvidersRowEs extends TranslationsWebMemoryAmbientProvidersRowEn {
-	_TranslationsWebMemoryAmbientProvidersRowEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$memoryAmbient$providers$row$es extends Translations$web$memoryAmbient$providers$row$en {
+	_Translations$web$memoryAmbient$providers$row$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8944,8 +9033,8 @@ class _TranslationsWebMemoryAmbientProvidersRowEs extends TranslationsWebMemoryA
 }
 
 // Path: web.memoryAmbient.providers.dialog
-class _TranslationsWebMemoryAmbientProvidersDialogEs extends TranslationsWebMemoryAmbientProvidersDialogEn {
-	_TranslationsWebMemoryAmbientProvidersDialogEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$memoryAmbient$providers$dialog$es extends Translations$web$memoryAmbient$providers$dialog$en {
+	_Translations$web$memoryAmbient$providers$dialog$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8967,8 +9056,8 @@ class _TranslationsWebMemoryAmbientProvidersDialogEs extends TranslationsWebMemo
 }
 
 // Path: web.memoryAmbient.providers.modelSelect
-class _TranslationsWebMemoryAmbientProvidersModelSelectEs extends TranslationsWebMemoryAmbientProvidersModelSelectEn {
-	_TranslationsWebMemoryAmbientProvidersModelSelectEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$memoryAmbient$providers$modelSelect$es extends Translations$web$memoryAmbient$providers$modelSelect$en {
+	_Translations$web$memoryAmbient$providers$modelSelect$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -8986,8 +9075,8 @@ class _TranslationsWebMemoryAmbientProvidersModelSelectEs extends TranslationsWe
 }
 
 // Path: web.memoryAmbient.rules.row
-class _TranslationsWebMemoryAmbientRulesRowEs extends TranslationsWebMemoryAmbientRulesRowEn {
-	_TranslationsWebMemoryAmbientRulesRowEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$memoryAmbient$rules$row$es extends Translations$web$memoryAmbient$rules$row$en {
+	_Translations$web$memoryAmbient$rules$row$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -9003,12 +9092,12 @@ class _TranslationsWebMemoryAmbientRulesRowEs extends TranslationsWebMemoryAmbie
 	@override String deleteConfirm({required Object name}) => '¿Eliminar la regla "${name}"?';
 	@override String get deletedToast => 'Regla eliminada';
 	@override String get deleteFailedToast => 'La eliminación falló';
-	@override late final _TranslationsWebMemoryAmbientRulesRowSummaryEs summary = _TranslationsWebMemoryAmbientRulesRowSummaryEs._(_root);
+	@override late final _Translations$web$memoryAmbient$rules$row$summary$es summary = _Translations$web$memoryAmbient$rules$row$summary$es._(_root);
 }
 
 // Path: web.memoryAmbient.rules.dialog
-class _TranslationsWebMemoryAmbientRulesDialogEs extends TranslationsWebMemoryAmbientRulesDialogEn {
-	_TranslationsWebMemoryAmbientRulesDialogEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$memoryAmbient$rules$dialog$es extends Translations$web$memoryAmbient$rules$dialog$en {
+	_Translations$web$memoryAmbient$rules$dialog$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -9031,8 +9120,8 @@ class _TranslationsWebMemoryAmbientRulesDialogEs extends TranslationsWebMemoryAm
 }
 
 // Path: web.memoryAmbient.profiles.row
-class _TranslationsWebMemoryAmbientProfilesRowEs extends TranslationsWebMemoryAmbientProfilesRowEn {
-	_TranslationsWebMemoryAmbientProfilesRowEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$memoryAmbient$profiles$row$es extends Translations$web$memoryAmbient$profiles$row$en {
+	_Translations$web$memoryAmbient$profiles$row$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -9045,8 +9134,8 @@ class _TranslationsWebMemoryAmbientProfilesRowEs extends TranslationsWebMemoryAm
 }
 
 // Path: web.memoryAmbient.profiles.dialog
-class _TranslationsWebMemoryAmbientProfilesDialogEs extends TranslationsWebMemoryAmbientProfilesDialogEn {
-	_TranslationsWebMemoryAmbientProfilesDialogEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$memoryAmbient$profiles$dialog$es extends Translations$web$memoryAmbient$profiles$dialog$en {
+	_Translations$web$memoryAmbient$profiles$dialog$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -9061,8 +9150,8 @@ class _TranslationsWebMemoryAmbientProfilesDialogEs extends TranslationsWebMemor
 }
 
 // Path: web.memoryAmbient.cost.columns
-class _TranslationsWebMemoryAmbientCostColumnsEs extends TranslationsWebMemoryAmbientCostColumnsEn {
-	_TranslationsWebMemoryAmbientCostColumnsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$memoryAmbient$cost$columns$es extends Translations$web$memoryAmbient$cost$columns$en {
+	_Translations$web$memoryAmbient$cost$columns$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -9075,8 +9164,8 @@ class _TranslationsWebMemoryAmbientCostColumnsEs extends TranslationsWebMemoryAm
 }
 
 // Path: web.export.form.integrationOptions
-class _TranslationsWebExportFormIntegrationOptionsEs extends TranslationsWebExportFormIntegrationOptionsEn {
-	_TranslationsWebExportFormIntegrationOptionsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$export$form$integrationOptions$es extends Translations$web$export$form$integrationOptions$en {
+	_Translations$web$export$form$integrationOptions$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -9090,8 +9179,8 @@ class _TranslationsWebExportFormIntegrationOptionsEs extends TranslationsWebExpo
 }
 
 // Path: web.export.history.columns
-class _TranslationsWebExportHistoryColumnsEs extends TranslationsWebExportHistoryColumnsEn {
-	_TranslationsWebExportHistoryColumnsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$export$history$columns$es extends Translations$web$export$history$columns$en {
+	_Translations$web$export$history$columns$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -9105,8 +9194,8 @@ class _TranslationsWebExportHistoryColumnsEs extends TranslationsWebExportHistor
 }
 
 // Path: web.export.import.summaryCard
-class _TranslationsWebExportImportSummaryCardEs extends TranslationsWebExportImportSummaryCardEn {
-	_TranslationsWebExportImportSummaryCardEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$export$import$summaryCard$es extends Translations$web$export$import$summaryCard$en {
+	_Translations$web$export$import$summaryCard$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -9120,8 +9209,8 @@ class _TranslationsWebExportImportSummaryCardEs extends TranslationsWebExportImp
 }
 
 // Path: web.export.imports.columns
-class _TranslationsWebExportImportsColumnsEs extends TranslationsWebExportImportsColumnsEn {
-	_TranslationsWebExportImportsColumnsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$export$imports$columns$es extends Translations$web$export$imports$columns$en {
+	_Translations$web$export$imports$columns$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -9134,8 +9223,8 @@ class _TranslationsWebExportImportsColumnsEs extends TranslationsWebExportImport
 }
 
 // Path: web.knowledge.kb.kinds
-class _TranslationsWebKnowledgeKbKindsEs extends TranslationsWebKnowledgeKbKindsEn {
-	_TranslationsWebKnowledgeKbKindsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$knowledge$kb$kinds$es extends Translations$web$knowledge$kb$kinds$en {
+	_Translations$web$knowledge$kb$kinds$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -9147,8 +9236,8 @@ class _TranslationsWebKnowledgeKbKindsEs extends TranslationsWebKnowledgeKbKinds
 }
 
 // Path: web.knowledge.kb.proposal
-class _TranslationsWebKnowledgeKbProposalEs extends TranslationsWebKnowledgeKbProposalEn {
-	_TranslationsWebKnowledgeKbProposalEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$knowledge$kb$proposal$es extends Translations$web$knowledge$kb$proposal$en {
+	_Translations$web$knowledge$kb$proposal$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -9163,8 +9252,8 @@ class _TranslationsWebKnowledgeKbProposalEs extends TranslationsWebKnowledgeKbPr
 }
 
 // Path: web.knowledge.kb.newPage
-class _TranslationsWebKnowledgeKbNewPageEs extends TranslationsWebKnowledgeKbNewPageEn {
-	_TranslationsWebKnowledgeKbNewPageEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$knowledge$kb$newPage$es extends Translations$web$knowledge$kb$newPage$en {
+	_Translations$web$knowledge$kb$newPage$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -9182,8 +9271,8 @@ class _TranslationsWebKnowledgeKbNewPageEs extends TranslationsWebKnowledgeKbNew
 }
 
 // Path: web.knowledge.kb.pageSettings
-class _TranslationsWebKnowledgeKbPageSettingsEs extends TranslationsWebKnowledgeKbPageSettingsEn {
-	_TranslationsWebKnowledgeKbPageSettingsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$knowledge$kb$pageSettings$es extends Translations$web$knowledge$kb$pageSettings$en {
+	_Translations$web$knowledge$kb$pageSettings$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -9197,8 +9286,8 @@ class _TranslationsWebKnowledgeKbPageSettingsEs extends TranslationsWebKnowledge
 }
 
 // Path: web.knowledge.kb.librarian
-class _TranslationsWebKnowledgeKbLibrarianEs extends TranslationsWebKnowledgeKbLibrarianEn {
-	_TranslationsWebKnowledgeKbLibrarianEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$knowledge$kb$librarian$es extends Translations$web$knowledge$kb$librarian$en {
+	_Translations$web$knowledge$kb$librarian$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -9214,8 +9303,8 @@ class _TranslationsWebKnowledgeKbLibrarianEs extends TranslationsWebKnowledgeKbL
 }
 
 // Path: web.knowledge.distill.retirement
-class _TranslationsWebKnowledgeDistillRetirementEs extends TranslationsWebKnowledgeDistillRetirementEn {
-	_TranslationsWebKnowledgeDistillRetirementEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$knowledge$distill$retirement$es extends Translations$web$knowledge$distill$retirement$en {
+	_Translations$web$knowledge$distill$retirement$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -9229,8 +9318,8 @@ class _TranslationsWebKnowledgeDistillRetirementEs extends TranslationsWebKnowle
 }
 
 // Path: web.knowledge.graph.legend
-class _TranslationsWebKnowledgeGraphLegendEs extends TranslationsWebKnowledgeGraphLegendEn {
-	_TranslationsWebKnowledgeGraphLegendEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$knowledge$graph$legend$es extends Translations$web$knowledge$graph$legend$en {
+	_Translations$web$knowledge$graph$legend$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -9242,8 +9331,8 @@ class _TranslationsWebKnowledgeGraphLegendEs extends TranslationsWebKnowledgeGra
 }
 
 // Path: web.cortex.home.memory
-class _TranslationsWebCortexHomeMemoryEs extends TranslationsWebCortexHomeMemoryEn {
-	_TranslationsWebCortexHomeMemoryEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$cortex$home$memory$es extends Translations$web$cortex$home$memory$en {
+	_Translations$web$cortex$home$memory$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -9254,8 +9343,8 @@ class _TranslationsWebCortexHomeMemoryEs extends TranslationsWebCortexHomeMemory
 }
 
 // Path: web.cortex.home.notes
-class _TranslationsWebCortexHomeNotesEs extends TranslationsWebCortexHomeNotesEn {
-	_TranslationsWebCortexHomeNotesEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$cortex$home$notes$es extends Translations$web$cortex$home$notes$en {
+	_Translations$web$cortex$home$notes$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -9266,8 +9355,8 @@ class _TranslationsWebCortexHomeNotesEs extends TranslationsWebCortexHomeNotesEn
 }
 
 // Path: web.cortex.home.knowledge
-class _TranslationsWebCortexHomeKnowledgeEs extends TranslationsWebCortexHomeKnowledgeEn {
-	_TranslationsWebCortexHomeKnowledgeEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$cortex$home$knowledge$es extends Translations$web$cortex$home$knowledge$en {
+	_Translations$web$cortex$home$knowledge$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -9277,8 +9366,8 @@ class _TranslationsWebCortexHomeKnowledgeEs extends TranslationsWebCortexHomeKno
 }
 
 // Path: web.cortex.home.proposals
-class _TranslationsWebCortexHomeProposalsEs extends TranslationsWebCortexHomeProposalsEn {
-	_TranslationsWebCortexHomeProposalsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$cortex$home$proposals$es extends Translations$web$cortex$home$proposals$en {
+	_Translations$web$cortex$home$proposals$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -9297,8 +9386,8 @@ class _TranslationsWebCortexHomeProposalsEs extends TranslationsWebCortexHomePro
 }
 
 // Path: web.cortex.blueprint.mode
-class _TranslationsWebCortexBlueprintModeEs extends TranslationsWebCortexBlueprintModeEn {
-	_TranslationsWebCortexBlueprintModeEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$cortex$blueprint$mode$es extends Translations$web$cortex$blueprint$mode$en {
+	_Translations$web$cortex$blueprint$mode$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -9309,8 +9398,8 @@ class _TranslationsWebCortexBlueprintModeEs extends TranslationsWebCortexBluepri
 }
 
 // Path: web.cortex.blueprint.writePolicy
-class _TranslationsWebCortexBlueprintWritePolicyEs extends TranslationsWebCortexBlueprintWritePolicyEn {
-	_TranslationsWebCortexBlueprintWritePolicyEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$cortex$blueprint$writePolicy$es extends Translations$web$cortex$blueprint$writePolicy$en {
+	_Translations$web$cortex$blueprint$writePolicy$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -9321,8 +9410,8 @@ class _TranslationsWebCortexBlueprintWritePolicyEs extends TranslationsWebCortex
 }
 
 // Path: web.cortex.settings.injection
-class _TranslationsWebCortexSettingsInjectionEs extends TranslationsWebCortexSettingsInjectionEn {
-	_TranslationsWebCortexSettingsInjectionEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$cortex$settings$injection$es extends Translations$web$cortex$settings$injection$en {
+	_Translations$web$cortex$settings$injection$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -9330,15 +9419,15 @@ class _TranslationsWebCortexSettingsInjectionEs extends TranslationsWebCortexSet
 	@override String get title => 'Inyección al arranque';
 	@override String get hint => 'Cuánto contexto de Cortex carga cada SESIÓN NUEVA por adelantado. El cambio aplica de inmediato a las sesiones creadas después — el backend nunca necesita reiniciarse.';
 	@override String get active => 'activo';
-	@override late final _TranslationsWebCortexSettingsInjectionModeEs mode = _TranslationsWebCortexSettingsInjectionModeEs._(_root);
+	@override late final _Translations$web$cortex$settings$injection$mode$es mode = _Translations$web$cortex$settings$injection$mode$es._(_root);
 	@override String get savedToast => 'Modo guardado — las sesiones nuevas lo usan de inmediato (sin reiniciar el backend)';
 	@override String get saveFailed => 'Error al guardar';
 	@override String get note => 'En modo completo siguen aplicando los flags de inyección por sección/página; en modo ligero las reglas fundacionales siempre se inyectan y el resto va al índice.';
 }
 
 // Path: web.database.dialog.drivers
-class _TranslationsWebDatabaseDialogDriversEs extends TranslationsWebDatabaseDialogDriversEn {
-	_TranslationsWebDatabaseDialogDriversEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$database$dialog$drivers$es extends Translations$web$database$dialog$drivers$en {
+	_Translations$web$database$dialog$drivers$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -9350,8 +9439,8 @@ class _TranslationsWebDatabaseDialogDriversEs extends TranslationsWebDatabaseDia
 }
 
 // Path: web.roundTable.dialog.personaPresets
-class _TranslationsWebRoundTableDialogPersonaPresetsEs extends TranslationsWebRoundTableDialogPersonaPresetsEn {
-	_TranslationsWebRoundTableDialogPersonaPresetsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$roundTable$dialog$personaPresets$es extends Translations$web$roundTable$dialog$personaPresets$en {
+	_Translations$web$roundTable$dialog$personaPresets$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -9365,8 +9454,8 @@ class _TranslationsWebRoundTableDialogPersonaPresetsEs extends TranslationsWebRo
 }
 
 // Path: sessions.inspector.shell.tabs
-class _TranslationsSessionsInspectorShellTabsEs extends TranslationsSessionsInspectorShellTabsEn {
-	_TranslationsSessionsInspectorShellTabsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$sessions$inspector$shell$tabs$es extends Translations$sessions$inspector$shell$tabs$en {
+	_Translations$sessions$inspector$shell$tabs$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -9381,8 +9470,8 @@ class _TranslationsSessionsInspectorShellTabsEs extends TranslationsSessionsInsp
 }
 
 // Path: web.notes.vaultSync.conflict.kinds
-class _TranslationsWebNotesVaultSyncConflictKindsEs extends TranslationsWebNotesVaultSyncConflictKindsEn {
-	_TranslationsWebNotesVaultSyncConflictKindsEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$notes$vaultSync$conflict$kinds$es extends Translations$web$notes$vaultSync$conflict$kinds$en {
+	_Translations$web$notes$vaultSync$conflict$kinds$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -9394,8 +9483,8 @@ class _TranslationsWebNotesVaultSyncConflictKindsEs extends TranslationsWebNotes
 }
 
 // Path: web.memoryAmbient.rules.row.summary
-class _TranslationsWebMemoryAmbientRulesRowSummaryEs extends TranslationsWebMemoryAmbientRulesRowSummaryEn {
-	_TranslationsWebMemoryAmbientRulesRowSummaryEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$memoryAmbient$rules$row$summary$es extends Translations$web$memoryAmbient$rules$row$summary$en {
+	_Translations$web$memoryAmbient$rules$row$summary$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -9407,19 +9496,19 @@ class _TranslationsWebMemoryAmbientRulesRowSummaryEs extends TranslationsWebMemo
 }
 
 // Path: web.cortex.settings.injection.mode
-class _TranslationsWebCortexSettingsInjectionModeEs extends TranslationsWebCortexSettingsInjectionModeEn {
-	_TranslationsWebCortexSettingsInjectionModeEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$cortex$settings$injection$mode$es extends Translations$web$cortex$settings$injection$mode$en {
+	_Translations$web$cortex$settings$injection$mode$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsWebCortexSettingsInjectionModeLeanEs lean = _TranslationsWebCortexSettingsInjectionModeLeanEs._(_root);
-	@override late final _TranslationsWebCortexSettingsInjectionModeFullEs full = _TranslationsWebCortexSettingsInjectionModeFullEs._(_root);
+	@override late final _Translations$web$cortex$settings$injection$mode$lean$es lean = _Translations$web$cortex$settings$injection$mode$lean$es._(_root);
+	@override late final _Translations$web$cortex$settings$injection$mode$full$es full = _Translations$web$cortex$settings$injection$mode$full$es._(_root);
 }
 
 // Path: web.cortex.settings.injection.mode.lean
-class _TranslationsWebCortexSettingsInjectionModeLeanEs extends TranslationsWebCortexSettingsInjectionModeLeanEn {
-	_TranslationsWebCortexSettingsInjectionModeLeanEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$cortex$settings$injection$mode$lean$es extends Translations$web$cortex$settings$injection$mode$lean$en {
+	_Translations$web$cortex$settings$injection$mode$lean$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -9429,8 +9518,8 @@ class _TranslationsWebCortexSettingsInjectionModeLeanEs extends TranslationsWebC
 }
 
 // Path: web.cortex.settings.injection.mode.full
-class _TranslationsWebCortexSettingsInjectionModeFullEs extends TranslationsWebCortexSettingsInjectionModeFullEn {
-	_TranslationsWebCortexSettingsInjectionModeFullEs._(TranslationsEs root) : this._root = root, super.internal(root);
+class _Translations$web$cortex$settings$injection$mode$full$es extends Translations$web$cortex$settings$injection$mode$full$en {
+	_Translations$web$cortex$settings$injection$mode$full$es._(TranslationsEs root) : this._root = root, super.internal(root);
 
 	final TranslationsEs _root; // ignore: unused_field
 
@@ -13591,6 +13680,85 @@ extension on TranslationsEs {
 			'cortexSettings.providersManageOnWeb' => 'Añade o edita proveedores en el panel web.',
 			'cortexSettings.providersLoadFailed' => 'Error al cargar proveedores',
 			'cortexSettings.defaultBadge' => 'predeterminado',
+			'agentTasks.navLabel' => 'Tareas',
+			'agentTasks.title' => 'Tareas de agente',
+			'agentTasks.create' => 'Nueva tarea',
+			'agentTasks.emptyTitle' => 'No hay tareas de agente',
+			'agentTasks.emptyBody' => 'Crea una tarea de agente no interactiva. Las sesiones de terminal permanecen separadas.',
+			'agentTasks.refresh' => 'Actualizar',
+			'agentTasks.all' => 'Todas',
+			'agentTasks.loadMore' => 'Cargar más',
+			'agentTasks.offline' => 'Sin conexión. Se muestra el último estado cargado.',
+			'agentTasks.retry' => 'Reintentar',
+			'agentTasks.project' => 'Proyecto',
+			'agentTasks.provider' => 'Proveedor',
+			'agentTasks.prompt' => 'Instrucción',
+			'agentTasks.workspace' => 'Espacio de trabajo',
+			'agentTasks.contextMode' => 'Contexto',
+			'agentTasks.newContext' => 'Contexto nuevo',
+			'agentTasks.continueContext' => 'Continuar contexto',
+			'agentTasks.attachments' => 'Adjuntos',
+			'agentTasks.timeout' => 'Tiempo límite (segundos)',
+			'agentTasks.telegramNotify' => 'Notificar en Telegram',
+			'agentTasks.submit' => 'Crear tarea',
+			'agentTasks.creating' => 'Creando…',
+			'agentTasks.required' => 'Este campo es obligatorio',
+			'agentTasks.invalidTimeout' => 'Introduce un tiempo entre 30 y 86400 segundos',
+			'agentTasks.details' => 'Detalles de la tarea',
+			'agentTasks.runs' => 'Ejecuciones',
+			'agentTasks.events' => 'Salida',
+			'agentTasks.artifacts' => 'Artefactos',
+			'agentTasks.continueAction' => 'Continuar',
+			'agentTasks.cancelAction' => 'Cancelar',
+			'agentTasks.confirm' => 'Confirmar',
+			'agentTasks.retryAction' => 'Reintentar',
+			'agentTasks.confirmCancel' => '¿Cancelar esta tarea y terminar su árbol de procesos activo?',
+			'agentTasks.confirmRetry' => '¿Crear una nueva ejecución de reintento?',
+			'agentTasks.waitingInput' => 'Se requiere entrada',
+			'agentTasks.continueHint' => 'Introduce instrucciones de seguimiento',
+			'agentTasks.send' => 'Enviar',
+			'agentTasks.stdout' => 'stdout',
+			'agentTasks.stderr' => 'stderr',
+			'agentTasks.raw' => 'raw',
+			'agentTasks.download' => 'Descargar',
+			'agentTasks.verified' => 'Integridad verificada',
+			'agentTasks.downloadFailed' => 'Falló la descarga del artefacto',
+			'agentTasks.noRuns' => 'Aún no hay ejecuciones',
+			'agentTasks.noOutput' => 'Aún no hay salida',
+			'agentTasks.source' => 'Origen',
+			'agentTasks.status' => 'Estado',
+			'agentTasks.created' => 'Creada',
+			'agentTasks.updated' => 'Actualizada',
+			'agentTasks.context' => 'Contexto de ejecución',
+			'agentTasks.currentRun' => 'Ejecución actual',
+			'agentTasks.networkError' => 'Falló la solicitud de red',
+			'agentTasks.permissionError' => 'No tienes permiso para esta operación',
+			'agentTasks.sessionIsolation' => 'Las tareas One-shot no abren ni escriben en sesiones de terminal.',
+			'agentTasks.capabilityResume' => 'Reanudar',
+			'agentTasks.capabilityAttachment' => 'Adjuntos',
+			'agentTasks.smallScreenHint' => 'Los campos se apilan en pantallas pequeñas.',
+			'agentTasks.filterStatus' => 'Filtro de estado',
+			'agentTasks.taskCreated' => 'Tarea creada',
+			'agentTasks.actionFailed' => 'La acción falló',
+			'agentTasks.loading' => 'Cargando…',
+			'agentTasks.open' => 'Abrir',
+			'agentTasks.timeline' => 'Cronología',
+			'agentTasks.result' => 'Resultado',
+			'agentTasks.idempotent' => 'Los toques duplicados reutilizan la misma clave de idempotencia.',
+			'agentTasks.telegramSource' => 'Telegram',
+			'agentTasks.mobileSource' => 'Móvil',
+			'agentTasks.apiSource' => 'API',
+			'agentTasks.unknownSource' => 'Desconocido',
+			'agentTasks.cancelled' => 'Cancelada',
+			'agentTasks.completed' => 'Completada',
+			'agentTasks.failed' => 'Fallida',
+			'agentTasks.timedOut' => 'Tiempo agotado',
+			'agentTasks.running' => 'En ejecución',
+			'agentTasks.queued' => 'En cola',
+			'agentTasks.pending' => 'Pendiente',
+			'agentTasks.waiting' => 'Esperando entrada',
+			'agentTasks.unknown' => 'Desconocido',
+			'agentTasks.allProjects' => 'Todos los proyectos',
 			_ => null,
 		};
 	}

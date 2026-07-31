@@ -39,42 +39,43 @@ class TranslationsZh extends Translations with BaseTranslations<AppLocale, Trans
 	TranslationsZh $copyWith({TranslationMetadata<AppLocale, Translations>? meta}) => TranslationsZh(meta: meta ?? this.$meta);
 
 	// Translations
-	@override late final _TranslationsCommonZh common = _TranslationsCommonZh._(_root);
-	@override late final _TranslationsAuthZh auth = _TranslationsAuthZh._(_root);
-	@override late final _TranslationsNavZh nav = _TranslationsNavZh._(_root);
-	@override late final _TranslationsWebZh web = _TranslationsWebZh._(_root);
-	@override late final _TranslationsMoreZh more = _TranslationsMoreZh._(_root);
-	@override late final _TranslationsActivityZh activity = _TranslationsActivityZh._(_root);
-	@override late final _TranslationsMemoryAmbientZh memoryAmbient = _TranslationsMemoryAmbientZh._(_root);
-	@override late final _TranslationsSessionsZh sessions = _TranslationsSessionsZh._(_root);
-	@override late final _TranslationsMcpZh mcp = _TranslationsMcpZh._(_root);
-	@override late final _TranslationsProvidersZh providers = _TranslationsProvidersZh._(_root);
-	@override late final _TranslationsIntegrationsZh integrations = _TranslationsIntegrationsZh._(_root);
-	@override late final _TranslationsMemoryWorkersZh memoryWorkers = _TranslationsMemoryWorkersZh._(_root);
-	@override late final _TranslationsMemoryArchivedZh memoryArchived = _TranslationsMemoryArchivedZh._(_root);
-	@override late final _TranslationsProjectZh project = _TranslationsProjectZh._(_root);
-	@override late final _TranslationsBackupsZh backups = _TranslationsBackupsZh._(_root);
-	@override late final _TranslationsBackupTargetsZh backupTargets = _TranslationsBackupTargetsZh._(_root);
-	@override late final _TranslationsBackupSchedulesZh backupSchedules = _TranslationsBackupSchedulesZh._(_root);
-	@override late final _TranslationsBackupTargetEditorZh backupTargetEditor = _TranslationsBackupTargetEditorZh._(_root);
-	@override late final _TranslationsGithostsZh githosts = _TranslationsGithostsZh._(_root);
-	@override late final _TranslationsChannelsZh channels = _TranslationsChannelsZh._(_root);
-	@override late final _TranslationsOnboardingZh onboarding = _TranslationsOnboardingZh._(_root);
-	@override late final _TranslationsSkillsZh skills = _TranslationsSkillsZh._(_root);
-	@override late final _TranslationsCustomTasksZh customTasks = _TranslationsCustomTasksZh._(_root);
-	@override late final _TranslationsNotesPageZh notesPage = _TranslationsNotesPageZh._(_root);
-	@override late final _TranslationsDataExportZh dataExport = _TranslationsDataExportZh._(_root);
-	@override late final _TranslationsMemoryZh memory = _TranslationsMemoryZh._(_root);
-	@override late final _TranslationsAboutZh about = _TranslationsAboutZh._(_root);
-	@override late final _TranslationsSettingsZh settings = _TranslationsSettingsZh._(_root);
-	@override late final _TranslationsMemoryQuarantineZh memoryQuarantine = _TranslationsMemoryQuarantineZh._(_root);
-	@override late final _TranslationsCortexHubZh cortexHub = _TranslationsCortexHubZh._(_root);
-	@override late final _TranslationsCortexSettingsZh cortexSettings = _TranslationsCortexSettingsZh._(_root);
+	@override late final _Translations$common$zh common = _Translations$common$zh._(_root);
+	@override late final _Translations$auth$zh auth = _Translations$auth$zh._(_root);
+	@override late final _Translations$nav$zh nav = _Translations$nav$zh._(_root);
+	@override late final _Translations$web$zh web = _Translations$web$zh._(_root);
+	@override late final _Translations$more$zh more = _Translations$more$zh._(_root);
+	@override late final _Translations$activity$zh activity = _Translations$activity$zh._(_root);
+	@override late final _Translations$memoryAmbient$zh memoryAmbient = _Translations$memoryAmbient$zh._(_root);
+	@override late final _Translations$sessions$zh sessions = _Translations$sessions$zh._(_root);
+	@override late final _Translations$mcp$zh mcp = _Translations$mcp$zh._(_root);
+	@override late final _Translations$providers$zh providers = _Translations$providers$zh._(_root);
+	@override late final _Translations$integrations$zh integrations = _Translations$integrations$zh._(_root);
+	@override late final _Translations$memoryWorkers$zh memoryWorkers = _Translations$memoryWorkers$zh._(_root);
+	@override late final _Translations$memoryArchived$zh memoryArchived = _Translations$memoryArchived$zh._(_root);
+	@override late final _Translations$project$zh project = _Translations$project$zh._(_root);
+	@override late final _Translations$backups$zh backups = _Translations$backups$zh._(_root);
+	@override late final _Translations$backupTargets$zh backupTargets = _Translations$backupTargets$zh._(_root);
+	@override late final _Translations$backupSchedules$zh backupSchedules = _Translations$backupSchedules$zh._(_root);
+	@override late final _Translations$backupTargetEditor$zh backupTargetEditor = _Translations$backupTargetEditor$zh._(_root);
+	@override late final _Translations$githosts$zh githosts = _Translations$githosts$zh._(_root);
+	@override late final _Translations$channels$zh channels = _Translations$channels$zh._(_root);
+	@override late final _Translations$onboarding$zh onboarding = _Translations$onboarding$zh._(_root);
+	@override late final _Translations$skills$zh skills = _Translations$skills$zh._(_root);
+	@override late final _Translations$customTasks$zh customTasks = _Translations$customTasks$zh._(_root);
+	@override late final _Translations$notesPage$zh notesPage = _Translations$notesPage$zh._(_root);
+	@override late final _Translations$dataExport$zh dataExport = _Translations$dataExport$zh._(_root);
+	@override late final _Translations$memory$zh memory = _Translations$memory$zh._(_root);
+	@override late final _Translations$about$zh about = _Translations$about$zh._(_root);
+	@override late final _Translations$settings$zh settings = _Translations$settings$zh._(_root);
+	@override late final _Translations$memoryQuarantine$zh memoryQuarantine = _Translations$memoryQuarantine$zh._(_root);
+	@override late final _Translations$cortexHub$zh cortexHub = _Translations$cortexHub$zh._(_root);
+	@override late final _Translations$cortexSettings$zh cortexSettings = _Translations$cortexSettings$zh._(_root);
+	@override late final _Translations$agentTasks$zh agentTasks = _Translations$agentTasks$zh._(_root);
 }
 
 // Path: common
-class _TranslationsCommonZh extends TranslationsCommonEn {
-	_TranslationsCommonZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$common$zh extends Translations$common$en {
+	_Translations$common$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -96,8 +97,8 @@ class _TranslationsCommonZh extends TranslationsCommonEn {
 }
 
 // Path: auth
-class _TranslationsAuthZh extends TranslationsAuthEn {
-	_TranslationsAuthZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$auth$zh extends Translations$auth$en {
+	_Translations$auth$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -115,8 +116,8 @@ class _TranslationsAuthZh extends TranslationsAuthEn {
 }
 
 // Path: nav
-class _TranslationsNavZh extends TranslationsNavEn {
-	_TranslationsNavZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$nav$zh extends Translations$nav$en {
+	_Translations$nav$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -141,67 +142,67 @@ class _TranslationsNavZh extends TranslationsNavEn {
 	@override String get docs => '文档与安装';
 	@override String get community => '社区';
 	@override String get sponsor => '赞助';
-	@override late final _TranslationsNavUpdatesZh updates = _TranslationsNavUpdatesZh._(_root);
+	@override late final _Translations$nav$updates$zh updates = _Translations$nav$updates$zh._(_root);
 	@override String get roundTable => '圆桌';
 }
 
 // Path: web
-class _TranslationsWebZh extends TranslationsWebEn {
-	_TranslationsWebZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$zh extends Translations$web$en {
+	_Translations$web$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
 	// Translations
 	@override String get brand => 'opendray';
 	@override String get loading => '加载中…';
-	@override late final _TranslationsWebTopbarZh topbar = _TranslationsWebTopbarZh._(_root);
-	@override late final _TranslationsWebSessionsZh sessions = _TranslationsWebSessionsZh._(_root);
-	@override late final _TranslationsWebMemoryZh memory = _TranslationsWebMemoryZh._(_root);
-	@override late final _TranslationsWebJournalStaleZh journalStale = _TranslationsWebJournalStaleZh._(_root);
-	@override late final _TranslationsWebConflictsZh conflicts = _TranslationsWebConflictsZh._(_root);
-	@override late final _TranslationsWebMemoryHealthZh memoryHealth = _TranslationsWebMemoryHealthZh._(_root);
-	@override late final _TranslationsWebMemoryConfigZh memoryConfig = _TranslationsWebMemoryConfigZh._(_root);
-	@override late final _TranslationsWebMemoryWorkersZh memoryWorkers = _TranslationsWebMemoryWorkersZh._(_root);
-	@override late final _TranslationsWebArchivedZh archived = _TranslationsWebArchivedZh._(_root);
-	@override late final _TranslationsWebProjectZh project = _TranslationsWebProjectZh._(_root);
-	@override late final _TranslationsWebMemoryInspectorZh memoryInspector = _TranslationsWebMemoryInspectorZh._(_root);
-	@override late final _TranslationsWebNotesZh notes = _TranslationsWebNotesZh._(_root);
-	@override late final _TranslationsWebActivityZh activity = _TranslationsWebActivityZh._(_root);
-	@override late final _TranslationsWebProvidersZh providers = _TranslationsWebProvidersZh._(_root);
-	@override late final _TranslationsWebChannelsZh channels = _TranslationsWebChannelsZh._(_root);
-	@override late final _TranslationsWebIntegrationsZh integrations = _TranslationsWebIntegrationsZh._(_root);
-	@override late final _TranslationsWebPluginsZh plugins = _TranslationsWebPluginsZh._(_root);
-	@override late final _TranslationsWebBackupsZh backups = _TranslationsWebBackupsZh._(_root);
-	@override late final _TranslationsWebServerSettingsZh serverSettings = _TranslationsWebServerSettingsZh._(_root);
-	@override late final _TranslationsWebSettingsZh settings = _TranslationsWebSettingsZh._(_root);
-	@override late final _TranslationsWebLogViewerZh logViewer = _TranslationsWebLogViewerZh._(_root);
-	@override late final _TranslationsWebPathInputZh pathInput = _TranslationsWebPathInputZh._(_root);
-	@override late final _TranslationsWebMemoryAmbientZh memoryAmbient = _TranslationsWebMemoryAmbientZh._(_root);
-	@override late final _TranslationsWebNoteEditorZh noteEditor = _TranslationsWebNoteEditorZh._(_root);
-	@override late final _TranslationsWebExportZh export = _TranslationsWebExportZh._(_root);
-	@override late final _TranslationsWebKnowledgeZh knowledge = _TranslationsWebKnowledgeZh._(_root);
-	@override late final _TranslationsWebCortexZh cortex = _TranslationsWebCortexZh._(_root);
-	@override late final _TranslationsWebDatabaseZh database = _TranslationsWebDatabaseZh._(_root);
-	@override late final _TranslationsWebRoundTableZh roundTable = _TranslationsWebRoundTableZh._(_root);
+	@override late final _Translations$web$topbar$zh topbar = _Translations$web$topbar$zh._(_root);
+	@override late final _Translations$web$sessions$zh sessions = _Translations$web$sessions$zh._(_root);
+	@override late final _Translations$web$memory$zh memory = _Translations$web$memory$zh._(_root);
+	@override late final _Translations$web$journalStale$zh journalStale = _Translations$web$journalStale$zh._(_root);
+	@override late final _Translations$web$conflicts$zh conflicts = _Translations$web$conflicts$zh._(_root);
+	@override late final _Translations$web$memoryHealth$zh memoryHealth = _Translations$web$memoryHealth$zh._(_root);
+	@override late final _Translations$web$memoryConfig$zh memoryConfig = _Translations$web$memoryConfig$zh._(_root);
+	@override late final _Translations$web$memoryWorkers$zh memoryWorkers = _Translations$web$memoryWorkers$zh._(_root);
+	@override late final _Translations$web$archived$zh archived = _Translations$web$archived$zh._(_root);
+	@override late final _Translations$web$project$zh project = _Translations$web$project$zh._(_root);
+	@override late final _Translations$web$memoryInspector$zh memoryInspector = _Translations$web$memoryInspector$zh._(_root);
+	@override late final _Translations$web$notes$zh notes = _Translations$web$notes$zh._(_root);
+	@override late final _Translations$web$activity$zh activity = _Translations$web$activity$zh._(_root);
+	@override late final _Translations$web$providers$zh providers = _Translations$web$providers$zh._(_root);
+	@override late final _Translations$web$channels$zh channels = _Translations$web$channels$zh._(_root);
+	@override late final _Translations$web$integrations$zh integrations = _Translations$web$integrations$zh._(_root);
+	@override late final _Translations$web$plugins$zh plugins = _Translations$web$plugins$zh._(_root);
+	@override late final _Translations$web$backups$zh backups = _Translations$web$backups$zh._(_root);
+	@override late final _Translations$web$serverSettings$zh serverSettings = _Translations$web$serverSettings$zh._(_root);
+	@override late final _Translations$web$settings$zh settings = _Translations$web$settings$zh._(_root);
+	@override late final _Translations$web$logViewer$zh logViewer = _Translations$web$logViewer$zh._(_root);
+	@override late final _Translations$web$pathInput$zh pathInput = _Translations$web$pathInput$zh._(_root);
+	@override late final _Translations$web$memoryAmbient$zh memoryAmbient = _Translations$web$memoryAmbient$zh._(_root);
+	@override late final _Translations$web$noteEditor$zh noteEditor = _Translations$web$noteEditor$zh._(_root);
+	@override late final _Translations$web$export$zh export = _Translations$web$export$zh._(_root);
+	@override late final _Translations$web$knowledge$zh knowledge = _Translations$web$knowledge$zh._(_root);
+	@override late final _Translations$web$cortex$zh cortex = _Translations$web$cortex$zh._(_root);
+	@override late final _Translations$web$database$zh database = _Translations$web$database$zh._(_root);
+	@override late final _Translations$web$roundTable$zh roundTable = _Translations$web$roundTable$zh._(_root);
 }
 
 // Path: more
-class _TranslationsMoreZh extends TranslationsMoreEn {
-	_TranslationsMoreZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$more$zh extends Translations$more$en {
+	_Translations$more$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
 	// Translations
 	@override String get title => '更多';
-	@override late final _TranslationsMoreIdentityZh identity = _TranslationsMoreIdentityZh._(_root);
-	@override late final _TranslationsMoreSectionsZh sections = _TranslationsMoreSectionsZh._(_root);
-	@override late final _TranslationsMoreItemsZh items = _TranslationsMoreItemsZh._(_root);
+	@override late final _Translations$more$identity$zh identity = _Translations$more$identity$zh._(_root);
+	@override late final _Translations$more$sections$zh sections = _Translations$more$sections$zh._(_root);
+	@override late final _Translations$more$items$zh items = _Translations$more$items$zh._(_root);
 	@override String get signOut => '退出登录';
 }
 
 // Path: activity
-class _TranslationsActivityZh extends TranslationsActivityEn {
-	_TranslationsActivityZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$activity$zh extends Translations$activity$en {
+	_Translations$activity$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -212,13 +213,13 @@ class _TranslationsActivityZh extends TranslationsActivityEn {
 	@override String callsCount({required Object count}) => '${count} 次调用';
 	@override String get directionInbound => '入站';
 	@override String get directionOutbound => '出站';
-	@override late final _TranslationsActivityFilterZh filter = _TranslationsActivityFilterZh._(_root);
-	@override late final _TranslationsActivityDetailZh detail = _TranslationsActivityDetailZh._(_root);
+	@override late final _Translations$activity$filter$zh filter = _Translations$activity$filter$zh._(_root);
+	@override late final _Translations$activity$detail$zh detail = _Translations$activity$detail$zh._(_root);
 }
 
 // Path: memoryAmbient
-class _TranslationsMemoryAmbientZh extends TranslationsMemoryAmbientEn {
-	_TranslationsMemoryAmbientZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$memoryAmbient$zh extends Translations$memoryAmbient$en {
+	_Translations$memoryAmbient$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -250,34 +251,34 @@ class _TranslationsMemoryAmbientZh extends TranslationsMemoryAmbientEn {
 }
 
 // Path: sessions
-class _TranslationsSessionsZh extends TranslationsSessionsEn {
-	_TranslationsSessionsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$sessions$zh extends Translations$sessions$en {
+	_Translations$sessions$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsSessionsDockZh dock = _TranslationsSessionsDockZh._(_root);
-	@override late final _TranslationsSessionsToolsZh tools = _TranslationsSessionsToolsZh._(_root);
+	@override late final _Translations$sessions$dock$zh dock = _Translations$sessions$dock$zh._(_root);
+	@override late final _Translations$sessions$tools$zh tools = _Translations$sessions$tools$zh._(_root);
 	@override String get title => '会话';
 	@override String get refresh => '刷新';
 	@override String get actions => '操作';
 	@override String get spawn => '创建';
-	@override late final _TranslationsSessionsFiltersZh filters = _TranslationsSessionsFiltersZh._(_root);
-	@override late final _TranslationsSessionsCardZh card = _TranslationsSessionsCardZh._(_root);
-	@override late final _TranslationsSessionsEmptyZh empty = _TranslationsSessionsEmptyZh._(_root);
+	@override late final _Translations$sessions$filters$zh filters = _Translations$sessions$filters$zh._(_root);
+	@override late final _Translations$sessions$card$zh card = _Translations$sessions$card$zh._(_root);
+	@override late final _Translations$sessions$empty$zh empty = _Translations$sessions$empty$zh._(_root);
 	@override String get errorTitle => '加载会话失败';
-	@override late final _TranslationsSessionsRelativeZh relative = _TranslationsSessionsRelativeZh._(_root);
-	@override late final _TranslationsSessionsDetailZh detail = _TranslationsSessionsDetailZh._(_root);
-	@override late final _TranslationsSessionsTerminalZh terminal = _TranslationsSessionsTerminalZh._(_root);
-	@override late final _TranslationsSessionsActionZh action = _TranslationsSessionsActionZh._(_root);
-	@override late final _TranslationsSessionsDirPickerZh dirPicker = _TranslationsSessionsDirPickerZh._(_root);
-	@override late final _TranslationsSessionsInspectorZh inspector = _TranslationsSessionsInspectorZh._(_root);
-	@override late final _TranslationsSessionsSpawnSheetZh spawnSheet = _TranslationsSessionsSpawnSheetZh._(_root);
+	@override late final _Translations$sessions$relative$zh relative = _Translations$sessions$relative$zh._(_root);
+	@override late final _Translations$sessions$detail$zh detail = _Translations$sessions$detail$zh._(_root);
+	@override late final _Translations$sessions$terminal$zh terminal = _Translations$sessions$terminal$zh._(_root);
+	@override late final _Translations$sessions$action$zh action = _Translations$sessions$action$zh._(_root);
+	@override late final _Translations$sessions$dirPicker$zh dirPicker = _Translations$sessions$dirPicker$zh._(_root);
+	@override late final _Translations$sessions$inspector$zh inspector = _Translations$sessions$inspector$zh._(_root);
+	@override late final _Translations$sessions$spawnSheet$zh spawnSheet = _Translations$sessions$spawnSheet$zh._(_root);
 }
 
 // Path: mcp
-class _TranslationsMcpZh extends TranslationsMcpEn {
-	_TranslationsMcpZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$mcp$zh extends Translations$mcp$en {
+	_Translations$mcp$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -291,12 +292,12 @@ class _TranslationsMcpZh extends TranslationsMcpEn {
 	@override String copiedSnack({required Object id}) => '已复制 ${id}';
 	@override String get deleteServerTitle => '删除 MCP 服务器？';
 	@override String get deleteSecretTitle => '删除密钥？';
-	@override late final _TranslationsMcpErrorPrefixZh errorPrefix = _TranslationsMcpErrorPrefixZh._(_root);
+	@override late final _Translations$mcp$errorPrefix$zh errorPrefix = _Translations$mcp$errorPrefix$zh._(_root);
 	@override String errorWithMessage({required Object prefix, required Object error}) => '${prefix}：${error}';
-	@override late final _TranslationsMcpEditorZh editor = _TranslationsMcpEditorZh._(_root);
-	@override late final _TranslationsMcpSecretZh secret = _TranslationsMcpSecretZh._(_root);
-	@override late final _TranslationsMcpPopupZh popup = _TranslationsMcpPopupZh._(_root);
-	@override late final _TranslationsMcpKvZh kv = _TranslationsMcpKvZh._(_root);
+	@override late final _Translations$mcp$editor$zh editor = _Translations$mcp$editor$zh._(_root);
+	@override late final _Translations$mcp$secret$zh secret = _Translations$mcp$secret$zh._(_root);
+	@override late final _Translations$mcp$popup$zh popup = _Translations$mcp$popup$zh._(_root);
+	@override late final _Translations$mcp$kv$zh kv = _Translations$mcp$kv$zh._(_root);
 	@override String deleteServerBody({required Object id}) => '移除 ${id} 的密钥库目录。引用此服务器的会话将无法启动。';
 	@override String deleteServerSnack({required Object id}) => '已删除 ${id}。';
 	@override String serversCount({required Object count}) => '服务器（${count}）';
@@ -319,8 +320,8 @@ class _TranslationsMcpZh extends TranslationsMcpEn {
 }
 
 // Path: providers
-class _TranslationsProvidersZh extends TranslationsProvidersEn {
-	_TranslationsProvidersZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$providers$zh extends Translations$providers$en {
+	_Translations$providers$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -330,11 +331,11 @@ class _TranslationsProvidersZh extends TranslationsProvidersEn {
 	@override String saveFailedApi({required Object error}) => '保存失败：${error}';
 	@override String saveFailedGeneric({required Object error}) => '保存失败：${error}';
 	@override String get reload => '重新加载';
-	@override late final _TranslationsProvidersErrorPrefixZh errorPrefix = _TranslationsProvidersErrorPrefixZh._(_root);
+	@override late final _Translations$providers$errorPrefix$zh errorPrefix = _Translations$providers$errorPrefix$zh._(_root);
 	@override String errorWithMessage({required Object prefix, required Object error}) => '${prefix}：${error}';
-	@override late final _TranslationsProvidersUpdateCheckZh updateCheck = _TranslationsProvidersUpdateCheckZh._(_root);
-	@override late final _TranslationsProvidersAccountsZh accounts = _TranslationsProvidersAccountsZh._(_root);
-	@override late final _TranslationsProvidersAntigravityAccountsZh antigravityAccounts = _TranslationsProvidersAntigravityAccountsZh._(_root);
+	@override late final _Translations$providers$updateCheck$zh updateCheck = _Translations$providers$updateCheck$zh._(_root);
+	@override late final _Translations$providers$accounts$zh accounts = _Translations$providers$accounts$zh._(_root);
+	@override late final _Translations$providers$antigravityAccounts$zh antigravityAccounts = _Translations$providers$antigravityAccounts$zh._(_root);
 	@override String get configFallbackTitle => '提供商配置';
 	@override String get saving => '保存中…';
 	@override String get save => '保存';
@@ -349,8 +350,8 @@ class _TranslationsProvidersZh extends TranslationsProvidersEn {
 }
 
 // Path: integrations
-class _TranslationsIntegrationsZh extends TranslationsIntegrationsEn {
-	_TranslationsIntegrationsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$integrations$zh extends Translations$integrations$en {
+	_Translations$integrations$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -399,8 +400,8 @@ class _TranslationsIntegrationsZh extends TranslationsIntegrationsEn {
 	@override String get directionAll => '全部';
 	@override String get directionInbound => '入站';
 	@override String get directionOutbound => '出站';
-	@override late final _TranslationsIntegrationsFormZh form = _TranslationsIntegrationsFormZh._(_root);
-	@override late final _TranslationsIntegrationsDefaultAgentZh defaultAgent = _TranslationsIntegrationsDefaultAgentZh._(_root);
+	@override late final _Translations$integrations$form$zh form = _Translations$integrations$form$zh._(_root);
+	@override late final _Translations$integrations$defaultAgent$zh defaultAgent = _Translations$integrations$defaultAgent$zh._(_root);
 	@override String get emptyState => '在 Web 管理端注册：集成 → 新建。';
 	@override String get sectionRegistered => '已注册';
 	@override String get sectionSystem => '系统';
@@ -408,8 +409,8 @@ class _TranslationsIntegrationsZh extends TranslationsIntegrationsEn {
 }
 
 // Path: memoryWorkers
-class _TranslationsMemoryWorkersZh extends TranslationsMemoryWorkersEn {
-	_TranslationsMemoryWorkersZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$memoryWorkers$zh extends Translations$memoryWorkers$en {
+	_Translations$memoryWorkers$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -446,12 +447,12 @@ class _TranslationsMemoryWorkersZh extends TranslationsMemoryWorkersEn {
 	@override String testOkSnack({required Object label, required Object duration}) => '${label} OK — ${duration}ms';
 	@override String testFailedReturnedSnack({required Object label, required Object error}) => '${label} 失败：${error}';
 	@override String get unknownError => '未知';
-	@override late final _TranslationsMemoryWorkersTasksZh tasks = _TranslationsMemoryWorkersTasksZh._(_root);
+	@override late final _Translations$memoryWorkers$tasks$zh tasks = _Translations$memoryWorkers$tasks$zh._(_root);
 }
 
 // Path: memoryArchived
-class _TranslationsMemoryArchivedZh extends TranslationsMemoryArchivedEn {
-	_TranslationsMemoryArchivedZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$memoryArchived$zh extends Translations$memoryArchived$en {
+	_Translations$memoryArchived$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -479,17 +480,17 @@ class _TranslationsMemoryArchivedZh extends TranslationsMemoryArchivedEn {
 }
 
 // Path: project
-class _TranslationsProjectZh extends TranslationsProjectEn {
-	_TranslationsProjectZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$project$zh extends Translations$project$en {
+	_Translations$project$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
 	// Translations
 	@override String get title => '项目';
 	@override String get pickFirst => '请先选择一个项目。';
-	@override late final _TranslationsProjectHealthZh health = _TranslationsProjectHealthZh._(_root);
-	@override late final _TranslationsProjectConflictsZh conflicts = _TranslationsProjectConflictsZh._(_root);
-	@override late final _TranslationsProjectJournalPruneZh journalPrune = _TranslationsProjectJournalPruneZh._(_root);
+	@override late final _Translations$project$health$zh health = _Translations$project$health$zh._(_root);
+	@override late final _Translations$project$conflicts$zh conflicts = _Translations$project$conflicts$zh._(_root);
+	@override late final _Translations$project$journalPrune$zh journalPrune = _Translations$project$journalPrune$zh._(_root);
 	@override String loadFailed({required Object error}) => '加载失败：${error}';
 	@override String projectsLoadFailed({required Object error}) => '加载项目列表失败：${error}';
 	@override String get projectLabel => '项目';
@@ -517,12 +518,12 @@ class _TranslationsProjectZh extends TranslationsProjectEn {
 	@override String get approve => '批准';
 	@override String replaceConfirmTitle({required Object kind}) => '替换当前 ${kind}？';
 	@override String replaceKind({required Object kind}) => '替换 ${kind}';
-	@override late final _TranslationsProjectArchivedZh archived = _TranslationsProjectArchivedZh._(_root);
+	@override late final _Translations$project$archived$zh archived = _Translations$project$archived$zh._(_root);
 }
 
 // Path: backups
-class _TranslationsBackupsZh extends TranslationsBackupsEn {
-	_TranslationsBackupsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$backups$zh extends Translations$backups$en {
+	_Translations$backups$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -555,33 +556,33 @@ class _TranslationsBackupsZh extends TranslationsBackupsEn {
 	@override String deleteFailedGeneric({required Object error}) => '删除失败：${error}';
 	@override String get menuSchedules => '计划';
 	@override String get menuTargets => '目标';
-	@override late final _TranslationsBackupsKvZh kv = _TranslationsBackupsKvZh._(_root);
-	@override late final _TranslationsBackupsRecoveryKitZh recoveryKit = _TranslationsBackupsRecoveryKitZh._(_root);
-	@override late final _TranslationsBackupsEmptyMissingDepsZh emptyMissingDeps = _TranslationsBackupsEmptyMissingDepsZh._(_root);
-	@override late final _TranslationsBackupsEmptyNoTargetsZh emptyNoTargets = _TranslationsBackupsEmptyNoTargetsZh._(_root);
-	@override late final _TranslationsBackupsEmptyNoBackupsZh emptyNoBackups = _TranslationsBackupsEmptyNoBackupsZh._(_root);
+	@override late final _Translations$backups$kv$zh kv = _Translations$backups$kv$zh._(_root);
+	@override late final _Translations$backups$recoveryKit$zh recoveryKit = _Translations$backups$recoveryKit$zh._(_root);
+	@override late final _Translations$backups$emptyMissingDeps$zh emptyMissingDeps = _Translations$backups$emptyMissingDeps$zh._(_root);
+	@override late final _Translations$backups$emptyNoTargets$zh emptyNoTargets = _Translations$backups$emptyNoTargets$zh._(_root);
+	@override late final _Translations$backups$emptyNoBackups$zh emptyNoBackups = _Translations$backups$emptyNoBackups$zh._(_root);
 	@override String get restartToActivate => '重启 opendray 以激活备份';
 	@override String get passphraseSaved => '你的密语已保存。网关仅在启动时加载，因此更改需重启后才生效。';
 	@override String get keyFileLabel => '密钥文件';
 	@override String get configuredViaLabel => '配置方式';
-	@override late final _TranslationsBackupsWizardZh wizard = _TranslationsBackupsWizardZh._(_root);
+	@override late final _Translations$backups$wizard$zh wizard = _Translations$backups$wizard$zh._(_root);
 	@override String get overviewTargets => '目标';
 	@override String get overviewSchedules => '计划';
 	@override String get overviewBackups => '备份';
-	@override late final _TranslationsBackupsHealthZh health = _TranslationsBackupsHealthZh._(_root);
+	@override late final _Translations$backups$health$zh health = _Translations$backups$health$zh._(_root);
 	@override String get failedToLoad => '加载备份失败';
 	@override String get envVarConfigured => 'OPENDRAY_BACKUP_KEY 环境变量';
 	@override String get savedConfirmCheckbox => '我已将密语保存到密码管理器';
 	@override String get pgDumpMissing => 'pg_dump 不在 PATH 中。请安装 postgresql-client 并重启 opendray。';
-	@override late final _TranslationsBackupsEncryptionZh encryption = _TranslationsBackupsEncryptionZh._(_root);
+	@override late final _Translations$backups$encryption$zh encryption = _Translations$backups$encryption$zh._(_root);
 	@override String get restoreFromFile => '从文件恢复';
-	@override late final _TranslationsBackupsRestoreZh restore = _TranslationsBackupsRestoreZh._(_root);
-	@override late final _TranslationsBackupsInventoryZh inventory = _TranslationsBackupsInventoryZh._(_root);
+	@override late final _Translations$backups$restore$zh restore = _Translations$backups$restore$zh._(_root);
+	@override late final _Translations$backups$inventory$zh inventory = _Translations$backups$inventory$zh._(_root);
 }
 
 // Path: backupTargets
-class _TranslationsBackupTargetsZh extends TranslationsBackupTargetsEn {
-	_TranslationsBackupTargetsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$backupTargets$zh extends Translations$backupTargets$en {
+	_Translations$backupTargets$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -597,8 +598,8 @@ class _TranslationsBackupTargetsZh extends TranslationsBackupTargetsEn {
 }
 
 // Path: backupSchedules
-class _TranslationsBackupSchedulesZh extends TranslationsBackupSchedulesEn {
-	_TranslationsBackupSchedulesZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$backupSchedules$zh extends Translations$backupSchedules$en {
+	_Translations$backupSchedules$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -638,8 +639,8 @@ class _TranslationsBackupSchedulesZh extends TranslationsBackupSchedulesEn {
 }
 
 // Path: backupTargetEditor
-class _TranslationsBackupTargetEditorZh extends TranslationsBackupTargetEditorEn {
-	_TranslationsBackupTargetEditorZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$backupTargetEditor$zh extends Translations$backupTargetEditor$en {
+	_Translations$backupTargetEditor$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -647,7 +648,7 @@ class _TranslationsBackupTargetEditorZh extends TranslationsBackupTargetEditorEn
 	@override String get useHttps => '使用 HTTPS';
 	@override String get pathStyle => '路径风格寻址';
 	@override String get pathStyleSubtitle => '旧版 / MinIO';
-	@override late final _TranslationsBackupTargetEditorKindsZh kinds = _TranslationsBackupTargetEditorKindsZh._(_root);
+	@override late final _Translations$backupTargetEditor$kinds$zh kinds = _Translations$backupTargetEditor$kinds$zh._(_root);
 	@override String get formTitleEdit => '编辑目标';
 	@override String get formTitleNew => '新建备份目标';
 	@override String idHintAuto({required Object prefix}) => '自动：${prefix}-1';
@@ -699,8 +700,8 @@ class _TranslationsBackupTargetEditorZh extends TranslationsBackupTargetEditorEn
 }
 
 // Path: githosts
-class _TranslationsGithostsZh extends TranslationsGithostsEn {
-	_TranslationsGithostsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$githosts$zh extends Translations$githosts$en {
+	_Translations$githosts$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -709,8 +710,8 @@ class _TranslationsGithostsZh extends TranslationsGithostsEn {
 	@override String get addHost => '添加主机';
 	@override String get deleteTitle => '删除 Git 主机？';
 	@override String errorWithMessage({required Object prefix, required Object error}) => '${prefix}：${error}';
-	@override late final _TranslationsGithostsErrorPrefixZh errorPrefix = _TranslationsGithostsErrorPrefixZh._(_root);
-	@override late final _TranslationsGithostsFormZh form = _TranslationsGithostsFormZh._(_root);
+	@override late final _Translations$githosts$errorPrefix$zh errorPrefix = _Translations$githosts$errorPrefix$zh._(_root);
+	@override late final _Translations$githosts$form$zh form = _Translations$githosts$form$zh._(_root);
 	@override String deleteBody({required Object host}) => '移除该凭据。试图列出 ${host} 的 PR 的会话将回退到未认证 API。';
 	@override String deletedSnack({required Object name}) => '已删除 ${name}。';
 	@override String enabledSnack({required Object name}) => '${name} 已启用。';
@@ -720,8 +721,8 @@ class _TranslationsGithostsZh extends TranslationsGithostsEn {
 }
 
 // Path: channels
-class _TranslationsChannelsZh extends TranslationsChannelsEn {
-	_TranslationsChannelsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$channels$zh extends Translations$channels$en {
+	_Translations$channels$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -738,25 +739,25 @@ class _TranslationsChannelsZh extends TranslationsChannelsEn {
 	@override String createFailedApi({required Object error}) => '创建失败：${error}';
 	@override String createFailedGeneric({required Object error}) => '创建失败：${error}';
 	@override String get deleteTitle => '删除通道？';
-	@override late final _TranslationsChannelsConfigDialogZh configDialog = _TranslationsChannelsConfigDialogZh._(_root);
-	@override late final _TranslationsChannelsWebhookDialogZh webhookDialog = _TranslationsChannelsWebhookDialogZh._(_root);
+	@override late final _Translations$channels$configDialog$zh configDialog = _Translations$channels$configDialog$zh._(_root);
+	@override late final _Translations$channels$webhookDialog$zh webhookDialog = _Translations$channels$webhookDialog$zh._(_root);
 	@override String errorWithMessage({required Object prefix, required Object error}) => '${prefix}：${error}';
-	@override late final _TranslationsChannelsNotificationsZh notifications = _TranslationsChannelsNotificationsZh._(_root);
-	@override late final _TranslationsChannelsPopupZh popup = _TranslationsChannelsPopupZh._(_root);
-	@override late final _TranslationsChannelsBadgesZh badges = _TranslationsChannelsBadgesZh._(_root);
+	@override late final _Translations$channels$notifications$zh notifications = _Translations$channels$notifications$zh._(_root);
+	@override late final _Translations$channels$popup$zh popup = _Translations$channels$popup$zh._(_root);
+	@override late final _Translations$channels$badges$zh badges = _Translations$channels$badges$zh._(_root);
 	@override String capsLabel({required Object list}) => '· 能力：${list}';
 	@override String get bridgeWebOnly => 'Bridge 通道仅 Web 端';
 	@override String get bridgeEmptyAdd => '在 Web 管理端添加：通道 → 新建。';
 	@override String get deleteBody => '停止该通道并移除其配置。仍在传输中的通知会被静默丢弃。';
-	@override late final _TranslationsChannelsSnacksZh snacks = _TranslationsChannelsSnacksZh._(_root);
-	@override late final _TranslationsChannelsErrorPrefixZh errorPrefix = _TranslationsChannelsErrorPrefixZh._(_root);
+	@override late final _Translations$channels$snacks$zh snacks = _Translations$channels$snacks$zh._(_root);
+	@override late final _Translations$channels$errorPrefix$zh errorPrefix = _Translations$channels$errorPrefix$zh._(_root);
 	@override String get failedToLoad => '加载通道失败';
-	@override late final _TranslationsChannelsKindsZh kinds = _TranslationsChannelsKindsZh._(_root);
+	@override late final _Translations$channels$kinds$zh kinds = _Translations$channels$kinds$zh._(_root);
 }
 
 // Path: onboarding
-class _TranslationsOnboardingZh extends TranslationsOnboardingEn {
-	_TranslationsOnboardingZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$onboarding$zh extends Translations$onboarding$en {
+	_Translations$onboarding$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -767,8 +768,8 @@ class _TranslationsOnboardingZh extends TranslationsOnboardingEn {
 }
 
 // Path: skills
-class _TranslationsSkillsZh extends TranslationsSkillsEn {
-	_TranslationsSkillsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$skills$zh extends Translations$skills$en {
+	_Translations$skills$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -814,8 +815,8 @@ class _TranslationsSkillsZh extends TranslationsSkillsEn {
 }
 
 // Path: customTasks
-class _TranslationsCustomTasksZh extends TranslationsCustomTasksEn {
-	_TranslationsCustomTasksZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$customTasks$zh extends Translations$customTasks$en {
+	_Translations$customTasks$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -860,8 +861,8 @@ class _TranslationsCustomTasksZh extends TranslationsCustomTasksEn {
 }
 
 // Path: notesPage
-class _TranslationsNotesPageZh extends TranslationsNotesPageEn {
-	_TranslationsNotesPageZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$notesPage$zh extends Translations$notesPage$en {
+	_Translations$notesPage$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -891,100 +892,100 @@ class _TranslationsNotesPageZh extends TranslationsNotesPageEn {
 	@override String get validatePath => '必须填写路径';
 	@override String get validatePathDots => '路径不能包含「..」';
 	@override String get pathHelper => '缺失时自动追加 .md。';
-	@override late final _TranslationsNotesPageEditorZh editor = _TranslationsNotesPageEditorZh._(_root);
+	@override late final _Translations$notesPage$editor$zh editor = _Translations$notesPage$editor$zh._(_root);
 }
 
 // Path: dataExport
-class _TranslationsDataExportZh extends TranslationsDataExportEn {
-	_TranslationsDataExportZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$dataExport$zh extends Translations$dataExport$en {
+	_Translations$dataExport$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
 	// Translations
 	@override String get title => '数据导出与导入';
 	@override String get subtitle => '面向用户的数据包，用于迁移或验证 — 与 /backups（灾难恢复）相互独立。';
-	@override late final _TranslationsDataExportSectionsZh sections = _TranslationsDataExportSectionsZh._(_root);
-	@override late final _TranslationsDataExportFormZh form = _TranslationsDataExportFormZh._(_root);
-	@override late final _TranslationsDataExportHistoryZh history = _TranslationsDataExportHistoryZh._(_root);
-	@override late final _TranslationsDataExportImportZh import = _TranslationsDataExportImportZh._(_root);
-	@override late final _TranslationsDataExportImportsZh imports = _TranslationsDataExportImportsZh._(_root);
-	@override late final _TranslationsDataExportRelativeZh relative = _TranslationsDataExportRelativeZh._(_root);
-	@override late final _TranslationsDataExportStatusZh status = _TranslationsDataExportStatusZh._(_root);
+	@override late final _Translations$dataExport$sections$zh sections = _Translations$dataExport$sections$zh._(_root);
+	@override late final _Translations$dataExport$form$zh form = _Translations$dataExport$form$zh._(_root);
+	@override late final _Translations$dataExport$history$zh history = _Translations$dataExport$history$zh._(_root);
+	@override late final _Translations$dataExport$import$zh import = _Translations$dataExport$import$zh._(_root);
+	@override late final _Translations$dataExport$imports$zh imports = _Translations$dataExport$imports$zh._(_root);
+	@override late final _Translations$dataExport$relative$zh relative = _Translations$dataExport$relative$zh._(_root);
+	@override late final _Translations$dataExport$status$zh status = _Translations$dataExport$status$zh._(_root);
 }
 
 // Path: memory
-class _TranslationsMemoryZh extends TranslationsMemoryEn {
-	_TranslationsMemoryZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$memory$zh extends Translations$memory$en {
+	_Translations$memory$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsMemoryStatusZh status = _TranslationsMemoryStatusZh._(_root);
+	@override late final _Translations$memory$status$zh status = _Translations$memory$status$zh._(_root);
 	@override String get title => '记忆';
 	@override String get more => '更多';
 	@override String get workers => '记忆工作器';
-	@override late final _TranslationsMemoryRankZh rank = _TranslationsMemoryRankZh._(_root);
+	@override late final _Translations$memory$rank$zh rank = _Translations$memory$rank$zh._(_root);
 	@override String get kNew => '新建';
 	@override String get searchHint => '搜索…';
 	@override String get projectLabel => '项目';
 	@override String get filterHint => '按名称或路径筛选…';
 	@override String get copied => '已复制';
 	@override String get copyTooltip => '复制文本';
-	@override late final _TranslationsMemoryDeleteAllConfirmZh deleteAllConfirm = _TranslationsMemoryDeleteAllConfirmZh._(_root);
+	@override late final _Translations$memory$deleteAllConfirm$zh deleteAllConfirm = _Translations$memory$deleteAllConfirm$zh._(_root);
 	@override String deletedSnackOne({required Object n}) => '已删除 ${n} 条记忆';
 	@override String deletedSnackOther({required Object n}) => '已删除 ${n} 条记忆';
 	@override String bulkDeleteFailedApi({required Object error}) => '批量删除失败：${error}';
 	@override String bulkDeleteFailedGeneric({required Object error}) => '批量删除失败：${error}';
-	@override late final _TranslationsMemoryDeleteOneZh deleteOne = _TranslationsMemoryDeleteOneZh._(_root);
-	@override late final _TranslationsMemoryScopeZh scope = _TranslationsMemoryScopeZh._(_root);
-	@override late final _TranslationsMemoryCreateZh create = _TranslationsMemoryCreateZh._(_root);
+	@override late final _Translations$memory$deleteOne$zh deleteOne = _Translations$memory$deleteOne$zh._(_root);
+	@override late final _Translations$memory$scope$zh scope = _Translations$memory$scope$zh._(_root);
+	@override late final _Translations$memory$create$zh create = _Translations$memory$create$zh._(_root);
 	@override String get archive => '归档';
 	@override String get quarantine => '隔离';
 	@override String get archivedToast => '记忆已归档——可在「已归档」中恢复';
 	@override String get quarantinedToast => '记忆已隔离——请在 Cortex → 隔离区 审查';
 	@override String archiveFailed({required Object error}) => '归档失败：${error}';
 	@override String quarantineFailed({required Object error}) => '隔离失败：${error}';
-	@override late final _TranslationsMemoryReembedZh reembed = _TranslationsMemoryReembedZh._(_root);
+	@override late final _Translations$memory$reembed$zh reembed = _Translations$memory$reembed$zh._(_root);
 }
 
 // Path: about
-class _TranslationsAboutZh extends TranslationsAboutEn {
-	_TranslationsAboutZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$about$zh extends Translations$about$en {
+	_Translations$about$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
 	// Translations
 	@override String get title => '关于';
 	@override String get loading => '加载中…';
-	@override late final _TranslationsAboutSectionsZh sections = _TranslationsAboutSectionsZh._(_root);
-	@override late final _TranslationsAboutFieldsZh fields = _TranslationsAboutFieldsZh._(_root);
+	@override late final _Translations$about$sections$zh sections = _Translations$about$sections$zh._(_root);
+	@override late final _Translations$about$fields$zh fields = _Translations$about$fields$zh._(_root);
 	@override String copied({required Object label}) => '已复制 ${label}';
 	@override String get copyTooltip => '复制';
-	@override late final _TranslationsAboutCopyLabelsZh copyLabels = _TranslationsAboutCopyLabelsZh._(_root);
+	@override late final _Translations$about$copyLabels$zh copyLabels = _Translations$about$copyLabels$zh._(_root);
 	@override String get tagline => 'opendray mobile — 多 CLI 网关控制。\n源码：github.com/Opendray/opendray';
-	@override late final _TranslationsAboutGatewayZh gateway = _TranslationsAboutGatewayZh._(_root);
+	@override late final _Translations$about$gateway$zh gateway = _Translations$about$gateway$zh._(_root);
 }
 
 // Path: settings
-class _TranslationsSettingsZh extends TranslationsSettingsEn {
-	_TranslationsSettingsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$settings$zh extends Translations$settings$en {
+	_Translations$settings$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
 	// Translations
 	@override String get title => '设置';
-	@override late final _TranslationsSettingsLanguageZh language = _TranslationsSettingsLanguageZh._(_root);
-	@override late final _TranslationsSettingsAppearanceZh appearance = _TranslationsSettingsAppearanceZh._(_root);
-	@override late final _TranslationsSettingsAccountZh account = _TranslationsSettingsAccountZh._(_root);
-	@override late final _TranslationsSettingsGatewayZh gateway = _TranslationsSettingsGatewayZh._(_root);
-	@override late final _TranslationsSettingsChangeCredentialsZh changeCredentials = _TranslationsSettingsChangeCredentialsZh._(_root);
-	@override late final _TranslationsSettingsLogViewerZh logViewer = _TranslationsSettingsLogViewerZh._(_root);
-	@override late final _TranslationsSettingsServerSettingsZh serverSettings = _TranslationsSettingsServerSettingsZh._(_root);
+	@override late final _Translations$settings$language$zh language = _Translations$settings$language$zh._(_root);
+	@override late final _Translations$settings$appearance$zh appearance = _Translations$settings$appearance$zh._(_root);
+	@override late final _Translations$settings$account$zh account = _Translations$settings$account$zh._(_root);
+	@override late final _Translations$settings$gateway$zh gateway = _Translations$settings$gateway$zh._(_root);
+	@override late final _Translations$settings$changeCredentials$zh changeCredentials = _Translations$settings$changeCredentials$zh._(_root);
+	@override late final _Translations$settings$logViewer$zh logViewer = _Translations$settings$logViewer$zh._(_root);
+	@override late final _Translations$settings$serverSettings$zh serverSettings = _Translations$settings$serverSettings$zh._(_root);
 }
 
 // Path: memoryQuarantine
-class _TranslationsMemoryQuarantineZh extends TranslationsMemoryQuarantineEn {
-	_TranslationsMemoryQuarantineZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$memoryQuarantine$zh extends Translations$memoryQuarantine$en {
+	_Translations$memoryQuarantine$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -1003,8 +1004,8 @@ class _TranslationsMemoryQuarantineZh extends TranslationsMemoryQuarantineEn {
 }
 
 // Path: cortexHub
-class _TranslationsCortexHubZh extends TranslationsCortexHubEn {
-	_TranslationsCortexHubZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$cortexHub$zh extends Translations$cortexHub$en {
+	_Translations$cortexHub$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -1039,8 +1040,8 @@ class _TranslationsCortexHubZh extends TranslationsCortexHubEn {
 }
 
 // Path: cortexSettings
-class _TranslationsCortexSettingsZh extends TranslationsCortexSettingsEn {
-	_TranslationsCortexSettingsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$cortexSettings$zh extends Translations$cortexSettings$en {
+	_Translations$cortexSettings$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -1056,9 +1057,97 @@ class _TranslationsCortexSettingsZh extends TranslationsCortexSettingsEn {
 	@override String get defaultBadge => '默认';
 }
 
+// Path: agentTasks
+class _Translations$agentTasks$zh extends Translations$agentTasks$en {
+	_Translations$agentTasks$zh._(TranslationsZh root) : this._root = root, super.internal(root);
+
+	final TranslationsZh _root; // ignore: unused_field
+
+	// Translations
+	@override String get navLabel => '任务';
+	@override String get title => 'Agent 任务';
+	@override String get create => '新建任务';
+	@override String get emptyTitle => '暂无 Agent 任务';
+	@override String get emptyBody => '创建非交互式 Agent 任务。终端会话保持独立。';
+	@override String get refresh => '刷新';
+	@override String get all => '全部';
+	@override String get loadMore => '加载更多';
+	@override String get offline => '网络已断开，正在显示最近一次加载的状态。';
+	@override String get retry => '重试';
+	@override String get project => '项目';
+	@override String get provider => 'Provider';
+	@override String get prompt => '任务指令';
+	@override String get workspace => '工作目录';
+	@override String get contextMode => '上下文';
+	@override String get newContext => '新上下文';
+	@override String get continueContext => '继续上下文';
+	@override String get attachments => '附件';
+	@override String get timeout => '超时秒数';
+	@override String get telegramNotify => '完成后通知 Telegram';
+	@override String get submit => '创建任务';
+	@override String get creating => '正在创建…';
+	@override String get required => '此项必填';
+	@override String get invalidTimeout => '请输入 30 到 86400 秒之间的超时时间';
+	@override String get details => '任务详情';
+	@override String get runs => '运行记录';
+	@override String get events => '实时输出';
+	@override String get artifacts => '制品';
+	@override String get continueAction => '继续';
+	@override String get cancelAction => '取消';
+	@override String get confirm => '确认';
+	@override String get retryAction => '重试';
+	@override String get confirmCancel => '确认取消该任务并终止当前进程树？';
+	@override String get confirmRetry => '确认创建新的重试 Run？';
+	@override String get waitingInput => '等待补充输入';
+	@override String get continueHint => '输入后续指令';
+	@override String get send => '发送';
+	@override String get stdout => '标准输出';
+	@override String get stderr => '标准错误';
+	@override String get raw => '原始事件';
+	@override String get download => '下载';
+	@override String get verified => '完整性校验通过';
+	@override String get downloadFailed => '制品下载失败';
+	@override String get noRuns => '暂无 Run';
+	@override String get noOutput => '暂无输出';
+	@override String get source => '来源';
+	@override String get status => '状态';
+	@override String get created => '创建时间';
+	@override String get updated => '更新时间';
+	@override String get context => '运行上下文';
+	@override String get currentRun => '当前 Run';
+	@override String get networkError => '网络请求失败';
+	@override String get permissionError => '当前账号没有此操作权限';
+	@override String get sessionIsolation => 'One-shot 任务不会打开或写入终端会话。';
+	@override String get capabilityResume => '支持继续';
+	@override String get capabilityAttachment => '支持附件';
+	@override String get smallScreenHint => '小屏设备会自动纵向排列字段。';
+	@override String get filterStatus => '状态筛选';
+	@override String get taskCreated => '任务已创建';
+	@override String get actionFailed => '操作失败';
+	@override String get loading => '加载中…';
+	@override String get open => '打开';
+	@override String get timeline => '时间线';
+	@override String get result => '结果';
+	@override String get idempotent => '重复点击会复用同一个幂等键。';
+	@override String get telegramSource => 'Telegram';
+	@override String get mobileSource => '移动端';
+	@override String get apiSource => 'API';
+	@override String get unknownSource => '未知';
+	@override String get cancelled => '已取消';
+	@override String get completed => '已完成';
+	@override String get failed => '失败';
+	@override String get timedOut => '已超时';
+	@override String get running => '运行中';
+	@override String get queued => '排队中';
+	@override String get pending => '待处理';
+	@override String get waiting => '等待输入';
+	@override String get unknown => '未知';
+	@override String get allProjects => '全部项目';
+}
+
 // Path: nav.updates
-class _TranslationsNavUpdatesZh extends TranslationsNavUpdatesEn {
-	_TranslationsNavUpdatesZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$nav$updates$zh extends Translations$nav$updates$en {
+	_Translations$nav$updates$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -1076,8 +1165,8 @@ class _TranslationsNavUpdatesZh extends TranslationsNavUpdatesEn {
 }
 
 // Path: web.topbar
-class _TranslationsWebTopbarZh extends TranslationsWebTopbarEn {
-	_TranslationsWebTopbarZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$topbar$zh extends Translations$web$topbar$en {
+	_Translations$web$topbar$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -1102,28 +1191,28 @@ class _TranslationsWebTopbarZh extends TranslationsWebTopbarEn {
 }
 
 // Path: web.sessions
-class _TranslationsWebSessionsZh extends TranslationsWebSessionsEn {
-	_TranslationsWebSessionsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$sessions$zh extends Translations$web$sessions$en {
+	_Translations$web$sessions$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsWebSessionsListZh list = _TranslationsWebSessionsListZh._(_root);
-	@override late final _TranslationsWebSessionsTabsZh tabs = _TranslationsWebSessionsTabsZh._(_root);
-	@override late final _TranslationsWebSessionsPageZh page = _TranslationsWebSessionsPageZh._(_root);
-	@override late final _TranslationsWebSessionsEmptyZh empty = _TranslationsWebSessionsEmptyZh._(_root);
-	@override late final _TranslationsWebSessionsHeaderZh header = _TranslationsWebSessionsHeaderZh._(_root);
-	@override late final _TranslationsWebSessionsTerminalZh terminal = _TranslationsWebSessionsTerminalZh._(_root);
-	@override late final _TranslationsWebSessionsSpawnZh spawn = _TranslationsWebSessionsSpawnZh._(_root);
-	@override late final _TranslationsWebSessionsAccountSwitcherZh accountSwitcher = _TranslationsWebSessionsAccountSwitcherZh._(_root);
-	@override late final _TranslationsWebSessionsInspectorZh inspector = _TranslationsWebSessionsInspectorZh._(_root);
-	@override late final _TranslationsWebSessionsEndedZh ended = _TranslationsWebSessionsEndedZh._(_root);
-	@override late final _TranslationsWebSessionsFileBrowserZh fileBrowser = _TranslationsWebSessionsFileBrowserZh._(_root);
+	@override late final _Translations$web$sessions$list$zh list = _Translations$web$sessions$list$zh._(_root);
+	@override late final _Translations$web$sessions$tabs$zh tabs = _Translations$web$sessions$tabs$zh._(_root);
+	@override late final _Translations$web$sessions$page$zh page = _Translations$web$sessions$page$zh._(_root);
+	@override late final _Translations$web$sessions$empty$zh empty = _Translations$web$sessions$empty$zh._(_root);
+	@override late final _Translations$web$sessions$header$zh header = _Translations$web$sessions$header$zh._(_root);
+	@override late final _Translations$web$sessions$terminal$zh terminal = _Translations$web$sessions$terminal$zh._(_root);
+	@override late final _Translations$web$sessions$spawn$zh spawn = _Translations$web$sessions$spawn$zh._(_root);
+	@override late final _Translations$web$sessions$accountSwitcher$zh accountSwitcher = _Translations$web$sessions$accountSwitcher$zh._(_root);
+	@override late final _Translations$web$sessions$inspector$zh inspector = _Translations$web$sessions$inspector$zh._(_root);
+	@override late final _Translations$web$sessions$ended$zh ended = _Translations$web$sessions$ended$zh._(_root);
+	@override late final _Translations$web$sessions$fileBrowser$zh fileBrowser = _Translations$web$sessions$fileBrowser$zh._(_root);
 }
 
 // Path: web.memory
-class _TranslationsWebMemoryZh extends TranslationsWebMemoryEn {
-	_TranslationsWebMemoryZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$memory$zh extends Translations$web$memory$en {
+	_Translations$web$memory$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -1138,8 +1227,8 @@ class _TranslationsWebMemoryZh extends TranslationsWebMemoryEn {
 }
 
 // Path: web.journalStale
-class _TranslationsWebJournalStaleZh extends TranslationsWebJournalStaleEn {
-	_TranslationsWebJournalStaleZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$journalStale$zh extends Translations$web$journalStale$en {
+	_Translations$web$journalStale$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -1157,8 +1246,8 @@ class _TranslationsWebJournalStaleZh extends TranslationsWebJournalStaleEn {
 }
 
 // Path: web.conflicts
-class _TranslationsWebConflictsZh extends TranslationsWebConflictsEn {
-	_TranslationsWebConflictsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$conflicts$zh extends Translations$web$conflicts$en {
+	_Translations$web$conflicts$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -1178,14 +1267,14 @@ class _TranslationsWebConflictsZh extends TranslationsWebConflictsEn {
 	@override String get quickActions => '快速修复：';
 	@override String get deleteFact => '删除 fact';
 	@override String deleteFactSide({required Object side, required Object ref}) => '删除 ${side}: ${ref}';
-	@override late final _TranslationsWebConflictsConfirmDeleteZh confirmDelete = _TranslationsWebConflictsConfirmDeleteZh._(_root);
-	@override late final _TranslationsWebConflictsOpenLayerZh openLayer = _TranslationsWebConflictsOpenLayerZh._(_root);
-	@override late final _TranslationsWebConflictsSeverityZh severity = _TranslationsWebConflictsSeverityZh._(_root);
+	@override late final _Translations$web$conflicts$confirmDelete$zh confirmDelete = _Translations$web$conflicts$confirmDelete$zh._(_root);
+	@override late final _Translations$web$conflicts$openLayer$zh openLayer = _Translations$web$conflicts$openLayer$zh._(_root);
+	@override late final _Translations$web$conflicts$severity$zh severity = _Translations$web$conflicts$severity$zh._(_root);
 }
 
 // Path: web.memoryHealth
-class _TranslationsWebMemoryHealthZh extends TranslationsWebMemoryHealthEn {
-	_TranslationsWebMemoryHealthZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$memoryHealth$zh extends Translations$web$memoryHealth$en {
+	_Translations$web$memoryHealth$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -1216,23 +1305,23 @@ class _TranslationsWebMemoryHealthZh extends TranslationsWebMemoryHealthEn {
 }
 
 // Path: web.memoryConfig
-class _TranslationsWebMemoryConfigZh extends TranslationsWebMemoryConfigEn {
-	_TranslationsWebMemoryConfigZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$memoryConfig$zh extends Translations$web$memoryConfig$en {
+	_Translations$web$memoryConfig$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
 	// Translations
 	@override String get title => 'Cortex 设置';
 	@override String get subtitle => 'AI 闭环的全部运行时旋钮都在这里——spawn 注入、LLM provider、按任务的工作器路由、捕获触发器、注入策略、token 花费。保存即生效，无需重启。';
-	@override late final _TranslationsWebMemoryConfigSectionsZh sections = _TranslationsWebMemoryConfigSectionsZh._(_root);
-	@override late final _TranslationsWebMemoryConfigSectionHintsZh sectionHints = _TranslationsWebMemoryConfigSectionHintsZh._(_root);
-	@override late final _TranslationsWebMemoryConfigMoveBannerZh moveBanner = _TranslationsWebMemoryConfigMoveBannerZh._(_root);
-	@override late final _TranslationsWebMemoryConfigInfraZh infra = _TranslationsWebMemoryConfigInfraZh._(_root);
+	@override late final _Translations$web$memoryConfig$sections$zh sections = _Translations$web$memoryConfig$sections$zh._(_root);
+	@override late final _Translations$web$memoryConfig$sectionHints$zh sectionHints = _Translations$web$memoryConfig$sectionHints$zh._(_root);
+	@override late final _Translations$web$memoryConfig$moveBanner$zh moveBanner = _Translations$web$memoryConfig$moveBanner$zh._(_root);
+	@override late final _Translations$web$memoryConfig$infra$zh infra = _Translations$web$memoryConfig$infra$zh._(_root);
 }
 
 // Path: web.memoryWorkers
-class _TranslationsWebMemoryWorkersZh extends TranslationsWebMemoryWorkersEn {
-	_TranslationsWebMemoryWorkersZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$memoryWorkers$zh extends Translations$web$memoryWorkers$en {
+	_Translations$web$memoryWorkers$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -1273,7 +1362,7 @@ class _TranslationsWebMemoryWorkersZh extends TranslationsWebMemoryWorkersEn {
 	@override String testFailedToast({required Object label}) => '${label} 失败';
 	@override String get testCallFailedToast => '测试调用失败';
 	@override String get unknownError => '未知错误';
-	@override late final _TranslationsWebMemoryWorkersTasksZh tasks = _TranslationsWebMemoryWorkersTasksZh._(_root);
+	@override late final _Translations$web$memoryWorkers$tasks$zh tasks = _Translations$web$memoryWorkers$tasks$zh._(_root);
 	@override String get modelLabel => '模型';
 	@override String get modelHint => '为该任务固定 CLI 模型（如基础杂活用 haiku）。留空 = CLI 默认。';
 	@override String get modelCliDefault => 'CLI 默认（最新）';
@@ -1290,8 +1379,8 @@ class _TranslationsWebMemoryWorkersZh extends TranslationsWebMemoryWorkersEn {
 }
 
 // Path: web.archived
-class _TranslationsWebArchivedZh extends TranslationsWebArchivedEn {
-	_TranslationsWebArchivedZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$archived$zh extends Translations$web$archived$en {
+	_Translations$web$archived$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -1325,72 +1414,72 @@ class _TranslationsWebArchivedZh extends TranslationsWebArchivedEn {
 }
 
 // Path: web.project
-class _TranslationsWebProjectZh extends TranslationsWebProjectEn {
-	_TranslationsWebProjectZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$project$zh extends Translations$web$project$en {
+	_Translations$web$project$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsWebProjectPickerZh picker = _TranslationsWebProjectPickerZh._(_root);
+	@override late final _Translations$web$project$picker$zh picker = _Translations$web$project$picker$zh._(_root);
 	@override String get noCwd => '选择一个项目以管理其记忆。';
-	@override late final _TranslationsWebProjectHeaderZh header = _TranslationsWebProjectHeaderZh._(_root);
-	@override late final _TranslationsWebProjectTabsZh tabs = _TranslationsWebProjectTabsZh._(_root);
-	@override late final _TranslationsWebProjectDocLabelZh docLabel = _TranslationsWebProjectDocLabelZh._(_root);
-	@override late final _TranslationsWebProjectEditorZh editor = _TranslationsWebProjectEditorZh._(_root);
-	@override late final _TranslationsWebProjectReadonlyZh readonly = _TranslationsWebProjectReadonlyZh._(_root);
-	@override late final _TranslationsWebProjectJournalZh journal = _TranslationsWebProjectJournalZh._(_root);
-	@override late final _TranslationsWebProjectInboxZh inbox = _TranslationsWebProjectInboxZh._(_root);
-	@override late final _TranslationsWebProjectArchivedZh archived = _TranslationsWebProjectArchivedZh._(_root);
-	@override late final _TranslationsWebProjectResetZh reset = _TranslationsWebProjectResetZh._(_root);
-	@override late final _TranslationsWebProjectLifecycleZh lifecycle = _TranslationsWebProjectLifecycleZh._(_root);
-	@override late final _TranslationsWebProjectDocMetaZh docMeta = _TranslationsWebProjectDocMetaZh._(_root);
-	@override late final _TranslationsWebProjectProposalBannerZh proposalBanner = _TranslationsWebProjectProposalBannerZh._(_root);
-	@override late final _TranslationsWebProjectOverviewZh overview = _TranslationsWebProjectOverviewZh._(_root);
+	@override late final _Translations$web$project$header$zh header = _Translations$web$project$header$zh._(_root);
+	@override late final _Translations$web$project$tabs$zh tabs = _Translations$web$project$tabs$zh._(_root);
+	@override late final _Translations$web$project$docLabel$zh docLabel = _Translations$web$project$docLabel$zh._(_root);
+	@override late final _Translations$web$project$editor$zh editor = _Translations$web$project$editor$zh._(_root);
+	@override late final _Translations$web$project$readonly$zh readonly = _Translations$web$project$readonly$zh._(_root);
+	@override late final _Translations$web$project$journal$zh journal = _Translations$web$project$journal$zh._(_root);
+	@override late final _Translations$web$project$inbox$zh inbox = _Translations$web$project$inbox$zh._(_root);
+	@override late final _Translations$web$project$archived$zh archived = _Translations$web$project$archived$zh._(_root);
+	@override late final _Translations$web$project$reset$zh reset = _Translations$web$project$reset$zh._(_root);
+	@override late final _Translations$web$project$lifecycle$zh lifecycle = _Translations$web$project$lifecycle$zh._(_root);
+	@override late final _Translations$web$project$docMeta$zh docMeta = _Translations$web$project$docMeta$zh._(_root);
+	@override late final _Translations$web$project$proposalBanner$zh proposalBanner = _Translations$web$project$proposalBanner$zh._(_root);
+	@override late final _Translations$web$project$overview$zh overview = _Translations$web$project$overview$zh._(_root);
 }
 
 // Path: web.memoryInspector
-class _TranslationsWebMemoryInspectorZh extends TranslationsWebMemoryInspectorEn {
-	_TranslationsWebMemoryInspectorZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$memoryInspector$zh extends Translations$web$memoryInspector$en {
+	_Translations$web$memoryInspector$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsWebMemoryInspectorStatusZh status = _TranslationsWebMemoryInspectorStatusZh._(_root);
-	@override late final _TranslationsWebMemoryInspectorScopeZh scope = _TranslationsWebMemoryInspectorScopeZh._(_root);
-	@override late final _TranslationsWebMemoryInspectorSearchZh search = _TranslationsWebMemoryInspectorSearchZh._(_root);
-	@override late final _TranslationsWebMemoryInspectorRecordsZh records = _TranslationsWebMemoryInspectorRecordsZh._(_root);
-	@override late final _TranslationsWebMemoryInspectorRowZh row = _TranslationsWebMemoryInspectorRowZh._(_root);
-	@override late final _TranslationsWebMemoryInspectorToastsZh toasts = _TranslationsWebMemoryInspectorToastsZh._(_root);
-	@override late final _TranslationsWebMemoryInspectorBulkDeleteZh bulkDelete = _TranslationsWebMemoryInspectorBulkDeleteZh._(_root);
-	@override late final _TranslationsWebMemoryInspectorAddMemZh addMem = _TranslationsWebMemoryInspectorAddMemZh._(_root);
-	@override late final _TranslationsWebMemoryInspectorPickerZh picker = _TranslationsWebMemoryInspectorPickerZh._(_root);
-	@override late final _TranslationsWebMemoryInspectorMigrationBannerZh migrationBanner = _TranslationsWebMemoryInspectorMigrationBannerZh._(_root);
-	@override late final _TranslationsWebMemoryInspectorReembedZh reembed = _TranslationsWebMemoryInspectorReembedZh._(_root);
+	@override late final _Translations$web$memoryInspector$status$zh status = _Translations$web$memoryInspector$status$zh._(_root);
+	@override late final _Translations$web$memoryInspector$scope$zh scope = _Translations$web$memoryInspector$scope$zh._(_root);
+	@override late final _Translations$web$memoryInspector$search$zh search = _Translations$web$memoryInspector$search$zh._(_root);
+	@override late final _Translations$web$memoryInspector$records$zh records = _Translations$web$memoryInspector$records$zh._(_root);
+	@override late final _Translations$web$memoryInspector$row$zh row = _Translations$web$memoryInspector$row$zh._(_root);
+	@override late final _Translations$web$memoryInspector$toasts$zh toasts = _Translations$web$memoryInspector$toasts$zh._(_root);
+	@override late final _Translations$web$memoryInspector$bulkDelete$zh bulkDelete = _Translations$web$memoryInspector$bulkDelete$zh._(_root);
+	@override late final _Translations$web$memoryInspector$addMem$zh addMem = _Translations$web$memoryInspector$addMem$zh._(_root);
+	@override late final _Translations$web$memoryInspector$picker$zh picker = _Translations$web$memoryInspector$picker$zh._(_root);
+	@override late final _Translations$web$memoryInspector$migrationBanner$zh migrationBanner = _Translations$web$memoryInspector$migrationBanner$zh._(_root);
+	@override late final _Translations$web$memoryInspector$reembed$zh reembed = _Translations$web$memoryInspector$reembed$zh._(_root);
 }
 
 // Path: web.notes
-class _TranslationsWebNotesZh extends TranslationsWebNotesEn {
-	_TranslationsWebNotesZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$notes$zh extends Translations$web$notes$en {
+	_Translations$web$notes$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
 	// Translations
 	@override String get title => '笔记';
-	@override late final _TranslationsWebNotesHeaderZh header = _TranslationsWebNotesHeaderZh._(_root);
-	@override late final _TranslationsWebNotesLeftZh left = _TranslationsWebNotesLeftZh._(_root);
-	@override late final _TranslationsWebNotesTagsZh tags = _TranslationsWebNotesTagsZh._(_root);
-	@override late final _TranslationsWebNotesTreeZh tree = _TranslationsWebNotesTreeZh._(_root);
-	@override late final _TranslationsWebNotesOutlineZh outline = _TranslationsWebNotesOutlineZh._(_root);
-	@override late final _TranslationsWebNotesNewNoteZh newNote = _TranslationsWebNotesNewNoteZh._(_root);
-	@override late final _TranslationsWebNotesEmptyZh empty = _TranslationsWebNotesEmptyZh._(_root);
-	@override late final _TranslationsWebNotesPickerZh picker = _TranslationsWebNotesPickerZh._(_root);
-	@override late final _TranslationsWebNotesVaultSyncZh vaultSync = _TranslationsWebNotesVaultSyncZh._(_root);
-	@override late final _TranslationsWebNotesSyncBadgeZh syncBadge = _TranslationsWebNotesSyncBadgeZh._(_root);
+	@override late final _Translations$web$notes$header$zh header = _Translations$web$notes$header$zh._(_root);
+	@override late final _Translations$web$notes$left$zh left = _Translations$web$notes$left$zh._(_root);
+	@override late final _Translations$web$notes$tags$zh tags = _Translations$web$notes$tags$zh._(_root);
+	@override late final _Translations$web$notes$tree$zh tree = _Translations$web$notes$tree$zh._(_root);
+	@override late final _Translations$web$notes$outline$zh outline = _Translations$web$notes$outline$zh._(_root);
+	@override late final _Translations$web$notes$newNote$zh newNote = _Translations$web$notes$newNote$zh._(_root);
+	@override late final _Translations$web$notes$empty$zh empty = _Translations$web$notes$empty$zh._(_root);
+	@override late final _Translations$web$notes$picker$zh picker = _Translations$web$notes$picker$zh._(_root);
+	@override late final _Translations$web$notes$vaultSync$zh vaultSync = _Translations$web$notes$vaultSync$zh._(_root);
+	@override late final _Translations$web$notes$syncBadge$zh syncBadge = _Translations$web$notes$syncBadge$zh._(_root);
 }
 
 // Path: web.activity
-class _TranslationsWebActivityZh extends TranslationsWebActivityEn {
-	_TranslationsWebActivityZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$activity$zh extends Translations$web$activity$en {
+	_Translations$web$activity$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -1399,33 +1488,33 @@ class _TranslationsWebActivityZh extends TranslationsWebActivityEn {
 	@override String get subtitle => '按调用维度审计每个由注册集成发起的 API 请求。包括入站调用（第三方应用以集成 API key 调用 opendray）和出站代理调用（admin → opendray 代理 → 集成）。本管理端 UI 直接发起的调用不会被记录。';
 	@override String get refresh => '刷新';
 	@override String get refreshTooltip => '刷新';
-	@override late final _TranslationsWebActivityFiltersZh filters = _TranslationsWebActivityFiltersZh._(_root);
+	@override late final _Translations$web$activity$filters$zh filters = _Translations$web$activity$filters$zh._(_root);
 	@override String callsCount_one({required Object count}) => '${count} 次调用';
 	@override String callsCount_other({required Object count}) => '${count} 次调用';
 	@override String get loading => '加载中…';
-	@override late final _TranslationsWebActivityTableZh table = _TranslationsWebActivityTableZh._(_root);
-	@override late final _TranslationsWebActivityEmptyZh empty = _TranslationsWebActivityEmptyZh._(_root);
-	@override late final _TranslationsWebActivityEventsZh events = _TranslationsWebActivityEventsZh._(_root);
+	@override late final _Translations$web$activity$table$zh table = _Translations$web$activity$table$zh._(_root);
+	@override late final _Translations$web$activity$empty$zh empty = _Translations$web$activity$empty$zh._(_root);
+	@override late final _Translations$web$activity$events$zh events = _Translations$web$activity$events$zh._(_root);
 }
 
 // Path: web.providers
-class _TranslationsWebProvidersZh extends TranslationsWebProvidersEn {
-	_TranslationsWebProvidersZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$providers$zh extends Translations$web$providers$en {
+	_Translations$web$providers$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsWebProvidersListZh list = _TranslationsWebProvidersListZh._(_root);
-	@override late final _TranslationsWebProvidersDetailZh detail = _TranslationsWebProvidersDetailZh._(_root);
-	@override late final _TranslationsWebProvidersConfigFormZh configForm = _TranslationsWebProvidersConfigFormZh._(_root);
-	@override late final _TranslationsWebProvidersClaudeAccountsZh claudeAccounts = _TranslationsWebProvidersClaudeAccountsZh._(_root);
-	@override late final _TranslationsWebProvidersAntigravityAccountsZh antigravityAccounts = _TranslationsWebProvidersAntigravityAccountsZh._(_root);
-	@override late final _TranslationsWebProvidersModelsZh models = _TranslationsWebProvidersModelsZh._(_root);
+	@override late final _Translations$web$providers$list$zh list = _Translations$web$providers$list$zh._(_root);
+	@override late final _Translations$web$providers$detail$zh detail = _Translations$web$providers$detail$zh._(_root);
+	@override late final _Translations$web$providers$configForm$zh configForm = _Translations$web$providers$configForm$zh._(_root);
+	@override late final _Translations$web$providers$claudeAccounts$zh claudeAccounts = _Translations$web$providers$claudeAccounts$zh._(_root);
+	@override late final _Translations$web$providers$antigravityAccounts$zh antigravityAccounts = _Translations$web$providers$antigravityAccounts$zh._(_root);
+	@override late final _Translations$web$providers$models$zh models = _Translations$web$providers$models$zh._(_root);
 }
 
 // Path: web.channels
-class _TranslationsWebChannelsZh extends TranslationsWebChannelsEn {
-	_TranslationsWebChannelsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$channels$zh extends Translations$web$channels$en {
+	_Translations$web$channels$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -1434,18 +1523,18 @@ class _TranslationsWebChannelsZh extends TranslationsWebChannelsEn {
 	@override String get subtitle => '双向消息集成。每个已启用且未静音的频道都会接收会话通知。';
 	@override String get newButton => '新建频道';
 	@override String get loading => '加载中…';
-	@override late final _TranslationsWebChannelsEmptyZh empty = _TranslationsWebChannelsEmptyZh._(_root);
-	@override late final _TranslationsWebChannelsCardZh card = _TranslationsWebChannelsCardZh._(_root);
-	@override late final _TranslationsWebChannelsToastsZh toasts = _TranslationsWebChannelsToastsZh._(_root);
-	@override late final _TranslationsWebChannelsDialogZh dialog = _TranslationsWebChannelsDialogZh._(_root);
-	@override late final _TranslationsWebChannelsNotificationsZh notifications = _TranslationsWebChannelsNotificationsZh._(_root);
-	@override late final _TranslationsWebChannelsBridgeZh bridge = _TranslationsWebChannelsBridgeZh._(_root);
-	@override late final _TranslationsWebChannelsSetupZh setup = _TranslationsWebChannelsSetupZh._(_root);
+	@override late final _Translations$web$channels$empty$zh empty = _Translations$web$channels$empty$zh._(_root);
+	@override late final _Translations$web$channels$card$zh card = _Translations$web$channels$card$zh._(_root);
+	@override late final _Translations$web$channels$toasts$zh toasts = _Translations$web$channels$toasts$zh._(_root);
+	@override late final _Translations$web$channels$dialog$zh dialog = _Translations$web$channels$dialog$zh._(_root);
+	@override late final _Translations$web$channels$notifications$zh notifications = _Translations$web$channels$notifications$zh._(_root);
+	@override late final _Translations$web$channels$bridge$zh bridge = _Translations$web$channels$bridge$zh._(_root);
+	@override late final _Translations$web$channels$setup$zh setup = _Translations$web$channels$setup$zh._(_root);
 }
 
 // Path: web.integrations
-class _TranslationsWebIntegrationsZh extends TranslationsWebIntegrationsEn {
-	_TranslationsWebIntegrationsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$integrations$zh extends Translations$web$integrations$en {
+	_Translations$web$integrations$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -1454,38 +1543,38 @@ class _TranslationsWebIntegrationsZh extends TranslationsWebIntegrationsEn {
 	@override String get subtitle => '调用 opendray 的外部应用。通过 <1>/api/v1/proxy/&lt;prefix&gt;/…</1> 反向代理，并通过 WS 端点订阅事件。';
 	@override String get register => '注册';
 	@override String get loading => '加载中…';
-	@override late final _TranslationsWebIntegrationsTabsZh tabs = _TranslationsWebIntegrationsTabsZh._(_root);
-	@override late final _TranslationsWebIntegrationsEmptyZh empty = _TranslationsWebIntegrationsEmptyZh._(_root);
+	@override late final _Translations$web$integrations$tabs$zh tabs = _Translations$web$integrations$tabs$zh._(_root);
+	@override late final _Translations$web$integrations$empty$zh empty = _Translations$web$integrations$empty$zh._(_root);
 	@override String get groupSystem => '系统（由 opendray 管理）';
 	@override String get groupOperator => '用户注册';
-	@override late final _TranslationsWebIntegrationsCardZh card = _TranslationsWebIntegrationsCardZh._(_root);
-	@override late final _TranslationsWebIntegrationsDefaultAgentZh defaultAgent = _TranslationsWebIntegrationsDefaultAgentZh._(_root);
-	@override late final _TranslationsWebIntegrationsRegisterDialogZh register_dialog = _TranslationsWebIntegrationsRegisterDialogZh._(_root);
-	@override late final _TranslationsWebIntegrationsRevealZh reveal = _TranslationsWebIntegrationsRevealZh._(_root);
-	@override late final _TranslationsWebIntegrationsEditDialogZh edit_dialog = _TranslationsWebIntegrationsEditDialogZh._(_root);
-	@override late final _TranslationsWebIntegrationsProxyZh proxy = _TranslationsWebIntegrationsProxyZh._(_root);
+	@override late final _Translations$web$integrations$card$zh card = _Translations$web$integrations$card$zh._(_root);
+	@override late final _Translations$web$integrations$defaultAgent$zh defaultAgent = _Translations$web$integrations$defaultAgent$zh._(_root);
+	@override late final _Translations$web$integrations$register_dialog$zh register_dialog = _Translations$web$integrations$register_dialog$zh._(_root);
+	@override late final _Translations$web$integrations$reveal$zh reveal = _Translations$web$integrations$reveal$zh._(_root);
+	@override late final _Translations$web$integrations$edit_dialog$zh edit_dialog = _Translations$web$integrations$edit_dialog$zh._(_root);
+	@override late final _Translations$web$integrations$proxy$zh proxy = _Translations$web$integrations$proxy$zh._(_root);
 }
 
 // Path: web.plugins
-class _TranslationsWebPluginsZh extends TranslationsWebPluginsEn {
-	_TranslationsWebPluginsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$plugins$zh extends Translations$web$plugins$en {
+	_Translations$web$plugins$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
 	// Translations
 	@override String get title => '检查器插件';
 	@override String get subtitle => '配置在会话打开时右侧检查器面板呈现的数据源。每个插件都是管理员级别且在所有会话间共享。点击章节标题可折叠。';
-	@override late final _TranslationsWebPluginsCommonZh common = _TranslationsWebPluginsCommonZh._(_root);
-	@override late final _TranslationsWebPluginsMcpZh mcp = _TranslationsWebPluginsMcpZh._(_root);
-	@override late final _TranslationsWebPluginsMcpSecretsZh mcpSecrets = _TranslationsWebPluginsMcpSecretsZh._(_root);
-	@override late final _TranslationsWebPluginsSkillsZh skills = _TranslationsWebPluginsSkillsZh._(_root);
-	@override late final _TranslationsWebPluginsCustomTasksZh customTasks = _TranslationsWebPluginsCustomTasksZh._(_root);
-	@override late final _TranslationsWebPluginsGitHostsZh gitHosts = _TranslationsWebPluginsGitHostsZh._(_root);
+	@override late final _Translations$web$plugins$common$zh common = _Translations$web$plugins$common$zh._(_root);
+	@override late final _Translations$web$plugins$mcp$zh mcp = _Translations$web$plugins$mcp$zh._(_root);
+	@override late final _Translations$web$plugins$mcpSecrets$zh mcpSecrets = _Translations$web$plugins$mcpSecrets$zh._(_root);
+	@override late final _Translations$web$plugins$skills$zh skills = _Translations$web$plugins$skills$zh._(_root);
+	@override late final _Translations$web$plugins$customTasks$zh customTasks = _Translations$web$plugins$customTasks$zh._(_root);
+	@override late final _Translations$web$plugins$gitHosts$zh gitHosts = _Translations$web$plugins$gitHosts$zh._(_root);
 }
 
 // Path: web.backups
-class _TranslationsWebBackupsZh extends TranslationsWebBackupsEn {
-	_TranslationsWebBackupsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$backups$zh extends Translations$web$backups$en {
+	_Translations$web$backups$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -1495,35 +1584,35 @@ class _TranslationsWebBackupsZh extends TranslationsWebBackupsEn {
 	@override String get exportData => '导出数据';
 	@override String get loading => '加载中…';
 	@override String get loadStatusFailedToast => '加载备份状态失败';
-	@override late final _TranslationsWebBackupsTabsZh tabs = _TranslationsWebBackupsTabsZh._(_root);
-	@override late final _TranslationsWebBackupsInventoryZh inventory = _TranslationsWebBackupsInventoryZh._(_root);
-	@override late final _TranslationsWebBackupsRestartZh restart = _TranslationsWebBackupsRestartZh._(_root);
-	@override late final _TranslationsWebBackupsSetupZh setup = _TranslationsWebBackupsSetupZh._(_root);
-	@override late final _TranslationsWebBackupsGeneratedZh generated = _TranslationsWebBackupsGeneratedZh._(_root);
-	@override late final _TranslationsWebBackupsStatusZh status = _TranslationsWebBackupsStatusZh._(_root);
-	@override late final _TranslationsWebBackupsBackupsTabZh backupsTab = _TranslationsWebBackupsBackupsTabZh._(_root);
-	@override late final _TranslationsWebBackupsRestoreZh restore = _TranslationsWebBackupsRestoreZh._(_root);
-	@override late final _TranslationsWebBackupsKindZh kind = _TranslationsWebBackupsKindZh._(_root);
-	@override late final _TranslationsWebBackupsVerifyZh verify = _TranslationsWebBackupsVerifyZh._(_root);
-	@override late final _TranslationsWebBackupsHealthZh health = _TranslationsWebBackupsHealthZh._(_root);
-	@override late final _TranslationsWebBackupsTriggerZh trigger = _TranslationsWebBackupsTriggerZh._(_root);
-	@override late final _TranslationsWebBackupsRecoveryKitZh recoveryKit = _TranslationsWebBackupsRecoveryKitZh._(_root);
-	@override late final _TranslationsWebBackupsSchedulesTabZh schedulesTab = _TranslationsWebBackupsSchedulesTabZh._(_root);
-	@override late final _TranslationsWebBackupsNewScheduleZh newSchedule = _TranslationsWebBackupsNewScheduleZh._(_root);
-	@override late final _TranslationsWebBackupsFanoutZh fanout = _TranslationsWebBackupsFanoutZh._(_root);
-	@override late final _TranslationsWebBackupsDedupZh dedup = _TranslationsWebBackupsDedupZh._(_root);
-	@override late final _TranslationsWebBackupsTargetsTabZh targetsTab = _TranslationsWebBackupsTargetsTabZh._(_root);
-	@override late final _TranslationsWebBackupsTargetEditorZh targetEditor = _TranslationsWebBackupsTargetEditorZh._(_root);
+	@override late final _Translations$web$backups$tabs$zh tabs = _Translations$web$backups$tabs$zh._(_root);
+	@override late final _Translations$web$backups$inventory$zh inventory = _Translations$web$backups$inventory$zh._(_root);
+	@override late final _Translations$web$backups$restart$zh restart = _Translations$web$backups$restart$zh._(_root);
+	@override late final _Translations$web$backups$setup$zh setup = _Translations$web$backups$setup$zh._(_root);
+	@override late final _Translations$web$backups$generated$zh generated = _Translations$web$backups$generated$zh._(_root);
+	@override late final _Translations$web$backups$status$zh status = _Translations$web$backups$status$zh._(_root);
+	@override late final _Translations$web$backups$backupsTab$zh backupsTab = _Translations$web$backups$backupsTab$zh._(_root);
+	@override late final _Translations$web$backups$restore$zh restore = _Translations$web$backups$restore$zh._(_root);
+	@override late final _Translations$web$backups$kind$zh kind = _Translations$web$backups$kind$zh._(_root);
+	@override late final _Translations$web$backups$verify$zh verify = _Translations$web$backups$verify$zh._(_root);
+	@override late final _Translations$web$backups$health$zh health = _Translations$web$backups$health$zh._(_root);
+	@override late final _Translations$web$backups$trigger$zh trigger = _Translations$web$backups$trigger$zh._(_root);
+	@override late final _Translations$web$backups$recoveryKit$zh recoveryKit = _Translations$web$backups$recoveryKit$zh._(_root);
+	@override late final _Translations$web$backups$schedulesTab$zh schedulesTab = _Translations$web$backups$schedulesTab$zh._(_root);
+	@override late final _Translations$web$backups$newSchedule$zh newSchedule = _Translations$web$backups$newSchedule$zh._(_root);
+	@override late final _Translations$web$backups$fanout$zh fanout = _Translations$web$backups$fanout$zh._(_root);
+	@override late final _Translations$web$backups$dedup$zh dedup = _Translations$web$backups$dedup$zh._(_root);
+	@override late final _Translations$web$backups$targetsTab$zh targetsTab = _Translations$web$backups$targetsTab$zh._(_root);
+	@override late final _Translations$web$backups$targetEditor$zh targetEditor = _Translations$web$backups$targetEditor$zh._(_root);
 }
 
 // Path: web.serverSettings
-class _TranslationsWebServerSettingsZh extends TranslationsWebServerSettingsEn {
-	_TranslationsWebServerSettingsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$zh extends Translations$web$serverSettings$en {
+	_Translations$web$serverSettings$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsWebServerSettingsSectionsZh sections = _TranslationsWebServerSettingsSectionsZh._(_root);
+	@override late final _Translations$web$serverSettings$sections$zh sections = _Translations$web$serverSettings$sections$zh._(_root);
 	@override String get loading => '正在加载服务器设置…';
 	@override String loadFailed({required Object message}) => '加载失败：${message}';
 	@override String get noConfigFlag => 'opendray 启动时未指定 -config，设置仅从环境变量加载，无法在此编辑。';
@@ -1540,46 +1629,46 @@ class _TranslationsWebServerSettingsZh extends TranslationsWebServerSettingsEn {
 	@override String get unsavedHint => '有未保存的修改';
 	@override String get savedHint => '所有修改已保存';
 	@override String get searchPlaceholder => '筛选字段…';
-	@override late final _TranslationsWebServerSettingsRestartZh restart = _TranslationsWebServerSettingsRestartZh._(_root);
-	@override late final _TranslationsWebServerSettingsFormGroupsZh formGroups = _TranslationsWebServerSettingsFormGroupsZh._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsZh fields = _TranslationsWebServerSettingsFieldsZh._(_root);
-	@override late final _TranslationsWebServerSettingsLiveTailZh liveTail = _TranslationsWebServerSettingsLiveTailZh._(_root);
-	@override late final _TranslationsWebServerSettingsMemoryInspectorCardZh memoryInspectorCard = _TranslationsWebServerSettingsMemoryInspectorCardZh._(_root);
+	@override late final _Translations$web$serverSettings$restart$zh restart = _Translations$web$serverSettings$restart$zh._(_root);
+	@override late final _Translations$web$serverSettings$formGroups$zh formGroups = _Translations$web$serverSettings$formGroups$zh._(_root);
+	@override late final _Translations$web$serverSettings$fields$zh fields = _Translations$web$serverSettings$fields$zh._(_root);
+	@override late final _Translations$web$serverSettings$liveTail$zh liveTail = _Translations$web$serverSettings$liveTail$zh._(_root);
+	@override late final _Translations$web$serverSettings$memoryInspectorCard$zh memoryInspectorCard = _Translations$web$serverSettings$memoryInspectorCard$zh._(_root);
 	@override String get localOnnxBanner => '需要使用 <1>-tags local_onnx</1> 编译二进制。标准构建在选择此后端时会返回明确的 stub 错误。设置步骤参见 <3>记忆 → 本地 ONNX</3> 教程。';
-	@override late final _TranslationsWebServerSettingsStringListZh stringList = _TranslationsWebServerSettingsStringListZh._(_root);
-	@override late final _TranslationsWebServerSettingsHttpHelpersZh httpHelpers = _TranslationsWebServerSettingsHttpHelpersZh._(_root);
-	@override late final _TranslationsWebServerSettingsProbeZh probe = _TranslationsWebServerSettingsProbeZh._(_root);
-	@override late final _TranslationsWebServerSettingsBackupZh backup = _TranslationsWebServerSettingsBackupZh._(_root);
-	@override late final _TranslationsWebServerSettingsTargetRowZh targetRow = _TranslationsWebServerSettingsTargetRowZh._(_root);
-	@override late final _TranslationsWebServerSettingsToggleZh toggle = _TranslationsWebServerSettingsToggleZh._(_root);
+	@override late final _Translations$web$serverSettings$stringList$zh stringList = _Translations$web$serverSettings$stringList$zh._(_root);
+	@override late final _Translations$web$serverSettings$httpHelpers$zh httpHelpers = _Translations$web$serverSettings$httpHelpers$zh._(_root);
+	@override late final _Translations$web$serverSettings$probe$zh probe = _Translations$web$serverSettings$probe$zh._(_root);
+	@override late final _Translations$web$serverSettings$backup$zh backup = _Translations$web$serverSettings$backup$zh._(_root);
+	@override late final _Translations$web$serverSettings$targetRow$zh targetRow = _Translations$web$serverSettings$targetRow$zh._(_root);
+	@override late final _Translations$web$serverSettings$toggle$zh toggle = _Translations$web$serverSettings$toggle$zh._(_root);
 	@override String get memoryRuntimeBanner => '运行时 AI 行为——工作器、捕获规则、注入策略与 spawn 模式——位于 Cortex 设置，保存即生效。本区块是基础设施的一半：嵌入后端、存储与后台治理（需重启生效）。';
 	@override String get memoryRuntimeBannerButton => '打开 Cortex 设置';
 }
 
 // Path: web.settings
-class _TranslationsWebSettingsZh extends TranslationsWebSettingsEn {
-	_TranslationsWebSettingsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$settings$zh extends Translations$web$settings$en {
+	_Translations$web$settings$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
 	// Translations
 	@override String get title => '设置';
 	@override String get subtitle => '工作区、账号与网关配置。';
-	@override late final _TranslationsWebSettingsGroupsZh groups = _TranslationsWebSettingsGroupsZh._(_root);
-	@override late final _TranslationsWebSettingsItemsZh items = _TranslationsWebSettingsItemsZh._(_root);
-	@override late final _TranslationsWebSettingsHealthZh health = _TranslationsWebSettingsHealthZh._(_root);
-	@override late final _TranslationsWebSettingsBreadcrumbZh breadcrumb = _TranslationsWebSettingsBreadcrumbZh._(_root);
-	@override late final _TranslationsWebSettingsAppearanceZh appearance = _TranslationsWebSettingsAppearanceZh._(_root);
-	@override late final _TranslationsWebSettingsFontZh font = _TranslationsWebSettingsFontZh._(_root);
-	@override late final _TranslationsWebSettingsAccountZh account = _TranslationsWebSettingsAccountZh._(_root);
-	@override late final _TranslationsWebSettingsChangeCredentialsZh changeCredentials = _TranslationsWebSettingsChangeCredentialsZh._(_root);
-	@override late final _TranslationsWebSettingsSystemZh system = _TranslationsWebSettingsSystemZh._(_root);
-	@override late final _TranslationsWebSettingsAboutZh about = _TranslationsWebSettingsAboutZh._(_root);
+	@override late final _Translations$web$settings$groups$zh groups = _Translations$web$settings$groups$zh._(_root);
+	@override late final _Translations$web$settings$items$zh items = _Translations$web$settings$items$zh._(_root);
+	@override late final _Translations$web$settings$health$zh health = _Translations$web$settings$health$zh._(_root);
+	@override late final _Translations$web$settings$breadcrumb$zh breadcrumb = _Translations$web$settings$breadcrumb$zh._(_root);
+	@override late final _Translations$web$settings$appearance$zh appearance = _Translations$web$settings$appearance$zh._(_root);
+	@override late final _Translations$web$settings$font$zh font = _Translations$web$settings$font$zh._(_root);
+	@override late final _Translations$web$settings$account$zh account = _Translations$web$settings$account$zh._(_root);
+	@override late final _Translations$web$settings$changeCredentials$zh changeCredentials = _Translations$web$settings$changeCredentials$zh._(_root);
+	@override late final _Translations$web$settings$system$zh system = _Translations$web$settings$system$zh._(_root);
+	@override late final _Translations$web$settings$about$zh about = _Translations$web$settings$about$zh._(_root);
 }
 
 // Path: web.logViewer
-class _TranslationsWebLogViewerZh extends TranslationsWebLogViewerEn {
-	_TranslationsWebLogViewerZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$logViewer$zh extends Translations$web$logViewer$en {
+	_Translations$web$logViewer$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -1602,8 +1691,8 @@ class _TranslationsWebLogViewerZh extends TranslationsWebLogViewerEn {
 }
 
 // Path: web.pathInput
-class _TranslationsWebPathInputZh extends TranslationsWebPathInputEn {
-	_TranslationsWebPathInputZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$pathInput$zh extends Translations$web$pathInput$en {
+	_Translations$web$pathInput$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -1616,23 +1705,23 @@ class _TranslationsWebPathInputZh extends TranslationsWebPathInputEn {
 }
 
 // Path: web.memoryAmbient
-class _TranslationsWebMemoryAmbientZh extends TranslationsWebMemoryAmbientEn {
-	_TranslationsWebMemoryAmbientZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$memoryAmbient$zh extends Translations$web$memoryAmbient$en {
+	_Translations$web$memoryAmbient$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsWebMemoryAmbientHeaderZh header = _TranslationsWebMemoryAmbientHeaderZh._(_root);
+	@override late final _Translations$web$memoryAmbient$header$zh header = _Translations$web$memoryAmbient$header$zh._(_root);
 	@override String get loading => '加载中…';
-	@override late final _TranslationsWebMemoryAmbientProvidersZh providers = _TranslationsWebMemoryAmbientProvidersZh._(_root);
-	@override late final _TranslationsWebMemoryAmbientRulesZh rules = _TranslationsWebMemoryAmbientRulesZh._(_root);
-	@override late final _TranslationsWebMemoryAmbientProfilesZh profiles = _TranslationsWebMemoryAmbientProfilesZh._(_root);
-	@override late final _TranslationsWebMemoryAmbientCostZh cost = _TranslationsWebMemoryAmbientCostZh._(_root);
+	@override late final _Translations$web$memoryAmbient$providers$zh providers = _Translations$web$memoryAmbient$providers$zh._(_root);
+	@override late final _Translations$web$memoryAmbient$rules$zh rules = _Translations$web$memoryAmbient$rules$zh._(_root);
+	@override late final _Translations$web$memoryAmbient$profiles$zh profiles = _Translations$web$memoryAmbient$profiles$zh._(_root);
+	@override late final _Translations$web$memoryAmbient$cost$zh cost = _Translations$web$memoryAmbient$cost$zh._(_root);
 }
 
 // Path: web.noteEditor
-class _TranslationsWebNoteEditorZh extends TranslationsWebNoteEditorEn {
-	_TranslationsWebNoteEditorZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$noteEditor$zh extends Translations$web$noteEditor$en {
+	_Translations$web$noteEditor$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -1643,12 +1732,12 @@ class _TranslationsWebNoteEditorZh extends TranslationsWebNoteEditorEn {
 	@override String tagTitle({required Object tag}) => '标签 #${tag}';
 	@override String get emptyNote => '空白笔记。切换到源码标签开始书写。';
 	@override String get saveFailedToast => '保存失败';
-	@override late final _TranslationsWebNoteEditorStatusZh status = _TranslationsWebNoteEditorStatusZh._(_root);
+	@override late final _Translations$web$noteEditor$status$zh status = _Translations$web$noteEditor$status$zh._(_root);
 }
 
 // Path: web.export
-class _TranslationsWebExportZh extends TranslationsWebExportEn {
-	_TranslationsWebExportZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$export$zh extends Translations$web$export$en {
+	_Translations$web$export$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -1656,16 +1745,16 @@ class _TranslationsWebExportZh extends TranslationsWebExportEn {
 	@override String get title => '导出数据';
 	@override String get subtitle => '把选中的逻辑实体打成一份一次性 zip 包。服务器上保留 24 小时后自动回收。';
 	@override String get backToBackups => '← 备份';
-	@override late final _TranslationsWebExportSectionsZh sections = _TranslationsWebExportSectionsZh._(_root);
-	@override late final _TranslationsWebExportFormZh form = _TranslationsWebExportFormZh._(_root);
-	@override late final _TranslationsWebExportHistoryZh history = _TranslationsWebExportHistoryZh._(_root);
-	@override late final _TranslationsWebExportImportZh import = _TranslationsWebExportImportZh._(_root);
-	@override late final _TranslationsWebExportImportsZh imports = _TranslationsWebExportImportsZh._(_root);
+	@override late final _Translations$web$export$sections$zh sections = _Translations$web$export$sections$zh._(_root);
+	@override late final _Translations$web$export$form$zh form = _Translations$web$export$form$zh._(_root);
+	@override late final _Translations$web$export$history$zh history = _Translations$web$export$history$zh._(_root);
+	@override late final _Translations$web$export$import$zh import = _Translations$web$export$import$zh._(_root);
+	@override late final _Translations$web$export$imports$zh imports = _Translations$web$export$imports$zh._(_root);
 }
 
 // Path: web.knowledge
-class _TranslationsWebKnowledgeZh extends TranslationsWebKnowledgeEn {
-	_TranslationsWebKnowledgeZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$knowledge$zh extends Translations$web$knowledge$en {
+	_Translations$web$knowledge$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -1689,47 +1778,47 @@ class _TranslationsWebKnowledgeZh extends TranslationsWebKnowledgeEn {
 	@override String get delete => '删除';
 	@override String get deleted => '已删除';
 	@override String get deleteConfirm => '删除此节点?技能将永久删除;自动派生的事实/实体可能在下次扫描时重新出现。';
-	@override late final _TranslationsWebKnowledgeScopesZh scopes = _TranslationsWebKnowledgeScopesZh._(_root);
-	@override late final _TranslationsWebKnowledgeKbZh kb = _TranslationsWebKnowledgeKbZh._(_root);
-	@override late final _TranslationsWebKnowledgeKindsZh kinds = _TranslationsWebKnowledgeKindsZh._(_root);
-	@override late final _TranslationsWebKnowledgeDistillZh distill = _TranslationsWebKnowledgeDistillZh._(_root);
-	@override late final _TranslationsWebKnowledgeGraphZh graph = _TranslationsWebKnowledgeGraphZh._(_root);
+	@override late final _Translations$web$knowledge$scopes$zh scopes = _Translations$web$knowledge$scopes$zh._(_root);
+	@override late final _Translations$web$knowledge$kb$zh kb = _Translations$web$knowledge$kb$zh._(_root);
+	@override late final _Translations$web$knowledge$kinds$zh kinds = _Translations$web$knowledge$kinds$zh._(_root);
+	@override late final _Translations$web$knowledge$distill$zh distill = _Translations$web$knowledge$distill$zh._(_root);
+	@override late final _Translations$web$knowledge$graph$zh graph = _Translations$web$knowledge$graph$zh._(_root);
 }
 
 // Path: web.cortex
-class _TranslationsWebCortexZh extends TranslationsWebCortexEn {
-	_TranslationsWebCortexZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$cortex$zh extends Translations$web$cortex$en {
+	_Translations$web$cortex$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsWebCortexHomeZh home = _TranslationsWebCortexHomeZh._(_root);
-	@override late final _TranslationsWebCortexChatZh chat = _TranslationsWebCortexChatZh._(_root);
-	@override late final _TranslationsWebCortexBlueprintZh blueprint = _TranslationsWebCortexBlueprintZh._(_root);
-	@override late final _TranslationsWebCortexQuarantineZh quarantine = _TranslationsWebCortexQuarantineZh._(_root);
-	@override late final _TranslationsWebCortexSettingsZh settings = _TranslationsWebCortexSettingsZh._(_root);
+	@override late final _Translations$web$cortex$home$zh home = _Translations$web$cortex$home$zh._(_root);
+	@override late final _Translations$web$cortex$chat$zh chat = _Translations$web$cortex$chat$zh._(_root);
+	@override late final _Translations$web$cortex$blueprint$zh blueprint = _Translations$web$cortex$blueprint$zh._(_root);
+	@override late final _Translations$web$cortex$quarantine$zh quarantine = _Translations$web$cortex$quarantine$zh._(_root);
+	@override late final _Translations$web$cortex$settings$zh settings = _Translations$web$cortex$settings$zh._(_root);
 }
 
 // Path: web.database
-class _TranslationsWebDatabaseZh extends TranslationsWebDatabaseEn {
-	_TranslationsWebDatabaseZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$database$zh extends Translations$web$database$en {
+	_Translations$web$database$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsWebDatabaseDialogZh dialog = _TranslationsWebDatabaseDialogZh._(_root);
-	@override late final _TranslationsWebDatabaseResultsZh results = _TranslationsWebDatabaseResultsZh._(_root);
-	@override late final _TranslationsWebDatabaseTreeZh tree = _TranslationsWebDatabaseTreeZh._(_root);
-	@override late final _TranslationsWebDatabaseRowZh row = _TranslationsWebDatabaseRowZh._(_root);
-	@override late final _TranslationsWebDatabaseGridZh grid = _TranslationsWebDatabaseGridZh._(_root);
-	@override late final _TranslationsWebDatabaseConsoleZh console = _TranslationsWebDatabaseConsoleZh._(_root);
-	@override late final _TranslationsWebDatabasePanelZh panel = _TranslationsWebDatabasePanelZh._(_root);
-	@override late final _TranslationsWebDatabaseWorkbenchZh workbench = _TranslationsWebDatabaseWorkbenchZh._(_root);
+	@override late final _Translations$web$database$dialog$zh dialog = _Translations$web$database$dialog$zh._(_root);
+	@override late final _Translations$web$database$results$zh results = _Translations$web$database$results$zh._(_root);
+	@override late final _Translations$web$database$tree$zh tree = _Translations$web$database$tree$zh._(_root);
+	@override late final _Translations$web$database$row$zh row = _Translations$web$database$row$zh._(_root);
+	@override late final _Translations$web$database$grid$zh grid = _Translations$web$database$grid$zh._(_root);
+	@override late final _Translations$web$database$console$zh console = _Translations$web$database$console$zh._(_root);
+	@override late final _Translations$web$database$panel$zh panel = _Translations$web$database$panel$zh._(_root);
+	@override late final _Translations$web$database$workbench$zh workbench = _Translations$web$database$workbench$zh._(_root);
 }
 
 // Path: web.roundTable
-class _TranslationsWebRoundTableZh extends TranslationsWebRoundTableEn {
-	_TranslationsWebRoundTableZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$roundTable$zh extends Translations$web$roundTable$en {
+	_Translations$web$roundTable$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -1743,17 +1832,17 @@ class _TranslationsWebRoundTableZh extends TranslationsWebRoundTableEn {
 	@override String get selectHint => '选择一个圆桌打开群聊。';
 	@override String get you => '你';
 	@override String get summary => '总结';
-	@override late final _TranslationsWebRoundTableDialogZh dialog = _TranslationsWebRoundTableDialogZh._(_root);
-	@override late final _TranslationsWebRoundTableDetailZh detail = _TranslationsWebRoundTableDetailZh._(_root);
-	@override late final _TranslationsWebRoundTableStatusZh status = _TranslationsWebRoundTableStatusZh._(_root);
+	@override late final _Translations$web$roundTable$dialog$zh dialog = _Translations$web$roundTable$dialog$zh._(_root);
+	@override late final _Translations$web$roundTable$detail$zh detail = _Translations$web$roundTable$detail$zh._(_root);
+	@override late final _Translations$web$roundTable$status$zh status = _Translations$web$roundTable$status$zh._(_root);
 	@override String get untitled => '新群聊';
-	@override late final _TranslationsWebRoundTableHandoffZh handoff = _TranslationsWebRoundTableHandoffZh._(_root);
-	@override late final _TranslationsWebRoundTablePlanZh plan = _TranslationsWebRoundTablePlanZh._(_root);
+	@override late final _Translations$web$roundTable$handoff$zh handoff = _Translations$web$roundTable$handoff$zh._(_root);
+	@override late final _Translations$web$roundTable$plan$zh plan = _Translations$web$roundTable$plan$zh._(_root);
 }
 
 // Path: more.identity
-class _TranslationsMoreIdentityZh extends TranslationsMoreIdentityEn {
-	_TranslationsMoreIdentityZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$more$identity$zh extends Translations$more$identity$en {
+	_Translations$more$identity$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -1764,8 +1853,8 @@ class _TranslationsMoreIdentityZh extends TranslationsMoreIdentityEn {
 }
 
 // Path: more.sections
-class _TranslationsMoreSectionsZh extends TranslationsMoreSectionsEn {
-	_TranslationsMoreSectionsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$more$sections$zh extends Translations$more$sections$en {
+	_Translations$more$sections$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -1777,36 +1866,36 @@ class _TranslationsMoreSectionsZh extends TranslationsMoreSectionsEn {
 }
 
 // Path: more.items
-class _TranslationsMoreItemsZh extends TranslationsMoreItemsEn {
-	_TranslationsMoreItemsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$more$items$zh extends Translations$more$items$en {
+	_Translations$more$items$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsMoreItemsIntegrationsZh integrations = _TranslationsMoreItemsIntegrationsZh._(_root);
-	@override late final _TranslationsMoreItemsActivityZh activity = _TranslationsMoreItemsActivityZh._(_root);
-	@override late final _TranslationsMoreItemsMemoryAmbientZh memoryAmbient = _TranslationsMoreItemsMemoryAmbientZh._(_root);
-	@override late final _TranslationsMoreItemsChannelsZh channels = _TranslationsMoreItemsChannelsZh._(_root);
-	@override late final _TranslationsMoreItemsProvidersZh providers = _TranslationsMoreItemsProvidersZh._(_root);
-	@override late final _TranslationsMoreItemsMcpZh mcp = _TranslationsMoreItemsMcpZh._(_root);
-	@override late final _TranslationsMoreItemsSkillsZh skills = _TranslationsMoreItemsSkillsZh._(_root);
-	@override late final _TranslationsMoreItemsGitHostsZh gitHosts = _TranslationsMoreItemsGitHostsZh._(_root);
-	@override late final _TranslationsMoreItemsCustomTasksZh customTasks = _TranslationsMoreItemsCustomTasksZh._(_root);
-	@override late final _TranslationsMoreItemsCortexHubZh cortexHub = _TranslationsMoreItemsCortexHubZh._(_root);
-	@override late final _TranslationsMoreItemsProjectMemoryZh projectMemory = _TranslationsMoreItemsProjectMemoryZh._(_root);
-	@override late final _TranslationsMoreItemsArchivedZh archived = _TranslationsMoreItemsArchivedZh._(_root);
-	@override late final _TranslationsMoreItemsQuarantineZh quarantine = _TranslationsMoreItemsQuarantineZh._(_root);
-	@override late final _TranslationsMoreItemsBackupsZh backups = _TranslationsMoreItemsBackupsZh._(_root);
-	@override late final _TranslationsMoreItemsDataExportZh dataExport = _TranslationsMoreItemsDataExportZh._(_root);
-	@override late final _TranslationsMoreItemsSettingsZh settings = _TranslationsMoreItemsSettingsZh._(_root);
-	@override late final _TranslationsMoreItemsAboutZh about = _TranslationsMoreItemsAboutZh._(_root);
-	@override late final _TranslationsMoreItemsVaultZh vault = _TranslationsMoreItemsVaultZh._(_root);
-	@override late final _TranslationsMoreItemsRoundTableZh roundTable = _TranslationsMoreItemsRoundTableZh._(_root);
+	@override late final _Translations$more$items$integrations$zh integrations = _Translations$more$items$integrations$zh._(_root);
+	@override late final _Translations$more$items$activity$zh activity = _Translations$more$items$activity$zh._(_root);
+	@override late final _Translations$more$items$memoryAmbient$zh memoryAmbient = _Translations$more$items$memoryAmbient$zh._(_root);
+	@override late final _Translations$more$items$channels$zh channels = _Translations$more$items$channels$zh._(_root);
+	@override late final _Translations$more$items$providers$zh providers = _Translations$more$items$providers$zh._(_root);
+	@override late final _Translations$more$items$mcp$zh mcp = _Translations$more$items$mcp$zh._(_root);
+	@override late final _Translations$more$items$skills$zh skills = _Translations$more$items$skills$zh._(_root);
+	@override late final _Translations$more$items$gitHosts$zh gitHosts = _Translations$more$items$gitHosts$zh._(_root);
+	@override late final _Translations$more$items$customTasks$zh customTasks = _Translations$more$items$customTasks$zh._(_root);
+	@override late final _Translations$more$items$cortexHub$zh cortexHub = _Translations$more$items$cortexHub$zh._(_root);
+	@override late final _Translations$more$items$projectMemory$zh projectMemory = _Translations$more$items$projectMemory$zh._(_root);
+	@override late final _Translations$more$items$archived$zh archived = _Translations$more$items$archived$zh._(_root);
+	@override late final _Translations$more$items$quarantine$zh quarantine = _Translations$more$items$quarantine$zh._(_root);
+	@override late final _Translations$more$items$backups$zh backups = _Translations$more$items$backups$zh._(_root);
+	@override late final _Translations$more$items$dataExport$zh dataExport = _Translations$more$items$dataExport$zh._(_root);
+	@override late final _Translations$more$items$settings$zh settings = _Translations$more$items$settings$zh._(_root);
+	@override late final _Translations$more$items$about$zh about = _Translations$more$items$about$zh._(_root);
+	@override late final _Translations$more$items$vault$zh vault = _Translations$more$items$vault$zh._(_root);
+	@override late final _Translations$more$items$roundTable$zh roundTable = _Translations$more$items$roundTable$zh._(_root);
 }
 
 // Path: activity.filter
-class _TranslationsActivityFilterZh extends TranslationsActivityFilterEn {
-	_TranslationsActivityFilterZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$activity$filter$zh extends Translations$activity$filter$en {
+	_Translations$activity$filter$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -1824,8 +1913,8 @@ class _TranslationsActivityFilterZh extends TranslationsActivityFilterEn {
 }
 
 // Path: activity.detail
-class _TranslationsActivityDetailZh extends TranslationsActivityDetailEn {
-	_TranslationsActivityDetailZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$activity$detail$zh extends Translations$activity$detail$en {
+	_Translations$activity$detail$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -1842,8 +1931,8 @@ class _TranslationsActivityDetailZh extends TranslationsActivityDetailEn {
 }
 
 // Path: sessions.dock
-class _TranslationsSessionsDockZh extends TranslationsSessionsDockEn {
-	_TranslationsSessionsDockZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$sessions$dock$zh extends Translations$sessions$dock$en {
+	_Translations$sessions$dock$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -1852,8 +1941,8 @@ class _TranslationsSessionsDockZh extends TranslationsSessionsDockEn {
 }
 
 // Path: sessions.tools
-class _TranslationsSessionsToolsZh extends TranslationsSessionsToolsEn {
-	_TranslationsSessionsToolsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$sessions$tools$zh extends Translations$sessions$tools$en {
+	_Translations$sessions$tools$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -1864,8 +1953,8 @@ class _TranslationsSessionsToolsZh extends TranslationsSessionsToolsEn {
 }
 
 // Path: sessions.filters
-class _TranslationsSessionsFiltersZh extends TranslationsSessionsFiltersEn {
-	_TranslationsSessionsFiltersZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$sessions$filters$zh extends Translations$sessions$filters$en {
+	_Translations$sessions$filters$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -1877,8 +1966,8 @@ class _TranslationsSessionsFiltersZh extends TranslationsSessionsFiltersEn {
 }
 
 // Path: sessions.card
-class _TranslationsSessionsCardZh extends TranslationsSessionsCardEn {
-	_TranslationsSessionsCardZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$sessions$card$zh extends Translations$sessions$card$en {
+	_Translations$sessions$card$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -1887,8 +1976,8 @@ class _TranslationsSessionsCardZh extends TranslationsSessionsCardEn {
 }
 
 // Path: sessions.empty
-class _TranslationsSessionsEmptyZh extends TranslationsSessionsEmptyEn {
-	_TranslationsSessionsEmptyZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$sessions$empty$zh extends Translations$sessions$empty$en {
+	_Translations$sessions$empty$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -1900,8 +1989,8 @@ class _TranslationsSessionsEmptyZh extends TranslationsSessionsEmptyEn {
 }
 
 // Path: sessions.relative
-class _TranslationsSessionsRelativeZh extends TranslationsSessionsRelativeEn {
-	_TranslationsSessionsRelativeZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$sessions$relative$zh extends Translations$sessions$relative$en {
+	_Translations$sessions$relative$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -1913,8 +2002,8 @@ class _TranslationsSessionsRelativeZh extends TranslationsSessionsRelativeEn {
 }
 
 // Path: sessions.detail
-class _TranslationsSessionsDetailZh extends TranslationsSessionsDetailEn {
-	_TranslationsSessionsDetailZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$sessions$detail$zh extends Translations$sessions$detail$en {
+	_Translations$sessions$detail$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -1928,27 +2017,27 @@ class _TranslationsSessionsDetailZh extends TranslationsSessionsDetailEn {
 	@override String startedEnded({required Object started, required Object ended}) => '${started} 启动  ·  ${ended} 结束';
 	@override String idPrefix({required Object id}) => 'id: ${id}';
 	@override String get errorTitle => '加载会话失败';
-	@override late final _TranslationsSessionsDetailAccountSwitcherZh accountSwitcher = _TranslationsSessionsDetailAccountSwitcherZh._(_root);
+	@override late final _Translations$sessions$detail$accountSwitcher$zh accountSwitcher = _Translations$sessions$detail$accountSwitcher$zh._(_root);
 }
 
 // Path: sessions.terminal
-class _TranslationsSessionsTerminalZh extends TranslationsSessionsTerminalEn {
-	_TranslationsSessionsTerminalZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$sessions$terminal$zh extends Translations$sessions$terminal$en {
+	_Translations$sessions$terminal$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsSessionsTerminalSnackbarZh snackbar = _TranslationsSessionsTerminalSnackbarZh._(_root);
-	@override late final _TranslationsSessionsTerminalImageSourceZh imageSource = _TranslationsSessionsTerminalImageSourceZh._(_root);
-	@override late final _TranslationsSessionsTerminalKeyboardZh keyboard = _TranslationsSessionsTerminalKeyboardZh._(_root);
-	@override late final _TranslationsSessionsTerminalAttachmentsZh attachments = _TranslationsSessionsTerminalAttachmentsZh._(_root);
-	@override late final _TranslationsSessionsTerminalConnectionZh connection = _TranslationsSessionsTerminalConnectionZh._(_root);
-	@override late final _TranslationsSessionsTerminalSelectCopyZh selectCopy = _TranslationsSessionsTerminalSelectCopyZh._(_root);
+	@override late final _Translations$sessions$terminal$snackbar$zh snackbar = _Translations$sessions$terminal$snackbar$zh._(_root);
+	@override late final _Translations$sessions$terminal$imageSource$zh imageSource = _Translations$sessions$terminal$imageSource$zh._(_root);
+	@override late final _Translations$sessions$terminal$keyboard$zh keyboard = _Translations$sessions$terminal$keyboard$zh._(_root);
+	@override late final _Translations$sessions$terminal$attachments$zh attachments = _Translations$sessions$terminal$attachments$zh._(_root);
+	@override late final _Translations$sessions$terminal$connection$zh connection = _Translations$sessions$terminal$connection$zh._(_root);
+	@override late final _Translations$sessions$terminal$selectCopy$zh selectCopy = _Translations$sessions$terminal$selectCopy$zh._(_root);
 }
 
 // Path: sessions.action
-class _TranslationsSessionsActionZh extends TranslationsSessionsActionEn {
-	_TranslationsSessionsActionZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$sessions$action$zh extends Translations$sessions$action$en {
+	_Translations$sessions$action$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -1962,12 +2051,12 @@ class _TranslationsSessionsActionZh extends TranslationsSessionsActionEn {
 	@override String get delete => '删除';
 	@override String get deleteDescription => '移除会话及其历史';
 	@override String get deleteConfirm => '确定永久删除此会话吗？其环形缓冲区和历史将全部丢失。';
-	@override late final _TranslationsSessionsActionErrorsZh errors = _TranslationsSessionsActionErrorsZh._(_root);
+	@override late final _Translations$sessions$action$errors$zh errors = _Translations$sessions$action$errors$zh._(_root);
 }
 
 // Path: sessions.dirPicker
-class _TranslationsSessionsDirPickerZh extends TranslationsSessionsDirPickerEn {
-	_TranslationsSessionsDirPickerZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$sessions$dirPicker$zh extends Translations$sessions$dirPicker$en {
+	_Translations$sessions$dirPicker$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -1979,29 +2068,29 @@ class _TranslationsSessionsDirPickerZh extends TranslationsSessionsDirPickerEn {
 	@override String get empty => '此处没有子文件夹。\n选择此文件夹，或新建一个。';
 	@override String createdSnack({required Object path}) => '已创建 ${path}';
 	@override String mkdirFailedSnack({required Object error}) => '创建文件夹失败：${error}';
-	@override late final _TranslationsSessionsDirPickerDialogZh dialog = _TranslationsSessionsDirPickerDialogZh._(_root);
+	@override late final _Translations$sessions$dirPicker$dialog$zh dialog = _Translations$sessions$dirPicker$dialog$zh._(_root);
 }
 
 // Path: sessions.inspector
-class _TranslationsSessionsInspectorZh extends TranslationsSessionsInspectorEn {
-	_TranslationsSessionsInspectorZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$sessions$inspector$zh extends Translations$sessions$inspector$en {
+	_Translations$sessions$inspector$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsSessionsInspectorShellZh shell = _TranslationsSessionsInspectorShellZh._(_root);
-	@override late final _TranslationsSessionsInspectorCortexZh cortex = _TranslationsSessionsInspectorCortexZh._(_root);
-	@override late final _TranslationsSessionsInspectorSharedZh shared = _TranslationsSessionsInspectorSharedZh._(_root);
-	@override late final _TranslationsSessionsInspectorHistoryZh history = _TranslationsSessionsInspectorHistoryZh._(_root);
-	@override late final _TranslationsSessionsInspectorFilesZh files = _TranslationsSessionsInspectorFilesZh._(_root);
-	@override late final _TranslationsSessionsInspectorGitZh git = _TranslationsSessionsInspectorGitZh._(_root);
-	@override late final _TranslationsSessionsInspectorTasksZh tasks = _TranslationsSessionsInspectorTasksZh._(_root);
-	@override late final _TranslationsSessionsInspectorNotesZh notes = _TranslationsSessionsInspectorNotesZh._(_root);
+	@override late final _Translations$sessions$inspector$shell$zh shell = _Translations$sessions$inspector$shell$zh._(_root);
+	@override late final _Translations$sessions$inspector$cortex$zh cortex = _Translations$sessions$inspector$cortex$zh._(_root);
+	@override late final _Translations$sessions$inspector$shared$zh shared = _Translations$sessions$inspector$shared$zh._(_root);
+	@override late final _Translations$sessions$inspector$history$zh history = _Translations$sessions$inspector$history$zh._(_root);
+	@override late final _Translations$sessions$inspector$files$zh files = _Translations$sessions$inspector$files$zh._(_root);
+	@override late final _Translations$sessions$inspector$git$zh git = _Translations$sessions$inspector$git$zh._(_root);
+	@override late final _Translations$sessions$inspector$tasks$zh tasks = _Translations$sessions$inspector$tasks$zh._(_root);
+	@override late final _Translations$sessions$inspector$notes$zh notes = _Translations$sessions$inspector$notes$zh._(_root);
 }
 
 // Path: sessions.spawnSheet
-class _TranslationsSessionsSpawnSheetZh extends TranslationsSessionsSpawnSheetEn {
-	_TranslationsSessionsSpawnSheetZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$sessions$spawnSheet$zh extends Translations$sessions$spawnSheet$en {
+	_Translations$sessions$spawnSheet$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -2022,15 +2111,15 @@ class _TranslationsSessionsSpawnSheetZh extends TranslationsSessionsSpawnSheetEn
 	@override String get argsLabel => '额外参数（可选）';
 	@override String get argsHint => '--continue --verbose';
 	@override String get argsHelper => '以空格分隔；留空使用提供商默认值。';
-	@override late final _TranslationsSessionsSpawnSheetBypassZh bypass = _TranslationsSessionsSpawnSheetBypassZh._(_root);
-	@override late final _TranslationsSessionsSpawnSheetNoProvidersZh noProviders = _TranslationsSessionsSpawnSheetNoProvidersZh._(_root);
-	@override late final _TranslationsSessionsSpawnSheetProviderLoadErrorZh providerLoadError = _TranslationsSessionsSpawnSheetProviderLoadErrorZh._(_root);
-	@override late final _TranslationsSessionsSpawnSheetClaudeAccountZh claudeAccount = _TranslationsSessionsSpawnSheetClaudeAccountZh._(_root);
+	@override late final _Translations$sessions$spawnSheet$bypass$zh bypass = _Translations$sessions$spawnSheet$bypass$zh._(_root);
+	@override late final _Translations$sessions$spawnSheet$noProviders$zh noProviders = _Translations$sessions$spawnSheet$noProviders$zh._(_root);
+	@override late final _Translations$sessions$spawnSheet$providerLoadError$zh providerLoadError = _Translations$sessions$spawnSheet$providerLoadError$zh._(_root);
+	@override late final _Translations$sessions$spawnSheet$claudeAccount$zh claudeAccount = _Translations$sessions$spawnSheet$claudeAccount$zh._(_root);
 }
 
 // Path: mcp.errorPrefix
-class _TranslationsMcpErrorPrefixZh extends TranslationsMcpErrorPrefixEn {
-	_TranslationsMcpErrorPrefixZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$mcp$errorPrefix$zh extends Translations$mcp$errorPrefix$en {
+	_Translations$mcp$errorPrefix$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -2042,8 +2131,8 @@ class _TranslationsMcpErrorPrefixZh extends TranslationsMcpErrorPrefixEn {
 }
 
 // Path: mcp.editor
-class _TranslationsMcpEditorZh extends TranslationsMcpEditorEn {
-	_TranslationsMcpEditorZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$mcp$editor$zh extends Translations$mcp$editor$en {
+	_Translations$mcp$editor$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -2066,8 +2155,8 @@ class _TranslationsMcpEditorZh extends TranslationsMcpEditorEn {
 }
 
 // Path: mcp.secret
-class _TranslationsMcpSecretZh extends TranslationsMcpSecretEn {
-	_TranslationsMcpSecretZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$mcp$secret$zh extends Translations$mcp$secret$en {
+	_Translations$mcp$secret$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -2092,8 +2181,8 @@ class _TranslationsMcpSecretZh extends TranslationsMcpSecretEn {
 }
 
 // Path: mcp.popup
-class _TranslationsMcpPopupZh extends TranslationsMcpPopupEn {
-	_TranslationsMcpPopupZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$mcp$popup$zh extends Translations$mcp$popup$en {
+	_Translations$mcp$popup$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -2104,8 +2193,8 @@ class _TranslationsMcpPopupZh extends TranslationsMcpPopupEn {
 }
 
 // Path: mcp.kv
-class _TranslationsMcpKvZh extends TranslationsMcpKvEn {
-	_TranslationsMcpKvZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$mcp$kv$zh extends Translations$mcp$kv$en {
+	_Translations$mcp$kv$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -2118,8 +2207,8 @@ class _TranslationsMcpKvZh extends TranslationsMcpKvEn {
 }
 
 // Path: providers.errorPrefix
-class _TranslationsProvidersErrorPrefixZh extends TranslationsProvidersErrorPrefixEn {
-	_TranslationsProvidersErrorPrefixZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$providers$errorPrefix$zh extends Translations$providers$errorPrefix$en {
+	_Translations$providers$errorPrefix$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -2130,8 +2219,8 @@ class _TranslationsProvidersErrorPrefixZh extends TranslationsProvidersErrorPref
 }
 
 // Path: providers.updateCheck
-class _TranslationsProvidersUpdateCheckZh extends TranslationsProvidersUpdateCheckEn {
-	_TranslationsProvidersUpdateCheckZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$providers$updateCheck$zh extends Translations$providers$updateCheck$en {
+	_Translations$providers$updateCheck$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -2154,8 +2243,8 @@ class _TranslationsProvidersUpdateCheckZh extends TranslationsProvidersUpdateChe
 }
 
 // Path: providers.accounts
-class _TranslationsProvidersAccountsZh extends TranslationsProvidersAccountsEn {
-	_TranslationsProvidersAccountsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$providers$accounts$zh extends Translations$providers$accounts$en {
+	_Translations$providers$accounts$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -2194,8 +2283,8 @@ class _TranslationsProvidersAccountsZh extends TranslationsProvidersAccountsEn {
 }
 
 // Path: providers.antigravityAccounts
-class _TranslationsProvidersAntigravityAccountsZh extends TranslationsProvidersAntigravityAccountsEn {
-	_TranslationsProvidersAntigravityAccountsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$providers$antigravityAccounts$zh extends Translations$providers$antigravityAccounts$en {
+	_Translations$providers$antigravityAccounts$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -2212,8 +2301,8 @@ class _TranslationsProvidersAntigravityAccountsZh extends TranslationsProvidersA
 }
 
 // Path: integrations.form
-class _TranslationsIntegrationsFormZh extends TranslationsIntegrationsFormEn {
-	_TranslationsIntegrationsFormZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$integrations$form$zh extends Translations$integrations$form$en {
+	_Translations$integrations$form$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -2233,8 +2322,8 @@ class _TranslationsIntegrationsFormZh extends TranslationsIntegrationsFormEn {
 }
 
 // Path: integrations.defaultAgent
-class _TranslationsIntegrationsDefaultAgentZh extends TranslationsIntegrationsDefaultAgentEn {
-	_TranslationsIntegrationsDefaultAgentZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$integrations$defaultAgent$zh extends Translations$integrations$defaultAgent$en {
+	_Translations$integrations$defaultAgent$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -2252,24 +2341,24 @@ class _TranslationsIntegrationsDefaultAgentZh extends TranslationsIntegrationsDe
 }
 
 // Path: memoryWorkers.tasks
-class _TranslationsMemoryWorkersTasksZh extends TranslationsMemoryWorkersTasksEn {
-	_TranslationsMemoryWorkersTasksZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$memoryWorkers$tasks$zh extends Translations$memoryWorkers$tasks$en {
+	_Translations$memoryWorkers$tasks$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsMemoryWorkersTasksGatekeeperZh gatekeeper = _TranslationsMemoryWorkersTasksGatekeeperZh._(_root);
-	@override late final _TranslationsMemoryWorkersTasksCleanerZh cleaner = _TranslationsMemoryWorkersTasksCleanerZh._(_root);
-	@override late final _TranslationsMemoryWorkersTasksGitactivityZh gitactivity = _TranslationsMemoryWorkersTasksGitactivityZh._(_root);
-	@override late final _TranslationsMemoryWorkersTasksTranscriptZh transcript = _TranslationsMemoryWorkersTasksTranscriptZh._(_root);
-	@override late final _TranslationsMemoryWorkersTasksPlanDriftZh planDrift = _TranslationsMemoryWorkersTasksPlanDriftZh._(_root);
-	@override late final _TranslationsMemoryWorkersTasksConflictDetectorZh conflictDetector = _TranslationsMemoryWorkersTasksConflictDetectorZh._(_root);
-	@override late final _TranslationsMemoryWorkersTasksCaptureZh capture = _TranslationsMemoryWorkersTasksCaptureZh._(_root);
+	@override late final _Translations$memoryWorkers$tasks$gatekeeper$zh gatekeeper = _Translations$memoryWorkers$tasks$gatekeeper$zh._(_root);
+	@override late final _Translations$memoryWorkers$tasks$cleaner$zh cleaner = _Translations$memoryWorkers$tasks$cleaner$zh._(_root);
+	@override late final _Translations$memoryWorkers$tasks$gitactivity$zh gitactivity = _Translations$memoryWorkers$tasks$gitactivity$zh._(_root);
+	@override late final _Translations$memoryWorkers$tasks$transcript$zh transcript = _Translations$memoryWorkers$tasks$transcript$zh._(_root);
+	@override late final _Translations$memoryWorkers$tasks$planDrift$zh planDrift = _Translations$memoryWorkers$tasks$planDrift$zh._(_root);
+	@override late final _Translations$memoryWorkers$tasks$conflictDetector$zh conflictDetector = _Translations$memoryWorkers$tasks$conflictDetector$zh._(_root);
+	@override late final _Translations$memoryWorkers$tasks$capture$zh capture = _Translations$memoryWorkers$tasks$capture$zh._(_root);
 }
 
 // Path: project.health
-class _TranslationsProjectHealthZh extends TranslationsProjectHealthEn {
-	_TranslationsProjectHealthZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$project$health$zh extends Translations$project$health$en {
+	_Translations$project$health$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -2296,8 +2385,8 @@ class _TranslationsProjectHealthZh extends TranslationsProjectHealthEn {
 }
 
 // Path: project.conflicts
-class _TranslationsProjectConflictsZh extends TranslationsProjectConflictsEn {
-	_TranslationsProjectConflictsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$project$conflicts$zh extends Translations$project$conflicts$en {
+	_Translations$project$conflicts$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -2319,12 +2408,12 @@ class _TranslationsProjectConflictsZh extends TranslationsProjectConflictsEn {
 	@override String get deletedFact => '已删除 fact 并采纳冲突';
 	@override String get openPlanEditor => '打开计划编辑器';
 	@override String get openGoalEditor => '打开目标编辑器';
-	@override late final _TranslationsProjectConflictsSeverityZh severity = _TranslationsProjectConflictsSeverityZh._(_root);
+	@override late final _Translations$project$conflicts$severity$zh severity = _Translations$project$conflicts$severity$zh._(_root);
 }
 
 // Path: project.journalPrune
-class _TranslationsProjectJournalPruneZh extends TranslationsProjectJournalPruneEn {
-	_TranslationsProjectJournalPruneZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$project$journalPrune$zh extends Translations$project$journalPrune$en {
+	_Translations$project$journalPrune$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -2340,8 +2429,8 @@ class _TranslationsProjectJournalPruneZh extends TranslationsProjectJournalPrune
 }
 
 // Path: project.archived
-class _TranslationsProjectArchivedZh extends TranslationsProjectArchivedEn {
-	_TranslationsProjectArchivedZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$project$archived$zh extends Translations$project$archived$en {
+	_Translations$project$archived$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -2353,8 +2442,8 @@ class _TranslationsProjectArchivedZh extends TranslationsProjectArchivedEn {
 }
 
 // Path: backups.kv
-class _TranslationsBackupsKvZh extends TranslationsBackupsKvEn {
-	_TranslationsBackupsKvZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$backups$kv$zh extends Translations$backups$kv$en {
+	_Translations$backups$kv$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -2377,8 +2466,8 @@ class _TranslationsBackupsKvZh extends TranslationsBackupsKvEn {
 }
 
 // Path: backups.recoveryKit
-class _TranslationsBackupsRecoveryKitZh extends TranslationsBackupsRecoveryKitEn {
-	_TranslationsBackupsRecoveryKitZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$backups$recoveryKit$zh extends Translations$backups$recoveryKit$en {
+	_Translations$backups$recoveryKit$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -2395,8 +2484,8 @@ class _TranslationsBackupsRecoveryKitZh extends TranslationsBackupsRecoveryKitEn
 }
 
 // Path: backups.emptyMissingDeps
-class _TranslationsBackupsEmptyMissingDepsZh extends TranslationsBackupsEmptyMissingDepsEn {
-	_TranslationsBackupsEmptyMissingDepsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$backups$emptyMissingDeps$zh extends Translations$backups$emptyMissingDeps$en {
+	_Translations$backups$emptyMissingDeps$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -2406,8 +2495,8 @@ class _TranslationsBackupsEmptyMissingDepsZh extends TranslationsBackupsEmptyMis
 }
 
 // Path: backups.emptyNoTargets
-class _TranslationsBackupsEmptyNoTargetsZh extends TranslationsBackupsEmptyNoTargetsEn {
-	_TranslationsBackupsEmptyNoTargetsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$backups$emptyNoTargets$zh extends Translations$backups$emptyNoTargets$en {
+	_Translations$backups$emptyNoTargets$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -2417,8 +2506,8 @@ class _TranslationsBackupsEmptyNoTargetsZh extends TranslationsBackupsEmptyNoTar
 }
 
 // Path: backups.emptyNoBackups
-class _TranslationsBackupsEmptyNoBackupsZh extends TranslationsBackupsEmptyNoBackupsEn {
-	_TranslationsBackupsEmptyNoBackupsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$backups$emptyNoBackups$zh extends Translations$backups$emptyNoBackups$en {
+	_Translations$backups$emptyNoBackups$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -2428,8 +2517,8 @@ class _TranslationsBackupsEmptyNoBackupsZh extends TranslationsBackupsEmptyNoBac
 }
 
 // Path: backups.wizard
-class _TranslationsBackupsWizardZh extends TranslationsBackupsWizardEn {
-	_TranslationsBackupsWizardZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$backups$wizard$zh extends Translations$backups$wizard$en {
+	_Translations$backups$wizard$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -2446,8 +2535,8 @@ class _TranslationsBackupsWizardZh extends TranslationsBackupsWizardEn {
 }
 
 // Path: backups.health
-class _TranslationsBackupsHealthZh extends TranslationsBackupsHealthEn {
-	_TranslationsBackupsHealthZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$backups$health$zh extends Translations$backups$health$en {
+	_Translations$backups$health$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -2457,12 +2546,12 @@ class _TranslationsBackupsHealthZh extends TranslationsBackupsHealthEn {
 	@override String get headlineNever => '尚无备份';
 	@override String get lastSuccess => '最近成功备份';
 	@override String get never => '从未';
-	@override late final _TranslationsBackupsHealthTilesZh tiles = _TranslationsBackupsHealthTilesZh._(_root);
+	@override late final _Translations$backups$health$tiles$zh tiles = _Translations$backups$health$tiles$zh._(_root);
 }
 
 // Path: backups.encryption
-class _TranslationsBackupsEncryptionZh extends TranslationsBackupsEncryptionEn {
-	_TranslationsBackupsEncryptionZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$backups$encryption$zh extends Translations$backups$encryption$en {
+	_Translations$backups$encryption$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -2477,8 +2566,8 @@ class _TranslationsBackupsEncryptionZh extends TranslationsBackupsEncryptionEn {
 }
 
 // Path: backups.restore
-class _TranslationsBackupsRestoreZh extends TranslationsBackupsRestoreEn {
-	_TranslationsBackupsRestoreZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$backups$restore$zh extends Translations$backups$restore$en {
+	_Translations$backups$restore$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -2534,8 +2623,8 @@ class _TranslationsBackupsRestoreZh extends TranslationsBackupsRestoreEn {
 }
 
 // Path: backups.inventory
-class _TranslationsBackupsInventoryZh extends TranslationsBackupsInventoryEn {
-	_TranslationsBackupsInventoryZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$backups$inventory$zh extends Translations$backups$inventory$en {
+	_Translations$backups$inventory$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -2550,23 +2639,23 @@ class _TranslationsBackupsInventoryZh extends TranslationsBackupsInventoryEn {
 }
 
 // Path: backupTargetEditor.kinds
-class _TranslationsBackupTargetEditorKindsZh extends TranslationsBackupTargetEditorKindsEn {
-	_TranslationsBackupTargetEditorKindsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$backupTargetEditor$kinds$zh extends Translations$backupTargetEditor$kinds$en {
+	_Translations$backupTargetEditor$kinds$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsBackupTargetEditorKindsLocalZh local = _TranslationsBackupTargetEditorKindsLocalZh._(_root);
-	@override late final _TranslationsBackupTargetEditorKindsSmbZh smb = _TranslationsBackupTargetEditorKindsSmbZh._(_root);
-	@override late final _TranslationsBackupTargetEditorKindsWebdavZh webdav = _TranslationsBackupTargetEditorKindsWebdavZh._(_root);
-	@override late final _TranslationsBackupTargetEditorKindsSftpZh sftp = _TranslationsBackupTargetEditorKindsSftpZh._(_root);
-	@override late final _TranslationsBackupTargetEditorKindsS3Zh s3 = _TranslationsBackupTargetEditorKindsS3Zh._(_root);
-	@override late final _TranslationsBackupTargetEditorKindsRcloneZh rclone = _TranslationsBackupTargetEditorKindsRcloneZh._(_root);
+	@override late final _Translations$backupTargetEditor$kinds$local$zh local = _Translations$backupTargetEditor$kinds$local$zh._(_root);
+	@override late final _Translations$backupTargetEditor$kinds$smb$zh smb = _Translations$backupTargetEditor$kinds$smb$zh._(_root);
+	@override late final _Translations$backupTargetEditor$kinds$webdav$zh webdav = _Translations$backupTargetEditor$kinds$webdav$zh._(_root);
+	@override late final _Translations$backupTargetEditor$kinds$sftp$zh sftp = _Translations$backupTargetEditor$kinds$sftp$zh._(_root);
+	@override late final _Translations$backupTargetEditor$kinds$s3$zh s3 = _Translations$backupTargetEditor$kinds$s3$zh._(_root);
+	@override late final _Translations$backupTargetEditor$kinds$rclone$zh rclone = _Translations$backupTargetEditor$kinds$rclone$zh._(_root);
 }
 
 // Path: githosts.errorPrefix
-class _TranslationsGithostsErrorPrefixZh extends TranslationsGithostsErrorPrefixEn {
-	_TranslationsGithostsErrorPrefixZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$githosts$errorPrefix$zh extends Translations$githosts$errorPrefix$en {
+	_Translations$githosts$errorPrefix$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -2576,8 +2665,8 @@ class _TranslationsGithostsErrorPrefixZh extends TranslationsGithostsErrorPrefix
 }
 
 // Path: githosts.form
-class _TranslationsGithostsFormZh extends TranslationsGithostsFormEn {
-	_TranslationsGithostsFormZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$githosts$form$zh extends Translations$githosts$form$en {
+	_Translations$githosts$form$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -2586,7 +2675,7 @@ class _TranslationsGithostsFormZh extends TranslationsGithostsFormEn {
 	@override String get hostLabel => '主机';
 	@override String get nameLabel => '名称';
 	@override String get nameHint => 'work-github、personal-gitlab、…';
-	@override late final _TranslationsGithostsFormKindsZh kinds = _TranslationsGithostsFormKindsZh._(_root);
+	@override late final _Translations$githosts$form$kinds$zh kinds = _Translations$githosts$form$kinds$zh._(_root);
 	@override String get validateHost => '必须填写主机。';
 	@override String get validateName => '必须填写名称。';
 	@override String get snackAdded => '主机已添加。';
@@ -2611,8 +2700,8 @@ class _TranslationsGithostsFormZh extends TranslationsGithostsFormEn {
 }
 
 // Path: channels.configDialog
-class _TranslationsChannelsConfigDialogZh extends TranslationsChannelsConfigDialogEn {
-	_TranslationsChannelsConfigDialogZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$channels$configDialog$zh extends Translations$channels$configDialog$en {
+	_Translations$channels$configDialog$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -2621,8 +2710,8 @@ class _TranslationsChannelsConfigDialogZh extends TranslationsChannelsConfigDial
 }
 
 // Path: channels.webhookDialog
-class _TranslationsChannelsWebhookDialogZh extends TranslationsChannelsWebhookDialogEn {
-	_TranslationsChannelsWebhookDialogZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$channels$webhookDialog$zh extends Translations$channels$webhookDialog$en {
+	_Translations$channels$webhookDialog$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -2632,8 +2721,8 @@ class _TranslationsChannelsWebhookDialogZh extends TranslationsChannelsWebhookDi
 }
 
 // Path: channels.notifications
-class _TranslationsChannelsNotificationsZh extends TranslationsChannelsNotificationsEn {
-	_TranslationsChannelsNotificationsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$channels$notifications$zh extends Translations$channels$notifications$en {
+	_Translations$channels$notifications$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -2647,12 +2736,12 @@ class _TranslationsChannelsNotificationsZh extends TranslationsChannelsNotificat
 	@override String get snippetNoCap => '无上限';
 	@override String snippetChars({required Object n}) => '${n} 字符';
 	@override String get updatedSnack => '通知偏好已更新。';
-	@override late final _TranslationsChannelsNotificationsModesZh modes = _TranslationsChannelsNotificationsModesZh._(_root);
+	@override late final _Translations$channels$notifications$modes$zh modes = _Translations$channels$notifications$modes$zh._(_root);
 }
 
 // Path: channels.popup
-class _TranslationsChannelsPopupZh extends TranslationsChannelsPopupEn {
-	_TranslationsChannelsPopupZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$channels$popup$zh extends Translations$channels$popup$en {
+	_Translations$channels$popup$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -2665,8 +2754,8 @@ class _TranslationsChannelsPopupZh extends TranslationsChannelsPopupEn {
 }
 
 // Path: channels.badges
-class _TranslationsChannelsBadgesZh extends TranslationsChannelsBadgesEn {
-	_TranslationsChannelsBadgesZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$channels$badges$zh extends Translations$channels$badges$en {
+	_Translations$channels$badges$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -2678,8 +2767,8 @@ class _TranslationsChannelsBadgesZh extends TranslationsChannelsBadgesEn {
 }
 
 // Path: channels.snacks
-class _TranslationsChannelsSnacksZh extends TranslationsChannelsSnacksEn {
-	_TranslationsChannelsSnacksZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$channels$snacks$zh extends Translations$channels$snacks$en {
+	_Translations$channels$snacks$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -2694,8 +2783,8 @@ class _TranslationsChannelsSnacksZh extends TranslationsChannelsSnacksEn {
 }
 
 // Path: channels.errorPrefix
-class _TranslationsChannelsErrorPrefixZh extends TranslationsChannelsErrorPrefixEn {
-	_TranslationsChannelsErrorPrefixZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$channels$errorPrefix$zh extends Translations$channels$errorPrefix$en {
+	_Translations$channels$errorPrefix$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -2708,23 +2797,23 @@ class _TranslationsChannelsErrorPrefixZh extends TranslationsChannelsErrorPrefix
 }
 
 // Path: channels.kinds
-class _TranslationsChannelsKindsZh extends TranslationsChannelsKindsEn {
-	_TranslationsChannelsKindsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$channels$kinds$zh extends Translations$channels$kinds$en {
+	_Translations$channels$kinds$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsChannelsKindsTelegramZh telegram = _TranslationsChannelsKindsTelegramZh._(_root);
-	@override late final _TranslationsChannelsKindsSlackZh slack = _TranslationsChannelsKindsSlackZh._(_root);
-	@override late final _TranslationsChannelsKindsDiscordZh discord = _TranslationsChannelsKindsDiscordZh._(_root);
-	@override late final _TranslationsChannelsKindsFeishuZh feishu = _TranslationsChannelsKindsFeishuZh._(_root);
-	@override late final _TranslationsChannelsKindsDingtalkZh dingtalk = _TranslationsChannelsKindsDingtalkZh._(_root);
-	@override late final _TranslationsChannelsKindsWecomZh wecom = _TranslationsChannelsKindsWecomZh._(_root);
+	@override late final _Translations$channels$kinds$telegram$zh telegram = _Translations$channels$kinds$telegram$zh._(_root);
+	@override late final _Translations$channels$kinds$slack$zh slack = _Translations$channels$kinds$slack$zh._(_root);
+	@override late final _Translations$channels$kinds$discord$zh discord = _Translations$channels$kinds$discord$zh._(_root);
+	@override late final _Translations$channels$kinds$feishu$zh feishu = _Translations$channels$kinds$feishu$zh._(_root);
+	@override late final _Translations$channels$kinds$dingtalk$zh dingtalk = _Translations$channels$kinds$dingtalk$zh._(_root);
+	@override late final _Translations$channels$kinds$wecom$zh wecom = _Translations$channels$kinds$wecom$zh._(_root);
 }
 
 // Path: notesPage.editor
-class _TranslationsNotesPageEditorZh extends TranslationsNotesPageEditorEn {
-	_TranslationsNotesPageEditorZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$notesPage$editor$zh extends Translations$notesPage$editor$en {
+	_Translations$notesPage$editor$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -2740,8 +2829,8 @@ class _TranslationsNotesPageEditorZh extends TranslationsNotesPageEditorEn {
 }
 
 // Path: dataExport.sections
-class _TranslationsDataExportSectionsZh extends TranslationsDataExportSectionsEn {
-	_TranslationsDataExportSectionsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$dataExport$sections$zh extends Translations$dataExport$sections$en {
+	_Translations$dataExport$sections$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -2751,8 +2840,8 @@ class _TranslationsDataExportSectionsZh extends TranslationsDataExportSectionsEn
 }
 
 // Path: dataExport.form
-class _TranslationsDataExportFormZh extends TranslationsDataExportFormEn {
-	_TranslationsDataExportFormZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$dataExport$form$zh extends Translations$dataExport$form$en {
+	_Translations$dataExport$form$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -2761,7 +2850,7 @@ class _TranslationsDataExportFormZh extends TranslationsDataExportFormEn {
 	@override String get memories => '记忆';
 	@override String get memoriesHint => '所有已持久化的记忆及其向量。';
 	@override String get integrations => '集成';
-	@override late final _TranslationsDataExportFormIntegrationOptionsZh integrationOptions = _TranslationsDataExportFormIntegrationOptionsZh._(_root);
+	@override late final _Translations$dataExport$form$integrationOptions$zh integrationOptions = _Translations$dataExport$form$integrationOptions$zh._(_root);
 	@override String get confirmWarning => '明文密钥导出包含可解密的机密。请输入 "I understand" 以确认。';
 	@override String get confirmPlaceholder => '输入 "I understand"';
 	@override String get confirmSentinel => 'I understand';
@@ -2776,8 +2865,8 @@ class _TranslationsDataExportFormZh extends TranslationsDataExportFormEn {
 }
 
 // Path: dataExport.history
-class _TranslationsDataExportHistoryZh extends TranslationsDataExportHistoryEn {
-	_TranslationsDataExportHistoryZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$dataExport$history$zh extends Translations$dataExport$history$en {
+	_Translations$dataExport$history$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -2795,7 +2884,7 @@ class _TranslationsDataExportHistoryZh extends TranslationsDataExportHistoryEn {
 	@override String get download => '下载';
 	@override String get delete => '删除';
 	@override String get downloadCopiedToast => '下载 URL 已复制到剪贴板。在浏览器中粘贴以获取（单次使用）。';
-	@override late final _TranslationsDataExportHistoryColumnsZh columns = _TranslationsDataExportHistoryColumnsZh._(_root);
+	@override late final _Translations$dataExport$history$columns$zh columns = _Translations$dataExport$history$columns$zh._(_root);
 	@override String get scopeEmpty => '（空）';
 	@override String get scopeMemories => '记忆';
 	@override String scopeIntegrations({required Object mode}) => '集成(${mode})';
@@ -2803,8 +2892,8 @@ class _TranslationsDataExportHistoryZh extends TranslationsDataExportHistoryEn {
 }
 
 // Path: dataExport.import
-class _TranslationsDataExportImportZh extends TranslationsDataExportImportEn {
-	_TranslationsDataExportImportZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$dataExport$import$zh extends Translations$dataExport$import$en {
+	_Translations$dataExport$import$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -2823,12 +2912,12 @@ class _TranslationsDataExportImportZh extends TranslationsDataExportImportEn {
 	@override String get doneToast => '导入完成';
 	@override String get finishedWithErrors => '导入完成但有错误';
 	@override String failedToast({required Object error}) => '导入失败：${error}';
-	@override late final _TranslationsDataExportImportSummaryCardZh summaryCard = _TranslationsDataExportImportSummaryCardZh._(_root);
+	@override late final _Translations$dataExport$import$summaryCard$zh summaryCard = _Translations$dataExport$import$summaryCard$zh._(_root);
 }
 
 // Path: dataExport.imports
-class _TranslationsDataExportImportsZh extends TranslationsDataExportImportsEn {
-	_TranslationsDataExportImportsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$dataExport$imports$zh extends Translations$dataExport$imports$en {
+	_Translations$dataExport$imports$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -2839,12 +2928,12 @@ class _TranslationsDataExportImportsZh extends TranslationsDataExportImportsEn {
 	@override String listFailedToast({required Object error}) => '加载导入失败：${error}';
 	@override String get noneCounts => '（无计数）';
 	@override String get sourceUnknown => '（未知来源）';
-	@override late final _TranslationsDataExportImportsColumnsZh columns = _TranslationsDataExportImportsColumnsZh._(_root);
+	@override late final _Translations$dataExport$imports$columns$zh columns = _Translations$dataExport$imports$columns$zh._(_root);
 }
 
 // Path: dataExport.relative
-class _TranslationsDataExportRelativeZh extends TranslationsDataExportRelativeEn {
-	_TranslationsDataExportRelativeZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$dataExport$relative$zh extends Translations$dataExport$relative$en {
+	_Translations$dataExport$relative$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -2859,8 +2948,8 @@ class _TranslationsDataExportRelativeZh extends TranslationsDataExportRelativeEn
 }
 
 // Path: dataExport.status
-class _TranslationsDataExportStatusZh extends TranslationsDataExportStatusEn {
-	_TranslationsDataExportStatusZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$dataExport$status$zh extends Translations$dataExport$status$en {
+	_Translations$dataExport$status$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -2874,8 +2963,8 @@ class _TranslationsDataExportStatusZh extends TranslationsDataExportStatusEn {
 }
 
 // Path: memory.status
-class _TranslationsMemoryStatusZh extends TranslationsMemoryStatusEn {
-	_TranslationsMemoryStatusZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$memory$status$zh extends Translations$memory$status$en {
+	_Translations$memory$status$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -2891,8 +2980,8 @@ class _TranslationsMemoryStatusZh extends TranslationsMemoryStatusEn {
 }
 
 // Path: memory.rank
-class _TranslationsMemoryRankZh extends TranslationsMemoryRankEn {
-	_TranslationsMemoryRankZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$memory$rank$zh extends Translations$memory$rank$en {
+	_Translations$memory$rank$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -2908,8 +2997,8 @@ class _TranslationsMemoryRankZh extends TranslationsMemoryRankEn {
 }
 
 // Path: memory.deleteAllConfirm
-class _TranslationsMemoryDeleteAllConfirmZh extends TranslationsMemoryDeleteAllConfirmEn {
-	_TranslationsMemoryDeleteAllConfirmZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$memory$deleteAllConfirm$zh extends Translations$memory$deleteAllConfirm$en {
+	_Translations$memory$deleteAllConfirm$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -2919,8 +3008,8 @@ class _TranslationsMemoryDeleteAllConfirmZh extends TranslationsMemoryDeleteAllC
 }
 
 // Path: memory.deleteOne
-class _TranslationsMemoryDeleteOneZh extends TranslationsMemoryDeleteOneEn {
-	_TranslationsMemoryDeleteOneZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$memory$deleteOne$zh extends Translations$memory$deleteOne$en {
+	_Translations$memory$deleteOne$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -2930,8 +3019,8 @@ class _TranslationsMemoryDeleteOneZh extends TranslationsMemoryDeleteOneEn {
 }
 
 // Path: memory.scope
-class _TranslationsMemoryScopeZh extends TranslationsMemoryScopeEn {
-	_TranslationsMemoryScopeZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$memory$scope$zh extends Translations$memory$scope$en {
+	_Translations$memory$scope$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -2941,8 +3030,8 @@ class _TranslationsMemoryScopeZh extends TranslationsMemoryScopeEn {
 }
 
 // Path: memory.create
-class _TranslationsMemoryCreateZh extends TranslationsMemoryCreateEn {
-	_TranslationsMemoryCreateZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$memory$create$zh extends Translations$memory$create$en {
+	_Translations$memory$create$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -2954,8 +3043,8 @@ class _TranslationsMemoryCreateZh extends TranslationsMemoryCreateEn {
 }
 
 // Path: memory.reembed
-class _TranslationsMemoryReembedZh extends TranslationsMemoryReembedEn {
-	_TranslationsMemoryReembedZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$memory$reembed$zh extends Translations$memory$reembed$en {
+	_Translations$memory$reembed$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -2970,8 +3059,8 @@ class _TranslationsMemoryReembedZh extends TranslationsMemoryReembedEn {
 }
 
 // Path: about.sections
-class _TranslationsAboutSectionsZh extends TranslationsAboutSectionsEn {
-	_TranslationsAboutSectionsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$about$sections$zh extends Translations$about$sections$en {
+	_Translations$about$sections$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -2982,8 +3071,8 @@ class _TranslationsAboutSectionsZh extends TranslationsAboutSectionsEn {
 }
 
 // Path: about.fields
-class _TranslationsAboutFieldsZh extends TranslationsAboutFieldsEn {
-	_TranslationsAboutFieldsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$about$fields$zh extends Translations$about$fields$en {
+	_Translations$about$fields$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -2998,8 +3087,8 @@ class _TranslationsAboutFieldsZh extends TranslationsAboutFieldsEn {
 }
 
 // Path: about.copyLabels
-class _TranslationsAboutCopyLabelsZh extends TranslationsAboutCopyLabelsEn {
-	_TranslationsAboutCopyLabelsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$about$copyLabels$zh extends Translations$about$copyLabels$en {
+	_Translations$about$copyLabels$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -3009,8 +3098,8 @@ class _TranslationsAboutCopyLabelsZh extends TranslationsAboutCopyLabelsEn {
 }
 
 // Path: about.gateway
-class _TranslationsAboutGatewayZh extends TranslationsAboutGatewayEn {
-	_TranslationsAboutGatewayZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$about$gateway$zh extends Translations$about$gateway$en {
+	_Translations$about$gateway$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -3025,8 +3114,8 @@ class _TranslationsAboutGatewayZh extends TranslationsAboutGatewayEn {
 }
 
 // Path: settings.language
-class _TranslationsSettingsLanguageZh extends TranslationsSettingsLanguageEn {
-	_TranslationsSettingsLanguageZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$settings$language$zh extends Translations$settings$language$en {
+	_Translations$settings$language$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -3040,8 +3129,8 @@ class _TranslationsSettingsLanguageZh extends TranslationsSettingsLanguageEn {
 }
 
 // Path: settings.appearance
-class _TranslationsSettingsAppearanceZh extends TranslationsSettingsAppearanceEn {
-	_TranslationsSettingsAppearanceZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$settings$appearance$zh extends Translations$settings$appearance$en {
+	_Translations$settings$appearance$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -3056,8 +3145,8 @@ class _TranslationsSettingsAppearanceZh extends TranslationsSettingsAppearanceEn
 }
 
 // Path: settings.account
-class _TranslationsSettingsAccountZh extends TranslationsSettingsAccountEn {
-	_TranslationsSettingsAccountZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$settings$account$zh extends Translations$settings$account$en {
+	_Translations$settings$account$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -3068,8 +3157,8 @@ class _TranslationsSettingsAccountZh extends TranslationsSettingsAccountEn {
 }
 
 // Path: settings.gateway
-class _TranslationsSettingsGatewayZh extends TranslationsSettingsGatewayEn {
-	_TranslationsSettingsGatewayZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$settings$gateway$zh extends Translations$settings$gateway$en {
+	_Translations$settings$gateway$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -3082,8 +3171,8 @@ class _TranslationsSettingsGatewayZh extends TranslationsSettingsGatewayEn {
 }
 
 // Path: settings.changeCredentials
-class _TranslationsSettingsChangeCredentialsZh extends TranslationsSettingsChangeCredentialsEn {
-	_TranslationsSettingsChangeCredentialsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$settings$changeCredentials$zh extends Translations$settings$changeCredentials$en {
+	_Translations$settings$changeCredentials$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -3105,8 +3194,8 @@ class _TranslationsSettingsChangeCredentialsZh extends TranslationsSettingsChang
 }
 
 // Path: settings.logViewer
-class _TranslationsSettingsLogViewerZh extends TranslationsSettingsLogViewerEn {
-	_TranslationsSettingsLogViewerZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$settings$logViewer$zh extends Translations$settings$logViewer$en {
+	_Translations$settings$logViewer$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -3117,12 +3206,12 @@ class _TranslationsSettingsLogViewerZh extends TranslationsSettingsLogViewerEn {
 	@override String get clearLocal => '清除本地视图';
 	@override String get copiedSnack => '已将缓冲复制到剪贴板';
 	@override String get filterHint => '筛选子串…';
-	@override late final _TranslationsSettingsLogViewerLevelsZh levels = _TranslationsSettingsLogViewerLevelsZh._(_root);
+	@override late final _Translations$settings$logViewer$levels$zh levels = _Translations$settings$logViewer$levels$zh._(_root);
 }
 
 // Path: settings.serverSettings
-class _TranslationsSettingsServerSettingsZh extends TranslationsSettingsServerSettingsEn {
-	_TranslationsSettingsServerSettingsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$settings$serverSettings$zh extends Translations$settings$serverSettings$en {
+	_Translations$settings$serverSettings$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -3142,17 +3231,17 @@ class _TranslationsSettingsServerSettingsZh extends TranslationsSettingsServerSe
 	@override String get savedSimple => '已保存。';
 	@override String get changesNeedRestart => '此配置的修改需重启网关。';
 	@override String get loadFailed => '加载服务器设置失败';
-	@override late final _TranslationsSettingsServerSettingsSectionsZh sections = _TranslationsSettingsServerSettingsSectionsZh._(_root);
-	@override late final _TranslationsSettingsServerSettingsSectionDescriptionsZh sectionDescriptions = _TranslationsSettingsServerSettingsSectionDescriptionsZh._(_root);
-	@override late final _TranslationsSettingsServerSettingsFieldsZh fields = _TranslationsSettingsServerSettingsFieldsZh._(_root);
+	@override late final _Translations$settings$serverSettings$sections$zh sections = _Translations$settings$serverSettings$sections$zh._(_root);
+	@override late final _Translations$settings$serverSettings$sectionDescriptions$zh sectionDescriptions = _Translations$settings$serverSettings$sectionDescriptions$zh._(_root);
+	@override late final _Translations$settings$serverSettings$fields$zh fields = _Translations$settings$serverSettings$fields$zh._(_root);
 	@override String validateInteger({required Object field}) => '「${field}」必须是整数';
 	@override String validateNumber({required Object field}) => '「${field}」必须是数字';
-	@override late final _TranslationsSettingsServerSettingsEmbedderModelZh embedderModel = _TranslationsSettingsServerSettingsEmbedderModelZh._(_root);
+	@override late final _Translations$settings$serverSettings$embedderModel$zh embedderModel = _Translations$settings$serverSettings$embedderModel$zh._(_root);
 }
 
 // Path: web.sessions.list
-class _TranslationsWebSessionsListZh extends TranslationsWebSessionsListEn {
-	_TranslationsWebSessionsListZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$sessions$list$zh extends Translations$web$sessions$list$en {
+	_Translations$web$sessions$list$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -3171,13 +3260,13 @@ class _TranslationsWebSessionsListZh extends TranslationsWebSessionsListEn {
 	@override String childPromoted({required Object count}) => '其 ${count} 个子任务会话将被提升为顶级。';
 	@override String childPromotedPlural({required Object count}) => '其 ${count} 个子任务会话将被提升为顶级。';
 	@override String footer({required Object live, required Object ended}) => '${live} 运行中 · ${ended} 已结束';
-	@override late final _TranslationsWebSessionsListRowZh row = _TranslationsWebSessionsListRowZh._(_root);
+	@override late final _Translations$web$sessions$list$row$zh row = _Translations$web$sessions$list$row$zh._(_root);
 	@override String get deleteFailedToast => '删除失败';
 }
 
 // Path: web.sessions.tabs
-class _TranslationsWebSessionsTabsZh extends TranslationsWebSessionsTabsEn {
-	_TranslationsWebSessionsTabsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$sessions$tabs$zh extends Translations$web$sessions$tabs$en {
+	_Translations$web$sessions$tabs$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -3187,8 +3276,8 @@ class _TranslationsWebSessionsTabsZh extends TranslationsWebSessionsTabsEn {
 }
 
 // Path: web.sessions.page
-class _TranslationsWebSessionsPageZh extends TranslationsWebSessionsPageEn {
-	_TranslationsWebSessionsPageZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$sessions$page$zh extends Translations$web$sessions$page$en {
+	_Translations$web$sessions$page$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -3209,8 +3298,8 @@ class _TranslationsWebSessionsPageZh extends TranslationsWebSessionsPageEn {
 }
 
 // Path: web.sessions.empty
-class _TranslationsWebSessionsEmptyZh extends TranslationsWebSessionsEmptyEn {
-	_TranslationsWebSessionsEmptyZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$sessions$empty$zh extends Translations$web$sessions$empty$en {
+	_Translations$web$sessions$empty$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -3221,8 +3310,8 @@ class _TranslationsWebSessionsEmptyZh extends TranslationsWebSessionsEmptyEn {
 }
 
 // Path: web.sessions.header
-class _TranslationsWebSessionsHeaderZh extends TranslationsWebSessionsHeaderEn {
-	_TranslationsWebSessionsHeaderZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$sessions$header$zh extends Translations$web$sessions$header$en {
+	_Translations$web$sessions$header$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -3248,8 +3337,8 @@ class _TranslationsWebSessionsHeaderZh extends TranslationsWebSessionsHeaderEn {
 }
 
 // Path: web.sessions.terminal
-class _TranslationsWebSessionsTerminalZh extends TranslationsWebSessionsTerminalEn {
-	_TranslationsWebSessionsTerminalZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$sessions$terminal$zh extends Translations$web$sessions$terminal$en {
+	_Translations$web$sessions$terminal$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -3278,8 +3367,8 @@ class _TranslationsWebSessionsTerminalZh extends TranslationsWebSessionsTerminal
 }
 
 // Path: web.sessions.spawn
-class _TranslationsWebSessionsSpawnZh extends TranslationsWebSessionsSpawnEn {
-	_TranslationsWebSessionsSpawnZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$sessions$spawn$zh extends Translations$web$sessions$spawn$en {
+	_Translations$web$sessions$spawn$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -3319,8 +3408,8 @@ class _TranslationsWebSessionsSpawnZh extends TranslationsWebSessionsSpawnEn {
 }
 
 // Path: web.sessions.accountSwitcher
-class _TranslationsWebSessionsAccountSwitcherZh extends TranslationsWebSessionsAccountSwitcherEn {
-	_TranslationsWebSessionsAccountSwitcherZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$sessions$accountSwitcher$zh extends Translations$web$sessions$accountSwitcher$en {
+	_Translations$web$sessions$accountSwitcher$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -3345,20 +3434,20 @@ class _TranslationsWebSessionsAccountSwitcherZh extends TranslationsWebSessionsA
 }
 
 // Path: web.sessions.inspector
-class _TranslationsWebSessionsInspectorZh extends TranslationsWebSessionsInspectorEn {
-	_TranslationsWebSessionsInspectorZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$sessions$inspector$zh extends Translations$web$sessions$inspector$en {
+	_Translations$web$sessions$inspector$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsWebSessionsInspectorTabsZh tabs = _TranslationsWebSessionsInspectorTabsZh._(_root);
-	@override late final _TranslationsWebSessionsInspectorVaultPanelZh vaultPanel = _TranslationsWebSessionsInspectorVaultPanelZh._(_root);
-	@override late final _TranslationsWebSessionsInspectorCortexPanelZh cortexPanel = _TranslationsWebSessionsInspectorCortexPanelZh._(_root);
+	@override late final _Translations$web$sessions$inspector$tabs$zh tabs = _Translations$web$sessions$inspector$tabs$zh._(_root);
+	@override late final _Translations$web$sessions$inspector$vaultPanel$zh vaultPanel = _Translations$web$sessions$inspector$vaultPanel$zh._(_root);
+	@override late final _Translations$web$sessions$inspector$cortexPanel$zh cortexPanel = _Translations$web$sessions$inspector$cortexPanel$zh._(_root);
 }
 
 // Path: web.sessions.ended
-class _TranslationsWebSessionsEndedZh extends TranslationsWebSessionsEndedEn {
-	_TranslationsWebSessionsEndedZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$sessions$ended$zh extends Translations$web$sessions$ended$en {
+	_Translations$web$sessions$ended$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -3368,8 +3457,8 @@ class _TranslationsWebSessionsEndedZh extends TranslationsWebSessionsEndedEn {
 }
 
 // Path: web.sessions.fileBrowser
-class _TranslationsWebSessionsFileBrowserZh extends TranslationsWebSessionsFileBrowserEn {
-	_TranslationsWebSessionsFileBrowserZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$sessions$fileBrowser$zh extends Translations$web$sessions$fileBrowser$en {
+	_Translations$web$sessions$fileBrowser$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -3393,8 +3482,8 @@ class _TranslationsWebSessionsFileBrowserZh extends TranslationsWebSessionsFileB
 }
 
 // Path: web.conflicts.confirmDelete
-class _TranslationsWebConflictsConfirmDeleteZh extends TranslationsWebConflictsConfirmDeleteEn {
-	_TranslationsWebConflictsConfirmDeleteZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$conflicts$confirmDelete$zh extends Translations$web$conflicts$confirmDelete$en {
+	_Translations$web$conflicts$confirmDelete$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -3412,8 +3501,8 @@ class _TranslationsWebConflictsConfirmDeleteZh extends TranslationsWebConflictsC
 }
 
 // Path: web.conflicts.openLayer
-class _TranslationsWebConflictsOpenLayerZh extends TranslationsWebConflictsOpenLayerEn {
-	_TranslationsWebConflictsOpenLayerZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$conflicts$openLayer$zh extends Translations$web$conflicts$openLayer$en {
+	_Translations$web$conflicts$openLayer$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -3423,8 +3512,8 @@ class _TranslationsWebConflictsOpenLayerZh extends TranslationsWebConflictsOpenL
 }
 
 // Path: web.conflicts.severity
-class _TranslationsWebConflictsSeverityZh extends TranslationsWebConflictsSeverityEn {
-	_TranslationsWebConflictsSeverityZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$conflicts$severity$zh extends Translations$web$conflicts$severity$en {
+	_Translations$web$conflicts$severity$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -3435,8 +3524,8 @@ class _TranslationsWebConflictsSeverityZh extends TranslationsWebConflictsSeveri
 }
 
 // Path: web.memoryConfig.sections
-class _TranslationsWebMemoryConfigSectionsZh extends TranslationsWebMemoryConfigSectionsEn {
-	_TranslationsWebMemoryConfigSectionsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$memoryConfig$sections$zh extends Translations$web$memoryConfig$sections$en {
+	_Translations$web$memoryConfig$sections$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -3449,8 +3538,8 @@ class _TranslationsWebMemoryConfigSectionsZh extends TranslationsWebMemoryConfig
 }
 
 // Path: web.memoryConfig.sectionHints
-class _TranslationsWebMemoryConfigSectionHintsZh extends TranslationsWebMemoryConfigSectionHintsEn {
-	_TranslationsWebMemoryConfigSectionHintsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$memoryConfig$sectionHints$zh extends Translations$web$memoryConfig$sectionHints$en {
+	_Translations$web$memoryConfig$sectionHints$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -3463,8 +3552,8 @@ class _TranslationsWebMemoryConfigSectionHintsZh extends TranslationsWebMemoryCo
 }
 
 // Path: web.memoryConfig.moveBanner
-class _TranslationsWebMemoryConfigMoveBannerZh extends TranslationsWebMemoryConfigMoveBannerEn {
-	_TranslationsWebMemoryConfigMoveBannerZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$memoryConfig$moveBanner$zh extends Translations$web$memoryConfig$moveBanner$en {
+	_Translations$web$memoryConfig$moveBanner$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -3475,8 +3564,8 @@ class _TranslationsWebMemoryConfigMoveBannerZh extends TranslationsWebMemoryConf
 }
 
 // Path: web.memoryConfig.infra
-class _TranslationsWebMemoryConfigInfraZh extends TranslationsWebMemoryConfigInfraEn {
-	_TranslationsWebMemoryConfigInfraZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$memoryConfig$infra$zh extends Translations$web$memoryConfig$infra$en {
+	_Translations$web$memoryConfig$infra$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -3493,26 +3582,26 @@ class _TranslationsWebMemoryConfigInfraZh extends TranslationsWebMemoryConfigInf
 }
 
 // Path: web.memoryWorkers.tasks
-class _TranslationsWebMemoryWorkersTasksZh extends TranslationsWebMemoryWorkersTasksEn {
-	_TranslationsWebMemoryWorkersTasksZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$memoryWorkers$tasks$zh extends Translations$web$memoryWorkers$tasks$en {
+	_Translations$web$memoryWorkers$tasks$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsWebMemoryWorkersTasksGatekeeperZh gatekeeper = _TranslationsWebMemoryWorkersTasksGatekeeperZh._(_root);
-	@override late final _TranslationsWebMemoryWorkersTasksCleanerZh cleaner = _TranslationsWebMemoryWorkersTasksCleanerZh._(_root);
-	@override late final _TranslationsWebMemoryWorkersTasksGitactivityZh gitactivity = _TranslationsWebMemoryWorkersTasksGitactivityZh._(_root);
-	@override late final _TranslationsWebMemoryWorkersTasksTranscriptZh transcript = _TranslationsWebMemoryWorkersTasksTranscriptZh._(_root);
-	@override late final _TranslationsWebMemoryWorkersTasksPlanDriftZh plan_drift = _TranslationsWebMemoryWorkersTasksPlanDriftZh._(_root);
-	@override late final _TranslationsWebMemoryWorkersTasksConflictDetectorZh conflict_detector = _TranslationsWebMemoryWorkersTasksConflictDetectorZh._(_root);
-	@override late final _TranslationsWebMemoryWorkersTasksCaptureZh capture = _TranslationsWebMemoryWorkersTasksCaptureZh._(_root);
-	@override late final _TranslationsWebMemoryWorkersTasksBlueprintZh blueprint = _TranslationsWebMemoryWorkersTasksBlueprintZh._(_root);
-	@override late final _TranslationsWebMemoryWorkersTasksCurationZh curation = _TranslationsWebMemoryWorkersTasksCurationZh._(_root);
+	@override late final _Translations$web$memoryWorkers$tasks$gatekeeper$zh gatekeeper = _Translations$web$memoryWorkers$tasks$gatekeeper$zh._(_root);
+	@override late final _Translations$web$memoryWorkers$tasks$cleaner$zh cleaner = _Translations$web$memoryWorkers$tasks$cleaner$zh._(_root);
+	@override late final _Translations$web$memoryWorkers$tasks$gitactivity$zh gitactivity = _Translations$web$memoryWorkers$tasks$gitactivity$zh._(_root);
+	@override late final _Translations$web$memoryWorkers$tasks$transcript$zh transcript = _Translations$web$memoryWorkers$tasks$transcript$zh._(_root);
+	@override late final _Translations$web$memoryWorkers$tasks$plan_drift$zh plan_drift = _Translations$web$memoryWorkers$tasks$plan_drift$zh._(_root);
+	@override late final _Translations$web$memoryWorkers$tasks$conflict_detector$zh conflict_detector = _Translations$web$memoryWorkers$tasks$conflict_detector$zh._(_root);
+	@override late final _Translations$web$memoryWorkers$tasks$capture$zh capture = _Translations$web$memoryWorkers$tasks$capture$zh._(_root);
+	@override late final _Translations$web$memoryWorkers$tasks$blueprint$zh blueprint = _Translations$web$memoryWorkers$tasks$blueprint$zh._(_root);
+	@override late final _Translations$web$memoryWorkers$tasks$curation$zh curation = _Translations$web$memoryWorkers$tasks$curation$zh._(_root);
 }
 
 // Path: web.project.picker
-class _TranslationsWebProjectPickerZh extends TranslationsWebProjectPickerEn {
-	_TranslationsWebProjectPickerZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$project$picker$zh extends Translations$web$project$picker$en {
+	_Translations$web$project$picker$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -3529,8 +3618,8 @@ class _TranslationsWebProjectPickerZh extends TranslationsWebProjectPickerEn {
 }
 
 // Path: web.project.header
-class _TranslationsWebProjectHeaderZh extends TranslationsWebProjectHeaderEn {
-	_TranslationsWebProjectHeaderZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$project$header$zh extends Translations$web$project$header$en {
+	_Translations$web$project$header$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -3545,8 +3634,8 @@ class _TranslationsWebProjectHeaderZh extends TranslationsWebProjectHeaderEn {
 }
 
 // Path: web.project.tabs
-class _TranslationsWebProjectTabsZh extends TranslationsWebProjectTabsEn {
-	_TranslationsWebProjectTabsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$project$tabs$zh extends Translations$web$project$tabs$en {
+	_Translations$web$project$tabs$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -3566,8 +3655,8 @@ class _TranslationsWebProjectTabsZh extends TranslationsWebProjectTabsEn {
 }
 
 // Path: web.project.docLabel
-class _TranslationsWebProjectDocLabelZh extends TranslationsWebProjectDocLabelEn {
-	_TranslationsWebProjectDocLabelZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$project$docLabel$zh extends Translations$web$project$docLabel$en {
+	_Translations$web$project$docLabel$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -3580,8 +3669,8 @@ class _TranslationsWebProjectDocLabelZh extends TranslationsWebProjectDocLabelEn
 }
 
 // Path: web.project.editor
-class _TranslationsWebProjectEditorZh extends TranslationsWebProjectEditorEn {
-	_TranslationsWebProjectEditorZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$project$editor$zh extends Translations$web$project$editor$en {
+	_Translations$web$project$editor$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -3597,14 +3686,14 @@ class _TranslationsWebProjectEditorZh extends TranslationsWebProjectEditorEn {
 }
 
 // Path: web.project.readonly
-class _TranslationsWebProjectReadonlyZh extends TranslationsWebProjectReadonlyEn {
-	_TranslationsWebProjectReadonlyZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$project$readonly$zh extends Translations$web$project$readonly$en {
+	_Translations$web$project$readonly$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsWebProjectReadonlyTechStackZh tech_stack = _TranslationsWebProjectReadonlyTechStackZh._(_root);
-	@override late final _TranslationsWebProjectReadonlyRecentActivityZh recent_activity = _TranslationsWebProjectReadonlyRecentActivityZh._(_root);
+	@override late final _Translations$web$project$readonly$tech_stack$zh tech_stack = _Translations$web$project$readonly$tech_stack$zh._(_root);
+	@override late final _Translations$web$project$readonly$recent_activity$zh recent_activity = _Translations$web$project$readonly$recent_activity$zh._(_root);
 	@override String noneCaptured({required Object label}) => '尚未捕获${label}。';
 	@override String get generatedBy => '生成者';
 	@override String get lastRefresh => '最近刷新';
@@ -3612,8 +3701,8 @@ class _TranslationsWebProjectReadonlyZh extends TranslationsWebProjectReadonlyEn
 }
 
 // Path: web.project.journal
-class _TranslationsWebProjectJournalZh extends TranslationsWebProjectJournalEn {
-	_TranslationsWebProjectJournalZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$project$journal$zh extends Translations$web$project$journal$en {
+	_Translations$web$project$journal$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -3623,8 +3712,8 @@ class _TranslationsWebProjectJournalZh extends TranslationsWebProjectJournalEn {
 }
 
 // Path: web.project.inbox
-class _TranslationsWebProjectInboxZh extends TranslationsWebProjectInboxEn {
-	_TranslationsWebProjectInboxZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$project$inbox$zh extends Translations$web$project$inbox$en {
+	_Translations$web$project$inbox$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -3651,8 +3740,8 @@ class _TranslationsWebProjectInboxZh extends TranslationsWebProjectInboxEn {
 }
 
 // Path: web.project.archived
-class _TranslationsWebProjectArchivedZh extends TranslationsWebProjectArchivedEn {
-	_TranslationsWebProjectArchivedZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$project$archived$zh extends Translations$web$project$archived$en {
+	_Translations$web$project$archived$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -3666,8 +3755,8 @@ class _TranslationsWebProjectArchivedZh extends TranslationsWebProjectArchivedEn
 }
 
 // Path: web.project.reset
-class _TranslationsWebProjectResetZh extends TranslationsWebProjectResetEn {
-	_TranslationsWebProjectResetZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$project$reset$zh extends Translations$web$project$reset$en {
+	_Translations$web$project$reset$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -3685,42 +3774,42 @@ class _TranslationsWebProjectResetZh extends TranslationsWebProjectResetEn {
 	@override String get cancel => '取消';
 	@override String get deleteForever => '永久删除';
 	@override String successToast({required Object summary}) => '重置：已删除 ${summary}';
-	@override late final _TranslationsWebProjectResetSummaryZh summary = _TranslationsWebProjectResetSummaryZh._(_root);
+	@override late final _Translations$web$project$reset$summary$zh summary = _Translations$web$project$reset$summary$zh._(_root);
 	@override String get failedToast => '重置失败';
 }
 
 // Path: web.project.lifecycle
-class _TranslationsWebProjectLifecycleZh extends TranslationsWebProjectLifecycleEn {
-	_TranslationsWebProjectLifecycleZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$project$lifecycle$zh extends Translations$web$project$lifecycle$en {
+	_Translations$web$project$lifecycle$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsWebProjectLifecycleStatusZh status = _TranslationsWebProjectLifecycleStatusZh._(_root);
+	@override late final _Translations$web$project$lifecycle$status$zh status = _Translations$web$project$lifecycle$status$zh._(_root);
 	@override String get activate => '激活';
 	@override String get pause => '暂停';
 	@override String get archive => '归档';
 	@override String get idleSuggest => '长期闲置 — 建议归档';
 	@override String idleHint({required Object days}) => '已有 ${days} 天无活动';
 	@override String get failedToast => '无法更改项目状态';
-	@override late final _TranslationsWebProjectLifecycleAppliedZh applied = _TranslationsWebProjectLifecycleAppliedZh._(_root);
-	@override late final _TranslationsWebProjectLifecycleTooltipZh tooltip = _TranslationsWebProjectLifecycleTooltipZh._(_root);
+	@override late final _Translations$web$project$lifecycle$applied$zh applied = _Translations$web$project$lifecycle$applied$zh._(_root);
+	@override late final _Translations$web$project$lifecycle$tooltip$zh tooltip = _Translations$web$project$lifecycle$tooltip$zh._(_root);
 }
 
 // Path: web.project.docMeta
-class _TranslationsWebProjectDocMetaZh extends TranslationsWebProjectDocMetaEn {
-	_TranslationsWebProjectDocMetaZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$project$docMeta$zh extends Translations$web$project$docMeta$en {
+	_Translations$web$project$docMeta$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsWebProjectDocMetaMaintainerZh maintainer = _TranslationsWebProjectDocMetaMaintainerZh._(_root);
-	@override late final _TranslationsWebProjectDocMetaPurposeZh purpose = _TranslationsWebProjectDocMetaPurposeZh._(_root);
+	@override late final _Translations$web$project$docMeta$maintainer$zh maintainer = _Translations$web$project$docMeta$maintainer$zh._(_root);
+	@override late final _Translations$web$project$docMeta$purpose$zh purpose = _Translations$web$project$docMeta$purpose$zh._(_root);
 }
 
 // Path: web.project.proposalBanner
-class _TranslationsWebProjectProposalBannerZh extends TranslationsWebProjectProposalBannerEn {
-	_TranslationsWebProjectProposalBannerZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$project$proposalBanner$zh extends Translations$web$project$proposalBanner$en {
+	_Translations$web$project$proposalBanner$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -3730,8 +3819,8 @@ class _TranslationsWebProjectProposalBannerZh extends TranslationsWebProjectProp
 }
 
 // Path: web.project.overview
-class _TranslationsWebProjectOverviewZh extends TranslationsWebProjectOverviewEn {
-	_TranslationsWebProjectOverviewZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$project$overview$zh extends Translations$web$project$overview$en {
+	_Translations$web$project$overview$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -3753,8 +3842,8 @@ class _TranslationsWebProjectOverviewZh extends TranslationsWebProjectOverviewEn
 }
 
 // Path: web.memoryInspector.status
-class _TranslationsWebMemoryInspectorStatusZh extends TranslationsWebMemoryInspectorStatusEn {
-	_TranslationsWebMemoryInspectorStatusZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$memoryInspector$status$zh extends Translations$web$memoryInspector$status$en {
+	_Translations$web$memoryInspector$status$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -3772,8 +3861,8 @@ class _TranslationsWebMemoryInspectorStatusZh extends TranslationsWebMemoryInspe
 }
 
 // Path: web.memoryInspector.scope
-class _TranslationsWebMemoryInspectorScopeZh extends TranslationsWebMemoryInspectorScopeEn {
-	_TranslationsWebMemoryInspectorScopeZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$memoryInspector$scope$zh extends Translations$web$memoryInspector$scope$en {
+	_Translations$web$memoryInspector$scope$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -3787,12 +3876,12 @@ class _TranslationsWebMemoryInspectorScopeZh extends TranslationsWebMemoryInspec
 	@override String get syncTooltip => '把 Claude 的 <cwd>/.claude/memory/*.md 重新摄取到 pgvector';
 	@override String get browse => '浏览';
 	@override String get browseTooltip => '浏览网关主机的文件系统，选择任意项目目录';
-	@override late final _TranslationsWebMemoryInspectorScopeValuesZh values = _TranslationsWebMemoryInspectorScopeValuesZh._(_root);
+	@override late final _Translations$web$memoryInspector$scope$values$zh values = _Translations$web$memoryInspector$scope$values$zh._(_root);
 }
 
 // Path: web.memoryInspector.search
-class _TranslationsWebMemoryInspectorSearchZh extends TranslationsWebMemoryInspectorSearchEn {
-	_TranslationsWebMemoryInspectorSearchZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$memoryInspector$search$zh extends Translations$web$memoryInspector$search$en {
+	_Translations$web$memoryInspector$search$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -3804,8 +3893,8 @@ class _TranslationsWebMemoryInspectorSearchZh extends TranslationsWebMemoryInspe
 }
 
 // Path: web.memoryInspector.records
-class _TranslationsWebMemoryInspectorRecordsZh extends TranslationsWebMemoryInspectorRecordsEn {
-	_TranslationsWebMemoryInspectorRecordsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$memoryInspector$records$zh extends Translations$web$memoryInspector$records$en {
+	_Translations$web$memoryInspector$records$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -3828,8 +3917,8 @@ class _TranslationsWebMemoryInspectorRecordsZh extends TranslationsWebMemoryInsp
 }
 
 // Path: web.memoryInspector.row
-class _TranslationsWebMemoryInspectorRowZh extends TranslationsWebMemoryInspectorRowEn {
-	_TranslationsWebMemoryInspectorRowZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$memoryInspector$row$zh extends Translations$web$memoryInspector$row$en {
+	_Translations$web$memoryInspector$row$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -3852,8 +3941,8 @@ class _TranslationsWebMemoryInspectorRowZh extends TranslationsWebMemoryInspecto
 }
 
 // Path: web.memoryInspector.toasts
-class _TranslationsWebMemoryInspectorToastsZh extends TranslationsWebMemoryInspectorToastsEn {
-	_TranslationsWebMemoryInspectorToastsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$memoryInspector$toasts$zh extends Translations$web$memoryInspector$toasts$en {
+	_Translations$web$memoryInspector$toasts$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -3881,8 +3970,8 @@ class _TranslationsWebMemoryInspectorToastsZh extends TranslationsWebMemoryInspe
 }
 
 // Path: web.memoryInspector.bulkDelete
-class _TranslationsWebMemoryInspectorBulkDeleteZh extends TranslationsWebMemoryInspectorBulkDeleteEn {
-	_TranslationsWebMemoryInspectorBulkDeleteZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$memoryInspector$bulkDelete$zh extends Translations$web$memoryInspector$bulkDelete$en {
+	_Translations$web$memoryInspector$bulkDelete$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -3899,8 +3988,8 @@ class _TranslationsWebMemoryInspectorBulkDeleteZh extends TranslationsWebMemoryI
 }
 
 // Path: web.memoryInspector.addMem
-class _TranslationsWebMemoryInspectorAddMemZh extends TranslationsWebMemoryInspectorAddMemEn {
-	_TranslationsWebMemoryInspectorAddMemZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$memoryInspector$addMem$zh extends Translations$web$memoryInspector$addMem$en {
+	_Translations$web$memoryInspector$addMem$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -3914,8 +4003,8 @@ class _TranslationsWebMemoryInspectorAddMemZh extends TranslationsWebMemoryInspe
 }
 
 // Path: web.memoryInspector.picker
-class _TranslationsWebMemoryInspectorPickerZh extends TranslationsWebMemoryInspectorPickerEn {
-	_TranslationsWebMemoryInspectorPickerZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$memoryInspector$picker$zh extends Translations$web$memoryInspector$picker$en {
+	_Translations$web$memoryInspector$picker$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -3929,8 +4018,8 @@ class _TranslationsWebMemoryInspectorPickerZh extends TranslationsWebMemoryInspe
 }
 
 // Path: web.memoryInspector.migrationBanner
-class _TranslationsWebMemoryInspectorMigrationBannerZh extends TranslationsWebMemoryInspectorMigrationBannerEn {
-	_TranslationsWebMemoryInspectorMigrationBannerZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$memoryInspector$migrationBanner$zh extends Translations$web$memoryInspector$migrationBanner$en {
+	_Translations$web$memoryInspector$migrationBanner$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -3943,8 +4032,8 @@ class _TranslationsWebMemoryInspectorMigrationBannerZh extends TranslationsWebMe
 }
 
 // Path: web.memoryInspector.reembed
-class _TranslationsWebMemoryInspectorReembedZh extends TranslationsWebMemoryInspectorReembedEn {
-	_TranslationsWebMemoryInspectorReembedZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$memoryInspector$reembed$zh extends Translations$web$memoryInspector$reembed$en {
+	_Translations$web$memoryInspector$reembed$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -3968,8 +4057,8 @@ class _TranslationsWebMemoryInspectorReembedZh extends TranslationsWebMemoryInsp
 }
 
 // Path: web.notes.header
-class _TranslationsWebNotesHeaderZh extends TranslationsWebNotesHeaderEn {
-	_TranslationsWebNotesHeaderZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$notes$header$zh extends Translations$web$notes$header$en {
+	_Translations$web$notes$header$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -3983,8 +4072,8 @@ class _TranslationsWebNotesHeaderZh extends TranslationsWebNotesHeaderEn {
 }
 
 // Path: web.notes.left
-class _TranslationsWebNotesLeftZh extends TranslationsWebNotesLeftEn {
-	_TranslationsWebNotesLeftZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$notes$left$zh extends Translations$web$notes$left$en {
+	_Translations$web$notes$left$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -4004,8 +4093,8 @@ class _TranslationsWebNotesLeftZh extends TranslationsWebNotesLeftEn {
 }
 
 // Path: web.notes.tags
-class _TranslationsWebNotesTagsZh extends TranslationsWebNotesTagsEn {
-	_TranslationsWebNotesTagsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$notes$tags$zh extends Translations$web$notes$tags$en {
+	_Translations$web$notes$tags$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -4015,8 +4104,8 @@ class _TranslationsWebNotesTagsZh extends TranslationsWebNotesTagsEn {
 }
 
 // Path: web.notes.tree
-class _TranslationsWebNotesTreeZh extends TranslationsWebNotesTreeEn {
-	_TranslationsWebNotesTreeZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$notes$tree$zh extends Translations$web$notes$tree$en {
+	_Translations$web$notes$tree$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -4025,8 +4114,8 @@ class _TranslationsWebNotesTreeZh extends TranslationsWebNotesTreeEn {
 }
 
 // Path: web.notes.outline
-class _TranslationsWebNotesOutlineZh extends TranslationsWebNotesOutlineEn {
-	_TranslationsWebNotesOutlineZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$notes$outline$zh extends Translations$web$notes$outline$en {
+	_Translations$web$notes$outline$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -4036,8 +4125,8 @@ class _TranslationsWebNotesOutlineZh extends TranslationsWebNotesOutlineEn {
 }
 
 // Path: web.notes.newNote
-class _TranslationsWebNotesNewNoteZh extends TranslationsWebNotesNewNoteEn {
-	_TranslationsWebNotesNewNoteZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$notes$newNote$zh extends Translations$web$notes$newNote$en {
+	_Translations$web$notes$newNote$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -4050,8 +4139,8 @@ class _TranslationsWebNotesNewNoteZh extends TranslationsWebNotesNewNoteEn {
 }
 
 // Path: web.notes.empty
-class _TranslationsWebNotesEmptyZh extends TranslationsWebNotesEmptyEn {
-	_TranslationsWebNotesEmptyZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$notes$empty$zh extends Translations$web$notes$empty$en {
+	_Translations$web$notes$empty$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -4063,8 +4152,8 @@ class _TranslationsWebNotesEmptyZh extends TranslationsWebNotesEmptyEn {
 }
 
 // Path: web.notes.picker
-class _TranslationsWebNotesPickerZh extends TranslationsWebNotesPickerEn {
-	_TranslationsWebNotesPickerZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$notes$picker$zh extends Translations$web$notes$picker$en {
+	_Translations$web$notes$picker$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -4077,8 +4166,8 @@ class _TranslationsWebNotesPickerZh extends TranslationsWebNotesPickerEn {
 }
 
 // Path: web.notes.vaultSync
-class _TranslationsWebNotesVaultSyncZh extends TranslationsWebNotesVaultSyncEn {
-	_TranslationsWebNotesVaultSyncZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$notes$vaultSync$zh extends Translations$web$notes$vaultSync$en {
+	_Translations$web$notes$vaultSync$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -4086,21 +4175,21 @@ class _TranslationsWebNotesVaultSyncZh extends TranslationsWebNotesVaultSyncEn {
 	@override String get title => 'Vault 同步';
 	@override String get description => '把 notes vault 作为 git 仓库进行 commit、pull 与 push。认证使用网关主机的 git 凭据（SSH agent / credential helper）。';
 	@override String get reading => '正在读取 vault 状态…';
-	@override late final _TranslationsWebNotesVaultSyncInitZh init = _TranslationsWebNotesVaultSyncInitZh._(_root);
-	@override late final _TranslationsWebNotesVaultSyncBranchZh branch = _TranslationsWebNotesVaultSyncBranchZh._(_root);
-	@override late final _TranslationsWebNotesVaultSyncActionZh action = _TranslationsWebNotesVaultSyncActionZh._(_root);
-	@override late final _TranslationsWebNotesVaultSyncCommitZh commit = _TranslationsWebNotesVaultSyncCommitZh._(_root);
-	@override late final _TranslationsWebNotesVaultSyncFileListZh fileList = _TranslationsWebNotesVaultSyncFileListZh._(_root);
-	@override late final _TranslationsWebNotesVaultSyncRemoteZh remote = _TranslationsWebNotesVaultSyncRemoteZh._(_root);
-	@override late final _TranslationsWebNotesVaultSyncHistoryZh history = _TranslationsWebNotesVaultSyncHistoryZh._(_root);
-	@override late final _TranslationsWebNotesVaultSyncConflictZh conflict = _TranslationsWebNotesVaultSyncConflictZh._(_root);
-	@override late final _TranslationsWebNotesVaultSyncAuthZh auth = _TranslationsWebNotesVaultSyncAuthZh._(_root);
-	@override late final _TranslationsWebNotesVaultSyncAutoSyncZh autoSync = _TranslationsWebNotesVaultSyncAutoSyncZh._(_root);
+	@override late final _Translations$web$notes$vaultSync$init$zh init = _Translations$web$notes$vaultSync$init$zh._(_root);
+	@override late final _Translations$web$notes$vaultSync$branch$zh branch = _Translations$web$notes$vaultSync$branch$zh._(_root);
+	@override late final _Translations$web$notes$vaultSync$action$zh action = _Translations$web$notes$vaultSync$action$zh._(_root);
+	@override late final _Translations$web$notes$vaultSync$commit$zh commit = _Translations$web$notes$vaultSync$commit$zh._(_root);
+	@override late final _Translations$web$notes$vaultSync$fileList$zh fileList = _Translations$web$notes$vaultSync$fileList$zh._(_root);
+	@override late final _Translations$web$notes$vaultSync$remote$zh remote = _Translations$web$notes$vaultSync$remote$zh._(_root);
+	@override late final _Translations$web$notes$vaultSync$history$zh history = _Translations$web$notes$vaultSync$history$zh._(_root);
+	@override late final _Translations$web$notes$vaultSync$conflict$zh conflict = _Translations$web$notes$vaultSync$conflict$zh._(_root);
+	@override late final _Translations$web$notes$vaultSync$auth$zh auth = _Translations$web$notes$vaultSync$auth$zh._(_root);
+	@override late final _Translations$web$notes$vaultSync$autoSync$zh autoSync = _Translations$web$notes$vaultSync$autoSync$zh._(_root);
 }
 
 // Path: web.notes.syncBadge
-class _TranslationsWebNotesSyncBadgeZh extends TranslationsWebNotesSyncBadgeEn {
-	_TranslationsWebNotesSyncBadgeZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$notes$syncBadge$zh extends Translations$web$notes$syncBadge$en {
+	_Translations$web$notes$syncBadge$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -4119,8 +4208,8 @@ class _TranslationsWebNotesSyncBadgeZh extends TranslationsWebNotesSyncBadgeEn {
 }
 
 // Path: web.activity.filters
-class _TranslationsWebActivityFiltersZh extends TranslationsWebActivityFiltersEn {
-	_TranslationsWebActivityFiltersZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$activity$filters$zh extends Translations$web$activity$filters$en {
+	_Translations$web$activity$filters$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -4140,8 +4229,8 @@ class _TranslationsWebActivityFiltersZh extends TranslationsWebActivityFiltersEn
 }
 
 // Path: web.activity.table
-class _TranslationsWebActivityTableZh extends TranslationsWebActivityTableEn {
-	_TranslationsWebActivityTableZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$activity$table$zh extends Translations$web$activity$table$en {
+	_Translations$web$activity$table$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -4158,8 +4247,8 @@ class _TranslationsWebActivityTableZh extends TranslationsWebActivityTableEn {
 }
 
 // Path: web.activity.empty
-class _TranslationsWebActivityEmptyZh extends TranslationsWebActivityEmptyEn {
-	_TranslationsWebActivityEmptyZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$activity$empty$zh extends Translations$web$activity$empty$en {
+	_Translations$web$activity$empty$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -4175,8 +4264,8 @@ class _TranslationsWebActivityEmptyZh extends TranslationsWebActivityEmptyEn {
 }
 
 // Path: web.activity.events
-class _TranslationsWebActivityEventsZh extends TranslationsWebActivityEventsEn {
-	_TranslationsWebActivityEventsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$activity$events$zh extends Translations$web$activity$events$en {
+	_Translations$web$activity$events$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -4190,8 +4279,8 @@ class _TranslationsWebActivityEventsZh extends TranslationsWebActivityEventsEn {
 }
 
 // Path: web.providers.list
-class _TranslationsWebProvidersListZh extends TranslationsWebProvidersListEn {
-	_TranslationsWebProvidersListZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$providers$list$zh extends Translations$web$providers$list$en {
+	_Translations$web$providers$list$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -4203,8 +4292,8 @@ class _TranslationsWebProvidersListZh extends TranslationsWebProvidersListEn {
 }
 
 // Path: web.providers.detail
-class _TranslationsWebProvidersDetailZh extends TranslationsWebProvidersDetailEn {
-	_TranslationsWebProvidersDetailZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$providers$detail$zh extends Translations$web$providers$detail$en {
+	_Translations$web$providers$detail$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -4222,7 +4311,7 @@ class _TranslationsWebProvidersDetailZh extends TranslationsWebProvidersDetailEn
 	@override String get savedToast => 'Provider 配置已保存';
 	@override String get saveFailedToast => '保存失败';
 	@override String get toggleFailedToast => '切换失败';
-	@override late final _TranslationsWebProvidersDetailCapsZh caps = _TranslationsWebProvidersDetailCapsZh._(_root);
+	@override late final _Translations$web$providers$detail$caps$zh caps = _Translations$web$providers$detail$caps$zh._(_root);
 	@override String get notInstalled => '未安装';
 	@override String get brokenCli => '已安装但无法运行';
 	@override String updateAvailable({required Object version}) => '有可用更新 → ${version}';
@@ -4236,8 +4325,8 @@ class _TranslationsWebProvidersDetailZh extends TranslationsWebProvidersDetailEn
 }
 
 // Path: web.providers.configForm
-class _TranslationsWebProvidersConfigFormZh extends TranslationsWebProvidersConfigFormEn {
-	_TranslationsWebProvidersConfigFormZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$providers$configForm$zh extends Translations$web$providers$configForm$en {
+	_Translations$web$providers$configForm$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -4251,8 +4340,8 @@ class _TranslationsWebProvidersConfigFormZh extends TranslationsWebProvidersConf
 }
 
 // Path: web.providers.claudeAccounts
-class _TranslationsWebProvidersClaudeAccountsZh extends TranslationsWebProvidersClaudeAccountsEn {
-	_TranslationsWebProvidersClaudeAccountsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$providers$claudeAccounts$zh extends Translations$web$providers$claudeAccounts$en {
+	_Translations$web$providers$claudeAccounts$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -4284,8 +4373,8 @@ class _TranslationsWebProvidersClaudeAccountsZh extends TranslationsWebProviders
 }
 
 // Path: web.providers.antigravityAccounts
-class _TranslationsWebProvidersAntigravityAccountsZh extends TranslationsWebProvidersAntigravityAccountsEn {
-	_TranslationsWebProvidersAntigravityAccountsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$providers$antigravityAccounts$zh extends Translations$web$providers$antigravityAccounts$en {
+	_Translations$web$providers$antigravityAccounts$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -4313,8 +4402,8 @@ class _TranslationsWebProvidersAntigravityAccountsZh extends TranslationsWebProv
 }
 
 // Path: web.providers.models
-class _TranslationsWebProvidersModelsZh extends TranslationsWebProvidersModelsEn {
-	_TranslationsWebProvidersModelsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$providers$models$zh extends Translations$web$providers$models$en {
+	_Translations$web$providers$models$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -4332,8 +4421,8 @@ class _TranslationsWebProvidersModelsZh extends TranslationsWebProvidersModelsEn
 }
 
 // Path: web.channels.empty
-class _TranslationsWebChannelsEmptyZh extends TranslationsWebChannelsEmptyEn {
-	_TranslationsWebChannelsEmptyZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$channels$empty$zh extends Translations$web$channels$empty$en {
+	_Translations$web$channels$empty$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -4343,8 +4432,8 @@ class _TranslationsWebChannelsEmptyZh extends TranslationsWebChannelsEmptyEn {
 }
 
 // Path: web.channels.card
-class _TranslationsWebChannelsCardZh extends TranslationsWebChannelsCardEn {
-	_TranslationsWebChannelsCardZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$channels$card$zh extends Translations$web$channels$card$en {
+	_Translations$web$channels$card$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -4374,8 +4463,8 @@ class _TranslationsWebChannelsCardZh extends TranslationsWebChannelsCardEn {
 }
 
 // Path: web.channels.toasts
-class _TranslationsWebChannelsToastsZh extends TranslationsWebChannelsToastsEn {
-	_TranslationsWebChannelsToastsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$channels$toasts$zh extends Translations$web$channels$toasts$en {
+	_Translations$web$channels$toasts$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -4391,8 +4480,8 @@ class _TranslationsWebChannelsToastsZh extends TranslationsWebChannelsToastsEn {
 }
 
 // Path: web.channels.dialog
-class _TranslationsWebChannelsDialogZh extends TranslationsWebChannelsDialogEn {
-	_TranslationsWebChannelsDialogZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$channels$dialog$zh extends Translations$web$channels$dialog$en {
+	_Translations$web$channels$dialog$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -4422,8 +4511,8 @@ class _TranslationsWebChannelsDialogZh extends TranslationsWebChannelsDialogEn {
 }
 
 // Path: web.channels.notifications
-class _TranslationsWebChannelsNotificationsZh extends TranslationsWebChannelsNotificationsEn {
-	_TranslationsWebChannelsNotificationsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$channels$notifications$zh extends Translations$web$channels$notifications$en {
+	_Translations$web$channels$notifications$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -4435,14 +4524,14 @@ class _TranslationsWebChannelsNotificationsZh extends TranslationsWebChannelsNot
 	@override String get terminalSnippetLabel => '终端片段';
 	@override String get embedSnippetLabel => '在 idle 通知中嵌入最近的终端画面';
 	@override String get snippetExplainer => '开启后，idle 卡片会包含一段代码块片段，呈现用户在网页终端中会看到的内容 — Claude TUI 自身的装饰（状态 spinner、"bypass permissions" 提示、分隔线）会被自动过滤。';
-	@override late final _TranslationsWebChannelsNotificationsModesZh modes = _TranslationsWebChannelsNotificationsModesZh._(_root);
-	@override late final _TranslationsWebChannelsNotificationsCooldownsZh cooldowns = _TranslationsWebChannelsNotificationsCooldownsZh._(_root);
-	@override late final _TranslationsWebChannelsNotificationsSnippetCapsZh snippetCaps = _TranslationsWebChannelsNotificationsSnippetCapsZh._(_root);
+	@override late final _Translations$web$channels$notifications$modes$zh modes = _Translations$web$channels$notifications$modes$zh._(_root);
+	@override late final _Translations$web$channels$notifications$cooldowns$zh cooldowns = _Translations$web$channels$notifications$cooldowns$zh._(_root);
+	@override late final _Translations$web$channels$notifications$snippetCaps$zh snippetCaps = _Translations$web$channels$notifications$snippetCaps$zh._(_root);
 }
 
 // Path: web.channels.bridge
-class _TranslationsWebChannelsBridgeZh extends TranslationsWebChannelsBridgeEn {
-	_TranslationsWebChannelsBridgeZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$channels$bridge$zh extends Translations$web$channels$bridge$en {
+	_Translations$web$channels$bridge$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -4461,8 +4550,8 @@ class _TranslationsWebChannelsBridgeZh extends TranslationsWebChannelsBridgeEn {
 }
 
 // Path: web.channels.setup
-class _TranslationsWebChannelsSetupZh extends TranslationsWebChannelsSetupEn {
-	_TranslationsWebChannelsSetupZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$channels$setup$zh extends Translations$web$channels$setup$en {
+	_Translations$web$channels$setup$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -4485,8 +4574,8 @@ class _TranslationsWebChannelsSetupZh extends TranslationsWebChannelsSetupEn {
 }
 
 // Path: web.integrations.tabs
-class _TranslationsWebIntegrationsTabsZh extends TranslationsWebIntegrationsTabsEn {
-	_TranslationsWebIntegrationsTabsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$integrations$tabs$zh extends Translations$web$integrations$tabs$en {
+	_Translations$web$integrations$tabs$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -4496,8 +4585,8 @@ class _TranslationsWebIntegrationsTabsZh extends TranslationsWebIntegrationsTabs
 }
 
 // Path: web.integrations.empty
-class _TranslationsWebIntegrationsEmptyZh extends TranslationsWebIntegrationsEmptyEn {
-	_TranslationsWebIntegrationsEmptyZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$integrations$empty$zh extends Translations$web$integrations$empty$en {
+	_Translations$web$integrations$empty$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -4508,8 +4597,8 @@ class _TranslationsWebIntegrationsEmptyZh extends TranslationsWebIntegrationsEmp
 }
 
 // Path: web.integrations.card
-class _TranslationsWebIntegrationsCardZh extends TranslationsWebIntegrationsCardEn {
-	_TranslationsWebIntegrationsCardZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$integrations$card$zh extends Translations$web$integrations$card$en {
+	_Translations$web$integrations$card$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -4534,8 +4623,8 @@ class _TranslationsWebIntegrationsCardZh extends TranslationsWebIntegrationsCard
 }
 
 // Path: web.integrations.defaultAgent
-class _TranslationsWebIntegrationsDefaultAgentZh extends TranslationsWebIntegrationsDefaultAgentEn {
-	_TranslationsWebIntegrationsDefaultAgentZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$integrations$defaultAgent$zh extends Translations$web$integrations$defaultAgent$en {
+	_Translations$web$integrations$defaultAgent$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -4554,8 +4643,8 @@ class _TranslationsWebIntegrationsDefaultAgentZh extends TranslationsWebIntegrat
 }
 
 // Path: web.integrations.register_dialog
-class _TranslationsWebIntegrationsRegisterDialogZh extends TranslationsWebIntegrationsRegisterDialogEn {
-	_TranslationsWebIntegrationsRegisterDialogZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$integrations$register_dialog$zh extends Translations$web$integrations$register_dialog$en {
+	_Translations$web$integrations$register_dialog$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -4584,8 +4673,8 @@ class _TranslationsWebIntegrationsRegisterDialogZh extends TranslationsWebIntegr
 }
 
 // Path: web.integrations.reveal
-class _TranslationsWebIntegrationsRevealZh extends TranslationsWebIntegrationsRevealEn {
-	_TranslationsWebIntegrationsRevealZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$integrations$reveal$zh extends Translations$web$integrations$reveal$en {
+	_Translations$web$integrations$reveal$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -4605,8 +4694,8 @@ class _TranslationsWebIntegrationsRevealZh extends TranslationsWebIntegrationsRe
 }
 
 // Path: web.integrations.edit_dialog
-class _TranslationsWebIntegrationsEditDialogZh extends TranslationsWebIntegrationsEditDialogEn {
-	_TranslationsWebIntegrationsEditDialogZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$integrations$edit_dialog$zh extends Translations$web$integrations$edit_dialog$en {
+	_Translations$web$integrations$edit_dialog$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -4640,8 +4729,8 @@ class _TranslationsWebIntegrationsEditDialogZh extends TranslationsWebIntegratio
 }
 
 // Path: web.integrations.proxy
-class _TranslationsWebIntegrationsProxyZh extends TranslationsWebIntegrationsProxyEn {
-	_TranslationsWebIntegrationsProxyZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$integrations$proxy$zh extends Translations$web$integrations$proxy$en {
+	_Translations$web$integrations$proxy$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -4667,8 +4756,8 @@ class _TranslationsWebIntegrationsProxyZh extends TranslationsWebIntegrationsPro
 }
 
 // Path: web.plugins.common
-class _TranslationsWebPluginsCommonZh extends TranslationsWebPluginsCommonEn {
-	_TranslationsWebPluginsCommonZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$plugins$common$zh extends Translations$web$plugins$common$en {
+	_Translations$web$plugins$common$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -4682,8 +4771,8 @@ class _TranslationsWebPluginsCommonZh extends TranslationsWebPluginsCommonEn {
 }
 
 // Path: web.plugins.mcp
-class _TranslationsWebPluginsMcpZh extends TranslationsWebPluginsMcpEn {
-	_TranslationsWebPluginsMcpZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$plugins$mcp$zh extends Translations$web$plugins$mcp$en {
+	_Translations$web$plugins$mcp$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -4692,7 +4781,7 @@ class _TranslationsWebPluginsMcpZh extends TranslationsWebPluginsMcpEn {
 	@override String description({required Object KEY}) => '注入到每次 spawn（claude / codex）的 Model Context Protocol 服务器。Vault 条目位于 <1>~/.opendray/vault/mcp/&lt;id&gt;/mcp.json</1>；env / headers 中以 <3>\$${KEY}</3> 引用的密钥来自下方 <5>MCP secrets</5>。';
 	@override String get newServer => '新建服务器';
 	@override String get empty => '尚无 MCP 服务器。添加一个以为 agent 会话暴露额外工具。';
-	@override late final _TranslationsWebPluginsMcpColumnsZh columns = _TranslationsWebPluginsMcpColumnsZh._(_root);
+	@override late final _Translations$web$plugins$mcp$columns$zh columns = _Translations$web$plugins$mcp$columns$zh._(_root);
 	@override String get noUrl => '无 URL';
 	@override String get noCommand => '无 command';
 	@override String deleteConfirm({required Object id}) => '删除 MCP 服务器 "${id}"?';
@@ -4705,13 +4794,13 @@ class _TranslationsWebPluginsMcpZh extends TranslationsWebPluginsMcpEn {
 	@override String get builtinTooltip => '由 opendray 自身提供——自动附加到每个支持 MCP 的会话。不可编辑或删除。';
 	@override String get builtinDescription => 'opendray 的共享记忆与知识服务器：memory_search / memory_store、project_goal 与 project_plan 读写、session_log_append、decision_record、doc_read、skill_distill、project_search。自动附加到每个 Claude / Codex / Antigravity 会话。';
 	@override String get builtinAutoAttach => '始终启用';
-	@override late final _TranslationsWebPluginsMcpEditorZh editor = _TranslationsWebPluginsMcpEditorZh._(_root);
-	@override late final _TranslationsWebPluginsMcpTestZh test = _TranslationsWebPluginsMcpTestZh._(_root);
+	@override late final _Translations$web$plugins$mcp$editor$zh editor = _Translations$web$plugins$mcp$editor$zh._(_root);
+	@override late final _Translations$web$plugins$mcp$test$zh test = _Translations$web$plugins$mcp$test$zh._(_root);
 }
 
 // Path: web.plugins.mcpSecrets
-class _TranslationsWebPluginsMcpSecretsZh extends TranslationsWebPluginsMcpSecretsEn {
-	_TranslationsWebPluginsMcpSecretsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$plugins$mcpSecrets$zh extends Translations$web$plugins$mcpSecrets$en {
+	_Translations$web$plugins$mcpSecrets$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -4725,17 +4814,17 @@ class _TranslationsWebPluginsMcpSecretsZh extends TranslationsWebPluginsMcpSecre
 	@override String descriptionStored({required Object path}) => ' 存储于 <1>${path}</1>。';
 	@override String get addSecret => '添加密钥';
 	@override String empty({required Object KEY}) => '暂无已存密钥。添加后即可在 MCP 服务器配置中以 <1>\$${KEY}</1> 引用。';
-	@override late final _TranslationsWebPluginsMcpSecretsColumnsZh columns = _TranslationsWebPluginsMcpSecretsColumnsZh._(_root);
+	@override late final _Translations$web$plugins$mcpSecrets$columns$zh columns = _Translations$web$plugins$mcpSecrets$columns$zh._(_root);
 	@override String get editTooltip => '覆盖已存的值';
 	@override String deleteConfirm({required Object key}) => '删除密钥 "${key}"? 任何引用 \$${key} 的 mcp.json 在你重新设置之前都会回退到字面占位符。';
 	@override String get removedToast => '密钥已移除';
 	@override String get deleteFailedToast => '删除失败';
-	@override late final _TranslationsWebPluginsMcpSecretsEditorZh editor = _TranslationsWebPluginsMcpSecretsEditorZh._(_root);
+	@override late final _Translations$web$plugins$mcpSecrets$editor$zh editor = _Translations$web$plugins$mcpSecrets$editor$zh._(_root);
 }
 
 // Path: web.plugins.skills
-class _TranslationsWebPluginsSkillsZh extends TranslationsWebPluginsSkillsEn {
-	_TranslationsWebPluginsSkillsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$plugins$skills$zh extends Translations$web$plugins$skills$en {
+	_Translations$web$plugins$skills$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -4744,7 +4833,7 @@ class _TranslationsWebPluginsSkillsZh extends TranslationsWebPluginsSkillsEn {
 	@override String get description => '作为 Tier 1 索引注入到 Claude 会话的可复用能力 — agent 通过 <1>opendray skill describe &lt;id&gt;</1> 按需加载完整 SKILL.md。内置 skill 随二进制发布但可被 <3>自定义</3> — 你的修改保存到 <5>~/.opendray/vault/skills/&lt;id&gt;/SKILL.md</5> 并覆盖内置版本。点击重置可还原。';
 	@override String get newSkill => '新建 skill';
 	@override String get empty => '未找到任何 skill。';
-	@override late final _TranslationsWebPluginsSkillsColumnsZh columns = _TranslationsWebPluginsSkillsColumnsZh._(_root);
+	@override late final _Translations$web$plugins$skills$columns$zh columns = _Translations$web$plugins$skills$columns$zh._(_root);
 	@override String get noDescription => '无描述';
 	@override String get builtinBadge => '内置';
 	@override String get builtinTooltip => '嵌入 opendray 二进制 — 点击自定义可在 vault 中覆盖';
@@ -4760,7 +4849,7 @@ class _TranslationsWebPluginsSkillsZh extends TranslationsWebPluginsSkillsEn {
 	@override String deleteConfirm({required Object id}) => '从 vault 删除 skill "${id}"? 这会移除该 SKILL.md 文件。';
 	@override String get removedToast => 'Skill 已移除';
 	@override String get deleteFailedToast => '删除失败';
-	@override late final _TranslationsWebPluginsSkillsEditorZh editor = _TranslationsWebPluginsSkillsEditorZh._(_root);
+	@override late final _Translations$web$plugins$skills$editor$zh editor = _Translations$web$plugins$skills$editor$zh._(_root);
 	@override String get dropHint => '或将 SKILL.md 文件拖放到此处以安装。';
 	@override String get dropToInstall => '拖放 SKILL.md 以安装';
 	@override String get uploading => '正在安装 skill…';
@@ -4770,8 +4859,8 @@ class _TranslationsWebPluginsSkillsZh extends TranslationsWebPluginsSkillsEn {
 }
 
 // Path: web.plugins.customTasks
-class _TranslationsWebPluginsCustomTasksZh extends TranslationsWebPluginsCustomTasksEn {
-	_TranslationsWebPluginsCustomTasksZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$plugins$customTasks$zh extends Translations$web$plugins$customTasks$en {
+	_Translations$web$plugins$customTasks$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -4780,17 +4869,17 @@ class _TranslationsWebPluginsCustomTasksZh extends TranslationsWebPluginsCustomT
 	@override String get description => '在 Tasks 选项卡中以点选即运行的方式呈现的快捷方式。留空 cwd 即为所有会话可见的全局任务，或填写绝对路径以限定 scope。';
 	@override String get addTask => '添加任务';
 	@override String get empty => '尚无自定义任务。';
-	@override late final _TranslationsWebPluginsCustomTasksColumnsZh columns = _TranslationsWebPluginsCustomTasksColumnsZh._(_root);
+	@override late final _Translations$web$plugins$customTasks$columns$zh columns = _Translations$web$plugins$customTasks$columns$zh._(_root);
 	@override String get globalScope => '全局';
 	@override String deleteConfirm({required Object name}) => '删除自定义任务 "${name}"?';
 	@override String get removedToast => '任务已移除';
 	@override String get deleteFailedToast => '删除失败';
-	@override late final _TranslationsWebPluginsCustomTasksDialogZh dialog = _TranslationsWebPluginsCustomTasksDialogZh._(_root);
+	@override late final _Translations$web$plugins$customTasks$dialog$zh dialog = _Translations$web$plugins$customTasks$dialog$zh._(_root);
 }
 
 // Path: web.plugins.gitHosts
-class _TranslationsWebPluginsGitHostsZh extends TranslationsWebPluginsGitHostsEn {
-	_TranslationsWebPluginsGitHostsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$plugins$gitHosts$zh extends Translations$web$plugins$gitHosts$en {
+	_Translations$web$plugins$gitHosts$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -4799,18 +4888,18 @@ class _TranslationsWebPluginsGitHostsZh extends TranslationsWebPluginsGitHostsEn
 	@override String get description => '每个主机一个 token — 被 Git 选项卡用来拉取 pull request，<1>也被 Notes vault sync</1> 使用（当其 remote 通过 HTTPS 指向同一主机上的私有仓库时）。支持 GitHub.com、自托管 GitHub Enterprise、Gitea 与 GitLab。';
 	@override String get addHost => '添加主机';
 	@override String get empty => '尚未配置任何 git 主机。\n添加一个以在检查器 Git 选项卡中启用 PR 列表。';
-	@override late final _TranslationsWebPluginsGitHostsColumnsZh columns = _TranslationsWebPluginsGitHostsColumnsZh._(_root);
+	@override late final _Translations$web$plugins$gitHosts$columns$zh columns = _Translations$web$plugins$gitHosts$columns$zh._(_root);
 	@override String get statusEnabled => '已启用';
 	@override String get statusDisabled => '已禁用';
 	@override String deleteConfirm({required Object host}) => '移除 git 主机 ${host}? 对该主机的 PR 查询将停止工作。';
 	@override String get removedToast => 'Git 主机已移除';
 	@override String get deleteFailedToast => '删除失败';
-	@override late final _TranslationsWebPluginsGitHostsDialogZh dialog = _TranslationsWebPluginsGitHostsDialogZh._(_root);
+	@override late final _Translations$web$plugins$gitHosts$dialog$zh dialog = _Translations$web$plugins$gitHosts$dialog$zh._(_root);
 }
 
 // Path: web.backups.tabs
-class _TranslationsWebBackupsTabsZh extends TranslationsWebBackupsTabsEn {
-	_TranslationsWebBackupsTabsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$backups$tabs$zh extends Translations$web$backups$tabs$en {
+	_Translations$web$backups$tabs$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -4821,8 +4910,8 @@ class _TranslationsWebBackupsTabsZh extends TranslationsWebBackupsTabsEn {
 }
 
 // Path: web.backups.inventory
-class _TranslationsWebBackupsInventoryZh extends TranslationsWebBackupsInventoryEn {
-	_TranslationsWebBackupsInventoryZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$backups$inventory$zh extends Translations$web$backups$inventory$en {
+	_Translations$web$backups$inventory$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -4835,8 +4924,8 @@ class _TranslationsWebBackupsInventoryZh extends TranslationsWebBackupsInventory
 }
 
 // Path: web.backups.restart
-class _TranslationsWebBackupsRestartZh extends TranslationsWebBackupsRestartEn {
-	_TranslationsWebBackupsRestartZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$backups$restart$zh extends Translations$web$backups$restart$en {
+	_Translations$web$backups$restart$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -4850,8 +4939,8 @@ class _TranslationsWebBackupsRestartZh extends TranslationsWebBackupsRestartEn {
 }
 
 // Path: web.backups.setup
-class _TranslationsWebBackupsSetupZh extends TranslationsWebBackupsSetupEn {
-	_TranslationsWebBackupsSetupZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$backups$setup$zh extends Translations$web$backups$setup$en {
+	_Translations$web$backups$setup$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -4872,8 +4961,8 @@ class _TranslationsWebBackupsSetupZh extends TranslationsWebBackupsSetupEn {
 }
 
 // Path: web.backups.generated
-class _TranslationsWebBackupsGeneratedZh extends TranslationsWebBackupsGeneratedEn {
-	_TranslationsWebBackupsGeneratedZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$backups$generated$zh extends Translations$web$backups$generated$en {
+	_Translations$web$backups$generated$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -4889,8 +4978,8 @@ class _TranslationsWebBackupsGeneratedZh extends TranslationsWebBackupsGenerated
 }
 
 // Path: web.backups.status
-class _TranslationsWebBackupsStatusZh extends TranslationsWebBackupsStatusEn {
-	_TranslationsWebBackupsStatusZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$backups$status$zh extends Translations$web$backups$status$en {
+	_Translations$web$backups$status$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -4902,8 +4991,8 @@ class _TranslationsWebBackupsStatusZh extends TranslationsWebBackupsStatusEn {
 }
 
 // Path: web.backups.backupsTab
-class _TranslationsWebBackupsBackupsTabZh extends TranslationsWebBackupsBackupsTabEn {
-	_TranslationsWebBackupsBackupsTabZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$backups$backupsTab$zh extends Translations$web$backups$backupsTab$en {
+	_Translations$web$backups$backupsTab$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -4922,14 +5011,14 @@ class _TranslationsWebBackupsBackupsTabZh extends TranslationsWebBackupsBackupsT
 	@override String get deletedToast => '备份已删除';
 	@override String get deleteFailedToast => '删除失败';
 	@override String get empty => '暂无备份。点击上方 "立即备份" 进行第一次。';
-	@override late final _TranslationsWebBackupsBackupsTabColumnsZh columns = _TranslationsWebBackupsBackupsTabColumnsZh._(_root);
+	@override late final _Translations$web$backups$backupsTab$columns$zh columns = _Translations$web$backups$backupsTab$columns$zh._(_root);
 	@override String get downloadTooltip => '下载';
 	@override String get deleteTooltip => '删除';
 }
 
 // Path: web.backups.restore
-class _TranslationsWebBackupsRestoreZh extends TranslationsWebBackupsRestoreEn {
-	_TranslationsWebBackupsRestoreZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$backups$restore$zh extends Translations$web$backups$restore$en {
+	_Translations$web$backups$restore$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -4966,8 +5055,8 @@ class _TranslationsWebBackupsRestoreZh extends TranslationsWebBackupsRestoreEn {
 }
 
 // Path: web.backups.kind
-class _TranslationsWebBackupsKindZh extends TranslationsWebBackupsKindEn {
-	_TranslationsWebBackupsKindZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$backups$kind$zh extends Translations$web$backups$kind$en {
+	_Translations$web$backups$kind$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -4978,8 +5067,8 @@ class _TranslationsWebBackupsKindZh extends TranslationsWebBackupsKindEn {
 }
 
 // Path: web.backups.verify
-class _TranslationsWebBackupsVerifyZh extends TranslationsWebBackupsVerifyEn {
-	_TranslationsWebBackupsVerifyZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$backups$verify$zh extends Translations$web$backups$verify$en {
+	_Translations$web$backups$verify$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -4990,8 +5079,8 @@ class _TranslationsWebBackupsVerifyZh extends TranslationsWebBackupsVerifyEn {
 }
 
 // Path: web.backups.health
-class _TranslationsWebBackupsHealthZh extends TranslationsWebBackupsHealthEn {
-	_TranslationsWebBackupsHealthZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$backups$health$zh extends Translations$web$backups$health$en {
+	_Translations$web$backups$health$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -5001,13 +5090,13 @@ class _TranslationsWebBackupsHealthZh extends TranslationsWebBackupsHealthEn {
 	@override String get headlineNever => '尚无备份';
 	@override String get lastSuccess => '最近成功备份';
 	@override String get never => '从未';
-	@override late final _TranslationsWebBackupsHealthTilesZh tiles = _TranslationsWebBackupsHealthTilesZh._(_root);
+	@override late final _Translations$web$backups$health$tiles$zh tiles = _Translations$web$backups$health$tiles$zh._(_root);
 	@override String get loadFailedToast => '无法加载备份健康状态';
 }
 
 // Path: web.backups.trigger
-class _TranslationsWebBackupsTriggerZh extends TranslationsWebBackupsTriggerEn {
-	_TranslationsWebBackupsTriggerZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$backups$trigger$zh extends Translations$web$backups$trigger$en {
+	_Translations$web$backups$trigger$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -5019,8 +5108,8 @@ class _TranslationsWebBackupsTriggerZh extends TranslationsWebBackupsTriggerEn {
 }
 
 // Path: web.backups.recoveryKit
-class _TranslationsWebBackupsRecoveryKitZh extends TranslationsWebBackupsRecoveryKitEn {
-	_TranslationsWebBackupsRecoveryKitZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$backups$recoveryKit$zh extends Translations$web$backups$recoveryKit$en {
+	_Translations$web$backups$recoveryKit$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -5039,8 +5128,8 @@ class _TranslationsWebBackupsRecoveryKitZh extends TranslationsWebBackupsRecover
 }
 
 // Path: web.backups.schedulesTab
-class _TranslationsWebBackupsSchedulesTabZh extends TranslationsWebBackupsSchedulesTabEn {
-	_TranslationsWebBackupsSchedulesTabZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$backups$schedulesTab$zh extends Translations$web$backups$schedulesTab$en {
+	_Translations$web$backups$schedulesTab$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -5053,14 +5142,14 @@ class _TranslationsWebBackupsSchedulesTabZh extends TranslationsWebBackupsSchedu
 	@override String get deleteFailedToast => '删除失败';
 	@override String get toggleFailedToast => '切换失败';
 	@override String get empty => '暂无计划。添加一个以进行周期性自动备份。';
-	@override late final _TranslationsWebBackupsSchedulesTabColumnsZh columns = _TranslationsWebBackupsSchedulesTabColumnsZh._(_root);
+	@override late final _Translations$web$backups$schedulesTab$columns$zh columns = _Translations$web$backups$schedulesTab$columns$zh._(_root);
 	@override String keepCount({required Object count}) => '${count} 个备份';
 	@override String get deleteTooltip => '删除';
 }
 
 // Path: web.backups.newSchedule
-class _TranslationsWebBackupsNewScheduleZh extends TranslationsWebBackupsNewScheduleEn {
-	_TranslationsWebBackupsNewScheduleZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$backups$newSchedule$zh extends Translations$web$backups$newSchedule$en {
+	_Translations$web$backups$newSchedule$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -5078,8 +5167,8 @@ class _TranslationsWebBackupsNewScheduleZh extends TranslationsWebBackupsNewSche
 }
 
 // Path: web.backups.fanout
-class _TranslationsWebBackupsFanoutZh extends TranslationsWebBackupsFanoutEn {
-	_TranslationsWebBackupsFanoutZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$backups$fanout$zh extends Translations$web$backups$fanout$en {
+	_Translations$web$backups$fanout$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -5089,8 +5178,8 @@ class _TranslationsWebBackupsFanoutZh extends TranslationsWebBackupsFanoutEn {
 }
 
 // Path: web.backups.dedup
-class _TranslationsWebBackupsDedupZh extends TranslationsWebBackupsDedupEn {
-	_TranslationsWebBackupsDedupZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$backups$dedup$zh extends Translations$web$backups$dedup$en {
+	_Translations$web$backups$dedup$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -5100,8 +5189,8 @@ class _TranslationsWebBackupsDedupZh extends TranslationsWebBackupsDedupEn {
 }
 
 // Path: web.backups.targetsTab
-class _TranslationsWebBackupsTargetsTabZh extends TranslationsWebBackupsTargetsTabEn {
-	_TranslationsWebBackupsTargetsTabZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$backups$targetsTab$zh extends Translations$web$backups$targetsTab$en {
+	_Translations$web$backups$targetsTab$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -5115,7 +5204,7 @@ class _TranslationsWebBackupsTargetsTabZh extends TranslationsWebBackupsTargetsT
 	@override String get connectionOkToast => '连接成功';
 	@override String get connectionFailedToast => '连接失败';
 	@override String get testFailedToast => '测试失败';
-	@override late final _TranslationsWebBackupsTargetsTabColumnsZh columns = _TranslationsWebBackupsTargetsTabColumnsZh._(_root);
+	@override late final _Translations$web$backups$targetsTab$columns$zh columns = _Translations$web$backups$targetsTab$columns$zh._(_root);
 	@override String get on => '开';
 	@override String get off => '关';
 	@override String get test => '测试';
@@ -5124,8 +5213,8 @@ class _TranslationsWebBackupsTargetsTabZh extends TranslationsWebBackupsTargetsT
 }
 
 // Path: web.backups.targetEditor
-class _TranslationsWebBackupsTargetEditorZh extends TranslationsWebBackupsTargetEditorEn {
-	_TranslationsWebBackupsTargetEditorZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$backups$targetEditor$zh extends Translations$web$backups$targetEditor$en {
+	_Translations$web$backups$targetEditor$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -5139,36 +5228,36 @@ class _TranslationsWebBackupsTargetEditorZh extends TranslationsWebBackupsTarget
 	@override String get creating => '创建中…';
 	@override String get create => '创建目标';
 	@override String get enableImmediately => '立即启用（否则保存为禁用 — 适合 "先配置好，稍后开启"）';
-	@override late final _TranslationsWebBackupsTargetEditorLocalZh local = _TranslationsWebBackupsTargetEditorLocalZh._(_root);
-	@override late final _TranslationsWebBackupsTargetEditorSmbZh smb = _TranslationsWebBackupsTargetEditorSmbZh._(_root);
-	@override late final _TranslationsWebBackupsTargetEditorS3Zh s3 = _TranslationsWebBackupsTargetEditorS3Zh._(_root);
-	@override late final _TranslationsWebBackupsTargetEditorWebdavZh webdav = _TranslationsWebBackupsTargetEditorWebdavZh._(_root);
-	@override late final _TranslationsWebBackupsTargetEditorSftpZh sftp = _TranslationsWebBackupsTargetEditorSftpZh._(_root);
-	@override late final _TranslationsWebBackupsTargetEditorRcloneZh rclone = _TranslationsWebBackupsTargetEditorRcloneZh._(_root);
+	@override late final _Translations$web$backups$targetEditor$local$zh local = _Translations$web$backups$targetEditor$local$zh._(_root);
+	@override late final _Translations$web$backups$targetEditor$smb$zh smb = _Translations$web$backups$targetEditor$smb$zh._(_root);
+	@override late final _Translations$web$backups$targetEditor$s3$zh s3 = _Translations$web$backups$targetEditor$s3$zh._(_root);
+	@override late final _Translations$web$backups$targetEditor$webdav$zh webdav = _Translations$web$backups$targetEditor$webdav$zh._(_root);
+	@override late final _Translations$web$backups$targetEditor$sftp$zh sftp = _Translations$web$backups$targetEditor$sftp$zh._(_root);
+	@override late final _Translations$web$backups$targetEditor$rclone$zh rclone = _Translations$web$backups$targetEditor$rclone$zh._(_root);
 }
 
 // Path: web.serverSettings.sections
-class _TranslationsWebServerSettingsSectionsZh extends TranslationsWebServerSettingsSectionsEn {
-	_TranslationsWebServerSettingsSectionsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$sections$zh extends Translations$web$serverSettings$sections$en {
+	_Translations$web$serverSettings$sections$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsWebServerSettingsSectionsGeneralZh general = _TranslationsWebServerSettingsSectionsGeneralZh._(_root);
-	@override late final _TranslationsWebServerSettingsSectionsLoggingZh logging = _TranslationsWebServerSettingsSectionsLoggingZh._(_root);
-	@override late final _TranslationsWebServerSettingsSectionsSessionsZh sessions = _TranslationsWebServerSettingsSectionsSessionsZh._(_root);
-	@override late final _TranslationsWebServerSettingsSectionsVaultZh vault = _TranslationsWebServerSettingsSectionsVaultZh._(_root);
-	@override late final _TranslationsWebServerSettingsSectionsMcpZh mcp = _TranslationsWebServerSettingsSectionsMcpZh._(_root);
-	@override late final _TranslationsWebServerSettingsSectionsMemoryZh memory = _TranslationsWebServerSettingsSectionsMemoryZh._(_root);
-	@override late final _TranslationsWebServerSettingsSectionsBackupZh backup = _TranslationsWebServerSettingsSectionsBackupZh._(_root);
-	@override late final _TranslationsWebServerSettingsSectionsClaudeZh claude = _TranslationsWebServerSettingsSectionsClaudeZh._(_root);
-	@override late final _TranslationsWebServerSettingsSectionsCodexZh codex = _TranslationsWebServerSettingsSectionsCodexZh._(_root);
-	@override late final _TranslationsWebServerSettingsSectionsAntigravityZh antigravity = _TranslationsWebServerSettingsSectionsAntigravityZh._(_root);
+	@override late final _Translations$web$serverSettings$sections$general$zh general = _Translations$web$serverSettings$sections$general$zh._(_root);
+	@override late final _Translations$web$serverSettings$sections$logging$zh logging = _Translations$web$serverSettings$sections$logging$zh._(_root);
+	@override late final _Translations$web$serverSettings$sections$sessions$zh sessions = _Translations$web$serverSettings$sections$sessions$zh._(_root);
+	@override late final _Translations$web$serverSettings$sections$vault$zh vault = _Translations$web$serverSettings$sections$vault$zh._(_root);
+	@override late final _Translations$web$serverSettings$sections$mcp$zh mcp = _Translations$web$serverSettings$sections$mcp$zh._(_root);
+	@override late final _Translations$web$serverSettings$sections$memory$zh memory = _Translations$web$serverSettings$sections$memory$zh._(_root);
+	@override late final _Translations$web$serverSettings$sections$backup$zh backup = _Translations$web$serverSettings$sections$backup$zh._(_root);
+	@override late final _Translations$web$serverSettings$sections$claude$zh claude = _Translations$web$serverSettings$sections$claude$zh._(_root);
+	@override late final _Translations$web$serverSettings$sections$codex$zh codex = _Translations$web$serverSettings$sections$codex$zh._(_root);
+	@override late final _Translations$web$serverSettings$sections$antigravity$zh antigravity = _Translations$web$serverSettings$sections$antigravity$zh._(_root);
 }
 
 // Path: web.serverSettings.restart
-class _TranslationsWebServerSettingsRestartZh extends TranslationsWebServerSettingsRestartEn {
-	_TranslationsWebServerSettingsRestartZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$restart$zh extends Translations$web$serverSettings$restart$en {
+	_Translations$web$serverSettings$restart$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -5185,8 +5274,8 @@ class _TranslationsWebServerSettingsRestartZh extends TranslationsWebServerSetti
 }
 
 // Path: web.serverSettings.formGroups
-class _TranslationsWebServerSettingsFormGroupsZh extends TranslationsWebServerSettingsFormGroupsEn {
-	_TranslationsWebServerSettingsFormGroupsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$formGroups$zh extends Translations$web$serverSettings$formGroups$en {
+	_Translations$web$serverSettings$formGroups$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -5206,66 +5295,66 @@ class _TranslationsWebServerSettingsFormGroupsZh extends TranslationsWebServerSe
 }
 
 // Path: web.serverSettings.fields
-class _TranslationsWebServerSettingsFieldsZh extends TranslationsWebServerSettingsFieldsEn {
-	_TranslationsWebServerSettingsFieldsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$zh extends Translations$web$serverSettings$fields$en {
+	_Translations$web$serverSettings$fields$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsWebServerSettingsFieldsListenAddressZh listenAddress = _TranslationsWebServerSettingsFieldsListenAddressZh._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsUsernameZh username = _TranslationsWebServerSettingsFieldsUsernameZh._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsPasswordZh password = _TranslationsWebServerSettingsFieldsPasswordZh._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsTokenTTLZh tokenTTL = _TranslationsWebServerSettingsFieldsTokenTTLZh._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsLogLevelZh logLevel = _TranslationsWebServerSettingsFieldsLogLevelZh._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsLogFormatZh logFormat = _TranslationsWebServerSettingsFieldsLogFormatZh._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsLogFileZh logFile = _TranslationsWebServerSettingsFieldsLogFileZh._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsIdleThresholdZh idleThreshold = _TranslationsWebServerSettingsFieldsIdleThresholdZh._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsIdlePollIntervalZh idlePollInterval = _TranslationsWebServerSettingsFieldsIdlePollIntervalZh._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsVaultRootZh vaultRoot = _TranslationsWebServerSettingsFieldsVaultRootZh._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsNotesDirectoryZh notesDirectory = _TranslationsWebServerSettingsFieldsNotesDirectoryZh._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsSkillsDirectoryZh skillsDirectory = _TranslationsWebServerSettingsFieldsSkillsDirectoryZh._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsGitRootZh gitRoot = _TranslationsWebServerSettingsFieldsGitRootZh._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsPersonalPrefixZh personalPrefix = _TranslationsWebServerSettingsFieldsPersonalPrefixZh._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsProjectsPrefixZh projectsPrefix = _TranslationsWebServerSettingsFieldsProjectsPrefixZh._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsRegistryRootZh registryRoot = _TranslationsWebServerSettingsFieldsRegistryRootZh._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsSecretsFileZh secretsFile = _TranslationsWebServerSettingsFieldsSecretsFileZh._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsMemoryBackendZh memoryBackend = _TranslationsWebServerSettingsFieldsMemoryBackendZh._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsMemoryStoreZh memoryStore = _TranslationsWebServerSettingsFieldsMemoryStoreZh._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsMemoryTopKZh memoryTopK = _TranslationsWebServerSettingsFieldsMemoryTopKZh._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsMemoryThresholdZh memoryThreshold = _TranslationsWebServerSettingsFieldsMemoryThresholdZh._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsMemoryScopeZh memoryScope = _TranslationsWebServerSettingsFieldsMemoryScopeZh._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsMemoryBaseUrlZh memoryBaseUrl = _TranslationsWebServerSettingsFieldsMemoryBaseUrlZh._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsMemoryModelZh memoryModel = _TranslationsWebServerSettingsFieldsMemoryModelZh._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsMemoryApiKeyZh memoryApiKey = _TranslationsWebServerSettingsFieldsMemoryApiKeyZh._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsMemoryLocalModelZh memoryLocalModel = _TranslationsWebServerSettingsFieldsMemoryLocalModelZh._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsMemoryLibraryPathZh memoryLibraryPath = _TranslationsWebServerSettingsFieldsMemoryLibraryPathZh._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsMemoryModelPathZh memoryModelPath = _TranslationsWebServerSettingsFieldsMemoryModelPathZh._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsMemoryTokenizerPathZh memoryTokenizerPath = _TranslationsWebServerSettingsFieldsMemoryTokenizerPathZh._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsMemoryMaxSeqLenZh memoryMaxSeqLen = _TranslationsWebServerSettingsFieldsMemoryMaxSeqLenZh._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsClaudeHistoryRootsZh claudeHistoryRoots = _TranslationsWebServerSettingsFieldsClaudeHistoryRootsZh._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsClaudeAccountsDirZh claudeAccountsDir = _TranslationsWebServerSettingsFieldsClaudeAccountsDirZh._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsCodexSessionsRootZh codexSessionsRoot = _TranslationsWebServerSettingsFieldsCodexSessionsRootZh._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsAntigravityConversationsRootZh antigravityConversationsRoot = _TranslationsWebServerSettingsFieldsAntigravityConversationsRootZh._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsBackupLocalDirZh backupLocalDir = _TranslationsWebServerSettingsFieldsBackupLocalDirZh._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsBackupExportDirZh backupExportDir = _TranslationsWebServerSettingsFieldsBackupExportDirZh._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsBackupPgDumpPathZh backupPgDumpPath = _TranslationsWebServerSettingsFieldsBackupPgDumpPathZh._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsBackupPgRestorePathZh backupPgRestorePath = _TranslationsWebServerSettingsFieldsBackupPgRestorePathZh._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsMemoryDedupZh memoryDedup = _TranslationsWebServerSettingsFieldsMemoryDedupZh._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsGatekeeperEnabledZh gatekeeperEnabled = _TranslationsWebServerSettingsFieldsGatekeeperEnabledZh._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsGatekeeperLatencyZh gatekeeperLatency = _TranslationsWebServerSettingsFieldsGatekeeperLatencyZh._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsCleanerEnabledZh cleanerEnabled = _TranslationsWebServerSettingsFieldsCleanerEnabledZh._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsCleanerIntervalZh cleanerInterval = _TranslationsWebServerSettingsFieldsCleanerIntervalZh._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsCleanerGlobalScopeZh cleanerGlobalScope = _TranslationsWebServerSettingsFieldsCleanerGlobalScopeZh._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsKnowledgeEnabledZh knowledgeEnabled = _TranslationsWebServerSettingsFieldsKnowledgeEnabledZh._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsClaudeWatcherZh claudeWatcher = _TranslationsWebServerSettingsFieldsClaudeWatcherZh._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsClaudeAutoFailoverZh claudeAutoFailover = _TranslationsWebServerSettingsFieldsClaudeAutoFailoverZh._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsMobileTokenTTLZh mobileTokenTTL = _TranslationsWebServerSettingsFieldsMobileTokenTTLZh._(_root);
-	@override late final _TranslationsWebServerSettingsFieldsDbMaxConnsZh dbMaxConns = _TranslationsWebServerSettingsFieldsDbMaxConnsZh._(_root);
+	@override late final _Translations$web$serverSettings$fields$listenAddress$zh listenAddress = _Translations$web$serverSettings$fields$listenAddress$zh._(_root);
+	@override late final _Translations$web$serverSettings$fields$username$zh username = _Translations$web$serverSettings$fields$username$zh._(_root);
+	@override late final _Translations$web$serverSettings$fields$password$zh password = _Translations$web$serverSettings$fields$password$zh._(_root);
+	@override late final _Translations$web$serverSettings$fields$tokenTTL$zh tokenTTL = _Translations$web$serverSettings$fields$tokenTTL$zh._(_root);
+	@override late final _Translations$web$serverSettings$fields$logLevel$zh logLevel = _Translations$web$serverSettings$fields$logLevel$zh._(_root);
+	@override late final _Translations$web$serverSettings$fields$logFormat$zh logFormat = _Translations$web$serverSettings$fields$logFormat$zh._(_root);
+	@override late final _Translations$web$serverSettings$fields$logFile$zh logFile = _Translations$web$serverSettings$fields$logFile$zh._(_root);
+	@override late final _Translations$web$serverSettings$fields$idleThreshold$zh idleThreshold = _Translations$web$serverSettings$fields$idleThreshold$zh._(_root);
+	@override late final _Translations$web$serverSettings$fields$idlePollInterval$zh idlePollInterval = _Translations$web$serverSettings$fields$idlePollInterval$zh._(_root);
+	@override late final _Translations$web$serverSettings$fields$vaultRoot$zh vaultRoot = _Translations$web$serverSettings$fields$vaultRoot$zh._(_root);
+	@override late final _Translations$web$serverSettings$fields$notesDirectory$zh notesDirectory = _Translations$web$serverSettings$fields$notesDirectory$zh._(_root);
+	@override late final _Translations$web$serverSettings$fields$skillsDirectory$zh skillsDirectory = _Translations$web$serverSettings$fields$skillsDirectory$zh._(_root);
+	@override late final _Translations$web$serverSettings$fields$gitRoot$zh gitRoot = _Translations$web$serverSettings$fields$gitRoot$zh._(_root);
+	@override late final _Translations$web$serverSettings$fields$personalPrefix$zh personalPrefix = _Translations$web$serverSettings$fields$personalPrefix$zh._(_root);
+	@override late final _Translations$web$serverSettings$fields$projectsPrefix$zh projectsPrefix = _Translations$web$serverSettings$fields$projectsPrefix$zh._(_root);
+	@override late final _Translations$web$serverSettings$fields$registryRoot$zh registryRoot = _Translations$web$serverSettings$fields$registryRoot$zh._(_root);
+	@override late final _Translations$web$serverSettings$fields$secretsFile$zh secretsFile = _Translations$web$serverSettings$fields$secretsFile$zh._(_root);
+	@override late final _Translations$web$serverSettings$fields$memoryBackend$zh memoryBackend = _Translations$web$serverSettings$fields$memoryBackend$zh._(_root);
+	@override late final _Translations$web$serverSettings$fields$memoryStore$zh memoryStore = _Translations$web$serverSettings$fields$memoryStore$zh._(_root);
+	@override late final _Translations$web$serverSettings$fields$memoryTopK$zh memoryTopK = _Translations$web$serverSettings$fields$memoryTopK$zh._(_root);
+	@override late final _Translations$web$serverSettings$fields$memoryThreshold$zh memoryThreshold = _Translations$web$serverSettings$fields$memoryThreshold$zh._(_root);
+	@override late final _Translations$web$serverSettings$fields$memoryScope$zh memoryScope = _Translations$web$serverSettings$fields$memoryScope$zh._(_root);
+	@override late final _Translations$web$serverSettings$fields$memoryBaseUrl$zh memoryBaseUrl = _Translations$web$serverSettings$fields$memoryBaseUrl$zh._(_root);
+	@override late final _Translations$web$serverSettings$fields$memoryModel$zh memoryModel = _Translations$web$serverSettings$fields$memoryModel$zh._(_root);
+	@override late final _Translations$web$serverSettings$fields$memoryApiKey$zh memoryApiKey = _Translations$web$serverSettings$fields$memoryApiKey$zh._(_root);
+	@override late final _Translations$web$serverSettings$fields$memoryLocalModel$zh memoryLocalModel = _Translations$web$serverSettings$fields$memoryLocalModel$zh._(_root);
+	@override late final _Translations$web$serverSettings$fields$memoryLibraryPath$zh memoryLibraryPath = _Translations$web$serverSettings$fields$memoryLibraryPath$zh._(_root);
+	@override late final _Translations$web$serverSettings$fields$memoryModelPath$zh memoryModelPath = _Translations$web$serverSettings$fields$memoryModelPath$zh._(_root);
+	@override late final _Translations$web$serverSettings$fields$memoryTokenizerPath$zh memoryTokenizerPath = _Translations$web$serverSettings$fields$memoryTokenizerPath$zh._(_root);
+	@override late final _Translations$web$serverSettings$fields$memoryMaxSeqLen$zh memoryMaxSeqLen = _Translations$web$serverSettings$fields$memoryMaxSeqLen$zh._(_root);
+	@override late final _Translations$web$serverSettings$fields$claudeHistoryRoots$zh claudeHistoryRoots = _Translations$web$serverSettings$fields$claudeHistoryRoots$zh._(_root);
+	@override late final _Translations$web$serverSettings$fields$claudeAccountsDir$zh claudeAccountsDir = _Translations$web$serverSettings$fields$claudeAccountsDir$zh._(_root);
+	@override late final _Translations$web$serverSettings$fields$codexSessionsRoot$zh codexSessionsRoot = _Translations$web$serverSettings$fields$codexSessionsRoot$zh._(_root);
+	@override late final _Translations$web$serverSettings$fields$antigravityConversationsRoot$zh antigravityConversationsRoot = _Translations$web$serverSettings$fields$antigravityConversationsRoot$zh._(_root);
+	@override late final _Translations$web$serverSettings$fields$backupLocalDir$zh backupLocalDir = _Translations$web$serverSettings$fields$backupLocalDir$zh._(_root);
+	@override late final _Translations$web$serverSettings$fields$backupExportDir$zh backupExportDir = _Translations$web$serverSettings$fields$backupExportDir$zh._(_root);
+	@override late final _Translations$web$serverSettings$fields$backupPgDumpPath$zh backupPgDumpPath = _Translations$web$serverSettings$fields$backupPgDumpPath$zh._(_root);
+	@override late final _Translations$web$serverSettings$fields$backupPgRestorePath$zh backupPgRestorePath = _Translations$web$serverSettings$fields$backupPgRestorePath$zh._(_root);
+	@override late final _Translations$web$serverSettings$fields$memoryDedup$zh memoryDedup = _Translations$web$serverSettings$fields$memoryDedup$zh._(_root);
+	@override late final _Translations$web$serverSettings$fields$gatekeeperEnabled$zh gatekeeperEnabled = _Translations$web$serverSettings$fields$gatekeeperEnabled$zh._(_root);
+	@override late final _Translations$web$serverSettings$fields$gatekeeperLatency$zh gatekeeperLatency = _Translations$web$serverSettings$fields$gatekeeperLatency$zh._(_root);
+	@override late final _Translations$web$serverSettings$fields$cleanerEnabled$zh cleanerEnabled = _Translations$web$serverSettings$fields$cleanerEnabled$zh._(_root);
+	@override late final _Translations$web$serverSettings$fields$cleanerInterval$zh cleanerInterval = _Translations$web$serverSettings$fields$cleanerInterval$zh._(_root);
+	@override late final _Translations$web$serverSettings$fields$cleanerGlobalScope$zh cleanerGlobalScope = _Translations$web$serverSettings$fields$cleanerGlobalScope$zh._(_root);
+	@override late final _Translations$web$serverSettings$fields$knowledgeEnabled$zh knowledgeEnabled = _Translations$web$serverSettings$fields$knowledgeEnabled$zh._(_root);
+	@override late final _Translations$web$serverSettings$fields$claudeWatcher$zh claudeWatcher = _Translations$web$serverSettings$fields$claudeWatcher$zh._(_root);
+	@override late final _Translations$web$serverSettings$fields$claudeAutoFailover$zh claudeAutoFailover = _Translations$web$serverSettings$fields$claudeAutoFailover$zh._(_root);
+	@override late final _Translations$web$serverSettings$fields$mobileTokenTTL$zh mobileTokenTTL = _Translations$web$serverSettings$fields$mobileTokenTTL$zh._(_root);
+	@override late final _Translations$web$serverSettings$fields$dbMaxConns$zh dbMaxConns = _Translations$web$serverSettings$fields$dbMaxConns$zh._(_root);
 }
 
 // Path: web.serverSettings.liveTail
-class _TranslationsWebServerSettingsLiveTailZh extends TranslationsWebServerSettingsLiveTailEn {
-	_TranslationsWebServerSettingsLiveTailZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$liveTail$zh extends Translations$web$serverSettings$liveTail$en {
+	_Translations$web$serverSettings$liveTail$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -5275,8 +5364,8 @@ class _TranslationsWebServerSettingsLiveTailZh extends TranslationsWebServerSett
 }
 
 // Path: web.serverSettings.memoryInspectorCard
-class _TranslationsWebServerSettingsMemoryInspectorCardZh extends TranslationsWebServerSettingsMemoryInspectorCardEn {
-	_TranslationsWebServerSettingsMemoryInspectorCardZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$memoryInspectorCard$zh extends Translations$web$serverSettings$memoryInspectorCard$en {
+	_Translations$web$serverSettings$memoryInspectorCard$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -5287,8 +5376,8 @@ class _TranslationsWebServerSettingsMemoryInspectorCardZh extends TranslationsWe
 }
 
 // Path: web.serverSettings.stringList
-class _TranslationsWebServerSettingsStringListZh extends TranslationsWebServerSettingsStringListEn {
-	_TranslationsWebServerSettingsStringListZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$stringList$zh extends Translations$web$serverSettings$stringList$en {
+	_Translations$web$serverSettings$stringList$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -5299,8 +5388,8 @@ class _TranslationsWebServerSettingsStringListZh extends TranslationsWebServerSe
 }
 
 // Path: web.serverSettings.httpHelpers
-class _TranslationsWebServerSettingsHttpHelpersZh extends TranslationsWebServerSettingsHttpHelpersEn {
-	_TranslationsWebServerSettingsHttpHelpersZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$httpHelpers$zh extends Translations$web$serverSettings$httpHelpers$en {
+	_Translations$web$serverSettings$httpHelpers$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -5309,12 +5398,12 @@ class _TranslationsWebServerSettingsHttpHelpersZh extends TranslationsWebServerS
 	@override String modelCount({required Object count}) => '${count} 个模型 — 点击使用';
 	@override String get presets => '预设：';
 	@override String get testConnection => '测试连接';
-	@override late final _TranslationsWebServerSettingsHttpHelpersPresetTipZh presetTip = _TranslationsWebServerSettingsHttpHelpersPresetTipZh._(_root);
+	@override late final _Translations$web$serverSettings$httpHelpers$presetTip$zh presetTip = _Translations$web$serverSettings$httpHelpers$presetTip$zh._(_root);
 }
 
 // Path: web.serverSettings.probe
-class _TranslationsWebServerSettingsProbeZh extends TranslationsWebServerSettingsProbeEn {
-	_TranslationsWebServerSettingsProbeZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$probe$zh extends Translations$web$serverSettings$probe$en {
+	_Translations$web$serverSettings$probe$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -5331,8 +5420,8 @@ class _TranslationsWebServerSettingsProbeZh extends TranslationsWebServerSetting
 }
 
 // Path: web.serverSettings.backup
-class _TranslationsWebServerSettingsBackupZh extends TranslationsWebServerSettingsBackupEn {
-	_TranslationsWebServerSettingsBackupZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$backup$zh extends Translations$web$serverSettings$backup$en {
+	_Translations$web$serverSettings$backup$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -5355,7 +5444,7 @@ class _TranslationsWebServerSettingsBackupZh extends TranslationsWebServerSettin
 	@override String get noTargets => '尚未添加目标。添加一个开始备份。';
 	@override String get addTarget => '添加目标';
 	@override String get noSchedulesHint => '没有循环计划。在 <1>/backups → 计划任务</1> 添加一个以自动执行备份。';
-	@override late final _TranslationsWebServerSettingsBackupScheduleHeadersZh scheduleHeaders = _TranslationsWebServerSettingsBackupScheduleHeadersZh._(_root);
+	@override late final _Translations$web$serverSettings$backup$scheduleHeaders$zh scheduleHeaders = _Translations$web$serverSettings$backup$scheduleHeaders$zh._(_root);
 	@override String every({required Object interval}) => '每 ${interval}';
 	@override String backupsKeep({required Object count}) => '${count} 份备份';
 	@override String get stateEnabled => '已启用';
@@ -5366,8 +5455,8 @@ class _TranslationsWebServerSettingsBackupZh extends TranslationsWebServerSettin
 }
 
 // Path: web.serverSettings.targetRow
-class _TranslationsWebServerSettingsTargetRowZh extends TranslationsWebServerSettingsTargetRowEn {
-	_TranslationsWebServerSettingsTargetRowZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$targetRow$zh extends Translations$web$serverSettings$targetRow$en {
+	_Translations$web$serverSettings$targetRow$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -5387,8 +5476,8 @@ class _TranslationsWebServerSettingsTargetRowZh extends TranslationsWebServerSet
 }
 
 // Path: web.serverSettings.toggle
-class _TranslationsWebServerSettingsToggleZh extends TranslationsWebServerSettingsToggleEn {
-	_TranslationsWebServerSettingsToggleZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$toggle$zh extends Translations$web$serverSettings$toggle$en {
+	_Translations$web$serverSettings$toggle$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -5400,8 +5489,8 @@ class _TranslationsWebServerSettingsToggleZh extends TranslationsWebServerSettin
 }
 
 // Path: web.settings.groups
-class _TranslationsWebSettingsGroupsZh extends TranslationsWebSettingsGroupsEn {
-	_TranslationsWebSettingsGroupsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$settings$groups$zh extends Translations$web$settings$groups$en {
+	_Translations$web$settings$groups$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -5412,8 +5501,8 @@ class _TranslationsWebSettingsGroupsZh extends TranslationsWebSettingsGroupsEn {
 }
 
 // Path: web.settings.items
-class _TranslationsWebSettingsItemsZh extends TranslationsWebSettingsItemsEn {
-	_TranslationsWebSettingsItemsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$settings$items$zh extends Translations$web$settings$items$en {
+	_Translations$web$settings$items$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -5426,8 +5515,8 @@ class _TranslationsWebSettingsItemsZh extends TranslationsWebSettingsItemsEn {
 }
 
 // Path: web.settings.health
-class _TranslationsWebSettingsHealthZh extends TranslationsWebSettingsHealthEn {
-	_TranslationsWebSettingsHealthZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$settings$health$zh extends Translations$web$settings$health$en {
+	_Translations$web$settings$health$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -5438,8 +5527,8 @@ class _TranslationsWebSettingsHealthZh extends TranslationsWebSettingsHealthEn {
 }
 
 // Path: web.settings.breadcrumb
-class _TranslationsWebSettingsBreadcrumbZh extends TranslationsWebSettingsBreadcrumbEn {
-	_TranslationsWebSettingsBreadcrumbZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$settings$breadcrumb$zh extends Translations$web$settings$breadcrumb$en {
+	_Translations$web$settings$breadcrumb$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -5448,32 +5537,32 @@ class _TranslationsWebSettingsBreadcrumbZh extends TranslationsWebSettingsBreadc
 }
 
 // Path: web.settings.appearance
-class _TranslationsWebSettingsAppearanceZh extends TranslationsWebSettingsAppearanceEn {
-	_TranslationsWebSettingsAppearanceZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$settings$appearance$zh extends Translations$web$settings$appearance$en {
+	_Translations$web$settings$appearance$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
 	// Translations
 	@override String get title => '外观';
 	@override String get description => '选择 opendray 的外观风格。';
-	@override late final _TranslationsWebSettingsAppearanceOptionsZh options = _TranslationsWebSettingsAppearanceOptionsZh._(_root);
+	@override late final _Translations$web$settings$appearance$options$zh options = _Translations$web$settings$appearance$options$zh._(_root);
 }
 
 // Path: web.settings.font
-class _TranslationsWebSettingsFontZh extends TranslationsWebSettingsFontEn {
-	_TranslationsWebSettingsFontZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$settings$font$zh extends Translations$web$settings$font$en {
+	_Translations$web$settings$font$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
 	// Translations
 	@override String get title => '字号';
 	@override String get description => '缩放整个界面。按浏览器保存。';
-	@override late final _TranslationsWebSettingsFontOptionsZh options = _TranslationsWebSettingsFontOptionsZh._(_root);
+	@override late final _Translations$web$settings$font$options$zh options = _Translations$web$settings$font$options$zh._(_root);
 }
 
 // Path: web.settings.account
-class _TranslationsWebSettingsAccountZh extends TranslationsWebSettingsAccountEn {
-	_TranslationsWebSettingsAccountZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$settings$account$zh extends Translations$web$settings$account$en {
+	_Translations$web$settings$account$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -5486,8 +5575,8 @@ class _TranslationsWebSettingsAccountZh extends TranslationsWebSettingsAccountEn
 }
 
 // Path: web.settings.changeCredentials
-class _TranslationsWebSettingsChangeCredentialsZh extends TranslationsWebSettingsChangeCredentialsEn {
-	_TranslationsWebSettingsChangeCredentialsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$settings$changeCredentials$zh extends Translations$web$settings$changeCredentials$en {
+	_Translations$web$settings$changeCredentials$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -5508,8 +5597,8 @@ class _TranslationsWebSettingsChangeCredentialsZh extends TranslationsWebSetting
 }
 
 // Path: web.settings.system
-class _TranslationsWebSettingsSystemZh extends TranslationsWebSettingsSystemEn {
-	_TranslationsWebSettingsSystemZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$settings$system$zh extends Translations$web$settings$system$en {
+	_Translations$web$settings$system$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -5525,8 +5614,8 @@ class _TranslationsWebSettingsSystemZh extends TranslationsWebSettingsSystemEn {
 }
 
 // Path: web.settings.about
-class _TranslationsWebSettingsAboutZh extends TranslationsWebSettingsAboutEn {
-	_TranslationsWebSettingsAboutZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$settings$about$zh extends Translations$web$settings$about$en {
+	_Translations$web$settings$about$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -5555,8 +5644,8 @@ class _TranslationsWebSettingsAboutZh extends TranslationsWebSettingsAboutEn {
 }
 
 // Path: web.memoryAmbient.header
-class _TranslationsWebMemoryAmbientHeaderZh extends TranslationsWebMemoryAmbientHeaderEn {
-	_TranslationsWebMemoryAmbientHeaderZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$memoryAmbient$header$zh extends Translations$web$memoryAmbient$header$en {
+	_Translations$web$memoryAmbient$header$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -5566,8 +5655,8 @@ class _TranslationsWebMemoryAmbientHeaderZh extends TranslationsWebMemoryAmbient
 }
 
 // Path: web.memoryAmbient.providers
-class _TranslationsWebMemoryAmbientProvidersZh extends TranslationsWebMemoryAmbientProvidersEn {
-	_TranslationsWebMemoryAmbientProvidersZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$memoryAmbient$providers$zh extends Translations$web$memoryAmbient$providers$en {
+	_Translations$web$memoryAmbient$providers$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -5576,14 +5665,14 @@ class _TranslationsWebMemoryAmbientProvidersZh extends TranslationsWebMemoryAmbi
 	@override String get addButton => '添加 provider';
 	@override String get intro => '至少需要一个已启用的 provider 才能真正触发捕获。本地选项（Ollama、LM Studio、Integration）让你的会话内容不出外网。';
 	@override String get empty => '尚未配置 provider。';
-	@override late final _TranslationsWebMemoryAmbientProvidersRowZh row = _TranslationsWebMemoryAmbientProvidersRowZh._(_root);
-	@override late final _TranslationsWebMemoryAmbientProvidersDialogZh dialog = _TranslationsWebMemoryAmbientProvidersDialogZh._(_root);
-	@override late final _TranslationsWebMemoryAmbientProvidersModelSelectZh modelSelect = _TranslationsWebMemoryAmbientProvidersModelSelectZh._(_root);
+	@override late final _Translations$web$memoryAmbient$providers$row$zh row = _Translations$web$memoryAmbient$providers$row$zh._(_root);
+	@override late final _Translations$web$memoryAmbient$providers$dialog$zh dialog = _Translations$web$memoryAmbient$providers$dialog$zh._(_root);
+	@override late final _Translations$web$memoryAmbient$providers$modelSelect$zh modelSelect = _Translations$web$memoryAmbient$providers$modelSelect$zh._(_root);
 }
 
 // Path: web.memoryAmbient.rules
-class _TranslationsWebMemoryAmbientRulesZh extends TranslationsWebMemoryAmbientRulesEn {
-	_TranslationsWebMemoryAmbientRulesZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$memoryAmbient$rules$zh extends Translations$web$memoryAmbient$rules$en {
+	_Translations$web$memoryAmbient$rules$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -5592,13 +5681,13 @@ class _TranslationsWebMemoryAmbientRulesZh extends TranslationsWebMemoryAmbientR
 	@override String get addButton => '添加规则';
 	@override String get intro => '每条规则表示 "当此 trigger 触发时，对新的会话消息做总结并存储持久事实。" 单会话规则覆盖全局默认。v1 内置 4 种 trigger 类型。';
 	@override String get empty => '尚无捕获规则。添加一条以启用自动捕获。';
-	@override late final _TranslationsWebMemoryAmbientRulesRowZh row = _TranslationsWebMemoryAmbientRulesRowZh._(_root);
-	@override late final _TranslationsWebMemoryAmbientRulesDialogZh dialog = _TranslationsWebMemoryAmbientRulesDialogZh._(_root);
+	@override late final _Translations$web$memoryAmbient$rules$row$zh row = _Translations$web$memoryAmbient$rules$row$zh._(_root);
+	@override late final _Translations$web$memoryAmbient$rules$dialog$zh dialog = _Translations$web$memoryAmbient$rules$dialog$zh._(_root);
 }
 
 // Path: web.memoryAmbient.profiles
-class _TranslationsWebMemoryAmbientProfilesZh extends TranslationsWebMemoryAmbientProfilesEn {
-	_TranslationsWebMemoryAmbientProfilesZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$memoryAmbient$profiles$zh extends Translations$web$memoryAmbient$profiles$en {
+	_Translations$web$memoryAmbient$profiles$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -5607,13 +5696,13 @@ class _TranslationsWebMemoryAmbientProfilesZh extends TranslationsWebMemoryAmbie
 	@override String get addButton => '添加 profile';
 	@override String get intro => 'spawn 时，opendray 会把最近的项目记忆作为一段 markdown banner 拼接到 agent 的 system prompt — 前提是配置了 profile。没有 profile 时，模型仍可按需调用 memory_search。';
 	@override String get empty => '尚无 injection profile。spawn 时不会自动注入记忆 — 模型仍可使用 memory_search。';
-	@override late final _TranslationsWebMemoryAmbientProfilesRowZh row = _TranslationsWebMemoryAmbientProfilesRowZh._(_root);
-	@override late final _TranslationsWebMemoryAmbientProfilesDialogZh dialog = _TranslationsWebMemoryAmbientProfilesDialogZh._(_root);
+	@override late final _Translations$web$memoryAmbient$profiles$row$zh row = _Translations$web$memoryAmbient$profiles$row$zh._(_root);
+	@override late final _Translations$web$memoryAmbient$profiles$dialog$zh dialog = _Translations$web$memoryAmbient$profiles$dialog$zh._(_root);
 }
 
 // Path: web.memoryAmbient.cost
-class _TranslationsWebMemoryAmbientCostZh extends TranslationsWebMemoryAmbientCostEn {
-	_TranslationsWebMemoryAmbientCostZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$memoryAmbient$cost$zh extends Translations$web$memoryAmbient$cost$en {
+	_Translations$web$memoryAmbient$cost$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -5621,12 +5710,12 @@ class _TranslationsWebMemoryAmbientCostZh extends TranslationsWebMemoryAmbientCo
 	@override String get title => 'Token 成本（总计）';
 	@override String get intro => '按 provider 聚合自 <1>memory_summarizer_calls</1>。本地 provider（Ollama、LM Studio、Integration）按 \$0 计价 — 硬件成本由运维承担。';
 	@override String get empty => '暂无已启用的 provider — 没有成本数据。';
-	@override late final _TranslationsWebMemoryAmbientCostColumnsZh columns = _TranslationsWebMemoryAmbientCostColumnsZh._(_root);
+	@override late final _Translations$web$memoryAmbient$cost$columns$zh columns = _Translations$web$memoryAmbient$cost$columns$zh._(_root);
 }
 
 // Path: web.noteEditor.status
-class _TranslationsWebNoteEditorStatusZh extends TranslationsWebNoteEditorStatusEn {
-	_TranslationsWebNoteEditorStatusZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$noteEditor$status$zh extends Translations$web$noteEditor$status$en {
+	_Translations$web$noteEditor$status$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -5639,8 +5728,8 @@ class _TranslationsWebNoteEditorStatusZh extends TranslationsWebNoteEditorStatus
 }
 
 // Path: web.export.sections
-class _TranslationsWebExportSectionsZh extends TranslationsWebExportSectionsEn {
-	_TranslationsWebExportSectionsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$export$sections$zh extends Translations$web$export$sections$en {
+	_Translations$web$export$sections$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -5650,8 +5739,8 @@ class _TranslationsWebExportSectionsZh extends TranslationsWebExportSectionsEn {
 }
 
 // Path: web.export.form
-class _TranslationsWebExportFormZh extends TranslationsWebExportFormEn {
-	_TranslationsWebExportFormZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$export$form$zh extends Translations$web$export$form$en {
+	_Translations$web$export$form$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -5662,7 +5751,7 @@ class _TranslationsWebExportFormZh extends TranslationsWebExportFormEn {
 	@override String get integrations => '集成';
 	@override String get customTasks => '自定义任务';
 	@override String get customTasksHint => '在 Inspector 的 Tasks 标签里展示的运维自定义任务。';
-	@override late final _TranslationsWebExportFormIntegrationOptionsZh integrationOptions = _TranslationsWebExportFormIntegrationOptionsZh._(_root);
+	@override late final _Translations$web$export$form$integrationOptions$zh integrationOptions = _Translations$web$export$form$integrationOptions$zh._(_root);
 	@override String get confirmWarning => '输入 <1>I understand</1> 以确认。opendray 当前只存 bcrypt 哈希 — 选择明文也不会导出任何明文（该选项为将来保留明文缓存的版本而预留）。';
 	@override String get confirmPlaceholder => 'I understand';
 	@override String get confirmSentinel => 'i understand';
@@ -5675,8 +5764,8 @@ class _TranslationsWebExportFormZh extends TranslationsWebExportFormEn {
 }
 
 // Path: web.export.history
-class _TranslationsWebExportHistoryZh extends TranslationsWebExportHistoryEn {
-	_TranslationsWebExportHistoryZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$export$history$zh extends Translations$web$export$history$en {
+	_Translations$web$export$history$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -5684,7 +5773,7 @@ class _TranslationsWebExportHistoryZh extends TranslationsWebExportHistoryEn {
 	@override String get loading => '加载中…';
 	@override String get empty => '暂无导出。请使用上面的表单创建一个。';
 	@override String get title => '历史';
-	@override late final _TranslationsWebExportHistoryColumnsZh columns = _TranslationsWebExportHistoryColumnsZh._(_root);
+	@override late final _Translations$web$export$history$columns$zh columns = _Translations$web$export$history$columns$zh._(_root);
 	@override String get download => '下载';
 	@override String get deleteTooltip => '删除';
 	@override String get listFailedToast => '加载导出列表失败';
@@ -5697,8 +5786,8 @@ class _TranslationsWebExportHistoryZh extends TranslationsWebExportHistoryEn {
 }
 
 // Path: web.export.import
-class _TranslationsWebExportImportZh extends TranslationsWebExportImportEn {
-	_TranslationsWebExportImportZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$export$import$zh extends Translations$web$export$import$en {
+	_Translations$web$export$import$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -5715,12 +5804,12 @@ class _TranslationsWebExportImportZh extends TranslationsWebExportImportEn {
 	@override String get doneToast => '导入完成';
 	@override String get finishedWithErrors => '导入完成但有错误';
 	@override String get failedToast => '导入失败';
-	@override late final _TranslationsWebExportImportSummaryCardZh summaryCard = _TranslationsWebExportImportSummaryCardZh._(_root);
+	@override late final _Translations$web$export$import$summaryCard$zh summaryCard = _Translations$web$export$import$summaryCard$zh._(_root);
 }
 
 // Path: web.export.imports
-class _TranslationsWebExportImportsZh extends TranslationsWebExportImportsEn {
-	_TranslationsWebExportImportsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$export$imports$zh extends Translations$web$export$imports$en {
+	_Translations$web$export$imports$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -5728,14 +5817,14 @@ class _TranslationsWebExportImportsZh extends TranslationsWebExportImportsEn {
 	@override String get loading => '加载中…';
 	@override String get empty => '暂无导入。';
 	@override String get title => '历史';
-	@override late final _TranslationsWebExportImportsColumnsZh columns = _TranslationsWebExportImportsColumnsZh._(_root);
+	@override late final _Translations$web$export$imports$columns$zh columns = _Translations$web$export$imports$columns$zh._(_root);
 	@override String get noneCounts => '(无)';
 	@override String get listFailedToast => '加载导入列表失败';
 }
 
 // Path: web.knowledge.scopes
-class _TranslationsWebKnowledgeScopesZh extends TranslationsWebKnowledgeScopesEn {
-	_TranslationsWebKnowledgeScopesZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$knowledge$scopes$zh extends Translations$web$knowledge$scopes$en {
+	_Translations$web$knowledge$scopes$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -5747,8 +5836,8 @@ class _TranslationsWebKnowledgeScopesZh extends TranslationsWebKnowledgeScopesEn
 }
 
 // Path: web.knowledge.kb
-class _TranslationsWebKnowledgeKbZh extends TranslationsWebKnowledgeKbEn {
-	_TranslationsWebKnowledgeKbZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$knowledge$kb$zh extends Translations$web$knowledge$kb$en {
+	_Translations$web$knowledge$kb$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -5770,14 +5859,14 @@ class _TranslationsWebKnowledgeKbZh extends TranslationsWebKnowledgeKbEn {
 	@override String get saved => '已保存';
 	@override String get unlocked => '已解锁——AI 将重新维护此页';
 	@override String get regenerating => '正在后台重新生成…';
-	@override late final _TranslationsWebKnowledgeKbKindsZh kinds = _TranslationsWebKnowledgeKbKindsZh._(_root);
+	@override late final _Translations$web$knowledge$kb$kinds$zh kinds = _Translations$web$knowledge$kb$kinds$zh._(_root);
 	@override String get foundational => '基础 / 规约';
 	@override String get foundationalHint => '基础设施与规范——注入每个项目的强约束规则。';
 	@override String get emergent => '经验';
 	@override String get emergentHint => '从过往工作蒸馏的教训与可复用功能——参考性引导。';
 	@override String get bindingBadge => '强约束 · 必须遵守';
 	@override String get referenceBadge => '参考';
-	@override late final _TranslationsWebKnowledgeKbProposalZh proposal = _TranslationsWebKnowledgeKbProposalZh._(_root);
+	@override late final _Translations$web$knowledge$kb$proposal$zh proposal = _Translations$web$knowledge$kb$proposal$zh._(_root);
 	@override String get discuss => '与 AI 讨论';
 	@override String get discussHint => '与 AI 对话重新制定这页方针——已锁定的页面只会产生提案，绝不覆写';
 	@override String get onDemand => '按需';
@@ -5786,14 +5875,14 @@ class _TranslationsWebKnowledgeKbZh extends TranslationsWebKnowledgeKbEn {
 	@override String get removePage => '移除页面';
 	@override String get removePageHint => '从知识库移除此页（内容保留，重新添加同名标识即可恢复）';
 	@override String get pageRemovedToast => '页面已移除';
-	@override late final _TranslationsWebKnowledgeKbNewPageZh newPage = _TranslationsWebKnowledgeKbNewPageZh._(_root);
-	@override late final _TranslationsWebKnowledgeKbPageSettingsZh pageSettings = _TranslationsWebKnowledgeKbPageSettingsZh._(_root);
-	@override late final _TranslationsWebKnowledgeKbLibrarianZh librarian = _TranslationsWebKnowledgeKbLibrarianZh._(_root);
+	@override late final _Translations$web$knowledge$kb$newPage$zh newPage = _Translations$web$knowledge$kb$newPage$zh._(_root);
+	@override late final _Translations$web$knowledge$kb$pageSettings$zh pageSettings = _Translations$web$knowledge$kb$pageSettings$zh._(_root);
+	@override late final _Translations$web$knowledge$kb$librarian$zh librarian = _Translations$web$knowledge$kb$librarian$zh._(_root);
 }
 
 // Path: web.knowledge.kinds
-class _TranslationsWebKnowledgeKindsZh extends TranslationsWebKnowledgeKindsEn {
-	_TranslationsWebKnowledgeKindsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$knowledge$kinds$zh extends Translations$web$knowledge$kinds$en {
+	_Translations$web$knowledge$kinds$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -5806,8 +5895,8 @@ class _TranslationsWebKnowledgeKindsZh extends TranslationsWebKnowledgeKindsEn {
 }
 
 // Path: web.knowledge.distill
-class _TranslationsWebKnowledgeDistillZh extends TranslationsWebKnowledgeDistillEn {
-	_TranslationsWebKnowledgeDistillZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$knowledge$distill$zh extends Translations$web$knowledge$distill$en {
+	_Translations$web$knowledge$distill$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -5844,15 +5933,15 @@ class _TranslationsWebKnowledgeDistillZh extends TranslationsWebKnowledgeDistill
 	@override String projectSpan({required Object count}) => '${count} 个项目';
 	@override String get scoreHint => '按「复现次数 × 手动耗时」排序——最省操作员时间的优先蒸馏';
 	@override String outcomes({required Object ok, required Object failed}) => '加载后 ${ok} 次成功 / ${failed} 次失败';
-	@override late final _TranslationsWebKnowledgeDistillRetirementZh retirement = _TranslationsWebKnowledgeDistillRetirementZh._(_root);
+	@override late final _Translations$web$knowledge$distill$retirement$zh retirement = _Translations$web$knowledge$distill$retirement$zh._(_root);
 	@override String get retirementEmpty => '暂无退役候选——所有技能都在发挥作用。';
 	@override String get retirementHint => '结果回路建议淘汰的技能——同意的可禁用。';
 	@override String get retirementTitle => '退役候选';
 }
 
 // Path: web.knowledge.graph
-class _TranslationsWebKnowledgeGraphZh extends TranslationsWebKnowledgeGraphEn {
-	_TranslationsWebKnowledgeGraphZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$knowledge$graph$zh extends Translations$web$knowledge$graph$en {
+	_Translations$web$knowledge$graph$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -5861,14 +5950,14 @@ class _TranslationsWebKnowledgeGraphZh extends TranslationsWebKnowledgeGraphEn {
 	@override String get intro => 'AI 所学一切的关系图谱：哪些项目共用同一技术、哪些技能与坑绑定在哪些实体上。动共享基础设施之前，先在这里确认节点的爆炸半径。';
 	@override String get empty => '还没有知识——图谱会随着会话运行自动生长：锚定扫描从项目工作中提取实体，蒸馏再沉淀出手册与技能。跑几个工作会话后再来看看。';
 	@override String get hint => '滚轮缩放 · 拖动背景平移 · 拖动节点整理布局 · 点击节点查看详情';
-	@override late final _TranslationsWebKnowledgeGraphLegendZh legend = _TranslationsWebKnowledgeGraphLegendZh._(_root);
+	@override late final _Translations$web$knowledge$graph$legend$zh legend = _Translations$web$knowledge$graph$legend$zh._(_root);
 	@override String connections({required Object count}) => '${count} 个关联节点';
 	@override String get noLinks => '还没有任何东西关联到这个节点。';
 }
 
 // Path: web.cortex.home
-class _TranslationsWebCortexHomeZh extends TranslationsWebCortexHomeEn {
-	_TranslationsWebCortexHomeZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$cortex$home$zh extends Translations$web$cortex$home$en {
+	_Translations$web$cortex$home$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -5880,16 +5969,16 @@ class _TranslationsWebCortexHomeZh extends TranslationsWebCortexHomeEn {
 	@override String get loopHint => '记忆 → 笔记 → 知识 → 注入每次启动。层级提升是转化，绝不是复制。';
 	@override String get activeProjects => '活跃项目';
 	@override String idle({required Object days}) => '闲置 ${days} 天';
-	@override late final _TranslationsWebCortexHomeMemoryZh memory = _TranslationsWebCortexHomeMemoryZh._(_root);
-	@override late final _TranslationsWebCortexHomeNotesZh notes = _TranslationsWebCortexHomeNotesZh._(_root);
-	@override late final _TranslationsWebCortexHomeKnowledgeZh knowledge = _TranslationsWebCortexHomeKnowledgeZh._(_root);
+	@override late final _Translations$web$cortex$home$memory$zh memory = _Translations$web$cortex$home$memory$zh._(_root);
+	@override late final _Translations$web$cortex$home$notes$zh notes = _Translations$web$cortex$home$notes$zh._(_root);
+	@override late final _Translations$web$cortex$home$knowledge$zh knowledge = _Translations$web$cortex$home$knowledge$zh._(_root);
 	@override String get settings => '设置';
-	@override late final _TranslationsWebCortexHomeProposalsZh proposals = _TranslationsWebCortexHomeProposalsZh._(_root);
+	@override late final _Translations$web$cortex$home$proposals$zh proposals = _Translations$web$cortex$home$proposals$zh._(_root);
 }
 
 // Path: web.cortex.chat
-class _TranslationsWebCortexChatZh extends TranslationsWebCortexChatEn {
-	_TranslationsWebCortexChatZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$cortex$chat$zh extends Translations$web$cortex$chat$en {
+	_Translations$web$cortex$chat$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -5923,8 +6012,8 @@ class _TranslationsWebCortexChatZh extends TranslationsWebCortexChatEn {
 }
 
 // Path: web.cortex.blueprint
-class _TranslationsWebCortexBlueprintZh extends TranslationsWebCortexBlueprintEn {
-	_TranslationsWebCortexBlueprintZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$cortex$blueprint$zh extends Translations$web$cortex$blueprint$en {
+	_Translations$web$cortex$blueprint$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -5941,7 +6030,7 @@ class _TranslationsWebCortexBlueprintZh extends TranslationsWebCortexBlueprintEn
 	@override String get slugPlaceholder => '标识';
 	@override String get titlePlaceholder => '标题';
 	@override String get hintPlaceholder => '维护提示——一句话指引 AI 如何维护本章节（可选）';
-	@override late final _TranslationsWebCortexBlueprintModeZh mode = _TranslationsWebCortexBlueprintModeZh._(_root);
+	@override late final _Translations$web$cortex$blueprint$mode$zh mode = _Translations$web$cortex$blueprint$mode$zh._(_root);
 	@override String get inject => '注入';
 	@override String get reserved => '保留';
 	@override String get deleteNote => '删除章节只是隐藏，内容不会丢——重新添加同名标识即可恢复。';
@@ -5949,12 +6038,12 @@ class _TranslationsWebCortexBlueprintZh extends TranslationsWebCortexBlueprintEn
 	@override String get apply => '应用蓝图';
 	@override String get applyFailed => '应用失败';
 	@override String get appliedToast => '蓝图已应用';
-	@override late final _TranslationsWebCortexBlueprintWritePolicyZh writePolicy = _TranslationsWebCortexBlueprintWritePolicyZh._(_root);
+	@override late final _Translations$web$cortex$blueprint$writePolicy$zh writePolicy = _Translations$web$cortex$blueprint$writePolicy$zh._(_root);
 }
 
 // Path: web.cortex.quarantine
-class _TranslationsWebCortexQuarantineZh extends TranslationsWebCortexQuarantineEn {
-	_TranslationsWebCortexQuarantineZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$cortex$quarantine$zh extends Translations$web$cortex$quarantine$en {
+	_Translations$web$cortex$quarantine$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -5972,18 +6061,18 @@ class _TranslationsWebCortexQuarantineZh extends TranslationsWebCortexQuarantine
 }
 
 // Path: web.cortex.settings
-class _TranslationsWebCortexSettingsZh extends TranslationsWebCortexSettingsEn {
-	_TranslationsWebCortexSettingsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$cortex$settings$zh extends Translations$web$cortex$settings$en {
+	_Translations$web$cortex$settings$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsWebCortexSettingsInjectionZh injection = _TranslationsWebCortexSettingsInjectionZh._(_root);
+	@override late final _Translations$web$cortex$settings$injection$zh injection = _Translations$web$cortex$settings$injection$zh._(_root);
 }
 
 // Path: web.database.dialog
-class _TranslationsWebDatabaseDialogZh extends TranslationsWebDatabaseDialogEn {
-	_TranslationsWebDatabaseDialogZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$database$dialog$zh extends Translations$web$database$dialog$en {
+	_Translations$web$database$dialog$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6009,14 +6098,14 @@ class _TranslationsWebDatabaseDialogZh extends TranslationsWebDatabaseDialogEn {
 	@override String get savedEdit => '连接已更新';
 	@override String get missingFields => '需要填写名称和数据库（服务器引擎还需主机和用户名）';
 	@override String get driver => '数据库类型';
-	@override late final _TranslationsWebDatabaseDialogDriversZh drivers = _TranslationsWebDatabaseDialogDriversZh._(_root);
+	@override late final _Translations$web$database$dialog$drivers$zh drivers = _Translations$web$database$dialog$drivers$zh._(_root);
 	@override String get filePath => '数据库文件';
 	@override String get filePathHint => '项目目录内的 SQLite 文件路径。';
 }
 
 // Path: web.database.results
-class _TranslationsWebDatabaseResultsZh extends TranslationsWebDatabaseResultsEn {
-	_TranslationsWebDatabaseResultsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$database$results$zh extends Translations$web$database$results$en {
+	_Translations$web$database$results$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6025,8 +6114,8 @@ class _TranslationsWebDatabaseResultsZh extends TranslationsWebDatabaseResultsEn
 }
 
 // Path: web.database.tree
-class _TranslationsWebDatabaseTreeZh extends TranslationsWebDatabaseTreeEn {
-	_TranslationsWebDatabaseTreeZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$database$tree$zh extends Translations$web$database$tree$en {
+	_Translations$web$database$tree$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6036,8 +6125,8 @@ class _TranslationsWebDatabaseTreeZh extends TranslationsWebDatabaseTreeEn {
 }
 
 // Path: web.database.row
-class _TranslationsWebDatabaseRowZh extends TranslationsWebDatabaseRowEn {
-	_TranslationsWebDatabaseRowZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$database$row$zh extends Translations$web$database$row$en {
+	_Translations$web$database$row$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6052,8 +6141,8 @@ class _TranslationsWebDatabaseRowZh extends TranslationsWebDatabaseRowEn {
 }
 
 // Path: web.database.grid
-class _TranslationsWebDatabaseGridZh extends TranslationsWebDatabaseGridEn {
-	_TranslationsWebDatabaseGridZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$database$grid$zh extends Translations$web$database$grid$en {
+	_Translations$web$database$grid$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6071,8 +6160,8 @@ class _TranslationsWebDatabaseGridZh extends TranslationsWebDatabaseGridEn {
 }
 
 // Path: web.database.console
-class _TranslationsWebDatabaseConsoleZh extends TranslationsWebDatabaseConsoleEn {
-	_TranslationsWebDatabaseConsoleZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$database$console$zh extends Translations$web$database$console$en {
+	_Translations$web$database$console$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6087,8 +6176,8 @@ class _TranslationsWebDatabaseConsoleZh extends TranslationsWebDatabaseConsoleEn
 }
 
 // Path: web.database.panel
-class _TranslationsWebDatabasePanelZh extends TranslationsWebDatabasePanelEn {
-	_TranslationsWebDatabasePanelZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$database$panel$zh extends Translations$web$database$panel$en {
+	_Translations$web$database$panel$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6107,8 +6196,8 @@ class _TranslationsWebDatabasePanelZh extends TranslationsWebDatabasePanelEn {
 }
 
 // Path: web.database.workbench
-class _TranslationsWebDatabaseWorkbenchZh extends TranslationsWebDatabaseWorkbenchEn {
-	_TranslationsWebDatabaseWorkbenchZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$database$workbench$zh extends Translations$web$database$workbench$en {
+	_Translations$web$database$workbench$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6117,8 +6206,8 @@ class _TranslationsWebDatabaseWorkbenchZh extends TranslationsWebDatabaseWorkben
 }
 
 // Path: web.roundTable.dialog
-class _TranslationsWebRoundTableDialogZh extends TranslationsWebRoundTableDialogEn {
-	_TranslationsWebRoundTableDialogZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$roundTable$dialog$zh extends Translations$web$roundTable$dialog$en {
+	_Translations$web$roundTable$dialog$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6141,14 +6230,14 @@ class _TranslationsWebRoundTableDialogZh extends TranslationsWebRoundTableDialog
 	@override String get accountDefault => '默认账号';
 	@override String get accountNoToken => '无凭据';
 	@override String get personaPlaceholder => '角色 / 人设(可选)—— 决定该成员以什么立场发言';
-	@override late final _TranslationsWebRoundTableDialogPersonaPresetsZh personaPresets = _TranslationsWebRoundTableDialogPersonaPresetsZh._(_root);
+	@override late final _Translations$web$roundTable$dialog$personaPresets$zh personaPresets = _Translations$web$roundTable$dialog$personaPresets$zh._(_root);
 	@override String get framing => '框架(可选)';
 	@override String get framingPlaceholder => '当前议题 + 成员关系 —— 如「议题:认证重构。claude 主导架构,codex 只挑安全漏洞。」';
 }
 
 // Path: web.roundTable.detail
-class _TranslationsWebRoundTableDetailZh extends TranslationsWebRoundTableDetailEn {
-	_TranslationsWebRoundTableDetailZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$roundTable$detail$zh extends Translations$web$roundTable$detail$en {
+	_Translations$web$roundTable$detail$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6180,8 +6269,8 @@ class _TranslationsWebRoundTableDetailZh extends TranslationsWebRoundTableDetail
 }
 
 // Path: web.roundTable.status
-class _TranslationsWebRoundTableStatusZh extends TranslationsWebRoundTableStatusEn {
-	_TranslationsWebRoundTableStatusZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$roundTable$status$zh extends Translations$web$roundTable$status$en {
+	_Translations$web$roundTable$status$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6191,8 +6280,8 @@ class _TranslationsWebRoundTableStatusZh extends TranslationsWebRoundTableStatus
 }
 
 // Path: web.roundTable.handoff
-class _TranslationsWebRoundTableHandoffZh extends TranslationsWebRoundTableHandoffEn {
-	_TranslationsWebRoundTableHandoffZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$roundTable$handoff$zh extends Translations$web$roundTable$handoff$en {
+	_Translations$web$roundTable$handoff$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6217,8 +6306,8 @@ class _TranslationsWebRoundTableHandoffZh extends TranslationsWebRoundTableHando
 }
 
 // Path: web.roundTable.plan
-class _TranslationsWebRoundTablePlanZh extends TranslationsWebRoundTablePlanEn {
-	_TranslationsWebRoundTablePlanZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$roundTable$plan$zh extends Translations$web$roundTable$plan$en {
+	_Translations$web$roundTable$plan$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6252,8 +6341,8 @@ class _TranslationsWebRoundTablePlanZh extends TranslationsWebRoundTablePlanEn {
 }
 
 // Path: more.items.integrations
-class _TranslationsMoreItemsIntegrationsZh extends TranslationsMoreItemsIntegrationsEn {
-	_TranslationsMoreItemsIntegrationsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$more$items$integrations$zh extends Translations$more$items$integrations$en {
+	_Translations$more$items$integrations$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6263,8 +6352,8 @@ class _TranslationsMoreItemsIntegrationsZh extends TranslationsMoreItemsIntegrat
 }
 
 // Path: more.items.activity
-class _TranslationsMoreItemsActivityZh extends TranslationsMoreItemsActivityEn {
-	_TranslationsMoreItemsActivityZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$more$items$activity$zh extends Translations$more$items$activity$en {
+	_Translations$more$items$activity$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6274,8 +6363,8 @@ class _TranslationsMoreItemsActivityZh extends TranslationsMoreItemsActivityEn {
 }
 
 // Path: more.items.memoryAmbient
-class _TranslationsMoreItemsMemoryAmbientZh extends TranslationsMoreItemsMemoryAmbientEn {
-	_TranslationsMoreItemsMemoryAmbientZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$more$items$memoryAmbient$zh extends Translations$more$items$memoryAmbient$en {
+	_Translations$more$items$memoryAmbient$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6285,8 +6374,8 @@ class _TranslationsMoreItemsMemoryAmbientZh extends TranslationsMoreItemsMemoryA
 }
 
 // Path: more.items.channels
-class _TranslationsMoreItemsChannelsZh extends TranslationsMoreItemsChannelsEn {
-	_TranslationsMoreItemsChannelsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$more$items$channels$zh extends Translations$more$items$channels$en {
+	_Translations$more$items$channels$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6296,8 +6385,8 @@ class _TranslationsMoreItemsChannelsZh extends TranslationsMoreItemsChannelsEn {
 }
 
 // Path: more.items.providers
-class _TranslationsMoreItemsProvidersZh extends TranslationsMoreItemsProvidersEn {
-	_TranslationsMoreItemsProvidersZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$more$items$providers$zh extends Translations$more$items$providers$en {
+	_Translations$more$items$providers$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6307,8 +6396,8 @@ class _TranslationsMoreItemsProvidersZh extends TranslationsMoreItemsProvidersEn
 }
 
 // Path: more.items.mcp
-class _TranslationsMoreItemsMcpZh extends TranslationsMoreItemsMcpEn {
-	_TranslationsMoreItemsMcpZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$more$items$mcp$zh extends Translations$more$items$mcp$en {
+	_Translations$more$items$mcp$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6318,8 +6407,8 @@ class _TranslationsMoreItemsMcpZh extends TranslationsMoreItemsMcpEn {
 }
 
 // Path: more.items.skills
-class _TranslationsMoreItemsSkillsZh extends TranslationsMoreItemsSkillsEn {
-	_TranslationsMoreItemsSkillsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$more$items$skills$zh extends Translations$more$items$skills$en {
+	_Translations$more$items$skills$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6329,8 +6418,8 @@ class _TranslationsMoreItemsSkillsZh extends TranslationsMoreItemsSkillsEn {
 }
 
 // Path: more.items.gitHosts
-class _TranslationsMoreItemsGitHostsZh extends TranslationsMoreItemsGitHostsEn {
-	_TranslationsMoreItemsGitHostsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$more$items$gitHosts$zh extends Translations$more$items$gitHosts$en {
+	_Translations$more$items$gitHosts$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6340,8 +6429,8 @@ class _TranslationsMoreItemsGitHostsZh extends TranslationsMoreItemsGitHostsEn {
 }
 
 // Path: more.items.customTasks
-class _TranslationsMoreItemsCustomTasksZh extends TranslationsMoreItemsCustomTasksEn {
-	_TranslationsMoreItemsCustomTasksZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$more$items$customTasks$zh extends Translations$more$items$customTasks$en {
+	_Translations$more$items$customTasks$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6351,8 +6440,8 @@ class _TranslationsMoreItemsCustomTasksZh extends TranslationsMoreItemsCustomTas
 }
 
 // Path: more.items.cortexHub
-class _TranslationsMoreItemsCortexHubZh extends TranslationsMoreItemsCortexHubEn {
-	_TranslationsMoreItemsCortexHubZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$more$items$cortexHub$zh extends Translations$more$items$cortexHub$en {
+	_Translations$more$items$cortexHub$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6362,8 +6451,8 @@ class _TranslationsMoreItemsCortexHubZh extends TranslationsMoreItemsCortexHubEn
 }
 
 // Path: more.items.projectMemory
-class _TranslationsMoreItemsProjectMemoryZh extends TranslationsMoreItemsProjectMemoryEn {
-	_TranslationsMoreItemsProjectMemoryZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$more$items$projectMemory$zh extends Translations$more$items$projectMemory$en {
+	_Translations$more$items$projectMemory$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6373,8 +6462,8 @@ class _TranslationsMoreItemsProjectMemoryZh extends TranslationsMoreItemsProject
 }
 
 // Path: more.items.archived
-class _TranslationsMoreItemsArchivedZh extends TranslationsMoreItemsArchivedEn {
-	_TranslationsMoreItemsArchivedZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$more$items$archived$zh extends Translations$more$items$archived$en {
+	_Translations$more$items$archived$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6384,8 +6473,8 @@ class _TranslationsMoreItemsArchivedZh extends TranslationsMoreItemsArchivedEn {
 }
 
 // Path: more.items.quarantine
-class _TranslationsMoreItemsQuarantineZh extends TranslationsMoreItemsQuarantineEn {
-	_TranslationsMoreItemsQuarantineZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$more$items$quarantine$zh extends Translations$more$items$quarantine$en {
+	_Translations$more$items$quarantine$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6395,8 +6484,8 @@ class _TranslationsMoreItemsQuarantineZh extends TranslationsMoreItemsQuarantine
 }
 
 // Path: more.items.backups
-class _TranslationsMoreItemsBackupsZh extends TranslationsMoreItemsBackupsEn {
-	_TranslationsMoreItemsBackupsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$more$items$backups$zh extends Translations$more$items$backups$en {
+	_Translations$more$items$backups$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6406,8 +6495,8 @@ class _TranslationsMoreItemsBackupsZh extends TranslationsMoreItemsBackupsEn {
 }
 
 // Path: more.items.dataExport
-class _TranslationsMoreItemsDataExportZh extends TranslationsMoreItemsDataExportEn {
-	_TranslationsMoreItemsDataExportZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$more$items$dataExport$zh extends Translations$more$items$dataExport$en {
+	_Translations$more$items$dataExport$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6417,8 +6506,8 @@ class _TranslationsMoreItemsDataExportZh extends TranslationsMoreItemsDataExport
 }
 
 // Path: more.items.settings
-class _TranslationsMoreItemsSettingsZh extends TranslationsMoreItemsSettingsEn {
-	_TranslationsMoreItemsSettingsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$more$items$settings$zh extends Translations$more$items$settings$en {
+	_Translations$more$items$settings$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6428,8 +6517,8 @@ class _TranslationsMoreItemsSettingsZh extends TranslationsMoreItemsSettingsEn {
 }
 
 // Path: more.items.about
-class _TranslationsMoreItemsAboutZh extends TranslationsMoreItemsAboutEn {
-	_TranslationsMoreItemsAboutZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$more$items$about$zh extends Translations$more$items$about$en {
+	_Translations$more$items$about$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6439,8 +6528,8 @@ class _TranslationsMoreItemsAboutZh extends TranslationsMoreItemsAboutEn {
 }
 
 // Path: more.items.vault
-class _TranslationsMoreItemsVaultZh extends TranslationsMoreItemsVaultEn {
-	_TranslationsMoreItemsVaultZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$more$items$vault$zh extends Translations$more$items$vault$en {
+	_Translations$more$items$vault$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6450,8 +6539,8 @@ class _TranslationsMoreItemsVaultZh extends TranslationsMoreItemsVaultEn {
 }
 
 // Path: more.items.roundTable
-class _TranslationsMoreItemsRoundTableZh extends TranslationsMoreItemsRoundTableEn {
-	_TranslationsMoreItemsRoundTableZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$more$items$roundTable$zh extends Translations$more$items$roundTable$en {
+	_Translations$more$items$roundTable$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6461,8 +6550,8 @@ class _TranslationsMoreItemsRoundTableZh extends TranslationsMoreItemsRoundTable
 }
 
 // Path: sessions.detail.accountSwitcher
-class _TranslationsSessionsDetailAccountSwitcherZh extends TranslationsSessionsDetailAccountSwitcherEn {
-	_TranslationsSessionsDetailAccountSwitcherZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$sessions$detail$accountSwitcher$zh extends Translations$sessions$detail$accountSwitcher$en {
+	_Translations$sessions$detail$accountSwitcher$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6488,8 +6577,8 @@ class _TranslationsSessionsDetailAccountSwitcherZh extends TranslationsSessionsD
 }
 
 // Path: sessions.terminal.snackbar
-class _TranslationsSessionsTerminalSnackbarZh extends TranslationsSessionsTerminalSnackbarEn {
-	_TranslationsSessionsTerminalSnackbarZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$sessions$terminal$snackbar$zh extends Translations$sessions$terminal$snackbar$en {
+	_Translations$sessions$terminal$snackbar$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6502,8 +6591,8 @@ class _TranslationsSessionsTerminalSnackbarZh extends TranslationsSessionsTermin
 }
 
 // Path: sessions.terminal.imageSource
-class _TranslationsSessionsTerminalImageSourceZh extends TranslationsSessionsTerminalImageSourceEn {
-	_TranslationsSessionsTerminalImageSourceZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$sessions$terminal$imageSource$zh extends Translations$sessions$terminal$imageSource$en {
+	_Translations$sessions$terminal$imageSource$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6513,8 +6602,8 @@ class _TranslationsSessionsTerminalImageSourceZh extends TranslationsSessionsTer
 }
 
 // Path: sessions.terminal.keyboard
-class _TranslationsSessionsTerminalKeyboardZh extends TranslationsSessionsTerminalKeyboardEn {
-	_TranslationsSessionsTerminalKeyboardZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$sessions$terminal$keyboard$zh extends Translations$sessions$terminal$keyboard$en {
+	_Translations$sessions$terminal$keyboard$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6526,8 +6615,8 @@ class _TranslationsSessionsTerminalKeyboardZh extends TranslationsSessionsTermin
 }
 
 // Path: sessions.terminal.attachments
-class _TranslationsSessionsTerminalAttachmentsZh extends TranslationsSessionsTerminalAttachmentsEn {
-	_TranslationsSessionsTerminalAttachmentsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$sessions$terminal$attachments$zh extends Translations$sessions$terminal$attachments$en {
+	_Translations$sessions$terminal$attachments$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6538,8 +6627,8 @@ class _TranslationsSessionsTerminalAttachmentsZh extends TranslationsSessionsTer
 }
 
 // Path: sessions.terminal.connection
-class _TranslationsSessionsTerminalConnectionZh extends TranslationsSessionsTerminalConnectionEn {
-	_TranslationsSessionsTerminalConnectionZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$sessions$terminal$connection$zh extends Translations$sessions$terminal$connection$en {
+	_Translations$sessions$terminal$connection$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6554,8 +6643,8 @@ class _TranslationsSessionsTerminalConnectionZh extends TranslationsSessionsTerm
 }
 
 // Path: sessions.terminal.selectCopy
-class _TranslationsSessionsTerminalSelectCopyZh extends TranslationsSessionsTerminalSelectCopyEn {
-	_TranslationsSessionsTerminalSelectCopyZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$sessions$terminal$selectCopy$zh extends Translations$sessions$terminal$selectCopy$en {
+	_Translations$sessions$terminal$selectCopy$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6568,8 +6657,8 @@ class _TranslationsSessionsTerminalSelectCopyZh extends TranslationsSessionsTerm
 }
 
 // Path: sessions.action.errors
-class _TranslationsSessionsActionErrorsZh extends TranslationsSessionsActionErrorsEn {
-	_TranslationsSessionsActionErrorsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$sessions$action$errors$zh extends Translations$sessions$action$errors$en {
+	_Translations$sessions$action$errors$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6580,8 +6669,8 @@ class _TranslationsSessionsActionErrorsZh extends TranslationsSessionsActionErro
 }
 
 // Path: sessions.dirPicker.dialog
-class _TranslationsSessionsDirPickerDialogZh extends TranslationsSessionsDirPickerDialogEn {
-	_TranslationsSessionsDirPickerDialogZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$sessions$dirPicker$dialog$zh extends Translations$sessions$dirPicker$dialog$en {
+	_Translations$sessions$dirPicker$dialog$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6592,20 +6681,20 @@ class _TranslationsSessionsDirPickerDialogZh extends TranslationsSessionsDirPick
 }
 
 // Path: sessions.inspector.shell
-class _TranslationsSessionsInspectorShellZh extends TranslationsSessionsInspectorShellEn {
-	_TranslationsSessionsInspectorShellZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$sessions$inspector$shell$zh extends Translations$sessions$inspector$shell$en {
+	_Translations$sessions$inspector$shell$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
 	// Translations
 	@override String get title => '检查器';
 	@override String loadError({required Object error}) => '加载会话失败：${error}';
-	@override late final _TranslationsSessionsInspectorShellTabsZh tabs = _TranslationsSessionsInspectorShellTabsZh._(_root);
+	@override late final _Translations$sessions$inspector$shell$tabs$zh tabs = _Translations$sessions$inspector$shell$tabs$zh._(_root);
 }
 
 // Path: sessions.inspector.cortex
-class _TranslationsSessionsInspectorCortexZh extends TranslationsSessionsInspectorCortexEn {
-	_TranslationsSessionsInspectorCortexZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$sessions$inspector$cortex$zh extends Translations$sessions$inspector$cortex$en {
+	_Translations$sessions$inspector$cortex$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6616,8 +6705,8 @@ class _TranslationsSessionsInspectorCortexZh extends TranslationsSessionsInspect
 }
 
 // Path: sessions.inspector.shared
-class _TranslationsSessionsInspectorSharedZh extends TranslationsSessionsInspectorSharedEn {
-	_TranslationsSessionsInspectorSharedZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$sessions$inspector$shared$zh extends Translations$sessions$inspector$shared$en {
+	_Translations$sessions$inspector$shared$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6630,8 +6719,8 @@ class _TranslationsSessionsInspectorSharedZh extends TranslationsSessionsInspect
 }
 
 // Path: sessions.inspector.history
-class _TranslationsSessionsInspectorHistoryZh extends TranslationsSessionsInspectorHistoryEn {
-	_TranslationsSessionsInspectorHistoryZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$sessions$inspector$history$zh extends Translations$sessions$inspector$history$en {
+	_Translations$sessions$inspector$history$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6641,8 +6730,8 @@ class _TranslationsSessionsInspectorHistoryZh extends TranslationsSessionsInspec
 }
 
 // Path: sessions.inspector.files
-class _TranslationsSessionsInspectorFilesZh extends TranslationsSessionsInspectorFilesEn {
-	_TranslationsSessionsInspectorFilesZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$sessions$inspector$files$zh extends Translations$sessions$inspector$files$en {
+	_Translations$sessions$inspector$files$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6662,8 +6751,8 @@ class _TranslationsSessionsInspectorFilesZh extends TranslationsSessionsInspecto
 }
 
 // Path: sessions.inspector.git
-class _TranslationsSessionsInspectorGitZh extends TranslationsSessionsInspectorGitEn {
-	_TranslationsSessionsInspectorGitZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$sessions$inspector$git$zh extends Translations$sessions$inspector$git$en {
+	_Translations$sessions$inspector$git$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6682,8 +6771,8 @@ class _TranslationsSessionsInspectorGitZh extends TranslationsSessionsInspectorG
 }
 
 // Path: sessions.inspector.tasks
-class _TranslationsSessionsInspectorTasksZh extends TranslationsSessionsInspectorTasksEn {
-	_TranslationsSessionsInspectorTasksZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$sessions$inspector$tasks$zh extends Translations$sessions$inspector$tasks$en {
+	_Translations$sessions$inspector$tasks$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6698,8 +6787,8 @@ class _TranslationsSessionsInspectorTasksZh extends TranslationsSessionsInspecto
 }
 
 // Path: sessions.inspector.notes
-class _TranslationsSessionsInspectorNotesZh extends TranslationsSessionsInspectorNotesEn {
-	_TranslationsSessionsInspectorNotesZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$sessions$inspector$notes$zh extends Translations$sessions$inspector$notes$en {
+	_Translations$sessions$inspector$notes$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6745,8 +6834,8 @@ class _TranslationsSessionsInspectorNotesZh extends TranslationsSessionsInspecto
 }
 
 // Path: sessions.spawnSheet.bypass
-class _TranslationsSessionsSpawnSheetBypassZh extends TranslationsSessionsSpawnSheetBypassEn {
-	_TranslationsSessionsSpawnSheetBypassZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$sessions$spawnSheet$bypass$zh extends Translations$sessions$spawnSheet$bypass$en {
+	_Translations$sessions$spawnSheet$bypass$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6761,8 +6850,8 @@ class _TranslationsSessionsSpawnSheetBypassZh extends TranslationsSessionsSpawnS
 }
 
 // Path: sessions.spawnSheet.noProviders
-class _TranslationsSessionsSpawnSheetNoProvidersZh extends TranslationsSessionsSpawnSheetNoProvidersEn {
-	_TranslationsSessionsSpawnSheetNoProvidersZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$sessions$spawnSheet$noProviders$zh extends Translations$sessions$spawnSheet$noProviders$en {
+	_Translations$sessions$spawnSheet$noProviders$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6773,8 +6862,8 @@ class _TranslationsSessionsSpawnSheetNoProvidersZh extends TranslationsSessionsS
 }
 
 // Path: sessions.spawnSheet.providerLoadError
-class _TranslationsSessionsSpawnSheetProviderLoadErrorZh extends TranslationsSessionsSpawnSheetProviderLoadErrorEn {
-	_TranslationsSessionsSpawnSheetProviderLoadErrorZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$sessions$spawnSheet$providerLoadError$zh extends Translations$sessions$spawnSheet$providerLoadError$en {
+	_Translations$sessions$spawnSheet$providerLoadError$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6786,8 +6875,8 @@ class _TranslationsSessionsSpawnSheetProviderLoadErrorZh extends TranslationsSes
 }
 
 // Path: sessions.spawnSheet.claudeAccount
-class _TranslationsSessionsSpawnSheetClaudeAccountZh extends TranslationsSessionsSpawnSheetClaudeAccountEn {
-	_TranslationsSessionsSpawnSheetClaudeAccountZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$sessions$spawnSheet$claudeAccount$zh extends Translations$sessions$spawnSheet$claudeAccount$en {
+	_Translations$sessions$spawnSheet$claudeAccount$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6803,8 +6892,8 @@ class _TranslationsSessionsSpawnSheetClaudeAccountZh extends TranslationsSession
 }
 
 // Path: memoryWorkers.tasks.gatekeeper
-class _TranslationsMemoryWorkersTasksGatekeeperZh extends TranslationsMemoryWorkersTasksGatekeeperEn {
-	_TranslationsMemoryWorkersTasksGatekeeperZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$memoryWorkers$tasks$gatekeeper$zh extends Translations$memoryWorkers$tasks$gatekeeper$en {
+	_Translations$memoryWorkers$tasks$gatekeeper$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6814,8 +6903,8 @@ class _TranslationsMemoryWorkersTasksGatekeeperZh extends TranslationsMemoryWork
 }
 
 // Path: memoryWorkers.tasks.cleaner
-class _TranslationsMemoryWorkersTasksCleanerZh extends TranslationsMemoryWorkersTasksCleanerEn {
-	_TranslationsMemoryWorkersTasksCleanerZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$memoryWorkers$tasks$cleaner$zh extends Translations$memoryWorkers$tasks$cleaner$en {
+	_Translations$memoryWorkers$tasks$cleaner$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6825,8 +6914,8 @@ class _TranslationsMemoryWorkersTasksCleanerZh extends TranslationsMemoryWorkers
 }
 
 // Path: memoryWorkers.tasks.gitactivity
-class _TranslationsMemoryWorkersTasksGitactivityZh extends TranslationsMemoryWorkersTasksGitactivityEn {
-	_TranslationsMemoryWorkersTasksGitactivityZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$memoryWorkers$tasks$gitactivity$zh extends Translations$memoryWorkers$tasks$gitactivity$en {
+	_Translations$memoryWorkers$tasks$gitactivity$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6836,8 +6925,8 @@ class _TranslationsMemoryWorkersTasksGitactivityZh extends TranslationsMemoryWor
 }
 
 // Path: memoryWorkers.tasks.transcript
-class _TranslationsMemoryWorkersTasksTranscriptZh extends TranslationsMemoryWorkersTasksTranscriptEn {
-	_TranslationsMemoryWorkersTasksTranscriptZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$memoryWorkers$tasks$transcript$zh extends Translations$memoryWorkers$tasks$transcript$en {
+	_Translations$memoryWorkers$tasks$transcript$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6847,8 +6936,8 @@ class _TranslationsMemoryWorkersTasksTranscriptZh extends TranslationsMemoryWork
 }
 
 // Path: memoryWorkers.tasks.planDrift
-class _TranslationsMemoryWorkersTasksPlanDriftZh extends TranslationsMemoryWorkersTasksPlanDriftEn {
-	_TranslationsMemoryWorkersTasksPlanDriftZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$memoryWorkers$tasks$planDrift$zh extends Translations$memoryWorkers$tasks$planDrift$en {
+	_Translations$memoryWorkers$tasks$planDrift$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6858,8 +6947,8 @@ class _TranslationsMemoryWorkersTasksPlanDriftZh extends TranslationsMemoryWorke
 }
 
 // Path: memoryWorkers.tasks.conflictDetector
-class _TranslationsMemoryWorkersTasksConflictDetectorZh extends TranslationsMemoryWorkersTasksConflictDetectorEn {
-	_TranslationsMemoryWorkersTasksConflictDetectorZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$memoryWorkers$tasks$conflictDetector$zh extends Translations$memoryWorkers$tasks$conflictDetector$en {
+	_Translations$memoryWorkers$tasks$conflictDetector$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6869,8 +6958,8 @@ class _TranslationsMemoryWorkersTasksConflictDetectorZh extends TranslationsMemo
 }
 
 // Path: memoryWorkers.tasks.capture
-class _TranslationsMemoryWorkersTasksCaptureZh extends TranslationsMemoryWorkersTasksCaptureEn {
-	_TranslationsMemoryWorkersTasksCaptureZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$memoryWorkers$tasks$capture$zh extends Translations$memoryWorkers$tasks$capture$en {
+	_Translations$memoryWorkers$tasks$capture$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6880,8 +6969,8 @@ class _TranslationsMemoryWorkersTasksCaptureZh extends TranslationsMemoryWorkers
 }
 
 // Path: project.conflicts.severity
-class _TranslationsProjectConflictsSeverityZh extends TranslationsProjectConflictsSeverityEn {
-	_TranslationsProjectConflictsSeverityZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$project$conflicts$severity$zh extends Translations$project$conflicts$severity$en {
+	_Translations$project$conflicts$severity$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6892,8 +6981,8 @@ class _TranslationsProjectConflictsSeverityZh extends TranslationsProjectConflic
 }
 
 // Path: backups.health.tiles
-class _TranslationsBackupsHealthTilesZh extends TranslationsBackupsHealthTilesEn {
-	_TranslationsBackupsHealthTilesZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$backups$health$tiles$zh extends Translations$backups$health$tiles$en {
+	_Translations$backups$health$tiles$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6905,8 +6994,8 @@ class _TranslationsBackupsHealthTilesZh extends TranslationsBackupsHealthTilesEn
 }
 
 // Path: backupTargetEditor.kinds.local
-class _TranslationsBackupTargetEditorKindsLocalZh extends TranslationsBackupTargetEditorKindsLocalEn {
-	_TranslationsBackupTargetEditorKindsLocalZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$backupTargetEditor$kinds$local$zh extends Translations$backupTargetEditor$kinds$local$en {
+	_Translations$backupTargetEditor$kinds$local$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6916,8 +7005,8 @@ class _TranslationsBackupTargetEditorKindsLocalZh extends TranslationsBackupTarg
 }
 
 // Path: backupTargetEditor.kinds.smb
-class _TranslationsBackupTargetEditorKindsSmbZh extends TranslationsBackupTargetEditorKindsSmbEn {
-	_TranslationsBackupTargetEditorKindsSmbZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$backupTargetEditor$kinds$smb$zh extends Translations$backupTargetEditor$kinds$smb$en {
+	_Translations$backupTargetEditor$kinds$smb$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6927,8 +7016,8 @@ class _TranslationsBackupTargetEditorKindsSmbZh extends TranslationsBackupTarget
 }
 
 // Path: backupTargetEditor.kinds.webdav
-class _TranslationsBackupTargetEditorKindsWebdavZh extends TranslationsBackupTargetEditorKindsWebdavEn {
-	_TranslationsBackupTargetEditorKindsWebdavZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$backupTargetEditor$kinds$webdav$zh extends Translations$backupTargetEditor$kinds$webdav$en {
+	_Translations$backupTargetEditor$kinds$webdav$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6938,8 +7027,8 @@ class _TranslationsBackupTargetEditorKindsWebdavZh extends TranslationsBackupTar
 }
 
 // Path: backupTargetEditor.kinds.sftp
-class _TranslationsBackupTargetEditorKindsSftpZh extends TranslationsBackupTargetEditorKindsSftpEn {
-	_TranslationsBackupTargetEditorKindsSftpZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$backupTargetEditor$kinds$sftp$zh extends Translations$backupTargetEditor$kinds$sftp$en {
+	_Translations$backupTargetEditor$kinds$sftp$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6949,8 +7038,8 @@ class _TranslationsBackupTargetEditorKindsSftpZh extends TranslationsBackupTarge
 }
 
 // Path: backupTargetEditor.kinds.s3
-class _TranslationsBackupTargetEditorKindsS3Zh extends TranslationsBackupTargetEditorKindsS3En {
-	_TranslationsBackupTargetEditorKindsS3Zh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$backupTargetEditor$kinds$s3$zh extends Translations$backupTargetEditor$kinds$s3$en {
+	_Translations$backupTargetEditor$kinds$s3$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6960,8 +7049,8 @@ class _TranslationsBackupTargetEditorKindsS3Zh extends TranslationsBackupTargetE
 }
 
 // Path: backupTargetEditor.kinds.rclone
-class _TranslationsBackupTargetEditorKindsRcloneZh extends TranslationsBackupTargetEditorKindsRcloneEn {
-	_TranslationsBackupTargetEditorKindsRcloneZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$backupTargetEditor$kinds$rclone$zh extends Translations$backupTargetEditor$kinds$rclone$en {
+	_Translations$backupTargetEditor$kinds$rclone$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6971,8 +7060,8 @@ class _TranslationsBackupTargetEditorKindsRcloneZh extends TranslationsBackupTar
 }
 
 // Path: githosts.form.kinds
-class _TranslationsGithostsFormKindsZh extends TranslationsGithostsFormKindsEn {
-	_TranslationsGithostsFormKindsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$githosts$form$kinds$zh extends Translations$githosts$form$kinds$en {
+	_Translations$githosts$form$kinds$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -6985,8 +7074,8 @@ class _TranslationsGithostsFormKindsZh extends TranslationsGithostsFormKindsEn {
 }
 
 // Path: channels.notifications.modes
-class _TranslationsChannelsNotificationsModesZh extends TranslationsChannelsNotificationsModesEn {
-	_TranslationsChannelsNotificationsModesZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$channels$notifications$modes$zh extends Translations$channels$notifications$modes$en {
+	_Translations$channels$notifications$modes$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7000,8 +7089,8 @@ class _TranslationsChannelsNotificationsModesZh extends TranslationsChannelsNoti
 }
 
 // Path: channels.kinds.telegram
-class _TranslationsChannelsKindsTelegramZh extends TranslationsChannelsKindsTelegramEn {
-	_TranslationsChannelsKindsTelegramZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$channels$kinds$telegram$zh extends Translations$channels$kinds$telegram$en {
+	_Translations$channels$kinds$telegram$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7024,8 +7113,8 @@ class _TranslationsChannelsKindsTelegramZh extends TranslationsChannelsKindsTele
 }
 
 // Path: channels.kinds.slack
-class _TranslationsChannelsKindsSlackZh extends TranslationsChannelsKindsSlackEn {
-	_TranslationsChannelsKindsSlackZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$channels$kinds$slack$zh extends Translations$channels$kinds$slack$en {
+	_Translations$channels$kinds$slack$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7040,8 +7129,8 @@ class _TranslationsChannelsKindsSlackZh extends TranslationsChannelsKindsSlackEn
 }
 
 // Path: channels.kinds.discord
-class _TranslationsChannelsKindsDiscordZh extends TranslationsChannelsKindsDiscordEn {
-	_TranslationsChannelsKindsDiscordZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$channels$kinds$discord$zh extends Translations$channels$kinds$discord$en {
+	_Translations$channels$kinds$discord$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7055,8 +7144,8 @@ class _TranslationsChannelsKindsDiscordZh extends TranslationsChannelsKindsDisco
 }
 
 // Path: channels.kinds.feishu
-class _TranslationsChannelsKindsFeishuZh extends TranslationsChannelsKindsFeishuEn {
-	_TranslationsChannelsKindsFeishuZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$channels$kinds$feishu$zh extends Translations$channels$kinds$feishu$en {
+	_Translations$channels$kinds$feishu$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7073,8 +7162,8 @@ class _TranslationsChannelsKindsFeishuZh extends TranslationsChannelsKindsFeishu
 }
 
 // Path: channels.kinds.dingtalk
-class _TranslationsChannelsKindsDingtalkZh extends TranslationsChannelsKindsDingtalkEn {
-	_TranslationsChannelsKindsDingtalkZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$channels$kinds$dingtalk$zh extends Translations$channels$kinds$dingtalk$en {
+	_Translations$channels$kinds$dingtalk$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7086,8 +7175,8 @@ class _TranslationsChannelsKindsDingtalkZh extends TranslationsChannelsKindsDing
 }
 
 // Path: channels.kinds.wecom
-class _TranslationsChannelsKindsWecomZh extends TranslationsChannelsKindsWecomEn {
-	_TranslationsChannelsKindsWecomZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$channels$kinds$wecom$zh extends Translations$channels$kinds$wecom$en {
+	_Translations$channels$kinds$wecom$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7100,8 +7189,8 @@ class _TranslationsChannelsKindsWecomZh extends TranslationsChannelsKindsWecomEn
 }
 
 // Path: dataExport.form.integrationOptions
-class _TranslationsDataExportFormIntegrationOptionsZh extends TranslationsDataExportFormIntegrationOptionsEn {
-	_TranslationsDataExportFormIntegrationOptionsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$dataExport$form$integrationOptions$zh extends Translations$dataExport$form$integrationOptions$en {
+	_Translations$dataExport$form$integrationOptions$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7115,8 +7204,8 @@ class _TranslationsDataExportFormIntegrationOptionsZh extends TranslationsDataEx
 }
 
 // Path: dataExport.history.columns
-class _TranslationsDataExportHistoryColumnsZh extends TranslationsDataExportHistoryColumnsEn {
-	_TranslationsDataExportHistoryColumnsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$dataExport$history$columns$zh extends Translations$dataExport$history$columns$en {
+	_Translations$dataExport$history$columns$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7128,8 +7217,8 @@ class _TranslationsDataExportHistoryColumnsZh extends TranslationsDataExportHist
 }
 
 // Path: dataExport.import.summaryCard
-class _TranslationsDataExportImportSummaryCardZh extends TranslationsDataExportImportSummaryCardEn {
-	_TranslationsDataExportImportSummaryCardZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$dataExport$import$summaryCard$zh extends Translations$dataExport$import$summaryCard$en {
+	_Translations$dataExport$import$summaryCard$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7143,8 +7232,8 @@ class _TranslationsDataExportImportSummaryCardZh extends TranslationsDataExportI
 }
 
 // Path: dataExport.imports.columns
-class _TranslationsDataExportImportsColumnsZh extends TranslationsDataExportImportsColumnsEn {
-	_TranslationsDataExportImportsColumnsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$dataExport$imports$columns$zh extends Translations$dataExport$imports$columns$en {
+	_Translations$dataExport$imports$columns$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7157,8 +7246,8 @@ class _TranslationsDataExportImportsColumnsZh extends TranslationsDataExportImpo
 }
 
 // Path: settings.logViewer.levels
-class _TranslationsSettingsLogViewerLevelsZh extends TranslationsSettingsLogViewerLevelsEn {
-	_TranslationsSettingsLogViewerLevelsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$settings$logViewer$levels$zh extends Translations$settings$logViewer$levels$en {
+	_Translations$settings$logViewer$levels$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7171,8 +7260,8 @@ class _TranslationsSettingsLogViewerLevelsZh extends TranslationsSettingsLogView
 }
 
 // Path: settings.serverSettings.sections
-class _TranslationsSettingsServerSettingsSectionsZh extends TranslationsSettingsServerSettingsSectionsEn {
-	_TranslationsSettingsServerSettingsSectionsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$settings$serverSettings$sections$zh extends Translations$settings$serverSettings$sections$en {
+	_Translations$settings$serverSettings$sections$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7190,8 +7279,8 @@ class _TranslationsSettingsServerSettingsSectionsZh extends TranslationsSettings
 }
 
 // Path: settings.serverSettings.sectionDescriptions
-class _TranslationsSettingsServerSettingsSectionDescriptionsZh extends TranslationsSettingsServerSettingsSectionDescriptionsEn {
-	_TranslationsSettingsServerSettingsSectionDescriptionsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$settings$serverSettings$sectionDescriptions$zh extends Translations$settings$serverSettings$sectionDescriptions$en {
+	_Translations$settings$serverSettings$sectionDescriptions$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7209,8 +7298,8 @@ class _TranslationsSettingsServerSettingsSectionDescriptionsZh extends Translati
 }
 
 // Path: settings.serverSettings.fields
-class _TranslationsSettingsServerSettingsFieldsZh extends TranslationsSettingsServerSettingsFieldsEn {
-	_TranslationsSettingsServerSettingsFieldsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$settings$serverSettings$fields$zh extends Translations$settings$serverSettings$fields$en {
+	_Translations$settings$serverSettings$fields$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7282,8 +7371,8 @@ class _TranslationsSettingsServerSettingsFieldsZh extends TranslationsSettingsSe
 }
 
 // Path: settings.serverSettings.embedderModel
-class _TranslationsSettingsServerSettingsEmbedderModelZh extends TranslationsSettingsServerSettingsEmbedderModelEn {
-	_TranslationsSettingsServerSettingsEmbedderModelZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$settings$serverSettings$embedderModel$zh extends Translations$settings$serverSettings$embedderModel$en {
+	_Translations$settings$serverSettings$embedderModel$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7296,8 +7385,8 @@ class _TranslationsSettingsServerSettingsEmbedderModelZh extends TranslationsSet
 }
 
 // Path: web.sessions.list.row
-class _TranslationsWebSessionsListRowZh extends TranslationsWebSessionsListRowEn {
-	_TranslationsWebSessionsListRowZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$sessions$list$row$zh extends Translations$web$sessions$list$row$en {
+	_Translations$web$sessions$list$row$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7310,8 +7399,8 @@ class _TranslationsWebSessionsListRowZh extends TranslationsWebSessionsListRowEn
 }
 
 // Path: web.sessions.inspector.tabs
-class _TranslationsWebSessionsInspectorTabsZh extends TranslationsWebSessionsInspectorTabsEn {
-	_TranslationsWebSessionsInspectorTabsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$sessions$inspector$tabs$zh extends Translations$web$sessions$inspector$tabs$en {
+	_Translations$web$sessions$inspector$tabs$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7327,8 +7416,8 @@ class _TranslationsWebSessionsInspectorTabsZh extends TranslationsWebSessionsIns
 }
 
 // Path: web.sessions.inspector.vaultPanel
-class _TranslationsWebSessionsInspectorVaultPanelZh extends TranslationsWebSessionsInspectorVaultPanelEn {
-	_TranslationsWebSessionsInspectorVaultPanelZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$sessions$inspector$vaultPanel$zh extends Translations$web$sessions$inspector$vaultPanel$en {
+	_Translations$web$sessions$inspector$vaultPanel$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7358,8 +7447,8 @@ class _TranslationsWebSessionsInspectorVaultPanelZh extends TranslationsWebSessi
 }
 
 // Path: web.sessions.inspector.cortexPanel
-class _TranslationsWebSessionsInspectorCortexPanelZh extends TranslationsWebSessionsInspectorCortexPanelEn {
-	_TranslationsWebSessionsInspectorCortexPanelZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$sessions$inspector$cortexPanel$zh extends Translations$web$sessions$inspector$cortexPanel$en {
+	_Translations$web$sessions$inspector$cortexPanel$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7378,8 +7467,8 @@ class _TranslationsWebSessionsInspectorCortexPanelZh extends TranslationsWebSess
 }
 
 // Path: web.memoryWorkers.tasks.gatekeeper
-class _TranslationsWebMemoryWorkersTasksGatekeeperZh extends TranslationsWebMemoryWorkersTasksGatekeeperEn {
-	_TranslationsWebMemoryWorkersTasksGatekeeperZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$memoryWorkers$tasks$gatekeeper$zh extends Translations$web$memoryWorkers$tasks$gatekeeper$en {
+	_Translations$web$memoryWorkers$tasks$gatekeeper$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7390,8 +7479,8 @@ class _TranslationsWebMemoryWorkersTasksGatekeeperZh extends TranslationsWebMemo
 }
 
 // Path: web.memoryWorkers.tasks.cleaner
-class _TranslationsWebMemoryWorkersTasksCleanerZh extends TranslationsWebMemoryWorkersTasksCleanerEn {
-	_TranslationsWebMemoryWorkersTasksCleanerZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$memoryWorkers$tasks$cleaner$zh extends Translations$web$memoryWorkers$tasks$cleaner$en {
+	_Translations$web$memoryWorkers$tasks$cleaner$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7402,8 +7491,8 @@ class _TranslationsWebMemoryWorkersTasksCleanerZh extends TranslationsWebMemoryW
 }
 
 // Path: web.memoryWorkers.tasks.gitactivity
-class _TranslationsWebMemoryWorkersTasksGitactivityZh extends TranslationsWebMemoryWorkersTasksGitactivityEn {
-	_TranslationsWebMemoryWorkersTasksGitactivityZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$memoryWorkers$tasks$gitactivity$zh extends Translations$web$memoryWorkers$tasks$gitactivity$en {
+	_Translations$web$memoryWorkers$tasks$gitactivity$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7414,8 +7503,8 @@ class _TranslationsWebMemoryWorkersTasksGitactivityZh extends TranslationsWebMem
 }
 
 // Path: web.memoryWorkers.tasks.transcript
-class _TranslationsWebMemoryWorkersTasksTranscriptZh extends TranslationsWebMemoryWorkersTasksTranscriptEn {
-	_TranslationsWebMemoryWorkersTasksTranscriptZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$memoryWorkers$tasks$transcript$zh extends Translations$web$memoryWorkers$tasks$transcript$en {
+	_Translations$web$memoryWorkers$tasks$transcript$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7426,8 +7515,8 @@ class _TranslationsWebMemoryWorkersTasksTranscriptZh extends TranslationsWebMemo
 }
 
 // Path: web.memoryWorkers.tasks.plan_drift
-class _TranslationsWebMemoryWorkersTasksPlanDriftZh extends TranslationsWebMemoryWorkersTasksPlanDriftEn {
-	_TranslationsWebMemoryWorkersTasksPlanDriftZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$memoryWorkers$tasks$plan_drift$zh extends Translations$web$memoryWorkers$tasks$plan_drift$en {
+	_Translations$web$memoryWorkers$tasks$plan_drift$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7438,8 +7527,8 @@ class _TranslationsWebMemoryWorkersTasksPlanDriftZh extends TranslationsWebMemor
 }
 
 // Path: web.memoryWorkers.tasks.conflict_detector
-class _TranslationsWebMemoryWorkersTasksConflictDetectorZh extends TranslationsWebMemoryWorkersTasksConflictDetectorEn {
-	_TranslationsWebMemoryWorkersTasksConflictDetectorZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$memoryWorkers$tasks$conflict_detector$zh extends Translations$web$memoryWorkers$tasks$conflict_detector$en {
+	_Translations$web$memoryWorkers$tasks$conflict_detector$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7450,8 +7539,8 @@ class _TranslationsWebMemoryWorkersTasksConflictDetectorZh extends TranslationsW
 }
 
 // Path: web.memoryWorkers.tasks.capture
-class _TranslationsWebMemoryWorkersTasksCaptureZh extends TranslationsWebMemoryWorkersTasksCaptureEn {
-	_TranslationsWebMemoryWorkersTasksCaptureZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$memoryWorkers$tasks$capture$zh extends Translations$web$memoryWorkers$tasks$capture$en {
+	_Translations$web$memoryWorkers$tasks$capture$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7462,8 +7551,8 @@ class _TranslationsWebMemoryWorkersTasksCaptureZh extends TranslationsWebMemoryW
 }
 
 // Path: web.memoryWorkers.tasks.blueprint
-class _TranslationsWebMemoryWorkersTasksBlueprintZh extends TranslationsWebMemoryWorkersTasksBlueprintEn {
-	_TranslationsWebMemoryWorkersTasksBlueprintZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$memoryWorkers$tasks$blueprint$zh extends Translations$web$memoryWorkers$tasks$blueprint$en {
+	_Translations$web$memoryWorkers$tasks$blueprint$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7474,8 +7563,8 @@ class _TranslationsWebMemoryWorkersTasksBlueprintZh extends TranslationsWebMemor
 }
 
 // Path: web.memoryWorkers.tasks.curation
-class _TranslationsWebMemoryWorkersTasksCurationZh extends TranslationsWebMemoryWorkersTasksCurationEn {
-	_TranslationsWebMemoryWorkersTasksCurationZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$memoryWorkers$tasks$curation$zh extends Translations$web$memoryWorkers$tasks$curation$en {
+	_Translations$web$memoryWorkers$tasks$curation$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7486,8 +7575,8 @@ class _TranslationsWebMemoryWorkersTasksCurationZh extends TranslationsWebMemory
 }
 
 // Path: web.project.readonly.tech_stack
-class _TranslationsWebProjectReadonlyTechStackZh extends TranslationsWebProjectReadonlyTechStackEn {
-	_TranslationsWebProjectReadonlyTechStackZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$project$readonly$tech_stack$zh extends Translations$web$project$readonly$tech_stack$en {
+	_Translations$web$project$readonly$tech_stack$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7497,8 +7586,8 @@ class _TranslationsWebProjectReadonlyTechStackZh extends TranslationsWebProjectR
 }
 
 // Path: web.project.readonly.recent_activity
-class _TranslationsWebProjectReadonlyRecentActivityZh extends TranslationsWebProjectReadonlyRecentActivityEn {
-	_TranslationsWebProjectReadonlyRecentActivityZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$project$readonly$recent_activity$zh extends Translations$web$project$readonly$recent_activity$en {
+	_Translations$web$project$readonly$recent_activity$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7508,8 +7597,8 @@ class _TranslationsWebProjectReadonlyRecentActivityZh extends TranslationsWebPro
 }
 
 // Path: web.project.reset.summary
-class _TranslationsWebProjectResetSummaryZh extends TranslationsWebProjectResetSummaryEn {
-	_TranslationsWebProjectResetSummaryZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$project$reset$summary$zh extends Translations$web$project$reset$summary$en {
+	_Translations$web$project$reset$summary$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7524,8 +7613,8 @@ class _TranslationsWebProjectResetSummaryZh extends TranslationsWebProjectResetS
 }
 
 // Path: web.project.lifecycle.status
-class _TranslationsWebProjectLifecycleStatusZh extends TranslationsWebProjectLifecycleStatusEn {
-	_TranslationsWebProjectLifecycleStatusZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$project$lifecycle$status$zh extends Translations$web$project$lifecycle$status$en {
+	_Translations$web$project$lifecycle$status$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7536,8 +7625,8 @@ class _TranslationsWebProjectLifecycleStatusZh extends TranslationsWebProjectLif
 }
 
 // Path: web.project.lifecycle.applied
-class _TranslationsWebProjectLifecycleAppliedZh extends TranslationsWebProjectLifecycleAppliedEn {
-	_TranslationsWebProjectLifecycleAppliedZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$project$lifecycle$applied$zh extends Translations$web$project$lifecycle$applied$en {
+	_Translations$web$project$lifecycle$applied$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7548,8 +7637,8 @@ class _TranslationsWebProjectLifecycleAppliedZh extends TranslationsWebProjectLi
 }
 
 // Path: web.project.lifecycle.tooltip
-class _TranslationsWebProjectLifecycleTooltipZh extends TranslationsWebProjectLifecycleTooltipEn {
-	_TranslationsWebProjectLifecycleTooltipZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$project$lifecycle$tooltip$zh extends Translations$web$project$lifecycle$tooltip$en {
+	_Translations$web$project$lifecycle$tooltip$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7561,8 +7650,8 @@ class _TranslationsWebProjectLifecycleTooltipZh extends TranslationsWebProjectLi
 }
 
 // Path: web.project.docMeta.maintainer
-class _TranslationsWebProjectDocMetaMaintainerZh extends TranslationsWebProjectDocMetaMaintainerEn {
-	_TranslationsWebProjectDocMetaMaintainerZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$project$docMeta$maintainer$zh extends Translations$web$project$docMeta$maintainer$en {
+	_Translations$web$project$docMeta$maintainer$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7573,8 +7662,8 @@ class _TranslationsWebProjectDocMetaMaintainerZh extends TranslationsWebProjectD
 }
 
 // Path: web.project.docMeta.purpose
-class _TranslationsWebProjectDocMetaPurposeZh extends TranslationsWebProjectDocMetaPurposeEn {
-	_TranslationsWebProjectDocMetaPurposeZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$project$docMeta$purpose$zh extends Translations$web$project$docMeta$purpose$en {
+	_Translations$web$project$docMeta$purpose$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7588,8 +7677,8 @@ class _TranslationsWebProjectDocMetaPurposeZh extends TranslationsWebProjectDocM
 }
 
 // Path: web.memoryInspector.scope.values
-class _TranslationsWebMemoryInspectorScopeValuesZh extends TranslationsWebMemoryInspectorScopeValuesEn {
-	_TranslationsWebMemoryInspectorScopeValuesZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$memoryInspector$scope$values$zh extends Translations$web$memoryInspector$scope$values$en {
+	_Translations$web$memoryInspector$scope$values$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7599,8 +7688,8 @@ class _TranslationsWebMemoryInspectorScopeValuesZh extends TranslationsWebMemory
 }
 
 // Path: web.notes.vaultSync.init
-class _TranslationsWebNotesVaultSyncInitZh extends TranslationsWebNotesVaultSyncInitEn {
-	_TranslationsWebNotesVaultSyncInitZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$notes$vaultSync$init$zh extends Translations$web$notes$vaultSync$init$en {
+	_Translations$web$notes$vaultSync$init$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7613,8 +7702,8 @@ class _TranslationsWebNotesVaultSyncInitZh extends TranslationsWebNotesVaultSync
 }
 
 // Path: web.notes.vaultSync.branch
-class _TranslationsWebNotesVaultSyncBranchZh extends TranslationsWebNotesVaultSyncBranchEn {
-	_TranslationsWebNotesVaultSyncBranchZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$notes$vaultSync$branch$zh extends Translations$web$notes$vaultSync$branch$en {
+	_Translations$web$notes$vaultSync$branch$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7626,8 +7715,8 @@ class _TranslationsWebNotesVaultSyncBranchZh extends TranslationsWebNotesVaultSy
 }
 
 // Path: web.notes.vaultSync.action
-class _TranslationsWebNotesVaultSyncActionZh extends TranslationsWebNotesVaultSyncActionEn {
-	_TranslationsWebNotesVaultSyncActionZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$notes$vaultSync$action$zh extends Translations$web$notes$vaultSync$action$en {
+	_Translations$web$notes$vaultSync$action$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7649,8 +7738,8 @@ class _TranslationsWebNotesVaultSyncActionZh extends TranslationsWebNotesVaultSy
 }
 
 // Path: web.notes.vaultSync.commit
-class _TranslationsWebNotesVaultSyncCommitZh extends TranslationsWebNotesVaultSyncCommitEn {
-	_TranslationsWebNotesVaultSyncCommitZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$notes$vaultSync$commit$zh extends Translations$web$notes$vaultSync$commit$en {
+	_Translations$web$notes$vaultSync$commit$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7664,8 +7753,8 @@ class _TranslationsWebNotesVaultSyncCommitZh extends TranslationsWebNotesVaultSy
 }
 
 // Path: web.notes.vaultSync.fileList
-class _TranslationsWebNotesVaultSyncFileListZh extends TranslationsWebNotesVaultSyncFileListEn {
-	_TranslationsWebNotesVaultSyncFileListZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$notes$vaultSync$fileList$zh extends Translations$web$notes$vaultSync$fileList$en {
+	_Translations$web$notes$vaultSync$fileList$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7675,8 +7764,8 @@ class _TranslationsWebNotesVaultSyncFileListZh extends TranslationsWebNotesVault
 }
 
 // Path: web.notes.vaultSync.remote
-class _TranslationsWebNotesVaultSyncRemoteZh extends TranslationsWebNotesVaultSyncRemoteEn {
-	_TranslationsWebNotesVaultSyncRemoteZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$notes$vaultSync$remote$zh extends Translations$web$notes$vaultSync$remote$en {
+	_Translations$web$notes$vaultSync$remote$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7694,8 +7783,8 @@ class _TranslationsWebNotesVaultSyncRemoteZh extends TranslationsWebNotesVaultSy
 }
 
 // Path: web.notes.vaultSync.history
-class _TranslationsWebNotesVaultSyncHistoryZh extends TranslationsWebNotesVaultSyncHistoryEn {
-	_TranslationsWebNotesVaultSyncHistoryZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$notes$vaultSync$history$zh extends Translations$web$notes$vaultSync$history$en {
+	_Translations$web$notes$vaultSync$history$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7706,13 +7795,13 @@ class _TranslationsWebNotesVaultSyncHistoryZh extends TranslationsWebNotesVaultS
 }
 
 // Path: web.notes.vaultSync.conflict
-class _TranslationsWebNotesVaultSyncConflictZh extends TranslationsWebNotesVaultSyncConflictEn {
-	_TranslationsWebNotesVaultSyncConflictZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$notes$vaultSync$conflict$zh extends Translations$web$notes$vaultSync$conflict$en {
+	_Translations$web$notes$vaultSync$conflict$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsWebNotesVaultSyncConflictKindsZh kinds = _TranslationsWebNotesVaultSyncConflictKindsZh._(_root);
+	@override late final _Translations$web$notes$vaultSync$conflict$kinds$zh kinds = _Translations$web$notes$vaultSync$conflict$kinds$zh._(_root);
 	@override String headline({required Object kind}) => 'vault 存在暂停的 ${kind} 且有未解决的冲突';
 	@override String explainer({required Object kind}) => '在 ${kind} 完成之前，pull、push 与 commit 都被阻塞。你可以选择 <1>中止</1>（把工作树恢复到 ${kind} 之前的状态 — 保留本地提交，丢弃远端提交），或 <3>强制重置到 remote</3>（丢弃所有本地提交 + 未提交修改；vault 变成 origin 的精确镜像）。';
 	@override String conflictedHeader({required Object count}) => '冲突文件 · ${count}';
@@ -7730,8 +7819,8 @@ class _TranslationsWebNotesVaultSyncConflictZh extends TranslationsWebNotesVault
 }
 
 // Path: web.notes.vaultSync.auth
-class _TranslationsWebNotesVaultSyncAuthZh extends TranslationsWebNotesVaultSyncAuthEn {
-	_TranslationsWebNotesVaultSyncAuthZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$notes$vaultSync$auth$zh extends Translations$web$notes$vaultSync$auth$en {
+	_Translations$web$notes$vaultSync$auth$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7744,8 +7833,8 @@ class _TranslationsWebNotesVaultSyncAuthZh extends TranslationsWebNotesVaultSync
 }
 
 // Path: web.notes.vaultSync.autoSync
-class _TranslationsWebNotesVaultSyncAutoSyncZh extends TranslationsWebNotesVaultSyncAutoSyncEn {
-	_TranslationsWebNotesVaultSyncAutoSyncZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$notes$vaultSync$autoSync$zh extends Translations$web$notes$vaultSync$autoSync$en {
+	_Translations$web$notes$vaultSync$autoSync$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7781,8 +7870,8 @@ class _TranslationsWebNotesVaultSyncAutoSyncZh extends TranslationsWebNotesVault
 }
 
 // Path: web.providers.detail.caps
-class _TranslationsWebProvidersDetailCapsZh extends TranslationsWebProvidersDetailCapsEn {
-	_TranslationsWebProvidersDetailCapsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$providers$detail$caps$zh extends Translations$web$providers$detail$caps$en {
+	_Translations$web$providers$detail$caps$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7794,8 +7883,8 @@ class _TranslationsWebProvidersDetailCapsZh extends TranslationsWebProvidersDeta
 }
 
 // Path: web.channels.notifications.modes
-class _TranslationsWebChannelsNotificationsModesZh extends TranslationsWebChannelsNotificationsModesEn {
-	_TranslationsWebChannelsNotificationsModesZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$channels$notifications$modes$zh extends Translations$web$channels$notifications$modes$en {
+	_Translations$web$channels$notifications$modes$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7809,8 +7898,8 @@ class _TranslationsWebChannelsNotificationsModesZh extends TranslationsWebChanne
 }
 
 // Path: web.channels.notifications.cooldowns
-class _TranslationsWebChannelsNotificationsCooldownsZh extends TranslationsWebChannelsNotificationsCooldownsEn {
-	_TranslationsWebChannelsNotificationsCooldownsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$channels$notifications$cooldowns$zh extends Translations$web$channels$notifications$cooldowns$en {
+	_Translations$web$channels$notifications$cooldowns$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7823,8 +7912,8 @@ class _TranslationsWebChannelsNotificationsCooldownsZh extends TranslationsWebCh
 }
 
 // Path: web.channels.notifications.snippetCaps
-class _TranslationsWebChannelsNotificationsSnippetCapsZh extends TranslationsWebChannelsNotificationsSnippetCapsEn {
-	_TranslationsWebChannelsNotificationsSnippetCapsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$channels$notifications$snippetCaps$zh extends Translations$web$channels$notifications$snippetCaps$en {
+	_Translations$web$channels$notifications$snippetCaps$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7837,8 +7926,8 @@ class _TranslationsWebChannelsNotificationsSnippetCapsZh extends TranslationsWeb
 }
 
 // Path: web.plugins.mcp.columns
-class _TranslationsWebPluginsMcpColumnsZh extends TranslationsWebPluginsMcpColumnsEn {
-	_TranslationsWebPluginsMcpColumnsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$plugins$mcp$columns$zh extends Translations$web$plugins$mcp$columns$en {
+	_Translations$web$plugins$mcp$columns$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7850,8 +7939,8 @@ class _TranslationsWebPluginsMcpColumnsZh extends TranslationsWebPluginsMcpColum
 }
 
 // Path: web.plugins.mcp.editor
-class _TranslationsWebPluginsMcpEditorZh extends TranslationsWebPluginsMcpEditorEn {
-	_TranslationsWebPluginsMcpEditorZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$plugins$mcp$editor$zh extends Translations$web$plugins$mcp$editor$en {
+	_Translations$web$plugins$mcp$editor$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7876,8 +7965,8 @@ class _TranslationsWebPluginsMcpEditorZh extends TranslationsWebPluginsMcpEditor
 }
 
 // Path: web.plugins.mcp.test
-class _TranslationsWebPluginsMcpTestZh extends TranslationsWebPluginsMcpTestEn {
-	_TranslationsWebPluginsMcpTestZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$plugins$mcp$test$zh extends Translations$web$plugins$mcp$test$en {
+	_Translations$web$plugins$mcp$test$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7890,8 +7979,8 @@ class _TranslationsWebPluginsMcpTestZh extends TranslationsWebPluginsMcpTestEn {
 }
 
 // Path: web.plugins.mcpSecrets.columns
-class _TranslationsWebPluginsMcpSecretsColumnsZh extends TranslationsWebPluginsMcpSecretsColumnsEn {
-	_TranslationsWebPluginsMcpSecretsColumnsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$plugins$mcpSecrets$columns$zh extends Translations$web$plugins$mcpSecrets$columns$en {
+	_Translations$web$plugins$mcpSecrets$columns$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7901,8 +7990,8 @@ class _TranslationsWebPluginsMcpSecretsColumnsZh extends TranslationsWebPluginsM
 }
 
 // Path: web.plugins.mcpSecrets.editor
-class _TranslationsWebPluginsMcpSecretsEditorZh extends TranslationsWebPluginsMcpSecretsEditorEn {
-	_TranslationsWebPluginsMcpSecretsEditorZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$plugins$mcpSecrets$editor$zh extends Translations$web$plugins$mcpSecrets$editor$en {
+	_Translations$web$plugins$mcpSecrets$editor$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7923,8 +8012,8 @@ class _TranslationsWebPluginsMcpSecretsEditorZh extends TranslationsWebPluginsMc
 }
 
 // Path: web.plugins.skills.columns
-class _TranslationsWebPluginsSkillsColumnsZh extends TranslationsWebPluginsSkillsColumnsEn {
-	_TranslationsWebPluginsSkillsColumnsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$plugins$skills$columns$zh extends Translations$web$plugins$skills$columns$en {
+	_Translations$web$plugins$skills$columns$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7935,8 +8024,8 @@ class _TranslationsWebPluginsSkillsColumnsZh extends TranslationsWebPluginsSkill
 }
 
 // Path: web.plugins.skills.editor
-class _TranslationsWebPluginsSkillsEditorZh extends TranslationsWebPluginsSkillsEditorEn {
-	_TranslationsWebPluginsSkillsEditorZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$plugins$skills$editor$zh extends Translations$web$plugins$skills$editor$en {
+	_Translations$web$plugins$skills$editor$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7959,8 +8048,8 @@ class _TranslationsWebPluginsSkillsEditorZh extends TranslationsWebPluginsSkills
 }
 
 // Path: web.plugins.customTasks.columns
-class _TranslationsWebPluginsCustomTasksColumnsZh extends TranslationsWebPluginsCustomTasksColumnsEn {
-	_TranslationsWebPluginsCustomTasksColumnsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$plugins$customTasks$columns$zh extends Translations$web$plugins$customTasks$columns$en {
+	_Translations$web$plugins$customTasks$columns$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7971,8 +8060,8 @@ class _TranslationsWebPluginsCustomTasksColumnsZh extends TranslationsWebPlugins
 }
 
 // Path: web.plugins.customTasks.dialog
-class _TranslationsWebPluginsCustomTasksDialogZh extends TranslationsWebPluginsCustomTasksDialogEn {
-	_TranslationsWebPluginsCustomTasksDialogZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$plugins$customTasks$dialog$zh extends Translations$web$plugins$customTasks$dialog$en {
+	_Translations$web$plugins$customTasks$dialog$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -7996,8 +8085,8 @@ class _TranslationsWebPluginsCustomTasksDialogZh extends TranslationsWebPluginsC
 }
 
 // Path: web.plugins.gitHosts.columns
-class _TranslationsWebPluginsGitHostsColumnsZh extends TranslationsWebPluginsGitHostsColumnsEn {
-	_TranslationsWebPluginsGitHostsColumnsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$plugins$gitHosts$columns$zh extends Translations$web$plugins$gitHosts$columns$en {
+	_Translations$web$plugins$gitHosts$columns$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8009,8 +8098,8 @@ class _TranslationsWebPluginsGitHostsColumnsZh extends TranslationsWebPluginsGit
 }
 
 // Path: web.plugins.gitHosts.dialog
-class _TranslationsWebPluginsGitHostsDialogZh extends TranslationsWebPluginsGitHostsDialogEn {
-	_TranslationsWebPluginsGitHostsDialogZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$plugins$gitHosts$dialog$zh extends Translations$web$plugins$gitHosts$dialog$en {
+	_Translations$web$plugins$gitHosts$dialog$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8039,8 +8128,8 @@ class _TranslationsWebPluginsGitHostsDialogZh extends TranslationsWebPluginsGitH
 }
 
 // Path: web.backups.backupsTab.columns
-class _TranslationsWebBackupsBackupsTabColumnsZh extends TranslationsWebBackupsBackupsTabColumnsEn {
-	_TranslationsWebBackupsBackupsTabColumnsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$backups$backupsTab$columns$zh extends Translations$web$backups$backupsTab$columns$en {
+	_Translations$web$backups$backupsTab$columns$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8055,8 +8144,8 @@ class _TranslationsWebBackupsBackupsTabColumnsZh extends TranslationsWebBackupsB
 }
 
 // Path: web.backups.health.tiles
-class _TranslationsWebBackupsHealthTilesZh extends TranslationsWebBackupsHealthTilesEn {
-	_TranslationsWebBackupsHealthTilesZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$backups$health$tiles$zh extends Translations$web$backups$health$tiles$en {
+	_Translations$web$backups$health$tiles$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8068,8 +8157,8 @@ class _TranslationsWebBackupsHealthTilesZh extends TranslationsWebBackupsHealthT
 }
 
 // Path: web.backups.schedulesTab.columns
-class _TranslationsWebBackupsSchedulesTabColumnsZh extends TranslationsWebBackupsSchedulesTabColumnsEn {
-	_TranslationsWebBackupsSchedulesTabColumnsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$backups$schedulesTab$columns$zh extends Translations$web$backups$schedulesTab$columns$en {
+	_Translations$web$backups$schedulesTab$columns$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8084,8 +8173,8 @@ class _TranslationsWebBackupsSchedulesTabColumnsZh extends TranslationsWebBackup
 }
 
 // Path: web.backups.targetsTab.columns
-class _TranslationsWebBackupsTargetsTabColumnsZh extends TranslationsWebBackupsTargetsTabColumnsEn {
-	_TranslationsWebBackupsTargetsTabColumnsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$backups$targetsTab$columns$zh extends Translations$web$backups$targetsTab$columns$en {
+	_Translations$web$backups$targetsTab$columns$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8098,8 +8187,8 @@ class _TranslationsWebBackupsTargetsTabColumnsZh extends TranslationsWebBackupsT
 }
 
 // Path: web.backups.targetEditor.local
-class _TranslationsWebBackupsTargetEditorLocalZh extends TranslationsWebBackupsTargetEditorLocalEn {
-	_TranslationsWebBackupsTargetEditorLocalZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$backups$targetEditor$local$zh extends Translations$web$backups$targetEditor$local$en {
+	_Translations$web$backups$targetEditor$local$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8110,8 +8199,8 @@ class _TranslationsWebBackupsTargetEditorLocalZh extends TranslationsWebBackupsT
 }
 
 // Path: web.backups.targetEditor.smb
-class _TranslationsWebBackupsTargetEditorSmbZh extends TranslationsWebBackupsTargetEditorSmbEn {
-	_TranslationsWebBackupsTargetEditorSmbZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$backups$targetEditor$smb$zh extends Translations$web$backups$targetEditor$smb$en {
+	_Translations$web$backups$targetEditor$smb$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8130,8 +8219,8 @@ class _TranslationsWebBackupsTargetEditorSmbZh extends TranslationsWebBackupsTar
 }
 
 // Path: web.backups.targetEditor.s3
-class _TranslationsWebBackupsTargetEditorS3Zh extends TranslationsWebBackupsTargetEditorS3En {
-	_TranslationsWebBackupsTargetEditorS3Zh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$backups$targetEditor$s3$zh extends Translations$web$backups$targetEditor$s3$en {
+	_Translations$web$backups$targetEditor$s3$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8155,8 +8244,8 @@ class _TranslationsWebBackupsTargetEditorS3Zh extends TranslationsWebBackupsTarg
 }
 
 // Path: web.backups.targetEditor.webdav
-class _TranslationsWebBackupsTargetEditorWebdavZh extends TranslationsWebBackupsTargetEditorWebdavEn {
-	_TranslationsWebBackupsTargetEditorWebdavZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$backups$targetEditor$webdav$zh extends Translations$web$backups$targetEditor$webdav$en {
+	_Translations$web$backups$targetEditor$webdav$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8172,8 +8261,8 @@ class _TranslationsWebBackupsTargetEditorWebdavZh extends TranslationsWebBackups
 }
 
 // Path: web.backups.targetEditor.sftp
-class _TranslationsWebBackupsTargetEditorSftpZh extends TranslationsWebBackupsTargetEditorSftpEn {
-	_TranslationsWebBackupsTargetEditorSftpZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$backups$targetEditor$sftp$zh extends Translations$web$backups$targetEditor$sftp$en {
+	_Translations$web$backups$targetEditor$sftp$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8196,8 +8285,8 @@ class _TranslationsWebBackupsTargetEditorSftpZh extends TranslationsWebBackupsTa
 }
 
 // Path: web.backups.targetEditor.rclone
-class _TranslationsWebBackupsTargetEditorRcloneZh extends TranslationsWebBackupsTargetEditorRcloneEn {
-	_TranslationsWebBackupsTargetEditorRcloneZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$backups$targetEditor$rclone$zh extends Translations$web$backups$targetEditor$rclone$en {
+	_Translations$web$backups$targetEditor$rclone$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8218,8 +8307,8 @@ class _TranslationsWebBackupsTargetEditorRcloneZh extends TranslationsWebBackups
 }
 
 // Path: web.serverSettings.sections.general
-class _TranslationsWebServerSettingsSectionsGeneralZh extends TranslationsWebServerSettingsSectionsGeneralEn {
-	_TranslationsWebServerSettingsSectionsGeneralZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$sections$general$zh extends Translations$web$serverSettings$sections$general$en {
+	_Translations$web$serverSettings$sections$general$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8229,8 +8318,8 @@ class _TranslationsWebServerSettingsSectionsGeneralZh extends TranslationsWebSer
 }
 
 // Path: web.serverSettings.sections.logging
-class _TranslationsWebServerSettingsSectionsLoggingZh extends TranslationsWebServerSettingsSectionsLoggingEn {
-	_TranslationsWebServerSettingsSectionsLoggingZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$sections$logging$zh extends Translations$web$serverSettings$sections$logging$en {
+	_Translations$web$serverSettings$sections$logging$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8240,8 +8329,8 @@ class _TranslationsWebServerSettingsSectionsLoggingZh extends TranslationsWebSer
 }
 
 // Path: web.serverSettings.sections.sessions
-class _TranslationsWebServerSettingsSectionsSessionsZh extends TranslationsWebServerSettingsSectionsSessionsEn {
-	_TranslationsWebServerSettingsSectionsSessionsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$sections$sessions$zh extends Translations$web$serverSettings$sections$sessions$en {
+	_Translations$web$serverSettings$sections$sessions$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8251,8 +8340,8 @@ class _TranslationsWebServerSettingsSectionsSessionsZh extends TranslationsWebSe
 }
 
 // Path: web.serverSettings.sections.vault
-class _TranslationsWebServerSettingsSectionsVaultZh extends TranslationsWebServerSettingsSectionsVaultEn {
-	_TranslationsWebServerSettingsSectionsVaultZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$sections$vault$zh extends Translations$web$serverSettings$sections$vault$en {
+	_Translations$web$serverSettings$sections$vault$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8262,8 +8351,8 @@ class _TranslationsWebServerSettingsSectionsVaultZh extends TranslationsWebServe
 }
 
 // Path: web.serverSettings.sections.mcp
-class _TranslationsWebServerSettingsSectionsMcpZh extends TranslationsWebServerSettingsSectionsMcpEn {
-	_TranslationsWebServerSettingsSectionsMcpZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$sections$mcp$zh extends Translations$web$serverSettings$sections$mcp$en {
+	_Translations$web$serverSettings$sections$mcp$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8273,8 +8362,8 @@ class _TranslationsWebServerSettingsSectionsMcpZh extends TranslationsWebServerS
 }
 
 // Path: web.serverSettings.sections.memory
-class _TranslationsWebServerSettingsSectionsMemoryZh extends TranslationsWebServerSettingsSectionsMemoryEn {
-	_TranslationsWebServerSettingsSectionsMemoryZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$sections$memory$zh extends Translations$web$serverSettings$sections$memory$en {
+	_Translations$web$serverSettings$sections$memory$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8284,8 +8373,8 @@ class _TranslationsWebServerSettingsSectionsMemoryZh extends TranslationsWebServ
 }
 
 // Path: web.serverSettings.sections.backup
-class _TranslationsWebServerSettingsSectionsBackupZh extends TranslationsWebServerSettingsSectionsBackupEn {
-	_TranslationsWebServerSettingsSectionsBackupZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$sections$backup$zh extends Translations$web$serverSettings$sections$backup$en {
+	_Translations$web$serverSettings$sections$backup$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8295,8 +8384,8 @@ class _TranslationsWebServerSettingsSectionsBackupZh extends TranslationsWebServ
 }
 
 // Path: web.serverSettings.sections.claude
-class _TranslationsWebServerSettingsSectionsClaudeZh extends TranslationsWebServerSettingsSectionsClaudeEn {
-	_TranslationsWebServerSettingsSectionsClaudeZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$sections$claude$zh extends Translations$web$serverSettings$sections$claude$en {
+	_Translations$web$serverSettings$sections$claude$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8306,8 +8395,8 @@ class _TranslationsWebServerSettingsSectionsClaudeZh extends TranslationsWebServ
 }
 
 // Path: web.serverSettings.sections.codex
-class _TranslationsWebServerSettingsSectionsCodexZh extends TranslationsWebServerSettingsSectionsCodexEn {
-	_TranslationsWebServerSettingsSectionsCodexZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$sections$codex$zh extends Translations$web$serverSettings$sections$codex$en {
+	_Translations$web$serverSettings$sections$codex$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8317,8 +8406,8 @@ class _TranslationsWebServerSettingsSectionsCodexZh extends TranslationsWebServe
 }
 
 // Path: web.serverSettings.sections.antigravity
-class _TranslationsWebServerSettingsSectionsAntigravityZh extends TranslationsWebServerSettingsSectionsAntigravityEn {
-	_TranslationsWebServerSettingsSectionsAntigravityZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$sections$antigravity$zh extends Translations$web$serverSettings$sections$antigravity$en {
+	_Translations$web$serverSettings$sections$antigravity$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8328,8 +8417,8 @@ class _TranslationsWebServerSettingsSectionsAntigravityZh extends TranslationsWe
 }
 
 // Path: web.serverSettings.fields.listenAddress
-class _TranslationsWebServerSettingsFieldsListenAddressZh extends TranslationsWebServerSettingsFieldsListenAddressEn {
-	_TranslationsWebServerSettingsFieldsListenAddressZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$listenAddress$zh extends Translations$web$serverSettings$fields$listenAddress$en {
+	_Translations$web$serverSettings$fields$listenAddress$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8339,8 +8428,8 @@ class _TranslationsWebServerSettingsFieldsListenAddressZh extends TranslationsWe
 }
 
 // Path: web.serverSettings.fields.username
-class _TranslationsWebServerSettingsFieldsUsernameZh extends TranslationsWebServerSettingsFieldsUsernameEn {
-	_TranslationsWebServerSettingsFieldsUsernameZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$username$zh extends Translations$web$serverSettings$fields$username$en {
+	_Translations$web$serverSettings$fields$username$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8350,8 +8439,8 @@ class _TranslationsWebServerSettingsFieldsUsernameZh extends TranslationsWebServ
 }
 
 // Path: web.serverSettings.fields.password
-class _TranslationsWebServerSettingsFieldsPasswordZh extends TranslationsWebServerSettingsFieldsPasswordEn {
-	_TranslationsWebServerSettingsFieldsPasswordZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$password$zh extends Translations$web$serverSettings$fields$password$en {
+	_Translations$web$serverSettings$fields$password$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8363,8 +8452,8 @@ class _TranslationsWebServerSettingsFieldsPasswordZh extends TranslationsWebServ
 }
 
 // Path: web.serverSettings.fields.tokenTTL
-class _TranslationsWebServerSettingsFieldsTokenTTLZh extends TranslationsWebServerSettingsFieldsTokenTTLEn {
-	_TranslationsWebServerSettingsFieldsTokenTTLZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$tokenTTL$zh extends Translations$web$serverSettings$fields$tokenTTL$en {
+	_Translations$web$serverSettings$fields$tokenTTL$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8374,8 +8463,8 @@ class _TranslationsWebServerSettingsFieldsTokenTTLZh extends TranslationsWebServ
 }
 
 // Path: web.serverSettings.fields.logLevel
-class _TranslationsWebServerSettingsFieldsLogLevelZh extends TranslationsWebServerSettingsFieldsLogLevelEn {
-	_TranslationsWebServerSettingsFieldsLogLevelZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$logLevel$zh extends Translations$web$serverSettings$fields$logLevel$en {
+	_Translations$web$serverSettings$fields$logLevel$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8385,8 +8474,8 @@ class _TranslationsWebServerSettingsFieldsLogLevelZh extends TranslationsWebServ
 }
 
 // Path: web.serverSettings.fields.logFormat
-class _TranslationsWebServerSettingsFieldsLogFormatZh extends TranslationsWebServerSettingsFieldsLogFormatEn {
-	_TranslationsWebServerSettingsFieldsLogFormatZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$logFormat$zh extends Translations$web$serverSettings$fields$logFormat$en {
+	_Translations$web$serverSettings$fields$logFormat$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8396,8 +8485,8 @@ class _TranslationsWebServerSettingsFieldsLogFormatZh extends TranslationsWebSer
 }
 
 // Path: web.serverSettings.fields.logFile
-class _TranslationsWebServerSettingsFieldsLogFileZh extends TranslationsWebServerSettingsFieldsLogFileEn {
-	_TranslationsWebServerSettingsFieldsLogFileZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$logFile$zh extends Translations$web$serverSettings$fields$logFile$en {
+	_Translations$web$serverSettings$fields$logFile$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8407,8 +8496,8 @@ class _TranslationsWebServerSettingsFieldsLogFileZh extends TranslationsWebServe
 }
 
 // Path: web.serverSettings.fields.idleThreshold
-class _TranslationsWebServerSettingsFieldsIdleThresholdZh extends TranslationsWebServerSettingsFieldsIdleThresholdEn {
-	_TranslationsWebServerSettingsFieldsIdleThresholdZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$idleThreshold$zh extends Translations$web$serverSettings$fields$idleThreshold$en {
+	_Translations$web$serverSettings$fields$idleThreshold$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8418,8 +8507,8 @@ class _TranslationsWebServerSettingsFieldsIdleThresholdZh extends TranslationsWe
 }
 
 // Path: web.serverSettings.fields.idlePollInterval
-class _TranslationsWebServerSettingsFieldsIdlePollIntervalZh extends TranslationsWebServerSettingsFieldsIdlePollIntervalEn {
-	_TranslationsWebServerSettingsFieldsIdlePollIntervalZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$idlePollInterval$zh extends Translations$web$serverSettings$fields$idlePollInterval$en {
+	_Translations$web$serverSettings$fields$idlePollInterval$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8429,8 +8518,8 @@ class _TranslationsWebServerSettingsFieldsIdlePollIntervalZh extends Translation
 }
 
 // Path: web.serverSettings.fields.vaultRoot
-class _TranslationsWebServerSettingsFieldsVaultRootZh extends TranslationsWebServerSettingsFieldsVaultRootEn {
-	_TranslationsWebServerSettingsFieldsVaultRootZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$vaultRoot$zh extends Translations$web$serverSettings$fields$vaultRoot$en {
+	_Translations$web$serverSettings$fields$vaultRoot$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8440,8 +8529,8 @@ class _TranslationsWebServerSettingsFieldsVaultRootZh extends TranslationsWebSer
 }
 
 // Path: web.serverSettings.fields.notesDirectory
-class _TranslationsWebServerSettingsFieldsNotesDirectoryZh extends TranslationsWebServerSettingsFieldsNotesDirectoryEn {
-	_TranslationsWebServerSettingsFieldsNotesDirectoryZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$notesDirectory$zh extends Translations$web$serverSettings$fields$notesDirectory$en {
+	_Translations$web$serverSettings$fields$notesDirectory$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8451,8 +8540,8 @@ class _TranslationsWebServerSettingsFieldsNotesDirectoryZh extends TranslationsW
 }
 
 // Path: web.serverSettings.fields.skillsDirectory
-class _TranslationsWebServerSettingsFieldsSkillsDirectoryZh extends TranslationsWebServerSettingsFieldsSkillsDirectoryEn {
-	_TranslationsWebServerSettingsFieldsSkillsDirectoryZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$skillsDirectory$zh extends Translations$web$serverSettings$fields$skillsDirectory$en {
+	_Translations$web$serverSettings$fields$skillsDirectory$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8462,8 +8551,8 @@ class _TranslationsWebServerSettingsFieldsSkillsDirectoryZh extends Translations
 }
 
 // Path: web.serverSettings.fields.gitRoot
-class _TranslationsWebServerSettingsFieldsGitRootZh extends TranslationsWebServerSettingsFieldsGitRootEn {
-	_TranslationsWebServerSettingsFieldsGitRootZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$gitRoot$zh extends Translations$web$serverSettings$fields$gitRoot$en {
+	_Translations$web$serverSettings$fields$gitRoot$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8473,8 +8562,8 @@ class _TranslationsWebServerSettingsFieldsGitRootZh extends TranslationsWebServe
 }
 
 // Path: web.serverSettings.fields.personalPrefix
-class _TranslationsWebServerSettingsFieldsPersonalPrefixZh extends TranslationsWebServerSettingsFieldsPersonalPrefixEn {
-	_TranslationsWebServerSettingsFieldsPersonalPrefixZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$personalPrefix$zh extends Translations$web$serverSettings$fields$personalPrefix$en {
+	_Translations$web$serverSettings$fields$personalPrefix$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8484,8 +8573,8 @@ class _TranslationsWebServerSettingsFieldsPersonalPrefixZh extends TranslationsW
 }
 
 // Path: web.serverSettings.fields.projectsPrefix
-class _TranslationsWebServerSettingsFieldsProjectsPrefixZh extends TranslationsWebServerSettingsFieldsProjectsPrefixEn {
-	_TranslationsWebServerSettingsFieldsProjectsPrefixZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$projectsPrefix$zh extends Translations$web$serverSettings$fields$projectsPrefix$en {
+	_Translations$web$serverSettings$fields$projectsPrefix$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8495,8 +8584,8 @@ class _TranslationsWebServerSettingsFieldsProjectsPrefixZh extends TranslationsW
 }
 
 // Path: web.serverSettings.fields.registryRoot
-class _TranslationsWebServerSettingsFieldsRegistryRootZh extends TranslationsWebServerSettingsFieldsRegistryRootEn {
-	_TranslationsWebServerSettingsFieldsRegistryRootZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$registryRoot$zh extends Translations$web$serverSettings$fields$registryRoot$en {
+	_Translations$web$serverSettings$fields$registryRoot$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8506,8 +8595,8 @@ class _TranslationsWebServerSettingsFieldsRegistryRootZh extends TranslationsWeb
 }
 
 // Path: web.serverSettings.fields.secretsFile
-class _TranslationsWebServerSettingsFieldsSecretsFileZh extends TranslationsWebServerSettingsFieldsSecretsFileEn {
-	_TranslationsWebServerSettingsFieldsSecretsFileZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$secretsFile$zh extends Translations$web$serverSettings$fields$secretsFile$en {
+	_Translations$web$serverSettings$fields$secretsFile$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8517,8 +8606,8 @@ class _TranslationsWebServerSettingsFieldsSecretsFileZh extends TranslationsWebS
 }
 
 // Path: web.serverSettings.fields.memoryBackend
-class _TranslationsWebServerSettingsFieldsMemoryBackendZh extends TranslationsWebServerSettingsFieldsMemoryBackendEn {
-	_TranslationsWebServerSettingsFieldsMemoryBackendZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$memoryBackend$zh extends Translations$web$serverSettings$fields$memoryBackend$en {
+	_Translations$web$serverSettings$fields$memoryBackend$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8528,8 +8617,8 @@ class _TranslationsWebServerSettingsFieldsMemoryBackendZh extends TranslationsWe
 }
 
 // Path: web.serverSettings.fields.memoryStore
-class _TranslationsWebServerSettingsFieldsMemoryStoreZh extends TranslationsWebServerSettingsFieldsMemoryStoreEn {
-	_TranslationsWebServerSettingsFieldsMemoryStoreZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$memoryStore$zh extends Translations$web$serverSettings$fields$memoryStore$en {
+	_Translations$web$serverSettings$fields$memoryStore$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8539,8 +8628,8 @@ class _TranslationsWebServerSettingsFieldsMemoryStoreZh extends TranslationsWebS
 }
 
 // Path: web.serverSettings.fields.memoryTopK
-class _TranslationsWebServerSettingsFieldsMemoryTopKZh extends TranslationsWebServerSettingsFieldsMemoryTopKEn {
-	_TranslationsWebServerSettingsFieldsMemoryTopKZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$memoryTopK$zh extends Translations$web$serverSettings$fields$memoryTopK$en {
+	_Translations$web$serverSettings$fields$memoryTopK$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8550,8 +8639,8 @@ class _TranslationsWebServerSettingsFieldsMemoryTopKZh extends TranslationsWebSe
 }
 
 // Path: web.serverSettings.fields.memoryThreshold
-class _TranslationsWebServerSettingsFieldsMemoryThresholdZh extends TranslationsWebServerSettingsFieldsMemoryThresholdEn {
-	_TranslationsWebServerSettingsFieldsMemoryThresholdZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$memoryThreshold$zh extends Translations$web$serverSettings$fields$memoryThreshold$en {
+	_Translations$web$serverSettings$fields$memoryThreshold$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8561,8 +8650,8 @@ class _TranslationsWebServerSettingsFieldsMemoryThresholdZh extends Translations
 }
 
 // Path: web.serverSettings.fields.memoryScope
-class _TranslationsWebServerSettingsFieldsMemoryScopeZh extends TranslationsWebServerSettingsFieldsMemoryScopeEn {
-	_TranslationsWebServerSettingsFieldsMemoryScopeZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$memoryScope$zh extends Translations$web$serverSettings$fields$memoryScope$en {
+	_Translations$web$serverSettings$fields$memoryScope$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8572,8 +8661,8 @@ class _TranslationsWebServerSettingsFieldsMemoryScopeZh extends TranslationsWebS
 }
 
 // Path: web.serverSettings.fields.memoryBaseUrl
-class _TranslationsWebServerSettingsFieldsMemoryBaseUrlZh extends TranslationsWebServerSettingsFieldsMemoryBaseUrlEn {
-	_TranslationsWebServerSettingsFieldsMemoryBaseUrlZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$memoryBaseUrl$zh extends Translations$web$serverSettings$fields$memoryBaseUrl$en {
+	_Translations$web$serverSettings$fields$memoryBaseUrl$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8583,8 +8672,8 @@ class _TranslationsWebServerSettingsFieldsMemoryBaseUrlZh extends TranslationsWe
 }
 
 // Path: web.serverSettings.fields.memoryModel
-class _TranslationsWebServerSettingsFieldsMemoryModelZh extends TranslationsWebServerSettingsFieldsMemoryModelEn {
-	_TranslationsWebServerSettingsFieldsMemoryModelZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$memoryModel$zh extends Translations$web$serverSettings$fields$memoryModel$en {
+	_Translations$web$serverSettings$fields$memoryModel$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8594,8 +8683,8 @@ class _TranslationsWebServerSettingsFieldsMemoryModelZh extends TranslationsWebS
 }
 
 // Path: web.serverSettings.fields.memoryApiKey
-class _TranslationsWebServerSettingsFieldsMemoryApiKeyZh extends TranslationsWebServerSettingsFieldsMemoryApiKeyEn {
-	_TranslationsWebServerSettingsFieldsMemoryApiKeyZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$memoryApiKey$zh extends Translations$web$serverSettings$fields$memoryApiKey$en {
+	_Translations$web$serverSettings$fields$memoryApiKey$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8605,8 +8694,8 @@ class _TranslationsWebServerSettingsFieldsMemoryApiKeyZh extends TranslationsWeb
 }
 
 // Path: web.serverSettings.fields.memoryLocalModel
-class _TranslationsWebServerSettingsFieldsMemoryLocalModelZh extends TranslationsWebServerSettingsFieldsMemoryLocalModelEn {
-	_TranslationsWebServerSettingsFieldsMemoryLocalModelZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$memoryLocalModel$zh extends Translations$web$serverSettings$fields$memoryLocalModel$en {
+	_Translations$web$serverSettings$fields$memoryLocalModel$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8616,8 +8705,8 @@ class _TranslationsWebServerSettingsFieldsMemoryLocalModelZh extends Translation
 }
 
 // Path: web.serverSettings.fields.memoryLibraryPath
-class _TranslationsWebServerSettingsFieldsMemoryLibraryPathZh extends TranslationsWebServerSettingsFieldsMemoryLibraryPathEn {
-	_TranslationsWebServerSettingsFieldsMemoryLibraryPathZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$memoryLibraryPath$zh extends Translations$web$serverSettings$fields$memoryLibraryPath$en {
+	_Translations$web$serverSettings$fields$memoryLibraryPath$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8627,8 +8716,8 @@ class _TranslationsWebServerSettingsFieldsMemoryLibraryPathZh extends Translatio
 }
 
 // Path: web.serverSettings.fields.memoryModelPath
-class _TranslationsWebServerSettingsFieldsMemoryModelPathZh extends TranslationsWebServerSettingsFieldsMemoryModelPathEn {
-	_TranslationsWebServerSettingsFieldsMemoryModelPathZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$memoryModelPath$zh extends Translations$web$serverSettings$fields$memoryModelPath$en {
+	_Translations$web$serverSettings$fields$memoryModelPath$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8638,8 +8727,8 @@ class _TranslationsWebServerSettingsFieldsMemoryModelPathZh extends Translations
 }
 
 // Path: web.serverSettings.fields.memoryTokenizerPath
-class _TranslationsWebServerSettingsFieldsMemoryTokenizerPathZh extends TranslationsWebServerSettingsFieldsMemoryTokenizerPathEn {
-	_TranslationsWebServerSettingsFieldsMemoryTokenizerPathZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$memoryTokenizerPath$zh extends Translations$web$serverSettings$fields$memoryTokenizerPath$en {
+	_Translations$web$serverSettings$fields$memoryTokenizerPath$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8649,8 +8738,8 @@ class _TranslationsWebServerSettingsFieldsMemoryTokenizerPathZh extends Translat
 }
 
 // Path: web.serverSettings.fields.memoryMaxSeqLen
-class _TranslationsWebServerSettingsFieldsMemoryMaxSeqLenZh extends TranslationsWebServerSettingsFieldsMemoryMaxSeqLenEn {
-	_TranslationsWebServerSettingsFieldsMemoryMaxSeqLenZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$memoryMaxSeqLen$zh extends Translations$web$serverSettings$fields$memoryMaxSeqLen$en {
+	_Translations$web$serverSettings$fields$memoryMaxSeqLen$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8660,8 +8749,8 @@ class _TranslationsWebServerSettingsFieldsMemoryMaxSeqLenZh extends Translations
 }
 
 // Path: web.serverSettings.fields.claudeHistoryRoots
-class _TranslationsWebServerSettingsFieldsClaudeHistoryRootsZh extends TranslationsWebServerSettingsFieldsClaudeHistoryRootsEn {
-	_TranslationsWebServerSettingsFieldsClaudeHistoryRootsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$claudeHistoryRoots$zh extends Translations$web$serverSettings$fields$claudeHistoryRoots$en {
+	_Translations$web$serverSettings$fields$claudeHistoryRoots$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8671,8 +8760,8 @@ class _TranslationsWebServerSettingsFieldsClaudeHistoryRootsZh extends Translati
 }
 
 // Path: web.serverSettings.fields.claudeAccountsDir
-class _TranslationsWebServerSettingsFieldsClaudeAccountsDirZh extends TranslationsWebServerSettingsFieldsClaudeAccountsDirEn {
-	_TranslationsWebServerSettingsFieldsClaudeAccountsDirZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$claudeAccountsDir$zh extends Translations$web$serverSettings$fields$claudeAccountsDir$en {
+	_Translations$web$serverSettings$fields$claudeAccountsDir$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8682,8 +8771,8 @@ class _TranslationsWebServerSettingsFieldsClaudeAccountsDirZh extends Translatio
 }
 
 // Path: web.serverSettings.fields.codexSessionsRoot
-class _TranslationsWebServerSettingsFieldsCodexSessionsRootZh extends TranslationsWebServerSettingsFieldsCodexSessionsRootEn {
-	_TranslationsWebServerSettingsFieldsCodexSessionsRootZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$codexSessionsRoot$zh extends Translations$web$serverSettings$fields$codexSessionsRoot$en {
+	_Translations$web$serverSettings$fields$codexSessionsRoot$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8693,8 +8782,8 @@ class _TranslationsWebServerSettingsFieldsCodexSessionsRootZh extends Translatio
 }
 
 // Path: web.serverSettings.fields.antigravityConversationsRoot
-class _TranslationsWebServerSettingsFieldsAntigravityConversationsRootZh extends TranslationsWebServerSettingsFieldsAntigravityConversationsRootEn {
-	_TranslationsWebServerSettingsFieldsAntigravityConversationsRootZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$antigravityConversationsRoot$zh extends Translations$web$serverSettings$fields$antigravityConversationsRoot$en {
+	_Translations$web$serverSettings$fields$antigravityConversationsRoot$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8704,8 +8793,8 @@ class _TranslationsWebServerSettingsFieldsAntigravityConversationsRootZh extends
 }
 
 // Path: web.serverSettings.fields.backupLocalDir
-class _TranslationsWebServerSettingsFieldsBackupLocalDirZh extends TranslationsWebServerSettingsFieldsBackupLocalDirEn {
-	_TranslationsWebServerSettingsFieldsBackupLocalDirZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$backupLocalDir$zh extends Translations$web$serverSettings$fields$backupLocalDir$en {
+	_Translations$web$serverSettings$fields$backupLocalDir$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8715,8 +8804,8 @@ class _TranslationsWebServerSettingsFieldsBackupLocalDirZh extends TranslationsW
 }
 
 // Path: web.serverSettings.fields.backupExportDir
-class _TranslationsWebServerSettingsFieldsBackupExportDirZh extends TranslationsWebServerSettingsFieldsBackupExportDirEn {
-	_TranslationsWebServerSettingsFieldsBackupExportDirZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$backupExportDir$zh extends Translations$web$serverSettings$fields$backupExportDir$en {
+	_Translations$web$serverSettings$fields$backupExportDir$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8726,8 +8815,8 @@ class _TranslationsWebServerSettingsFieldsBackupExportDirZh extends Translations
 }
 
 // Path: web.serverSettings.fields.backupPgDumpPath
-class _TranslationsWebServerSettingsFieldsBackupPgDumpPathZh extends TranslationsWebServerSettingsFieldsBackupPgDumpPathEn {
-	_TranslationsWebServerSettingsFieldsBackupPgDumpPathZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$backupPgDumpPath$zh extends Translations$web$serverSettings$fields$backupPgDumpPath$en {
+	_Translations$web$serverSettings$fields$backupPgDumpPath$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8737,8 +8826,8 @@ class _TranslationsWebServerSettingsFieldsBackupPgDumpPathZh extends Translation
 }
 
 // Path: web.serverSettings.fields.backupPgRestorePath
-class _TranslationsWebServerSettingsFieldsBackupPgRestorePathZh extends TranslationsWebServerSettingsFieldsBackupPgRestorePathEn {
-	_TranslationsWebServerSettingsFieldsBackupPgRestorePathZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$backupPgRestorePath$zh extends Translations$web$serverSettings$fields$backupPgRestorePath$en {
+	_Translations$web$serverSettings$fields$backupPgRestorePath$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8748,8 +8837,8 @@ class _TranslationsWebServerSettingsFieldsBackupPgRestorePathZh extends Translat
 }
 
 // Path: web.serverSettings.fields.memoryDedup
-class _TranslationsWebServerSettingsFieldsMemoryDedupZh extends TranslationsWebServerSettingsFieldsMemoryDedupEn {
-	_TranslationsWebServerSettingsFieldsMemoryDedupZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$memoryDedup$zh extends Translations$web$serverSettings$fields$memoryDedup$en {
+	_Translations$web$serverSettings$fields$memoryDedup$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8759,8 +8848,8 @@ class _TranslationsWebServerSettingsFieldsMemoryDedupZh extends TranslationsWebS
 }
 
 // Path: web.serverSettings.fields.gatekeeperEnabled
-class _TranslationsWebServerSettingsFieldsGatekeeperEnabledZh extends TranslationsWebServerSettingsFieldsGatekeeperEnabledEn {
-	_TranslationsWebServerSettingsFieldsGatekeeperEnabledZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$gatekeeperEnabled$zh extends Translations$web$serverSettings$fields$gatekeeperEnabled$en {
+	_Translations$web$serverSettings$fields$gatekeeperEnabled$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8770,8 +8859,8 @@ class _TranslationsWebServerSettingsFieldsGatekeeperEnabledZh extends Translatio
 }
 
 // Path: web.serverSettings.fields.gatekeeperLatency
-class _TranslationsWebServerSettingsFieldsGatekeeperLatencyZh extends TranslationsWebServerSettingsFieldsGatekeeperLatencyEn {
-	_TranslationsWebServerSettingsFieldsGatekeeperLatencyZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$gatekeeperLatency$zh extends Translations$web$serverSettings$fields$gatekeeperLatency$en {
+	_Translations$web$serverSettings$fields$gatekeeperLatency$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8781,8 +8870,8 @@ class _TranslationsWebServerSettingsFieldsGatekeeperLatencyZh extends Translatio
 }
 
 // Path: web.serverSettings.fields.cleanerEnabled
-class _TranslationsWebServerSettingsFieldsCleanerEnabledZh extends TranslationsWebServerSettingsFieldsCleanerEnabledEn {
-	_TranslationsWebServerSettingsFieldsCleanerEnabledZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$cleanerEnabled$zh extends Translations$web$serverSettings$fields$cleanerEnabled$en {
+	_Translations$web$serverSettings$fields$cleanerEnabled$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8792,8 +8881,8 @@ class _TranslationsWebServerSettingsFieldsCleanerEnabledZh extends TranslationsW
 }
 
 // Path: web.serverSettings.fields.cleanerInterval
-class _TranslationsWebServerSettingsFieldsCleanerIntervalZh extends TranslationsWebServerSettingsFieldsCleanerIntervalEn {
-	_TranslationsWebServerSettingsFieldsCleanerIntervalZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$cleanerInterval$zh extends Translations$web$serverSettings$fields$cleanerInterval$en {
+	_Translations$web$serverSettings$fields$cleanerInterval$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8803,8 +8892,8 @@ class _TranslationsWebServerSettingsFieldsCleanerIntervalZh extends Translations
 }
 
 // Path: web.serverSettings.fields.cleanerGlobalScope
-class _TranslationsWebServerSettingsFieldsCleanerGlobalScopeZh extends TranslationsWebServerSettingsFieldsCleanerGlobalScopeEn {
-	_TranslationsWebServerSettingsFieldsCleanerGlobalScopeZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$cleanerGlobalScope$zh extends Translations$web$serverSettings$fields$cleanerGlobalScope$en {
+	_Translations$web$serverSettings$fields$cleanerGlobalScope$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8814,8 +8903,8 @@ class _TranslationsWebServerSettingsFieldsCleanerGlobalScopeZh extends Translati
 }
 
 // Path: web.serverSettings.fields.knowledgeEnabled
-class _TranslationsWebServerSettingsFieldsKnowledgeEnabledZh extends TranslationsWebServerSettingsFieldsKnowledgeEnabledEn {
-	_TranslationsWebServerSettingsFieldsKnowledgeEnabledZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$knowledgeEnabled$zh extends Translations$web$serverSettings$fields$knowledgeEnabled$en {
+	_Translations$web$serverSettings$fields$knowledgeEnabled$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8825,8 +8914,8 @@ class _TranslationsWebServerSettingsFieldsKnowledgeEnabledZh extends Translation
 }
 
 // Path: web.serverSettings.fields.claudeWatcher
-class _TranslationsWebServerSettingsFieldsClaudeWatcherZh extends TranslationsWebServerSettingsFieldsClaudeWatcherEn {
-	_TranslationsWebServerSettingsFieldsClaudeWatcherZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$claudeWatcher$zh extends Translations$web$serverSettings$fields$claudeWatcher$en {
+	_Translations$web$serverSettings$fields$claudeWatcher$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8836,8 +8925,8 @@ class _TranslationsWebServerSettingsFieldsClaudeWatcherZh extends TranslationsWe
 }
 
 // Path: web.serverSettings.fields.claudeAutoFailover
-class _TranslationsWebServerSettingsFieldsClaudeAutoFailoverZh extends TranslationsWebServerSettingsFieldsClaudeAutoFailoverEn {
-	_TranslationsWebServerSettingsFieldsClaudeAutoFailoverZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$claudeAutoFailover$zh extends Translations$web$serverSettings$fields$claudeAutoFailover$en {
+	_Translations$web$serverSettings$fields$claudeAutoFailover$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8847,8 +8936,8 @@ class _TranslationsWebServerSettingsFieldsClaudeAutoFailoverZh extends Translati
 }
 
 // Path: web.serverSettings.fields.mobileTokenTTL
-class _TranslationsWebServerSettingsFieldsMobileTokenTTLZh extends TranslationsWebServerSettingsFieldsMobileTokenTTLEn {
-	_TranslationsWebServerSettingsFieldsMobileTokenTTLZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$mobileTokenTTL$zh extends Translations$web$serverSettings$fields$mobileTokenTTL$en {
+	_Translations$web$serverSettings$fields$mobileTokenTTL$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8858,8 +8947,8 @@ class _TranslationsWebServerSettingsFieldsMobileTokenTTLZh extends TranslationsW
 }
 
 // Path: web.serverSettings.fields.dbMaxConns
-class _TranslationsWebServerSettingsFieldsDbMaxConnsZh extends TranslationsWebServerSettingsFieldsDbMaxConnsEn {
-	_TranslationsWebServerSettingsFieldsDbMaxConnsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$fields$dbMaxConns$zh extends Translations$web$serverSettings$fields$dbMaxConns$en {
+	_Translations$web$serverSettings$fields$dbMaxConns$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8869,8 +8958,8 @@ class _TranslationsWebServerSettingsFieldsDbMaxConnsZh extends TranslationsWebSe
 }
 
 // Path: web.serverSettings.httpHelpers.presetTip
-class _TranslationsWebServerSettingsHttpHelpersPresetTipZh extends TranslationsWebServerSettingsHttpHelpersPresetTipEn {
-	_TranslationsWebServerSettingsHttpHelpersPresetTipZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$httpHelpers$presetTip$zh extends Translations$web$serverSettings$httpHelpers$presetTip$en {
+	_Translations$web$serverSettings$httpHelpers$presetTip$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8881,8 +8970,8 @@ class _TranslationsWebServerSettingsHttpHelpersPresetTipZh extends TranslationsW
 }
 
 // Path: web.serverSettings.backup.scheduleHeaders
-class _TranslationsWebServerSettingsBackupScheduleHeadersZh extends TranslationsWebServerSettingsBackupScheduleHeadersEn {
-	_TranslationsWebServerSettingsBackupScheduleHeadersZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$serverSettings$backup$scheduleHeaders$zh extends Translations$web$serverSettings$backup$scheduleHeaders$en {
+	_Translations$web$serverSettings$backup$scheduleHeaders$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8895,8 +8984,8 @@ class _TranslationsWebServerSettingsBackupScheduleHeadersZh extends Translations
 }
 
 // Path: web.settings.appearance.options
-class _TranslationsWebSettingsAppearanceOptionsZh extends TranslationsWebSettingsAppearanceOptionsEn {
-	_TranslationsWebSettingsAppearanceOptionsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$settings$appearance$options$zh extends Translations$web$settings$appearance$options$en {
+	_Translations$web$settings$appearance$options$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8910,8 +8999,8 @@ class _TranslationsWebSettingsAppearanceOptionsZh extends TranslationsWebSetting
 }
 
 // Path: web.settings.font.options
-class _TranslationsWebSettingsFontOptionsZh extends TranslationsWebSettingsFontOptionsEn {
-	_TranslationsWebSettingsFontOptionsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$settings$font$options$zh extends Translations$web$settings$font$options$en {
+	_Translations$web$settings$font$options$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8923,8 +9012,8 @@ class _TranslationsWebSettingsFontOptionsZh extends TranslationsWebSettingsFontO
 }
 
 // Path: web.memoryAmbient.providers.row
-class _TranslationsWebMemoryAmbientProvidersRowZh extends TranslationsWebMemoryAmbientProvidersRowEn {
-	_TranslationsWebMemoryAmbientProvidersRowZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$memoryAmbient$providers$row$zh extends Translations$web$memoryAmbient$providers$row$en {
+	_Translations$web$memoryAmbient$providers$row$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8944,8 +9033,8 @@ class _TranslationsWebMemoryAmbientProvidersRowZh extends TranslationsWebMemoryA
 }
 
 // Path: web.memoryAmbient.providers.dialog
-class _TranslationsWebMemoryAmbientProvidersDialogZh extends TranslationsWebMemoryAmbientProvidersDialogEn {
-	_TranslationsWebMemoryAmbientProvidersDialogZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$memoryAmbient$providers$dialog$zh extends Translations$web$memoryAmbient$providers$dialog$en {
+	_Translations$web$memoryAmbient$providers$dialog$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8967,8 +9056,8 @@ class _TranslationsWebMemoryAmbientProvidersDialogZh extends TranslationsWebMemo
 }
 
 // Path: web.memoryAmbient.providers.modelSelect
-class _TranslationsWebMemoryAmbientProvidersModelSelectZh extends TranslationsWebMemoryAmbientProvidersModelSelectEn {
-	_TranslationsWebMemoryAmbientProvidersModelSelectZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$memoryAmbient$providers$modelSelect$zh extends Translations$web$memoryAmbient$providers$modelSelect$en {
+	_Translations$web$memoryAmbient$providers$modelSelect$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -8986,8 +9075,8 @@ class _TranslationsWebMemoryAmbientProvidersModelSelectZh extends TranslationsWe
 }
 
 // Path: web.memoryAmbient.rules.row
-class _TranslationsWebMemoryAmbientRulesRowZh extends TranslationsWebMemoryAmbientRulesRowEn {
-	_TranslationsWebMemoryAmbientRulesRowZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$memoryAmbient$rules$row$zh extends Translations$web$memoryAmbient$rules$row$en {
+	_Translations$web$memoryAmbient$rules$row$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -9003,12 +9092,12 @@ class _TranslationsWebMemoryAmbientRulesRowZh extends TranslationsWebMemoryAmbie
 	@override String deleteConfirm({required Object name}) => '删除规则 "${name}"?';
 	@override String get deletedToast => '规则已删除';
 	@override String get deleteFailedToast => '删除失败';
-	@override late final _TranslationsWebMemoryAmbientRulesRowSummaryZh summary = _TranslationsWebMemoryAmbientRulesRowSummaryZh._(_root);
+	@override late final _Translations$web$memoryAmbient$rules$row$summary$zh summary = _Translations$web$memoryAmbient$rules$row$summary$zh._(_root);
 }
 
 // Path: web.memoryAmbient.rules.dialog
-class _TranslationsWebMemoryAmbientRulesDialogZh extends TranslationsWebMemoryAmbientRulesDialogEn {
-	_TranslationsWebMemoryAmbientRulesDialogZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$memoryAmbient$rules$dialog$zh extends Translations$web$memoryAmbient$rules$dialog$en {
+	_Translations$web$memoryAmbient$rules$dialog$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -9031,8 +9120,8 @@ class _TranslationsWebMemoryAmbientRulesDialogZh extends TranslationsWebMemoryAm
 }
 
 // Path: web.memoryAmbient.profiles.row
-class _TranslationsWebMemoryAmbientProfilesRowZh extends TranslationsWebMemoryAmbientProfilesRowEn {
-	_TranslationsWebMemoryAmbientProfilesRowZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$memoryAmbient$profiles$row$zh extends Translations$web$memoryAmbient$profiles$row$en {
+	_Translations$web$memoryAmbient$profiles$row$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -9045,8 +9134,8 @@ class _TranslationsWebMemoryAmbientProfilesRowZh extends TranslationsWebMemoryAm
 }
 
 // Path: web.memoryAmbient.profiles.dialog
-class _TranslationsWebMemoryAmbientProfilesDialogZh extends TranslationsWebMemoryAmbientProfilesDialogEn {
-	_TranslationsWebMemoryAmbientProfilesDialogZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$memoryAmbient$profiles$dialog$zh extends Translations$web$memoryAmbient$profiles$dialog$en {
+	_Translations$web$memoryAmbient$profiles$dialog$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -9061,8 +9150,8 @@ class _TranslationsWebMemoryAmbientProfilesDialogZh extends TranslationsWebMemor
 }
 
 // Path: web.memoryAmbient.cost.columns
-class _TranslationsWebMemoryAmbientCostColumnsZh extends TranslationsWebMemoryAmbientCostColumnsEn {
-	_TranslationsWebMemoryAmbientCostColumnsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$memoryAmbient$cost$columns$zh extends Translations$web$memoryAmbient$cost$columns$en {
+	_Translations$web$memoryAmbient$cost$columns$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -9075,8 +9164,8 @@ class _TranslationsWebMemoryAmbientCostColumnsZh extends TranslationsWebMemoryAm
 }
 
 // Path: web.export.form.integrationOptions
-class _TranslationsWebExportFormIntegrationOptionsZh extends TranslationsWebExportFormIntegrationOptionsEn {
-	_TranslationsWebExportFormIntegrationOptionsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$export$form$integrationOptions$zh extends Translations$web$export$form$integrationOptions$en {
+	_Translations$web$export$form$integrationOptions$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -9090,8 +9179,8 @@ class _TranslationsWebExportFormIntegrationOptionsZh extends TranslationsWebExpo
 }
 
 // Path: web.export.history.columns
-class _TranslationsWebExportHistoryColumnsZh extends TranslationsWebExportHistoryColumnsEn {
-	_TranslationsWebExportHistoryColumnsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$export$history$columns$zh extends Translations$web$export$history$columns$en {
+	_Translations$web$export$history$columns$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -9105,8 +9194,8 @@ class _TranslationsWebExportHistoryColumnsZh extends TranslationsWebExportHistor
 }
 
 // Path: web.export.import.summaryCard
-class _TranslationsWebExportImportSummaryCardZh extends TranslationsWebExportImportSummaryCardEn {
-	_TranslationsWebExportImportSummaryCardZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$export$import$summaryCard$zh extends Translations$web$export$import$summaryCard$en {
+	_Translations$web$export$import$summaryCard$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -9120,8 +9209,8 @@ class _TranslationsWebExportImportSummaryCardZh extends TranslationsWebExportImp
 }
 
 // Path: web.export.imports.columns
-class _TranslationsWebExportImportsColumnsZh extends TranslationsWebExportImportsColumnsEn {
-	_TranslationsWebExportImportsColumnsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$export$imports$columns$zh extends Translations$web$export$imports$columns$en {
+	_Translations$web$export$imports$columns$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -9134,8 +9223,8 @@ class _TranslationsWebExportImportsColumnsZh extends TranslationsWebExportImport
 }
 
 // Path: web.knowledge.kb.kinds
-class _TranslationsWebKnowledgeKbKindsZh extends TranslationsWebKnowledgeKbKindsEn {
-	_TranslationsWebKnowledgeKbKindsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$knowledge$kb$kinds$zh extends Translations$web$knowledge$kb$kinds$en {
+	_Translations$web$knowledge$kb$kinds$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -9147,8 +9236,8 @@ class _TranslationsWebKnowledgeKbKindsZh extends TranslationsWebKnowledgeKbKinds
 }
 
 // Path: web.knowledge.kb.proposal
-class _TranslationsWebKnowledgeKbProposalZh extends TranslationsWebKnowledgeKbProposalEn {
-	_TranslationsWebKnowledgeKbProposalZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$knowledge$kb$proposal$zh extends Translations$web$knowledge$kb$proposal$en {
+	_Translations$web$knowledge$kb$proposal$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -9163,8 +9252,8 @@ class _TranslationsWebKnowledgeKbProposalZh extends TranslationsWebKnowledgeKbPr
 }
 
 // Path: web.knowledge.kb.newPage
-class _TranslationsWebKnowledgeKbNewPageZh extends TranslationsWebKnowledgeKbNewPageEn {
-	_TranslationsWebKnowledgeKbNewPageZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$knowledge$kb$newPage$zh extends Translations$web$knowledge$kb$newPage$en {
+	_Translations$web$knowledge$kb$newPage$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -9182,8 +9271,8 @@ class _TranslationsWebKnowledgeKbNewPageZh extends TranslationsWebKnowledgeKbNew
 }
 
 // Path: web.knowledge.kb.pageSettings
-class _TranslationsWebKnowledgeKbPageSettingsZh extends TranslationsWebKnowledgeKbPageSettingsEn {
-	_TranslationsWebKnowledgeKbPageSettingsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$knowledge$kb$pageSettings$zh extends Translations$web$knowledge$kb$pageSettings$en {
+	_Translations$web$knowledge$kb$pageSettings$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -9197,8 +9286,8 @@ class _TranslationsWebKnowledgeKbPageSettingsZh extends TranslationsWebKnowledge
 }
 
 // Path: web.knowledge.kb.librarian
-class _TranslationsWebKnowledgeKbLibrarianZh extends TranslationsWebKnowledgeKbLibrarianEn {
-	_TranslationsWebKnowledgeKbLibrarianZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$knowledge$kb$librarian$zh extends Translations$web$knowledge$kb$librarian$en {
+	_Translations$web$knowledge$kb$librarian$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -9214,8 +9303,8 @@ class _TranslationsWebKnowledgeKbLibrarianZh extends TranslationsWebKnowledgeKbL
 }
 
 // Path: web.knowledge.distill.retirement
-class _TranslationsWebKnowledgeDistillRetirementZh extends TranslationsWebKnowledgeDistillRetirementEn {
-	_TranslationsWebKnowledgeDistillRetirementZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$knowledge$distill$retirement$zh extends Translations$web$knowledge$distill$retirement$en {
+	_Translations$web$knowledge$distill$retirement$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -9229,8 +9318,8 @@ class _TranslationsWebKnowledgeDistillRetirementZh extends TranslationsWebKnowle
 }
 
 // Path: web.knowledge.graph.legend
-class _TranslationsWebKnowledgeGraphLegendZh extends TranslationsWebKnowledgeGraphLegendEn {
-	_TranslationsWebKnowledgeGraphLegendZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$knowledge$graph$legend$zh extends Translations$web$knowledge$graph$legend$en {
+	_Translations$web$knowledge$graph$legend$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -9242,8 +9331,8 @@ class _TranslationsWebKnowledgeGraphLegendZh extends TranslationsWebKnowledgeGra
 }
 
 // Path: web.cortex.home.memory
-class _TranslationsWebCortexHomeMemoryZh extends TranslationsWebCortexHomeMemoryEn {
-	_TranslationsWebCortexHomeMemoryZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$cortex$home$memory$zh extends Translations$web$cortex$home$memory$en {
+	_Translations$web$cortex$home$memory$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -9254,8 +9343,8 @@ class _TranslationsWebCortexHomeMemoryZh extends TranslationsWebCortexHomeMemory
 }
 
 // Path: web.cortex.home.notes
-class _TranslationsWebCortexHomeNotesZh extends TranslationsWebCortexHomeNotesEn {
-	_TranslationsWebCortexHomeNotesZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$cortex$home$notes$zh extends Translations$web$cortex$home$notes$en {
+	_Translations$web$cortex$home$notes$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -9266,8 +9355,8 @@ class _TranslationsWebCortexHomeNotesZh extends TranslationsWebCortexHomeNotesEn
 }
 
 // Path: web.cortex.home.knowledge
-class _TranslationsWebCortexHomeKnowledgeZh extends TranslationsWebCortexHomeKnowledgeEn {
-	_TranslationsWebCortexHomeKnowledgeZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$cortex$home$knowledge$zh extends Translations$web$cortex$home$knowledge$en {
+	_Translations$web$cortex$home$knowledge$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -9277,8 +9366,8 @@ class _TranslationsWebCortexHomeKnowledgeZh extends TranslationsWebCortexHomeKno
 }
 
 // Path: web.cortex.home.proposals
-class _TranslationsWebCortexHomeProposalsZh extends TranslationsWebCortexHomeProposalsEn {
-	_TranslationsWebCortexHomeProposalsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$cortex$home$proposals$zh extends Translations$web$cortex$home$proposals$en {
+	_Translations$web$cortex$home$proposals$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -9297,8 +9386,8 @@ class _TranslationsWebCortexHomeProposalsZh extends TranslationsWebCortexHomePro
 }
 
 // Path: web.cortex.blueprint.mode
-class _TranslationsWebCortexBlueprintModeZh extends TranslationsWebCortexBlueprintModeEn {
-	_TranslationsWebCortexBlueprintModeZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$cortex$blueprint$mode$zh extends Translations$web$cortex$blueprint$mode$en {
+	_Translations$web$cortex$blueprint$mode$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -9309,8 +9398,8 @@ class _TranslationsWebCortexBlueprintModeZh extends TranslationsWebCortexBluepri
 }
 
 // Path: web.cortex.blueprint.writePolicy
-class _TranslationsWebCortexBlueprintWritePolicyZh extends TranslationsWebCortexBlueprintWritePolicyEn {
-	_TranslationsWebCortexBlueprintWritePolicyZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$cortex$blueprint$writePolicy$zh extends Translations$web$cortex$blueprint$writePolicy$en {
+	_Translations$web$cortex$blueprint$writePolicy$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -9321,8 +9410,8 @@ class _TranslationsWebCortexBlueprintWritePolicyZh extends TranslationsWebCortex
 }
 
 // Path: web.cortex.settings.injection
-class _TranslationsWebCortexSettingsInjectionZh extends TranslationsWebCortexSettingsInjectionEn {
-	_TranslationsWebCortexSettingsInjectionZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$cortex$settings$injection$zh extends Translations$web$cortex$settings$injection$en {
+	_Translations$web$cortex$settings$injection$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -9330,15 +9419,15 @@ class _TranslationsWebCortexSettingsInjectionZh extends TranslationsWebCortexSet
 	@override String get title => '启动注入';
 	@override String get hint => '每个【新建会话】预先加载多少心智中枢上下文。切换立即生效（影响之后新建的会话）——后端无需重启。';
 	@override String get active => '当前';
-	@override late final _TranslationsWebCortexSettingsInjectionModeZh mode = _TranslationsWebCortexSettingsInjectionModeZh._(_root);
+	@override late final _Translations$web$cortex$settings$injection$mode$zh mode = _Translations$web$cortex$settings$injection$mode$zh._(_root);
 	@override String get savedToast => '注入模式已保存——新建会话立即采用，后端无需重启';
 	@override String get saveFailed => '保存失败';
 	@override String get note => '完整模式下章节/知识页各自的注入开关（蓝图编辑器 / 知识页）仍然生效；精简模式下基础方针始终注入，其余一律走索引。';
 }
 
 // Path: web.database.dialog.drivers
-class _TranslationsWebDatabaseDialogDriversZh extends TranslationsWebDatabaseDialogDriversEn {
-	_TranslationsWebDatabaseDialogDriversZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$database$dialog$drivers$zh extends Translations$web$database$dialog$drivers$en {
+	_Translations$web$database$dialog$drivers$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -9350,8 +9439,8 @@ class _TranslationsWebDatabaseDialogDriversZh extends TranslationsWebDatabaseDia
 }
 
 // Path: web.roundTable.dialog.personaPresets
-class _TranslationsWebRoundTableDialogPersonaPresetsZh extends TranslationsWebRoundTableDialogPersonaPresetsEn {
-	_TranslationsWebRoundTableDialogPersonaPresetsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$roundTable$dialog$personaPresets$zh extends Translations$web$roundTable$dialog$personaPresets$en {
+	_Translations$web$roundTable$dialog$personaPresets$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -9365,8 +9454,8 @@ class _TranslationsWebRoundTableDialogPersonaPresetsZh extends TranslationsWebRo
 }
 
 // Path: sessions.inspector.shell.tabs
-class _TranslationsSessionsInspectorShellTabsZh extends TranslationsSessionsInspectorShellTabsEn {
-	_TranslationsSessionsInspectorShellTabsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$sessions$inspector$shell$tabs$zh extends Translations$sessions$inspector$shell$tabs$en {
+	_Translations$sessions$inspector$shell$tabs$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -9381,8 +9470,8 @@ class _TranslationsSessionsInspectorShellTabsZh extends TranslationsSessionsInsp
 }
 
 // Path: web.notes.vaultSync.conflict.kinds
-class _TranslationsWebNotesVaultSyncConflictKindsZh extends TranslationsWebNotesVaultSyncConflictKindsEn {
-	_TranslationsWebNotesVaultSyncConflictKindsZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$notes$vaultSync$conflict$kinds$zh extends Translations$web$notes$vaultSync$conflict$kinds$en {
+	_Translations$web$notes$vaultSync$conflict$kinds$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -9394,8 +9483,8 @@ class _TranslationsWebNotesVaultSyncConflictKindsZh extends TranslationsWebNotes
 }
 
 // Path: web.memoryAmbient.rules.row.summary
-class _TranslationsWebMemoryAmbientRulesRowSummaryZh extends TranslationsWebMemoryAmbientRulesRowSummaryEn {
-	_TranslationsWebMemoryAmbientRulesRowSummaryZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$memoryAmbient$rules$row$summary$zh extends Translations$web$memoryAmbient$rules$row$summary$en {
+	_Translations$web$memoryAmbient$rules$row$summary$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -9407,19 +9496,19 @@ class _TranslationsWebMemoryAmbientRulesRowSummaryZh extends TranslationsWebMemo
 }
 
 // Path: web.cortex.settings.injection.mode
-class _TranslationsWebCortexSettingsInjectionModeZh extends TranslationsWebCortexSettingsInjectionModeEn {
-	_TranslationsWebCortexSettingsInjectionModeZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$cortex$settings$injection$mode$zh extends Translations$web$cortex$settings$injection$mode$en {
+	_Translations$web$cortex$settings$injection$mode$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
 	// Translations
-	@override late final _TranslationsWebCortexSettingsInjectionModeLeanZh lean = _TranslationsWebCortexSettingsInjectionModeLeanZh._(_root);
-	@override late final _TranslationsWebCortexSettingsInjectionModeFullZh full = _TranslationsWebCortexSettingsInjectionModeFullZh._(_root);
+	@override late final _Translations$web$cortex$settings$injection$mode$lean$zh lean = _Translations$web$cortex$settings$injection$mode$lean$zh._(_root);
+	@override late final _Translations$web$cortex$settings$injection$mode$full$zh full = _Translations$web$cortex$settings$injection$mode$full$zh._(_root);
 }
 
 // Path: web.cortex.settings.injection.mode.lean
-class _TranslationsWebCortexSettingsInjectionModeLeanZh extends TranslationsWebCortexSettingsInjectionModeLeanEn {
-	_TranslationsWebCortexSettingsInjectionModeLeanZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$cortex$settings$injection$mode$lean$zh extends Translations$web$cortex$settings$injection$mode$lean$en {
+	_Translations$web$cortex$settings$injection$mode$lean$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -9429,8 +9518,8 @@ class _TranslationsWebCortexSettingsInjectionModeLeanZh extends TranslationsWebC
 }
 
 // Path: web.cortex.settings.injection.mode.full
-class _TranslationsWebCortexSettingsInjectionModeFullZh extends TranslationsWebCortexSettingsInjectionModeFullEn {
-	_TranslationsWebCortexSettingsInjectionModeFullZh._(TranslationsZh root) : this._root = root, super.internal(root);
+class _Translations$web$cortex$settings$injection$mode$full$zh extends Translations$web$cortex$settings$injection$mode$full$en {
+	_Translations$web$cortex$settings$injection$mode$full$zh._(TranslationsZh root) : this._root = root, super.internal(root);
 
 	final TranslationsZh _root; // ignore: unused_field
 
@@ -13591,6 +13680,85 @@ extension on TranslationsZh {
 			'cortexSettings.providersManageOnWeb' => '在 web 管理端添加或编辑 provider。',
 			'cortexSettings.providersLoadFailed' => '加载 provider 失败',
 			'cortexSettings.defaultBadge' => '默认',
+			'agentTasks.navLabel' => '任务',
+			'agentTasks.title' => 'Agent 任务',
+			'agentTasks.create' => '新建任务',
+			'agentTasks.emptyTitle' => '暂无 Agent 任务',
+			'agentTasks.emptyBody' => '创建非交互式 Agent 任务。终端会话保持独立。',
+			'agentTasks.refresh' => '刷新',
+			'agentTasks.all' => '全部',
+			'agentTasks.loadMore' => '加载更多',
+			'agentTasks.offline' => '网络已断开，正在显示最近一次加载的状态。',
+			'agentTasks.retry' => '重试',
+			'agentTasks.project' => '项目',
+			'agentTasks.provider' => 'Provider',
+			'agentTasks.prompt' => '任务指令',
+			'agentTasks.workspace' => '工作目录',
+			'agentTasks.contextMode' => '上下文',
+			'agentTasks.newContext' => '新上下文',
+			'agentTasks.continueContext' => '继续上下文',
+			'agentTasks.attachments' => '附件',
+			'agentTasks.timeout' => '超时秒数',
+			'agentTasks.telegramNotify' => '完成后通知 Telegram',
+			'agentTasks.submit' => '创建任务',
+			'agentTasks.creating' => '正在创建…',
+			'agentTasks.required' => '此项必填',
+			'agentTasks.invalidTimeout' => '请输入 30 到 86400 秒之间的超时时间',
+			'agentTasks.details' => '任务详情',
+			'agentTasks.runs' => '运行记录',
+			'agentTasks.events' => '实时输出',
+			'agentTasks.artifacts' => '制品',
+			'agentTasks.continueAction' => '继续',
+			'agentTasks.cancelAction' => '取消',
+			'agentTasks.confirm' => '确认',
+			'agentTasks.retryAction' => '重试',
+			'agentTasks.confirmCancel' => '确认取消该任务并终止当前进程树？',
+			'agentTasks.confirmRetry' => '确认创建新的重试 Run？',
+			'agentTasks.waitingInput' => '等待补充输入',
+			'agentTasks.continueHint' => '输入后续指令',
+			'agentTasks.send' => '发送',
+			'agentTasks.stdout' => '标准输出',
+			'agentTasks.stderr' => '标准错误',
+			'agentTasks.raw' => '原始事件',
+			'agentTasks.download' => '下载',
+			'agentTasks.verified' => '完整性校验通过',
+			'agentTasks.downloadFailed' => '制品下载失败',
+			'agentTasks.noRuns' => '暂无 Run',
+			'agentTasks.noOutput' => '暂无输出',
+			'agentTasks.source' => '来源',
+			'agentTasks.status' => '状态',
+			'agentTasks.created' => '创建时间',
+			'agentTasks.updated' => '更新时间',
+			'agentTasks.context' => '运行上下文',
+			'agentTasks.currentRun' => '当前 Run',
+			'agentTasks.networkError' => '网络请求失败',
+			'agentTasks.permissionError' => '当前账号没有此操作权限',
+			'agentTasks.sessionIsolation' => 'One-shot 任务不会打开或写入终端会话。',
+			'agentTasks.capabilityResume' => '支持继续',
+			'agentTasks.capabilityAttachment' => '支持附件',
+			'agentTasks.smallScreenHint' => '小屏设备会自动纵向排列字段。',
+			'agentTasks.filterStatus' => '状态筛选',
+			'agentTasks.taskCreated' => '任务已创建',
+			'agentTasks.actionFailed' => '操作失败',
+			'agentTasks.loading' => '加载中…',
+			'agentTasks.open' => '打开',
+			'agentTasks.timeline' => '时间线',
+			'agentTasks.result' => '结果',
+			'agentTasks.idempotent' => '重复点击会复用同一个幂等键。',
+			'agentTasks.telegramSource' => 'Telegram',
+			'agentTasks.mobileSource' => '移动端',
+			'agentTasks.apiSource' => 'API',
+			'agentTasks.unknownSource' => '未知',
+			'agentTasks.cancelled' => '已取消',
+			'agentTasks.completed' => '已完成',
+			'agentTasks.failed' => '失败',
+			'agentTasks.timedOut' => '已超时',
+			'agentTasks.running' => '运行中',
+			'agentTasks.queued' => '排队中',
+			'agentTasks.pending' => '待处理',
+			'agentTasks.waiting' => '等待输入',
+			'agentTasks.unknown' => '未知',
+			'agentTasks.allProjects' => '全部项目',
 			_ => null,
 		};
 	}
