@@ -1,0 +1,6 @@
+ok  	github.com/opendray/opendray-v2/internal/session/channeladapter	1.046s
+PASS: isolated Session channel adapter tests
+ok  	github.com/opendray/opendray-v2/internal/channel	1.064s
+PASS: isolated Channel Core tests
+ok  	github.com/opendray/opendray-v2/internal/channel/telegram	1.093s
+PASS: isolated Telegram transport tests

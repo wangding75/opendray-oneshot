@@ -1,0 +1,381 @@
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
+import {
+  CircleDot,
+  Download,
+  KeyRound,
+  Loader2,
+  Trash2,
+} from 'lucide-react'
+import { toast } from 'sonner'
+import { Trans, useTranslation } from 'react-i18next'
+
+import { Button } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
+import {
+  acceptClaudeIdentity,
+  deleteClaudeAccount,
+  importLocalClaudeAccounts,
+  listClaudeAccounts,
+  toggleClaudeAccount,
+} from '@/lib/claudeAccounts'
+import type { ClaudeAccount } from '@/lib/types'
+
+// ClaudeAccountsPanel renders the multi-account list for the Claude
+// provider. Account creation is filesystem-driven: operators run
+// `CLAUDE_CONFIG_DIR=~/.claude-accounts/<name> claude login` on the
+// gateway host and opendray's filesystem watcher picks the directory
+// up automatically. The Import local button forces a synchronous
+// scan for the case where the operator wants the row to appear
+// immediately.
+//
+// There is intentionally no Add-account form: pasting an OAuth token
+// into a web form produces an account that can't refresh and dies in
+// ~1 hour, while the canonical claude-login flow produces a
+// self-managed credentials file. Forcing the host-shell flow keeps
+// the affordance honest.
+
+// relativeAgo turns an ISO timestamp into a tight "12m ago" / "3h ago"
+// / "2d ago" label suitable for a per-row chip. We deliberately keep
+// the granularity coarse so the chip stays narrow.
+function relativeAgo(iso: string): string {
+  const t = new Date(iso).getTime()
+  if (!Number.isFinite(t)) return ''
+  const dsec = Math.max(0, Math.floor((Date.now() - t) / 1000))
+  if (dsec < 60) return `${dsec}s ago`
+  if (dsec < 3600) return `${Math.floor(dsec / 60)}m ago`
+  if (dsec < 86400) return `${Math.floor(dsec / 3600)}h ago`
+  return `${Math.floor(dsec / 86400)}d ago`
+}
+
+export function ClaudeAccountsPanel() {
+  const { t } = useTranslation()
+  const qc = useQueryClient()
+  const { data: accounts, isLoading } = useQuery({
+    queryKey: ['claude-accounts'],
+    queryFn: listClaudeAccounts,
+    // Poll every 5s so accounts registered by the gateway's fs-watcher
+    // (after `claude login` writes ~/.claude-accounts/<name>/.credentials.json)
+    // appear in the UI without a manual refresh. Cheap: one GET on a
+    // small table; refetch only fires while this panel is mounted.
+    refetchInterval: 5000,
+  })
+
+  const importLocal = useMutation({
+    mutationFn: importLocalClaudeAccounts,
+    onSuccess: (res) => {
+      qc.invalidateQueries({ queryKey: ['claude-accounts'] })
+      if (res.count === 0) {
+        toast.success(t('web.providers.claudeAccounts.importedNothingToast'))
+      } else {
+        toast.success(
+          t('web.providers.claudeAccounts.importedToast', { count: res.count }),
+        )
+      }
+    },
+    onError: (e: Error) =>
+      toast.error(t('web.providers.claudeAccounts.importFailedToast'), {
+        description: e.message,
+      }),
+  })
+
+  // Optimistic toggle: Radix Switch is fully controlled via
+  // `checked={a.enabled}`. Without an optimistic update the thumb
+  // doesn't budge between click and refetch, which on a slow round-
+  // trip looks indistinguishable from a broken button. We seed the
+  // cache with the new value on click and reconcile on settle.
+  const toggle = useMutation({
+    mutationFn: ({ id, enabled }: { id: string; enabled: boolean }) =>
+      toggleClaudeAccount(id, enabled),
+    onMutate: async ({ id, enabled }) => {
+      await qc.cancelQueries({ queryKey: ['claude-accounts'] })
+      const prev = qc.getQueryData<ClaudeAccount[]>(['claude-accounts'])
+      if (prev) {
+        qc.setQueryData<ClaudeAccount[]>(
+          ['claude-accounts'],
+          prev.map((a) => (a.id === id ? { ...a, enabled } : a)),
+        )
+      }
+      return { prev }
+    },
+    onError: (e: Error, _vars, ctx) => {
+      if (ctx?.prev) qc.setQueryData(['claude-accounts'], ctx.prev)
+      toast.error(t('web.providers.claudeAccounts.toggleFailedToast'), {
+        description: e.message,
+      })
+    },
+    onSettled: () =>
+      qc.invalidateQueries({ queryKey: ['claude-accounts'] }),
+  })
+
+  const remove = useMutation({
+    mutationFn: deleteClaudeAccount,
+    onSuccess: () => {
+      qc.invalidateQueries({ queryKey: ['claude-accounts'] })
+      toast.success(t('web.providers.claudeAccounts.removedToast'))
+    },
+    onError: (e: Error) =>
+      toast.error(t('web.providers.claudeAccounts.removeFailedToast'), {
+        description: e.message,
+      }),
+  })
+
+  return (
+    <div className="space-y-3">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <h2 className="text-[12px] font-semibold uppercase tracking-wider text-muted-foreground/80">
+            {t('web.providers.claudeAccounts.title')}
+          </h2>
+          <span className="text-[10px] text-muted-foreground/60 font-mono">
+            {accounts?.length ?? 0}
+          </span>
+        </div>
+        <Button
+          variant="ghost"
+          size="sm"
+          onClick={() => importLocal.mutate()}
+          disabled={importLocal.isPending}
+          className="text-[11px] gap-1"
+          title={t('web.providers.claudeAccounts.importLocalTooltip')}
+        >
+          {importLocal.isPending ? (
+            <Loader2 className="size-3.5 animate-spin" />
+          ) : (
+            <Download className="size-3.5" />
+          )}
+          {t('web.providers.claudeAccounts.importLocal')}
+        </Button>
+      </div>
+
+      <div className="rounded-md border border-border bg-muted/20 px-3 py-2.5 text-[11px] text-muted-foreground leading-relaxed">
+        <span className="font-medium text-foreground">
+          {t('web.providers.claudeAccounts.addingTitle')}
+        </span>{' '}
+        {t('web.providers.claudeAccounts.addingBodyPrefix')}
+        <pre className="mt-1.5 mb-1.5 px-2 py-1.5 rounded bg-background/60 text-[10.5px] overflow-x-auto">
+{`mkdir -p ~/.claude-accounts/<name>
+CLAUDE_CONFIG_DIR=~/.claude-accounts/<name> claude login`}
+        </pre>
+        <Trans
+          i18nKey="web.providers.claudeAccounts.addingBodySuffix"
+          components={{ 1: <span className="font-mono" /> }}
+        />
+      </div>
+
+      {isLoading && (
+        <div className="text-[12px] text-muted-foreground italic">
+          {t('web.providers.claudeAccounts.loading')}
+        </div>
+      )}
+
+      {!isLoading && (accounts?.length ?? 0) === 0 && (
+        <p className="text-[12px] text-muted-foreground italic">
+          <Trans
+            i18nKey="web.providers.claudeAccounts.empty"
+            components={{ 1: <span className="font-mono" /> }}
+          />
+        </p>
+      )}
+
+      <div className="space-y-1.5">
+        {(accounts ?? []).map((a) => (
+          <div
+            key={a.id}
+            className="rounded-md border border-border px-3 py-2.5"
+          >
+            <div className="flex items-center gap-3">
+              <KeyRound
+                className={
+                  a.token_filled
+                    ? 'size-4 text-foreground/80 shrink-0'
+                    : 'size-4 text-muted-foreground/50 shrink-0'
+                }
+              />
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span className="text-[12px] font-medium">
+                    {a.display_name || a.name}
+                  </span>
+                  <span className="text-[10px] text-muted-foreground/60 font-mono">
+                    {a.name}
+                  </span>
+                  {!a.token_filled && (
+                    <span className="text-[10px] uppercase tracking-wide text-amber-500/90 inline-flex items-center gap-1">
+                      <CircleDot className="size-2.5" />
+                      {t('web.providers.claudeAccounts.noTokenYet')}
+                    </span>
+                  )}
+                  {/*
+                    Capacity-at-a-glance chips. These all come from the
+                    backend's already-decorated Account JSON — no extra
+                    queries on the client side. We render them inline
+                    next to the name so the operator can pick the
+                    right account without drilling in.
+                  */}
+                  {a.subscription_type && (
+                    <span
+                      className="text-[10px] uppercase tracking-wide rounded px-1.5 py-0.5 bg-foreground/5 text-foreground/70"
+                      title="subscriptionType (from .credentials.json)"
+                    >
+                      {a.subscription_type}
+                    </span>
+                  )}
+                  {a.rate_limit_tier && (
+                    <span
+                      className="text-[10px] font-mono rounded px-1.5 py-0.5 bg-foreground/5 text-muted-foreground/80"
+                      title="rateLimitTier (from .credentials.json)"
+                    >
+                      {a.rate_limit_tier}
+                    </span>
+                  )}
+                  <span
+                    className="text-[10px] rounded px-1.5 py-0.5 bg-foreground/5 text-muted-foreground/80"
+                    title="sessions currently pinned to this account"
+                  >
+                    {a.active_sessions ?? 0} active
+                  </span>
+                  {a.last_used_at && (
+                    <span
+                      className="text-[10px] text-muted-foreground/60"
+                      title={`last session: ${a.last_used_at}`}
+                    >
+                      used {relativeAgo(a.last_used_at)}
+                    </span>
+                  )}
+                  {/* Current OAuth identity. Always rendered when known
+                      so the operator can see WHICH Anthropic account
+                      this row actually authenticates as. */}
+                  {a.oauth_email && (
+                    <span
+                      className="text-[10px] text-muted-foreground/80"
+                      title="oauthAccount.emailAddress (from .claude.json)"
+                    >
+                      {a.oauth_email}
+                    </span>
+                  )}
+                  {/* Identity drift banner. Shows when the on-disk email
+                      doesn't match the first-seen baseline — the user
+                      ran `claude login` without CLAUDE_CONFIG_DIR and
+                      silently swapped this row's identity. The button
+                      acknowledges the swap as intentional. */}
+                  {a.identity_drift && (
+                    <span className="inline-flex items-center gap-2 text-[10px] uppercase tracking-wide rounded px-1.5 py-0.5 bg-red-500/10 text-red-500 border border-red-500/30">
+                      <CircleDot className="size-2.5" />
+                      <span>
+                        identity changed: was {a.previous_email || '?'}
+                      </span>
+                      <button
+                        type="button"
+                        className="underline hover:text-red-400"
+                        onClick={async () => {
+                          try {
+                            await acceptClaudeIdentity(a.id)
+                            qc.invalidateQueries({ queryKey: ['claude-accounts'] })
+                            toast.success(
+                              t('web.providers.claudeAccounts.identityAcceptedToast'),
+                            )
+                          } catch (e) {
+                            toast.error(
+                              t('web.providers.claudeAccounts.identityAcceptFailedToast'),
+                              { description: (e as Error).message },
+                            )
+                          }
+                        }}
+                      >
+                        accept
+                      </button>
+                    </span>
+                  )}
+                </div>
+                <div className="text-[10px] font-mono text-muted-foreground/70 truncate">
+                  {t('web.providers.claudeAccounts.configDir')}{' '}
+                  {a.config_dir || '—'}
+                </div>
+                <div className="text-[10px] font-mono text-muted-foreground/70 truncate">
+                  {t('web.providers.claudeAccounts.tokenPath')}{' '}
+                  {a.token_path || '—'}
+                </div>
+              </div>
+              <ToggleButton
+                enabled={a.enabled}
+                pending={toggle.isPending}
+                onToggle={(v) => toggle.mutate({ id: a.id, enabled: v })}
+                ariaLabel={t('web.providers.claudeAccounts.toggleAria', {
+                  name: a.name,
+                })}
+              />
+              <Button
+                variant="ghost"
+                size="icon"
+                className="size-7 text-muted-foreground hover:text-destructive"
+                onClick={() => {
+                  if (
+                    confirm(
+                      t('web.providers.claudeAccounts.removeConfirm', {
+                        name: a.name,
+                      }),
+                    )
+                  ) {
+                    remove.mutate(a.id)
+                  }
+                }}
+                disabled={remove.isPending}
+                aria-label={t('web.providers.claudeAccounts.removeAria', {
+                  name: a.name,
+                })}
+              >
+                <Trash2 className="size-3.5" />
+              </Button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+// ToggleButton is a hand-rolled enable/disable control replacing the
+// Radix Switch primitive on this panel. Earlier versions used Switch
+// but the click was somehow not reaching the primitive in production
+// (no onCheckedChange fired, no network call). A plain <button> with
+// explicit onClick sidesteps the issue and gives us full control over
+// pending and disabled visual states.
+function ToggleButton({
+  enabled,
+  pending,
+  onToggle,
+  ariaLabel,
+}: {
+  enabled: boolean
+  pending: boolean
+  onToggle: (next: boolean) => void
+  ariaLabel: string
+}) {
+  return (
+    <button
+      type="button"
+      role="switch"
+      aria-checked={enabled}
+      aria-label={ariaLabel}
+      disabled={pending}
+      onClick={(e) => {
+        e.preventDefault()
+        e.stopPropagation()
+        onToggle(!enabled)
+      }}
+      className={cn(
+        'inline-flex h-5 w-9 shrink-0 cursor-pointer items-center rounded-full border border-border transition-colors',
+        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
+        'disabled:cursor-wait disabled:opacity-60',
+        enabled ? 'bg-accent' : 'bg-muted',
+      )}
+    >
+      <span
+        className={cn(
+          'pointer-events-none block size-4 rounded-full bg-background shadow-sm transition-transform',
+          enabled ? 'translate-x-4' : 'translate-x-0.5',
+        )}
+      />
+    </button>
+  )
+}

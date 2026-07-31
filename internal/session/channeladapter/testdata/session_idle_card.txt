@@ -1,0 +1,5 @@
+*Session idle*
+Session ses-1 went idle (silent for 12s).
+
+last output
+[Resume] [End] [Mute]

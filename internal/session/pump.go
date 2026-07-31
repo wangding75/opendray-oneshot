@@ -1,0 +1,307 @@
+package session
+
+import (
+	"context"
+	"errors"
+	"io"
+	"os"
+	"os/exec"
+	"time"
+
+	"github.com/opendray/opendray-v2/internal/eventbus"
+)
+
+// idleTailLines bounds how much of the recent stdout we ship inside
+// the session.idle event when no JSONL transcript is available
+// (Codex / shell sessions). Generous on purpose — the
+// channel layer (notify_snippet_max_chars, Telegram chunking) is
+// the right place to clamp for any specific transport. Set high
+// enough that a marathon session's last interesting screenful
+// survives. The ring buffer is 1 MiB and most output averages
+// ~80 chars/line, so this cap rarely bites in practice.
+const idleTailLines = 1000
+
+// pumpStdout copies bytes from the PTY into the ring buffer + fanout
+// subscribers. Updates lastActivity so the idle watcher resets when
+// the CLI emits output. Exits when the PTY closes (process death =>
+// EOF) — at which point waitExit handles cleanup.
+func (m *Manager) pumpStdout(rs *runningSession) {
+	defer m.wg.Done()
+	buf := make([]byte, pumpBufSize)
+	for {
+		n, err := rs.pty.Read(buf)
+		if n > 0 {
+			chunk := make([]byte, n)
+			copy(chunk, buf[:n])
+			_, _ = rs.ring.Write(chunk)
+			if rs.vt != nil {
+				// Feed the virtual terminal so RecentScreen sees the
+				// post-ANSI state. Errors here are non-fatal — a
+				// malformed escape would just leave a glyph somewhere;
+				// the live xterm.js client still sees the raw bytes
+				// via fanout.
+				_, _ = rs.vt.Write(chunk)
+			}
+			rs.fanout(chunk)
+			now := time.Now()
+			if rs.markActive(now) {
+				m.flipBackToRunning(rs)
+			}
+			// Rate-limit auto-failover (Phase 2 Tier A) — gated by
+			// config + provider == "claude" + a resolver being wired.
+			// appendRateLimitWindow returns true at most once per
+			// rateLimitScanCooldown, so the regex below isn't run on
+			// every chunk.
+			if m.claudeAccounts != nil && m.autoFailoverEnabled {
+				if rs.appendRateLimitWindow(chunk, now) {
+					rs.sessMu.RLock()
+					isClaude := rs.sess.ProviderID == "claude"
+					rs.sessMu.RUnlock()
+					if isClaude {
+						m.tryRateLimitFailover(rs, now)
+					}
+				}
+			}
+		}
+		if err != nil {
+			if !errors.Is(err, io.EOF) {
+				m.log.Debug("pty read closed", "session", rs.sess.ID, "err", err)
+			}
+			return
+		}
+	}
+}
+
+// idleWatcher polls the session's lastActivity at idleInterval cadence
+// and fires session.idle once per active→idle window. Exits when the
+// session ends.
+func (m *Manager) idleWatcher(rs *runningSession) {
+	defer m.wg.Done()
+	ticker := time.NewTicker(m.idleInterval)
+	defer ticker.Stop()
+	for {
+		select {
+		case <-rs.endedCh:
+			return
+		case now := <-ticker.C:
+			if !rs.checkIdle(now, m.idleThreshold) {
+				continue
+			}
+			rs.sessMu.Lock()
+			terminal := rs.sess.State.IsTerminal()
+			if !terminal {
+				rs.sess.State = StateIdle
+			}
+			rs.sessMu.Unlock()
+			if terminal {
+				return
+			}
+			data := map[string]any{
+				"session_id":  rs.sess.ID,
+				"idle_for_ms": m.idleThreshold.Milliseconds(),
+				// origin lets the channel hub skip integration-driven
+				// sessions: third-party apps own their own delivery, so
+				// opendray must not mirror them to operator channels.
+				"origin": string(rs.sess.Origin),
+			}
+			if snippet := m.recentResponseSnippet(rs); snippet != "" {
+				data["recent_output"] = snippet
+			}
+			m.bus.Publish(eventbus.Event{
+				Topic: "session.idle",
+				Data:  data,
+			})
+		}
+	}
+}
+
+// recentResponseSnippet extracts the agent's most recent visible
+// output for a notification card. Source priority:
+//
+//  1. Claude JSONL transcript (claude provider)
+//  2. Virtual-terminal screen snapshot — what the user sees in the
+//     live web terminal right now
+//  3. Raw ring-buffer tail — defensive fallback
+//
+// We deliberately do NOT cap byte / line counts here. The channel
+// layer owns user-facing truncation (notify_snippet_max_chars +
+// per-platform chunking, e.g. Telegram's splitter); capping at the
+// source would silently defeat the operator's "Unlimited — split into
+// messages" option. Shared by the idle watcher and the turn watcher.
+func (m *Manager) recentResponseSnippet(rs *runningSession) string {
+	rs.sessMu.RLock()
+	provider := rs.sess.ProviderID
+	cwd := rs.sess.Cwd
+	rs.sessMu.RUnlock()
+
+	snippet := ""
+	if provider == "claude" && cwd != "" {
+		snippet = claudeRecentResponse(cwd)
+	}
+	if snippet == "" && rs.vt != nil {
+		// Screen snapshots still need chrome stripping. Claude's busy TUI
+		// gets the aggressive FilterClaudeChrome (model bar, permission
+		// hint, separator runs, spinners); a shell — and the codex /
+		// antigravity snapshot fallback — gets the light FilterShellChrome,
+		// which preserves short / symbol-only output the Claude filter
+		// would mistake for debris. JSONL output (handled above) is
+		// already clean.
+		snippet = stripScreenChrome(provider, ScreenSnapshot(rs.vt))
+	}
+	if snippet == "" {
+		snippet = stripScreenChrome(provider, CleanTerminalOutput(string(rs.ring.Snapshot()), idleTailLines))
+	}
+	return snippet
+}
+
+// turnWatcher polls an armed session and fires session.turn_completed
+// once when the agent's reply settles (see checkTurnComplete). Only
+// sessions armed via ExpectTurn produce events, so the bus stays quiet
+// during ordinary work; the watcher itself just ticks cheaply. Exits
+// when the session ends.
+func (m *Manager) turnWatcher(rs *runningSession) {
+	defer m.wg.Done()
+	ticker := time.NewTicker(m.turnInterval)
+	defer ticker.Stop()
+	for {
+		select {
+		case <-rs.endedCh:
+			return
+		case now := <-ticker.C:
+			if !rs.checkTurnComplete(now, m.turnThreshold) {
+				continue
+			}
+			rs.sessMu.RLock()
+			terminal := rs.sess.State.IsTerminal()
+			rs.sessMu.RUnlock()
+			if terminal {
+				return
+			}
+			data := map[string]any{"session_id": rs.sess.ID}
+			if snippet := m.recentResponseSnippet(rs); snippet != "" {
+				data["recent_output"] = snippet
+			}
+			m.bus.Publish(eventbus.Event{
+				Topic: "session.turn_completed",
+				Data:  data,
+			})
+		}
+	}
+}
+
+// flipBackToRunning is called when activity arrives during an idle
+// window. Idempotent.
+func (m *Manager) flipBackToRunning(rs *runningSession) {
+	rs.sessMu.Lock()
+	defer rs.sessMu.Unlock()
+	if rs.sess.State == StateIdle {
+		rs.sess.State = StateRunning
+	}
+}
+
+// waitExit blocks on cmd.Wait() and runs end-of-life cleanup exactly
+// once per session: persist exit_code, close PTY + subscribers, fire
+// session.ended.
+func (m *Manager) waitExit(rs *runningSession) {
+	defer m.wg.Done()
+	err := rs.cmd.Wait()
+	exitCode := 0
+	var exitErr *exec.ExitError
+	if errors.As(err, &exitErr) {
+		exitCode = exitErr.ExitCode()
+	} else if err != nil {
+		exitCode = -1
+	}
+
+	rs.endOnce.Do(func() {
+		// Classify the exit (see classifyExitState): a user stop wins,
+		// else a gateway shutdown is an interruption to auto-resume, else
+		// a normal end. The DB row persists in every case so the user can
+		// Restart. consumeStopRequest must run regardless to clear the flag.
+		state := classifyExitState(m.consumeStopRequest(rs.sess.ID), m.isClosing())
+
+		dbCtx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+		defer cancel()
+		// An interruption here is always the graceful path (the gateway is
+		// closing); a hard crash never runs waitExit and is instead flipped
+		// with cause gateway_crash by MarkRunningAsInterrupted at next boot.
+		var markErr error
+		if state == StateInterrupted {
+			markErr = m.store.MarkInterrupted(dbCtx, rs.sess.ID, exitCode, CauseGatewayShutdown)
+		} else {
+			markErr = m.store.MarkTerminal(dbCtx, rs.sess.ID, state, exitCode)
+		}
+		if markErr != nil {
+			m.log.Error("mark session terminal", "session", rs.sess.ID, "err", markErr)
+		}
+
+		now := time.Now().UTC()
+		ec := exitCode
+		rs.sessMu.Lock()
+		rs.sess.State = state
+		if state == StateInterrupted {
+			rs.sess.InterruptReason = CauseGatewayShutdown
+		}
+		rs.sess.EndedAt = &now
+		rs.sess.ExitCode = &ec
+		rs.sessMu.Unlock()
+
+		_ = rs.pty.Close()
+		rs.closeSubs()
+		if rs.tempDir != "" {
+			_ = os.RemoveAll(rs.tempDir)
+		}
+		close(rs.endedCh)
+
+		// Drop from the live map so a subsequent Start() can
+		// install a fresh runningSession under the same id.
+		m.mu.Lock()
+		if cur, ok := m.sessions[rs.sess.ID]; ok && cur == rs {
+			delete(m.sessions, rs.sess.ID)
+		}
+		m.mu.Unlock()
+
+		topic := "session.ended"
+		switch state {
+		case StateStopped:
+			topic = "session.stopped"
+		case StateInterrupted:
+			topic = "session.interrupted"
+		}
+		m.bus.Publish(eventbus.Event{
+			Topic: topic,
+			Data: map[string]any{
+				"session_id": rs.sess.ID,
+				"exit_code":  exitCode,
+				"ended_at":   now,
+				"state":      string(state),
+				// origin lets the channel hub skip integration-driven
+				// sessions (self-managed delivery — never mirrored).
+				"origin": string(rs.sess.Origin),
+			},
+		})
+	})
+}
+
+// fanout broadcasts a stdout chunk to all live subscribers. Slow
+// subscribers (full buffer) drop this chunk — same backpressure policy
+// as eventbus.Hub.
+func (rs *runningSession) fanout(p []byte) {
+	rs.subsMu.Lock()
+	defer rs.subsMu.Unlock()
+	for ch := range rs.subs {
+		select {
+		case ch <- p:
+		default:
+		}
+	}
+}
+
+func (rs *runningSession) closeSubs() {
+	rs.subsMu.Lock()
+	defer rs.subsMu.Unlock()
+	for ch := range rs.subs {
+		close(ch)
+		delete(rs.subs, ch)
+	}
+}

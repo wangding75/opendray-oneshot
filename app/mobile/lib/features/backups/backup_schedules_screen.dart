@@ -1,0 +1,621 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:intl/intl.dart';
+
+import 'package:opendray/core/api/api_exception.dart';
+import 'package:opendray/core/api/backups_api.dart';
+import 'package:opendray/core/i18n/strings.g.dart';
+
+// Backup schedules — recurring spec (target + interval + retention +
+// enabled). Mobile-friendly because the shape is plain seconds, not
+// cron, so a few preset chips cover the realistic operator
+// configurations without typing arcane syntax on a phone keyboard.
+class BackupSchedulesScreen extends ConsumerStatefulWidget {
+  const BackupSchedulesScreen({super.key});
+
+  @override
+  ConsumerState<BackupSchedulesScreen> createState() =>
+      _BackupSchedulesScreenState();
+}
+
+class _BackupSchedulesScreenState
+    extends ConsumerState<BackupSchedulesScreen> {
+  AsyncValue<_Data> _state = const AsyncValue.loading();
+  final Set<String> _busy = {};
+
+  @override
+  void initState() {
+    super.initState();
+    _load();
+  }
+
+  Future<void> _load() async {
+    setState(() => _state = const AsyncValue.loading());
+    try {
+      final api = ref.read(backupsApiProvider);
+      final results = await Future.wait([api.listSchedules(), api.listTargets()]);
+      if (!mounted) return;
+      final schedules = results[0] as List<BackupSchedule>;
+      final targets = results[1] as List<BackupTarget>;
+      schedules.sort((a, b) => a.nextRunAt.compareTo(b.nextRunAt));
+      setState(() => _state = AsyncValue.data(
+            _Data(schedules: schedules, targets: targets),
+          ));
+    } on ApiException catch (e) {
+      if (mounted) {
+        setState(() => _state = AsyncValue.error(e, StackTrace.current));
+      }
+    } on Object catch (e, st) {
+      if (mounted) setState(() => _state = AsyncValue.error(e, st));
+    }
+  }
+
+  Future<void> _runOp({
+    required String key,
+    required String okMsg,
+    required String failPrefix,
+    required Future<void> Function() op,
+  }) async {
+    setState(() => _busy.add(key));
+    final messenger = ScaffoldMessenger.of(context);
+    try {
+      await op();
+      if (!mounted) return;
+      messenger.showSnackBar(
+        SnackBar(
+          content: Text(okMsg),
+          duration: const Duration(seconds: 2),
+          behavior: SnackBarBehavior.floating,
+        ),
+      );
+      await _load();
+    } on ApiException catch (e) {
+      if (!mounted) return;
+      messenger.showSnackBar(SnackBar(
+        content: Text(t.backupSchedules
+            .errorWithMessage(prefix: failPrefix, error: e.message)),
+      ));
+    } on Object catch (e) {
+      if (!mounted) return;
+      messenger.showSnackBar(SnackBar(
+        content: Text(t.backupSchedules
+            .errorWithMessage(prefix: failPrefix, error: e.toString())),
+      ));
+    } finally {
+      if (mounted) setState(() => _busy.remove(key));
+    }
+  }
+
+  Future<void> _onCreate(List<BackupTarget> targets) async {
+    if (targets.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(t.backupSchedules.noTargets),
+        ),
+      );
+      return;
+    }
+    final form = await Navigator.of(context).push<_ScheduleFormResult>(
+      MaterialPageRoute<_ScheduleFormResult>(
+        builder: (_) => _ScheduleFormScreen(targets: targets),
+        fullscreenDialog: true,
+      ),
+    );
+    if (form == null || !mounted) return;
+    await _runOp(
+      key: 'new',
+      okMsg: t.backupSchedules.okMsgCreate,
+      failPrefix: t.backupSchedules.errorPrefixCreate,
+      op: () => ref
+          .read(backupsApiProvider)
+          .createSchedule(
+            targetIds: form.targetIds,
+            intervalSec: form.intervalSec,
+            retention: form.retention,
+            enabled: form.enabled,
+          )
+          .then((_) {}),
+    );
+  }
+
+  Future<void> _onEdit(BackupSchedule sc, List<BackupTarget> targets) async {
+    final form = await Navigator.of(context).push<_ScheduleFormResult>(
+      MaterialPageRoute<_ScheduleFormResult>(
+        builder: (_) => _ScheduleFormScreen(
+          targets: targets,
+          initial: sc,
+        ),
+        fullscreenDialog: true,
+      ),
+    );
+    if (form == null || !mounted) return;
+    await _runOp(
+      key: 's:${sc.id}',
+      okMsg: t.backupSchedules.okMsgUpdate,
+      failPrefix: t.backupSchedules.errorPrefixUpdate,
+      op: () => ref
+          .read(backupsApiProvider)
+          .updateSchedule(
+            sc.id,
+            intervalSec:
+                form.intervalSec != sc.intervalSec ? form.intervalSec : null,
+            retention: form.retention != sc.retention ? form.retention : null,
+            enabled: form.enabled != sc.enabled ? form.enabled : null,
+          )
+          .then((_) {}),
+    );
+  }
+
+  Future<void> _onDelete(BackupSchedule sc) async {
+    final ok = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: Text(t.backupSchedules.deleteTitle),
+        content: Text(
+          t.backupSchedules.deleteBody(targetId: sc.targetId),
+          style: Theme.of(ctx).textTheme.bodySmall,
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(ctx).pop(false),
+            child: Text(t.common.cancel),
+          ),
+          FilledButton(
+            style: FilledButton.styleFrom(
+              backgroundColor: Theme.of(ctx).colorScheme.error,
+            ),
+            onPressed: () => Navigator.of(ctx).pop(true),
+            child: Text(t.common.delete),
+          ),
+        ],
+      ),
+    );
+    if (ok != true || !mounted) return;
+    await _runOp(
+      key: 's:${sc.id}',
+      okMsg: t.backupSchedules.okMsgDelete,
+      failPrefix: t.backupSchedules.errorPrefixDelete,
+      op: () => ref.read(backupsApiProvider).deleteSchedule(sc.id),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(t.backupSchedules.title),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.refresh),
+            tooltip: t.common.refresh,
+            onPressed: _state is AsyncLoading ? null : _load,
+          ),
+        ],
+      ),
+      body: _state.when(
+        data: _buildList,
+        loading: () => const Center(child: CircularProgressIndicator()),
+        error: (e, _) => _ErrorView(error: e.toString(), onRetry: _load),
+      ),
+      floatingActionButton: _state.maybeWhen(
+        data: (d) => FloatingActionButton.extended(
+          heroTag: 'backup_schedules_fab',
+          onPressed: () => _onCreate(d.targets),
+          icon: const Icon(Icons.add),
+          label: Text(t.backupSchedules.newButton),
+        ),
+        orElse: () => null,
+      ),
+    );
+  }
+
+  Widget _buildList(_Data d) {
+    if (d.schedules.isEmpty) {
+      return Center(
+        child: Padding(
+          padding: const EdgeInsets.all(24),
+          child: Text(
+            t.backupSchedules.emptyList,
+            textAlign: TextAlign.center,
+            style: Theme.of(context).textTheme.bodyMedium,
+          ),
+        ),
+      );
+    }
+    return RefreshIndicator(
+      onRefresh: _load,
+      child: ListView.separated(
+        itemCount: d.schedules.length,
+        separatorBuilder: (_, __) => Divider(
+          height: 1,
+          color: Theme.of(context).dividerColor,
+        ),
+        itemBuilder: (_, i) {
+          final sc = d.schedules[i];
+          return _ScheduleTile(
+            schedule: sc,
+            busy: _busy.contains('s:${sc.id}'),
+            onEdit: () => _onEdit(sc, d.targets),
+            onDelete: () => _onDelete(sc),
+          );
+        },
+      ),
+    );
+  }
+}
+
+class _Data {
+  _Data({required this.schedules, required this.targets});
+  final List<BackupSchedule> schedules;
+  final List<BackupTarget> targets;
+}
+
+class _ScheduleTile extends StatelessWidget {
+  const _ScheduleTile({
+    required this.schedule,
+    required this.busy,
+    required this.onEdit,
+    required this.onDelete,
+  });
+
+  final BackupSchedule schedule;
+  final bool busy;
+  final VoidCallback onEdit;
+  final VoidCallback onDelete;
+
+  @override
+  Widget build(BuildContext context) {
+    final muted = Theme.of(context).textTheme.bodySmall;
+    return ListTile(
+      onTap: busy ? null : onEdit,
+      leading: Icon(
+        schedule.enabled
+            ? Icons.schedule_outlined
+            : Icons.schedule_outlined,
+        color: schedule.enabled
+            ? Theme.of(context).colorScheme.primary
+            : Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.4),
+      ),
+      title: Row(
+        children: [
+          Expanded(
+            child: Text(
+              schedule.targetIds.isNotEmpty
+                  ? schedule.targetIds.join(', ')
+                  : schedule.targetId,
+              style: const TextStyle(
+                fontFamily: 'monospace',
+                fontWeight: FontWeight.w600,
+              ),
+              overflow: TextOverflow.ellipsis,
+            ),
+          ),
+          const SizedBox(width: 8),
+          if (!schedule.enabled)
+            _Badge(
+              label: t.backupSchedules.pausedBadge,
+              color: Theme.of(context).colorScheme.error,
+            ),
+        ],
+      ),
+      subtitle: DefaultTextStyle.merge(
+        style: muted ?? const TextStyle(),
+        child: Wrap(
+          spacing: 6,
+          runSpacing: 2,
+          children: [
+            Text(
+              t.backupSchedules.everyInterval(
+                interval: _formatInterval(schedule.intervalSec),
+              ),
+            ),
+            Text(t.backupSchedules.keepRetention(n: schedule.retention.toString())),
+            Text(
+              t.backupSchedules.nextRun(
+                when: _relTime(schedule.nextRunAt, future: true),
+              ),
+            ),
+            if (schedule.lastRunAt != null)
+              Text(
+                t.backupSchedules.lastRun(when: _relTime(schedule.lastRunAt!)),
+              ),
+          ],
+        ),
+      ),
+      trailing: busy
+          ? const SizedBox(
+              width: 18,
+              height: 18,
+              child: CircularProgressIndicator(strokeWidth: 2),
+            )
+          : IconButton(
+              icon: Icon(
+                Icons.delete_outline,
+                color: Theme.of(context).colorScheme.error,
+              ),
+              tooltip: t.common.delete,
+              onPressed: onDelete,
+            ),
+    );
+  }
+}
+
+class _Badge extends StatelessWidget {
+  const _Badge({required this.label, required this.color});
+  final String label;
+  final Color color;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+      decoration: BoxDecoration(
+        color: color.withValues(alpha: 0.15),
+        borderRadius: BorderRadius.circular(4),
+        border: Border.all(color: color.withValues(alpha: 0.6), width: 0.5),
+      ),
+      child: Text(
+        label,
+        style: TextStyle(color: color, fontSize: 10),
+      ),
+    );
+  }
+}
+
+class _ScheduleFormResult {
+  _ScheduleFormResult({
+    required this.targetIds,
+    required this.intervalSec,
+    required this.retention,
+    required this.enabled,
+  });
+  // Fan-out destination set (3-2-1). First element is the primary target.
+  final List<String> targetIds;
+  final int intervalSec;
+  final int retention;
+  final bool enabled;
+}
+
+class _ScheduleFormScreen extends StatefulWidget {
+  const _ScheduleFormScreen({required this.targets, this.initial});
+  final List<BackupTarget> targets;
+  final BackupSchedule? initial;
+
+  @override
+  State<_ScheduleFormScreen> createState() => _ScheduleFormScreenState();
+}
+
+class _ScheduleFormScreenState extends State<_ScheduleFormScreen> {
+  static const _intervals = [
+    (3600, '1 hour'),
+    (6 * 3600, '6 hours'),
+    (12 * 3600, '12 hours'),
+    (86400, '1 day'),
+    (3 * 86400, '3 days'),
+    (7 * 86400, '1 week'),
+  ];
+  static const _retentions = [3, 7, 14, 30];
+
+  late List<String> _targetIds;
+  late int _intervalSec;
+  late int _retention;
+  late bool _enabled;
+  String? _error;
+
+  @override
+  void initState() {
+    super.initState();
+    final init = widget.initial;
+    _targetIds = init != null
+        ? List<String>.from(init.targetIds)
+        : (widget.targets.isNotEmpty ? [widget.targets.first.id] : <String>[]);
+    _intervalSec = init?.intervalSec ?? 86400;
+    _retention = init?.retention ?? 7;
+    _enabled = init?.enabled ?? true;
+  }
+
+  void _toggleTarget(String id) {
+    setState(() {
+      if (_targetIds.contains(id)) {
+        _targetIds = _targetIds.where((x) => x != id).toList();
+      } else {
+        _targetIds = [..._targetIds, id];
+      }
+    });
+  }
+
+  void _submit() {
+    if (_targetIds.isEmpty) {
+      setState(() => _error = t.backupSchedules.validatePickTarget);
+      return;
+    }
+    if (_intervalSec <= 0) {
+      setState(() => _error = t.backupSchedules.validateInterval);
+      return;
+    }
+    Navigator.of(context).pop(_ScheduleFormResult(
+      targetIds: _targetIds,
+      intervalSec: _intervalSec,
+      retention: _retention,
+      enabled: _enabled,
+    ));
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final isEdit = widget.initial != null;
+    final muted = Theme.of(context).textTheme.bodySmall;
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(isEdit
+            ? t.backupSchedules.formTitleEdit
+            : t.backupSchedules.formTitleNew),
+        actions: [
+          TextButton(
+            onPressed: _submit,
+            child: Text(isEdit
+                ? t.backupSchedules.saveButtonEdit
+                : t.backupSchedules.saveButtonNew),
+          ),
+        ],
+      ),
+      body: ListView(
+        padding: const EdgeInsets.fromLTRB(16, 12, 16, 24),
+        children: [
+          Text(t.backupSchedules.targetLabel, style: muted),
+          const SizedBox(height: 2),
+          Text(t.backupSchedules.targetsHint, style: muted),
+          const SizedBox(height: 6),
+          DecoratedBox(
+            decoration: BoxDecoration(
+              border: Border.all(color: Theme.of(context).dividerColor),
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: Column(
+              children: [
+                for (final tgt in widget.targets)
+                  CheckboxListTile(
+                    dense: true,
+                    contentPadding: const EdgeInsets.symmetric(horizontal: 12),
+                    value: _targetIds.contains(tgt.id),
+                    // Target set is fixed once a schedule exists (mobile
+                    // edits interval/retention/enabled only).
+                    onChanged: isEdit ? null : (_) => _toggleTarget(tgt.id),
+                    title: Text('${tgt.id} (${tgt.kind})'),
+                  ),
+              ],
+            ),
+          ),
+          if (isEdit)
+            Padding(
+              padding: const EdgeInsets.only(top: 6),
+              child: Text(
+                t.backupSchedules.targetFixedHint,
+                style: muted,
+              ),
+            ),
+          const SizedBox(height: 24),
+          Text(t.backupSchedules.intervalLabel, style: muted),
+          const SizedBox(height: 6),
+          Wrap(
+            spacing: 6,
+            runSpacing: 4,
+            children: [
+              for (final (sec, label) in _intervals)
+                ChoiceChip(
+                  label: Text(label),
+                  selected: _intervalSec == sec,
+                  onSelected: (_) => setState(() => _intervalSec = sec),
+                ),
+            ],
+          ),
+          const SizedBox(height: 24),
+          Text(t.backupSchedules.retentionLabel, style: muted),
+          const SizedBox(height: 6),
+          Wrap(
+            spacing: 6,
+            runSpacing: 4,
+            children: [
+              for (final n in _retentions)
+                ChoiceChip(
+                  label: Text('$n'),
+                  selected: _retention == n,
+                  onSelected: (_) => setState(() => _retention = n),
+                ),
+            ],
+          ),
+          const SizedBox(height: 24),
+          SwitchListTile(
+            contentPadding: EdgeInsets.zero,
+            title: Text(t.common.enabled),
+            subtitle: Text(
+              _enabled
+                  ? t.backupSchedules.enabledOn
+                  : t.backupSchedules.enabledOff,
+              style: muted,
+            ),
+            value: _enabled,
+            onChanged: (v) => setState(() => _enabled = v),
+          ),
+          if (_error != null)
+            Padding(
+              padding: const EdgeInsets.only(top: 12),
+              child: Text(
+                _error!,
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.error,
+                  fontSize: 12,
+                ),
+              ),
+            ),
+        ],
+      ),
+    );
+  }
+}
+
+class _ErrorView extends StatelessWidget {
+  const _ErrorView({required this.error, required this.onRetry});
+  final String error;
+  final VoidCallback onRetry;
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.all(24),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(
+              Icons.error_outline,
+              size: 48,
+              color: Theme.of(context).colorScheme.error,
+            ),
+            const SizedBox(height: 12),
+            Text(
+              t.backupSchedules.loadFailedTitle,
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
+            const SizedBox(height: 6),
+            Text(
+              error,
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.bodySmall,
+            ),
+            const SizedBox(height: 16),
+            FilledButton(onPressed: onRetry, child: Text(t.common.retry)),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+String _formatInterval(int sec) {
+  if (sec < 60) return '${sec}s';
+  if (sec < 3600) return '${(sec / 60).toStringAsFixed(0)}m';
+  if (sec < 86400) return '${(sec / 3600).toStringAsFixed(0)}h';
+  return '${(sec / 86400).toStringAsFixed(0)}d';
+}
+
+String _relTime(DateTime ts, {bool future = false}) {
+  final diff = future
+      ? ts.toUtc().difference(DateTime.now().toUtc())
+      : DateTime.now().toUtc().difference(ts.toUtc());
+  if (diff.inSeconds.abs() < 60) {
+    return future ? 'in ${diff.inSeconds.abs()}s' : '${diff.inSeconds}s ago';
+  }
+  if (diff.inMinutes.abs() < 60) {
+    return future
+        ? 'in ${diff.inMinutes.abs()}m'
+        : '${diff.inMinutes}m ago';
+  }
+  if (diff.inHours.abs() < 24) {
+    return future ? 'in ${diff.inHours.abs()}h' : '${diff.inHours}h ago';
+  }
+  if (diff.inDays.abs() < 7) {
+    return future ? 'in ${diff.inDays.abs()}d' : '${diff.inDays}d ago';
+  }
+  return DateFormat.yMMMd().format(ts.toLocal());
+}

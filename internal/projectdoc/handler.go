@@ -1,0 +1,480 @@
+package projectdoc
+
+import (
+	"encoding/json"
+	"errors"
+	"log/slog"
+	"net/http"
+	"strconv"
+	"strings"
+	"time"
+
+	"github.com/go-chi/chi/v5"
+)
+
+// Handlers exposes project goal / plan / journal over HTTP. Mounted
+// under the dual-auth group (admin OR integration token) so the
+// auto-attached opendray-memory MCP subprocess can call these
+// endpoints with its integration bearer alongside web/mobile
+// operators.
+//
+// Routes (all under the gateway's /api/v1 prefix):
+//
+//	GET    /project-docs?cwd=…              → {docs: [Doc,…]}
+//	GET    /project-docs/{kind}?cwd=…       → Doc | 404
+//	PUT    /project-docs/{kind}             → Doc            body: {cwd, content, updated_by?}
+//	POST   /project-doc-proposals           → Proposal       body: {cwd, kind, proposed_content, reason, session_id?}
+//	GET    /project-doc-proposals/pending   → {proposals}    ?cwd=… (omit for all)
+//	POST   /project-doc-proposals/{id}/approve → Doc
+//	POST   /project-doc-proposals/{id}/reject  → 204
+//	GET    /session-logs?cwd=…&n=…          → {logs: [LogEntry,…]}
+//	POST   /session-logs                    → LogEntry       body: {cwd, kind?, session_id?, title?, content, updated_by?}
+//	DELETE /session-logs/{id}               → 204
+type Handlers struct {
+	svc *Service
+	log *slog.Logger
+}
+
+// NewHandlers wires HTTP routes against svc. svc must be non-nil —
+// unlike memory the projectdoc subsystem has no "disabled" mode; the
+// tables ship with every install via migration 0025.
+func NewHandlers(svc *Service, log *slog.Logger) *Handlers {
+	if log == nil {
+		log = slog.Default()
+	}
+	return &Handlers{svc: svc, log: log.With("component", "projectdoc.http")}
+}
+
+// Mount registers routes on r. r should already have auth middleware
+// applied (typically the dual-auth admin+integration group).
+func (h *Handlers) Mount(r chi.Router) {
+	r.Route("/project-docs", func(r chi.Router) {
+		r.Get("/", h.listDocs)
+		// Static segments must register before the {kind} wildcard so
+		// /projects + /lifecycle + /blueprint aren't swallowed as a
+		// doc kind.
+		r.Get("/projects", h.listProjects)
+		r.Post("/lifecycle", h.setLifecycle)
+		r.Post("/reset", h.resetCwd)
+		// Blueprint (Cortex Phase 3) — the per-project section set.
+		r.Get("/blueprint", h.listSections)
+		r.Put("/blueprint/{slug}", h.putSection)
+		r.Delete("/blueprint/{slug}", h.deleteSection)
+		r.Get("/{kind}", h.getDoc)
+		r.Put("/{kind}", h.putDoc)
+		// Agent-side policy-routed write: direct-write for direct sections
+		// (when unlocked), proposal otherwise. See Service.SetDocByPolicy.
+		r.Post("/{kind}/set", h.setDoc)
+	})
+	r.Route("/project-doc-proposals", func(r chi.Router) {
+		r.Get("/pending", h.listPending)
+		r.Post("/", h.propose)
+		r.Post("/{id}/approve", h.approve)
+		r.Post("/{id}/reject", h.reject)
+	})
+	r.Route("/session-logs", func(r chi.Router) {
+		r.Get("/", h.listLogs)
+		r.Get("/stale", h.listStale)
+		r.Post("/", h.appendLog)
+		r.Delete("/{id}", h.deleteLog)
+	})
+}
+
+// listStale returns journal entries older than `days` (default 90)
+// that aren't referenced by any pending conflict. Operators use
+// this list to bulk-delete accumulated noise from the cleanup UI.
+func (h *Handlers) listStale(w http.ResponseWriter, r *http.Request) {
+	cwd := r.URL.Query().Get("cwd")
+	if cwd == "" {
+		writeError(w, http.StatusBadRequest, errors.New("cwd is required"))
+		return
+	}
+	days := 90
+	if v := r.URL.Query().Get("days"); v != "" {
+		if n, err := strconv.Atoi(v); err == nil && n > 0 {
+			days = n
+		}
+	}
+	out, err := h.svc.StaleJournalEntries(r.Context(), cwd,
+		time.Duration(days)*24*time.Hour)
+	if err != nil {
+		writeError(w, http.StatusInternalServerError, err)
+		return
+	}
+	if out == nil {
+		out = []LogEntry{}
+	}
+	writeJSON(w, http.StatusOK, map[string]any{"stale": out})
+}
+
+// ─── blueprint (Cortex Phase 3) ────────────────────────────────────
+
+func (h *Handlers) listSections(w http.ResponseWriter, r *http.Request) {
+	cwd := r.URL.Query().Get("cwd")
+	sections, err := h.svc.ListSections(r.Context(), cwd)
+	if err != nil {
+		h.respondErr(w, err)
+		return
+	}
+	if sections == nil {
+		sections = []Section{}
+	}
+	writeJSON(w, http.StatusOK, map[string]any{"sections": sections})
+}
+
+func (h *Handlers) putSection(w http.ResponseWriter, r *http.Request) {
+	var body Section
+	if err := json.NewDecoder(r.Body).Decode(&body); err != nil {
+		writeError(w, http.StatusBadRequest, err)
+		return
+	}
+	body.Slug = chi.URLParam(r, "slug")
+	sec, err := h.svc.PutSection(r.Context(), body)
+	if err != nil {
+		h.respondErr(w, err)
+		return
+	}
+	writeJSON(w, http.StatusOK, sec)
+}
+
+func (h *Handlers) deleteSection(w http.ResponseWriter, r *http.Request) {
+	cwd := r.URL.Query().Get("cwd")
+	slug := chi.URLParam(r, "slug")
+	if err := h.svc.DeleteSection(r.Context(), cwd, slug); err != nil {
+		if errors.Is(err, ErrReservedSection) {
+			writeError(w, http.StatusForbidden, err)
+			return
+		}
+		h.respondErr(w, err)
+		return
+	}
+	w.WriteHeader(http.StatusNoContent)
+}
+
+// ─── project_docs ─────────────────────────────────────────────────
+
+func (h *Handlers) listDocs(w http.ResponseWriter, r *http.Request) {
+	cwd := r.URL.Query().Get("cwd")
+	docs, err := h.svc.ListDocsForCwd(r.Context(), cwd)
+	if err != nil {
+		h.respondErr(w, err)
+		return
+	}
+	if docs == nil {
+		docs = []Doc{}
+	}
+	writeJSON(w, http.StatusOK, map[string]any{"docs": docs})
+}
+
+func (h *Handlers) getDoc(w http.ResponseWriter, r *http.Request) {
+	kind := Kind(chi.URLParam(r, "kind"))
+	cwd := r.URL.Query().Get("cwd")
+	// Optional ?section= pulls one heading-section instead of the whole
+	// page — the on-demand path for large docs (e.g. kb_integrations).
+	section := r.URL.Query().Get("section")
+	var (
+		doc Doc
+		err error
+	)
+	if strings.TrimSpace(section) != "" {
+		doc, err = h.svc.GetDocSection(r.Context(), cwd, kind, section)
+	} else {
+		doc, err = h.svc.GetDoc(r.Context(), cwd, kind)
+	}
+	if errors.Is(err, ErrNotFound) {
+		// Treat absence as an empty doc so the UI doesn't need a
+		// separate "is there a doc?" probe. id stays blank so callers
+		// can tell synthesised-empty from a stored row.
+		writeJSON(w, http.StatusOK, Doc{Cwd: cwd, Kind: kind, UpdatedBy: AuthorOperator})
+		return
+	}
+	if err != nil {
+		h.respondErr(w, err)
+		return
+	}
+	writeJSON(w, http.StatusOK, doc)
+}
+
+// putDoc is the operator-side direct write. Agent writes go through
+// the propose / approve path; this handler defaults updated_by to
+// 'operator' but accepts 'agent' too so admin-side scripted imports
+// can still tag rows correctly.
+func (h *Handlers) putDoc(w http.ResponseWriter, r *http.Request) {
+	kind := Kind(chi.URLParam(r, "kind"))
+	var body struct {
+		Cwd       string `json:"cwd"`
+		Content   string `json:"content"`
+		UpdatedBy Author `json:"updated_by,omitempty"`
+	}
+	if err := json.NewDecoder(r.Body).Decode(&body); err != nil {
+		writeError(w, http.StatusBadRequest, err)
+		return
+	}
+	author := body.UpdatedBy
+	if author == "" {
+		author = AuthorOperator
+	}
+	doc, err := h.svc.PutDoc(r.Context(), body.Cwd, kind, body.Content, author)
+	if err != nil {
+		h.respondErr(w, err)
+		return
+	}
+	writeJSON(w, http.StatusOK, doc)
+}
+
+// setDoc is the agent-facing write that respects the section's blueprint
+// write_policy: a "direct" section (e.g. current_objective) writes the
+// live doc directly when it is unlocked; "proposal" sections (goal/plan)
+// — or any section a human has hand-edited — file a proposal instead.
+// The response carries the action taken so the caller can tell the agent
+// whether the doc updated live or is waiting for approval.
+func (h *Handlers) setDoc(w http.ResponseWriter, r *http.Request) {
+	kind := Kind(chi.URLParam(r, "kind"))
+	var body struct {
+		Cwd       string `json:"cwd"`
+		Content   string `json:"content"`
+		Reason    string `json:"reason,omitempty"`
+		SessionID string `json:"session_id,omitempty"`
+	}
+	if err := json.NewDecoder(r.Body).Decode(&body); err != nil {
+		writeError(w, http.StatusBadRequest, err)
+		return
+	}
+	out, err := h.svc.SetDocByPolicy(r.Context(), body.Cwd, kind, body.Content, body.Reason, body.SessionID)
+	if err != nil {
+		h.respondErr(w, err)
+		return
+	}
+	writeJSON(w, http.StatusOK, out)
+}
+
+// resetCwd wipes per-cwd project memory state — goal/plan
+// (optionally scanner-managed docs too), proposals queue, journal,
+// and the M13 cleanup decisions for this cwd. Memories (pgvector
+// facts) are NOT touched here; the UI calls
+// POST /memory/delete-by-scope separately when the operator opts
+// in. Two-step on purpose: memories live in a different subsystem
+// with its own dispatch/disabled-mode rules.
+//
+// Body:
+//
+//	{
+//	  "cwd": "/path/to/project",            (required)
+//	  "include_scanner_docs": false,        (default false — they auto-rebuild on next spawn)
+//	  "include_cleanup_decisions": true     (default true — closely tied to this cwd)
+//	}
+//
+// Returns ResetCounts so the UI can show "deleted X docs, Y journal
+// entries, …" in the toast.
+func (h *Handlers) resetCwd(w http.ResponseWriter, r *http.Request) {
+	var body struct {
+		Cwd                     string `json:"cwd"`
+		IncludeScannerDocs      bool   `json:"include_scanner_docs"`
+		IncludeCleanupDecisions *bool  `json:"include_cleanup_decisions,omitempty"`
+	}
+	if err := json.NewDecoder(r.Body).Decode(&body); err != nil {
+		writeError(w, http.StatusBadRequest, err)
+		return
+	}
+	if body.Cwd == "" {
+		writeError(w, http.StatusBadRequest, errors.New("cwd required"))
+		return
+	}
+	includeCleanup := true
+	if body.IncludeCleanupDecisions != nil {
+		includeCleanup = *body.IncludeCleanupDecisions
+	}
+	counts, err := h.svc.ResetCwd(r.Context(), body.Cwd, ResetCwdOptions{
+		IncludeScannerDocs:      body.IncludeScannerDocs,
+		IncludeCleanupDecisions: includeCleanup,
+	})
+	if err != nil {
+		h.respondErr(w, err)
+		return
+	}
+	writeJSON(w, http.StatusOK, counts)
+}
+
+// ─── lifecycle (P-D) ──────────────────────────────────────────────
+
+// defaultIdleSuggestDays is the staleness threshold for the
+// "consider archiving" hint. 45 days ≈ a project untouched for a month
+// and a half — long enough to avoid nagging on active work, short
+// enough to surface genuinely dormant projects.
+const defaultIdleSuggestDays = 45
+
+// listProjects returns every known project (cwd) with its lifecycle
+// status + last activity, for the operator's project list. The
+// ?idle_days= query overrides the auto-suggest threshold (0 disables).
+func (h *Handlers) listProjects(w http.ResponseWriter, r *http.Request) {
+	idleDays := defaultIdleSuggestDays
+	if v := r.URL.Query().Get("idle_days"); v != "" {
+		if n, err := strconv.Atoi(v); err == nil && n >= 0 {
+			idleDays = n
+		}
+	}
+	projects, err := h.svc.ListProjects(r.Context(), idleDays)
+	if err != nil {
+		h.respondErr(w, err)
+		return
+	}
+	if projects == nil {
+		projects = []ProjectSummary{}
+	}
+	writeJSON(w, http.StatusOK, map[string]any{"projects": projects})
+}
+
+// setLifecycle sets a project's status (active/paused/archived).
+// Body: {cwd, status}. updated_by defaults to operator.
+func (h *Handlers) setLifecycle(w http.ResponseWriter, r *http.Request) {
+	var body struct {
+		Cwd       string        `json:"cwd"`
+		Status    ProjectStatus `json:"status"`
+		UpdatedBy Author        `json:"updated_by,omitempty"`
+	}
+	if err := json.NewDecoder(r.Body).Decode(&body); err != nil {
+		writeError(w, http.StatusBadRequest, err)
+		return
+	}
+	author := body.UpdatedBy
+	if author == "" {
+		author = AuthorOperator
+	}
+	if err := h.svc.SetStatus(r.Context(), body.Cwd, body.Status, author); err != nil {
+		h.respondErr(w, err)
+		return
+	}
+	writeJSON(w, http.StatusOK, map[string]any{"cwd": body.Cwd, "status": body.Status})
+}
+
+// ─── proposals ────────────────────────────────────────────────────
+
+func (h *Handlers) propose(w http.ResponseWriter, r *http.Request) {
+	var body struct {
+		Cwd             string `json:"cwd"`
+		Kind            Kind   `json:"kind"`
+		ProposedContent string `json:"proposed_content"`
+		Reason          string `json:"reason"`
+		SessionID       string `json:"session_id,omitempty"`
+	}
+	if err := json.NewDecoder(r.Body).Decode(&body); err != nil {
+		writeError(w, http.StatusBadRequest, err)
+		return
+	}
+	p, err := h.svc.ProposeDoc(r.Context(), body.Cwd, body.Kind, body.ProposedContent, body.Reason, body.SessionID)
+	if err != nil {
+		h.respondErr(w, err)
+		return
+	}
+	writeJSON(w, http.StatusCreated, p)
+}
+
+func (h *Handlers) listPending(w http.ResponseWriter, r *http.Request) {
+	cwd := r.URL.Query().Get("cwd") // empty = global inbox
+	props, err := h.svc.ListPendingProposals(r.Context(), cwd)
+	if err != nil {
+		h.respondErr(w, err)
+		return
+	}
+	if props == nil {
+		props = []Proposal{}
+	}
+	writeJSON(w, http.StatusOK, map[string]any{"proposals": props})
+}
+
+func (h *Handlers) approve(w http.ResponseWriter, r *http.Request) {
+	id := chi.URLParam(r, "id")
+	doc, err := h.svc.ApproveProposal(r.Context(), id)
+	if err != nil {
+		h.respondErr(w, err)
+		return
+	}
+	writeJSON(w, http.StatusOK, doc)
+}
+
+func (h *Handlers) reject(w http.ResponseWriter, r *http.Request) {
+	id := chi.URLParam(r, "id")
+	if err := h.svc.RejectProposal(r.Context(), id); err != nil {
+		h.respondErr(w, err)
+		return
+	}
+	w.WriteHeader(http.StatusNoContent)
+}
+
+// ─── session_logs ─────────────────────────────────────────────────
+
+func (h *Handlers) listLogs(w http.ResponseWriter, r *http.Request) {
+	cwd := r.URL.Query().Get("cwd")
+	limit := 50
+	if v := r.URL.Query().Get("n"); v != "" {
+		if x, err := strconv.Atoi(v); err == nil && x > 0 {
+			limit = x
+		}
+	}
+	logs, err := h.svc.ListLogs(r.Context(), cwd, limit)
+	if err != nil {
+		h.respondErr(w, err)
+		return
+	}
+	if logs == nil {
+		logs = []LogEntry{}
+	}
+	writeJSON(w, http.StatusOK, map[string]any{"logs": logs})
+}
+
+func (h *Handlers) appendLog(w http.ResponseWriter, r *http.Request) {
+	var body LogEntry
+	if err := json.NewDecoder(r.Body).Decode(&body); err != nil {
+		writeError(w, http.StatusBadRequest, err)
+		return
+	}
+	entry, err := h.svc.AppendLog(r.Context(), body)
+	if err != nil {
+		h.respondErr(w, err)
+		return
+	}
+	writeJSON(w, http.StatusCreated, entry)
+}
+
+func (h *Handlers) deleteLog(w http.ResponseWriter, r *http.Request) {
+	id := chi.URLParam(r, "id")
+	if err := h.svc.DeleteLog(r.Context(), id); err != nil {
+		h.respondErr(w, err)
+		return
+	}
+	w.WriteHeader(http.StatusNoContent)
+}
+
+// respondErr maps Service sentinel errors to HTTP codes. Anything
+// outside the known set becomes a 500 with the message preserved
+// (callers are admins / agents on a private network).
+func (h *Handlers) respondErr(w http.ResponseWriter, err error) {
+	switch {
+	case errors.Is(err, ErrNotFound):
+		writeError(w, http.StatusNotFound, err)
+	case errors.Is(err, ErrAlreadyDecided):
+		// 409 — request can't be reapplied to current state.
+		writeError(w, http.StatusConflict, err)
+	case errors.Is(err, ErrInvalidKind),
+		errors.Is(err, ErrInvalidLogKind),
+		errors.Is(err, ErrInvalidStatus),
+		errors.Is(err, ErrEphemeralCwd),
+		errors.Is(err, ErrEmptyCwd):
+		writeError(w, http.StatusBadRequest, err)
+	default:
+		h.log.Warn("projectdoc handler error", "err", err)
+		writeError(w, http.StatusInternalServerError, err)
+	}
+}
+
+func writeJSON(w http.ResponseWriter, code int, body any) {
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(code)
+	_ = json.NewEncoder(w).Encode(body)
+}
+
+func writeError(w http.ResponseWriter, code int, err error) {
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(code)
+	_ = json.NewEncoder(w).Encode(map[string]string{"error": err.Error()})
+}

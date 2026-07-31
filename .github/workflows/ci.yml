@@ -1,0 +1,230 @@
+name: CI
+
+on:
+  push:
+    branches: [main, "feat/**"]
+  pull_request:
+    branches: [main, "feat/**"]
+
+permissions:
+  contents: read
+
+# Cancel an in-flight run when a newer commit is pushed to the same
+# ref. Avoids burning runner minutes on superseded commits.
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  frontend:
+    name: Frontend (web)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      # Reads `packageManager` from root package.json so this stays
+      # in lockstep with what local devs install via corepack.
+      - uses: pnpm/action-setup@v6
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
+
+      # Install at the workspace root so every workspace package
+      # (currently `web`; soon `shared`, `shared-ui`, `mobile`)
+      # gets its node_modules wired correctly.
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Type-check + build
+        run: pnpm --filter web build
+
+      # Hand the built bundle to the backend job so `go:embed` finds it.
+      - uses: actions/upload-artifact@v7
+        with:
+          name: web-dist
+          path: internal/web/dist
+          retention-days: 1
+          if-no-files-found: error
+
+  backend:
+    name: Backend (Go)
+    needs: frontend
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/download-artifact@v8
+        with:
+          name: web-dist
+          path: internal/web/dist
+
+      - uses: actions/setup-go@v6
+        with:
+          go-version: "1.25"
+
+      - run: go vet ./...
+
+      - name: Post-review source regression gate
+        run: python3 scripts/oneshot/check-code-review-fixes.py
+
+      # Unit and non-database integration tests. The dedicated
+      # backend-postgres job below runs the live PostgreSQL gates.
+      - name: go test -race
+        # 5m hard cap. Without this a hung test would burn the
+        # GitHub Actions 6h default before failing.
+        run: go test -race -timeout=5m -coverprofile=coverage.out ./...
+
+      - name: go build
+        run: go build -o /dev/null ./cmd/opendray
+
+
+  backend-postgres:
+    name: Backend (PostgreSQL integration)
+    needs: frontend
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: pgvector/pgvector:pg16
+        env:
+          POSTGRES_USER: opendray
+          POSTGRES_PASSWORD: opendray
+          POSTGRES_DB: opendray_ci
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U opendray -d opendray_ci"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 20
+    env:
+      OPENDRAY_DEV_DB_URL: postgres://opendray:opendray@127.0.0.1:5432/opendray_ci?sslmode=disable
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/download-artifact@v8
+        with:
+          name: web-dist
+          path: internal/web/dist
+
+      - uses: actions/setup-go@v6
+        with:
+          go-version: "1.25"
+
+      - name: Verify migrations are idempotent
+        run: go test -race -timeout=10m ./internal/store -run '^(TestOneShotMigrationIsRecordedAndRepeatable|TestMigrationFailureRollsBackBodyAndVersion)$'
+
+      - name: Run One-shot PostgreSQL tests
+        run: |
+          go test -race -tags=postgres -timeout=20m ./internal/oneshot/store ./internal/oneshot/queue ./internal/oneshot/saga ./internal/oneshot/notification ./internal/oneshot/recovery
+
+      - name: Run deterministic One-shot gates
+        run: |
+          bash scripts/oneshot/check-oneshot-store.sh
+          bash scripts/oneshot/check-oneshot-queue.sh
+          bash scripts/oneshot/check-control-plane.sh
+
+  mobile:
+    name: Mobile (Flutter)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app/mobile
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: "3.41.0"
+          channel: stable
+          cache: true
+
+      - name: Resolve dependencies
+        run: flutter pub get
+
+      - name: Regenerate slang sources
+        run: dart run slang
+
+      - name: Verify generated sources are committed
+        run: git diff --exit-code -- lib/core/i18n
+
+      - name: Analyze
+        run: flutter analyze
+
+      - name: Test
+        run: flutter test
+
+      - name: Build debug APK
+        run: flutter build apk --debug
+
+  lint:
+    name: Lint (Go)
+    # Lint runs the typecheck pass too, so it needs the embed tree
+    # populated — same dependency on the frontend artifact as Backend.
+    needs: frontend
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/download-artifact@v8
+        with:
+          name: web-dist
+          path: internal/web/dist
+
+      - uses: actions/setup-go@v6
+        with:
+          go-version: "1.25"
+
+      - uses: golangci/golangci-lint-action@v9
+        with:
+          # Pin to a specific version. Bumps go through a PR so a
+          # surprise lint regression can be reviewed, not absorbed.
+          version: v2.12.1
+
+  i18n:
+    name: i18n parity
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+
+      # Zero-dependency Node script, so no pnpm install needed. Compares
+      # every app/i18n/<locale>.json against the canonical en.json. Fails
+      # only on token mismatch / invalid JSON; missing keys are advisory
+      # (they fall back to English at runtime). See the script header.
+      - name: Translation parity check
+        run: node scripts/check-i18n-parity.mjs
+
+  readme-drift:
+    name: README translation drift (advisory)
+    # PR-only: there is no PR to comment on for a push to main. Advisory
+    # job, so it never blocks the merge; it just posts/updates a single
+    # comment when README.md changed but its translations did not. See
+    # scripts/check-readme-drift.sh for the full behaviour.
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      # Needs write to post/edit the advisory comment. Scoped to this job
+      # so the rest of CI keeps the read-only top-level default.
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+
+      # Zero-dependency Node script (shells out to the gh CLI), so no pnpm
+      # install needed. Same style as scripts/check-i18n-parity.mjs. See the
+      # script header for the full upsert/idempotency behaviour.
+      - name: README translation drift check
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          PR: ${{ github.event.pull_request.number }}
+        run: node scripts/check-readme-drift.mjs

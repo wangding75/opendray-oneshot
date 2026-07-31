@@ -1,0 +1,18 @@
+==> Agent Tasks source contract
+OD-OS-21/22/23 Flutter Agent Tasks source contract: PASS
+feature Dart files: 10
+specialized tests: 4
+agentTasks i18n keys: 79 across en/es/zh
+==> i18n parity
+
+[es] 100% complete  (missing:0 extra:0 token-mismatch:0)
+
+[zh] 100% complete  (missing:0 extra:0 token-mismatch:0)
+
+OK: no blocking issues.
+==> One-shot page JSON contract
+ok  	github.com/opendray/opendray-v2/internal/oneshot/store	0.003s
+==> Provider One-shot capability extension contract
+ok  	github.com/opendray/opendray-v2/internal/catalog	0.002s
+SKIP: flutter not found; set MOBILE_AGENT_TASKS_REQUIRE_FLUTTER=1 to make this fatal
+OD-OS-21/22/23 mobile Agent Tasks source gate: PASS

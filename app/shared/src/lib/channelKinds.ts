@@ -1,0 +1,294 @@
+// Catalogue of all channel kinds opendray ships natively. Drives the
+// admin UI's New Channel dialog (form fields, hints, defaults) and the
+// per-card display (which credential field to mask and show as
+// "token: 1234…abcd").
+//
+// `bridge` is intentionally absent — it has its own dedicated UI
+// (token generator, capability multiselect, post-create adapter
+// setup dialog) wired in Channels.tsx.
+
+export type FieldType = 'text' | 'password' | 'textarea' | 'boolean'
+
+export interface KindField {
+  name: string
+  label: string
+  type: FieldType
+  required?: boolean
+  placeholder?: string
+  hint?: string
+  /** When true and not provided by the user, the field is omitted from
+   * the submitted config (so server defaults apply). */
+  optional?: boolean
+  /** Initial value for `boolean` fields when the channel config has no
+   * stored value (new channel, or a field added after the channel was
+   * created). Ignored for non-boolean fields. */
+  default?: boolean
+}
+
+export interface KindDef {
+  kind: string
+  label: string
+  emoji: string
+  /**
+   * Optional simple-icons / inline-brand key. When set, the admin
+   * UI renders the official brand mark via <BrandIcon>; emoji is
+   * used as fallback (and in compact list views where the SVG is
+   * overkill).
+   */
+  iconKey?: string
+  description: string
+  /**
+   * Fields the operator fills in. Order matches the form display.
+   */
+  fields: KindField[]
+  /**
+   * Fields whose presence in `config` should be rendered on the
+   * channel card as a masked "token preview" line. First match wins.
+   */
+  tokenFields?: string[]
+  /**
+   * When true the channel needs a publicly-reachable webhook URL the
+   * operator has to paste into the platform's admin console. The card
+   * surfaces it via "Webhook URL" with a copy button.
+   */
+  webhookBased?: boolean
+  /**
+   * Optional after-create hint shown as a callout in the create
+   * dialog. Useful for "remember to paste this URL into Feishu".
+   */
+  afterCreateHint?: string
+}
+
+export const KIND_DEFS: KindDef[] = [
+  {
+    kind: 'telegram',
+    label: 'Telegram',
+    emoji: '✈️',
+    iconKey: 'telegram',
+    description:
+      'Bot via @BotFather. opendray long-polls getUpdates and sends via REST. Buttons + reply_to_message work natively.',
+    tokenFields: ['bot_token'],
+    fields: [
+      {
+        name: 'bot_token',
+        label: 'Bot token',
+        type: 'password',
+        required: true,
+        placeholder: '123456:ABC-DEF...',
+        hint: 'From @BotFather. Stored in channel config; admin-only API.',
+      },
+      {
+        name: 'chat_id',
+        label: 'Default chat ID',
+        type: 'text',
+        placeholder: '42 (optional — used for outbound when no ReplyCtx)',
+        optional: true,
+      },
+      {
+        name: 'owner_user_ids',
+        label: 'Owner Telegram user ID(s)',
+        type: 'text',
+        optional: true,
+        placeholder: '123456789 (comma-separated for more than one)',
+        hint: 'Only these numeric Telegram user IDs may drive sessions, run commands, or tap buttons; everyone else is ignored. Leave blank to allow anyone (not recommended for two-way chat). Get yours by DMing @userinfobot.',
+      },
+      {
+        name: 'chat_enabled',
+        label: 'Two-way chat (route messages into the session)',
+        type: 'boolean',
+        default: true,
+        hint: 'When on, your messages are typed into the selected session and the agent replies here. Turn off for notifications only.',
+      },
+      {
+        name: 'chat_typing',
+        label: 'Show “typing…” while the agent works',
+        type: 'boolean',
+        default: true,
+        hint: 'Displays a typing indicator until the agent’s reply settles.',
+      },
+      {
+        name: 'reply_max_chars',
+        label: 'Max reply length (characters)',
+        type: 'text',
+        optional: true,
+        placeholder: '3500 (blank = 3500, 0 = unlimited)',
+        hint: 'Caps how much of the agent’s reply is sent before it’s trimmed with a “…(truncated)” note. Blank uses the 3500 default (~one message); set 0 to send the whole reply, split across multiple messages.',
+      },
+    ],
+  },
+  {
+    kind: 'slack',
+    label: 'Slack',
+    emoji: '💬',
+    iconKey: 'slack',
+    description:
+      'Socket Mode — no public webhook needed. Requires both a bot OAuth token (xoxb-) and an app-level token (xapp-) with connections:write.',
+    tokenFields: ['bot_token'],
+    fields: [
+      {
+        name: 'bot_token',
+        label: 'Bot token (xoxb-…)',
+        type: 'password',
+        required: true,
+        placeholder: 'xoxb-...',
+        hint: 'OAuth & Permissions → Bot User OAuth Token. Needs chat:write.',
+      },
+      {
+        name: 'app_token',
+        label: 'App-level token (xapp-…)',
+        type: 'password',
+        required: true,
+        placeholder: 'xapp-...',
+        hint: 'Settings → Basic Information → App-Level Tokens. Scope: connections:write.',
+      },
+      {
+        name: 'channel_id',
+        label: 'Default channel ID',
+        type: 'text',
+        placeholder: 'C0123ABC456 (optional)',
+        optional: true,
+      },
+    ],
+  },
+  {
+    kind: 'discord',
+    label: 'Discord',
+    emoji: '🎮',
+    iconKey: 'discord',
+    description:
+      'Bot via Discord Developer Portal with MESSAGE CONTENT INTENT enabled. Connects to Gateway WS — no public URL required.',
+    tokenFields: ['bot_token'],
+    fields: [
+      {
+        name: 'bot_token',
+        label: 'Bot token',
+        type: 'password',
+        required: true,
+        placeholder: 'Bot token from Discord Developer Portal',
+        hint: 'Application → Bot → Reset Token. Invite bot with send_messages + embed_links.',
+      },
+      {
+        name: 'channel_id',
+        label: 'Default channel ID',
+        type: 'text',
+        placeholder: '123456789012345678 (right-click channel → Copy ID)',
+        optional: true,
+      },
+    ],
+  },
+  {
+    kind: 'feishu',
+    label: 'Feishu (飞书)',
+    emoji: '🐦',
+    iconKey: 'feishu',
+    description:
+      'App-level credentials. Uses event subscription webhook for inbound. Public webhook URL is generated below — paste it into the Feishu dev console.',
+    tokenFields: ['app_secret'],
+    webhookBased: true,
+    afterCreateHint:
+      'Open the webhook URL on the channel card and paste it into Feishu Open Platform → Event Subscriptions → Request URL.',
+    fields: [
+      {
+        name: 'app_id',
+        label: 'App ID',
+        type: 'text',
+        required: true,
+        placeholder: 'cli_a1b2c3d4...',
+      },
+      {
+        name: 'app_secret',
+        label: 'App secret',
+        type: 'password',
+        required: true,
+        placeholder: 'Application credential secret',
+      },
+      {
+        name: 'verification_token',
+        label: 'Verification token (optional)',
+        type: 'password',
+        optional: true,
+        hint: 'From Event Subscriptions → Verification Token. When set, opendray rejects webhooks with a different token.',
+      },
+      {
+        name: 'chat_id',
+        label: 'Default chat ID (oc_…)',
+        type: 'text',
+        placeholder: 'oc_xxxxxxxxxx (optional)',
+        optional: true,
+      },
+    ],
+  },
+  {
+    kind: 'dingtalk',
+    label: 'DingTalk (钉钉)',
+    emoji: '📞',
+    iconKey: 'dingtalk',
+    description:
+      'Custom group robot. Outbound only (text + markdown + actionCard). Group chat → Robots → Add → Sign mode → copy webhook + secret.',
+    tokenFields: ['secret', 'webhook_url'],
+    fields: [
+      {
+        name: 'webhook_url',
+        label: 'Webhook URL',
+        type: 'password',
+        required: true,
+        placeholder: 'https://oapi.dingtalk.com/robot/send?access_token=...',
+      },
+      {
+        name: 'secret',
+        label: 'Sign secret (optional)',
+        type: 'password',
+        optional: true,
+        placeholder: 'SEC...',
+        hint: 'When the robot is set to "Sign" security mode, copy the secret here. opendray adds the timestamp + sign query params automatically.',
+      },
+    ],
+  },
+  {
+    kind: 'wecom',
+    label: 'WeCom (企业微信)',
+    emoji: '🏢',
+    iconKey: 'wecom',
+    description:
+      'Group robot webhook. Outbound only (text + markdown). Group settings → Group robots → Add → copy webhook URL.',
+    tokenFields: ['webhook_key', 'webhook_url'],
+    fields: [
+      {
+        name: 'webhook_key',
+        label: 'Webhook key',
+        type: 'password',
+        required: true,
+        placeholder: 'The "key=" query value from the robot webhook URL',
+        hint: 'Or paste the whole webhook URL into the field below — either is enough.',
+      },
+      {
+        name: 'webhook_url',
+        label: 'Or full webhook URL',
+        type: 'password',
+        optional: true,
+        placeholder: 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=...',
+      },
+    ],
+  },
+  // Personal-WeChat (WxPusher) used to live here. Removed as a
+  // create-flow option because it's outbound-only — operators
+  // expecting a two-way channel had a frustrating discovery
+  // experience. The server-side adapter stays so historical
+  // channels keep working; only the New Channel entry point and
+  // its tutorial are gone.
+]
+
+export function getKindDef(kind: string): KindDef | undefined {
+  return KIND_DEFS.find((k) => k.kind === kind)
+}
+
+/**
+ * Build the per-channel public webhook URL the platform's admin
+ * console needs to call. Used for feishu / dingtalk / wecom (kinds
+ * that opt-in via `webhookBased: true`).
+ */
+export function buildWebhookURL(channelID: string): string {
+  const origin =
+    typeof window !== 'undefined' ? window.location.origin : 'http://localhost:5173'
+  return origin + '/api/v1/channels/' + channelID + '/webhook'
+}

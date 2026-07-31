@@ -1,0 +1,111 @@
+OD-OS-24/25/26 PTY AND CHANNEL REGRESSION
+UTC 2026-07-28T15:39:23Z
+PASS: repair Go files are formatted
+PASS: repair shell scripts parse
+One-shot task state: PASS
+ok  	github.com/opendray/opendray-v2/internal/session/channeladapter	1.191s
+PASS: isolated Session channel adapter tests
+ok  	github.com/opendray/opendray-v2/internal/channel	1.060s
+PASS: isolated Channel Core tests
+ok  	github.com/opendray/opendray-v2/internal/channel/telegram	1.089s
+PASS: isolated Telegram transport tests
+ok  	github.com/opendray/opendray-v2/internal/channel/telegram	1.089s
+ok  	github.com/opendray/opendray-v2/internal/channel/slack	1.020s
+ok  	github.com/opendray/opendray-v2/internal/channel/discord	1.021s
+ok  	github.com/opendray/opendray-v2/internal/channel/feishu	1.022s
+PASS: isolated Telegram, Slack, Discord, and Feishu transport tests
+PASS: gofmt
+PASS: neutral ReplyAddress type
+PASS: neutral Attachment type
+PASS: InboundDispatcher interface
+PASS: deterministic dispatcher chain
+PASS: Hub dispatcher seam
+PASS: post-persistence dispatcher entry
+PASS: handled audit event
+PASS: not-handled audit event
+PASS: timeout audit event
+PASS: panic audit event
+PASS: application dispatcher chain wiring
+PASS: interactive adapter registration
+PASS: handled stops fallback test
+PASS: not-handled neutral event test
+PASS: error duplicate-delivery test
+PASS: panic and timeout test
+PASS: execution-domain slash command routing test
+PASS: registered Channel command precedence test
+PASS: Telegram update offset regression test
+PASS: neutral dispatcher has no execution-domain import
+PASS: neutral channel types have no execution-domain import
+PASS: handleInbound delegates instead of writing PTY directly
+SKIP: Go >= 1.25 unavailable; source and sandbox compatibility gates only
+One-shot architecture boundaries: PASS
+==> executable PTY source baseline
+PASS: repository Go baseline
+PASS: PTY process launch
+PASS: live Session runtime state
+PASS: Session service PTY operations
+PASS: Session HTTP PTY routes
+PASS: session adapter target resolution priority
+PASS: conversation-scoped interactive routing state
+PASS: rune-by-rune PTY submission
+PASS: mobile raw PTY input API
+PASS: mobile terminal resize API
+PASS: mobile PTY websocket and resize forwarding
+PASS: session adapter binding regression tests
+PASS: session adapter input regression tests
+PASS: mobile PTY API contract tests
+PASS: PTY contract document
+PASS: PTY test coverage matrix
+PTY source baseline passed: 16 checks
+PASS: checker rejected mutation: PTY launch removed
+PASS: checker rejected mutation: Session input route removed
+PASS: checker rejected mutation: conversation scope collapsed
+PASS: checker rejected mutation: mobile stream route removed
+PASS: checker rejected mutation: test matrix removed
+PTY source baseline checker self-test passed
+==> i18n parity
+
+[es] 100% complete  (missing:0 extra:0 token-mismatch:0)
+
+[zh] 100% complete  (missing:0 extra:0 token-mismatch:0)
+
+OK: no blocking issues.
+SKIP: Go >= 1.25 not found; set PTY_REGRESSION_REQUIRE_GO=1 to make this fatal
+SKIP: flutter not found; set PTY_REGRESSION_REQUIRE_MOBILE=1 to make this fatal
+Channel inbound dispatcher source gate: PASS
+One-shot architecture boundaries: PASS
+==> executable PTY source baseline
+PASS: repository Go baseline
+PASS: PTY process launch
+PASS: live Session runtime state
+PASS: Session service PTY operations
+PASS: Session HTTP PTY routes
+PASS: session adapter target resolution priority
+PASS: conversation-scoped interactive routing state
+PASS: rune-by-rune PTY submission
+PASS: mobile raw PTY input API
+PASS: mobile terminal resize API
+PASS: mobile PTY websocket and resize forwarding
+PASS: session adapter binding regression tests
+PASS: session adapter input regression tests
+PASS: mobile PTY API contract tests
+PASS: PTY contract document
+PASS: PTY test coverage matrix
+PTY source baseline passed: 16 checks
+PASS: checker rejected mutation: PTY launch removed
+PASS: checker rejected mutation: Session input route removed
+PASS: checker rejected mutation: conversation scope collapsed
+PASS: checker rejected mutation: mobile stream route removed
+PASS: checker rejected mutation: test matrix removed
+PTY source baseline checker self-test passed
+==> i18n parity
+
+[es] 100% complete  (missing:0 extra:0 token-mismatch:0)
+
+[zh] 100% complete  (missing:0 extra:0 token-mismatch:0)
+
+OK: no blocking issues.
+SKIP: Go >= 1.25 not found; set PTY_REGRESSION_REQUIRE_GO=1 to make this fatal
+SKIP: flutter not found; set PTY_REGRESSION_REQUIRE_MOBILE=1 to make this fatal
+Known OD-OS-04/05 issue repair gate: PASS
+PTY/CHANNEL REGRESSION: PASS

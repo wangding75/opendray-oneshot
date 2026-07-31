@@ -1,0 +1,33 @@
+==> executable PTY source baseline
+PASS: repository Go baseline
+PASS: PTY process launch
+PASS: live Session runtime state
+PASS: Session service PTY operations
+PASS: Session HTTP PTY routes
+PASS: session adapter target resolution priority
+PASS: conversation-scoped interactive routing state
+PASS: rune-by-rune PTY submission
+PASS: mobile raw PTY input API
+PASS: mobile terminal resize API
+PASS: mobile PTY websocket and resize forwarding
+PASS: session adapter binding regression tests
+PASS: session adapter input regression tests
+PASS: mobile PTY API contract tests
+PASS: PTY contract document
+PASS: PTY test coverage matrix
+PTY source baseline passed: 16 checks
+PASS: checker rejected mutation: PTY launch removed
+PASS: checker rejected mutation: Session input route removed
+PASS: checker rejected mutation: conversation scope collapsed
+PASS: checker rejected mutation: mobile stream route removed
+PASS: checker rejected mutation: test matrix removed
+PTY source baseline checker self-test passed
+==> i18n parity
+
+[es] 100% complete  (missing:0 extra:0 token-mismatch:0)
+
+[zh] 100% complete  (missing:0 extra:0 token-mismatch:0)
+
+OK: no blocking issues.
+SKIP: Go >= 1.25 not found; set PTY_REGRESSION_REQUIRE_GO=1 to make this fatal
+SKIP: flutter not found; set PTY_REGRESSION_REQUIRE_MOBILE=1 to make this fatal

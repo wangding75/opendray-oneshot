@@ -1,0 +1,205 @@
+project: opendray
+source_mode: uploaded_source_archive
+source_archive_sha256: ee13137c9c99ae653379ac36d1156b0f3813895e0582f915d505cf14ee769bbf
+branch: feat/oneshot-agent
+base_commit: 649c7cb0a03b156a2ba4690be319c0086751b6a0
+current_task: OD-OS-26
+current_phase: post_review_coding_completed
+status: pending_runtime_validation
+tasks:
+  OD-OS-00:
+    implementation: completed
+    source_gate: passed
+    runtime_gate: not_required
+    overall: completed
+  OD-OS-01:
+    implementation: completed
+    source_gate: passed
+    runtime_gate: pending
+    overall: pending_runtime_validation
+  OD-OS-02:
+    implementation: completed
+    source_gate: passed
+    runtime_gate: pending
+    overall: pending_runtime_validation
+  OD-OS-03:
+    implementation: completed
+    source_gate: passed
+    runtime_gate: not_required
+    overall: completed
+  OD-OS-04:
+    implementation: completed
+    source_gate: passed
+    runtime_gate: pending
+    overall: pending_runtime_validation
+    repair: channel_dispatch_and_command_routing_fixed
+  OD-OS-05:
+    implementation: completed
+    source_gate: passed
+    runtime_gate: pending
+    overall: pending_runtime_validation
+    repair: asynchronous_pty_input_and_cross_channel_binding_fixed
+  OD-OS-06:
+    implementation: completed
+    source_gate: passed
+    runtime_gate: pending
+    overall: pending_runtime_validation
+  OD-OS-07:
+    implementation: completed
+    source_gate: passed
+    runtime_gate: pending
+    overall: pending_runtime_validation
+  OD-OS-08:
+    implementation: completed
+    source_gate: passed
+    runtime_gate: pending
+    overall: pending_runtime_validation
+  OD-OS-09:
+    implementation: completed
+    source_gate: passed
+    runtime_gate: pending
+    overall: pending_runtime_validation
+  OD-OS-10:
+    implementation: completed
+    source_gate: passed
+    runtime_gate: pending
+    overall: pending_runtime_validation
+  OD-OS-11:
+    implementation: completed
+    source_gate: passed
+    runtime_gate: pending
+    overall: pending_runtime_validation
+  OD-OS-12:
+    implementation: completed
+    source_gate: passed
+    runtime_gate: pending
+    overall: pending_runtime_validation
+  OD-OS-13:
+    implementation: completed
+    source_gate: passed
+    runtime_gate: pending
+    overall: pending_runtime_validation
+  OD-OS-14:
+    implementation: completed
+    source_gate: passed
+    runtime_gate: pending
+    overall: pending_runtime_validation
+  OD-OS-15:
+    implementation: completed
+    source_gate: passed
+    runtime_gate: pending
+    overall: pending_runtime_validation
+  OD-OS-16:
+    implementation: completed
+    source_gate: passed
+    runtime_gate: pending
+    overall: pending_runtime_validation
+  OD-OS-17:
+    implementation: completed
+    source_gate: passed
+    runtime_gate: pending
+    overall: pending_runtime_validation
+  OD-OS-18:
+    implementation: completed
+    source_gate: passed
+    runtime_gate: pending
+    overall: pending_runtime_validation
+  OD-OS-19:
+    implementation: completed
+    source_gate: passed
+    runtime_gate: pending
+    overall: pending_runtime_validation
+  OD-OS-20:
+    implementation: completed
+    source_gate: passed
+    runtime_gate: pending
+    overall: pending_runtime_validation
+  OD-OS-21:
+    implementation: completed
+    source_gate: passed
+    runtime_gate: pending
+    overall: pending_runtime_validation
+  OD-OS-22:
+    implementation: completed
+    source_gate: passed
+    runtime_gate: pending
+    overall: pending_runtime_validation
+  OD-OS-23:
+    implementation: completed
+    source_gate: passed
+    runtime_gate: pending
+    overall: pending_runtime_validation
+  OD-OS-24:
+    implementation: completed
+    source_gate: passed
+    runtime_gate: pending
+    overall: pending_runtime_validation
+  OD-OS-25:
+    implementation: completed
+    source_gate: passed
+    runtime_gate: pending
+    overall: pending_runtime_validation
+  OD-OS-26:
+    implementation: completed
+    source_gate: passed
+    runtime_gate: pending
+    overall: pending_runtime_validation
+source_baseline_commit: 16fe50540daab59f5ae1db2e59d4e6fa20c8668c
+completion_ref: refs/heads/feat/oneshot-agent
+last_push: sandbox-local-origin
+started_at: 2026-07-27T11:56:01+0800
+updated_at: 2026-07-29T14:24:00+0800
+user_direction:
+  decision: complete_source_development_before_local_runtime_debugging
+  effect: Source implementation tasks may be marked complete after executable source
+    gates pass. Go/Flutter runtime gates remain mandatory before final release acceptance
+    and may not be reported as passed until run locally.
+post_review_coding:
+  status: completed
+  source_gate: passed
+  known_p0_p1_remaining: 0
+  completed_fixes:
+  - persisted_snapshot_restore_fail_closed
+  - rest_source_and_notification_route_spoofing_blocked
+  - run_lifecycle_sequence_serialized_and_missing_run_rejected
+  - historical_queue_gate_repaired_and_repeatable
+  - strict_json_single_document_enforced
+  - cryptographic_id_generation_fail_closed_or_unique_fallback
+  - artifact_cleanup_bounded_by_timeout
+  - telegram_continuation_ack_errors_propagated
+  - flutter_stream_malformed_frame_and_terminal_error_handling
+  - provider_minimum_versions_probed_validated_and_configurable
+  - rest_route_behavior_tests_expanded
+  - postgresql_and_flutter_ci_gates_added
+  - source_archive_git_gate_made_portable
+  report: docs/development/oneshot/reports/POST-REVIEW-CODING-COMPLETION-summary.md
+  evidence: docs/development/oneshot/evidence/POST-REVIEW-CODING-COMPLETION-index.md
+  runtime_only_remaining:
+  - go_1_25_full_repository_toolchain
+  - live_postgresql_migration_concurrency_and_recovery
+  - flutter_android_ios_compiler_and_device
+  - real_codex_claude_telegram_credentials_and_services
+local_runtime_gate:
+  command: PTY_REGRESSION_REQUIRE_GO=1 PTY_REGRESSION_REQUIRE_MOBILE=1 scripts/oneshot/check-pty-regression.sh
+  current_status: deferred_toolchain_or_external_service_unavailable
+  details:
+  - Go 1.25 is required; the sandbox runtime exposes Go 1.23.2 for isolated compatibility
+    gates.
+  - Flutter, Dart, Node package installation and Android build tooling are unavailable
+    in this sandbox.
+  - A live PostgreSQL migration, concurrency and rollback test has not run in this
+    sandbox.
+  - Real Codex, Claude Code, Telegram Bot and mobile-device end-to-end credentials/services
+    are unavailable.
+  - The attachment policy performs deterministic filename, size and detected-MIME
+    validation; antivirus scanning is not integrated.
+source_gate:
+  command: python3 scripts/oneshot/check-code-review-fixes.py && scripts/oneshot/check-control-plane-compile.sh
+    && scripts/oneshot/check-provider-continuation.sh && scripts/oneshot/check-oneshot-queue.sh
+    && scripts/oneshot/check-final-hardening.sh
+  status: passed
+  evidence: docs/development/oneshot/evidence/POST-REVIEW-CODING-COMPLETION-index.md
+regression_gate:
+  command: scripts/oneshot/check-pty-regression.sh && scripts/oneshot/check-known-issue-fixes.sh
+  status: passed
+  evidence: docs/development/oneshot/evidence/POST-REVIEW-CODING-COMPLETION-pty-regression.txt

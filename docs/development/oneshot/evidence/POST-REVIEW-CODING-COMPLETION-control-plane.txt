@@ -1,0 +1,5 @@
+ok  	github.com/opendray/opendray-v2/internal/oneshot/api	1.016s	coverage: 55.7% of statements
+ok  	github.com/opendray/opendray-v2/internal/oneshot/channeladapter	1.013s	coverage: 30.1% of statements
+ok  	github.com/opendray/opendray-v2/internal/oneshot/notification	1.013s	coverage: 46.6% of statements
+ok  	github.com/opendray/opendray-v2/internal/oneshot/appwire	1.010s	coverage: 52.6% of statements
+OD-OS-18/19/20 isolated compile gate: PASS

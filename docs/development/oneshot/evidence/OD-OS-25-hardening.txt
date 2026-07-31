@@ -1,0 +1,50 @@
+==> OD-OS-24 attachment and cross-device source contract
+attachment/cross-device static contract: PASS
+==> security static checks
+security static checks: PASS
+==> attachment unit, race, coverage, and fuzz gates
+ok  	github.com/opendray/opendray-v2/internal/oneshot/attachment	1.012s	coverage: 47.1% of statements
+fuzz: elapsed: 0s, gathering baseline coverage: 0/144 completed
+fuzz: elapsed: 0s, gathering baseline coverage: 144/144 completed, now fuzzing with 5 workers
+fuzz: elapsed: 3s, execs: 30379 (10109/sec), new interesting: 9 (total: 153)
+fuzz: elapsed: 3s, execs: 30379 (0/sec), new interesting: 9 (total: 153)
+PASS
+ok  	github.com/opendray/opendray-v2/internal/oneshot/attachment	3.023s
+==> provider output parser race and fuzz gates
+ok  	github.com/opendray/opendray-v2/internal/oneshot/adapter	1.018s	coverage: 77.4% of statements
+fuzz: elapsed: 0s, gathering baseline coverage: 0/94 completed
+fuzz: elapsed: 0s, gathering baseline coverage: 94/94 completed, now fuzzing with 5 workers
+fuzz: elapsed: 3s, execs: 94055 (31342/sec), new interesting: 9 (total: 103)
+fuzz: elapsed: 3s, execs: 94055 (0/sec), new interesting: 9 (total: 103)
+PASS
+ok  	github.com/opendray/opendray-v2/internal/oneshot/adapter	3.017s
+==> control plane, channel transport, and mobile source gates
+ok  	github.com/opendray/opendray-v2/internal/oneshot/api	1.011s	coverage: 14.2% of statements
+ok  	github.com/opendray/opendray-v2/internal/oneshot/channeladapter	1.010s	coverage: 20.9% of statements
+ok  	github.com/opendray/opendray-v2/internal/oneshot/notification	1.010s	coverage: 46.8% of statements
+ok  	github.com/opendray/opendray-v2/internal/oneshot/appwire	1.009s	coverage: 18.8% of statements
+OD-OS-18/19/20 isolated compile gate: PASS
+ok  	github.com/opendray/opendray-v2/internal/channel/telegram	1.090s
+ok  	github.com/opendray/opendray-v2/internal/channel/slack	1.024s
+ok  	github.com/opendray/opendray-v2/internal/channel/discord	1.019s
+ok  	github.com/opendray/opendray-v2/internal/channel/feishu	1.024s
+PASS: isolated Telegram, Slack, Discord, and Feishu transport tests
+==> Agent Tasks source contract
+OD-OS-21/22/23 Flutter Agent Tasks source contract: PASS
+feature Dart files: 10
+specialized tests: 4
+agentTasks i18n keys: 79 across en/es/zh
+==> i18n parity
+
+[es] 100% complete  (missing:0 extra:0 token-mismatch:0)
+
+[zh] 100% complete  (missing:0 extra:0 token-mismatch:0)
+
+OK: no blocking issues.
+==> One-shot page JSON contract
+ok  	github.com/opendray/opendray-v2/internal/oneshot/store	0.002s
+==> Provider One-shot capability extension contract
+ok  	github.com/opendray/opendray-v2/internal/catalog	0.001s
+SKIP: flutter not found; set MOBILE_AGENT_TASKS_REQUIRE_FLUTTER=1 to make this fatal
+OD-OS-21/22/23 mobile Agent Tasks source gate: PASS
+OD-OS-24/25 final hardening source gate: PASS

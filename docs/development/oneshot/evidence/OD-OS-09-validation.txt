@@ -1,0 +1,148 @@
+OD-OS-09 validation started: 2026-07-27T16:19:28+00:00
+PASS: OD-OS-09 Go files are formatted
+PASS: OD-OS-09 PostgreSQL queue source contract
+PASS: SKIP LOCKED lease claim, expiry recovery, ack/nack/dead-letter/cancel
+PASS: API and Telegram idempotency payload binding
+PASS: restart protection excludes Deliveries that already own a Run
+ok  	github.com/opendray/opendray-v2/internal/oneshot/domain	1.022s
+ok  	github.com/opendray/opendray-v2/internal/oneshot/queue	1.094s
+ok  	github.com/opendray/opendray-v2/internal/oneshot/application	1.010s
+ok  	github.com/opendray/opendray-v2/internal/oneshot/queue	0.001s [no tests to run]
+PASS: isolated One-shot queue/application vet, race tests, and PostgreSQL-tag compilation
+SKIP: OPENDRAY_DEV_DB_URL not set; live PostgreSQL queue tests deferred to provisioned/local environment
+PASS: OD-OS-08 Go files are formatted
+PASS: One-shot migration owns exactly 10 isolated tables
+PASS: foreign keys, checks, deduplication, active-Run and append-order invariants are present
+PASS: Store exposes context-aware transactional CRUD and owner-filtered pagination
+PASS: PostgreSQL integration tests cover migration repeatability, rollback, constraints and ownership
+ok  	github.com/opendray/opendray-v2/internal/oneshot/domain	1.022s
+ok  	github.com/opendray/opendray-v2/internal/oneshot/store	1.010s
+ok  	github.com/opendray/opendray-v2/internal/store	0.002s [no tests to run]
+ok  	github.com/opendray/opendray-v2/internal/oneshot/store	0.001s [no tests to run]
+PASS: isolated One-shot domain/store vet and race tests
+SKIP: OPENDRAY_DEV_DB_URL not set; live PostgreSQL tests deferred to provisioned/local environment
+PASS: One-shot domain Go files are formatted
+PASS: 7 resource snapshots match frozen fields and ID prefixes
+PASS: 4 state sets match frozen state machines
+PASS: 26 stable error codes and retryability mappings match
+PASS: aggregate status fields remain private
+PASS: domain has no Session, Channel, PTY, HTTP, or database dependency
+ok  	github.com/opendray/opendray-v2/internal/oneshot/domain	1.039s	coverage: 68.6% of statements
+PASS: isolated One-shot domain vet, race tests, and coverage (68.6%)
+One-shot contract validation: PASS (7 resources, 4 state machines, 13 routes, 23 events, 26 errors)
+One-shot contract checker self-test: PASS
+One-shot architecture boundaries: PASS
+PASS: repair Go files are formatted
+PASS: repair shell scripts parse
+One-shot task state: PASS
+ok  	github.com/opendray/opendray-v2/internal/session/channeladapter	1.183s
+PASS: isolated Session channel adapter tests
+ok  	github.com/opendray/opendray-v2/internal/channel	1.061s
+PASS: isolated Channel Core tests
+ok  	github.com/opendray/opendray-v2/internal/channel/telegram	1.083s
+PASS: isolated Telegram transport tests
+ok  	github.com/opendray/opendray-v2/internal/channel/telegram	1.086s
+ok  	github.com/opendray/opendray-v2/internal/channel/slack	1.024s
+ok  	github.com/opendray/opendray-v2/internal/channel/discord	1.022s
+ok  	github.com/opendray/opendray-v2/internal/channel/feishu	1.023s
+PASS: isolated Telegram, Slack, Discord, and Feishu transport tests
+PASS: gofmt
+PASS: neutral ReplyAddress type
+PASS: neutral Attachment type
+PASS: InboundDispatcher interface
+PASS: deterministic dispatcher chain
+PASS: Hub dispatcher seam
+PASS: post-persistence dispatcher entry
+PASS: handled audit event
+PASS: not-handled audit event
+PASS: timeout audit event
+PASS: panic audit event
+PASS: application dispatcher chain wiring
+PASS: interactive adapter registration
+PASS: handled stops fallback test
+PASS: not-handled neutral event test
+PASS: error duplicate-delivery test
+PASS: panic and timeout test
+PASS: execution-domain slash command routing test
+PASS: registered Channel command precedence test
+PASS: Telegram update offset regression test
+PASS: neutral dispatcher has no execution-domain import
+PASS: neutral channel types have no execution-domain import
+PASS: handleInbound delegates instead of writing PTY directly
+SKIP: Go >= 1.25 unavailable; source and sandbox compatibility gates only
+One-shot architecture boundaries: PASS
+==> executable PTY source baseline
+PASS: repository Go baseline
+PASS: PTY process launch
+PASS: live Session runtime state
+PASS: Session service PTY operations
+PASS: Session HTTP PTY routes
+PASS: session adapter target resolution priority
+PASS: conversation-scoped interactive routing state
+PASS: rune-by-rune PTY submission
+PASS: mobile raw PTY input API
+PASS: mobile terminal resize API
+PASS: mobile PTY websocket and resize forwarding
+PASS: session adapter binding regression tests
+PASS: session adapter input regression tests
+PASS: mobile PTY API contract tests
+PASS: PTY contract document
+PASS: PTY test coverage matrix
+PTY source baseline passed: 16 checks
+PASS: checker rejected mutation: PTY launch removed
+PASS: checker rejected mutation: Session input route removed
+PASS: checker rejected mutation: conversation scope collapsed
+PASS: checker rejected mutation: mobile stream route removed
+PASS: checker rejected mutation: test matrix removed
+PTY source baseline checker self-test passed
+==> i18n parity
+
+[es] 100% complete  (missing:0 extra:0 token-mismatch:0)
+
+[zh] 100% complete  (missing:0 extra:0 token-mismatch:0)
+
+OK: no blocking issues.
+SKIP: Go >= 1.25 not found; set PTY_REGRESSION_REQUIRE_GO=1 to make this fatal
+SKIP: flutter not found; set PTY_REGRESSION_REQUIRE_MOBILE=1 to make this fatal
+Channel inbound dispatcher source gate: PASS
+One-shot architecture boundaries: PASS
+==> executable PTY source baseline
+PASS: repository Go baseline
+PASS: PTY process launch
+PASS: live Session runtime state
+PASS: Session service PTY operations
+PASS: Session HTTP PTY routes
+PASS: session adapter target resolution priority
+PASS: conversation-scoped interactive routing state
+PASS: rune-by-rune PTY submission
+PASS: mobile raw PTY input API
+PASS: mobile terminal resize API
+PASS: mobile PTY websocket and resize forwarding
+PASS: session adapter binding regression tests
+PASS: session adapter input regression tests
+PASS: mobile PTY API contract tests
+PASS: PTY contract document
+PASS: PTY test coverage matrix
+PTY source baseline passed: 16 checks
+PASS: checker rejected mutation: PTY launch removed
+PASS: checker rejected mutation: Session input route removed
+PASS: checker rejected mutation: conversation scope collapsed
+PASS: checker rejected mutation: mobile stream route removed
+PASS: checker rejected mutation: test matrix removed
+PTY source baseline checker self-test passed
+==> i18n parity
+
+[es] 100% complete  (missing:0 extra:0 token-mismatch:0)
+
+[zh] 100% complete  (missing:0 extra:0 token-mismatch:0)
+
+OK: no blocking issues.
+SKIP: Go >= 1.25 not found; set PTY_REGRESSION_REQUIRE_GO=1 to make this fatal
+SKIP: flutter not found; set PTY_REGRESSION_REQUIRE_MOBILE=1 to make this fatal
+Known OD-OS-04/05 issue repair gate: PASS
+One-shot task state: PASS
+OD-OS-07 One-shot domain source gate: PASS
+OD-OS-08 One-shot PostgreSQL Store source gate: PASS
+OD-OS-09 reliable PostgreSQL Delivery Queue source gate: PASS
+OD-OS-09 validation finished: 2026-07-27T16:20:02+00:00
+exit_code: 0

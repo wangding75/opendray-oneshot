@@ -1,0 +1,104 @@
+{
+  "$schema": "https://opendray.dev/schemas/manifest-v2.json",
+  "id": "claude",
+  "displayName": "Claude Code",
+  "displayName_zh": "Claude Code",
+  "description": "Anthropic Claude Code CLI — agentic coding with tool use, MCP, and session resume",
+  "description_zh": "Anthropic Claude Code CLI —— 支持工具调用、MCP 以及会话恢复的智能编码助手",
+  "icon": "🟣",
+  "version": "1.0.0",
+  "kind": "cli",
+  "executable": "claude",
+  "npmPackage": "@anthropic-ai/claude-code",
+  "modelFlag": "--model",
+  "knownModels": [
+    "opus",
+    "sonnet",
+    "haiku"
+  ],
+  "capabilities": {
+    "supportsResume": true,
+    "supportsStream": true,
+    "supportsImages": true,
+    "supportsMcp": true
+  },
+  "configSchema": [
+    {
+      "key": "authType",
+      "label": "Authentication",
+      "label_zh": "认证",
+      "type": "select",
+      "group": "auth",
+      "options": [
+        "env",
+        "custom"
+      ],
+      "default": "env",
+      "description": "env = read ANTHROPIC_API_KEY from system; custom = use the key below",
+      "description_zh": "env = 从系统读取 ANTHROPIC_API_KEY；custom = 使用下方自定义密钥"
+    },
+    {
+      "key": "apiKey",
+      "label": "API Key",
+      "label_zh": "API 密钥",
+      "type": "secret",
+      "group": "auth",
+      "envVar": "ANTHROPIC_API_KEY",
+      "placeholder": "sk-ant-...",
+      "dependsOn": "authType",
+      "dependsVal": "custom"
+    },
+    {
+      "key": "bypassPermissions",
+      "label": "Bypass Permissions",
+      "label_zh": "跳过权限检查",
+      "type": "boolean",
+      "group": "runtime",
+      "default": false,
+      "cliFlag": "--dangerously-skip-permissions",
+      "description": "Skip all permission prompts — full autonomous mode",
+      "description_zh": "跳过所有权限提示 —— 完全自主模式"
+    },
+    {
+      "key": "maxTurns",
+      "label": "Max Turns",
+      "label_zh": "最大轮次",
+      "type": "number",
+      "group": "runtime",
+      "description": "Limit autonomous agentic turns (0 = unlimited)",
+      "description_zh": "限制自主智能体的轮次（0 = 不限制）"
+    },
+    {
+      "key": "command",
+      "label": "Command Path",
+      "label_zh": "命令路径",
+      "type": "string",
+      "group": "advanced",
+      "placeholder": "claude"
+    },
+    {
+      "key": "extraArgs",
+      "label": "Extra CLI Args",
+      "label_zh": "额外 CLI 参数",
+      "type": "args",
+      "group": "advanced"
+    },
+    {
+      "key": "skills_disabled",
+      "label": "Disable opendray skills",
+      "label_zh": "禁用 opendray skills",
+      "type": "boolean",
+      "group": "advanced",
+      "default": false,
+      "description": "Skip injecting the opendray skill index into the session's system prompt. Useful if you want a clean Claude Code experience without our additions.",
+      "description_zh": "不向 session 系统提示词注入 opendray skill 索引。想要纯净的 Claude Code 体验时可关闭。"
+    }
+  ],
+  "ui": {
+    "activityBar": {
+      "id": "claude",
+      "icon": "🟣",
+      "title": "Claude Code"
+    }
+  }
+}

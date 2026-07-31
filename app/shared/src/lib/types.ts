@@ -1,0 +1,317 @@
+// ── Sessions ────────────────────────────────────────────────
+
+export type SessionState =
+  | 'pending'
+  | 'running'
+  | 'idle'
+  | 'stopped'
+  | 'ended'
+
+export const TERMINAL_SESSION_STATES: SessionState[] = ['stopped', 'ended']
+
+export function isTerminalSessionState(s: SessionState): boolean {
+  return s === 'stopped' || s === 'ended'
+}
+
+export interface Session {
+  id: string
+  name?: string
+  provider_id: string
+  cwd: string
+  args: string[]
+  state: SessionState
+  pid?: number
+  claude_account_id?: string
+  claude_session_id?: string
+  /** Antigravity account this session is pinned to (provider "antigravity"). */
+  antigravity_account_id?: string
+  /** Set when this session was spawned on behalf of another (e.g. a Task). */
+  parent_session_id?: string
+  started_at: string
+  ended_at?: string
+  exit_code?: number
+}
+
+export interface CreateSessionRequest {
+  provider_id: string
+  cwd: string
+  name?: string
+  args?: string[]
+  claude_account_id?: string
+  parent_session_id?: string
+  /** Operator's applied theme. The gateway advertises it to the CLI via
+      COLORFGBG so a TUI can pick a matching light/dark palette. Stamped
+      automatically by createSession(); callers rarely set it. */
+  theme?: 'light' | 'dark'
+}
+
+// ── Claude accounts (OAuth-token-on-disk model, mirrors v1) ─
+
+export interface ClaudeAccount {
+  id: string
+  name: string
+  display_name: string
+  config_dir: string
+  token_path: string
+  description: string
+  enabled: boolean
+  token_filled: boolean
+  created_at: string
+  updated_at: string
+  // Derived fields the backend decorates on read. Optional so older
+  // gateways (without the decorator) continue to deserialize cleanly.
+  subscription_type?: string // e.g. "max", "pro"
+  rate_limit_tier?: string // e.g. "default_claude_max_5x"
+  last_used_at?: string // ISO timestamp of the most recent session pinned to this account
+  active_sessions?: number // count of sessions currently pinned and in a non-terminal state
+  // Anthropic identity now logged in at the account's configDir,
+  // read from <configDir>/.claude.json (oauthAccount.emailAddress).
+  oauth_email?: string
+  // When the current oauth_email differs from the first-seen baseline
+  // for this account id, identity_drift=true and previous_email is
+  // populated. Cleared by POST /accept-identity.
+  previous_email?: string
+  identity_drift?: boolean
+}
+
+export interface CreateClaudeAccountRequest {
+  name: string
+  display_name?: string
+  config_dir?: string
+  token_path?: string
+  description?: string
+  enabled?: boolean
+  token?: string
+}
+
+export interface UpdateClaudeAccountRequest {
+  name?: string
+  display_name?: string
+  config_dir?: string
+  token_path?: string
+  description?: string
+  enabled?: boolean
+}
+
+// ── Antigravity accounts (HOME-isolation model) ─────────────
+// An antigravity account is a dedicated HOME dir holding its own agy
+// OAuth token. config_dir is that HOME; token_filled = token present.
+export interface AntigravityAccount {
+  id: string
+  name: string
+  display_name: string
+  config_dir: string // per-account HOME directory
+  description: string
+  enabled: boolean
+  token_filled: boolean
+  created_at: string
+  updated_at: string
+  // Derived, optional for forward-compat.
+  last_used_at?: string
+  active_sessions?: number
+}
+
+export interface CreateAntigravityAccountRequest {
+  name: string
+  display_name?: string
+  config_dir?: string
+  description?: string
+  enabled?: boolean
+}
+
+export interface UpdateAntigravityAccountRequest {
+  name?: string
+  display_name?: string
+  config_dir?: string
+  description?: string
+  enabled?: boolean
+}
+
+// ── Catalog (providers) ─────────────────────────────────────
+
+export type ConfigFieldType =
+  | 'string'
+  | 'number'
+  | 'boolean'
+  | 'select'
+  | 'secret'
+  | 'args'
+  // Read-only informational row — label + description, no input. Used
+  // for providers whose auth lives outside opendray (e.g. Antigravity's
+  // Google login).
+  | 'note'
+
+export interface ConfigField {
+  key: string
+  label: string
+  label_zh?: string
+  type: ConfigFieldType
+  group?: string
+  default?: unknown
+  options?: string[]
+  placeholder?: string
+  description?: string
+  description_zh?: string
+  envVar?: string
+  cliFlag?: string
+  cliValue?: boolean
+  dependsOn?: string
+  dependsVal?: unknown
+}
+
+export interface ProviderManifest {
+  id: string
+  displayName: string
+  displayName_zh?: string
+  description: string
+  description_zh?: string
+  icon: string
+  version: string
+  kind: 'cli' | 'shell'
+  executable: string
+  npmPackage?: string
+  modelFlag?: string
+  knownModels?: string[]
+  defaultArgs?: string[]
+  capabilities: {
+    supportsResume: boolean
+    supportsStream: boolean
+    supportsImages: boolean
+    supportsMcp: boolean
+  }
+  configSchema?: ConfigField[]
+}
+
+// ProviderRuntime is the live, probed CLI state (not from the manifest):
+// whether the binary is installed and its real `--version`, plus the
+// latest npm version when an update-check has run.
+export interface ProviderRuntime {
+  installed: boolean
+  installedVersion?: string
+  // Set when the binary is on PATH but `--version` failed — installed, but
+  // not runnable (e.g. a broken npm install missing its platform binary).
+  // When set, never fall back to the manifest version: that would render a
+  // broken CLI as healthy.
+  versionError?: string
+  path?: string
+  latestVersion?: string
+  updateAvailable: boolean
+  checkedAt?: string
+  // Non-terminal sessions currently using this provider's CLI. Used by
+  // the Providers page to warn before upgrading a CLI that running
+  // sessions are on it. 0 when the server didn't populate the counter.
+  activeSessions: number
+}
+
+export interface Provider {
+  manifest: ProviderManifest
+  manifest_hash: string
+  config: Record<string, unknown>
+  enabled: boolean
+  runtime?: ProviderRuntime
+}
+
+// ── Channels ────────────────────────────────────────────────
+
+export interface Channel {
+  id: string
+  kind: string
+  config: Record<string, unknown>
+  enabled: boolean
+  running: boolean
+  capabilities: string[]
+  muted: boolean
+}
+
+export interface CreateChannelRequest {
+  kind: string
+  config: Record<string, unknown>
+  enabled: boolean
+}
+
+// ── Integrations ────────────────────────────────────────────
+
+export type IntegrationHealth =
+  | 'unknown'
+  | 'healthy'
+  | 'degraded'
+  | 'unhealthy'
+
+export interface Integration {
+  id: string
+  name: string
+  base_url: string
+  route_prefix: string
+  scopes: string[]
+  version?: string
+  enabled: boolean
+  health_status: IntegrationHealth
+  health_payload?: Record<string, unknown>
+  health_last_seen?: string
+  created_at: string
+  rotated_at?: string
+  /** True for rows opendray manages itself (e.g. opendray-memory).
+      Operators can't delete or rotate these from the UI. */
+  is_system: boolean
+  /** Spawn defaults applied to sessions this integration creates when
+      the request omits the field (the request always wins). Empty =
+      no default. */
+  default_provider_id?: string
+  default_model?: string
+  default_claude_account_id?: string
+  /** MCP servers injected into sessions this integration creates. */
+  mcp_servers?: McpServerSpec[]
+  /** System prompt prepended to sessions this integration creates. */
+  system_prompt?: string
+  /** Permission mode for sessions this integration creates:
+      'default' = the provider's normal approval flow; 'bypass' =
+      auto-approve every tool call (unattended, no operator to confirm). */
+  permission_mode?: 'default' | 'bypass'
+  /** Reserved forward-compat slot for a future named, reusable Agent
+      entity. Not used at runtime yet. */
+  agent_id?: string
+}
+
+export interface McpServerSpec {
+  name: string
+  transport?: string
+  command?: string
+  args?: string[]
+  env?: Record<string, string>
+  url?: string
+  headers?: Record<string, string>
+}
+
+export interface RegisterIntegrationRequest {
+  name: string
+  base_url: string
+  route_prefix: string
+  scopes?: string[]
+  version?: string
+  default_provider_id?: string
+  default_model?: string
+  default_claude_account_id?: string
+}
+
+export interface RegisterIntegrationResult {
+  integration: Integration
+  api_key: string
+}
+
+export const ALL_SCOPES = [
+  'session:read',
+  'session:create',
+  'session:input',
+  'channel:send',
+  'channel:receive',
+  'event:subscribe:session.*',
+  'event:subscribe:channel.*',
+  'event:subscribe:integration.*',
+  'provider:read',
+  'memory:read',
+  'memory:write',
+  'db:read',
+  'db:write',
+] as const
+
+export type Scope = (typeof ALL_SCOPES)[number] | string

@@ -1,0 +1,12 @@
+{
+  "name": "opendray-scripts",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "capture-tutorial": "node capture-tutorial-screenshots.mjs"
+  },
+  "dependencies": {
+    "playwright": "^1.49.0"
+  }
+}

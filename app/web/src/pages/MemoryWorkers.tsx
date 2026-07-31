@@ -1,0 +1,986 @@
+// /memory/workers — unified Memory configuration page.
+//
+// Originally just per-task worker settings (M25); M-PF reworks
+// this into a single landing for every memory-related knob so
+// operators stop hunting between Settings → Memory.Ambient and
+// /memory/workers for related toggles:
+//
+//   1. Providers     — HTTP endpoint registry (was Settings)
+//   2. Workers       — per-task summarizer/agent routing (original)
+//   3. Capture rules — trigger config (was Settings)
+//   4. Injection     — spawn-time strategy (was Settings)
+//   5. Token cost    — all-time call audit (was Settings)
+//
+// Settings → Memory.Ambient becomes a thin redirect banner.
+
+import { useMemo, useState } from 'react'
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
+import { Link } from '@tanstack/react-router'
+import { toast } from 'sonner'
+import {
+  AlertTriangle,
+  CheckCircle2,
+  ChevronRight,
+  Loader2,
+  Play,
+  Save,
+} from 'lucide-react'
+import { Trans, useTranslation } from 'react-i18next'
+
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Badge } from '@/components/ui/badge'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select'
+
+import {
+  type AgentProviderID,
+  type CallSummary,
+  type WorkerConfig,
+  type WorkerKind,
+  type TaskKind,
+  listAgentModels,
+  listMemoryWorkerCalls,
+  listMemoryWorkers,
+  taskAgentSupported,
+  testMemoryWorker,
+  upsertMemoryWorker,
+} from '@/lib/memoryWorkers'
+import {
+  listProviders as listSummarizerProviders,
+  type SummarizerProvider,
+} from '@/lib/memoryAmbient'
+import { listClaudeAccounts } from '@/lib/claudeAccounts'
+import { fetchMemoryStatus, type MemoryStatus } from '@/lib/memory'
+import { fetchServerSettings } from '@/lib/settings'
+import {
+  type SpawnMode,
+  getCortexSettings,
+  putCortexSettings,
+} from '@/lib/cortex'
+import {
+  ChangeModelDialog,
+  CostBlock,
+  ProfilesBlock,
+  ProvidersBlock,
+  RulesBlock,
+} from '@/components/settings/MemoryAmbientSection'
+
+function useTaskLabels() {
+  const { t } = useTranslation()
+  return {
+    label: (task: TaskKind) => t(`web.memoryWorkers.tasks.${task}.label`),
+    description: (task: TaskKind) =>
+      t(`web.memoryWorkers.tasks.${task}.description`),
+  }
+}
+
+export function MemoryWorkersPage() {
+  const { t } = useTranslation()
+  const qc = useQueryClient()
+  const workersQuery = useQuery({
+    queryKey: ['memory-workers'],
+    queryFn: listMemoryWorkers,
+  })
+  const summarizersQuery = useQuery({
+    queryKey: ['memory-summarizer-providers'],
+    queryFn: listSummarizerProviders,
+    staleTime: 60_000,
+  })
+  const accountsQuery = useQuery({
+    queryKey: ['claude-accounts'],
+    queryFn: listClaudeAccounts,
+    staleTime: 60_000,
+  })
+  const callsQuery = useQuery({
+    queryKey: ['memory-worker-calls'],
+    queryFn: () => listMemoryWorkerCalls({ limit: 200 }),
+    staleTime: 15_000,
+    refetchInterval: 30_000,
+  })
+  // Infrastructure context (read-only here): embedder health + the
+  // config.toml gates for gatekeeper / cleaner / knowledge. Editing
+  // those lives in Settings → Server → Memory (restart required) —
+  // this page only shows where the boundary is.
+  const memoryStatusQuery = useQuery({
+    queryKey: ['memory-status'],
+    queryFn: fetchMemoryStatus,
+    staleTime: 30_000,
+  })
+  const serverSettingsQuery = useQuery({
+    queryKey: ['server-settings'],
+    queryFn: fetchServerSettings,
+    staleTime: 30_000,
+  })
+  const infraCfg = serverSettingsQuery.data?.config
+
+  const refresh = () =>
+    qc.invalidateQueries({ queryKey: ['memory-workers'] })
+
+  if (workersQuery.isLoading) {
+    return (
+      <div className="text-muted-foreground flex items-center gap-2 p-8 text-sm">
+        <Loader2 className="size-3 animate-spin" />
+        {t('web.memoryWorkers.loading')}
+      </div>
+    )
+  }
+
+  // Empty-data state: most common reason is the server hasn't yet
+  // applied migration 0029 (memory_workers table) — surface it
+  // clearly so operators don't stare at a half-empty page wondering
+  // what went wrong.
+  if (workersQuery.isError) {
+    return (
+      <div className="mx-auto max-w-2xl space-y-3 p-6 text-sm">
+        <h1 className="text-xl font-semibold">
+          {t('web.memoryWorkers.title')}
+        </h1>
+        <div className="bg-destructive/10 text-destructive rounded-md border p-3 text-xs">
+          <strong>{t('web.memoryWorkers.errorTitle')}</strong>{' '}
+          {t('web.memoryWorkers.errorDescription')}
+        </div>
+        <pre className="bg-muted/30 overflow-auto rounded p-2 font-mono text-[10px]">
+          {String(workersQuery.error)}
+        </pre>
+      </div>
+    )
+  }
+
+  const sections = [
+    { id: 'cortex-sec-0', label: t('web.cortex.settings.injection.title') },
+    { id: 'cortex-sec-1', label: t('web.memoryConfig.sections.providers') },
+    { id: 'cortex-sec-2', label: t('web.memoryConfig.sections.workers') },
+    { id: 'cortex-sec-3', label: t('web.memoryConfig.sections.rules') },
+    { id: 'cortex-sec-4', label: t('web.memoryConfig.sections.profiles') },
+    { id: 'cortex-sec-5', label: t('web.memoryConfig.sections.costs') },
+  ]
+
+  return (
+    <div className="mx-auto max-w-3xl space-y-10 p-6">
+      <header>
+        <h1 className="text-xl font-semibold">
+          {t('web.memoryConfig.title')}
+        </h1>
+        <p className="text-muted-foreground mt-1 text-sm">
+          {t('web.memoryConfig.subtitle')}
+        </p>
+        {/* Jump nav — the page is six sections long; let the operator
+            land on the right one without scroll-hunting. */}
+        <nav className="mt-3 flex flex-wrap gap-1.5">
+          {sections.map((s, i) => (
+            <button
+              key={s.id}
+              onClick={() =>
+                document
+                  .getElementById(s.id)
+                  ?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+              }
+              className="border-border text-muted-foreground hover:text-foreground hover:bg-card rounded-full border px-2.5 py-0.5 text-[11px]"
+            >
+              <span className="mr-1 font-mono text-[10px]">§{i}</span>
+              {s.label}
+            </button>
+          ))}
+        </nav>
+      </header>
+
+      {/* Infrastructure strip — the OTHER half of memory config
+          (embedder, storage, background governance) lives in Server
+          Settings and needs a restart. Read-only summary here so the
+          boundary is visible instead of a mystery. */}
+      <InfrastructureStrip
+        status={memoryStatusQuery.data}
+        gatekeeperOn={infraCfg?.memory.gatekeeper.enabled}
+        cleanerOn={infraCfg?.memory.cleaner.enabled}
+        knowledgeOn={infraCfg?.knowledge.enabled}
+      />
+
+      {/* § 0. Spawn injection — how much Cortex context each new
+          session pays for upfront (Cortex settings, no restart). */}
+      <section id="cortex-sec-0" className="scroll-mt-4 space-y-3">
+        <SectionTitle
+          step={0}
+          title={t('web.cortex.settings.injection.title')}
+          hint={t('web.cortex.settings.injection.hint')}
+        />
+        <SpawnInjectionBlock />
+      </section>
+
+      {/* § 1. Providers — HTTP endpoint registry consumed by both
+          Workers and (legacy) Capture rule pins. */}
+      <section id="cortex-sec-1" className="scroll-mt-4 space-y-3">
+        <SectionTitle
+          step={1}
+          title={t('web.memoryConfig.sections.providers')}
+          hint={t('web.memoryConfig.sectionHints.providers')}
+        />
+        <ProvidersBlock />
+      </section>
+
+      {/* § 2. Workers — per-task routing decisions (summarizer
+          provider vs headless Claude/Antigravity agent). */}
+      <section id="cortex-sec-2" className="scroll-mt-4 space-y-3">
+        <SectionTitle
+          step={2}
+          title={t('web.memoryConfig.sections.workers')}
+          hint={t('web.memoryConfig.sectionHints.workers')}
+        />
+        <p className="text-muted-foreground text-sm">
+          <Trans
+            i18nKey="web.memoryWorkers.intro"
+            components={{ 1: <strong />, 3: <strong />, 5: <code /> }}
+          />
+        </p>
+        <div className="space-y-4">
+          {(workersQuery.data ?? []).map((w) => (
+            <WorkerCard
+              key={w.task}
+              config={w}
+              summarizers={summarizersQuery.data ?? []}
+              accounts={accountsQuery.data ?? []}
+              calls={(callsQuery.data ?? []).filter((c) => c.task === w.task)}
+              onSaved={refresh}
+              infraGateOff={
+                (w.task === 'gatekeeper' &&
+                  infraCfg?.memory.gatekeeper.enabled === false) ||
+                (w.task === 'cleaner' &&
+                  infraCfg?.memory.cleaner.enabled === false)
+              }
+            />
+          ))}
+        </div>
+      </section>
+
+      {/* § 3. Capture rules — when/how the capture engine fires. */}
+      <section id="cortex-sec-3" className="scroll-mt-4 space-y-3">
+        <SectionTitle
+          step={3}
+          title={t('web.memoryConfig.sections.rules')}
+          hint={t('web.memoryConfig.sectionHints.rules')}
+        />
+        <RulesBlock />
+      </section>
+
+      {/* § 4. Injection profiles — spawn-time memory banner
+          strategy (top_k_recent / relevant / hybrid / none). */}
+      <section id="cortex-sec-4" className="scroll-mt-4 space-y-3">
+        <SectionTitle
+          step={4}
+          title={t('web.memoryConfig.sections.profiles')}
+          hint={t('web.memoryConfig.sectionHints.profiles')}
+        />
+        <ProfilesBlock />
+      </section>
+
+      {/* § 5. Token cost — all-time audit summary across providers. */}
+      <section id="cortex-sec-5" className="scroll-mt-4 space-y-3">
+        <SectionTitle
+          step={5}
+          title={t('web.memoryConfig.sections.costs')}
+          hint={t('web.memoryConfig.sectionHints.costs')}
+        />
+        <CostBlock />
+      </section>
+    </div>
+  )
+}
+
+// ModelPicker — dropdown fed by the backend's model catalog for the
+// chosen agent CLI (stable aliases first, pinned ids after), with a
+// "custom…" escape hatch for anything not listed. Selecting from the
+// list avoids typos / version-name drift breaking worker calls.
+function ModelPicker({
+  providerId,
+  value,
+  onChange,
+}: {
+  providerId: AgentProviderID
+  value: string
+  onChange: (v: string) => void
+}) {
+  const { t } = useTranslation()
+  const modelsQuery = useQuery({
+    queryKey: ['agent-models', providerId],
+    queryFn: () => listAgentModels(providerId),
+    staleTime: 5 * 60_000,
+  })
+  const options = modelsQuery.data ?? []
+  // Derive the mode every render — initializing state from the (still
+  // loading) catalog locked the picker into custom-input mode whenever
+  // a model was already saved. Custom is only an explicit choice or a
+  // genuinely unlisted value once the catalog has loaded.
+  const [customMode, setCustomMode] = useState(false)
+  const listed = value === '' || options.some((m) => m.id === value)
+  const custom = customMode || (!!modelsQuery.data && !listed)
+
+  return (
+    <div>
+      <label className="text-muted-foreground mb-1 block text-[10px] tracking-wide uppercase">
+        {t('web.memoryWorkers.modelLabel')}
+      </label>
+      {custom ? (
+        <div className="flex items-center gap-1">
+          <Input
+            value={value}
+            onChange={(e) => onChange(e.target.value)}
+            placeholder={t('web.memoryWorkers.modelCustomPlaceholder')}
+            className="h-9 font-mono text-xs"
+            autoFocus
+          />
+          <Button
+            size="sm"
+            variant="ghost"
+            className="h-9 px-2 text-[11px]"
+            onClick={() => {
+              setCustomMode(false)
+              onChange('')
+            }}
+          >
+            {t('web.memoryWorkers.modelBackToList')}
+          </Button>
+        </div>
+      ) : (
+        <Select
+          value={value || '__default__'}
+          onValueChange={(v) => {
+            if (v === '__custom__') {
+              setCustomMode(true)
+              return
+            }
+            onChange(v === '__default__' ? '' : v)
+          }}
+        >
+          <SelectTrigger title={t('web.memoryWorkers.modelHint')}>
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="__default__">
+              {t('web.memoryWorkers.modelCliDefault')}
+            </SelectItem>
+            {options.map((m) => (
+              <SelectItem key={m.id} value={m.id}>
+                {m.label}
+              </SelectItem>
+            ))}
+            <SelectItem value="__custom__">
+              {t('web.memoryWorkers.modelCustom')}
+            </SelectItem>
+          </SelectContent>
+        </Select>
+      )}
+    </div>
+  )
+}
+
+// InfrastructureStrip is the read-only bridge to the OTHER half of
+// memory configuration: the embedder / storage / background-governance
+// keys that live in config.toml (Settings → Server → Memory, restart
+// required). Everything on THIS page hot-applies; everything behind
+// the strip's link does not — making that boundary visible is the
+// whole point of the strip.
+function InfrastructureStrip({
+  status,
+  gatekeeperOn,
+  cleanerOn,
+  knowledgeOn,
+}: {
+  status?: MemoryStatus
+  gatekeeperOn?: boolean
+  cleanerOn?: boolean
+  knowledgeOn?: boolean
+}) {
+  const { t } = useTranslation()
+  const gate = (label: string, on?: boolean) => (
+    <span className="flex items-center gap-1 text-[11px]">
+      <span
+        className={`inline-block h-1.5 w-1.5 rounded-full ${
+          on === undefined
+            ? 'bg-muted-foreground/40'
+            : on
+              ? 'bg-emerald-400'
+              : 'bg-zinc-500'
+        }`}
+      />
+      {label}
+      <span className="text-muted-foreground">
+        {on === undefined
+          ? '…'
+          : on
+            ? t('web.memoryConfig.infra.on')
+            : t('web.memoryConfig.infra.off')}
+      </span>
+    </span>
+  )
+  return (
+    <div className="bg-card/50 rounded-md border p-3">
+      <div className="flex items-center justify-between gap-3">
+        <div className="min-w-0">
+          <h2 className="text-[12.5px] font-medium">
+            {t('web.memoryConfig.infra.title')}
+          </h2>
+          <p className="text-muted-foreground mt-0.5 text-[11px] leading-snug">
+            {t('web.memoryConfig.infra.hint')}
+          </p>
+        </div>
+        <Button asChild variant="outline" size="sm" className="h-8 shrink-0 text-[11px]">
+          <Link to="/settings" search={{ section: 'server.memory' }}>
+            {t('web.memoryConfig.infra.openSettings')}
+          </Link>
+        </Button>
+      </div>
+      <div className="mt-2.5 flex flex-wrap items-center gap-x-5 gap-y-1.5">
+        <span className="flex items-center gap-1 text-[11px]">
+          <span
+            className={`inline-block h-1.5 w-1.5 rounded-full ${
+              status ? (status.degraded ? 'bg-amber-400' : 'bg-emerald-400') : 'bg-muted-foreground/40'
+            }`}
+          />
+          {t('web.memoryConfig.infra.embedder')}
+          <code className="text-muted-foreground">
+            {status
+              ? `${status.effective_embedder || status.embedder} · ${status.dimensions}d`
+              : '…'}
+          </code>
+        </span>
+        {gate(t('web.memoryConfig.infra.gatekeeper'), gatekeeperOn)}
+        {gate(t('web.memoryConfig.infra.cleaner'), cleanerOn)}
+        {gate(t('web.memoryConfig.infra.knowledge'), knowledgeOn)}
+      </div>
+    </div>
+  )
+}
+
+// SpawnInjectionBlock — the full↔lean switch (Cortex settings).
+// lean: spawn carries the binding guardrails + a compact index;
+// agents pull sections/pages on demand via doc_read / project_search.
+function SpawnInjectionBlock() {
+  const { t } = useTranslation()
+  const qc = useQueryClient()
+  const settingsQuery = useQuery({
+    queryKey: ['cortex-settings'],
+    queryFn: getCortexSettings,
+  })
+  const save = useMutation({
+    mutationFn: (mode: SpawnMode) => putCortexSettings({ spawn_mode: mode }),
+    onSuccess: () => {
+      toast.success(t('web.cortex.settings.injection.savedToast'))
+      qc.invalidateQueries({ queryKey: ['cortex-settings'] })
+    },
+    onError: (e: Error) =>
+      toast.error(t('web.cortex.settings.injection.saveFailed'), {
+        description: e.message,
+      }),
+  })
+  const mode = settingsQuery.data?.spawn_mode ?? 'full'
+
+  return (
+    <div className="bg-card space-y-3 rounded-md border p-4">
+      <div className="grid grid-cols-1 gap-2 md:grid-cols-2">
+        {(['lean', 'full'] as SpawnMode[]).map((m) => (
+          <button
+            key={m}
+            onClick={() => save.mutate(m)}
+            disabled={save.isPending || settingsQuery.isLoading}
+            className={`rounded-md border p-3 text-left text-sm transition-colors ${
+              mode === m
+                ? 'border-primary bg-primary/10'
+                : 'border-border hover:bg-muted/40'
+            }`}
+          >
+            <div className="mb-1 flex items-center gap-2 font-medium">
+              {t(`web.cortex.settings.injection.mode.${m}.label`)}
+              {mode === m && (
+                <Badge variant="success" className="text-[9px]">
+                  {t('web.cortex.settings.injection.active')}
+                </Badge>
+              )}
+            </div>
+            <p className="text-muted-foreground text-xs leading-relaxed">
+              {t(`web.cortex.settings.injection.mode.${m}.description`)}
+            </p>
+          </button>
+        ))}
+      </div>
+      <p className="text-muted-foreground text-[11px]">
+        {t('web.cortex.settings.injection.note')}
+      </p>
+    </div>
+  )
+}
+
+function SectionTitle({
+  step,
+  title,
+  hint,
+}: {
+  step: number
+  title: string
+  hint: string
+}) {
+  return (
+    <div className="border-border border-b pb-2">
+      <h2 className="text-base font-semibold">
+        <span className="text-muted-foreground mr-2 font-mono text-[12px]">
+          §{step}
+        </span>
+        {title}
+      </h2>
+      <p className="text-muted-foreground mt-0.5 text-[12px]">{hint}</p>
+    </div>
+  )
+}
+
+interface WorkerCardProps {
+  config: WorkerConfig
+  summarizers: SummarizerProvider[]
+  accounts: { id: string; display_name?: string; name?: string }[]
+  calls: CallSummary[]
+  onSaved: () => void
+  /** True when this worker's config.toml feature gate is OFF (e.g.
+   * [memory.gatekeeper] enabled = false) — the routing below is saved
+   * but inert until the operator flips the infra toggle. */
+  infraGateOff?: boolean
+}
+
+function WorkerCard({
+  config,
+  summarizers,
+  accounts,
+  calls,
+  onSaved,
+  infraGateOff,
+}: WorkerCardProps) {
+  const { t } = useTranslation()
+  const taskLabels = useTaskLabels()
+  const [kind, setKind] = useState<WorkerKind>(config.kind)
+  const [summarizerId, setSummarizerId] = useState(config.summarizer_id ?? '')
+  const [providerId, setProviderId] = useState<AgentProviderID | ''>(
+    (config.provider_id as AgentProviderID) ?? '',
+  )
+  const [accountId, setAccountId] = useState(config.account_id ?? '')
+  const [model, setModel] = useState(config.model ?? '')
+  const [enabled, setEnabled] = useState(config.enabled)
+
+  const qc = useQueryClient()
+  // The provider whose model this worker will actually call: the
+  // pinned one, falling back to the registry default.
+  const effectiveSummarizer =
+    kind === 'summarizer'
+      ? ((summarizerId
+          ? summarizers.find((s) => s.id === summarizerId)
+          : summarizers.find((s) => s.is_default)) ?? null)
+      : null
+
+  const agentAllowed = taskAgentSupported(config.task)
+  const dirty =
+    kind !== config.kind ||
+    summarizerId !== (config.summarizer_id ?? '') ||
+    providerId !== ((config.provider_id as string) ?? '') ||
+    accountId !== (config.account_id ?? '') ||
+    model !== (config.model ?? '') ||
+    enabled !== config.enabled
+
+  const save = useMutation({
+    mutationFn: () =>
+      upsertMemoryWorker(config.task, {
+        kind,
+        summarizer_id: kind === 'summarizer' ? summarizerId : '',
+        provider_id: kind === 'agent' ? providerId || undefined : '',
+        account_id:
+          kind === 'agent' && providerId === 'claude' ? accountId : '',
+        model: kind === 'agent' ? model.trim() : '',
+        enabled,
+      }),
+    onSuccess: () => {
+      toast.success(
+        t('web.memoryWorkers.savedToast', { label: taskLabels.label(config.task) }),
+      )
+      onSaved()
+    },
+    onError: (e: Error) =>
+      toast.error(t('web.memoryWorkers.saveFailedToast'), {
+        description: e.message,
+      }),
+  })
+
+  const test = useMutation({
+    mutationFn: () => testMemoryWorker(config.task),
+    onSuccess: (res) => {
+      if (res.ok) {
+        toast.success(
+          t('web.memoryWorkers.testOkToast', {
+            label: taskLabels.label(config.task),
+            ms: res.duration_ms,
+          }),
+          { description: res.preview ? truncate(res.preview, 200) : '' },
+        )
+      } else {
+        toast.error(
+          t('web.memoryWorkers.testFailedToast', {
+            label: taskLabels.label(config.task),
+          }),
+          {
+            description: res.error ?? t('web.memoryWorkers.unknownError'),
+          },
+        )
+      }
+    },
+    onError: (e: Error) =>
+      toast.error(t('web.memoryWorkers.testCallFailedToast'), {
+        description: e.message,
+      }),
+  })
+
+  const recentMetrics = useMemo(() => computeMetrics(calls), [calls])
+
+  return (
+    <div className="bg-card space-y-3 rounded-md border p-4">
+      {infraGateOff && (
+        <div className="flex items-center gap-2 rounded-md border border-amber-500/30 bg-amber-500/10 px-2.5 py-1.5 text-[11px] text-amber-300">
+          <AlertTriangle className="h-3 w-3 shrink-0" />
+          <span className="min-w-0 flex-1">
+            {t('web.memoryWorkers.infraGateOff', {
+              label: taskLabels.label(config.task),
+            })}
+          </span>
+          <Link
+            to="/settings"
+            search={{ section: 'server.memory' }}
+            className="shrink-0 underline underline-offset-2"
+          >
+            {t('web.memoryWorkers.infraGateOpen')}
+          </Link>
+        </div>
+      )}
+      <div className="flex items-start justify-between gap-3">
+        <div>
+          <div className="flex items-center gap-2">
+            <h2 className="text-base font-semibold">
+              {taskLabels.label(config.task)}
+            </h2>
+            <Badge variant={enabled ? 'success' : 'muted'} className="text-[9px]">
+              {enabled
+                ? t('web.memoryWorkers.enabledBadge')
+                : t('web.memoryWorkers.disabledBadge')}
+            </Badge>
+            {!agentAllowed && (
+              <Badge variant="warning" className="text-[9px]">
+                {t('web.memoryWorkers.summarizerOnlyBadge')}
+              </Badge>
+            )}
+          </div>
+          <p className="text-muted-foreground mt-1 text-xs">
+            {taskLabels.description(config.task)}
+          </p>
+          {/* Model guidance — what strength this chore actually needs,
+              so operators don't burn frontier money on plumbing. */}
+          <p className="mt-1 text-[11px] text-blue-400/90">
+            {t(`web.memoryWorkers.tasks.${config.task}.modelAdvice`)}
+          </p>
+        </div>
+        <div className="text-muted-foreground flex flex-col items-end text-[10px]">
+          <span>
+            {t('web.memoryWorkers.callsCount', { count: recentMetrics.count })}
+          </span>
+          {recentMetrics.count > 0 && (
+            <>
+              <span>
+                {t('web.memoryWorkers.avgMs', { ms: recentMetrics.avgMs })}
+              </span>
+              {recentMetrics.errorCount > 0 && (
+                <span className="text-destructive">
+                  {t('web.memoryWorkers.errorsCount', {
+                    count: recentMetrics.errorCount,
+                  })}
+                </span>
+              )}
+            </>
+          )}
+        </div>
+      </div>
+
+      <div className="space-y-2">
+        <div className="grid grid-cols-1 gap-2 md:grid-cols-3">
+          <div>
+            <label className="text-muted-foreground mb-1 block text-[10px] tracking-wide uppercase">
+              {t('web.memoryWorkers.workerLabel')}
+            </label>
+            <Select
+              value={kind}
+              onValueChange={(v) => setKind(v as WorkerKind)}
+              disabled={!agentAllowed}
+            >
+              <SelectTrigger>
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="summarizer">
+                  {t('web.memoryWorkers.summarizerHttp')}
+                </SelectItem>
+                {agentAllowed && (
+                  <SelectItem value="agent">
+                    {t('web.memoryWorkers.agentCliPrint')}
+                  </SelectItem>
+                )}
+              </SelectContent>
+            </Select>
+          </div>
+
+          {kind === 'summarizer' && (
+            <div className="md:col-span-2">
+              <label className="text-muted-foreground mb-1 block text-[10px] tracking-wide uppercase">
+                {t('web.memoryWorkers.summarizerProviderLabel')}
+              </label>
+              <Select
+                value={summarizerId || '__default__'}
+                onValueChange={(v) =>
+                  setSummarizerId(v === '__default__' ? '' : v)
+                }
+              >
+                <SelectTrigger>
+                  <SelectValue
+                    placeholder={t('web.memoryWorkers.registryDefault')}
+                  />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="__default__">
+                    {t('web.memoryWorkers.registryDefault')}
+                  </SelectItem>
+                  {summarizers.map((s) => (
+                    <SelectItem key={s.id} value={s.id}>
+                      {s.name} · {s.kind}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+              {/* The provider pins the actual model — surface it here
+                  with an inline switcher (local endpoints list what's
+                  installed) so changing the model doesn't require a
+                  detour to §1. */}
+              {effectiveSummarizer && (
+                <div className="text-muted-foreground mt-1.5 flex items-center gap-2 text-[11px]">
+                  <span>{t('web.memoryWorkers.providerModel')}</span>
+                  <code className="text-foreground">
+                    {effectiveSummarizer.model}
+                  </code>
+                  <ChangeModelDialog
+                    provider={effectiveSummarizer}
+                    onSaved={() =>
+                      qc.invalidateQueries({
+                        queryKey: ['memory-summarizer-providers'],
+                      })
+                    }
+                  />
+                </div>
+              )}
+            </div>
+          )}
+
+          {kind === 'agent' && (
+            <>
+              <div>
+                <label className="text-muted-foreground mb-1 block text-[10px] tracking-wide uppercase">
+                  {t('web.memoryWorkers.cliLabel')}
+                </label>
+                <Select
+                  value={providerId || ''}
+                  onValueChange={(v) =>
+                    setProviderId(v as AgentProviderID | '')
+                  }
+                >
+                  <SelectTrigger>
+                    <SelectValue
+                      placeholder={t('web.memoryWorkers.selectPlaceholder')}
+                    />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="claude">
+                      {t('web.memoryWorkers.cliClaude')}
+                    </SelectItem>
+                    <SelectItem value="codex">
+                      {t('web.memoryWorkers.cliCodex')}
+                    </SelectItem>
+                    <SelectItem value="antigravity">
+                      {t('web.memoryWorkers.cliAntigravity')}
+                    </SelectItem>
+                    <SelectItem value="grok">
+                      {t('web.memoryWorkers.cliGrok')}
+                    </SelectItem>
+                    <SelectItem value="opencode">
+                      {t('web.memoryWorkers.cliOpencode')}
+                    </SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+              {providerId && (
+                <ModelPicker
+                  providerId={providerId}
+                  value={model}
+                  onChange={setModel}
+                />
+              )}
+              {providerId === 'claude' && (
+                <div>
+                  <label className="text-muted-foreground mb-1 block text-[10px] tracking-wide uppercase">
+                    {t('web.memoryWorkers.claudeAccountLabel')}
+                  </label>
+                  <Select
+                    value={accountId || '__default__'}
+                    onValueChange={(v) =>
+                      setAccountId(v === '__default__' ? '' : v)
+                    }
+                  >
+                    <SelectTrigger>
+                      <SelectValue
+                        placeholder={t('web.memoryWorkers.claudeAccountDefault')}
+                      />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="__default__">
+                        {t('web.memoryWorkers.claudeAccountDefault')}
+                      </SelectItem>
+                      {accounts.map((a) => (
+                        <SelectItem key={a.id} value={a.id}>
+                          {a.display_name || a.name || a.id}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+              )}
+            </>
+          )}
+        </div>
+
+        {kind === 'agent' && (
+          <div className="text-muted-foreground bg-muted/30 flex items-start gap-2 rounded-md p-2 text-xs">
+            <AlertTriangle className="mt-0.5 size-3 flex-none" />
+            <div>
+              <Trans
+                i18nKey="web.memoryWorkers.agentWarning"
+                components={{ 1: <strong />, 3: <strong /> }}
+              />
+            </div>
+          </div>
+        )}
+      </div>
+
+      <div className="flex items-center gap-2 pt-1">
+        <label className="text-muted-foreground flex cursor-pointer items-center gap-1 text-xs">
+          <input
+            type="checkbox"
+            checked={enabled}
+            onChange={(e) => setEnabled(e.target.checked)}
+          />
+          {t('web.memoryWorkers.enabledCheckbox')}
+        </label>
+        <div className="ml-auto flex gap-2">
+          <Button
+            size="sm"
+            variant="outline"
+            onClick={() => test.mutate()}
+            disabled={test.isPending}
+          >
+            {test.isPending ? (
+              <Loader2 className="mr-1 size-3 animate-spin" />
+            ) : (
+              <Play className="mr-1 size-3" />
+            )}
+            {t('web.memoryWorkers.testButton')}
+          </Button>
+          <Button
+            size="sm"
+            disabled={!dirty || save.isPending}
+            onClick={() => save.mutate()}
+          >
+            {save.isPending ? (
+              <Loader2 className="mr-1 size-3 animate-spin" />
+            ) : (
+              <Save className="mr-1 size-3" />
+            )}
+            {t('web.memoryWorkers.saveButton')}
+          </Button>
+        </div>
+      </div>
+
+      {calls.length > 0 && (
+        <details className="text-xs">
+          <summary className="text-muted-foreground hover:text-foreground inline-flex cursor-pointer items-center gap-1">
+            <ChevronRight className="size-3 transition-transform" />
+            {t('web.memoryWorkers.recentCalls', { count: calls.length })}
+          </summary>
+          <div className="mt-2 max-h-48 overflow-auto rounded-md border">
+            <table className="w-full text-[11px]">
+              <thead className="bg-muted/30">
+                <tr>
+                  <th className="px-2 py-1 text-left">
+                    {t('web.memoryWorkers.tableWhen')}
+                  </th>
+                  <th className="px-2 py-1 text-left">
+                    {t('web.memoryWorkers.tableWorker')}
+                  </th>
+                  <th className="px-2 py-1 text-right">
+                    {t('web.memoryWorkers.tableMs')}
+                  </th>
+                  <th className="px-2 py-1">
+                    {t('web.memoryWorkers.tableOk')}
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {calls.slice(0, 25).map((c) => (
+                  <tr key={c.id} className="border-t">
+                    <td className="text-muted-foreground px-2 py-1 font-mono">
+                      {new Date(c.started_at).toLocaleTimeString()}
+                    </td>
+                    <td className="px-2 py-1">
+                      {c.worker_kind}
+                      {c.provider_id ? ` · ${c.provider_id}` : ''}
+                    </td>
+                    <td className="px-2 py-1 text-right font-mono">
+                      {c.duration_ms}
+                    </td>
+                    <td className="px-2 py-1 text-center">
+                      {c.success ? (
+                        <CheckCircle2 className="text-state-running mx-auto size-3" />
+                      ) : (
+                        <AlertTriangle className="text-state-failed mx-auto size-3" />
+                      )}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </details>
+      )}
+    </div>
+  )
+}
+
+function computeMetrics(calls: CallSummary[]) {
+  if (calls.length === 0) return { count: 0, avgMs: 0, errorCount: 0 }
+  const cutoff = Date.now() - 24 * 3600_000
+  const recent = calls.filter((c) => new Date(c.started_at).getTime() > cutoff)
+  let totalMs = 0
+  let errors = 0
+  for (const c of recent) {
+    totalMs += c.duration_ms
+    if (!c.success) errors++
+  }
+  return {
+    count: recent.length,
+    avgMs: recent.length ? Math.round(totalMs / recent.length) : 0,
+    errorCount: errors,
+  }
+}
+
+function truncate(s: string, n: number): string {
+  return s.length > n ? s.slice(0, n) + '…' : s
+}

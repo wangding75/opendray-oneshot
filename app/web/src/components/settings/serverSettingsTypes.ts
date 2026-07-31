@@ -1,0 +1,11 @@
+export type ServerSectionId =
+  | 'general'
+  | 'logging'
+  | 'sessions'
+  | 'vault'
+  | 'mcp'
+  | 'memory'
+  | 'backup'
+  | 'claude'
+  | 'codex'
+  | 'antigravity'

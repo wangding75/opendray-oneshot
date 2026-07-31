@@ -1,0 +1,118 @@
+{
+  "$schema": "https://opendray.dev/schemas/manifest-v2.json",
+  "id": "codex",
+  "displayName": "Codex CLI",
+  "displayName_zh": "Codex CLI",
+  "description": "OpenAI Codex CLI — agentic coding with sandboxed execution",
+  "description_zh": "OpenAI Codex CLI —— 沙盒执行的智能编码助手",
+  "icon": "🤖",
+  "version": "1.0.0",
+  "kind": "cli",
+  "executable": "codex",
+  "npmPackage": "@openai/codex",
+  "modelFlag": "--model",
+  "knownModels": [
+    "gpt-5.5",
+    "gpt-5.4",
+    "gpt-5.4-mini"
+  ],
+  "capabilities": {
+    "supportsResume": false,
+    "supportsStream": true,
+    "supportsImages": false,
+    "supportsMcp": true
+  },
+  "configSchema": [
+    {
+      "key": "authType",
+      "label": "Authentication",
+      "label_zh": "认证",
+      "type": "select",
+      "group": "auth",
+      "options": [
+        "env",
+        "custom"
+      ],
+      "default": "env",
+      "description": "env = read OPENAI_API_KEY from system; custom = use the key below",
+      "description_zh": "env = 从系统读取 OPENAI_API_KEY；custom = 使用下方自定义密钥"
+    },
+    {
+      "key": "apiKey",
+      "label": "API Key",
+      "label_zh": "API 密钥",
+      "type": "secret",
+      "group": "auth",
+      "envVar": "OPENAI_API_KEY",
+      "placeholder": "sk-...",
+      "dependsOn": "authType",
+      "dependsVal": "custom"
+    },
+    {
+      "key": "approval",
+      "label": "Approval Mode",
+      "label_zh": "审批模式",
+      "type": "select",
+      "group": "runtime",
+      "options": [
+        "untrusted",
+        "on-request",
+        "never"
+      ],
+      "default": "on-request",
+      "cliFlag": "--ask-for-approval",
+      "cliValue": true,
+      "description": "untrusted = only run trusted commands without asking · on-request = model decides when to ask · never = never ask (pair with sandbox)",
+      "description_zh": "untrusted = 仅可信命令免询问 · on-request = 由模型决定何时询问 · never = 从不询问（建议配合 sandbox 使用）"
+    },
+    {
+      "key": "sandbox",
+      "label": "Sandbox Policy",
+      "label_zh": "沙盒策略",
+      "type": "select",
+      "group": "runtime",
+      "options": [
+        "read-only",
+        "workspace-write",
+        "danger-full-access"
+      ],
+      "default": "workspace-write",
+      "cliFlag": "-s",
+      "cliValue": true,
+      "description": "read-only = no writes · workspace-write = write inside workspace · danger-full-access = no sandbox",
+      "description_zh": "read-only = 只读 · workspace-write = 仅工作区可写 · danger-full-access = 无沙盒"
+    },
+    {
+      "key": "command",
+      "label": "Command Path",
+      "label_zh": "命令路径",
+      "type": "string",
+      "group": "advanced",
+      "placeholder": "codex"
+    },
+    {
+      "key": "extraArgs",
+      "label": "Extra CLI Args",
+      "label_zh": "额外 CLI 参数",
+      "type": "args",
+      "group": "advanced"
+    },
+    {
+      "key": "skills_enabled",
+      "label": "Enable opendray skills",
+      "label_zh": "启用 opendray skills",
+      "type": "boolean",
+      "group": "advanced",
+      "default": false,
+      "description": "WARNING: enabling skills overrides CODEX_HOME to a per-session scratch dir. ChatGPT-OAuth login state in ~/.codex/ will not be visible inside the session — only safe for OPENAI_API_KEY env auth.",
+      "description_zh": "警告：启用后会把 CODEX_HOME 指向 per-session 临时目录，~/.codex/ 里的 ChatGPT-OAuth 登录将不可用 — 仅适用 OPENAI_API_KEY 环境变量认证的场景。"
+    }
+  ],
+  "ui": {
+    "activityBar": {
+      "id": "codex",
+      "icon": "🤖",
+      "title": "Codex"
+    }
+  }
+}

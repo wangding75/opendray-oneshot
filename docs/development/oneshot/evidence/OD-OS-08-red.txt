@@ -1,0 +1,14 @@
+OD-OS-08 RED / baseline evidence
+================================
+Baseline commit: 11a2eb323a739a7b7c1313d8171852b356ab7dfa
+
+Before OD-OS-08 the repository did not contain:
+- internal/store/migrations/0083_oneshot.sql
+- internal/oneshot/store/
+- PostgreSQL-tagged One-shot migration/Store integration tests
+- scripts/oneshot/check-oneshot-store.py
+- scripts/oneshot/check-oneshot-store.sh
+
+Therefore the frozen OD-OS-08 acceptance conditions were not satisfied at the
+baseline: no independent One-shot schema, no transactional Store, no owner
+filtered CRUD/pagination, and no migration rollback/concurrency evidence.

@@ -1,0 +1,25 @@
+PASS: OD-OS-09 Go files are formatted
+PASS: OD-OS-09 PostgreSQL queue source contract
+PASS: SKIP LOCKED lease claim, expiry recovery, ack/nack/dead-letter/cancel
+PASS: API and Telegram idempotency payload binding
+PASS: restart protection excludes Deliveries that already own a Run
+ok  	github.com/opendray/opendray-v2/internal/oneshot/domain	1.025s
+ok  	github.com/opendray/opendray-v2/internal/oneshot/queue	1.098s
+ok  	github.com/opendray/opendray-v2/internal/oneshot/application	1.011s
+ok  	github.com/opendray/opendray-v2/internal/oneshot/queue	0.001s [no tests to run]
+PASS: isolated One-shot queue/application vet, race tests, and PostgreSQL-tag compilation
+SKIP: OPENDRAY_DEV_DB_URL not set; live PostgreSQL queue tests deferred to provisioned/local environment
+PASS: OD-OS-08 Go files are formatted
+PASS: One-shot migration owns exactly 10 isolated tables
+PASS: foreign keys, checks, deduplication, active-Run and append-order invariants are present
+PASS: Store exposes context-aware transactional CRUD and owner-filtered pagination
+PASS: PostgreSQL integration tests cover migration repeatability, rollback, constraints and ownership
+ok  	github.com/opendray/opendray-v2/internal/oneshot/domain	1.027s
+ok  	github.com/opendray/opendray-v2/internal/oneshot/saga	1.009s
+ok  	github.com/opendray/opendray-v2/internal/oneshot/store	1.014s
+ok  	github.com/opendray/opendray-v2/internal/store	0.002s [no tests to run]
+ok  	github.com/opendray/opendray-v2/internal/oneshot/store	0.016s [no tests to run]
+PASS: isolated One-shot domain/store vet and race tests
+SKIP: OPENDRAY_DEV_DB_URL not set; live PostgreSQL tests deferred to provisioned/local environment
+OD-OS-08/24 isolated One-shot PostgreSQL Store source gate: PASS
+OD-OS-09 reliable PostgreSQL Delivery Queue source gate: PASS

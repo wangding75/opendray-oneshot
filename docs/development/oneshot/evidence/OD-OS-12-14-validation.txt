@@ -1,0 +1,19 @@
+PASS: OD-OS-12 process-tree supervision, TERM/KILL cleanup, timeout, output drain and idempotent cancellation
+PASS: OD-OS-13 durable execution Saga, compensation audit, ACK recovery and restart reconciliation
+PASS: OD-OS-14 provider capability descriptor, versioned adapter registry, shared metadata and credential boundary
+PASS: OD-OS-10 Go files are formatted
+PASS: adapter contracts, Shell fixture allowlist, ordinary process executor, Run lifecycle and disabled worker gate
+PASS: executor has no PTY, Session, sessions-table or session_transcripts dependency
+ok  	github.com/opendray/opendray-v2/internal/oneshot/adapter	1.015s	coverage: 85.9% of statements
+ok  	github.com/opendray/opendray-v2/internal/oneshot/executor	9.118s	coverage: 66.9% of statements
+ok  	github.com/opendray/opendray-v2/internal/oneshot/queue	1.100s	coverage: 32.9% of statements
+ok  	github.com/opendray/opendray-v2/internal/oneshot/recovery	1.016s	coverage: 57.3% of statements
+ok  	github.com/opendray/opendray-v2/internal/oneshot/saga	1.010s	coverage: 78.6% of statements
+ok  	github.com/opendray/opendray-v2/internal/oneshot/store	1.009s
+ok  	github.com/opendray/opendray-v2/internal/oneshot/store	0.002s [no tests to run]
+PASS: isolated adapter/executor/store vet, race tests, PostgreSQL-tag and Windows/macOS compilation
+One-shot architecture boundaries: PASS
+One-shot task state: PASS
+OD-OS-10 Shell One-shot Adapter and Executor source gate: PASS
+One-shot task state: PASS
+OD-OS-12/13/14 One-shot runtime core source gate: PASS

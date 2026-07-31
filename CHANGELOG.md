@@ -1,0 +1,1710 @@
+# Changelog
+
+All notable changes to OpenDray v2 are documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
+Version numbers follow this project's own **major-as-generation**
+strategy — major version = product generation, minor = feature
+iteration, patch = fix / polish. See [VERSIONING.md](./VERSIONING.md)
+for the full rationale and what triggers a major bump.
+
+## [Unreleased]
+
+
+### Added
+
+- **Isolated One-shot agent execution platform.** Adds durable Task/Delivery/Run
+  execution, Codex and Claude Code adapters, continuation contexts, secure
+  REST/WebSocket control, Telegram commands, mobile Agent Tasks, staged
+  attachments and transactional completion notifications without changing the
+  existing PTY Session execution domain.
+
+### Security
+
+- One-shot attachment staging enforces owner/project scope, filename and path
+  safety, configured size limits, content-detected MIME policy, SHA-256 and
+  expiry. Telegram Bot file URLs/tokens and host storage paths are not exposed
+  to providers or clients.
+
+## [v2.12.2] — 2026-07-23
+
+Round Table members gain live, grounded memory, the mobile session screen
+is rebuilt around a tool dock, and the operator takes ownership of the four
+global knowledge pages so their curation finally sticks.
+
+### Added
+
+- **Round Table members read the shared memory.** Every seated provider now
+  gets live, **read-only** access to the shared `opendray-memory` MCP, so
+  members ground their claims in the real store instead of guessing. A new
+  read-only mode (`OPENDRAY_MEMORY_READONLY=1`) exposes only the search / read
+  tools and refuses every write server-side — safe even with tool permissions
+  open — and the table prompt flips to "ground your claims via these tools".
+  A single per-provider attach point (`catalog.AttachMemoryMCP`) handles the
+  antigravity / codex quirks and is reusable for any spawn.
+- **Operator owns the form of the four global KB pages.** The shape of
+  `kb_infrastructure` / `kb_conventions` / `kb_lessons` / `kb_reusable` was
+  hardcoded in the drafter's prompts, so every consolidation sweep
+  re-manufactured the fixed fat skeleton and operator curation never stuck.
+  The drafter now honours each page's blueprint `maintainer_mode` (`human` →
+  the operator owns it outright, never drafted) and, for AI-maintained pages,
+  edits the operator's current structure **in place** — folding in only new,
+  on-topic evidence — instead of regenerating from a template. A per-page
+  `prompt_hint` lets the operator steer form and scope without a code change.
+  Set both via `PUT /blueprint/{slug}` (cwd `__global__`); a web/mobile toggle
+  is a follow-up. No migration — the four pages default to the previous
+  behaviour.
+- **Mobile: session tool dock.** The session detail screen is rebuilt so the
+  terminal owns the full height under a two-line AppBar title, and a new
+  **SessionToolDock** (Files · Git · Database · Vault · More) opens each tool
+  as a bottom sheet over the live terminal. The overflow ⋮ menu is slimmed to
+  session actions.
+
+### Changed
+
+- **Mobile: More / settings redesigned.** The flat menu is rebuilt as grouped
+  inset cards per section, with an account-block identity header (monogram
+  avatar), accent-tinted icon chips, refined typography and a version footer.
+  New `sessions.dock.more` / `sessions.tools.*` strings ship across en / zh /
+  es at 100% parity.
+
+### Fixed
+
+- **A human-locked global KB page could never converge from the UI.** Two bugs
+  are fixed: approving a divergence proposal silently dropped the lock (the
+  merge was written as `updated_by='agent'`, flipping `HumanLocked` off) — an
+  approval is an operator decision, so the result now stays operator-authored
+  and locked; and rejecting a proposal didn't stick — the drafter re-generated
+  and re-filed the identical refresh every consolidation cycle. The drafter now
+  skips a locked page whose feedstock signature matches an already-rejected
+  proposal, so a rejection holds instead of nagging forever.
+
+### Docs
+
+- The README surfaces the two marquee capabilities shipped since the last pass
+  — **Round Table** (cross-vendor AI group chat + role-assigned execution
+  plans) and the **Database tool** (Postgres / MySQL / MariaDB / SQLite,
+  per-project crypto isolation, web + mobile) — plus staged image attachments,
+  TUI theme-following / wheel-scroll, and one-click provider updates.
+
+## [v2.12.1] — 2026-07-18
+
+Grok reaches parity with the other cloud agents, the Cortex knowledge base
+grows a real management surface, and the mobile knowledge experience is
+rebuilt for phones.
+
+### Added
+
+- **Grok is now a first-class cloud agent.** It can drive the shared memory
+  MCP (memory search, `doc_read`, cross-layer recall) just like Claude / Codex
+  / Antigravity — its spawn folder is marked trusted so grok actually starts
+  the injected memory server instead of silently skipping it. Grok and OpenCode
+  are also selectable in **Discuss with AI** and as **Memory Worker** agent
+  providers, and creating a grok session now offers the **Bypass permissions /
+  YOLO** toggle (`--always-approve`) the other agents already had.
+- **A cross-page KB Librarian (experimental).** Launch a dedicated agent
+  session — pick its cloud agent, model and account — that can organize,
+  create, edit and delete **any** global knowledge page across the whole base,
+  driven conversationally, unlike the per-page Discuss chat. It gets read +
+  write KB tools (list / upsert config / write body / delete) on its memory
+  MCP; those tools are scoped to the Librarian session alone and never reach
+  ordinary or third-party sessions.
+- **Edit a knowledge page's settings after creation.** A `kb_*` page's title,
+  one-line description, nature (foundational / emergent) and *inject* flag were
+  locked in at creation; they are now editable in place (web + mobile) on every
+  page except the classic four — including seeded pages like Integrations, so
+  you can flip a page between full-inject and on-demand retrieval.
+- **Discuss with AI model lists are live and accurate.** Antigravity and
+  OpenCode models are enumerated straight from their CLIs, and Codex offers its
+  full model family (higher plans unlock the fuller models) instead of one
+  pinned choice — no more picking a stale model that fails at spawn.
+- **Round Table members can change mid-conversation.** Add or remove seated
+  providers on an active chat (web + mobile) — an added member is `@mentionable`
+  on the next turn with the full thread as context; a removed one stops
+  replying while its past messages stay.
+- **Mobile: staged image uploads.** Images queue in a dismissable tray before
+  send instead of uploading immediately.
+
+### Changed
+
+- **The mobile Knowledge (KB) page is rebuilt as a searchable list → detail
+  flow.** The old horizontal page-chip strip didn't scale once you had many
+  `kb_*` docs; the KB tab is now a grouped, searchable list (Foundational /
+  Emergent) that grows gracefully, and tapping a page opens a full-screen
+  reader/editor with its actions in an AppBar overflow menu. New page and the
+  Librarian move onto a FAB.
+
+### Fixed
+
+- **Grok sessions had no MCP / memory tools.** opendray wrote the memory server
+  into the project-scoped `<cwd>/.grok/config.toml`, but grok refuses to start
+  repo-local MCP servers in an untrusted folder as a supply-chain guard, so the
+  server was configured but never started. opendray now trusts the operator's
+  own spawn folder (`--trust`), matching the other CLIs.
+- **The web terminal input cursor no longer drifts on iPad.**
+
+## [v2.12.0] — 2026-07-16
+
+### Added
+
+- **Round Table — a cross-vendor AI group chat (experimental).** Seat several
+  providers (Claude / Codex / Antigravity / Grok / OpenCode) plus the operator
+  in one shared thread; @mention who should reply (or `@all`) and each member
+  answers in character after reading the whole conversation, so heterogeneous
+  foundation-model families react to each other in seat order. Summarize the
+  discussion on demand, or turn it into a **role-assigned execution plan** —
+  each step runs as a real session in a shared project (bind the project after
+  the fact if you started without one). **Hand the whole thread off** to a
+  working session to do the actual code changes. A chat can be **closed and
+  reopened** (close keeps the thread, just stops new messages). Available on
+  both the web admin and the mobile app — where Round Table gets its own
+  bottom-nav tab, per-agent bubble colours, and labelled action menus.
+  Fully self-contained and rollback-able (`internal/roundtable/ROLLBACK.md`).
+
+### Fixed
+
+- **The Files-tree download icon is now reachable on touch devices (iPad,
+  phones).** The per-row download button was revealed only on hover
+  (`group-hover`) or keyboard focus. Tailwind v4 gates `group-hover` behind
+  `@media (hover: hover)`, so on a touch device — which can neither hover nor
+  focus a row — the icon stayed at `opacity-0` and was impossible to tap. It
+  now pins visible under `@media (hover: none)`, so touch users get a
+  permanently-shown download control while pointer users keep the clean
+  hover-reveal. (Follow-up to the v2.11.6 positioning fix, which addressed
+  *where* the icon sits but not *whether* it ever appears without a mouse.)
+- **Two MCP servers sharing a display name no longer brick Codex sessions.**
+  Every provider renderer keys its generated config on a server's display
+  name, not its unique id. Two enabled servers with the same name therefore
+  collided on that key: Codex emitted a duplicate `[mcp_servers."…"]` TOML
+  table and died with `duplicate key` at startup — before printing a byte, so
+  the session flipped straight to the read-only "[buffer unavailable]" view —
+  while Claude's map-based renderer silently dropped one of them. `renderMCP`
+  now rejects a duplicate name up front (for every provider, before any config
+  file is written), and the Plugins create/update endpoints return `409` when
+  a new or edited server would reuse a name already taken by a different id.
+  Grok's manifest gap and this collision are unrelated; a stray second Notion
+  entry sharing the name `Notion API` is what exposed it.
+- **Grok now reports and applies CLI updates from the Providers page.** The
+  `grok` manifest carried an empty `npmPackage`, and the whole update path is
+  npm-gated: `CheckUpdate` returned early (no latest version, no
+  "update available" flag) and `Update` hard-errored with "not updatable via
+  npm". Grok is published as `@xai-official/grok` (maintainer
+  `xai-security@x.ai`), so the manifest now names it.
+- **A provider CLI installed outside npm can now be updated in place.** Grok's
+  documented installer (`curl -fsSL https://x.ai/cli/install.sh | bash`) drops
+  a symlink into the npm bin dir that npm does not own, and npm refuses to
+  clobber it — `EEXIST: file already exists`. Simply naming the package would
+  therefore have shipped a dashboard that advertises an update behind a button
+  that always fails. `Update` now preflights the bin path: an unmanaged
+  **symlink** is cleared so npm can take ownership (and the update output tells
+  the operator exactly which link was replaced), while a regular **file** is
+  never deleted — it is reported instead, mirroring the existing
+  `ErrUpdatePrefixReadonly` preflight. Grok's install note now recommends
+  `npm install -g @xai-official/grok`.
+
+## [v2.11.6] — 2026-07-13
+
+### Fixed
+
+- **The download icon is reachable again in a deep or long file tree.** The
+  session inspector's Files tree renders inside a scroll area whose inner
+  wrapper sizes to its content, so long filenames and deep nesting pushed
+  rows wider than the panel: names were hard-cut with no ellipsis, and the
+  hover-download icon — anchored to each row's right edge — sat beyond the
+  visible edge, so hovering a file appeared to do nothing. The tree is now
+  constrained to the panel width, so names truncate with an ellipsis and the
+  download icon sits at the visible right edge. The Database tab is
+  unaffected (its grid scrolls in its own containers). (#443)
+
+## [v2.11.5] — 2026-07-13
+
+### Added
+
+- **TUIs follow the opendray theme.** A terminal UI picks a light/dark
+  palette by asking the terminal — via the OSC 11 background query (which
+  xterm.js already answered) or the `COLORFGBG` environment variable, which
+  opendray never set. So a CLI that reads the environment (Grok's
+  `theme = "auto"`, vim, tmux, …) had no way to know the operator was in
+  light mode and always defaulted to dark. opendray now stamps the client's
+  applied theme on session create and advertises it at spawn via
+  `COLORFGBG`. Optional and backward-compatible: no theme advertises
+  nothing and the CLI keeps its own default, and an explicit `COLORFGBG`
+  already in the environment still wins. (#446)
+- **The mouse wheel scrolls full-screen TUIs.** In the alternate screen
+  there is no xterm scrollback, and a CLI that hasn't grabbed the mouse
+  never receives wheel events either — so the wheel silently did nothing
+  and a Grok conversation couldn't be scrolled at all. opendray now does
+  what a real terminal does (alternate-scroll): wheel notches become cursor
+  Up/Down keys when the app is in the alternate screen and hasn't grabbed
+  the mouse. CLIs that do grab the mouse (Claude Code, Codex, Antigravity)
+  are unaffected — they already receive the wheel as SGR events. (#446)
+- **Custom tasks are pre-scoped to the current project.** (#442)
+
+### Fixed
+
+- **A disconnected browser no longer wedges CLI updates.** Provider updates
+  ran `npm install -g` on the HTTP *request* context, so a client
+  disconnect (browser closed, proxy timeout) cancelled it and SIGKILLed npm
+  mid-install. A half-killed npm leaves a partial global tree behind — a
+  stale `.<pkg>-XXXXXX` temp dir — after which *every* later install fails
+  with `ENOTEMPTY`, permanently wedging updates for that CLI (a codex update
+  stayed broken for a week this way, and left a CLI whose platform binary
+  never landed, so its sessions failed too). The install is now detached
+  from the caller's cancellation. (#445)
+- **A broken CLI is now visible instead of looking healthy.** When a
+  provider's binary is on `PATH` but won't run, opendray used to fall back
+  to showing the manifest version — rendering a CLI that can't even launch
+  as perfectly fine. It now reports "Installed but not runnable" with the
+  CLI's own error, and a failed update surfaces npm's actual message
+  (`ENOTEMPTY: …`) rather than a bare `exit status 217`. (#445)
+
+## [v2.11.4] — 2026-07-12
+
+### Added
+
+- **Mobile: Resources section + Updates "what's new" sheet.** The mobile
+  app gains the sidebar Resources block and the Updates/"what's new" sheet,
+  reaching parity with the web admin (#433). (#439)
+
+### Fixed
+
+- **Antigravity spawns no longer fail on an empty MCP config.** antigravity's
+  first-run migration writes an empty `~/.gemini/config/mcp_config.json`;
+  opendray's MCP-injection prep parsed it unconditionally and errored with
+  *"provider prepare: parse …/mcp_config.json … unexpected end of JSON
+  input"*, blocking every Antigravity session spawn. An empty (or
+  whitespace-only) file is now treated as "no config yet" rather than a parse
+  error, on both the `mcp_config.json` and gemini `settings.json` surfaces. (#440)
+- **Grok provider icon.** Grok is now registered in the web provider
+  icon/visual lookup tables so its brand mark renders. (#434)
+
+## [v2.11.3] — 2026-07-09
+
+### Added
+
+- **Session terminal: staged image attachments.** Uploading an image to a
+  session (attach button, clipboard paste, or drag-and-drop) now stages it
+  as a dismissable chip in a tray at the bottom of the terminal instead of
+  typing the server path straight into the running CLI. **Esc** (or the
+  chip's ✕) cancels it — an empty tray still passes Esc through to the CLI —
+  and an **Insert** button commits the path(s) when you're ready. Fixes the
+  long-standing "the uploaded path can't be dismissed" surprise. Web for
+  now; mobile parity to follow. (#436)
+- **Sidebar Resources block + Updates drawer.** The web admin's left nav
+  gains a Resources section under Settings: an **Updates** drawer that shows
+  "what's new" from GitHub Releases (falling back to CHANGELOG.md) with an
+  unread badge and "mark read", plus **Docs**, **Community**, and
+  **Sponsor** links. (#433)
+
+## [v2.11.2] — 2026-07-09
+
+### Added
+
+- **Database tool — MySQL, MariaDB and SQLite.** The Database tool now
+  connects to MySQL and MariaDB (host/port/username like PostgreSQL; a
+  MySQL "schema" is a database) and SQLite in addition to PostgreSQL. The
+  connection form (web and mobile) gains an engine picker with per-engine
+  default ports. **SQLite is a file-path connection**: the path is fenced
+  to the connection's project `cwd` (a path escaping it via `../` or a
+  symlink is rejected) and extension loading is disabled. Reads run behind
+  the same read-only fence on every engine (SQLite via a dedicated
+  read-only connection pool). All engines are pure-Go drivers
+  (`go-sql-driver/mysql`, `modernc.org/sqlite`), so the binary still
+  cross-compiles without cgo. Migration `0075` widens the driver
+  constraint; `0076` reseeds the kb_integrations page.
+
+### Fixed
+
+- **Backup download link authorises correctly.** The backup download URL
+  now carries the admin token, so downloading a backup from the web UI no
+  longer fails auth. (#428)
+
+## [v2.11.1] — 2026-07-09
+
+### Added
+
+- **Mobile parity — Database tool in the session inspector.** The mobile
+  app's session inspector gains a Database tab mirroring the web tool:
+  browse schemas and tables, page through rows, insert / update / delete
+  by primary key, and run read or write SQL against the project's
+  registered connections — honouring `db:read` / `db:write` scopes and
+  read-only connections, and reusing the session's `cwd` for isolation.
+- **Mobile parity — upload files into a session.** The mobile session
+  inspector's Files tab gains an upload button: pick one or more files and
+  stream them into the current directory via `POST /api/v1/fs/upload`,
+  matching the web files-sidebar upload shipped in v2.11.0 (same
+  `resolveWithinRoot` sandbox, auto-rename on name collision).
+
+### Security
+
+- **Database tool — cryptographic per-project isolation for the
+  auto-attached MCP.** The `opendray-dbtool` MCP now holds a `db:signed`
+  key and sends a per-session `X-OpenDray-Dbtool-Sig = HMAC(secret, cwd)`
+  header; the gateway rejects a signed-key call whose signature doesn't
+  match the `cwd`. An agent that extracts the injected key can no longer
+  forge another project's `cwd` — closing the residual the honest-path
+  check left open. Antigravity (whose MCP config is HOME-global and can't
+  carry a per-session signature — a Google limitation) and third-party
+  integration keys keep the plain `?cwd=` check via a separate honest-path
+  key. Migration `0074` reseeds the kb_integrations page.
+
+### Fixed
+
+- **Database tool — bigint primary keys stay exact.** Row update/delete
+  and filters decode JSON with `UseNumber`, so a 64-bit primary key above
+  2^53 is no longer rounded through `float64` (which could address the
+  wrong row or match none). Numbers beyond int64 keep their exact string.
+- **Database tool — consistent table metadata.** `TableMeta` runs its four
+  catalog queries (columns / PK / indexes / FKs) inside one read-only
+  transaction, so concurrent DDL can't produce a half-updated view.
+
+### Changed
+
+- **Dependencies.** Bump `golang.org/x/crypto` 0.50.0 → 0.52.0 (#421) and
+  `golang.org/x/net` 0.52.0 → 0.55.0 (#418), pulling transitive `x/sys`
+  and `x/text` updates. Build and vet clean.
+
+## [v2.11.0] — 2026-07-08
+
+### Added
+
+- **Upload files & folders into a session from the files sidebar.** The
+  session inspector's files panel can now create folders and upload files
+  or whole folders (recursively, preserving the subtree) via an upload
+  button or drag-and-drop — including dropping onto a specific folder row
+  to target it, or the panel background to target the session cwd.
+  Uploads land in the session's working directory where the AI model reads
+  them, streamed to disk (250 MiB per file) and confined to the session
+  cwd by the same `resolveWithinRoot` sandbox the download/zip endpoints
+  use — path traversal and symlinked-intermediate escapes are rejected.
+  Conflicting names auto-rename (`name-1.ext`) instead of overwriting what
+  the session produced. New admin-only endpoint `POST /api/v1/fs/upload`
+  on the existing `/fs` group; the tree refreshes to show new files
+  (including renames). (#420)
+- **Database tool — direct project database access.** opendray can now
+  hold per-project (cwd-keyed) database connections and expose them like a
+  JetBrains-style database tool: browse schemas/tables, read table data,
+  edit rows, and run a SQL console. It surfaces two ways — a **Database
+  tab** on each project screen (web: connection manager, lazy schema tree,
+  paginated data grid with row insert/edit/delete, and a CodeMirror SQL
+  console with schema-aware autocompletion; mobile: connection management,
+  schema browse, read-only query) and an auto-attached **`opendray-dbtool`
+  MCP server** (`db_connections_list` / `db_schema` / `db_table_data` /
+  `db_query` / `db_execute`) so agent sessions can query and mutate a
+  project's database directly. PostgreSQL only for now (a driver interface
+  reserves MySQL/SQLite). Connection passwords are encrypted at rest with
+  the same field cipher as channel/git-host secrets and are never returned
+  by any read endpoint. Two new scopes — `db:read` (browse + read-only
+  SQL) and `db:write` (row CRUD + write/DDL) — gate integration access;
+  **registering a connection stays admin-only** (an integration can never
+  point opendray at a new host). Reads run inside a server-side `READ ONLY`
+  transaction with a statement timeout, and per-connection `read_only`
+  refuses every write regardless of scope. The dbtool MCP is withheld from
+  `origin=integration` sessions, matching memory isolation. Configurable
+  via `[dbtool]` (enabled by default; the feature is inert until a
+  connection is registered). Migrations `0072` (schema) and `0073`
+  (kb_integrations reseed).
+- **Mobile: antigravity multi-account parity with web.** The mobile app
+  gains the antigravity multi-account management already shipped on web
+  (#396). (#409)
+- **Mobile: Grok provider brand mark**, syncing the real Grok icon added
+  to web in #405. (#408)
+- **Memory search surfaces folded (deduped) variants** in `memory_search`
+  and `memory_load_context`, so callers see the merged form rather than
+  near-duplicate rows. (#414)
+
+### Fixed
+
+- **antigravity MCP injection now targets the real config surface**, so
+  injected servers actually reach antigravity sessions. (#416)
+- **Transcript overlay for CLIs with unscrollable TUIs** — the web
+  terminal can surface scrollback for tools whose full-screen TUI can't be
+  scrolled natively. (#415)
+- **`project_search` moved from admin-only to dual-auth + `memory:read`
+  scope**, so integrations can search project memory. (#413)
+- **Per-provider spawn parity** — codex bypass, antigravity memory CLI,
+  and a default-model guard for integration-originated sessions. (#412)
+- **Integration default-agent model is an explicit dropdown** rather than
+  a free-text datalist, on both web (#411) and mobile (#410).
+
+### Docs
+
+- **README refresh** — reworked hero, added comparison + FAQ, and synced
+  the 5-CLI provider list across all 10 translations. (#417)
+
+## [v2.10.1] — 2026-06-22
+
+### Added
+
+- **MCP servers reach Grok.** Grok Build sessions now receive opendray's
+  enabled MCP registry (HashiCorp Vault, etc.), per-provider `mcp_servers`,
+  integration-scoped servers, and the opendray-memory server — the same
+  injection every other MCP-capable provider gets. opendray writes them
+  into the project-scoped `<cwd>/.grok/config.toml` `[mcp_servers]` table,
+  which Grok union-merges with your global `~/.grok/config.toml` (your
+  personal servers are untouched). Previously Grok shipped with MCP
+  injection disabled, so it could not see Vault or any other shared server
+  the operator had configured. (#404)
+- **Cortex-first knowledge framing.** The spawn banner now opens with a
+  preamble telling the agent to consult opendray's injected cortex
+  (`kb_*` pages) as the authoritative source first, treating any external
+  mirror (Obsidian vault, wiki) as a secondary fallback used only when the
+  cortex doesn't cover the topic. Stops agents from grounding infra/DB
+  process answers in stale external notes when the curated copy is already
+  in-context. (#406)
+- **Current objective always injected.** Lean-mode spawns now inject the
+  live `current_objective` body as a dedicated "work to THIS" block (not
+  just an index entry the agent had to remember to fetch), plus a stronger
+  proactive-maintenance directive so agents keep `current_objective`,
+  the journal, and durable memory current on their own. (#403)
+- **On-demand, section-level KB access.** `doc_read` and `project_search`
+  can now pull a single heading-section of a large global knowledge page
+  instead of the whole thing — a `kb_integrations` lookup drops from
+  ~15K tokens to ~300–1.3K, and search hits carry a
+  `doc_read(slug, section=…)` pointer instead of dead-ending on a teaser. (#400)
+- **Cross-project distilled knowledge now applies.** Fixed the experience
+  compiler reading session outcomes through an ephemeral table, which
+  starved it of feedstock (112 journal summaries → only 2 survived) so it
+  produced zero global playbooks. Outcomes are now denormalized onto the
+  durable journal row (migration `0070`, with a one-shot backfill of
+  historical rows), so the compiler sees the full corpus and its global
+  playbooks auto-inject at spawn. (#402)
+
+### Fixed
+
+- **Grok provider icon.** Grok now shows its real brand mark in the spawn
+  dialog and provider rail instead of the neutral letter-disc fallback. (#405)
+
+## [v2.10.0] — 2026-06-21
+
+### Added
+
+- **Antigravity multi-account.** Bind a session to a specific Antigravity
+  (`agy`) login, switch accounts from the session header, and manage
+  accounts in Providers → Antigravity (discovery + guided `HOME=… agy`
+  login). Accounts are isolated by `$HOME` — the agy analogue of Claude's
+  `CLAUDE_CONFIG_DIR`. **Switching accounts keeps the conversation:** agy
+  stores each conversation as a portable per-`$HOME` SQLite db, so the
+  switch copies the current conversation into the new account's HOME and
+  resumes it (`--conversation <id>`) — you continue the same chat on the
+  other identity, only the credential/quota changes. Restarting an
+  antigravity session resumes its conversation too. (#396)
+- **Grok Build CLI provider.** xAI's `grok` as a first-class provider
+  (install with `curl -fsSL https://x.ai/cli/install.sh | bash`, then
+  `grok login`; models `grok-build` / `grok-composer-2.5-fast`, bypass via
+  `--always-approve`). Resolves exe/model/bypass generically — no per-CLI
+  adapter code. (#397)
+- **OpenCode local-endpoint diagnostics.** When a session's local endpoint
+  (LM Studio / Ollama / vLLM) is unreachable or serves no chat-capable
+  model, opendray now surfaces a one-time spawn notice explaining the cause
+  (check the URL ends in `/v1`, the endpoint serves on the LAN, a chat
+  model is loaded) instead of OpenCode's opaque `[buffer unavailable]`. (#398)
+
+### Changed
+
+- **Carry-context is ON by default when switching Claude accounts**, and
+  rate-limit auto-failover now carries context too — a switch seeds the new
+  account with a recap of the prior conversation instead of starting blank.
+  Untick the toggle for a clean-slate switch. (#395)
+
+### Removed
+
+- **Gemini CLI provider retired**, superseded by Antigravity. Removed from
+  the install wizard, the provider catalog/UI, the `opendray providers`
+  npm-update list, and the Cortex "discuss with AI" list. Existing Gemini
+  sessions and on-disk credentials are left untouched, but the provider is
+  no longer offered to new installs. (#397, #399)
+
+## [v2.9.1] — 2026-06-19
+
+### Fixed
+
+- **Escalating a Cortex discussion now jumps straight into the spawned
+  session and continues on the same CLI + account.** The escalated session
+  surfaces immediately — web deep-links it via `?open=`, mobile pushes the
+  route — instead of only appearing on the next manual list refresh. It also
+  inherits the conversation's provider / model / Claude-account override
+  rather than always falling back to Claude. (#390)
+
+### Changed
+
+- **Refreshed the third-party integration guide and its searchable
+  `kb_integrations` KB page** to match the shipped v2.9.0 contract:
+  `permission_mode` (`default` | `bypass`) replacing the old
+  `bypass_permissions` boolean, the per-principal `integration:<id>` memory
+  zone, the enforced `providers:write` / `providers:update` scopes, and the
+  reserved `agent_id` field. Removes the stale `FORTHCOMING` framing so any
+  AI or developer reading it gets the current contract. (#391)
+
+## [v2.9.0] — 2026-06-19
+
+### Added
+
+- **Per-integration spawn profile.** Each third-party integration now
+  carries its own provider-agnostic spawn config — MCP servers, system
+  prompt, and a permission-bypass toggle — decoupled from per-CLI args, so
+  one integration behaves consistently across Claude / Codex / Gemini. (#381)
+- **Per-integration default agent + first-class session model.** Choose the
+  default agent and model an integration's sessions spawn with, from a
+  dedicated web + mobile config UI. (#378, #379)
+- **Native Select & Copy in the terminal.** Drag (or long-press on touch)
+  to select any portion of the buffer — a command, a line-wrapped URL — and
+  copy it, on both web and mobile. Replaces the old whole-buffer copy. (#374)
+- **Claude account selector for AI discussion.** Cortex's Discuss With AI
+  lets you pick which Claude account drives the discussion (web + mobile +
+  i18n). (#385)
+- **Remove (delete) session control** alongside Stop, so an ended session
+  can be cleared from the list rather than only halted. (#387)
+- **Mobile parity for integrations + project blueprint**, bringing the phone
+  app level with the web admin's integration management. (#386)
+- **Third-party integration guide + searchable `kb_integrations` KB page** —
+  an authoritative, on-demand reference for wiring external callers. (#382)
+
+### Changed
+
+- **Integration-origin sessions are isolated** from the operator's session
+  list and default to no memory capture, keeping third-party traffic out of
+  the operator's working view. (#375, #376)
+- **Retired the detected-URLs badge** on the terminal pane — native Select &
+  Copy now covers the OAuth-login URL case the badge existed to rescue. (#388)
+
+### Fixed
+
+- **Third-party integration memory capture** is routed into per-integration
+  zones instead of leaking facts into the operator's partition. (#380)
+- **Backup pre-migration snapshots** auto-discover the newest `pg_dump` so a
+  stale PATH default can't crash-loop migrations. (#383)
+- **AI discussion on non-Claude providers** uses the correct per-CLI
+  headless invocation (e.g. gemini `--prompt`, codex `exec`). (#384)
+
+## [v2.8.0] — 2026-06-16
+
+### Added
+
+- **OpenCode CLI provider.** Drive OpenCode — the open-source,
+  provider-agnostic agentic coding CLI — through the same PTY gateway as
+  Claude Code / Codex / Gemini. Point it at a local OpenAI-compatible
+  endpoint (Ollama / LM Studio / vLLM) with just a base URL: opendray
+  generates a per-session config, auto-discovers the endpoint's models so
+  they all appear in OpenCode's `/model` picker, and wires the shared
+  `opendray-memory` MCP, skills, and a spawn-dialog bypass toggle. (#369)
+- **AI discussion model picker on mobile**, matching the web admin's
+  cloud-agent + local-model selection in Cortex's Discuss With AI. (#368)
+- **Antigravity** is now selectable as a cloud agent in Cortex's Discuss
+  With AI. (#370)
+- **Backup-hardening arc + Cortex memory/notes UX** integrated from beta:
+  scheduled/fan-out backups across pluggable targets, pre-migration
+  snapshots, and the conversational notes/knowledge maintenance surface. (#367)
+
+### Changed
+
+- **Recovery Kit clarity.** The dialog now states what the kit is for
+  (disaster-recovery insurance, rarely needed), that each generation is an
+  independent file sealed with its own password (nothing is stored — there
+  is no master password), and that the password protects the file, not the
+  gateway. Downloaded kits are named by key fingerprint + date so
+  regenerating no longer silently overwrites a prior kit. (#371)
+
+### Fixed
+
+- Release announcements trigger via `workflow_run` instead of the release
+  event. (#366)
+
+## [v2.7.6] — 2026-06-14
+
+### Added
+
+- **Carry context on Claude account switch (opt-in).** Switching a live
+  session to another account starts a fresh conversation (Claude Code
+  can't `--resume` across accounts). A new **"Carry over conversation
+  context"** toggle in the account switcher seeds the new account's
+  session with a recap of the prior conversation — read from the old
+  transcript, injected into the system prompt. Off by default; the
+  toggle's helper text is the consent surface, since carrying context
+  sends prior conversation content to the provider under the new
+  account. Automatic rate-limit failover never carries context. Also
+  fixes the stale switch-confirm copy that still claimed history was
+  preserved via `--resume` (removed in v2.7.x).
+- **Release announcements auto-drafted for X.** Each published release
+  now appends an "Announce on X" block to its GitHub release notes with
+  a one-tap intent link composed from the CHANGELOG, and (when
+  `TYPEFULLY_API_KEY` is configured) queues a Typefully draft.
+
+### Fixed
+
+- **Web self-update no longer dead-ends on live sessions.** When an
+  in-app upgrade would interrupt running sessions, the gateway gates the
+  restart behind a confirmation (the sessions auto-resume). The web
+  About panel previously surfaced that gate as a raw error with no way
+  forward; it now shows an **"Upgrade anyway"** prompt with the live-
+  session count and proceeds on click.
+
+## [v2.7.5] — 2026-06-11
+
+### Fixed
+
+- **iOS Safari: restored the contextual copy pill on terminal text
+  selection** (regression from v2.7.3). PR #353 added `touch-action:
+  pan-y` to `.xterm-viewport` so iOS scrollback worked with the
+  clipped pane, but the same property claimed horizontal /
+  diagonal gestures for the browser and broke xterm's selection-drag
+  on iPad and iPhone — the pill (anchored at `pointerup` once a
+  selection finishes) never appeared because `pointerup` arrived
+  with no finished selection to anchor to. Dropped `pan-y` (the
+  default `auto` is sufficient for iOS scrollback) and added a
+  `touchend` belt-and-suspenders fallback so the pill anchors
+  reliably even when iOS Safari's synthesised `pointerup` doesn't
+  fire (or fires with stale coordinates) on canvas-internal events.
+
+## [v2.7.4] — 2026-06-11
+
+### Added
+
+- **Inspector: one-click download for files + zip-on-the-fly for
+  folders.** Every row in the Files tree now carries a hover-revealed
+  Download icon. Clicking it on a file streams the bytes as an
+  attachment with the original filename (including unicode via RFC
+  5987 `filename*=`); clicking it on a folder streams a built-on-the-
+  fly zip archive of the visible subtree (hidden entries + symlinks
+  skipped to match the tree's listing). `http.ServeContent` handles
+  Range requests so resume works on large files; the zip builder
+  walks deterministically and skips per-file permission errors
+  instead of aborting the whole archive. Downloads are confined to a
+  caller-supplied `root` (the session's cwd in the inspector) and
+  the server EvalSymlinks-checks the resolved target stays inside
+  it, so a hand-crafted URL can't exfiltrate files from outside the
+  inspector's view even with a leaked admin token.
+- **Plugins: drag-and-drop install of `SKILL.md`.** Drag a
+  `SKILL.md` onto the Agent skills table and the daemon slugs the
+  frontmatter `name:` into an id and writes it to `<vault>/<id>/
+  SKILL.md` — no id prompt, no editor modal. Vault collisions return
+  409; built-in collisions become overrides with the existing badge.
+  i18n parity preserved across en/es/zh.
+
+### Fixed
+
+- **Web sessions: breathing room around the chat pane.** Slimmed
+  the chrome (SessionTabs `h-9 → h-7`, WorkbenchHeader `h-14 → h-11`,
+  avatar `36 → 28px`) and reserved a 12px bottom strip so Claude's
+  input no longer sits flush against the browser bottom edge. Net
+  result: chat-top moves up ~20px and typing feels less cramped on
+  tall windows.
+
+## [v2.7.3] — 2026-06-10
+
+### Fixed
+
+- **Mac Safari terminal regressions** introduced in v2.7.2 by #323. The
+  chat no longer extends past the browser bottom; Claude's TUI input
+  wraps correctly past the visible right edge after 3-4 lines; and
+  `[disconnected — reconnecting…]` stops stacking — it announces once
+  per disconnect cycle, then prints `[reconnected]` on recovery or
+  `[connection lost — refresh the page to reconnect]` after retries are
+  exhausted. WebKit's `ResizeObserver` fires late on absolute-positioned
+  elements nested inside flex containers, which left `fit()` reading a
+  stale size after sidebar/banner shifts; the xterm host now stays
+  in-flow with `contain: layout paint` instead. The WebSocket retry
+  budget was also bumped (`maxRetries` 6 → 30, `maxBackoff` 8s → 15s)
+  so an idle proxy bouncing the socket doesn't read as "broken forever."
+- **iOS web terminal scrollback.** Two-finger drag on the terminal
+  canvas now scrolls xterm's scrollback. `.xterm-viewport` got
+  `-webkit-overflow-scrolling: touch`, `overscroll-behavior: contain`,
+  and `touch-action: pan-y`. The AppShell switched from `h-svh` to
+  `h-dvh` so the layout tracks the live visual viewport (keyboard,
+  address-bar) instead of locking to the address-bar-visible height.
+
+### Added
+
+- **Web: "update available" badge on the Settings icon.** A small
+  accent dot appears on the gear in the sidebar (expanded, icon-rail,
+  and mobile slide-over) when a newer release is detected — so the
+  upgrade prompt finds operators instead of waiting for them to open
+  About. Background poll every 6 hours, shares the `['version']` query
+  cache with the existing AboutSection so a manual "Check now" updates
+  the badge immediately. Suppressed while `pending=true` to avoid
+  nagging during an in-flight upgrade. i18n parity preserved across
+  en / es / zh.
+- **GitHub Sponsors landing material.** `SPONSORS.md` (pitch, five
+  tiers, FAQ, thank-you wall), `docs/sponsors/dashboard-copy.md`
+  (paste-ready text for both the Opendray org and the navidrast
+  personal Sponsors dashboards), and `.github/FUNDING.yml` updated to
+  list both accounts.
+
+## [v2.7.2] — 2026-06-04
+
+### Added
+
+- **`opendray doctor` + `opendray setup-macos` (macOS).** `setup-macos`
+  gives the binary a stable, per-machine self-signed code-signing
+  identity (in a dedicated keychain, fully non-interactive) and re-signs
+  it, so a one-time Full Disk Access grant survives rebuilds/updates
+  instead of macOS re-prompting on every version change. `doctor` is a
+  read-only health check that flags an ad-hoc signature or a config
+  living in a TCC-protected folder. `opendray serve` with no `-config`
+  now falls back to `~/.opendray/config.toml` — outside the protected
+  folders — so a fresh install's gateway starts without a privacy prompt.
+- **macOS release binaries are now Developer ID-signed + notarized**
+  (when the signing secrets are configured), so a user's Full Disk
+  Access grant persists across `opendray update`. Signing runs via quill
+  on the Linux release runner and is a no-op when unconfigured.
+- **Telegram `/peek` command + control-keyboard button** to re-send the
+  selected session's latest output on demand; the docked control keyboard
+  now refreshes on `/select` and `/start`.
+- **Mobile: switch a running Claude session's account + agent-CLI update
+  awareness.** Rebind a live session to a different account from the
+  session screen (web parity), and see when a provider CLI has an npm
+  update available. The session Tasks tab also reached web parity.
+- **Spanish (es) translation** across web + mobile with in-app language
+  switching, plus a CI translation-parity guard that fails the build on
+  missing/extra keys.
+
+### Changed
+
+- **Telegram notifications consolidated** on `enabled` + `muted` + the
+  repeat policy. The redundant `notify_enabled` switch and the
+  per-topic `notify_on` picker were removed — an enabled, unmuted
+  channel notifies once per round, and the web channel card gained the
+  mute toggle that mobile already had.
+
+### Fixed
+
+- **Switching a Claude session's account no longer leaves it stopped and
+  unrestartable.** The switch now starts a fresh conversation under the
+  new account (a session UUID that account's CLI actually knows) instead
+  of `--resume`-ing a UUID minted under the previous account, which
+  failed with "No conversation found" and exited the process.
+- Web terminal jitter caused by the page's scrollbar — the terminal pane
+  is now isolated from `<main>`.
+- Mobile: numeric Telegram `chat_id` is submitted as a number, not a
+  string, so a Telegram channel configured from the phone starts.
+- Release pipeline: release notes are written outside the work tree so
+  goreleaser's dirty-tree check passes.
+
+### Removed
+
+- **`ghcr.io/Opendray/opendray` container image (all 370 versions / 84
+  tags).** The image was orphaned — the most recent tag was `v2.1.0`
+  (five releases behind), no workflow in `.github/` was building it
+  any more, no docs / installer scripts / discussions referenced it.
+  More importantly, a pullable container contradicted the host-
+  resident-only deploy policy (Discussion #300, README "Choose how
+  to run it" table): opendray runs AI CLIs through PTYs and shares
+  filesystem state (`~/.claude`, ssh-agent, project files) with
+  them, which container isolation breaks. Operators who landed on
+  the GHCR page following stale links from external blog posts
+  would have pulled v2.1.0 and hit exactly that failure mode.
+  Supported install paths remain the
+  [one-line installer](https://raw.githubusercontent.com/Opendray/opendray/main/scripts/install.sh),
+  the [from-source quickstart](docs/quickstart.md), and
+  `npm install -g opendray`.
+
+## [v2.7.1] — 2026-06-01
+
+Security + bug-fix rollup on top of v2.7.0. No API, config, or schema
+changes — drop in.
+
+### Security
+
+- **Path-traversal sanitiser bypass in NotesPanel** (#294).
+  `replace(/\.\.\/+/g, '')` was bypassable by overlap (`....//`
+  collapses to `../` after one pass). Replaced with split-on-slash +
+  filter-out `..`/`.` + rejoin, which cannot be bypassed that way.
+- **Windows path-traversal gap in `backup` local target** (#296).
+  `filepath.IsAbs("/foo")` returns `false` on Windows, so the prior
+  absolute-path reject left a gap. `LocalTarget.resolve()` now also
+  rejects paths with a leading `/` or `\`, and rejects any colon on
+  Windows to catch drive-relative forms like `C:foo` / `C:..\evil`.
+- **Demo-client API key in log lines** (#294). The integration-key
+  fingerprint embedded in two log sites was emitting bytes from the
+  secret through `console.log`. Dropped the fingerprint entirely;
+  `integration_id` already identifies which credential is in use.
+
+### Fixed
+
+- **Windows build failure in `internal/session`** (#296).
+  `syscall.SIGTERM` / `syscall.SIGKILL` are undefined on Windows.
+  New build-tagged `signals_{unix,windows}.go` helpers abstract the
+  difference — Unix preserves the prior `SIGTERM → grace → SIGKILL`
+  ladder; Windows falls through to `proc.Kill()` (TerminateProcess)
+  since the platform has no SIGTERM equivalent. Documented in code.
+- **`go test -race ./...` failing on Windows** (#296). Test compat
+  across `auth`, `backup`, `cliacct`, `catalog`, `mcp`, `session`,
+  `app` packages: `USERPROFILE` setenv alongside `HOME` for
+  `os.UserHomeDir`, Unix-perm asserts skipped on Windows
+  (`os.Chmod` doesn't enforce them there), symlink tests skip when
+  `os.Symlink` lacks privilege, shell-script fake MCP server
+  replaced with `TestMain`-as-fake-server pattern, `app_test.go`
+  uses an existing file as fake parent dir for cross-platform
+  `os.MkdirAll` failure. Full suite now passes on Windows
+  (44 packages, 0 failures).
+- **Identity-replacement no-op in NotesPanel** (#294).
+  `prefix.replace(/\/$/, '/')` stripped a trailing slash and
+  replaced it with the same slash — the author meant to *ensure* a
+  trailing slash. Rewrote as
+  `endsWith('/') ? prefix : prefix + '/'`.
+
+### Docs
+
+- **`README.fa.md` 10-way language switcher backfill** (#293). The
+  Persian README still listed only English / 简体中文 / فارسی; now
+  matches the ten-way switcher the other nine READMEs got via #282.
+- **`enable-cli-updates.sh` discoverable from the failure path**
+  (#297). The in-app guidance toast (returned when the npm global
+  prefix is read-only by the service user) and `scripts/README.md`
+  now name the helper script that resolves the situation, so
+  operators don't have to grep for it. Closes #262.
+
+## [v2.7.0] — 2026-06-01
+
+The Flutter mobile app catches up to web. Features that landed on the
+web dashboard but never reached mobile are now at parity: Telegram
+two-way channel config, Claude account metadata, a gateway version
+check, and most-recently-used session ordering.
+
+### Added
+
+- **Telegram two-way channel config on mobile** (#290). The mobile
+  channel form gained the five Telegram fields the web form already
+  had: owner allow-list (`owner_user_ids`), two-way chat toggle
+  (`chat_enabled`), typing indicator (`chat_typing`), activity
+  notifications (`notify_enabled`), and reply length cap
+  (`reply_max_chars`). Booleans render as switches and serialize to
+  the same config shape the gateway expects.
+- **Claude account metadata on mobile** (#290). The provider page now
+  surfaces the gateway-decorated account fields — subscription tier,
+  rate-limit tier, active session count, last-used time, and OAuth
+  email — as inline chips, plus an identity-drift banner with an
+  Accept action when the on-disk OAuth identity changed.
+- **Gateway version check on mobile** (#290). The About screen shows
+  the running gateway's version, commit, and whether an update is
+  available, with a release-notes link. Read-only — the in-app
+  self-update stays on web / the host shell.
+- **Most-recently-used session ordering on mobile** (#290). The
+  sessions list now sorts most-recently-opened first (recorded
+  per-device, persisted across restarts), mirroring the web list;
+  live sessions still group ahead of ended ones.
+
+## [v2.6.0] — 2026-06-01
+
+Web/mobile gain a real PR detail surface and a read-only Issues
+surface, both backed by the existing git provider plumbing. The
+gateway binary is now also distributable via npm — `npx opendray`
+runs without a Go toolchain on the box. Plus a small dropdown-
+positioning fix and a handful of new README translations.
+
+### Added
+
+- **PR detail surface on web + mobile** (#279). Click into a pull
+  request from the PR list to get description, status (open /
+  merged / closed), CI check summary, head/base branches, author,
+  and last-updated timestamp. Backed by the same `git.PullRequests`
+  provider interface the list view already uses — no new API
+  surface for the host, just a deeper read against what the
+  provider returns.
+- **Read-only Issues surface on web + mobile** (#281). List and
+  detail views for repo issues, mirroring the PR layout: title,
+  state, labels, assignee, body, comments thread. Read-only by
+  design — issue creation/edit stays out of scope until the
+  permission model around it is settled.
+- **Distribute `opendray` as an npm package** (#280). `npm i -g
+  opendray` or `npx opendray` now works — the package wraps the
+  platform-appropriate binary from the GitHub release. Useful for
+  operators on Node-heavy fleets who'd rather not script a curl
+  install. The binary itself is unchanged; npm is just another
+  delivery channel alongside the existing tarballs.
+
+### Fixed
+
+- **Dropdown menus clamped to the viewport** (#284). The account
+  switcher and the session-action menu could overflow off the
+  right edge of narrow viewports (sub-400px mobile, or a
+  side-by-side desktop layout). Both now flip / clamp so the
+  trailing edge stays inside the visible area.
+
+### Docs
+
+- **Seven additional README translations** (#282): Spanish, Brazilian
+  Portuguese, Japanese, Korean, French, German, Russian. The README
+  switcher row at the top of every translation now lists ten
+  languages.
+- **Farsi (Persian) README translation** (#283), originally
+  contributed by [Majid Allahverdi](https://github.com/devwithmj)
+  in #278; brought to `main` via #283 after a cross-fork
+  rebase-conflict workaround. See Credits.
+
+### Credits
+
+- Farsi (Persian) README translation by [Majid Allahverdi](https://github.com/devwithmj) — originally contributed in #278, brought to `main` via #283 after a rebase-conflict workaround.
+
+## [v2.5.0] — 2026-05-31
+
+Phase 2 Tier A of the multi-Claude-account work: rate-limit-aware
+auto-failover. A Claude session that hits its account quota can now
+automatically switch itself to the next non-throttled enabled account,
+with the conversation continuing seamlessly on the new identity. Plus
+documentation polish around the release ceremony so the next operator
+cutting a release doesn't have to re-discover today's gotchas.
+
+### Added
+
+- **Rate-limit auto-failover for Claude sessions** ([providers.claude]
+  `auto_failover_enabled`, default false). `pumpStdout` scans each
+  Claude session's PTY for the `You've hit your session limit · resets
+  HH:MM (UTC)` banner. On a match:
+  1. The current account is marked throttled-until-reset in an
+     in-memory `ThrottleStore` (lazy GC of expired entries).
+  2. `PickFailoverClaudeAccount` picks the next enabled non-throttled
+     account by the same least-loaded heuristic auto-assign already
+     uses.
+  3. `SwitchClaudeAccount` runs end-to-end — transcript JSONL
+     hard-linked, PTY respawned with `--resume`, conversation
+     continues on the new identity.
+  4. Bus events for observability: `session.auto_switched` on
+     success, `session.auto_failover_no_target` when the fleet is
+     exhausted, `session.auto_failover_failed` when the switch
+     itself errors.
+  5s cooldown per session + 4 KiB rolling window so a persistent
+  banner can't drive the regex on every chunk. Opt-in by design —
+  defaults off so existing operators aren't surprised by silent
+  account switches.
+- **`RELEASING.md` runbook at the repo root** documenting the release
+  ceremony end-to-end: the chain diagram, the "tag-after-changelog-
+  merges" gotcha, recovery procedures (empty release body, pulled-
+  back release), pre/post-release checklists, roadmap to
+  release-please automation and pre-release `-rc.N` channels.
+
+### Tests
+
+- **Pinned contract: disabled accounts are excluded from auto-assign.**
+  A regression-safety unit test for the `enabled<2` guard in
+  `PickAutoAssignClaudeAccount`. The SQL filter
+  (`WHERE ca.enabled = true`) and the explicit-pin validation path
+  were already covered by live integration + handler tests; this
+  closes the last gap.
+
+### Internal
+
+- New `ClaudeAccountResolver` interface methods:
+  `MarkClaudeAccountThrottled`, `IsClaudeAccountThrottled`,
+  `PickFailoverClaudeAccount`. `pickLeastLoaded` SQL gains variadic
+  `exclude ...string` (parameterized via `NOT (ca.id = ANY($1::text[]))`).
+
+### Config
+
+- New: `[providers.claude] auto_failover_enabled` (default false).
+  Opt-in for the runtime rate-limit-driven account switching.
+
+### Honest limitations of Tier A
+
+- Banner-text fragile — if Claude rephrases the limit message, the
+  regex needs updating. Fallback separators (`-`, `|`) for the middle
+  bullet are already covered.
+- No predictive load spread — only reacts to hard limits. Tiers B
+  (active probing) and C (local HTTPS proxy) from the design
+  discussion remain available as upgrades.
+- Sessions running on the empty-id default (`~/.claude`) are skipped
+  by the failover path for the MVP — mapping the default to a real
+  account row needs a resolver round-trip we haven't exposed yet.
+  After auto-assign kicks in for ≥2 enabled accounts, most new
+  sessions are pinned to a named account anyway, so this gap shrinks
+  to zero in practice.
+
+## [v2.4.0] — 2026-05-31
+
+Multi-Claude-account UX, two-way Telegram channel, and a clutch of
+session-quality fixes. The big new capability: a single OpenDray
+gateway can now manage multiple Anthropic identities side-by-side and
+let an operator switch a live Claude session between them without
+losing the conversation.
+
+### Added
+
+- **Claude accounts: filesystem watcher.** `~/.claude-accounts/<name>/`
+  is now monitored with fsnotify; a new `.credentials.json` (the
+  result of `CLAUDE_CONFIG_DIR=… claude login`) registers an account
+  row automatically. 500ms debounce, backoff-on-error reattach loop,
+  symlink rejection at every level.
+- **Claude accounts: synthetic `default` row.** `~/.claude/.credentials.json`
+  (the CLI's own home) now surfaces as a row named `default` so the
+  primary identity is visible in the panel without forcing the
+  named-account login flow.
+- **Claude accounts: capacity chips.** Each row now shows
+  `subscription_type`, `rate_limit_tier`, `active_sessions`,
+  `last_used_at`, and `oauth_email` — all derived server-side from
+  `<configDir>/.credentials.json` + `<configDir>/.claude.json` + a
+  single JOIN against the sessions table. No new chrome.
+- **Claude accounts: least-loaded auto-assign at session create.**
+  When `POST /sessions` arrives with provider=claude and empty
+  `claude_account_id` (and ≥2 accounts are enabled), the gateway
+  picks the enabled account with the fewest non-terminal sessions
+  (alphabetical tiebreaker). Removes the "everything piles onto
+  default" bias. Explicit operator pin still wins.
+- **Claude accounts: identity drift detection.** First-seen
+  `oauthAccount.emailAddress` per account is recorded under
+  `~/.opendray/cliacct-identity.json` (chmod 0600). On every List/Get,
+  the current on-disk email is compared; mismatch surfaces
+  `identity_drift=true` and `previous_email` on the Account row,
+  rendered as a red "identity changed: was X · accept" chip.
+  `POST /api/v1/claude-accounts/{id}/accept-identity` updates the
+  baseline so the chip clears.
+- **Session switch preserves conversation.**
+  `PATCH /api/v1/sessions/{id}/claude-account` now hard-links the
+  Claude transcript JSONL from `<old_config_dir>/projects/<workspace>/
+  <session_id>.jsonl` into `<new_config_dir>/projects/<workspace>/`
+  before respawning. Claude `--resume` then finds and replays the
+  conversation under the new account. Hard-link shares one inode so
+  switching back-and-forth keeps both views synchronized.
+- **Telegram: two-way conversational chat.** Typing indicator, turn
+  replies, persistent control keyboard acting on the current session,
+  configurable from the dashboard.
+- **Catalog: warn + confirm before CLI upgrade.** The in-app CLI
+  upgrade button now warns when sessions are using the CLI it's about
+  to replace, with a new `scripts/enable-cli-updates.sh` helper for
+  the non-root install path.
+- **Web: MRU session ordering + Cmd/Ctrl+K palette search**.
+
+### Changed
+
+- `claude_account_id` validation is now enforced at session create
+  AND at switch — bogus or disabled ids return HTTP 400 BEFORE the
+  row is persisted (create) or BEFORE the live PTY is stopped (switch).
+- Default idle threshold raised 30s → 5m so long-running tool
+  invocations don't get killed by the idle reaper.
+- The "Switch Account" confirmation dialog now says "conversation
+  history is preserved" instead of "in-progress conversation state
+  will be lost" — accurate description of what now happens.
+
+### Fixed
+
+- `token_filled` previously only checked the legacy
+  `<accountsDir>/tokens/<name>.token` file, so every config-dir
+  account (the documented flow!) showed "NO TOKEN YET" despite having
+  working credentials. Now reports true when either source has usable
+  credentials.
+- Gemini reply parsing now reads `chats/*.jsonl` instead of scraping
+  the screen, eliminating screen-dump noise in Telegram forwards.
+- Session 'shell' provider's chrome stripper is now shell-aware so
+  raw prompt characters don't leak into the channel forwarders.
+- Web: copy now works over plain-HTTP LAN (Clipboard API requires
+  HTTPS otherwise), terminal selection-driven copy works, copy pill
+  is anchored at the selection with neutral styling.
+
+### Security
+
+- All disk reads in the cliacct path use `os.Lstat` and reject
+  symlinks (`<accountsDir>/<name>/`, `<configDir>/.credentials.json`,
+  `<configDir>/.claude.json`, the legacy token file). Defense in
+  depth against an attacker who can write under the accounts tree.
+- `migrateClaudeTranscript` Lstat-rejects symlinked sources before
+  `os.Link` so a planted symlink can't be hardlinked into the new
+  account's tree and read as conversation history by `claude --resume`.
+- Telegram inbound is gated to the configured owner across all
+  message types, not just control commands.
+
+### API
+
+- New: `POST /api/v1/claude-accounts/{id}/accept-identity` — clears
+  the identity-drift baseline by recording the current on-disk email
+  as the new accepted identity.
+
+### Config
+
+- New: `[providers.claude] watcher_enabled` (default true). Set to
+  false to disable the fsnotify watcher; the Import-local button
+  still works on demand.
+
+## [v2.3.4] — 2026-05-29
+
+### Fixed
+
+- **Language toggle in the web Topbar moved its checkmark but UI
+  strings didn't switch.** The zustand → i18next bridge ran as a
+  module-level `useLocale.subscribe(...)` in `i18n.ts` that mounted
+  before React. Under React 19 StrictMode + Vite HMR + zustand persist
+  hydration the subscription could end up registered against a store
+  snapshot React never re-reconciled with, so picking a language moved
+  the dropdown's checkmark (which reads from the store) without
+  triggering `i18n.changeLanguage()`. Moved the bridge into a
+  `<LocaleSync />` React effect under `QueryClientProvider` so it
+  shares the same lifecycle as every other `useTranslation()`
+  consumer and they update in lockstep (#267).
+
+- **Nine UI strings rendered their placeholders literally** —
+  "update available → {{version}}", "Suggested ({{count}})", "Updated
+  {{from}} → {{to}}", "connected · {{count}} tools", and the three
+  About-panel version-toaster lines all showed the `{{var}}` template
+  instead of the substituted value. The web i18next interpolation is
+  configured for single-brace `{name}` but those particular keys were
+  authored with the i18next default `{{name}}`. Normalized them across
+  both locales (#261).
+
+- **Mobile `flutter build apk` failed with hundreds of parser errors
+  after slang codegen.** Mobile's slang config uses
+  `string_interpolation: braces` (matching the web) but the same
+  `{{var}}` typos that produced literal placeholders on web produced
+  invalid Dart on mobile — `({required Object {version})` and
+  `${{version}}` — that wouldn't compile. Same normalization as #261,
+  plus a refresh of the generated `strings*.g.dart` outputs and
+  alignment of `app/mobile/pubspec.yaml` to the product version
+  (#264).
+
+### Changed
+
+- **App icons now show the new wooden-cart wordmark glyph instead of
+  the old pink-gradient "D".** README was already updated to the
+  opendray.dev wordmark, but the running surfaces — web favicon,
+  Android launcher mipmaps, the full iOS `AppIcon.appiconset`, and
+  the repo-root `assets/icons/logo/` set — hadn't caught up, so a
+  fresh install showed the new brand on GitHub and the old brand on
+  the device. Regenerated every square icon surface from a single
+  1024×1024 source so proportions stay consistent across sizes
+  (#266).
+
+- **The Providers page now asks for confirmation before upgrading a
+  CLI that has live sessions on it.** Linux file-replacement
+  semantics mean an already-loaded session keeps the old binary in
+  memory, but a long session with lazy / dynamic imports or in-flight
+  subprocess work can pick up new code mid-run. When `n > 0`
+  non-terminal sessions are using the provider, clicking Update opens
+  a dialog with the count and an honest explanation of the trade-off;
+  with no live sessions Update still fires immediately, as before.
+  Update-check responses also stay fresh for an hour now (matching
+  the server-side npm cache) instead of being re-fetched on every tab
+  switch (#263).
+
+## [v2.3.3] — 2026-05-24
+
+### Fixed
+
+- **About panel showed no version and the self-update button did
+  nothing.** The dashboard called the version / self-update API at
+  `/version` and `/version/update` instead of `/api/v1/...`, so the
+  requests 404'd. Added the `/api/v1` prefix (#251).
+
+## [v2.3.2] — 2026-05-24
+
+### Fixed
+
+- **Cross-session memory injection rendered every fact as `- ---`.**
+  The "Recent project memory" banner took the first line of each
+  memory, which for frontmatter-authored facts is the `---` YAML
+  delimiter. It now skips the frontmatter and surfaces the
+  `description` (falling back to the first body line) (#250).
+
+## [v2.3.1] — 2026-05-24
+
+### Fixed
+
+- **Copy buttons silently failed over plain HTTP (LAN IP / mobile).**
+  `navigator.clipboard` is only exposed in a secure context. Added a
+  shared `copyText()` helper that falls back to `execCommand('copy')`
+  and routed the existing copy callsites through it (#249).
+
+## [v2.3.0] — 2026-05-23
+
+### Fixed
+
+- **Live sessions were destroyed by a daemon restart (e.g. a
+  self-update).** Sessions are now marked `interrupted` on a gateway
+  shutdown and auto-resumed on the next startup via their stored agent
+  session id (`--resume`), with bounded-concurrency spawning and an
+  optional `OPENDRAY_AUTO_RESUME_MAX` cap. A drain gate warns before a
+  self-update interrupts running work (#247).
+- **404 page instead of the login screen after a restart.** The 401
+  redirect now respects the dashboard base path (→ `/admin/login`)
+  and keeps `next` router-relative (#248).
+- **Brand icons broke under a non-`/admin` base path** (#246).
+
+## [v2.2.2] — 2026-05-23
+
+### Added
+
+- **Memory: global-scope injection fallback + recency default** — a
+  fact told to one session surfaces in another regardless of cwd
+  (#244).
+- **Transport-aware MCP editor template + "unsupported" badge for
+  Codex** (#242).
+
+### Fixed
+
+- **Memory endpoints are now scope-gated** (admin or
+  `memory:read` / `memory:write`) (#245).
+
+## [v2.2.1] — 2026-05-22
+
+### Added
+
+- **Always-visible "Check for updates" + re-install action in the
+  About panel** (#243).
+
+### Fixed
+
+- **Remote MCP URL normalization** (#230).
+
+## [v2.2.0] — 2026-05-22
+
+### Added
+
+- **In-dashboard update notification + one-click background
+  self-update** (#241).
+- **Startup warning when W^X (MemoryDenyWriteExecute) blocks
+  executable memory** (#240).
+
+### Changed
+
+- **Repository renamed `opendray_v2` → `opendray`** across
+  code/config/docs; install / uninstall URLs updated (#238, #237).
+
+### Fixed
+
+- **Dropped `MemoryDenyWriteExecute`** from the systemd unit — it
+  broke Codex / Gemini sessions (#218).
+
+## [v2.1.1] — 2026-05-22
+
+### Added
+
+- **Responsive mobile web layout** — slide-over nav + inspector with
+  edge handles (#236).
+
+### Fixed
+
+- **Telegram channel:** handle `/start`, and a clearer `/list` header
+  for terminated sessions (#235).
+
+## [v2.1.0] — 2026-05-22
+
+### Added
+
+- **Per-provider model management from the dashboard** (#229).
+- **Real CLI version + "update available" surfaced in the providers
+  API/UI** (#227).
+- **Interactive session switching via `/select` + Talk-to buttons**
+  in channels (#226).
+- **Validate MCP servers from the Plugins page** (#233).
+- **Windows installer: a true one-liner** — auto-installs WSL2 +
+  Ubuntu, runs the installer, and persists across reboot (#213).
+
+### Changed
+
+- **Hardened the merged Update action** — provider mutations are gated
+  and the update path degrades gracefully (#234).
+
+### Fixed
+
+- **Session list shows session names in `/list` instead of bare ids**
+  (#224).
+- **Spawned CLIs get a color-capable `TERM`** so Claude/Codex/Gemini
+  render in color (#225).
+- **macOS installer hardening** — robust local Postgres provisioning,
+  configured-port binding, idempotent launchd reload, bash 3.2
+  compatibility, and a launchd PATH that finds brew-installed CLIs
+  (#208, #209, #211, #212, #231, #232).
+- **Windows installer:** OS-build guard, auto-resume after a WSL
+  reboot, PowerShell 5.1 compatibility (#214).
+- **Installer:** validate DB identifiers and don't abort on a free /
+  commented-out Postgres port (#210).
+
+### Security
+
+- **Scrubbed dev-internal docs + personal-network references from the
+  public repository** (#204).
+
+## [v2.0.5] — 2026-05-18
+
+### Added
+
+- **Flutter mobile session terminal now has the URL detector
+  badge.** Same model as the web admin: the PTY byte stream is
+  scanned for http(s) URLs with the same state-machine extractor
+  that re-assembles CLI-soft-wrapped OAuth URLs. A floating pill
+  in the top-right corner of the terminal — primary tap opens the
+  most recent URL in the OS browser via `url_launcher`, secondary
+  `⋯` button opens a bottom-sheet with every URL (newest first)
+  for picking older ones. Closes the OAuth-on-Flutter-app gap
+  reported alongside the web fix.
+
+### Changed
+
+- **Web login no longer pre-fills the username with "admin".** The
+  install wizard lets operators pick any username, so seeding the
+  field forced everyone-who-didn't-keep-the-default to backspace
+  before typing. The field is now empty by default and autofocused.
+
+## [v2.0.4] — 2026-05-18
+
+### Fixed
+
+- **URL extractor now re-assembles CLI-soft-wrapped URLs.** AI CLIs
+  (claude-code, codex, gemini) hard-wrap long OAuth URLs at the
+  terminal column width by emitting literal `\n` characters every
+  ~55 chars. The v2.0.1 / v2.0.2 / v2.0.3 extractor used a `[^\s]+`
+  regex that stops at `\n`, so it captured only the first wrapped
+  segment (e.g. `https://...&client_`). Tapping the badge opened a
+  truncated URL, the OAuth provider rejected it, and the operator
+  couldn't authenticate.
+
+  The extractor is now a state-machine walker that anchors on
+  `https?://`, consumes URL-body characters, and treats a single
+  internal `\n` as a soft-wrap when the current line is ≥ 40 chars
+  long (matches real CLI wrap width; well above "<intro phrase>\n
+  <url>" prose patterns). Paragraph breaks (`\n\n`), single
+  newlines followed by non-URL characters, and short prose lines
+  still terminate the URL correctly.
+
+  Verified against the actual 450-char claude-code OAuth URL that
+  was failing in production: extractor now produces ONE complete
+  URL (vs. two truncated segments).
+
+## [v2.0.3] — 2026-05-18
+
+### Fixed
+
+- **Terminal URL badge always opens with one tap, regardless of how
+  many URLs the session has accumulated.** v2.0.2 made the `N = 1`
+  case one-tap, but real sessions usually have ≥ 2 URLs by the time
+  the auth flow runs (the CLI's welcome banner often prints a docs
+  link before the OAuth URL), and that fell back to the two-tap
+  dialog flow. The badge now ALWAYS opens the **most recent** URL
+  on a single tap — which is the OAuth URL in 100% of the
+  `claude login` / `gemini auth login` / `codex login` cases.
+
+  Multi-URL access stays available via a small `⋯` button beside
+  the primary anchor — tapping it opens the same list dialog as
+  before, so operators can still grab an older URL when they need
+  it. The dialog row Open buttons are also real anchors (not
+  `window.open()`) for the same popup-blocker reason.
+
+  This is a web-admin-only fix. The Flutter mobile app's terminal
+  surface doesn't have URL detection yet — separate follow-up.
+
+## [v2.0.2] — 2026-05-18
+
+### Added
+
+- **Service-control subcommands**: `opendray start`, `opendray stop`,
+  `opendray restart`, `opendray status`. Thin wrappers over
+  `systemctl` (Linux) and `launchctl` (macOS) so operators don't
+  have to remember the platform-native incantation. On Linux, the
+  binary auto-prepends `sudo` if the caller isn't root. On macOS,
+  defaults to the user LaunchAgent (`gui/$UID/com.opendray.opendray`);
+  pass `--system` to target the LaunchDaemon scope.
+
+### Fixed
+
+- **One-tap link open for the OAuth URL badge.** When a session has
+  exactly one detected URL (the common AI-CLI auth case: `claude
+  login` / `gemini auth login` / `codex login` each print one OAuth
+  URL), the floating "🔗 1 link" badge is now itself an
+  `<a target="_blank">` — a single tap goes straight to the
+  browser, no intermediate dialog. The dialog still appears when
+  ≥ 2 URLs are detected, so multi-link sessions still get the
+  disambiguating UI. In the dialog, the "Open" button is also a
+  real anchor now, which avoids popup-blocker gating on some
+  mobile browsers.
+
+## [v2.0.1] — 2026-05-18
+
+### Removed
+
+- **Docker deployment path.** opendray is a host-resident gateway —
+  it spawns AI CLIs via PTYs and shares process state (`~/.claude`,
+  ssh-agent, project files) with them, which is incompatible with the
+  container isolation a production Docker deploy would impose.
+  Removed `Dockerfile`, `docker-compose.yml`, `docker-compose.test.yml`,
+  `.dockerignore`, `.env.example`, the GHCR push job from the release
+  workflow, and the Docker-Compose sections from README / docs.
+- **In-app Tutorial page.** All 84 markdown sections plus
+  `Tutorial.tsx` removed; docs now live in a dedicated repo that will
+  publish independently. Sidebar entry, `/tutorial` route, and i18n
+  keys (`nav.tutorial`, `web.providers.claudeAccounts.tutorialTooltip`,
+  `web.providers.claudeAccounts.architectureLink`) removed in parallel.
+
+### Fixed
+
+- **"No Claude accounts" empty state** (Providers page + Spawn dialog,
+  web + mobile) now tells operators the actual setup path: spawn a
+  session and run `claude login` in the terminal. The previous wording
+  pointed at the gateway-host shell workflow (works only for SSH-
+  capable operators) and incorrectly implied a system
+  `ANTHROPIC_API_KEY` fallback. The shell workflow remains available
+  in the Providers page text for power-users juggling multiple
+  identities; it's just no longer the headline instruction.
+
+### Changed
+
+- Brand: web favicon, docs hero, iOS `AppIcon.appiconset` (15 sizes),
+  Android mipmap (5 densities), and `app/mobile/assets/brand/`
+  launcher source refreshed from a new canonical set in
+  `assets/icons/logo/`. Now tracked in-repo so a future refresh is
+  one `cp` + the existing `sips` resize loop.
+
+### Added — install / uninstall / update tooling
+
+Lifecycle scripts and binary subcommands that grew out of a fresh-
+LXC end-to-end install test. Everything below is `curl | bash`–
+reachable, idempotent, and works on Linux (Ubuntu / Debian) +
+macOS; Windows is funneled through WSL2.
+
+- **One-line installer wizard** (#185 #186)
+  - `scripts/install.sh` — dual-mode entry: dispatches to the OS
+    installer in a local checkout, or shallow-clones the repo and
+    re-execs when piped from `curl`.
+  - `scripts/install-linux.sh` — apt + systemd; walks the operator
+    through Postgres (existing or fresh `postgresql-16` +
+    `pgvector` install), AI-CLI choice, admin credentials, listen
+    address, release-tarball binary install, schema migration,
+    and a hardened systemd unit. Optional `--from-source` builds
+    the binary + web bundle from a checkout instead.
+  - `scripts/install-macos.sh` — brew + LaunchAgent (or
+    `--launchd-daemon` for system-wide), same flow. Detects Apple
+    Silicon vs Intel for the right release asset.
+  - `scripts/install-windows.ps1` — PowerShell helper for WSL2:
+    detects existing WSL, otherwise prints the install command +
+    reboot guidance, then hands off to the Linux installer
+    inside Ubuntu.
+- **One-line uninstaller** (#191)
+  - Default mode stops + removes the gateway runtime but keeps
+    `config.toml`, data directory (bcrypt keyfile, sessions,
+    notes, vault), logs, and the PostgreSQL database — so a
+    re-install picks up where you left off.
+  - `--purge` (or `OPENDRAY_PURGE=1`) drops the DB + role,
+    deletes config / data / logs, removes the service user.
+  - Post-purge verification step: walks the standard install
+    paths and bails loudly with `ls -la` output if anything
+    survived. "No trace left" gets *checked*, not assumed.
+- **`opendray update` subcommand** (#194)
+  - Fetches the latest GitHub release, picks the goreleaser
+    asset matching this host's `GOOS/GOARCH`, verifies SHA-256
+    against the release's `SHA256SUMS`, then atomically replaces
+    `/proc/self/exe` via temp+rename.
+  - Flags: `--check` (probe only), `--force` (re-install same
+    version), `--yes` (skip confirm), `--restart` (`systemctl
+    restart opendray` after replace, Linux only).
+  - Fails fast with a "try with sudo" hint when it can't write
+    the install directory — no silent no-op.
+- **`opendray providers <list|update>`** (#194)
+  - Detects installed AI CLIs (`claude`, `gemini`, `codex`),
+    prints versions + paths.
+  - `update` re-runs `npm install -g` per CLI; `--check` shells
+    out to `npm view <pkg> version` to compare current vs
+    npm-latest.
+  - `--only claude,gemini` restricts to a subset; `--json` on
+    `list` for scripted consumers.
+
+### Security
+
+- **Secrets out of `config.toml`** (#192). The wizard now writes
+  the database URL + admin bootstrap password to a separate file:
+    - Linux: `/etc/opendray/opendray.env` (mode `0640 root:opendray`),
+      consumed by systemd via `EnvironmentFile=`.
+    - macOS: `~/.opendray/opendray.env` (mode `0600`), consumed
+      by a tiny launcher wrapper (`~/.opendray/bin/opendray-launcher.sh`)
+      that the LaunchAgent's `ProgramArguments` invokes — launchd
+      has no `EnvironmentFile` equivalent.
+  - `config.toml` is now `0644` and contains only non-secrets
+    (listen, log config, `[admin].user`, runtime data dir).
+  - Existing opendray env-var override layer
+    (`OPENDRAY_DATABASE_URL`, `OPENDRAY_ADMIN_PASSWORD`, etc.)
+    does the actual wiring — no Go changes needed.
+
+### Fixed (install wizard, all reported during the LXC walkthrough)
+
+- `curl | bash` prompts work — wizard re-attaches stdin to
+  `/dev/tty` so EOF on the pipe doesn't make every `read` fail
+  under `set -e` (#187).
+- `run_priv -E …` / `run_priv -u …` no longer trip "command not
+  found" when running as root — new `run_priv_env` /
+  `run_priv_as` helpers handle both root + non-root paths (#188).
+- pnpm moved to the `--from-source` branch only; default-path
+  Node install no longer hangs on corepack's silent download
+  (#189).
+- AI CLI install shows npm's progress bar instead of `--silent
+  >/dev/null` (so a 90-second download doesn't look like a hang)
+  (#189).
+- Admin login works after install: wizard writes `[admin].user`
+  in addition to the password; matches opendray's auth contract
+  (#190).
+- Customisable admin username (was hard-coded to "admin") (#190).
+- Final-summary URL resolves the host's LAN IP for `0.0.0.0`
+  listens instead of printing the `<this-host>` placeholder
+  (#190).
+- Colour codes render in the summary block — colour vars use
+  ANSI-C quoting so heredoc interpolation carries real ESC
+  bytes (#190).
+- `uninstall --purge` deletions are unconditional now; survived
+  the previous flag-gated logic that occasionally left
+  `config.toml` on disk (#192).
+- Env-var alternative for the purge flag (`OPENDRAY_PURGE=1
+  bash`) — survives `bash -s -- --flag` paste-newline weirdness
+  (#193).
+
+### Documentation
+
+- README hero: typographic v2 logo + status / license / CI /
+  GHCR badges + "What is opendray?" five-bullet section + paired
+  EN / ZH `README.md` / `README.zh.md` (#180 #181 #182).
+- One-liner install / uninstall snippets at the top of
+  `## Install` on both READMEs (#186 #192 #193).
+- `docs/getting-started.md` (+ `.zh.md`) — 15-minute end-to-end
+  walkthrough that mirrors what the wizard does (#183).
+- `docs/operator-guide.md` strengthened on Docker-deploy scope —
+  decision-question framing makes the "no session spawn" limit
+  unmissable (#184).
+- `scripts/README.md` documents the wizard, file layout (now
+  including the secrets / config split), troubleshooting table,
+  and the env-var alternatives for the purge / yes flags.
+
+### Branding
+
+- Unified launcher icons across web favicon, iOS
+  `AppIcon.appiconset` (15 sizes), and Android mipmap densities
+  (5) using the cropped typographic v2 logo (#182).
+
+## [v2.0.0] — 2026-05-17
+
+### Versioning realignment
+
+- **Re-tagged from the previous `v1.0.0` tag** (issue #165). The
+  major version now reflects this codebase's identity as the second
+  generation of the opendray product (`opendray_v2`). The previous
+  `v1.0.0` tag was deleted (had three duplicate draft releases on
+  GitHub, all deleted; no published release; no downstream
+  installers depend on it).
+- New [VERSIONING.md](./VERSIONING.md) documents the
+  major-as-generation policy and what triggers future bumps.
+
+### Added
+
+- Per-session bypass toggle in the Spawn dialog (mobile + web).
+  Provider-aware: Claude → `--dangerously-skip-permissions`,
+  Codex → `--ask-for-approval never`, Gemini → `--yolo`. Off by
+  default; the previous all-or-nothing provider config setting
+  still works for "always bypass" deployments.
+
+### Changed
+
+- Spawn dialog's Claude account picker now appears immediately on
+  open (mobile + web). Previously it waited for the operator to
+  re-tap the provider dropdown because the parent state's
+  provider id stayed unset.
+- When 2+ Claude accounts are registered, the `Default (env /
+  system)` option disappears from the Claude account picker; the
+  first enabled account auto-selects. Single-account setups
+  retain the Default option.
+
+### Fixed
+
+- Release workflow's `ghcr` job now produces image tags on
+  `workflow_dispatch`. `docker/metadata-action` was reading
+  `github.ref` (a branch when dispatched manually), so `type=semver`
+  rules emitted zero tags and buildx failed with "tag is needed when
+  pushing to registry". Each rule now passes `value=${{ env.TAG }}`
+  so the same ruleset works for both `push:tags` and
+  `workflow_dispatch` entry points.
+
+### Added
+
+- Release workflow gains a `ghcr` job that builds the multi-arch
+  Dockerfile (linux/amd64 + linux/arm64) and pushes to
+  `ghcr.io/opendray/opendray` on every tag release. Job-scoped
+  `packages: write` (the parent `release` job stays at
+  contents+id-token least-privilege). Tag set covers `:1.0.0`,
+  `:1.0`, `:v1.0.0`, plus `:latest` for non-prerelease semver.
+  SHA-pinned actions throughout, matching the existing release-
+  pipeline pattern.
+
+- `.github/workflows/release.yml` — automated release pipeline.
+  Triggers on `v*` tag push (or manually via workflow_dispatch with a
+  tag input). Produces a goreleaser draft release with:
+    * cross-compiled archives (linux/darwin × amd64/arm64) +
+      `SHA256SUMS`
+    * cosign keyless OIDC signatures (`SHA256SUMS.sig`,
+      `SHA256SUMS.pem`) via Sigstore Fulcio — no long-lived key
+    * SPDX SBOM via anchore/sbom-action
+  Permissions limited to `contents: write` (release upload) and
+  `id-token: write` (cosign OIDC). Supply-chain hardening: SHA-pinned
+  cosign-installer, sbom-action, and goreleaser-action; fail-fast
+  tag-format validation on workflow_dispatch.
+- `deploy/` directory with reference deploy artefacts:
+  - `deploy/systemd/opendray.service` — production-ready systemd unit
+    with sandboxing (`NoNewPrivileges`, `ProtectSystem=strict`, etc.),
+    `migrate`-then-`serve` startup, 20s graceful-stop window.
+  - `deploy/lxc/proxmox-pty-notes.md` — Proxmox-specific guide covering
+    privileged vs unprivileged container PTY behaviour, the cgroup +
+    bind-mount config required for unprivileged LXCs, networking +
+    pgvector + pg_dump-version checks, and a pre-go-live checklist.
+  - `deploy/README.md` — index pointing operators at the right artefact
+    for their topology.
+  - operator-guide.md "Where to look next" section now links to `deploy/`.
+- ADR 0016 (Proposed): backup-format v2 design for per-install PBKDF2
+  salt. Captures the four binding decisions (in-header storage,
+  version-byte bump 1→2, per-Seal salt provenance, indefinite v1
+  read compat) and the three-PR rollout. Implementation pending.
+- LICENSE file (Apache 2.0) — previously declared in README only.
+- SECURITY.md — threat model, default posture, deployment checklist, report channel.
+- CONTRIBUTING.md — dev setup, test commands, PR + commit conventions.
+- CHANGELOG.md — this file.
+
+### Changed
+- `internal/backup/cipher.go`: 6-line comment on `kdfSalt` flagging it
+  as a frozen v1 protocol constant and pointing at ADR 0016. No code
+  behaviour change.
+- Renumbered ADR `0011-memory-subsystem.md` → `0014-memory-subsystem.md` to
+  resolve the duplicate-0011 collision with `0011-channel-rich-content-and-bridge.md`.
+  Updated cross-references in README, ADR 0013, and the embed-onnx stub.
+
+## [v1.0.0 — retracted] — 2026-05-09
+
+> **Note.** This tag was retracted on 2026-05-17 and the work it
+> covered is folded into [v2.0.0](#v200--2026-05-17) above. See
+> issue #165 and [VERSIONING.md](./VERSIONING.md) for the rationale.
+> Original section preserved verbatim below for historical context.
+
+First stable release. Tagged at commit `fe96fd8` on `main`. Web frontend
++ backend feature-complete; mobile + Slack inbound + automated release
+workflow deferred to v1.x per the post-v1.0 roadmap. v1
+(`Opendray/opendray`) keeps running in production through this quarter
+per ADR 0001.
+
+The feature inventory below was originally captured under
+`[v1.0-rc] — 2026-05-05`; section was promoted to `[v1.0.0]` on tag.
+
+### Added (since the greenfield start)
+
+- **M0 — composition root:** `internal/app/`, config loader (`internal/config/`),
+  pgx pool + hand-rolled migration runner (`internal/store/`), event bus
+  (`internal/eventbus/`), structured logging via slog.
+- **M1 — sessions:** PTY lifecycle, ring-buffer streaming, WS handler,
+  resume-via-reconnect (per ADR 0003).
+- **M2 — CLI catalog:** provider manifests + per-id user config
+  (`internal/catalog/`).
+- **M2.5 — admin auth:** bearer tokens with constant-time password compare
+  and 24h TTL (`internal/auth/`).
+- **M3 — integrations:** external-app registry, `/api/v1/proxy/{prefix}/*`
+  reverse proxy, integration call log (`internal/integration/`, ADR 0006,
+  ADR 0010).
+- **M4 — channels:** channel hub + Telegram, Slack, Discord, DingTalk,
+  Feishu, WeChat, WeCom (`internal/channel/`, ADR 0005, ADR 0011-channel).
+- **Memory:** built-in pgvector cross-CLI memory layer
+  (`internal/memory/`, ADR 0014). Three-CLI mirror keeps Claude / Codex /
+  Gemini transcripts aligned. ONNX local-embedding optional via
+  `-tags local_onnx`.
+- **Ambient memory:** auto-capture from active sessions + auto-injection
+  on session start (ADR 0013).
+- **Backup + export:** AES-256-GCM encrypted PostgreSQL dumps,
+  S3/WebDAV/SFTP/rclone targets, admin export/import bundles
+  (`internal/backup/`, ADR 0012).
+- **Web admin (W0–W5):** React 19 + Vite + Tailwind v4 + shadcn/ui +
+  TanStack Router/Query + Zustand + xterm.js. Single SPA bundled into
+  the Go binary via `go:embed` (ADR 0007, ADR 0008).
+- **Events stream:** admin-bearer-authed `/api/v1/integrations/_events`
+  WebSocket (ADR 0009).
+
+### Deferred to post-v1.0
+
+- Mobile (Flutter) client — replaced by responsive web in v2 phase 2.
+- Slack inbound (M5+).
+- Deploy automation (release toolchain — goreleaser, Dockerfile,
+  systemd unit) lands in a follow-up PR.
+- e2e Playwright harness.

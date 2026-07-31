@@ -1,0 +1,61 @@
+{
+  "create_task_request": {
+    "project_id": "prj_demo",
+    "provider_id": "codex",
+    "prompt": "Run the focused unit tests and fix the failure.",
+    "source": {
+      "kind": "mobile",
+      "client_request_id": "mob_01"
+    },
+    "attachments": [],
+    "timeout_seconds": 3600
+  },
+  "task_envelope": {
+    "task": {
+      "id": "otk_01HXYZ",
+      "principal_kind": "admin",
+      "principal_id": "operator",
+      "project_id": "prj_demo",
+      "provider_id": "codex",
+      "source": {
+        "kind": "mobile",
+        "client_request_id": "mob_01"
+      },
+      "prompt": "Run the focused unit tests and fix the failure.",
+      "status": "queued",
+      "current_run_id": null,
+      "runtime_context_id": null,
+      "version": 2,
+      "created_at": "2026-07-27T06:00:00Z",
+      "updated_at": "2026-07-27T06:00:00Z"
+    },
+    "delivery_id": "odl_01HXYZ"
+  },
+  "event_frame": {
+    "topic": "oneshot.run.output",
+    "ts": "2026-07-27T06:00:01.123456Z",
+    "cursor": "oseq_42",
+    "data": {
+      "task_id": "otk_01HXYZ",
+      "run_id": "orn_01HXYZ",
+      "status": "running",
+      "provider_id": "codex",
+      "sequence": 42,
+      "event_type": "agent.output",
+      "content": {
+        "text": "tests passed"
+      }
+    }
+  },
+  "error_response": {
+    "error": {
+      "code": "oneshot.run_conflict",
+      "message": "task already has an active run",
+      "request_id": "req_01HXYZ",
+      "retryable": true,
+      "details": {
+        "task_id": "otk_01HXYZ"
+      }
+    }
+  }
+}

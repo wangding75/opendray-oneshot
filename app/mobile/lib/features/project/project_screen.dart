@@ -1,0 +1,2994 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:intl/intl.dart';
+import 'package:opendray/core/api/api_exception.dart';
+import 'package:opendray/core/api/cortex_api.dart';
+import 'package:opendray/core/api/knowledge_api.dart';
+import 'package:opendray/core/api/memory_api.dart';
+import 'package:opendray/core/api/memory_conflicts_api.dart';
+import 'package:opendray/core/api/memory_health_api.dart';
+import 'package:opendray/core/api/models.dart';
+import 'package:opendray/core/api/project_docs_api.dart';
+import 'package:opendray/core/i18n/strings.g.dart';
+import 'package:opendray/features/cortex/blueprint_editor_screen.dart';
+import 'package:opendray/features/cortex/curation_chat_screen.dart';
+import 'package:opendray/features/sessions/directory_picker_sheet.dart';
+import 'package:path/path.dart' as p;
+
+// Project screen — the Cortex project workspace: the project's official
+// doc (overview/goal/plan/tech/activity) plus the journal, the proposal
+// inbox, and a memory-hygiene tab (health/conflicts/archived). The cwd
+// picker reuses the project scope-keys endpoint so the list stays
+// consistent with the Memory tab. One unified surface — no legacy
+// memory-only variant (web parity).
+class ProjectScreen extends ConsumerStatefulWidget {
+  const ProjectScreen({super.key, this.initialCwd});
+
+  /// When set, the screen jumps straight to that cwd's project view
+  /// instead of letting the operator pick from the dropdown. Used
+  /// when entering from a Session detail screen that already knows
+  /// which project the session is bound to.
+  final String? initialCwd;
+
+  @override
+  ConsumerState<ProjectScreen> createState() => _ProjectScreenState();
+}
+
+class _ProjectScreenState extends ConsumerState<ProjectScreen>
+    with TickerProviderStateMixin {
+  // The doc tabs ARE the project's blueprint sections (dynamic), followed by
+  // three fixed feature tabs: Journal, Inbox, Hygiene. The controller is
+  // (re)built whenever the section count changes (project switch / blueprint
+  // edit) so a new section — current_objective, or any custom one — shows up
+  // without a hardcoded tab list. Null until the first blueprint load.
+  TabController? _tabs;
+  List<BlueprintSection> _sections = const [];
+  // Journal / Inbox / Hygiene are the three trailing fixed tabs, right after
+  // the dynamic doc tabs.
+  int get _journalTabIndex => _sections.length;
+  int get _inboxTabIndex => _sections.length + 1;
+  AsyncValue<List<String>> _projectKeys = const AsyncValue.loading();
+  String? _selectedKey;
+  // Set when the blueprint fetch fails. We deliberately do NOT substitute a
+  // hardcoded section set on failure (that silently hides custom sections —
+  // an operator adds a page on web and it vanishes on mobile). Instead the
+  // build surfaces a retry banner and keeps whatever sections loaded.
+  Object? _blueprintError;
+
+  // Per-tab state. Kept in the parent so tab swipes don't tear down.
+  AsyncValue<List<ProjectDoc>> _docs = const AsyncValue.loading();
+  AsyncValue<List<DocProposal>> _proposals = const AsyncValue.loading();
+  AsyncValue<List<SessionLogEntry>> _logs = const AsyncValue.loading();
+  AsyncValue<List<Memory>> _archived = const AsyncValue.loading();
+  AsyncValue<MemoryHealthSnapshot> _health = const AsyncValue.loading();
+  AsyncValue<List<MemoryConflict>> _conflicts = const AsyncValue.loading();
+  bool _conflictDetectRunning = false;
+
+  @override
+  void initState() {
+    super.initState();
+    // The TabController is built lazily once the blueprint sections load (in
+    // _loadAll) so its length matches the dynamic doc-tab set.
+    _loadKeys();
+  }
+
+  @override
+  void dispose() {
+    _tabs?.dispose();
+    super.dispose();
+  }
+
+  // (Re)build the tab controller when the number of tabs changes (project
+  // switch or blueprint edit). Disposes the previous one and preserves the
+  // current index where possible so a refresh doesn't snap back to Overview.
+  void _ensureTabController(int count) {
+    final n = count < 1 ? 1 : count;
+    if (_tabs != null && _tabs!.length == n) return;
+    final prevIndex = _tabs?.index ?? 0;
+    final old = _tabs;
+    _tabs = TabController(
+      length: n,
+      vsync: this,
+      initialIndex: prevIndex < n ? prevIndex : 0,
+    );
+    old?.dispose();
+  }
+
+  Future<void> _loadKeys() async {
+    setState(() => _projectKeys = const AsyncValue.loading());
+    try {
+      // Every project opendray knows about (project_docs ∪ session_logs),
+      // not just the ones with episodic memory — so the picker isn't limited
+      // to the cache.
+      final projects = await ref.read(projectDocsApiProvider).listProjects();
+      if (!mounted) return;
+      final keys = projects.map((p) => p.cwd).toList()..sort();
+      // When the caller passed an initialCwd that's not yet in the
+      // memory scope_keys list (a brand-new session whose project
+      // has no L5 memories yet), inject it so the picker can still
+      // anchor on it. Tech-stack + journal + plan all live in their
+      // own tables and don't need a memory row to exist.
+      final initial = widget.initialCwd;
+      var mergedKeys = keys;
+      if (initial != null && !keys.contains(initial)) {
+        mergedKeys = [...keys, initial]..sort();
+      }
+      setState(() {
+        _projectKeys = AsyncValue.data(mergedKeys);
+        if (initial != null && initial.isNotEmpty) {
+          // initialCwd wins on the first call. Subsequent _loadKeys
+          // calls (refresh, pull-to-reload) don't reset it because
+          // we leave _selectedKey alone when already set.
+          _selectedKey ??= initial;
+        }
+        if (_selectedKey != null && !mergedKeys.contains(_selectedKey)) {
+          _selectedKey = null;
+        }
+        _selectedKey ??=
+            mergedKeys.isEmpty ? null : mergedKeys.first;
+      });
+      if (_selectedKey != null) {
+        await _loadAll(_selectedKey!);
+      }
+    } on ApiException catch (e) {
+      if (!mounted) return;
+      setState(() => _projectKeys = AsyncValue.error(e, StackTrace.current));
+    }
+  }
+
+  Future<void> _loadAll(String cwd) async {
+    setState(() {
+      _docs = const AsyncValue.loading();
+      _proposals = const AsyncValue.loading();
+      _logs = const AsyncValue.loading();
+      _archived = const AsyncValue.loading();
+      _health = const AsyncValue.loading();
+      _conflicts = const AsyncValue.loading();
+    });
+    final api = ref.read(projectDocsApiProvider);
+    final memApi = ref.read(memoryApiProvider);
+    final healthApi = ref.read(memoryHealthApiProvider);
+    final conflictsApi = ref.read(memoryConflictsApiProvider);
+    // Blueprint first: the tab set (and its controller length) must match this
+    // project's sections before the bodies render.
+    try {
+      final secs = await ref.read(cortexApiProvider).listSections(cwd);
+      secs.sort((a, b) {
+        if (a.pinned != b.pinned) return a.pinned ? -1 : 1;
+        return a.position.compareTo(b.position);
+      });
+      if (!mounted) return;
+      setState(() {
+        _sections = secs;
+        _blueprintError = null;
+        _ensureTabController(secs.length + 3);
+      });
+    } on ApiException catch (e) {
+      // Web parity: NEVER substitute a hardcoded section set on failure —
+      // that silently drops custom blueprint sections (the operator adds a
+      // page on web, it vanishes on mobile). Surface the error with a retry
+      // banner and keep whatever sections already loaded; an empty set still
+      // renders the three fixed tabs (Journal / Inbox / Hygiene).
+      if (!mounted) return;
+      setState(() {
+        _blueprintError = e;
+        _ensureTabController(_sections.length + 3);
+      });
+    }
+    try {
+      final docs = await api.listDocs(cwd);
+      if (!mounted) return;
+      setState(() => _docs = AsyncValue.data(docs));
+    } on ApiException catch (e) {
+      if (!mounted) return;
+      setState(() => _docs = AsyncValue.error(e, StackTrace.current));
+    }
+    try {
+      final props = await api.listPendingProposals(cwd: cwd);
+      if (!mounted) return;
+      setState(() => _proposals = AsyncValue.data(props));
+    } on ApiException catch (e) {
+      if (!mounted) return;
+      setState(() => _proposals = AsyncValue.error(e, StackTrace.current));
+    }
+    try {
+      final logs = await api.listLogs(cwd);
+      if (!mounted) return;
+      setState(() => _logs = AsyncValue.data(logs));
+    } on ApiException catch (e) {
+      if (!mounted) return;
+      setState(() => _logs = AsyncValue.error(e, StackTrace.current));
+    }
+    try {
+      final archived = await memApi.listArchived(
+        scope: MemoryScope.project,
+        scopeKey: cwd,
+      );
+      if (!mounted) return;
+      setState(() => _archived = AsyncValue.data(archived));
+    } on ApiException catch (e) {
+      if (!mounted) return;
+      setState(() => _archived = AsyncValue.error(e, StackTrace.current));
+    }
+    try {
+      final snap = await healthApi.get(cwd);
+      if (!mounted) return;
+      setState(() => _health = AsyncValue.data(snap));
+    } on ApiException catch (e) {
+      if (!mounted) return;
+      setState(() => _health = AsyncValue.error(e, StackTrace.current));
+    }
+    try {
+      final conflicts =
+          await conflictsApi.list(cwd: cwd, status: ConflictStatus.pending);
+      if (!mounted) return;
+      setState(() => _conflicts = AsyncValue.data(conflicts));
+    } on ApiException catch (e) {
+      if (!mounted) return;
+      setState(() => _conflicts = AsyncValue.error(e, StackTrace.current));
+    }
+  }
+
+  Widget _cwdPicker() {
+    return _projectKeys.when(
+      loading: () => const Padding(
+        padding: EdgeInsets.all(16),
+        child: LinearProgressIndicator(),
+      ),
+      error: (e, _) => Padding(
+        padding: const EdgeInsets.all(16),
+        child: Text(t.project.projectsLoadFailed(error: e.toString())),
+      ),
+      data: (keys) {
+        if (keys.isEmpty) {
+          return const Padding(
+            padding: EdgeInsets.all(16),
+            child: Text(
+              'No projects yet — spawn a session in a working directory '
+              'to register it.',
+            ),
+          );
+        }
+        return Padding(
+          padding: const EdgeInsets.fromLTRB(12, 12, 12, 0),
+          child: InkWell(
+            onTap: () => _openProjectPicker(keys),
+            child: InputDecorator(
+              decoration: InputDecoration(
+                labelText: t.project.projectLabel,
+                border: const OutlineInputBorder(),
+                suffixIcon: const Icon(Icons.unfold_more),
+              ),
+              child: Text(
+                _selectedKey == null
+                    ? 'Select a project'
+                    : '${p.basename(_selectedKey!)}  ·  ${_selectedKey!}',
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  void _openProjectPicker(List<String> keys) {
+    showModalBottomSheet<void>(
+      context: context,
+      isScrollControlled: true,
+      builder: (ctx) {
+        return SafeArea(
+          child: ListView(
+            shrinkWrap: true,
+            children: [
+              const Padding(
+                padding: EdgeInsets.fromLTRB(16, 16, 16, 8),
+                child: Text(
+                  'Select a project',
+                  style: TextStyle(fontWeight: FontWeight.w600),
+                ),
+              ),
+              // Browse the gateway's filesystem to pick any directory as the
+              // project — not just one already in the known-projects list.
+              ListTile(
+                leading: const Icon(Icons.folder_open_outlined),
+                title: Text(t.project.browseFolder),
+                onTap: () async {
+                  Navigator.of(ctx).pop();
+                  final dir = await DirectoryPickerSheet.show(
+                    context,
+                    initialPath: _selectedKey,
+                  );
+                  if (dir == null || !mounted) return;
+                  setState(() => _selectedKey = dir);
+                  await _loadAll(dir);
+                },
+              ),
+              const Divider(height: 1),
+              for (final k in keys)
+                ListTile(
+                  title: Text(p.basename(k)),
+                  subtitle: Text(
+                    k,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  selected: k == _selectedKey,
+                  onTap: () {
+                    Navigator.of(ctx).pop();
+                    setState(() => _selectedKey = k);
+                    _loadAll(k);
+                  },
+                ),
+              const SizedBox(height: 8),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final tabs = _tabs;
+    final sections = _sections;
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(t.project.title),
+        actions: [
+          if (_selectedKey != null && _selectedKey!.isNotEmpty) ...[
+            IconButton(
+              icon: const Icon(Icons.dashboard_customize_outlined),
+              tooltip: t.web.cortex.blueprint.open,
+              onPressed: () async {
+                final changed = await Navigator.of(context).push<bool>(
+                  MaterialPageRoute<bool>(
+                    builder: (_) =>
+                        BlueprintEditorScreen(cwd: _selectedKey!),
+                  ),
+                );
+                if ((changed ?? false) && mounted) {
+                  await _loadAll(_selectedKey!);
+                }
+              },
+            ),
+            IconButton(
+              icon: const Icon(Icons.restart_alt),
+              tooltip: t.project.resetTooltip,
+              onPressed: () => _confirmReset(_selectedKey!),
+            ),
+          ],
+        ],
+        bottom: tabs == null
+            ? null
+            : TabBar(
+                controller: tabs,
+                isScrollable: true,
+                tabs: [
+                  for (final s in sections) Tab(text: _sectionTabLabel(s)),
+                  Tab(text: t.web.project.tabs.journal),
+                  Tab(text: t.web.project.tabs.inbox),
+                  Tab(text: t.web.project.tabs.hygiene),
+                ],
+              ),
+      ),
+      body: Column(
+        children: [
+          _cwdPicker(),
+          if (_selectedKey != null && _selectedKey!.isNotEmpty)
+            _LifecycleBar(cwd: _selectedKey!),
+          if (_blueprintError != null &&
+              _selectedKey != null &&
+              _selectedKey!.isNotEmpty)
+            _blueprintErrorBar(),
+          const SizedBox(height: 8),
+          Expanded(
+            child: tabs == null
+                ? const Center(child: CircularProgressIndicator())
+                : TabBarView(
+                    controller: tabs,
+                    children: [
+                      for (final s in sections) _sectionBody(s),
+                      _journalTab(),
+                      _inboxTab(),
+                      _hygieneTab(),
+                    ],
+                  ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  // _blueprintErrorBar replaces the old silent hardcoded fallback: when the
+  // blueprint fetch fails we tell the operator the section list may be
+  // incomplete and offer a retry — instead of inventing a default set that
+  // hides custom sections. The three fixed tabs still render underneath.
+  Widget _blueprintErrorBar() {
+    final scheme = Theme.of(context).colorScheme;
+    return Container(
+      margin: const EdgeInsets.fromLTRB(12, 8, 12, 0),
+      padding: const EdgeInsets.fromLTRB(12, 6, 6, 6),
+      decoration: BoxDecoration(
+        color: scheme.errorContainer,
+        borderRadius: BorderRadius.circular(8),
+      ),
+      child: Row(
+        children: [
+          Icon(Icons.warning_amber_rounded,
+              size: 18, color: scheme.onErrorContainer),
+          const SizedBox(width: 8),
+          Expanded(
+            child: Text(
+              t.project.loadFailed(error: '${_blueprintError ?? ''}'),
+              style: TextStyle(fontSize: 12, color: scheme.onErrorContainer),
+            ),
+          ),
+          TextButton(
+            onPressed: () {
+              final cwd = _selectedKey;
+              if (cwd != null && cwd.isNotEmpty) _loadAll(cwd);
+            },
+            child: Text(t.common.retry),
+          ),
+        ],
+      ),
+    );
+  }
+
+  // _sectionTabLabel localises the classic slugs (so zh/es operators keep
+  // translated tabs) and falls back to the section's own stored title for
+  // custom sections.
+  String _sectionTabLabel(BlueprintSection s) {
+    final tabs = t.web.project.tabs;
+    switch (s.slug) {
+      case 'overview':
+        return tabs.overview;
+      case 'goal':
+        return tabs.goal;
+      case 'plan':
+        return tabs.plan;
+      case 'current_objective':
+        return tabs.current_objective;
+      case 'tech_stack':
+        return tabs.tech;
+      case 'recent_activity':
+        return tabs.activity;
+      default:
+        return s.title;
+    }
+  }
+
+  // _sectionBody picks the right view for a blueprint section: the rich
+  // overview, a read-only scanner doc, or the editable goal/plan-style editor
+  // (which also covers current_objective and any custom ai/human section).
+  Widget _sectionBody(BlueprintSection s) {
+    if (s.slug == 'overview') return _overviewTab();
+    if (s.maintainerMode == 'scanner') {
+      return _readonlyDocTab(s.slug, emptyText: _scannerEmptyText(s.slug));
+    }
+    return _docTab(s.slug);
+  }
+
+  String _scannerEmptyText(String slug) {
+    switch (slug) {
+      case 'tech_stack':
+        return 'No tech_stack scan yet. Triggered automatically on every '
+            'session spawn (refreshes every 6h). You can force a refresh '
+            'via POST /api/v1/project-scan/run.';
+      case 'recent_activity':
+        return 'No git activity summary yet. Generated by the LLM librarian '
+            '— refreshes automatically every 12h, or you can force it via '
+            'POST /api/v1/git-activity/run.';
+      default:
+        return 'No content yet — this section is rebuilt mechanically by a '
+            'scanner.';
+    }
+  }
+
+  // ── Doc self-description (A: make each note explain itself) ─────
+
+  // _docMaintainer maps a doc kind to who keeps it current, driving the badge.
+  String _docMaintainer(String kind) {
+    switch (kind) {
+      case 'tech_stack':
+      case 'recent_activity':
+        return 'auto';
+      default:
+        return 'coauthored';
+    }
+  }
+
+  String _maintainerLabel(String m) {
+    final l = t.web.project.docMeta.maintainer;
+    switch (m) {
+      case 'auto':
+        return l.auto;
+      default:
+        return l.coauthored;
+    }
+  }
+
+  String _docPurpose(String kind) {
+    final p = t.web.project.docMeta.purpose;
+    switch (kind) {
+      case 'overview':
+        return p.overview;
+      case 'goal':
+        return p.goal;
+      case 'plan':
+        return p.plan;
+      case 'current_objective':
+        return p.current_objective;
+      case 'tech_stack':
+        return p.tech_stack;
+      case 'recent_activity':
+        return p.recent_activity;
+      default:
+        return '';
+    }
+  }
+
+  // _docMetaStrip is the per-note header: maintenance badge + last editor +
+  // one-line purpose, so the note describes itself instead of a bare label.
+  Widget _docMetaStrip(String kind, ProjectDoc? doc) {
+    final scheme = Theme.of(context).colorScheme;
+    final m = _docMaintainer(kind);
+    final chipColor = m == 'auto'
+        ? scheme.surfaceContainerHighest
+        : m == 'ai_lockable'
+            ? scheme.secondaryContainer
+            : scheme.primaryContainer;
+    return Card(
+      margin: const EdgeInsets.only(bottom: 8),
+      child: Padding(
+        padding: const EdgeInsets.all(12),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Wrap(
+              spacing: 8,
+              runSpacing: 4,
+              crossAxisAlignment: WrapCrossAlignment.center,
+              children: [
+                Chip(
+                  label: Text(_maintainerLabel(m)),
+                  backgroundColor: chipColor,
+                  visualDensity: VisualDensity.compact,
+                  materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                ),
+                if (doc != null && doc.isPersisted)
+                  Text(
+                    doc.updatedBy,
+                    style: Theme.of(context).textTheme.bodySmall,
+                  ),
+              ],
+            ),
+            const SizedBox(height: 6),
+            Text(
+              _docPurpose(kind),
+              style: Theme.of(context).textTheme.bodySmall,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  // _proposalBanner surfaces a pending AI proposal right on the goal/plan tab
+  // (P-B visibility) with a tap-through to the Inbox tab.
+  Widget _proposalBanner() {
+    final scheme = Theme.of(context).colorScheme;
+    return Card(
+      margin: const EdgeInsets.only(bottom: 8),
+      color: scheme.tertiaryContainer,
+      child: InkWell(
+        onTap: () => _tabs?.animateTo(_inboxTabIndex),
+        child: Padding(
+          padding: const EdgeInsets.all(12),
+          child: Row(
+            children: [
+              const Icon(Icons.inbox_outlined, size: 18),
+              const SizedBox(width: 8),
+              Expanded(child: Text(t.web.project.proposalBanner.text)),
+              Text(
+                t.web.project.proposalBanner.button,
+                style: TextStyle(
+                  fontWeight: FontWeight.w600,
+                  color: scheme.onTertiaryContainer,
+                ),
+              ),
+              const Icon(Icons.chevron_right, size: 18),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  // ── Overview — the project's rich, AI-maintained official doc ────
+
+  Widget _overviewTab() {
+    if (_selectedKey == null) {
+      return Center(child: Text(t.project.pickFirst));
+    }
+    return _docs.when(
+      loading: () => const Center(child: CircularProgressIndicator()),
+      error: (e, _) => Center(
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Text(t.project.loadFailed(error: e.toString())),
+        ),
+      ),
+      data: (docs) {
+        ProjectDoc? ov;
+        for (final d in docs) {
+          if (d.kind == 'overview') {
+            ov = d;
+            break;
+          }
+        }
+        final hasPending = _proposals.maybeWhen(
+          data: (props) => props.any((p) => p.kind == 'overview'),
+          orElse: () => false,
+        );
+        return RefreshIndicator(
+          onRefresh: () async => _loadAll(_selectedKey!),
+          child: ListView(
+            padding: const EdgeInsets.all(12),
+            children: [
+              _docMetaStrip('overview', ov),
+              if (hasPending) _proposalBanner(),
+              _OverviewView(
+                cwd: _selectedKey!,
+                doc: ov,
+                onChanged: () => _loadAll(_selectedKey!),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  // ── Goal / Plan editor ─────────────────────────────────────────
+
+  // Opens the AI discussion (CurationChat) for a doc section — web parity
+  // with the per-section "discuss / re-draft with AI" panel.
+  void _openDiscussion(String targetKind, String slug) {
+    final cwd = _selectedKey;
+    if (cwd == null || cwd.isEmpty) return;
+    Navigator.of(context).push(
+      MaterialPageRoute<void>(
+        builder: (_) => CurationChatScreen(
+          targetKind: targetKind,
+          targetCwd: cwd,
+          targetSlug: slug,
+          onRevision: () => _loadAll(cwd),
+        ),
+      ),
+    );
+  }
+
+  Widget _docTab(String kind) {
+    if (_selectedKey == null) {
+      return Center(child: Text(t.project.pickFirst));
+    }
+    return _docs.when(
+      loading: () => const Center(child: CircularProgressIndicator()),
+      error: (e, _) => Center(
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Text(t.project.loadFailed(error: e.toString())),
+        ),
+      ),
+      data: (docs) {
+        final current = docs.firstWhere(
+          (d) => d.kind == kind,
+          orElse: () => ProjectDoc(
+            id: '',
+            cwd: _selectedKey!,
+            kind: kind,
+            content: '',
+            updatedBy: 'operator',
+          ),
+        );
+        final hasPending = _proposals.maybeWhen(
+          data: (props) => props.any((p) => p.kind == kind),
+          orElse: () => false,
+        );
+        return Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.fromLTRB(12, 12, 12, 0),
+              child: Column(
+                children: [
+                  _docMetaStrip(kind, current.isPersisted ? current : null),
+                  if (hasPending) _proposalBanner(),
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: OutlinedButton.icon(
+                      onPressed: () => _openDiscussion('doc_section', kind),
+                      icon: const Icon(Icons.forum_outlined, size: 16),
+                      label: Text(t.web.cortex.chat.show),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Expanded(
+              child: _DocEditor(
+                key: ValueKey('$kind-${current.id}-${_selectedKey!}'),
+                doc: current,
+                onSaved: () => _loadAll(_selectedKey!),
+              ),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  // _readonlyDocTab renders scanner-managed docs (tech_stack /
+  // recent_activity) — these are NEVER hand-edited; the scanner /
+  // git activity summariser rewrites them on each refresh. The UI
+  // only shows the content + last-updated metadata.
+  Widget _readonlyDocTab(String kind, {required String emptyText}) {
+    if (_selectedKey == null) {
+      return Center(child: Text(t.project.pickFirst));
+    }
+    return _docs.when(
+      loading: () => const Center(child: CircularProgressIndicator()),
+      error: (e, _) => Center(
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Text(t.project.loadFailed(error: e.toString())),
+        ),
+      ),
+      data: (docs) {
+        final current = docs.firstWhere(
+          (d) => d.kind == kind,
+          orElse: () => ProjectDoc(
+            id: '',
+            cwd: _selectedKey!,
+            kind: kind,
+            content: '',
+            updatedBy: 'scanner',
+          ),
+        );
+        return RefreshIndicator(
+          onRefresh: () async => _loadAll(_selectedKey!),
+          child: ListView(
+            padding: const EdgeInsets.all(12),
+            children: [
+              _docMetaStrip(kind, current.isPersisted ? current : null),
+              if (current.content.trim().isEmpty)
+                Padding(
+                  padding: const EdgeInsets.all(16),
+                  child: Text(
+                    emptyText,
+                    style: Theme.of(context).textTheme.bodyMedium,
+                  ),
+                )
+              else
+                SelectableText(
+                  current.content,
+                  style: Theme.of(context).textTheme.bodyMedium,
+                ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  // ── Journal ────────────────────────────────────────────────────
+
+  Widget _journalTab() {
+    if (_selectedKey == null) {
+      return Center(child: Text(t.project.pickFirst));
+    }
+    return _logs.when(
+      loading: () => const Center(child: CircularProgressIndicator()),
+      error: (e, _) =>
+          Center(child: Text(t.project.loadFailed(error: e.toString()))),
+      data: (logs) {
+        return RefreshIndicator(
+          onRefresh: () async {
+            await _loadAll(_selectedKey!);
+          },
+          child: Stack(
+            children: [
+              if (logs.isEmpty)
+                Center(
+                  child: Padding(
+                    padding: const EdgeInsets.all(32),
+                    child: Text(
+                      'No journal entries yet. Sessions write '
+                      'auto-summaries on end, and the Append button '
+                      'lets you add notes by hand.',
+                      textAlign: TextAlign.center,
+                      style: Theme.of(context).textTheme.bodyMedium,
+                    ),
+                  ),
+                ),
+              if (logs.isNotEmpty)
+                ListView.separated(
+                  padding: const EdgeInsets.fromLTRB(8, 8, 8, 96),
+                  itemCount: logs.length,
+                  separatorBuilder: (_, __) => const SizedBox(height: 4),
+                  itemBuilder: (_, i) => _LogTile(
+                    entry: logs[i],
+                    onDelete: () async {
+                      await ref
+                          .read(projectDocsApiProvider)
+                          .deleteLog(logs[i].id);
+                      if (mounted) await _loadAll(_selectedKey!);
+                    },
+                  ),
+                ),
+              Positioned(
+                right: 16,
+                bottom: 16,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    FloatingActionButton.small(
+                      heroTag: 'project_journal_prune',
+                      onPressed: _openStalePruneSheet,
+                      tooltip: t.project.journalPrune.title,
+                      child: const Icon(Icons.cleaning_services_outlined),
+                    ),
+                    const SizedBox(height: 12),
+                    FloatingActionButton.extended(
+                      heroTag: 'project_journal_fab',
+                      onPressed: _openAppendJournal,
+                      icon: const Icon(Icons.add),
+                      label: Text(t.project.append),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  // ── M-PD stale-prune sheet ────────────────────────────────────
+
+  Future<void> _openStalePruneSheet() async {
+    final cwd = _selectedKey;
+    if (cwd == null) return;
+    await showModalBottomSheet<void>(
+      context: context,
+      isScrollControlled: true,
+      builder: (ctx) {
+        return DraggableScrollableSheet(
+          expand: false,
+          initialChildSize: 0.7,
+          minChildSize: 0.4,
+          maxChildSize: 0.95,
+          builder: (_, scrollController) {
+            return _StalePrunePanel(cwd: cwd, scrollController: scrollController);
+          },
+        );
+      },
+    );
+    if (mounted && _selectedKey != null) {
+      await _loadAll(_selectedKey!);
+    }
+  }
+
+  Future<void> _openAppendJournal() async {
+    final cwd = _selectedKey;
+    if (cwd == null) return;
+    final titleCtl = TextEditingController();
+    final bodyCtl = TextEditingController();
+    final ok = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: Text(t.project.appendDialogTitle),
+        content: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              TextField(
+                controller: titleCtl,
+                decoration: InputDecoration(
+                  labelText: t.project.titleFieldLabel,
+                ),
+              ),
+              const SizedBox(height: 8),
+              TextField(
+                controller: bodyCtl,
+                minLines: 3,
+                maxLines: 8,
+                decoration: InputDecoration(
+                  labelText: t.project.contentFieldLabel,
+                  border: const OutlineInputBorder(),
+                ),
+              ),
+            ],
+          ),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(ctx).pop(false),
+            child: Text(t.common.cancel),
+          ),
+          FilledButton(
+            onPressed: () => Navigator.of(ctx).pop(true),
+            child: Text(t.project.append),
+          ),
+        ],
+      ),
+    );
+    if (ok != true) return;
+    final content = bodyCtl.text.trim();
+    if (content.isEmpty) return;
+    try {
+      await ref.read(projectDocsApiProvider).appendLog(
+            cwd: cwd,
+            content: content,
+            title: titleCtl.text.trim(),
+          );
+      if (!mounted) return;
+      await _loadAll(cwd);
+    } on ApiException catch (e) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(t.project.appendFailed(error: e.toString())),
+        ),
+      );
+    }
+  }
+
+  // _currentContentFor returns the live doc body for the given
+  // kind (goal / plan) so the proposal card can render a before /
+  // after diff. Returns empty string when nothing is loaded or the
+  // kind has no doc yet — _DiffBlock will render "(not set)".
+  String _currentContentFor(String kind) {
+    final docs = _docs.asData?.value ?? const <ProjectDoc>[];
+    for (final d in docs) {
+      if (d.kind == kind) return d.content;
+    }
+    return '';
+  }
+
+  // ── Proposal inbox ─────────────────────────────────────────────
+
+  Widget _inboxTab() {
+    if (_selectedKey == null) {
+      return Center(child: Text(t.project.pickFirst));
+    }
+    return _proposals.when(
+      loading: () => const Center(child: CircularProgressIndicator()),
+      error: (e, _) =>
+          Center(child: Text(t.project.loadFailed(error: e.toString()))),
+      data: (props) {
+        if (props.isEmpty) {
+          return RefreshIndicator(
+            onRefresh: () async => _loadAll(_selectedKey!),
+            child: ListView(
+              children: [
+                const SizedBox(height: 80),
+                Padding(
+                  padding: const EdgeInsets.all(24),
+                  child: Text(
+                    'No pending proposals. Agents file these via the '
+                    'opendray-memory MCP tools — they will land here for '
+                    'your review before any goal / plan rewrite goes '
+                    'live.',
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.bodyMedium,
+                  ),
+                ),
+              ],
+            ),
+          );
+        }
+        return RefreshIndicator(
+          onRefresh: () async => _loadAll(_selectedKey!),
+          child: ListView.separated(
+            padding: const EdgeInsets.all(8),
+            itemCount: props.length,
+            separatorBuilder: (_, __) => const SizedBox(height: 4),
+            itemBuilder: (_, i) => _ProposalCard(
+              proposal: props[i],
+              currentContent: _currentContentFor(props[i].kind),
+              onApprove: () async {
+                try {
+                  await ref
+                      .read(projectDocsApiProvider)
+                      .approveProposal(props[i].id);
+                  if (mounted) await _loadAll(_selectedKey!);
+                } on ApiException catch (e) {
+                  if (mounted) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(
+                          t.project.approveFailed(error: e.toString()),
+                        ),
+                      ),
+                    );
+                    // Stale UI: the proposal was already decided
+                    // (CLI / web / another phone). Refresh so this
+                    // user stops seeing it as pending.
+                    await _loadAll(_selectedKey!);
+                  }
+                }
+              },
+              onReject: () async {
+                try {
+                  await ref
+                      .read(projectDocsApiProvider)
+                      .rejectProposal(props[i].id);
+                  if (mounted) await _loadAll(_selectedKey!);
+                } on ApiException catch (e) {
+                  if (mounted) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(
+                          t.project.rejectFailed(error: e.toString()),
+                        ),
+                      ),
+                    );
+                    await _loadAll(_selectedKey!);
+                  }
+                }
+              },
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  // ── Archived tab (read-only + restore) ───────────────────────
+  //
+  // The cleaner auto-applies its keep/stale/duplicate verdicts as
+  // reversible soft-archives — no approval queue. This tab shows what
+  // was auto-removed for this project and lets the operator restore a
+  // false positive before the 30-day grace window purges it.
+
+  Widget _archivedTab() {
+    if (_selectedKey == null) {
+      return Center(child: Text(t.project.pickFirst));
+    }
+    return _archived.when(
+      loading: () => const Center(child: CircularProgressIndicator()),
+      error: (e, _) =>
+          Center(child: Text(t.project.loadFailed(error: e.toString()))),
+      data: (rows) {
+        return RefreshIndicator(
+          onRefresh: () async => _loadAll(_selectedKey!),
+          child: rows.isEmpty
+              ? ListView(
+                  children: [
+                    const SizedBox(height: 60),
+                    Padding(
+                      padding: const EdgeInsets.all(24),
+                      child: Column(
+                        children: [
+                          Icon(
+                            Icons.inventory_2_outlined,
+                            size: 48,
+                            color: Theme.of(context)
+                                .colorScheme
+                                .onSurface
+                                .withValues(alpha: 0.4),
+                          ),
+                          const SizedBox(height: 12),
+                          Text(
+                            t.project.archived.emptyTitle,
+                            style: Theme.of(context).textTheme.titleMedium,
+                            textAlign: TextAlign.center,
+                          ),
+                          const SizedBox(height: 8),
+                          Text(
+                            t.project.archived.emptyBody,
+                            textAlign: TextAlign.center,
+                            style: Theme.of(context).textTheme.bodyMedium,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                )
+              : ListView.separated(
+                  padding: const EdgeInsets.fromLTRB(8, 8, 8, 16),
+                  itemCount: rows.length,
+                  separatorBuilder: (_, __) => const SizedBox(height: 4),
+                  itemBuilder: (_, i) => _ArchivedCard(
+                    memory: rows[i],
+                    onRestore: () => _restoreArchived(rows[i].id),
+                  ),
+                ),
+        );
+      },
+    );
+  }
+
+  Future<void> _restoreArchived(String id) async {
+    try {
+      await ref.read(memoryApiProvider).restore(id);
+      if (mounted) await _loadAll(_selectedKey!);
+    } on ApiException catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(t.project.archived.restoreFailed(error: e.toString())),
+          ),
+        );
+        await _loadAll(_selectedKey!);
+      }
+    }
+  }
+
+  /// Shows the reset confirmation dialog, then on confirm calls the
+  /// reset endpoint + (optionally) deleteMemoriesByScope. Mirrors
+  /// the web ResetButton flow in app/web.../ProjectScreen.tsx.
+  Future<void> _confirmReset(String cwd) async {
+    var includeScanner = false;
+    var includeMemories = false;
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (ctx) {
+        return StatefulBuilder(
+          builder: (ctx, setDialogState) {
+            return AlertDialog(
+              title: Text(t.project.resetConfirmTitle),
+              content: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    padding: const EdgeInsets.all(12),
+                    decoration: BoxDecoration(
+                      color: Theme.of(ctx).colorScheme.errorContainer,
+                      borderRadius: BorderRadius.circular(6),
+                    ),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Icon(Icons.warning_amber_rounded,
+                            size: 18,
+                            color: Theme.of(ctx).colorScheme.onErrorContainer),
+                        const SizedBox(width: 8),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SelectableText(
+                                cwd,
+                                style: const TextStyle(
+                                  fontFamily: 'monospace',
+                                  fontSize: 11,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              const SizedBox(height: 4),
+                              const Text(
+                                'Always deleted: goal, plan, proposals, '
+                                'journal, cleanup decisions.',
+                                style: TextStyle(fontSize: 11),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+                  CheckboxListTile(
+                    contentPadding: EdgeInsets.zero,
+                    dense: true,
+                    value: includeScanner,
+                    title: Text(t.project.alsoDeleteScanner,
+                        style: const TextStyle(fontSize: 13)),
+                    subtitle: const Text(
+                      'tech_stack + recent_activity (auto-rebuild on next spawn).',
+                      style: TextStyle(fontSize: 11),
+                    ),
+                    onChanged: (v) =>
+                        setDialogState(() => includeScanner = v ?? false),
+                  ),
+                  CheckboxListTile(
+                    contentPadding: EdgeInsets.zero,
+                    dense: true,
+                    value: includeMemories,
+                    title: Text(t.project.alsoDeletePgvector,
+                        style: const TextStyle(fontSize: 13)),
+                    subtitle: const Text(
+                      'Long-term facts for this scope_key. Cannot be recovered.',
+                      style: TextStyle(fontSize: 11),
+                    ),
+                    onChanged: (v) =>
+                        setDialogState(() => includeMemories = v ?? false),
+                  ),
+                ],
+              ),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.of(ctx).pop(false),
+                  child: Text(t.common.cancel),
+                ),
+                FilledButton.tonal(
+                  style: FilledButton.styleFrom(
+                    backgroundColor: Theme.of(ctx).colorScheme.errorContainer,
+                    foregroundColor: Theme.of(ctx).colorScheme.onErrorContainer,
+                  ),
+                  onPressed: () => Navigator.of(ctx).pop(true),
+                  child: Text(t.project.deleteForever),
+                ),
+              ],
+            );
+          },
+        );
+      },
+    );
+    if (confirmed != true) return;
+    try {
+      final counts = await ref.read(projectDocsApiProvider).resetCwd(
+            cwd: cwd,
+            includeScannerDocs: includeScanner,
+          );
+      var memCount = 0;
+      if (includeMemories) {
+        memCount = await ref.read(memoryApiProvider).deleteByScope(
+              scope: MemoryScope.project,
+              scopeKey: cwd,
+            );
+      }
+      if (!mounted) return;
+      final parts = <String>[
+        '${counts['project_docs'] ?? 0} doc',
+        '${counts['session_logs'] ?? 0} journal',
+        '${counts['memory_cleanup_decisions'] ?? 0} cleanup',
+      ];
+      if (includeMemories) parts.add('$memCount memories');
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            t.project.resetDoneSnack(parts: parts.join(' · ')),
+          ),
+        ),
+      );
+      await _loadAll(cwd);
+    } on ApiException catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(t.project.resetFailed(error: e.toString())),
+          ),
+        );
+      }
+    }
+  }
+
+  // ── M-PA Health tab ───────────────────────────────────────────
+
+  // _hygieneTab rolls the three memory-hygiene sub-views (health /
+  // conflicts / archived) into one top-level tab, mirroring the web Cortex
+  // workspace's "Hygiene" tab. A nested controller gives the three their own
+  // sub-tabs without bloating the main tab strip.
+  Widget _hygieneTab() {
+    return DefaultTabController(
+      length: 3,
+      child: Column(
+        children: [
+          const TabBar(
+            tabs: [
+              Tab(text: 'Health'),
+              Tab(text: 'Conflicts'),
+              Tab(text: 'Archived'),
+            ],
+          ),
+          Expanded(
+            child: TabBarView(
+              children: [
+                _healthTab(),
+                _conflictsTab(),
+                _archivedTab(),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _healthTab() {
+    if (_selectedKey == null) {
+      return Center(child: Text(t.project.pickFirst));
+    }
+    return _health.when(
+      loading: () => const Center(child: CircularProgressIndicator()),
+      error: (e, _) =>
+          Center(child: Text(t.project.loadFailed(error: e.toString()))),
+      data: (snap) {
+        return RefreshIndicator(
+          onRefresh: () async => _loadAll(_selectedKey!),
+          child: ListView(
+            padding: const EdgeInsets.all(16),
+            children: [
+              Text(
+                t.project.health.title(days: snap.lookbackDays),
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+              const SizedBox(height: 4),
+              Text(
+                t.project.health.subtitle,
+                style: Theme.of(context).textTheme.bodySmall,
+              ),
+              const SizedBox(height: 16),
+              GridView.count(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                crossAxisCount: 2,
+                mainAxisSpacing: 8,
+                crossAxisSpacing: 8,
+                childAspectRatio: 1.6,
+                children: [
+                  _HealthCard(
+                    label: t.project.health.newFacts,
+                    value: snap.newFactsCount.toString(),
+                    hint: t.project.health
+                        .newFactsHint(total: snap.totalFactsCount),
+                  ),
+                  _HealthCard(
+                    label: t.project.health.captureFires,
+                    value: snap.captureFires.toString(),
+                    hint: t.project.health.captureFiresHint(
+                      stored: snap.captureFactsStored,
+                      deduped: snap.captureFactsDeduped,
+                    ),
+                    tone: snap.captureFailedFires > 0
+                        ? _HealthCardTone.warn
+                        : _HealthCardTone.ok,
+                  ),
+                  _HealthCard(
+                    label: t.project.health.newJournal,
+                    value: snap.newJournalCount.toString(),
+                    hint: t.project.health
+                        .newJournalHint(total: snap.totalJournalCount),
+                  ),
+                  _HealthCard(
+                    label: t.project.health.planAge,
+                    value: _relativeAge(context, snap.planLastUpdatedAt),
+                    hint: snap.planDriftProposals > 0
+                        ? t.project.health.planAgeHint(
+                            count: snap.planDriftProposals)
+                        : t.project.health.planAgeHintNone,
+                  ),
+                  _HealthCard(
+                    label: t.project.health.goalAge,
+                    value: _relativeAge(context, snap.goalLastUpdatedAt),
+                  ),
+                  _HealthCard(
+                    label: t.project.health.pending,
+                    value: snap.pendingProposals.toString(),
+                    hint: snap.pendingProposals > 0 &&
+                            snap.oldestPendingDays > 0
+                        ? t.project.health.pendingHint(
+                            days: snap.oldestPendingDays)
+                        : null,
+                    tone: snap.oldestPendingDays >= 7
+                        ? _HealthCardTone.warn
+                        : _HealthCardTone.ok,
+                  ),
+                ],
+              ),
+              if (snap.topHitFactText.isNotEmpty) ...[
+                const SizedBox(height: 16),
+                Card(
+                  child: Padding(
+                    padding: const EdgeInsets.all(12),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          t.project.health
+                              .topHit(hits: snap.topHitFactHits),
+                          style: Theme.of(context).textTheme.labelSmall,
+                        ),
+                        const SizedBox(height: 6),
+                        Text(
+                          snap.topHitFactText,
+                          style: const TextStyle(
+                              fontFamily: 'monospace', fontSize: 12),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+              if (snap.zeroHitFactsCount > 0) ...[
+                const SizedBox(height: 12),
+                Text(
+                  t.project.health
+                      .zeroHit(count: snap.zeroHitFactsCount),
+                  style: Theme.of(context).textTheme.bodySmall,
+                ),
+              ],
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  // ── M-PC Conflicts tab ────────────────────────────────────────
+
+  Widget _conflictsTab() {
+    if (_selectedKey == null) {
+      return Center(child: Text(t.project.pickFirst));
+    }
+    return _conflicts.when(
+      loading: () => const Center(child: CircularProgressIndicator()),
+      error: (e, _) =>
+          Center(child: Text(t.project.loadFailed(error: e.toString()))),
+      data: (conflicts) {
+        return RefreshIndicator(
+          onRefresh: () async => _loadAll(_selectedKey!),
+          child: ListView(
+            padding: const EdgeInsets.all(12),
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Expanded(
+                    child: Text(
+                      t.project.conflicts.subtitle,
+                      style: Theme.of(context).textTheme.bodySmall,
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                  FilledButton.tonalIcon(
+                    onPressed:
+                        _conflictDetectRunning ? null : _runConflictDetect,
+                    icon: _conflictDetectRunning
+                        ? const SizedBox(
+                            width: 14,
+                            height: 14,
+                            child: CircularProgressIndicator(strokeWidth: 2),
+                          )
+                        : const Icon(Icons.refresh, size: 16),
+                    label: Text(t.project.conflicts.detectNow),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 12),
+              if (conflicts.isEmpty)
+                Padding(
+                  padding: const EdgeInsets.all(24),
+                  child: Center(
+                    child: Text(t.project.conflicts.empty),
+                  ),
+                )
+              else
+                ...conflicts.map((c) => _ConflictCard(
+                      conflict: c,
+                      busy: _conflictDetectRunning,
+                      onAccept: () => _decideConflict(c.id, 'accepted'),
+                      onDismiss: () => _decideConflict(c.id, 'dismissed'),
+                      onRequestDeleteFact: (side) =>
+                          _openConflictDeleteConfirm(c, side),
+                      onJumpTab: _jumpToLayerTab,
+                    )),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  Future<void> _runConflictDetect() async {
+    if (_selectedKey == null) return;
+    setState(() => _conflictDetectRunning = true);
+    try {
+      final n =
+          await ref.read(memoryConflictsApiProvider).detect(_selectedKey!);
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(t.project.conflicts.detected(count: n))),
+      );
+      await _loadAll(_selectedKey!);
+    } on ApiException catch (e) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(e.toString())),
+      );
+    } finally {
+      if (mounted) setState(() => _conflictDetectRunning = false);
+    }
+  }
+
+  Future<void> _decideConflict(String id, String action) async {
+    try {
+      await ref.read(memoryConflictsApiProvider).decide(id, action);
+      if (!mounted) return;
+      await _loadAll(_selectedKey!);
+    } on ApiException catch (e) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(e.toString())),
+      );
+    }
+  }
+
+  // M-PD — switch the Project tab bar to the plan / goal / journal tab so the
+  // operator can edit the doc that's currently in conflict with a fact. Tab
+  // positions are resolved from the live blueprint (the doc tabs are dynamic),
+  // with journal/inbox/hygiene trailing after the sections.
+  void _jumpToLayerTab(ConflictLayer layer) {
+    final tabs = _tabs;
+    if (tabs == null) return;
+    int? slugIndex(String slug) {
+      final i = _sections.indexWhere((s) => s.slug == slug);
+      return i >= 0 ? i : null;
+    }
+    switch (layer) {
+      case ConflictLayer.plan:
+        final i = slugIndex('plan');
+        if (i != null) tabs.animateTo(i);
+      case ConflictLayer.goal:
+        final i = slugIndex('goal');
+        if (i != null) tabs.animateTo(i);
+      case ConflictLayer.journal:
+        tabs.animateTo(_journalTabIndex);
+      case ConflictLayer.fact:
+        // No project-screen tab for layer-5 facts; operator
+        // jumps to the Memory screen instead. Surface a hint
+        // rather than silently doing nothing.
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+              content: Text(t.project.conflicts.deleteNonFactOther(
+                  layer: ConflictLayer.fact.name))),
+        );
+    }
+  }
+
+  // M-PD delete-fact preview + confirm dialog. Fetches the two
+  // memory rows on dialog open so the operator can read both
+  // claims side-by-side before deciding which to remove. On
+  // confirm: deleteMemory(targetRef) + decide(accepted) — same
+  // contract as the web ConflictsPanel.
+  Future<void> _openConflictDeleteConfirm(
+      MemoryConflict conflict, String side) async {
+    final targetRef = side == 'A' ? conflict.refA : conflict.refB;
+    final otherRef = side == 'A' ? conflict.refB : conflict.refA;
+    final otherLayer = side == 'A' ? conflict.layerB : conflict.layerA;
+
+    final memApi = ref.read(memoryApiProvider);
+    Future<Memory?> safeGet(String id) =>
+        memApi.get(id).then<Memory?>((m) => m).catchError(
+              (_) => null as Memory?,
+            );
+    final otherFuture = otherLayer == ConflictLayer.fact
+        ? safeGet(otherRef)
+        : Future<Memory?>.value(null);
+
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (ctx) {
+        return FutureBuilder<List<Memory?>>(
+          future: Future.wait([safeGet(targetRef), otherFuture]),
+          builder: (context, snap) {
+            final loading = snap.connectionState != ConnectionState.done;
+            final target = loading ? null : snap.data?[0];
+            final other = loading ? null : snap.data?[1];
+            return AlertDialog(
+              title: Text(t.project.conflicts
+                  .deleteConfirmTitle(side: side)),
+              content: SingleChildScrollView(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(t.project.conflicts.deleteConfirmBody),
+                    const SizedBox(height: 12),
+                    _DeletePreviewBox(
+                      label: t.project.conflicts
+                          .deleteWillDelete(side: side),
+                      content: loading
+                          ? t.project.conflicts.deleteLoading
+                          : (target?.text ?? '(?)'),
+                      tone: _PreviewTone.danger,
+                    ),
+                    const SizedBox(height: 8),
+                    _DeletePreviewBox(
+                      label: t.project.conflicts.deleteWillKeep(
+                          side: side == 'A' ? 'B' : 'A'),
+                      content: otherLayer == ConflictLayer.fact
+                          ? (loading
+                              ? t.project.conflicts.deleteLoading
+                              : (other?.text ?? '(?)'))
+                          : t.project.conflicts.deleteNonFactOther(
+                              layer: otherLayer.name),
+                      tone: _PreviewTone.muted,
+                    ),
+                    const SizedBox(height: 12),
+                    Text(
+                      conflict.evidence,
+                      style: Theme.of(context).textTheme.labelSmall,
+                    ),
+                  ],
+                ),
+              ),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.of(ctx).pop(false),
+                  child: Text(t.common.cancel),
+                ),
+                FilledButton.icon(
+                  onPressed: loading
+                      ? null
+                      : () => Navigator.of(ctx).pop(true),
+                  icon: const Icon(Icons.delete_outline, size: 16),
+                  label: Text(t.project.conflicts
+                      .deleteFactLabel(side: side)),
+                  style: FilledButton.styleFrom(
+                    backgroundColor:
+                        Theme.of(context).colorScheme.errorContainer,
+                    foregroundColor:
+                        Theme.of(context).colorScheme.onErrorContainer,
+                  ),
+                ),
+              ],
+            );
+          },
+        );
+      },
+    );
+    if (confirmed != true) return;
+    try {
+      await ref.read(memoryApiProvider).delete(targetRef);
+      await ref
+          .read(memoryConflictsApiProvider)
+          .decide(conflict.id, 'accepted');
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(t.project.conflicts.deletedFact)),
+      );
+      await _loadAll(_selectedKey!);
+    } on ApiException catch (e) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(e.toString())),
+      );
+    }
+  }
+}
+
+// ── Helpers for the new tabs ─────────────────────────────────────
+
+enum _HealthCardTone { ok, warn }
+
+class _HealthCard extends StatelessWidget {
+  const _HealthCard({
+    required this.label,
+    required this.value,
+    this.hint,
+    this.tone = _HealthCardTone.ok,
+  });
+
+  final String label;
+  final String value;
+  final String? hint;
+  final _HealthCardTone tone;
+
+  @override
+  Widget build(BuildContext context) {
+    final color = tone == _HealthCardTone.warn
+        ? Theme.of(context).colorScheme.tertiary
+        : Theme.of(context).colorScheme.onSurface;
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.all(10),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(label, style: Theme.of(context).textTheme.labelSmall),
+            const SizedBox(height: 4),
+            Text(
+              value,
+              style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                    color: color,
+                    fontWeight: FontWeight.w600,
+                  ),
+            ),
+            if (hint != null) ...[
+              const SizedBox(height: 2),
+              Text(
+                hint!,
+                style: Theme.of(context).textTheme.labelSmall,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+              ),
+            ],
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+String _relativeAge(BuildContext context, DateTime? when) {
+  if (when == null) return t.project.health.never;
+  final days = DateTime.now().difference(when).inDays;
+  if (days <= 0) return t.project.health.today;
+  return t.project.health.daysAgo(count: days);
+}
+
+class _ConflictCard extends StatelessWidget {
+  const _ConflictCard({
+    required this.conflict,
+    required this.busy,
+    required this.onAccept,
+    required this.onDismiss,
+    required this.onRequestDeleteFact,
+    required this.onJumpTab,
+  });
+
+  final MemoryConflict conflict;
+  final bool busy;
+  final VoidCallback onAccept;
+  final VoidCallback onDismiss;
+  // Parent owns the dialog + mutation so the card stays a thin
+  // StatelessWidget. side = 'A' | 'B' picks which fact ref to
+  // delete; layer hints at which tab to jump to for plan/goal.
+  final void Function(String side) onRequestDeleteFact;
+  final void Function(ConflictLayer layer) onJumpTab;
+
+  @override
+  Widget build(BuildContext context) {
+    final severityLabel = switch (conflict.severity) {
+      ConflictSeverity.high => t.project.conflicts.severity.high,
+      ConflictSeverity.medium => t.project.conflicts.severity.medium,
+      ConflictSeverity.low => t.project.conflicts.severity.low,
+    };
+    return Card(
+      margin: const EdgeInsets.only(bottom: 8),
+      child: Padding(
+        padding: const EdgeInsets.all(12),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Icon(Icons.warning_amber_rounded,
+                    size: 18,
+                    color: conflict.severity == ConflictSeverity.high
+                        ? Theme.of(context).colorScheme.error
+                        : null),
+                const SizedBox(width: 6),
+                Container(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 6, vertical: 2),
+                  decoration: BoxDecoration(
+                    color: conflict.severity == ConflictSeverity.high
+                        ? Theme.of(context).colorScheme.errorContainer
+                        : Theme.of(context).colorScheme.surfaceContainerHighest,
+                    borderRadius: BorderRadius.circular(4),
+                  ),
+                  child: Text(severityLabel,
+                      style: Theme.of(context).textTheme.labelSmall),
+                ),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: Text(
+                    '${conflict.layerA.name}:${_shortRef(conflict.refA)} ⟷ '
+                    '${conflict.layerB.name}:${_shortRef(conflict.refB)}',
+                    style: const TextStyle(
+                        fontFamily: 'monospace', fontSize: 11),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 8),
+            Text(conflict.evidence,
+                style: Theme.of(context).textTheme.bodySmall),
+            const SizedBox(height: 8),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                TextButton.icon(
+                  onPressed: busy ? null : onDismiss,
+                  icon: const Icon(Icons.close, size: 16),
+                  label: Text(t.project.conflicts.dismiss),
+                ),
+                const SizedBox(width: 4),
+                FilledButton.tonalIcon(
+                  onPressed: busy ? null : onAccept,
+                  icon: const Icon(Icons.check, size: 16),
+                  label: Text(t.project.conflicts.accept),
+                ),
+              ],
+            ),
+            ..._buildFixActions(context),
+          ],
+        ),
+      ),
+    );
+  }
+
+  // M-PD Fix row — when either side is a fact, render a delete
+  // shortcut keyed to the side; when either side is plan/goal,
+  // render a jump-to-editor shortcut deduped by layer.
+  List<Widget> _buildFixActions(BuildContext context) {
+    final actions = <Widget>[];
+    final seenLayers = <ConflictLayer>{};
+    for (final entry in [
+      _SideEntry('A', conflict.layerA, conflict.refA),
+      _SideEntry('B', conflict.layerB, conflict.refB),
+    ]) {
+      if (entry.layer == ConflictLayer.fact) {
+        actions.add(OutlinedButton(
+          onPressed: busy ? null : () => onRequestDeleteFact(entry.side),
+          style: OutlinedButton.styleFrom(
+            padding: const EdgeInsets.symmetric(horizontal: 8),
+            visualDensity: VisualDensity.compact,
+          ),
+          child: Text(
+            '${t.project.conflicts.deleteFactLabel(side: entry.side)}  '
+            '${_shortRef(entry.ref)}',
+            style: const TextStyle(fontFamily: 'monospace', fontSize: 11),
+          ),
+        ));
+      } else if (entry.layer == ConflictLayer.plan ||
+          entry.layer == ConflictLayer.goal) {
+        if (seenLayers.contains(entry.layer)) continue;
+        seenLayers.add(entry.layer);
+        actions.add(TextButton(
+          onPressed: busy ? null : () => onJumpTab(entry.layer),
+          child: Text(
+            entry.layer == ConflictLayer.plan
+                ? t.project.conflicts.openPlanEditor
+                : t.project.conflicts.openGoalEditor,
+            style: const TextStyle(fontSize: 11),
+          ),
+        ));
+      }
+    }
+    if (actions.isEmpty) return const [];
+    return [
+      const Divider(height: 16),
+      Wrap(
+        spacing: 6,
+        runSpacing: 4,
+        crossAxisAlignment: WrapCrossAlignment.center,
+        children: [
+          Text(
+              '${t.project.conflicts.deleteConfirmBody.split('.').first}…',
+              style: Theme.of(context).textTheme.labelSmall),
+          ...actions,
+        ],
+      ),
+    ];
+  }
+
+  String _shortRef(String ref) =>
+      ref.length <= 12 ? ref : '${ref.substring(0, 8)}…';
+}
+
+class _SideEntry {
+  const _SideEntry(this.side, this.layer, this.ref);
+  final String side;
+  final ConflictLayer layer;
+  final String ref;
+}
+
+enum _PreviewTone { danger, muted }
+
+class _DeletePreviewBox extends StatelessWidget {
+  const _DeletePreviewBox({
+    required this.label,
+    required this.content,
+    required this.tone,
+  });
+
+  final String label;
+  final String content;
+  final _PreviewTone tone;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    final bg = tone == _PreviewTone.danger
+        ? scheme.errorContainer.withValues(alpha: 0.45)
+        : scheme.surfaceContainerHighest.withValues(alpha: 0.55);
+    final border = tone == _PreviewTone.danger
+        ? scheme.error.withValues(alpha: 0.4)
+        : scheme.outline.withValues(alpha: 0.4);
+    return Container(
+      padding: const EdgeInsets.all(8),
+      decoration: BoxDecoration(
+        color: bg,
+        border: Border.all(color: border),
+        borderRadius: BorderRadius.circular(6),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(label, style: Theme.of(context).textTheme.labelSmall),
+          const SizedBox(height: 4),
+          Text(
+            content,
+            style: const TextStyle(fontFamily: 'monospace', fontSize: 12),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// ── M-PD Journal stale-prune bottom sheet ────────────────────────
+//
+// Lists session_summary rows older than `days` and not referenced
+// by any pending conflict. Checkbox multi-select + bulk delete.
+// Mirrors the web JournalStalePanel; phone-friendly form factor
+// (modal sheet instead of inline expand) because the Journal tab
+// itself is space-constrained.
+
+class _StalePrunePanel extends ConsumerStatefulWidget {
+  const _StalePrunePanel({
+    required this.cwd,
+    required this.scrollController,
+  });
+
+  final String cwd;
+  final ScrollController scrollController;
+
+  @override
+  ConsumerState<_StalePrunePanel> createState() => _StalePrunePanelState();
+}
+
+class _StalePrunePanelState extends ConsumerState<_StalePrunePanel> {
+  int _days = 90;
+  AsyncValue<List<SessionLogEntry>> _stale = const AsyncValue.loading();
+  final Set<String> _selected = {};
+  bool _busy = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _load();
+  }
+
+  Future<void> _load() async {
+    setState(() {
+      _stale = const AsyncValue.loading();
+      _selected.clear();
+    });
+    try {
+      final entries = await ref
+          .read(projectDocsApiProvider)
+          .listStaleLogs(widget.cwd, days: _days);
+      if (!mounted) return;
+      setState(() => _stale = AsyncValue.data(entries));
+    } on ApiException catch (e) {
+      if (!mounted) return;
+      setState(() => _stale = AsyncValue.error(e, StackTrace.current));
+    }
+  }
+
+  Future<void> _bulkDelete() async {
+    if (_selected.isEmpty) return;
+    setState(() => _busy = true);
+    try {
+      // Sequential rather than parallel so a 5xx on one entry
+      // doesn't leave a half-completed visual state.
+      for (final id in _selected.toList()) {
+        await ref.read(projectDocsApiProvider).deleteLog(id);
+      }
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            t.project.journalPrune.deleted(count: _selected.length),
+          ),
+        ),
+      );
+      await _load();
+    } on ApiException catch (e) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(e.toString())),
+      );
+    } finally {
+      if (mounted) setState(() => _busy = false);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return _stale.when(
+      loading: () => const Center(child: CircularProgressIndicator()),
+      error: (e, _) => Center(
+        child: Padding(
+          padding: const EdgeInsets.all(24),
+          child: Text(t.project.loadFailed(error: e.toString())),
+        ),
+      ),
+      data: (entries) {
+        final allChecked =
+            entries.isNotEmpty && _selected.length == entries.length;
+        return SafeArea(
+          top: false,
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Text(
+                  t.project.journalPrune.title,
+                  style: Theme.of(context).textTheme.titleMedium,
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  t.project.journalPrune.subtitle(days: _days),
+                  style: Theme.of(context).textTheme.bodySmall,
+                ),
+                const SizedBox(height: 12),
+                Row(
+                  children: [
+                    Text(t.project.journalPrune.daysLabel),
+                    const SizedBox(width: 8),
+                    SizedBox(
+                      width: 80,
+                      child: TextFormField(
+                        initialValue: _days.toString(),
+                        keyboardType: TextInputType.number,
+                        decoration: const InputDecoration(
+                          isDense: true,
+                          border: OutlineInputBorder(),
+                        ),
+                        onFieldSubmitted: (v) {
+                          final parsed = int.tryParse(v);
+                          if (parsed != null && parsed > 0) {
+                            setState(() => _days = parsed);
+                            _load();
+                          }
+                        },
+                      ),
+                    ),
+                    const Spacer(),
+                    TextButton(
+                      onPressed: entries.isEmpty
+                          ? null
+                          : () => setState(() {
+                                if (allChecked) {
+                                  _selected.clear();
+                                } else {
+                                  _selected
+                                    ..clear()
+                                    ..addAll(entries.map((e) => e.id));
+                                }
+                              }),
+                      child: Text(
+                        allChecked
+                            ? t.project.journalPrune.deselectAll
+                            : t.project.journalPrune.selectAll,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 8),
+                Expanded(
+                  child: entries.isEmpty
+                      ? Center(
+                          child: Text(t.project.journalPrune.empty),
+                        )
+                      : ListView.builder(
+                          controller: widget.scrollController,
+                          itemCount: entries.length,
+                          itemBuilder: (_, i) {
+                            final e = entries[i];
+                            return CheckboxListTile(
+                              value: _selected.contains(e.id),
+                              onChanged: (v) => setState(() {
+                                if (v ?? false) {
+                                  _selected.add(e.id);
+                                } else {
+                                  _selected.remove(e.id);
+                                }
+                              }),
+                              dense: true,
+                              title: Text(
+                                e.title.isEmpty ? e.id : e.title,
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                              subtitle: Text(
+                                e.content,
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                style:
+                                    Theme.of(context).textTheme.bodySmall,
+                              ),
+                            );
+                          },
+                        ),
+                ),
+                const SizedBox(height: 8),
+                FilledButton.icon(
+                  onPressed: _selected.isEmpty || _busy ? null : _bulkDelete,
+                  icon: _busy
+                      ? const SizedBox(
+                          width: 14,
+                          height: 14,
+                          child: CircularProgressIndicator(strokeWidth: 2),
+                        )
+                      : const Icon(Icons.delete_outline),
+                  label: Text(
+                    t.project.journalPrune
+                        .deleteSelected(count: _selected.length),
+                  ),
+                  style: FilledButton.styleFrom(
+                    backgroundColor:
+                        Theme.of(context).colorScheme.errorContainer,
+                    foregroundColor:
+                        Theme.of(context).colorScheme.onErrorContainer,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+}
+
+class _DocEditor extends StatefulWidget {
+  const _DocEditor({
+    required this.doc,
+    required this.onSaved,
+    super.key,
+  });
+
+  final ProjectDoc doc;
+  final VoidCallback onSaved;
+
+  @override
+  State<_DocEditor> createState() => _DocEditorState();
+}
+
+class _DocEditorState extends State<_DocEditor> {
+  late TextEditingController _ctl;
+  bool _saving = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _ctl = TextEditingController(text: widget.doc.content);
+  }
+
+  @override
+  void dispose() {
+    _ctl.dispose();
+    super.dispose();
+  }
+
+  Future<void> _save() async {
+    setState(() => _saving = true);
+    final api = ProviderScope.containerOf(context, listen: false)
+        .read(projectDocsApiProvider);
+    try {
+      await api.putDoc(
+        cwd: widget.doc.cwd,
+        kind: widget.doc.kind,
+        content: _ctl.text,
+      );
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content:
+              Text(t.project.docSavedSnack(kind: widget.doc.kind)),
+        ),
+      );
+      widget.onSaved();
+    } on ApiException catch (e) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(t.project.docSaveFailed(error: e.toString())),
+        ),
+      );
+    } finally {
+      if (mounted) setState(() => _saving = false);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final muted = Theme.of(context).textTheme.bodySmall;
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(12, 0, 12, 12),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          if (widget.doc.isPersisted)
+            Padding(
+              padding: const EdgeInsets.only(bottom: 8),
+              child: Text(
+                'last updated by ${widget.doc.updatedBy}',
+                style: muted,
+              ),
+            ),
+          Expanded(
+            child: TextField(
+              controller: _ctl,
+              maxLines: null,
+              expands: true,
+              textAlignVertical: TextAlignVertical.top,
+              keyboardType: TextInputType.multiline,
+              decoration: InputDecoration(
+                hintText: t.project.docHintTemplate(kind: widget.doc.kind),
+                border: const OutlineInputBorder(),
+              ),
+            ),
+          ),
+          const SizedBox(height: 8),
+          FilledButton.icon(
+            onPressed: _saving ? null : _save,
+            icon: _saving
+                ? const SizedBox(
+                    width: 16,
+                    height: 16,
+                    child: CircularProgressIndicator(strokeWidth: 2),
+                  )
+                : const Icon(Icons.save_outlined),
+            label: Text(_saving ? 'Saving…' : 'Save ${widget.doc.kind}'),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// _OverviewView renders the project's official Overview doc: AI-maintained,
+// human-editable. Edit saves as 'operator' (locks); Unlock hands it back to
+// AI; Regenerate asks the drafter to refresh it. Mirrors the web Overview tab.
+class _OverviewView extends ConsumerStatefulWidget {
+  const _OverviewView({required this.cwd, required this.doc, required this.onChanged});
+  final String cwd;
+  final ProjectDoc? doc;
+  final VoidCallback onChanged;
+
+  @override
+  ConsumerState<_OverviewView> createState() => _OverviewViewState();
+}
+
+class _OverviewViewState extends ConsumerState<_OverviewView> {
+  bool _editing = false;
+  bool _busy = false;
+  late TextEditingController _ctl;
+
+  String _strip(String s) => s
+      .split('\n')
+      .where((l) => !l.contains('kb-sig:'))
+      .join('\n')
+      .trim();
+
+  @override
+  void initState() {
+    super.initState();
+    _ctl = TextEditingController(text: _strip(widget.doc?.content ?? ''));
+  }
+
+  @override
+  void didUpdateWidget(covariant _OverviewView old) {
+    super.didUpdateWidget(old);
+    if (!_editing) _ctl.text = _strip(widget.doc?.content ?? '');
+  }
+
+  @override
+  void dispose() {
+    _ctl.dispose();
+    super.dispose();
+  }
+
+  Future<void> _save(String updatedBy) async {
+    setState(() => _busy = true);
+    try {
+      await ref.read(projectDocsApiProvider).putDoc(
+            cwd: widget.cwd,
+            kind: 'overview',
+            content: updatedBy == 'operator'
+                ? _ctl.text
+                : _strip(widget.doc?.content ?? ''),
+            updatedBy: updatedBy,
+          );
+      if (!mounted) return;
+      setState(() => _editing = false);
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text(updatedBy == 'operator'
+            ? t.web.project.overview.saved
+            : t.web.project.overview.unlocked),
+      ));
+      widget.onChanged();
+    } on ApiException catch (e) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(t.project.docSaveFailed(error: e.toString()))),
+      );
+    } finally {
+      if (mounted) setState(() => _busy = false);
+    }
+  }
+
+  Future<void> _regen() async {
+    final messenger = ScaffoldMessenger.of(context);
+    try {
+      await ref.read(knowledgeApiProvider).draftKb();
+      messenger.showSnackBar(
+        SnackBar(content: Text(t.web.project.overview.regenerating)),
+      );
+    } on Object {
+      messenger.showSnackBar(
+        SnackBar(content: Text(t.web.project.editor.saveFailedToast)),
+      );
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final locked = widget.doc?.updatedBy == 'operator';
+    final content = _strip(widget.doc?.content ?? '');
+
+    if (_editing) {
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          TextField(
+            controller: _ctl,
+            maxLines: null,
+            minLines: 16,
+            style: const TextStyle(fontFamily: 'monospace', fontSize: 13),
+            decoration: const InputDecoration(border: OutlineInputBorder()),
+          ),
+          const SizedBox(height: 4),
+          Text(t.web.project.overview.editHint,
+              style: Theme.of(context).textTheme.bodySmall),
+          const SizedBox(height: 8),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              TextButton(
+                onPressed: _busy ? null : () => setState(() => _editing = false),
+                child: Text(t.web.project.overview.cancel),
+              ),
+              const SizedBox(width: 8),
+              FilledButton.icon(
+                onPressed: _busy ? null : () => _save('operator'),
+                icon: const Icon(Icons.save_outlined, size: 16),
+                label: Text(t.web.project.overview.save),
+              ),
+            ],
+          ),
+        ],
+      );
+    }
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Row(
+          children: [
+            Icon(locked ? Icons.lock_outline : Icons.check, size: 14),
+            const SizedBox(width: 4),
+            Expanded(
+              child: Text(
+                locked
+                    ? t.web.project.overview.locked
+                    : t.web.project.overview.aiManaged,
+                style: Theme.of(context).textTheme.bodySmall,
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(height: 4),
+        Wrap(
+          spacing: 4,
+          alignment: WrapAlignment.end,
+          children: [
+            if (locked)
+              TextButton.icon(
+                onPressed: _busy ? null : () => _save('agent'),
+                icon: const Icon(Icons.lock_open, size: 16),
+                label: Text(t.web.project.overview.unlock),
+              ),
+            TextButton.icon(
+              onPressed: _regen,
+              icon: const Icon(Icons.refresh, size: 16),
+              label: Text(t.web.project.overview.regenerate),
+            ),
+            TextButton.icon(
+              onPressed: () {
+                _ctl.text = content;
+                setState(() => _editing = true);
+              },
+              icon: const Icon(Icons.edit, size: 16),
+              label: Text(t.web.project.overview.edit),
+            ),
+          ],
+        ),
+        const SizedBox(height: 8),
+        if (content.isEmpty)
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(t.web.project.overview.empty,
+                  style: Theme.of(context).textTheme.bodyMedium),
+              const SizedBox(height: 8),
+              FilledButton.tonalIcon(
+                onPressed: _regen,
+                icon: const Icon(Icons.refresh, size: 16),
+                label: Text(t.web.project.overview.generate),
+              ),
+            ],
+          )
+        else
+          SelectableText(content, style: Theme.of(context).textTheme.bodyMedium),
+      ],
+    );
+  }
+}
+
+class _LogTile extends StatelessWidget {
+  const _LogTile({required this.entry, required this.onDelete});
+
+  final SessionLogEntry entry;
+  final VoidCallback onDelete;
+
+  @override
+  Widget build(BuildContext context) {
+    final muted = Theme.of(context).textTheme.bodySmall;
+    return Card(
+      child: ListTile(
+        title: Text(
+          entry.title.isEmpty ? '(untitled)' : entry.title,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+        ),
+        subtitle: Padding(
+          padding: const EdgeInsets.only(top: 4),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                entry.content,
+                maxLines: 3,
+                overflow: TextOverflow.ellipsis,
+              ),
+              const SizedBox(height: 4),
+              Text(
+                '${entry.kind} · ${entry.updatedBy} · '
+                '${DateFormat.yMMMd().add_jm().format(entry.createdAt.toLocal())}',
+                style: muted,
+              ),
+            ],
+          ),
+        ),
+        trailing: IconButton(
+          icon: const Icon(Icons.delete_outline),
+          tooltip: t.project.deleteEntryTooltip,
+          onPressed: onDelete,
+        ),
+        onTap: () {
+          showModalBottomSheet<void>(
+            context: context,
+            isScrollControlled: true,
+            builder: (_) => DraggableScrollableSheet(
+              expand: false,
+              builder: (_, controller) => SingleChildScrollView(
+                controller: controller,
+                padding: const EdgeInsets.all(16),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      entry.title.isEmpty ? '(untitled)' : entry.title,
+                      style: Theme.of(context).textTheme.titleMedium,
+                    ),
+                    const SizedBox(height: 8),
+                    Text(
+                      '${entry.kind} · ${entry.updatedBy} · '
+                      '${DateFormat.yMMMd().add_jm().format(entry.createdAt.toLocal())}',
+                      style: Theme.of(context).textTheme.bodySmall,
+                    ),
+                    const SizedBox(height: 16),
+                    SelectableText(entry.content),
+                    const SizedBox(height: 24),
+                  ],
+                ),
+              ),
+            ),
+          );
+        },
+      ),
+    );
+  }
+}
+
+// _ProposalCard shows ONE pending goal/plan proposal. Critical UX
+// decision: agents propose REPLACEMENT bodies (not patches), so an
+// Approve click overwrites the live doc. To prevent operators
+// shipping an "improvement" that drops half the existing plan, the
+// card always shows both the current live doc and the proposed
+// replacement side by side, and Approve goes through a confirm
+// dialog with the same diff.
+class _ProposalCard extends StatelessWidget {
+  const _ProposalCard({
+    required this.proposal,
+    required this.currentContent,
+    required this.onApprove,
+    required this.onReject,
+  });
+
+  final DocProposal proposal;
+
+  /// The live doc body for (cwd, proposal.kind) right now. Used to
+  /// render the "Current" half of the before/after view so operators
+  /// can decide whether the proposal genuinely extends the existing
+  /// plan or accidentally drops content.
+  final String currentContent;
+  final VoidCallback onApprove;
+  final VoidCallback onReject;
+
+  @override
+  Widget build(BuildContext context) {
+    final muted = Theme.of(context).textTheme.bodySmall;
+    final scheme = Theme.of(context).colorScheme;
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.all(12),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Chip(label: Text(proposal.kind)),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: Text(
+                    'agent proposal · '
+                    '${DateFormat.MMMd().add_jm().format(proposal.createdAt.toLocal())}',
+                    style: muted,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 4),
+            // Loud warning so the operator can't miss the semantics.
+            Container(
+              padding: const EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                color: scheme.error.withValues(alpha: 0.08),
+                border: Border.all(
+                  color: scheme.error.withValues(alpha: 0.3),
+                ),
+                borderRadius: BorderRadius.circular(4),
+              ),
+              child: Row(
+                children: [
+                  Icon(Icons.warning_amber_outlined,
+                      size: 16, color: scheme.error),
+                  const SizedBox(width: 6),
+                  Expanded(
+                    child: Text(
+                      'Approve will REPLACE the current ${proposal.kind} '
+                      'with this content — not merge.',
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: scheme.error,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 8),
+            if (proposal.reason.isNotEmpty) ...[
+              Text(t.project.agentReason, style: muted),
+              const SizedBox(height: 2),
+              Text(proposal.reason),
+              const SizedBox(height: 8),
+            ],
+            _DiffBlock(
+              label: 'Current ${proposal.kind}',
+              body: currentContent,
+              empty: '(not set)',
+              tint: scheme.outline,
+            ),
+            const SizedBox(height: 6),
+            _DiffBlock(
+              label: 'After approve',
+              body: proposal.proposedContent,
+              empty: '(empty — approving would clear the doc)',
+              tint: scheme.primary,
+            ),
+            const SizedBox(height: 8),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                TextButton(
+                  onPressed: onReject,
+                  child: Text(t.project.reject),
+                ),
+                const SizedBox(width: 8),
+                FilledButton(
+                  onPressed: () => _confirmAndApprove(context),
+                  child: Text(t.project.approve),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Future<void> _confirmAndApprove(BuildContext context) async {
+    final scheme = Theme.of(context).colorScheme;
+    final ok = await showDialog<bool>(
+      context: context,
+      builder: (ctx) {
+        return AlertDialog(
+          title: Text(t.project.replaceConfirmTitle(kind: proposal.kind)),
+          content: SizedBox(
+            width: double.maxFinite,
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    'The agent proposed replacing the entire '
+                    '${proposal.kind} body. Make sure the new content '
+                    'covers everything you still want.',
+                    style: Theme.of(ctx).textTheme.bodyMedium,
+                  ),
+                  const SizedBox(height: 12),
+                  _DiffBlock(
+                    label: 'Current',
+                    body: currentContent,
+                    empty: '(not set)',
+                    tint: scheme.outline,
+                    maxLines: 8,
+                  ),
+                  const SizedBox(height: 8),
+                  _DiffBlock(
+                    label: 'After approve',
+                    body: proposal.proposedContent,
+                    empty: '(empty)',
+                    tint: scheme.primary,
+                    maxLines: 8,
+                  ),
+                ],
+              ),
+            ),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.of(ctx).pop(false),
+              child: Text(t.common.cancel),
+            ),
+            FilledButton(
+              onPressed: () => Navigator.of(ctx).pop(true),
+              child: Text(t.project.replaceKind(kind: proposal.kind)),
+            ),
+          ],
+        );
+      },
+    );
+    if (ok ?? false) {
+      onApprove();
+    }
+  }
+}
+
+class _DiffBlock extends StatelessWidget {
+  const _DiffBlock({
+    required this.label,
+    required this.body,
+    required this.empty,
+    required this.tint,
+    this.maxLines = 6,
+  });
+
+  final String label;
+  final String body;
+  final String empty;
+  final Color tint;
+  final int maxLines;
+
+  @override
+  Widget build(BuildContext context) {
+    final muted = Theme.of(context).textTheme.bodySmall;
+    final trimmed = body.trim();
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          children: [
+            Container(
+              width: 3,
+              height: 12,
+              color: tint,
+              margin: const EdgeInsets.only(right: 6),
+            ),
+            Text(label,
+                style: muted?.copyWith(fontWeight: FontWeight.w600)),
+          ],
+        ),
+        const SizedBox(height: 4),
+        Container(
+          width: double.infinity,
+          padding: const EdgeInsets.all(8),
+          decoration: BoxDecoration(
+            color: tint.withValues(alpha: 0.05),
+            border: Border.all(color: tint.withValues(alpha: 0.2)),
+            borderRadius: BorderRadius.circular(4),
+          ),
+          child: Text(
+            trimmed.isEmpty ? empty : trimmed,
+            maxLines: maxLines,
+            overflow: TextOverflow.ellipsis,
+            style: TextStyle(
+              fontSize: 13,
+              fontFamily: 'monospace',
+              fontStyle: trimmed.isEmpty ? FontStyle.italic : null,
+              color: trimmed.isEmpty ? muted?.color : null,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+// _ArchivedCard renders one soft-archived memory row with the reason
+// it was auto-removed and a one-click restore. Read-only otherwise —
+// the operator only ever undoes a false positive here.
+class _ArchivedCard extends StatelessWidget {
+  const _ArchivedCard({
+    required this.memory,
+    required this.onRestore,
+  });
+
+  final Memory memory;
+  final VoidCallback onRestore;
+
+  @override
+  Widget build(BuildContext context) {
+    final muted = Theme.of(context).textTheme.bodySmall;
+    final scheme = Theme.of(context).colorScheme;
+    final reason = memory.archivedReason ?? '';
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.all(12),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                if (reason.isNotEmpty) ...[
+                  Container(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 6, vertical: 2),
+                    decoration: BoxDecoration(
+                      color: scheme.surfaceContainerHighest,
+                      borderRadius: BorderRadius.circular(4),
+                    ),
+                    child: Text(
+                      reason.toUpperCase(),
+                      style: TextStyle(
+                        fontSize: 10,
+                        color: scheme.onSurfaceVariant,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                ],
+                if (memory.archivedAt != null)
+                  Expanded(
+                    child: Text(
+                      DateFormat.MMMd()
+                          .add_jm()
+                          .format(memory.archivedAt!.toLocal()),
+                      style: muted,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+              ],
+            ),
+            const SizedBox(height: 8),
+            Text(
+              memory.text,
+              maxLines: 4,
+              overflow: TextOverflow.ellipsis,
+            ),
+            const SizedBox(height: 8),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                FilledButton.tonalIcon(
+                  onPressed: onRestore,
+                  icon: const Icon(Icons.restore, size: 18),
+                  label: Text(t.project.archived.restore),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+// _LifecycleBar — P-D: shows the project's lifecycle status (active /
+// paused / archived) and lets the operator move it between them. Frozen
+// (paused/archived) projects are excluded from spawn injection and from
+// cross-project Knowledge distillation. Mirrors the web LifecycleControl.
+class _LifecycleBar extends ConsumerStatefulWidget {
+  const _LifecycleBar({required this.cwd});
+  final String cwd;
+
+  @override
+  ConsumerState<_LifecycleBar> createState() => _LifecycleBarState();
+}
+
+class _LifecycleBarState extends ConsumerState<_LifecycleBar> {
+  ProjectSummary? _summary;
+  bool _busy = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _load();
+  }
+
+  @override
+  void didUpdateWidget(covariant _LifecycleBar old) {
+    super.didUpdateWidget(old);
+    if (old.cwd != widget.cwd) _load();
+  }
+
+  Future<void> _load() async {
+    try {
+      final all = await ref.read(projectDocsApiProvider).listProjects();
+      if (!mounted) return;
+      ProjectSummary? found;
+      for (final pr in all) {
+        if (pr.cwd == widget.cwd) {
+          found = pr;
+          break;
+        }
+      }
+      setState(() => _summary = found);
+    } on Object {
+      // Non-fatal: the bar simply renders the default 'active' state.
+    }
+  }
+
+  Future<void> _set(String status) async {
+    setState(() => _busy = true);
+    try {
+      await ref.read(projectDocsApiProvider).setLifecycle(widget.cwd, status);
+      await _load();
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(_setLabel(status))),
+      );
+    } on Object catch (e) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('${t.web.project.lifecycle.failedToast}: $e')),
+      );
+    } finally {
+      if (mounted) setState(() => _busy = false);
+    }
+  }
+
+  String _statusLabel(String s) {
+    final l = t.web.project.lifecycle.status;
+    switch (s) {
+      case 'paused':
+        return l.paused;
+      case 'archived':
+        return l.archived;
+      default:
+        return l.active;
+    }
+  }
+
+  String _setLabel(String s) {
+    final l = t.web.project.lifecycle.applied;
+    switch (s) {
+      case 'paused':
+        return l.paused;
+      case 'archived':
+        return l.archived;
+      default:
+        return l.active;
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final status = _summary?.status ?? 'active';
+    final suggest = _summary?.suggestArchive ?? false;
+    final scheme = Theme.of(context).colorScheme;
+    final chipColor = status == 'archived'
+        ? scheme.surfaceContainerHighest
+        : status == 'paused'
+            ? scheme.tertiaryContainer
+            : scheme.secondaryContainer;
+
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+      child: Wrap(
+        spacing: 6,
+        runSpacing: 4,
+        crossAxisAlignment: WrapCrossAlignment.center,
+        children: [
+          Tooltip(
+            message: t.web.project.lifecycle.tooltip.badge,
+            child: Chip(
+              label: Text(_statusLabel(status)),
+              backgroundColor: chipColor,
+              visualDensity: VisualDensity.compact,
+              materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+            ),
+          ),
+          if (suggest && status == 'active')
+            Chip(
+              avatar: const Icon(Icons.schedule, size: 16),
+              label: Text(t.web.project.lifecycle.idleSuggest),
+              backgroundColor: scheme.tertiaryContainer,
+              visualDensity: VisualDensity.compact,
+              materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+            ),
+          if (status != 'active')
+            Tooltip(
+              message: t.web.project.lifecycle.tooltip.activate,
+              child: TextButton.icon(
+                onPressed: _busy ? null : () => _set('active'),
+                icon: const Icon(Icons.play_arrow, size: 18),
+                label: Text(t.web.project.lifecycle.activate),
+              ),
+            ),
+          if (status == 'active')
+            Tooltip(
+              message: t.web.project.lifecycle.tooltip.pause,
+              child: TextButton.icon(
+                onPressed: _busy ? null : () => _set('paused'),
+                icon: const Icon(Icons.pause, size: 18),
+                label: Text(t.web.project.lifecycle.pause),
+              ),
+            ),
+          if (status != 'archived')
+            Tooltip(
+              message: t.web.project.lifecycle.tooltip.archive,
+              child: TextButton.icon(
+                onPressed: _busy ? null : () => _set('archived'),
+                icon: const Icon(Icons.archive_outlined, size: 18),
+                label: Text(t.web.project.lifecycle.archive),
+              ),
+            ),
+        ],
+      ),
+    );
+  }
+}

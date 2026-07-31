@@ -1,0 +1,1990 @@
+{
+  "contract_version": "1.0.0",
+  "status": "frozen",
+  "api_base": "/api/v1/oneshot",
+  "resources": {
+    "Task": {
+      "id_prefix": "otk_",
+      "description": "User-visible unit of One-shot work. A Task may contain multiple immutable Runs.",
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "required": true,
+          "immutable": true,
+          "description": "Stable OpenDray Task identifier."
+        },
+        {
+          "name": "principal_kind",
+          "type": "enum",
+          "required": true,
+          "immutable": true,
+          "description": "Authenticated owner kind.",
+          "enum": [
+            "admin",
+            "integration"
+          ]
+        },
+        {
+          "name": "principal_id",
+          "type": "string",
+          "required": true,
+          "immutable": true,
+          "description": "Authenticated owner identifier."
+        },
+        {
+          "name": "project_id",
+          "type": "string",
+          "required": true,
+          "immutable": true,
+          "description": "Registered project/workspace owner."
+        },
+        {
+          "name": "provider_id",
+          "type": "string",
+          "required": true,
+          "immutable": true,
+          "description": "Requested One-shot provider adapter."
+        },
+        {
+          "name": "source",
+          "type": "object",
+          "required": true,
+          "immutable": true,
+          "description": "Origin snapshot: api, telegram, mobile or web and channel address metadata."
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "immutable": true,
+          "description": "Original requested work. Follow-up input belongs to the new Delivery/Run."
+        },
+        {
+          "name": "status",
+          "type": "enum",
+          "required": true,
+          "immutable": false,
+          "description": "Current aggregate status.",
+          "enum": [
+            "pending",
+            "queued",
+            "running",
+            "waiting_input",
+            "completed",
+            "failed",
+            "cancelled",
+            "timed_out"
+          ]
+        },
+        {
+          "name": "current_run_id",
+          "type": "nullable_string",
+          "required": false,
+          "immutable": false,
+          "description": "Latest/current Run identifier."
+        },
+        {
+          "name": "runtime_context_id",
+          "type": "nullable_string",
+          "required": false,
+          "immutable": false,
+          "description": "Provider continuity metadata; never a PTY Session ID."
+        },
+        {
+          "name": "version",
+          "type": "integer",
+          "required": true,
+          "immutable": false,
+          "description": "Optimistic concurrency version, starts at 1."
+        },
+        {
+          "name": "created_at",
+          "type": "timestamp",
+          "required": true,
+          "immutable": true,
+          "description": ""
+        },
+        {
+          "name": "updated_at",
+          "type": "timestamp",
+          "required": true,
+          "immutable": false,
+          "description": ""
+        }
+      ],
+      "invariants": [
+        "principal_kind, principal_id, project_id, provider_id, source and original prompt are immutable",
+        "at most one Run for the Task may be active",
+        "current_run_id, when present, references a Run owned by the same Task",
+        "runtime_context_id, when present, references a RuntimeContext with the same principal, project and provider",
+        "Task outcome transitions never rewrite an earlier Run; continue and retry create a new Delivery and Run",
+        "cancelled is terminal; a new Task is required to execute again"
+      ]
+    },
+    "Delivery": {
+      "id_prefix": "odl_",
+      "description": "Reliable request to start or resume one Run. Channel delivery is a separate concept.",
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "required": true,
+          "immutable": true,
+          "description": ""
+        },
+        {
+          "name": "task_id",
+          "type": "string",
+          "required": true,
+          "immutable": true,
+          "description": ""
+        },
+        {
+          "name": "operation",
+          "type": "enum",
+          "required": true,
+          "immutable": true,
+          "description": "",
+          "enum": [
+            "new",
+            "continue",
+            "retry"
+          ]
+        },
+        {
+          "name": "requested_by_kind",
+          "type": "enum",
+          "required": true,
+          "immutable": true,
+          "description": "",
+          "enum": [
+            "admin",
+            "integration"
+          ]
+        },
+        {
+          "name": "requested_by_id",
+          "type": "string",
+          "required": true,
+          "immutable": true,
+          "description": ""
+        },
+        {
+          "name": "input",
+          "type": "object",
+          "required": true,
+          "immutable": true,
+          "description": "Prompt delta, attachment references and requested options."
+        },
+        {
+          "name": "idempotency_key",
+          "type": "string",
+          "required": true,
+          "immutable": true,
+          "description": ""
+        },
+        {
+          "name": "payload_sha256",
+          "type": "string",
+          "required": true,
+          "immutable": true,
+          "description": ""
+        },
+        {
+          "name": "status",
+          "type": "enum",
+          "required": true,
+          "immutable": false,
+          "description": "",
+          "enum": [
+            "pending",
+            "reserved",
+            "retry_wait",
+            "acknowledged",
+            "dead_letter",
+            "cancelled"
+          ]
+        },
+        {
+          "name": "attempt",
+          "type": "integer",
+          "required": true,
+          "immutable": false,
+          "description": ""
+        },
+        {
+          "name": "max_attempts",
+          "type": "integer",
+          "required": true,
+          "immutable": true,
+          "description": ""
+        },
+        {
+          "name": "available_at",
+          "type": "timestamp",
+          "required": true,
+          "immutable": false,
+          "description": ""
+        },
+        {
+          "name": "lease_owner",
+          "type": "nullable_string",
+          "required": false,
+          "immutable": false,
+          "description": ""
+        },
+        {
+          "name": "lease_until",
+          "type": "nullable_timestamp",
+          "required": false,
+          "immutable": false,
+          "description": ""
+        },
+        {
+          "name": "run_id",
+          "type": "nullable_string",
+          "required": false,
+          "immutable": false,
+          "description": ""
+        },
+        {
+          "name": "last_error_code",
+          "type": "nullable_string",
+          "required": false,
+          "immutable": false,
+          "description": ""
+        },
+        {
+          "name": "created_at",
+          "type": "timestamp",
+          "required": true,
+          "immutable": true,
+          "description": ""
+        },
+        {
+          "name": "updated_at",
+          "type": "timestamp",
+          "required": true,
+          "immutable": false,
+          "description": ""
+        }
+      ],
+      "invariants": [
+        "one Delivery creates at most one Run and run_id is immutable once assigned",
+        "a reserved Delivery has a non-empty lease_owner and future lease_until",
+        "acknowledged, dead_letter and cancelled are terminal",
+        "notification retry never creates or mutates a Delivery",
+        "the same principal and idempotency key with the same payload returns the original result"
+      ]
+    },
+    "Run": {
+      "id_prefix": "orn_",
+      "description": "One immutable ordinary child-process execution attempt.",
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "required": true,
+          "immutable": true,
+          "description": ""
+        },
+        {
+          "name": "task_id",
+          "type": "string",
+          "required": true,
+          "immutable": true,
+          "description": ""
+        },
+        {
+          "name": "delivery_id",
+          "type": "string",
+          "required": true,
+          "immutable": true,
+          "description": ""
+        },
+        {
+          "name": "provider_id",
+          "type": "string",
+          "required": true,
+          "immutable": true,
+          "description": ""
+        },
+        {
+          "name": "runtime_context_id",
+          "type": "nullable_string",
+          "required": false,
+          "immutable": true,
+          "description": ""
+        },
+        {
+          "name": "status",
+          "type": "enum",
+          "required": true,
+          "immutable": false,
+          "description": "",
+          "enum": [
+            "created",
+            "starting",
+            "running",
+            "collecting_output",
+            "waiting_input",
+            "completed",
+            "failed",
+            "cancelled",
+            "timed_out"
+          ]
+        },
+        {
+          "name": "pid",
+          "type": "nullable_integer",
+          "required": false,
+          "immutable": false,
+          "description": ""
+        },
+        {
+          "name": "exit_code",
+          "type": "nullable_integer",
+          "required": false,
+          "immutable": false,
+          "description": ""
+        },
+        {
+          "name": "error_code",
+          "type": "nullable_string",
+          "required": false,
+          "immutable": false,
+          "description": ""
+        },
+        {
+          "name": "error_message",
+          "type": "nullable_string",
+          "required": false,
+          "immutable": false,
+          "description": ""
+        },
+        {
+          "name": "started_at",
+          "type": "nullable_timestamp",
+          "required": false,
+          "immutable": false,
+          "description": ""
+        },
+        {
+          "name": "finished_at",
+          "type": "nullable_timestamp",
+          "required": false,
+          "immutable": false,
+          "description": ""
+        },
+        {
+          "name": "created_at",
+          "type": "timestamp",
+          "required": true,
+          "immutable": true,
+          "description": ""
+        }
+      ],
+      "invariants": [
+        "one Run starts at most one ordinary child process and never allocates a PTY",
+        "delivery_id is unique across Runs",
+        "terminal Run states are immutable",
+        "finished_at is required in every terminal state",
+        "exit_code and failure metadata describe the child process and are never inferred from channel delivery"
+      ]
+    },
+    "RuntimeContext": {
+      "id_prefix": "orc_",
+      "description": "Provider continuity metadata used by a later ordinary process; it contains no live process.",
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "required": true,
+          "immutable": true,
+          "description": ""
+        },
+        {
+          "name": "principal_kind",
+          "type": "enum",
+          "required": true,
+          "immutable": true,
+          "description": "",
+          "enum": [
+            "admin",
+            "integration"
+          ]
+        },
+        {
+          "name": "principal_id",
+          "type": "string",
+          "required": true,
+          "immutable": true,
+          "description": ""
+        },
+        {
+          "name": "project_id",
+          "type": "string",
+          "required": true,
+          "immutable": true,
+          "description": ""
+        },
+        {
+          "name": "provider_id",
+          "type": "string",
+          "required": true,
+          "immutable": true,
+          "description": ""
+        },
+        {
+          "name": "provider_context_id",
+          "type": "string",
+          "required": true,
+          "immutable": true,
+          "description": ""
+        },
+        {
+          "name": "workspace_path",
+          "type": "string",
+          "required": true,
+          "immutable": true,
+          "description": ""
+        },
+        {
+          "name": "status",
+          "type": "enum",
+          "required": true,
+          "immutable": false,
+          "description": "",
+          "enum": [
+            "active",
+            "busy",
+            "invalid",
+            "revoked"
+          ]
+        },
+        {
+          "name": "version",
+          "type": "integer",
+          "required": true,
+          "immutable": false,
+          "description": ""
+        },
+        {
+          "name": "created_at",
+          "type": "timestamp",
+          "required": true,
+          "immutable": true,
+          "description": ""
+        },
+        {
+          "name": "updated_at",
+          "type": "timestamp",
+          "required": true,
+          "immutable": false,
+          "description": ""
+        }
+      ],
+      "invariants": [
+        "RuntimeContext has no Session ID, PID, PTY or process handle",
+        "only its owning principal, project and provider may acquire it",
+        "busy prevents concurrent Runs",
+        "invalid and revoked are terminal",
+        "resume failure never silently creates a replacement context"
+      ]
+    },
+    "StreamRecord": {
+      "id_prefix": "osr_",
+      "description": "Ordered persisted bytes received from stdout or stderr.",
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "required": true,
+          "immutable": true,
+          "description": ""
+        },
+        {
+          "name": "run_id",
+          "type": "string",
+          "required": true,
+          "immutable": true,
+          "description": ""
+        },
+        {
+          "name": "sequence",
+          "type": "integer",
+          "required": true,
+          "immutable": true,
+          "description": ""
+        },
+        {
+          "name": "stream",
+          "type": "enum",
+          "required": true,
+          "immutable": true,
+          "description": "",
+          "enum": [
+            "stdout",
+            "stderr"
+          ]
+        },
+        {
+          "name": "byte_offset",
+          "type": "integer",
+          "required": true,
+          "immutable": true,
+          "description": ""
+        },
+        {
+          "name": "byte_length",
+          "type": "integer",
+          "required": true,
+          "immutable": true,
+          "description": ""
+        },
+        {
+          "name": "raw_artifact_id",
+          "type": "string",
+          "required": true,
+          "immutable": true,
+          "description": ""
+        },
+        {
+          "name": "text",
+          "type": "nullable_string",
+          "required": false,
+          "immutable": true,
+          "description": ""
+        },
+        {
+          "name": "decode_status",
+          "type": "enum",
+          "required": true,
+          "immutable": true,
+          "description": "",
+          "enum": [
+            "valid_utf8",
+            "lossy_utf8",
+            "binary"
+          ]
+        },
+        {
+          "name": "sha256",
+          "type": "string",
+          "required": true,
+          "immutable": true,
+          "description": ""
+        },
+        {
+          "name": "received_at",
+          "type": "timestamp",
+          "required": true,
+          "immutable": true,
+          "description": ""
+        }
+      ],
+      "invariants": [
+        "sequence is globally unique and strictly increasing within a Run across stdout and stderr",
+        "raw bytes are preserved even when text decoding fails",
+        "records are append-only"
+      ]
+    },
+    "StandardEvent": {
+      "id_prefix": "ose_",
+      "description": "Adapter-normalized append-only Run event traceable to raw output when applicable.",
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "required": true,
+          "immutable": true,
+          "description": ""
+        },
+        {
+          "name": "run_id",
+          "type": "string",
+          "required": true,
+          "immutable": true,
+          "description": ""
+        },
+        {
+          "name": "sequence",
+          "type": "integer",
+          "required": true,
+          "immutable": true,
+          "description": ""
+        },
+        {
+          "name": "type",
+          "type": "string",
+          "required": true,
+          "immutable": true,
+          "description": ""
+        },
+        {
+          "name": "source_stream_record_id",
+          "type": "nullable_string",
+          "required": false,
+          "immutable": true,
+          "description": ""
+        },
+        {
+          "name": "adapter_id",
+          "type": "string",
+          "required": true,
+          "immutable": true,
+          "description": ""
+        },
+        {
+          "name": "adapter_version",
+          "type": "string",
+          "required": true,
+          "immutable": true,
+          "description": ""
+        },
+        {
+          "name": "content",
+          "type": "object",
+          "required": true,
+          "immutable": true,
+          "description": ""
+        },
+        {
+          "name": "occurred_at",
+          "type": "timestamp",
+          "required": true,
+          "immutable": true,
+          "description": ""
+        }
+      ],
+      "invariants": [
+        "sequence is unique and increasing within a Run",
+        "adapter-derived content never replaces the raw StreamRecord",
+        "events are append-only and adapter/version traceable"
+      ]
+    },
+    "Artifact": {
+      "id_prefix": "oar_",
+      "description": "Immutable content-addressed output or attachment belonging to a Task and optionally one Run.",
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "required": true,
+          "immutable": true,
+          "description": ""
+        },
+        {
+          "name": "task_id",
+          "type": "string",
+          "required": true,
+          "immutable": true,
+          "description": ""
+        },
+        {
+          "name": "run_id",
+          "type": "nullable_string",
+          "required": false,
+          "immutable": true,
+          "description": ""
+        },
+        {
+          "name": "kind",
+          "type": "enum",
+          "required": true,
+          "immutable": true,
+          "description": "",
+          "enum": [
+            "raw_stdout",
+            "raw_stderr",
+            "structured_output",
+            "final_result",
+            "file",
+            "log",
+            "attachment"
+          ]
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "required": true,
+          "immutable": true,
+          "description": ""
+        },
+        {
+          "name": "content_type",
+          "type": "string",
+          "required": true,
+          "immutable": true,
+          "description": ""
+        },
+        {
+          "name": "size_bytes",
+          "type": "integer",
+          "required": true,
+          "immutable": true,
+          "description": ""
+        },
+        {
+          "name": "sha256",
+          "type": "string",
+          "required": true,
+          "immutable": true,
+          "description": ""
+        },
+        {
+          "name": "storage_key",
+          "type": "string",
+          "required": true,
+          "immutable": true,
+          "description": ""
+        },
+        {
+          "name": "metadata",
+          "type": "object",
+          "required": true,
+          "immutable": true,
+          "description": ""
+        },
+        {
+          "name": "created_at",
+          "type": "timestamp",
+          "required": true,
+          "immutable": true,
+          "description": ""
+        }
+      ],
+      "invariants": [
+        "artifact content is immutable and verified by sha256",
+        "storage_key is server-controlled and never a client-supplied absolute path",
+        "authorization follows Task ownership"
+      ]
+    }
+  },
+  "state_machines": {
+    "Task": {
+      "initial": "pending",
+      "states": [
+        {
+          "name": "pending",
+          "kind": "active",
+          "description": "Validated Task exists but no Delivery has been queued."
+        },
+        {
+          "name": "queued",
+          "kind": "active",
+          "description": "A runnable Delivery is pending or reserved."
+        },
+        {
+          "name": "running",
+          "kind": "active",
+          "description": "The current Run owns a live ordinary process or is collecting output."
+        },
+        {
+          "name": "waiting_input",
+          "kind": "quiescent",
+          "description": "The previous Run exited after requesting user input; continue may queue another Run."
+        },
+        {
+          "name": "completed",
+          "kind": "quiescent",
+          "description": "The latest Run completed; explicit continue may queue another Run using RuntimeContext."
+        },
+        {
+          "name": "failed",
+          "kind": "quiescent",
+          "description": "The latest Run failed; explicit retry or eligible continue may queue another Run."
+        },
+        {
+          "name": "cancelled",
+          "kind": "terminal",
+          "description": "Task cancelled. Re-execution requires a new Task."
+        },
+        {
+          "name": "timed_out",
+          "kind": "quiescent",
+          "description": "The latest Run timed out; explicit retry or eligible continue may queue another Run."
+        }
+      ],
+      "transitions": [
+        {
+          "from": "pending",
+          "to": "queued",
+          "command": "dispatch",
+          "guard": "validated request and feature/provider enabled"
+        },
+        {
+          "from": "pending",
+          "to": "cancelled",
+          "command": "cancel",
+          "guard": "no Run has started"
+        },
+        {
+          "from": "pending",
+          "to": "failed",
+          "command": "reject",
+          "guard": "dispatch preparation failed after persistence"
+        },
+        {
+          "from": "queued",
+          "to": "running",
+          "command": "start_run",
+          "guard": "Delivery reserved and Run starting/running"
+        },
+        {
+          "from": "queued",
+          "to": "cancelled",
+          "command": "cancel",
+          "guard": "Delivery cancelled before child start"
+        },
+        {
+          "from": "queued",
+          "to": "failed",
+          "command": "dispatch_failed",
+          "guard": "Delivery exhausted or non-retryable start failure"
+        },
+        {
+          "from": "running",
+          "to": "waiting_input",
+          "command": "run_waiting_input",
+          "guard": "Run process exited and output persisted"
+        },
+        {
+          "from": "running",
+          "to": "completed",
+          "command": "run_completed",
+          "guard": "Run completed and output/artifacts committed"
+        },
+        {
+          "from": "running",
+          "to": "failed",
+          "command": "run_failed",
+          "guard": "Run failed and compensation completed or recorded"
+        },
+        {
+          "from": "running",
+          "to": "cancelled",
+          "command": "run_cancelled",
+          "guard": "process tree terminated or already absent"
+        },
+        {
+          "from": "running",
+          "to": "timed_out",
+          "command": "run_timed_out",
+          "guard": "timeout cleanup completed or recorded"
+        },
+        {
+          "from": "waiting_input",
+          "to": "queued",
+          "command": "continue",
+          "guard": "active owned RuntimeContext and new Delivery"
+        },
+        {
+          "from": "waiting_input",
+          "to": "cancelled",
+          "command": "cancel",
+          "guard": "owner-authorized"
+        },
+        {
+          "from": "completed",
+          "to": "queued",
+          "command": "continue",
+          "guard": "active owned RuntimeContext and new Delivery"
+        },
+        {
+          "from": "failed",
+          "to": "queued",
+          "command": "retry_or_continue",
+          "guard": "new Delivery; continue also requires active RuntimeContext"
+        },
+        {
+          "from": "timed_out",
+          "to": "queued",
+          "command": "retry_or_continue",
+          "guard": "new Delivery; continue also requires active RuntimeContext"
+        }
+      ]
+    },
+    "Delivery": {
+      "initial": "pending",
+      "states": [
+        {
+          "name": "pending",
+          "kind": "active",
+          "description": "Eligible for reservation at available_at."
+        },
+        {
+          "name": "reserved",
+          "kind": "active",
+          "description": "Owned by one worker lease."
+        },
+        {
+          "name": "retry_wait",
+          "kind": "active",
+          "description": "Transient pre-execution failure; becomes reservable at available_at."
+        },
+        {
+          "name": "acknowledged",
+          "kind": "terminal",
+          "description": "Execution responsibility durably resolved."
+        },
+        {
+          "name": "dead_letter",
+          "kind": "terminal",
+          "description": "No further automatic reservation."
+        },
+        {
+          "name": "cancelled",
+          "kind": "terminal",
+          "description": "Cancelled before responsibility was completed."
+        }
+      ],
+      "transitions": [
+        {
+          "from": "pending",
+          "to": "reserved",
+          "command": "reserve",
+          "guard": "available and lease acquired atomically"
+        },
+        {
+          "from": "pending",
+          "to": "cancelled",
+          "command": "cancel",
+          "guard": "not reserved"
+        },
+        {
+          "from": "retry_wait",
+          "to": "reserved",
+          "command": "reserve",
+          "guard": "available and lease acquired atomically"
+        },
+        {
+          "from": "retry_wait",
+          "to": "cancelled",
+          "command": "cancel",
+          "guard": "not reserved"
+        },
+        {
+          "from": "reserved",
+          "to": "acknowledged",
+          "command": "ack",
+          "guard": "Run outcome or recovered commit durably recorded"
+        },
+        {
+          "from": "reserved",
+          "to": "retry_wait",
+          "command": "nack",
+          "guard": "retryable failure before a new child process is started and attempts remain"
+        },
+        {
+          "from": "reserved",
+          "to": "dead_letter",
+          "command": "dead_letter",
+          "guard": "non-retryable failure or attempts exhausted"
+        },
+        {
+          "from": "reserved",
+          "to": "cancelled",
+          "command": "cancel",
+          "guard": "process not started or cancellation cleanup resolved"
+        }
+      ]
+    },
+    "Run": {
+      "initial": "created",
+      "states": [
+        {
+          "name": "created",
+          "kind": "active",
+          "description": "Persisted but process start not attempted."
+        },
+        {
+          "name": "starting",
+          "kind": "active",
+          "description": "Credentials and process start are in progress."
+        },
+        {
+          "name": "running",
+          "kind": "active",
+          "description": "Ordinary child process is alive."
+        },
+        {
+          "name": "collecting_output",
+          "kind": "active",
+          "description": "Child exited or is terminating; pipes/artifacts are being drained and committed."
+        },
+        {
+          "name": "waiting_input",
+          "kind": "terminal",
+          "description": "Process exited with normalized waiting-input outcome."
+        },
+        {
+          "name": "completed",
+          "kind": "terminal",
+          "description": "Successful immutable Run outcome."
+        },
+        {
+          "name": "failed",
+          "kind": "terminal",
+          "description": "Failed immutable Run outcome."
+        },
+        {
+          "name": "cancelled",
+          "kind": "terminal",
+          "description": "Process tree terminated or already absent by cancellation."
+        },
+        {
+          "name": "timed_out",
+          "kind": "terminal",
+          "description": "Process tree terminated after deadline."
+        }
+      ],
+      "transitions": [
+        {
+          "from": "created",
+          "to": "starting",
+          "command": "start",
+          "guard": "Delivery reserved and Task owns no active Run"
+        },
+        {
+          "from": "created",
+          "to": "cancelled",
+          "command": "cancel",
+          "guard": "process not started"
+        },
+        {
+          "from": "starting",
+          "to": "running",
+          "command": "process_started",
+          "guard": "ordinary child start succeeded"
+        },
+        {
+          "from": "starting",
+          "to": "failed",
+          "command": "start_failed",
+          "guard": "start failure persisted"
+        },
+        {
+          "from": "starting",
+          "to": "cancelled",
+          "command": "cancel",
+          "guard": "process absent or terminated"
+        },
+        {
+          "from": "starting",
+          "to": "timed_out",
+          "command": "timeout",
+          "guard": "deadline reached and cleanup resolved"
+        },
+        {
+          "from": "running",
+          "to": "collecting_output",
+          "command": "process_exited",
+          "guard": "wait result known; pipes still drainable"
+        },
+        {
+          "from": "running",
+          "to": "failed",
+          "command": "supervision_failed",
+          "guard": "failure recorded and process cleanup resolved"
+        },
+        {
+          "from": "running",
+          "to": "cancelled",
+          "command": "cancel",
+          "guard": "process tree terminated or already absent"
+        },
+        {
+          "from": "running",
+          "to": "timed_out",
+          "command": "timeout",
+          "guard": "deadline reached and process tree terminated"
+        },
+        {
+          "from": "collecting_output",
+          "to": "waiting_input",
+          "command": "finalize_waiting_input",
+          "guard": "all output committed and adapter outcome requests input"
+        },
+        {
+          "from": "collecting_output",
+          "to": "completed",
+          "command": "finalize_success",
+          "guard": "all output/artifacts committed"
+        },
+        {
+          "from": "collecting_output",
+          "to": "failed",
+          "command": "finalize_failure",
+          "guard": "failure and available output committed"
+        },
+        {
+          "from": "collecting_output",
+          "to": "cancelled",
+          "command": "finalize_cancel",
+          "guard": "cancellation output drained"
+        },
+        {
+          "from": "collecting_output",
+          "to": "timed_out",
+          "command": "finalize_timeout",
+          "guard": "timeout output drained"
+        }
+      ]
+    },
+    "RuntimeContext": {
+      "initial": "active",
+      "states": [
+        {
+          "name": "active",
+          "kind": "active",
+          "description": "Available for one owner-authorized continuation."
+        },
+        {
+          "name": "busy",
+          "kind": "active",
+          "description": "Acquired by one non-terminal Run."
+        },
+        {
+          "name": "invalid",
+          "kind": "terminal",
+          "description": "Provider context cannot be resumed."
+        },
+        {
+          "name": "revoked",
+          "kind": "terminal",
+          "description": "Owner or system permanently disabled use."
+        }
+      ],
+      "transitions": [
+        {
+          "from": "active",
+          "to": "busy",
+          "command": "acquire",
+          "guard": "owner/project/provider match and optimistic lock succeeds"
+        },
+        {
+          "from": "active",
+          "to": "invalid",
+          "command": "invalidate",
+          "guard": "provider reports context invalid"
+        },
+        {
+          "from": "active",
+          "to": "revoked",
+          "command": "revoke",
+          "guard": "owner/admin authorized"
+        },
+        {
+          "from": "busy",
+          "to": "active",
+          "command": "release",
+          "guard": "owning Run reached terminal state and context remains resumable"
+        },
+        {
+          "from": "busy",
+          "to": "invalid",
+          "command": "invalidate",
+          "guard": "owning Run proves context invalid"
+        },
+        {
+          "from": "busy",
+          "to": "revoked",
+          "command": "revoke",
+          "guard": "process cleanup and owner/admin authorization"
+        }
+      ]
+    }
+  },
+  "api": [
+    {
+      "id": "create_task",
+      "protocol": "http",
+      "method": "POST",
+      "path": "/api/v1/oneshot/tasks",
+      "scope": "oneshot:task:create",
+      "idempotency": "required",
+      "success_status": [
+        202
+      ],
+      "request": "CreateTaskRequest",
+      "response": "TaskEnvelope",
+      "audit_action": "oneshot.task.create",
+      "description": "Create Task and initial Delivery; never spawn a PTY."
+    },
+    {
+      "id": "list_tasks",
+      "protocol": "http",
+      "method": "GET",
+      "path": "/api/v1/oneshot/tasks",
+      "scope": "oneshot:task:read",
+      "idempotency": "none",
+      "success_status": [
+        200
+      ],
+      "request": "TaskListQuery",
+      "response": "TaskListEnvelope",
+      "audit_action": "oneshot.task.list",
+      "description": "Owner-filtered cursor list."
+    },
+    {
+      "id": "get_task",
+      "protocol": "http",
+      "method": "GET",
+      "path": "/api/v1/oneshot/tasks/{task_id}",
+      "scope": "oneshot:task:read",
+      "idempotency": "none",
+      "success_status": [
+        200
+      ],
+      "request": "None",
+      "response": "TaskEnvelope",
+      "audit_action": "oneshot.task.read",
+      "description": "Read one owned Task."
+    },
+    {
+      "id": "continue_task",
+      "protocol": "http",
+      "method": "POST",
+      "path": "/api/v1/oneshot/tasks/{task_id}/continue",
+      "scope": "oneshot:task:continue",
+      "idempotency": "required",
+      "success_status": [
+        202
+      ],
+      "request": "ContinueTaskRequest",
+      "response": "TaskRunEnvelope",
+      "audit_action": "oneshot.task.continue",
+      "description": "Create a new Delivery and Run using owned RuntimeContext."
+    },
+    {
+      "id": "cancel_task",
+      "protocol": "http",
+      "method": "POST",
+      "path": "/api/v1/oneshot/tasks/{task_id}/cancel",
+      "scope": "oneshot:task:cancel",
+      "idempotency": "optional",
+      "success_status": [
+        200,
+        202
+      ],
+      "request": "CancelTaskRequest",
+      "response": "TaskEnvelope",
+      "audit_action": "oneshot.task.cancel",
+      "description": "Idempotently request/confirm real queue or process-tree cancellation."
+    },
+    {
+      "id": "retry_task",
+      "protocol": "http",
+      "method": "POST",
+      "path": "/api/v1/oneshot/tasks/{task_id}/retry",
+      "scope": "oneshot:task:retry",
+      "idempotency": "required",
+      "success_status": [
+        202
+      ],
+      "request": "RetryTaskRequest",
+      "response": "TaskRunEnvelope",
+      "audit_action": "oneshot.task.retry",
+      "description": "Create a new Delivery and Run; does not resend a channel notification."
+    },
+    {
+      "id": "list_runs",
+      "protocol": "http",
+      "method": "GET",
+      "path": "/api/v1/oneshot/tasks/{task_id}/runs",
+      "scope": "oneshot:run:read",
+      "idempotency": "none",
+      "success_status": [
+        200
+      ],
+      "request": "RunListQuery",
+      "response": "RunListEnvelope",
+      "audit_action": "oneshot.run.list",
+      "description": "List immutable Runs for one Task."
+    },
+    {
+      "id": "get_run",
+      "protocol": "http",
+      "method": "GET",
+      "path": "/api/v1/oneshot/runs/{run_id}",
+      "scope": "oneshot:run:read",
+      "idempotency": "none",
+      "success_status": [
+        200
+      ],
+      "request": "None",
+      "response": "RunEnvelope",
+      "audit_action": "oneshot.run.read",
+      "description": "Read one owned Run."
+    },
+    {
+      "id": "list_run_events",
+      "protocol": "http",
+      "method": "GET",
+      "path": "/api/v1/oneshot/runs/{run_id}/events",
+      "scope": "oneshot:run:read",
+      "idempotency": "none",
+      "success_status": [
+        200
+      ],
+      "request": "EventListQuery",
+      "response": "EventListEnvelope",
+      "audit_action": "oneshot.run.events.read",
+      "description": "Cursor list of persisted StandardEvents."
+    },
+    {
+      "id": "list_run_artifacts",
+      "protocol": "http",
+      "method": "GET",
+      "path": "/api/v1/oneshot/runs/{run_id}/artifacts",
+      "scope": "oneshot:artifact:read",
+      "idempotency": "none",
+      "success_status": [
+        200
+      ],
+      "request": "ArtifactListQuery",
+      "response": "ArtifactListEnvelope",
+      "audit_action": "oneshot.run.artifacts.read",
+      "description": "List artifacts visible through Task ownership."
+    },
+    {
+      "id": "download_artifact",
+      "protocol": "http",
+      "method": "GET",
+      "path": "/api/v1/oneshot/artifacts/{artifact_id}",
+      "scope": "oneshot:artifact:read",
+      "idempotency": "none",
+      "success_status": [
+        200
+      ],
+      "request": "None",
+      "response": "ArtifactBytes",
+      "audit_action": "oneshot.artifact.read",
+      "description": "Stream immutable content with content type, length and digest headers."
+    },
+    {
+      "id": "stage_attachment",
+      "protocol": "http",
+      "method": "POST",
+      "path": "/api/v1/oneshot/attachments",
+      "scope": "oneshot:task:create",
+      "idempotency": "none",
+      "success_status": [
+        201
+      ],
+      "request": "MultipartAttachmentRequest",
+      "response": "StagedAttachmentEnvelope",
+      "audit_action": "oneshot.attachment.stage",
+      "description": "Stage an owner/project-scoped attachment after size and MIME validation."
+    },
+    {
+      "id": "get_staged_attachment",
+      "protocol": "http",
+      "method": "GET",
+      "path": "/api/v1/oneshot/attachments/{attachment_id}",
+      "scope": "oneshot:artifact:read",
+      "idempotency": "none",
+      "success_status": [
+        200
+      ],
+      "request": "None",
+      "response": "StagedAttachmentEnvelope",
+      "audit_action": "oneshot.attachment.read",
+      "description": "Read staged attachment metadata within owner and project scope."
+    },
+    {
+      "id": "delete_staged_attachment",
+      "protocol": "http",
+      "method": "DELETE",
+      "path": "/api/v1/oneshot/attachments/{attachment_id}",
+      "scope": "oneshot:task:create",
+      "idempotency": "none",
+      "success_status": [
+        204
+      ],
+      "request": "None",
+      "response": "None",
+      "audit_action": "oneshot.attachment.delete",
+      "description": "Delete an unbound staged attachment without exposing storage paths."
+    },
+    {
+      "id": "stream_tasks",
+      "protocol": "websocket",
+      "method": "GET",
+      "path": "/api/v1/oneshot/tasks/stream",
+      "scope": "event:subscribe:oneshot.task.*",
+      "idempotency": "none",
+      "success_status": [
+        101
+      ],
+      "request": "TaskStreamQuery",
+      "response": "EventFrame",
+      "audit_action": "oneshot.task.stream",
+      "description": "Owner-filtered task events; static route must be mounted before /{task_id}."
+    },
+    {
+      "id": "stream_run",
+      "protocol": "websocket",
+      "method": "GET",
+      "path": "/api/v1/oneshot/runs/{run_id}/stream",
+      "scope": "event:subscribe:oneshot.run.*",
+      "idempotency": "none",
+      "success_status": [
+        101
+      ],
+      "request": "RunStreamQuery",
+      "response": "EventFrame",
+      "audit_action": "oneshot.run.stream",
+      "description": "Owned Run event stream with cursor replay."
+    }
+  ],
+  "events": [
+    {
+      "topic": "oneshot.task.created",
+      "subject": "Task",
+      "payload_required": [
+        "task_id",
+        "status",
+        "principal_kind",
+        "principal_id",
+        "project_id",
+        "provider_id",
+        "source",
+        "version"
+      ],
+      "semantics": "Task and initial immutable request persisted."
+    },
+    {
+      "topic": "oneshot.task.queued",
+      "subject": "Task",
+      "payload_required": [
+        "task_id",
+        "status",
+        "principal_kind",
+        "principal_id",
+        "project_id",
+        "provider_id",
+        "source",
+        "version",
+        "delivery_id"
+      ],
+      "semantics": "A runnable Delivery is durably available or reserved."
+    },
+    {
+      "topic": "oneshot.task.running",
+      "subject": "Task",
+      "payload_required": [
+        "task_id",
+        "status",
+        "principal_kind",
+        "principal_id",
+        "project_id",
+        "provider_id",
+        "source",
+        "version",
+        "run_id"
+      ],
+      "semantics": "Current Run reached starting/running responsibility."
+    },
+    {
+      "topic": "oneshot.task.waiting_input",
+      "subject": "Task",
+      "payload_required": [
+        "task_id",
+        "status",
+        "principal_kind",
+        "principal_id",
+        "project_id",
+        "provider_id",
+        "source",
+        "version",
+        "run_id",
+        "runtime_context_id"
+      ],
+      "semantics": "Run exited and explicit follow-up input is required."
+    },
+    {
+      "topic": "oneshot.task.completed",
+      "subject": "Task",
+      "payload_required": [
+        "task_id",
+        "status",
+        "principal_kind",
+        "principal_id",
+        "project_id",
+        "provider_id",
+        "source",
+        "version",
+        "run_id",
+        "runtime_context_id"
+      ],
+      "semantics": "Latest Run output and artifacts committed successfully."
+    },
+    {
+      "topic": "oneshot.task.failed",
+      "subject": "Task",
+      "payload_required": [
+        "task_id",
+        "status",
+        "principal_kind",
+        "principal_id",
+        "project_id",
+        "provider_id",
+        "source",
+        "version",
+        "run_id",
+        "error_code"
+      ],
+      "semantics": "Latest Run or dispatch failed with a persisted error."
+    },
+    {
+      "topic": "oneshot.task.cancelled",
+      "subject": "Task",
+      "payload_required": [
+        "task_id",
+        "status",
+        "principal_kind",
+        "principal_id",
+        "project_id",
+        "provider_id",
+        "source",
+        "version",
+        "run_id"
+      ],
+      "semantics": "Queue responsibility or process tree is cancelled/absent."
+    },
+    {
+      "topic": "oneshot.task.timed_out",
+      "subject": "Task",
+      "payload_required": [
+        "task_id",
+        "status",
+        "principal_kind",
+        "principal_id",
+        "project_id",
+        "provider_id",
+        "source",
+        "version",
+        "run_id",
+        "error_code"
+      ],
+      "semantics": "Latest Run exceeded deadline and cleanup is resolved/recorded."
+    },
+    {
+      "topic": "oneshot.run.created",
+      "subject": "Run",
+      "payload_required": [
+        "task_id",
+        "run_id",
+        "status",
+        "provider_id",
+        "delivery_id"
+      ],
+      "semantics": "Immutable Run row created for one Delivery."
+    },
+    {
+      "topic": "oneshot.run.started",
+      "subject": "Run",
+      "payload_required": [
+        "task_id",
+        "run_id",
+        "status",
+        "provider_id",
+        "started_at"
+      ],
+      "semantics": "Ordinary child process started; no PTY allocated."
+    },
+    {
+      "topic": "oneshot.run.output",
+      "subject": "Run",
+      "payload_required": [
+        "task_id",
+        "run_id",
+        "status",
+        "provider_id",
+        "sequence",
+        "event_type",
+        "content"
+      ],
+      "semantics": "One persisted StandardEvent is available; replay uses sequence."
+    },
+    {
+      "topic": "oneshot.run.waiting_input",
+      "subject": "Run",
+      "payload_required": [
+        "task_id",
+        "run_id",
+        "status",
+        "provider_id",
+        "finished_at",
+        "runtime_context_id"
+      ],
+      "semantics": "Terminal Run outcome requests a later continuation."
+    },
+    {
+      "topic": "oneshot.run.completed",
+      "subject": "Run",
+      "payload_required": [
+        "task_id",
+        "run_id",
+        "status",
+        "provider_id",
+        "finished_at",
+        "exit_code"
+      ],
+      "semantics": "Terminal successful Run outcome."
+    },
+    {
+      "topic": "oneshot.run.failed",
+      "subject": "Run",
+      "payload_required": [
+        "task_id",
+        "run_id",
+        "status",
+        "provider_id",
+        "finished_at",
+        "error_code"
+      ],
+      "semantics": "Terminal failed Run outcome."
+    },
+    {
+      "topic": "oneshot.run.cancelled",
+      "subject": "Run",
+      "payload_required": [
+        "task_id",
+        "run_id",
+        "status",
+        "provider_id",
+        "finished_at"
+      ],
+      "semantics": "Terminal cancelled Run outcome after process-tree cleanup."
+    },
+    {
+      "topic": "oneshot.run.timed_out",
+      "subject": "Run",
+      "payload_required": [
+        "task_id",
+        "run_id",
+        "status",
+        "provider_id",
+        "finished_at",
+        "error_code"
+      ],
+      "semantics": "Terminal timeout Run outcome after process-tree cleanup."
+    },
+    {
+      "topic": "oneshot.delivery.dead_letter",
+      "subject": "Delivery",
+      "payload_required": [
+        "task_id",
+        "delivery_id",
+        "attempt",
+        "error_code"
+      ],
+      "semantics": "Delivery cannot be automatically reserved again."
+    },
+    {
+      "topic": "oneshot.context.created",
+      "subject": "RuntimeContext",
+      "payload_required": [
+        "runtime_context_id",
+        "principal_kind",
+        "principal_id",
+        "project_id",
+        "provider_id",
+        "status"
+      ],
+      "semantics": "Provider context metadata persisted."
+    },
+    {
+      "topic": "oneshot.context.acquired",
+      "subject": "RuntimeContext",
+      "payload_required": [
+        "runtime_context_id",
+        "task_id",
+        "run_id",
+        "status",
+        "version"
+      ],
+      "semantics": "Context exclusively acquired by one Run."
+    },
+    {
+      "topic": "oneshot.context.released",
+      "subject": "RuntimeContext",
+      "payload_required": [
+        "runtime_context_id",
+        "run_id",
+        "status",
+        "version"
+      ],
+      "semantics": "Terminal Run released a resumable context."
+    },
+    {
+      "topic": "oneshot.context.invalidated",
+      "subject": "RuntimeContext",
+      "payload_required": [
+        "runtime_context_id",
+        "run_id",
+        "status",
+        "error_code"
+      ],
+      "semantics": "Provider proved context unusable; no silent replacement."
+    },
+    {
+      "topic": "oneshot.context.revoked",
+      "subject": "RuntimeContext",
+      "payload_required": [
+        "runtime_context_id",
+        "status",
+        "actor_kind",
+        "actor_id"
+      ],
+      "semantics": "Owner/admin permanently revoked context use."
+    },
+    {
+      "topic": "oneshot.artifact.created",
+      "subject": "Artifact",
+      "payload_required": [
+        "task_id",
+        "artifact_id",
+        "run_id",
+        "kind",
+        "name",
+        "content_type",
+        "size_bytes",
+        "sha256"
+      ],
+      "semantics": "Immutable content became readable by owner-authorized clients."
+    }
+  ],
+  "errors": [
+    {
+      "code": "oneshot.disabled",
+      "http_status": 503,
+      "retryable": false,
+      "description": "One-shot feature is disabled; Interactive PTY remains available."
+    },
+    {
+      "code": "oneshot.unauthorized",
+      "http_status": 401,
+      "retryable": false,
+      "description": "No valid authenticated principal."
+    },
+    {
+      "code": "oneshot.forbidden",
+      "http_status": 403,
+      "retryable": false,
+      "description": "Principal lacks the required One-shot scope."
+    },
+    {
+      "code": "oneshot.invalid_request",
+      "http_status": 400,
+      "retryable": false,
+      "description": "Request body, query or path input is invalid."
+    },
+    {
+      "code": "oneshot.idempotency_required",
+      "http_status": 400,
+      "retryable": false,
+      "description": "A required write request omitted Idempotency-Key."
+    },
+    {
+      "code": "oneshot.idempotency_conflict",
+      "http_status": 409,
+      "retryable": false,
+      "description": "The same principal/key was reused with a different payload hash."
+    },
+    {
+      "code": "oneshot.task_not_found",
+      "http_status": 404,
+      "retryable": false,
+      "description": "Task does not exist or is not visible to the principal."
+    },
+    {
+      "code": "oneshot.run_not_found",
+      "http_status": 404,
+      "retryable": false,
+      "description": "Run does not exist or is not visible through Task ownership."
+    },
+    {
+      "code": "oneshot.artifact_not_found",
+      "http_status": 404,
+      "retryable": false,
+      "description": "Artifact does not exist or is not visible through Task ownership."
+    },
+    {
+      "code": "oneshot.context_not_found",
+      "http_status": 404,
+      "retryable": false,
+      "description": "RuntimeContext does not exist."
+    },
+    {
+      "code": "oneshot.context_owner_mismatch",
+      "http_status": 403,
+      "retryable": false,
+      "description": "RuntimeContext principal, project or provider does not match."
+    },
+    {
+      "code": "oneshot.unsupported_provider",
+      "http_status": 422,
+      "retryable": false,
+      "description": "Provider has no enabled non-interactive adapter."
+    },
+    {
+      "code": "oneshot.provider_unavailable",
+      "http_status": 503,
+      "retryable": true,
+      "description": "Provider executable, credential or runtime dependency is unavailable."
+    },
+    {
+      "code": "oneshot.resume_unsupported",
+      "http_status": 422,
+      "retryable": false,
+      "description": "Provider adapter does not support resume."
+    },
+    {
+      "code": "oneshot.resume_failed",
+      "http_status": 409,
+      "retryable": false,
+      "description": "Provider refused or could not restore the specified context; no new context was created."
+    },
+    {
+      "code": "oneshot.invalid_transition",
+      "http_status": 409,
+      "retryable": false,
+      "description": "Requested command is not legal from the current aggregate state."
+    },
+    {
+      "code": "oneshot.run_conflict",
+      "http_status": 409,
+      "retryable": true,
+      "description": "Task or RuntimeContext already has an active Run."
+    },
+    {
+      "code": "oneshot.queue_unavailable",
+      "http_status": 503,
+      "retryable": true,
+      "description": "Delivery could not be durably queued or reserved."
+    },
+    {
+      "code": "oneshot.delivery_exhausted",
+      "http_status": 503,
+      "retryable": false,
+      "description": "Delivery exhausted automatic pre-execution attempts and is dead-lettered."
+    },
+    {
+      "code": "oneshot.execution_failed",
+      "http_status": 502,
+      "retryable": false,
+      "description": "Provider process exited with a failed outcome."
+    },
+    {
+      "code": "oneshot.output_persist_failed",
+      "http_status": 500,
+      "retryable": true,
+      "description": "Raw output or normalized event persistence failed."
+    },
+    {
+      "code": "oneshot.artifact_unavailable",
+      "http_status": 503,
+      "retryable": true,
+      "description": "Artifact storage is temporarily unavailable."
+    },
+    {
+      "code": "oneshot.cancel_failed",
+      "http_status": 500,
+      "retryable": true,
+      "description": "Process-tree cancellation or its durable reconciliation failed."
+    },
+    {
+      "code": "oneshot.timeout",
+      "http_status": 504,
+      "retryable": false,
+      "description": "Run exceeded its deadline and was terminated."
+    },
+    {
+      "code": "oneshot.rate_limited",
+      "http_status": 429,
+      "retryable": true,
+      "description": "Principal, provider or channel exceeded a configured limit."
+    },
+    {
+      "code": "oneshot.internal",
+      "http_status": 500,
+      "retryable": true,
+      "description": "Unexpected internal failure with request ID for diagnosis."
+    }
+  ],
+  "idempotency": {
+    "header": "Idempotency-Key",
+    "required_for": [
+      "create_task",
+      "continue_task",
+      "retry_task"
+    ],
+    "identity_scope": "principal_kind + principal_id + method + canonical path + key",
+    "payload_binding": "SHA-256 of canonical JSON body and immutable source attachment references",
+    "same_payload": "return the original status and response without creating another Task, Delivery or Run",
+    "different_payload": "409 oneshot.idempotency_conflict",
+    "telegram_dedup": "unique channel_id + source_message_id before Task creation"
+  },
+  "pagination": {
+    "strategy": "opaque cursor",
+    "request_fields": {
+      "cursor": "optional opaque string",
+      "limit": "default 50, min 1, max 200",
+      "sort": "allow-list; default -created_at"
+    },
+    "response_fields": [
+      "items",
+      "next_cursor"
+    ],
+    "consistency": "cursor encodes stable sort values and resource ID; callers must not construct it"
+  },
+  "timestamps": {
+    "format": "RFC3339Nano",
+    "zone": "UTC",
+    "comparison": "database time is authoritative for leases and state transitions"
+  },
+  "error_envelope": {
+    "shape": {
+      "error": {
+        "code": "string",
+        "message": "string",
+        "request_id": "string",
+        "retryable": "boolean",
+        "details": "object"
+      }
+    },
+    "security": "message/details must not expose secrets, raw credentials, unregistered absolute paths or provider tokens"
+  },
+  "audit": {
+    "actor_fields": [
+      "actor_kind",
+      "actor_id"
+    ],
+    "subject_kinds": [
+      "oneshot_task",
+      "oneshot_run",
+      "oneshot_context",
+      "oneshot_artifact"
+    ],
+    "required_metadata": [
+      "request_id",
+      "source",
+      "project_id",
+      "provider_id",
+      "result"
+    ],
+    "conditional_metadata": [
+      "task_id",
+      "run_id",
+      "runtime_context_id",
+      "idempotency_key_hash",
+      "error_code"
+    ],
+    "rule": "write actions and denied owner/scope checks must be auditable; secret values and raw prompt bodies are excluded"
+  }
+}

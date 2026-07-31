@@ -1,0 +1,5 @@
+OD-OS-09 Red baseline evidence
+baseline: 962c3218b2c4ebb0f8e27e9198b3f6ae441035d6
+EXPECTED_MISSING internal/oneshot/queue/postgres.go
+EXPECTED_MISSING internal/oneshot/queue/worker.go
+EXPECTED_MISSING internal/oneshot/application/dispatch_service.go

@@ -1,0 +1,359 @@
+import 'package:dio/dio.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import 'package:opendray/core/api/dio_provider.dart';
+
+// Wraps /api/v1/project-docs/*, /project-doc-proposals/*, and
+// /session-logs/*. Backs the Project screen on the More menu.
+class ProjectDocsApi {
+  ProjectDocsApi(this._dio);
+  final Dio _dio;
+
+  // ── docs (goal / plan) ─────────────────────────────────────────
+
+  Future<List<ProjectDoc>> listDocs(String cwd) async {
+    try {
+      final res = await _dio.get<Map<String, dynamic>>(
+        '/api/v1/project-docs',
+        queryParameters: {'cwd': cwd},
+      );
+      final raw = res.data?['docs'];
+      if (raw is! List) return const [];
+      return raw
+          .whereType<Map<String, dynamic>>()
+          .map(ProjectDoc.fromJson)
+          .toList();
+    } on Object catch (e) {
+      throw toApiException(e);
+    }
+  }
+
+  Future<ProjectDoc> getDoc(String cwd, String kind) async {
+    try {
+      final res = await _dio.get<Map<String, dynamic>>(
+        '/api/v1/project-docs/$kind',
+        queryParameters: {'cwd': cwd},
+      );
+      return ProjectDoc.fromJson(res.data ?? {});
+    } on Object catch (e) {
+      throw toApiException(e);
+    }
+  }
+
+  Future<ProjectDoc> putDoc({
+    required String cwd,
+    required String kind,
+    required String content,
+    String updatedBy = 'operator',
+  }) async {
+    try {
+      final res = await _dio.put<Map<String, dynamic>>(
+        '/api/v1/project-docs/$kind',
+        data: {'cwd': cwd, 'content': content, 'updated_by': updatedBy},
+      );
+      return ProjectDoc.fromJson(res.data ?? {});
+    } on Object catch (e) {
+      throw toApiException(e);
+    }
+  }
+
+  /// Wipes per-cwd project memory state. Always deletes goal+plan,
+  /// proposals, session_logs, and cleanup_decisions for the cwd.
+  /// Optionally scanner-managed docs (tech_stack + recent_activity)
+  /// which would otherwise auto-rebuild on next spawn.
+  ///
+  /// Memories (pgvector) live in a separate subsystem — call
+  /// MemoryApi.deleteByScope('project', cwd) separately when the
+  /// operator opts in.
+  Future<Map<String, int>> resetCwd({
+    required String cwd,
+    bool includeScannerDocs = false,
+    bool includeCleanupDecisions = true,
+  }) async {
+    try {
+      final res = await _dio.post<Map<String, dynamic>>(
+        '/api/v1/project-docs/reset',
+        data: {
+          'cwd': cwd,
+          'include_scanner_docs': includeScannerDocs,
+          'include_cleanup_decisions': includeCleanupDecisions,
+        },
+      );
+      final raw = res.data ?? const <String, dynamic>{};
+      return raw.map((k, v) => MapEntry(k, (v is int) ? v : 0));
+    } on Object catch (e) {
+      throw toApiException(e);
+    }
+  }
+
+  // ── lifecycle (P-D) ────────────────────────────────────────────
+
+  /// Lists every known project with its lifecycle status + last activity.
+  /// [idleDays] overrides the auto-suggest threshold (0 disables).
+  Future<List<ProjectSummary>> listProjects({int? idleDays}) async {
+    try {
+      final res = await _dio.get<Map<String, dynamic>>(
+        '/api/v1/project-docs/projects',
+        queryParameters: {if (idleDays != null) 'idle_days': idleDays},
+      );
+      final raw = res.data?['projects'];
+      if (raw is! List) return const [];
+      return raw
+          .whereType<Map<String, dynamic>>()
+          .map(ProjectSummary.fromJson)
+          .toList();
+    } on Object catch (e) {
+      throw toApiException(e);
+    }
+  }
+
+  /// Sets a project's lifecycle status (active / paused / archived).
+  /// Frozen (paused/archived) projects are excluded from spawn injection
+  /// and cross-project Knowledge distillation.
+  Future<void> setLifecycle(String cwd, String status) async {
+    try {
+      await _dio.post<Map<String, dynamic>>(
+        '/api/v1/project-docs/lifecycle',
+        data: {'cwd': cwd, 'status': status},
+      );
+    } on Object catch (e) {
+      throw toApiException(e);
+    }
+  }
+
+  // ── proposals ──────────────────────────────────────────────────
+
+  Future<List<DocProposal>> listPendingProposals({String? cwd}) async {
+    try {
+      final res = await _dio.get<Map<String, dynamic>>(
+        '/api/v1/project-doc-proposals/pending',
+        queryParameters: {if (cwd != null && cwd.isNotEmpty) 'cwd': cwd},
+      );
+      final raw = res.data?['proposals'];
+      if (raw is! List) return const [];
+      return raw
+          .whereType<Map<String, dynamic>>()
+          .map(DocProposal.fromJson)
+          .toList();
+    } on Object catch (e) {
+      throw toApiException(e);
+    }
+  }
+
+  Future<ProjectDoc> approveProposal(String id) async {
+    try {
+      final res = await _dio.post<Map<String, dynamic>>(
+        '/api/v1/project-doc-proposals/$id/approve',
+      );
+      return ProjectDoc.fromJson(res.data ?? {});
+    } on Object catch (e) {
+      throw toApiException(e);
+    }
+  }
+
+  Future<void> rejectProposal(String id) async {
+    try {
+      await _dio.post<void>('/api/v1/project-doc-proposals/$id/reject');
+    } on Object catch (e) {
+      throw toApiException(e);
+    }
+  }
+
+  // ── session logs (journal) ─────────────────────────────────────
+
+  Future<List<SessionLogEntry>> listLogs(String cwd, {int limit = 50}) async {
+    try {
+      final res = await _dio.get<Map<String, dynamic>>(
+        '/api/v1/session-logs',
+        queryParameters: {'cwd': cwd, 'n': limit},
+      );
+      final raw = res.data?['logs'];
+      if (raw is! List) return const [];
+      return raw
+          .whereType<Map<String, dynamic>>()
+          .map(SessionLogEntry.fromJson)
+          .toList();
+    } on Object catch (e) {
+      throw toApiException(e);
+    }
+  }
+
+  Future<SessionLogEntry> appendLog({
+    required String cwd,
+    required String content,
+    String? title,
+    String kind = 'manual',
+  }) async {
+    try {
+      final res = await _dio.post<Map<String, dynamic>>(
+        '/api/v1/session-logs',
+        data: {
+          'cwd': cwd,
+          'kind': kind,
+          if (title != null && title.isNotEmpty) 'title': title,
+          'content': content,
+          'updated_by': 'operator',
+        },
+      );
+      return SessionLogEntry.fromJson(res.data ?? {});
+    } on Object catch (e) {
+      throw toApiException(e);
+    }
+  }
+
+  Future<void> deleteLog(String id) async {
+    try {
+      await _dio.delete<void>('/api/v1/session-logs/$id');
+    } on Object catch (e) {
+      throw toApiException(e);
+    }
+  }
+
+  // M-PD stale journal helper — lists session_summary rows older
+  // than `days` (default 90) that aren't referenced by any pending
+  // memory_conflicts row. Used by the mobile Journal tab's bulk-
+  // prune panel.
+  Future<List<SessionLogEntry>> listStaleLogs(
+    String cwd, {
+    int days = 90,
+  }) async {
+    try {
+      final res = await _dio.get<Map<String, dynamic>>(
+        '/api/v1/session-logs/stale',
+        queryParameters: {'cwd': cwd, 'days': days},
+      );
+      final raw = res.data?['stale'];
+      if (raw is! List) return const [];
+      return raw
+          .whereType<Map<String, dynamic>>()
+          .map(SessionLogEntry.fromJson)
+          .toList();
+    } on Object catch (e) {
+      throw toApiException(e);
+    }
+  }
+}
+
+// Server returns Doc{} for non-existent rows (so we always have a
+// shape to render); detect "empty" via id.isEmpty.
+class ProjectDoc {
+  ProjectDoc({
+    required this.id,
+    required this.cwd,
+    required this.kind,
+    required this.content,
+    required this.updatedBy,
+  });
+
+  factory ProjectDoc.fromJson(Map<String, dynamic> j) => ProjectDoc(
+    id: j['id']?.toString() ?? '',
+    cwd: j['cwd']?.toString() ?? '',
+    kind: j['kind']?.toString() ?? '',
+    content: j['content']?.toString() ?? '',
+    updatedBy: j['updated_by']?.toString() ?? '',
+  );
+
+  final String id;
+  final String cwd;
+  final String kind;
+  final String content;
+  final String updatedBy;
+
+  bool get isPersisted => id.isNotEmpty;
+}
+
+class ProjectSummary {
+  ProjectSummary({
+    required this.cwd,
+    required this.status,
+    required this.updatedBy,
+    required this.lastActivityAt,
+    required this.idleDays,
+    required this.suggestArchive,
+  });
+
+  factory ProjectSummary.fromJson(Map<String, dynamic> j) => ProjectSummary(
+    cwd: j['cwd']?.toString() ?? '',
+    status: j['status']?.toString() ?? 'active',
+    updatedBy: j['updated_by']?.toString() ?? 'operator',
+    lastActivityAt: DateTime.tryParse(j['last_activity_at']?.toString() ?? ''),
+    idleDays: (j['idle_days'] is int) ? j['idle_days'] as int : 0,
+    suggestArchive: j['suggest_archive'] == true,
+  );
+
+  final String cwd;
+  final String status;
+  final String updatedBy;
+  final DateTime? lastActivityAt;
+  final int idleDays;
+  final bool suggestArchive;
+}
+
+class DocProposal {
+  DocProposal({
+    required this.id,
+    required this.cwd,
+    required this.kind,
+    required this.proposedContent,
+    required this.reason,
+    required this.proposedBySession,
+    required this.createdAt,
+  });
+
+  factory DocProposal.fromJson(Map<String, dynamic> j) => DocProposal(
+    id: j['id']?.toString() ?? '',
+    cwd: j['cwd']?.toString() ?? '',
+    kind: j['kind']?.toString() ?? '',
+    proposedContent: j['proposed_content']?.toString() ?? '',
+    reason: j['reason']?.toString() ?? '',
+    proposedBySession: j['proposed_by_session']?.toString() ?? '',
+    createdAt:
+        DateTime.tryParse(j['created_at']?.toString() ?? '') ?? DateTime.now(),
+  );
+
+  final String id;
+  final String cwd;
+  final String kind;
+  final String proposedContent;
+  final String reason;
+  final String proposedBySession;
+  final DateTime createdAt;
+}
+
+class SessionLogEntry {
+  SessionLogEntry({
+    required this.id,
+    required this.cwd,
+    required this.sessionId,
+    required this.kind,
+    required this.title,
+    required this.content,
+    required this.updatedBy,
+    required this.createdAt,
+  });
+
+  factory SessionLogEntry.fromJson(Map<String, dynamic> j) => SessionLogEntry(
+    id: j['id']?.toString() ?? '',
+    cwd: j['cwd']?.toString() ?? '',
+    sessionId: j['session_id']?.toString() ?? '',
+    kind: j['kind']?.toString() ?? '',
+    title: j['title']?.toString() ?? '',
+    content: j['content']?.toString() ?? '',
+    updatedBy: j['updated_by']?.toString() ?? '',
+    createdAt:
+        DateTime.tryParse(j['created_at']?.toString() ?? '') ?? DateTime.now(),
+  );
+
+  final String id;
+  final String cwd;
+  final String sessionId;
+  final String kind;
+  final String title;
+  final String content;
+  final String updatedBy;
+  final DateTime createdAt;
+}
+
+final projectDocsApiProvider = Provider<ProjectDocsApi>((ref) {
+  return ProjectDocsApi(ref.watch(dioProvider));
+});

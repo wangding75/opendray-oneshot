@@ -1,0 +1,3 @@
+{"type":"system","subtype":"init","session_id":"session-fixture-001"}
+{"type":"assistant","session_id":"session-fixture-001","message":{"role":"assistant","content":[{"type":"text","text":"fixture complete"}]}}
+{"type":"result","subtype":"success","is_error":false,"result":"fixture complete","session_id":"session-fixture-001"}

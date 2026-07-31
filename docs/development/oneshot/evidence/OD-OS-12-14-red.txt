@@ -1,0 +1,5 @@
+FAIL: missing internal/oneshot/executor/process_supervisor.go
+
+exit_code=1
+expected=nonzero
+base_commit=019e251ba5f97f81dc8d21e6e806a259c8e591ca

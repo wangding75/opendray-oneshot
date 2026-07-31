@@ -1,0 +1,38 @@
+{
+  "$schema": "https://opendray.dev/schemas/manifest-v2.json",
+  "id": "shell",
+  "displayName": "Shell",
+  "displayName_zh": "Shell",
+  "description": "Plain bash session for ad-hoc commands and debugging.",
+  "description_zh": "用于临时命令和调试的 bash 会话。",
+  "icon": "⬛",
+  "version": "1.0.0",
+  "kind": "shell",
+  "executable": "$SHELL",
+  "capabilities": {
+    "supportsResume": false,
+    "supportsStream": true,
+    "supportsImages": false,
+    "supportsMcp": false
+  },
+  "configSchema": [
+    {
+      "key": "command",
+      "label": "Command Path",
+      "label_zh": "命令路径",
+      "type": "string",
+      "group": "advanced",
+      "placeholder": "/bin/bash"
+    },
+    {
+      "key": "extraArgs",
+      "label": "Extra CLI Args",
+      "label_zh": "额外 CLI 参数",
+      "type": "args",
+      "group": "advanced"
+    }
+  ],
+  "ui": {
+    "activityBar": { "id": "shell", "icon": "⬛", "title": "Shell" }
+  }
+}

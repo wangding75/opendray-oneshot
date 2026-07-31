@@ -1,0 +1,49 @@
+OD-OS-21/22/23 FINAL VALIDATION
+started_at=2026-07-28T14:25:11Z
+baseline=99ccc1fbb0f8e6bba59dcffe5f21fdf96cf3d404
+
+=== mobile agent tasks source gate ===
+==> Agent Tasks source contract
+OD-OS-21/22/23 Flutter Agent Tasks source contract: PASS
+feature Dart files: 10
+specialized tests: 4
+agentTasks i18n keys: 79 across en/es/zh
+==> i18n parity
+
+[es] 100% complete  (missing:0 extra:0 token-mismatch:0)
+
+[zh] 100% complete  (missing:0 extra:0 token-mismatch:0)
+
+OK: no blocking issues.
+==> One-shot page JSON contract
+ok  	github.com/opendray/opendray-v2/internal/oneshot/store	0.002s
+==> Provider One-shot capability extension contract
+ok  	github.com/opendray/opendray-v2/internal/catalog	0.003s
+SKIP: flutter not found; set MOBILE_AGENT_TASKS_REQUIRE_FLUTTER=1 to make this fatal
+OD-OS-21/22/23 mobile Agent Tasks source gate: PASS
+
+=== control plane source gate ===
+OD-OS-18 secure REST control-plane source gate: PASS
+OD-OS-19 replayable WebSocket and notification outbox source gate: PASS
+OD-OS-20 isolated Telegram One-shot command source gate: PASS
+One-shot task state: PASS
+OD-OS-18/19/20 control-plane source gate: PASS
+
+=== control plane isolated compile/tests ===
+ok  	github.com/opendray/opendray-v2/internal/oneshot/api	1.015s	coverage: 16.7% of statements
+ok  	github.com/opendray/opendray-v2/internal/oneshot/channeladapter	1.010s	coverage: 13.9% of statements
+ok  	github.com/opendray/opendray-v2/internal/oneshot/notification	1.012s	coverage: 45.5% of statements
+ok  	github.com/opendray/opendray-v2/internal/oneshot/appwire	1.014s	coverage: 18.8% of statements
+OD-OS-18/19/20 isolated compile gate: PASS
+
+=== task state ===
+One-shot task state: PASS
+
+=== report files ===
+task reports: PASS
+
+=== git diff check ===
+git diff --check: PASS
+
+completed_at=2026-07-28T14:25:19Z
+RESULT=PASS_WITH_RUNTIME_GATES_PENDING

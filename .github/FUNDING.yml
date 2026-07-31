@@ -1,0 +1,21 @@
+# Funding sources for opendray. Drives the "Sponsor" button GitHub
+# shows on the repo, on every release, and on every issue / PR.
+#
+# Two GitHub accounts, in priority order: the project (Opendray org)
+# for company sponsorships that flow to the project, and the
+# maintainer (navidrast) as a fallback for procurement processes
+# that can only pay individuals. Both surface the same tiers, the
+# money funds the same work, see SPONSORS.md.
+
+github: [Opendray, navidrast]
+
+# --- enable as accounts are set up (uncomment + set the real handle) ---
+# open_collective: opendray
+# ko_fi: navidrast
+# buy_me_a_coffee: navidrast
+# patreon: navidrast
+# liberapay: navidrast
+# tidelift: npm/opendray
+# polar: navidrast
+# thanks_dev: navidrast
+# custom: ["https://opendray.dev/sponsor"]

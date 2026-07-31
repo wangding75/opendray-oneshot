@@ -1,0 +1,43 @@
+PASS: OD-OS-15/16 Codex and Claude non-interactive adapters, JSONL, context IDs, resume args, redaction and failure mapping
+PASS: OD-OS-17 isolated RuntimeContext, exact ownership, atomic busy lease, new-process continuation and no replacement on resume failure
+PASS: OD-OS-10 Go files are formatted
+PASS: adapter contracts, Shell fixture allowlist, ordinary process executor, Run lifecycle and disabled worker gate
+PASS: executor has no PTY, Session, sessions-table or session_transcripts dependency
+ok  	github.com/opendray/opendray-v2/internal/oneshot/adapter	1.020s	coverage: 77.4% of statements
+ok  	github.com/opendray/opendray-v2/internal/oneshot/application	1.015s	coverage: 75.4% of statements
+ok  	github.com/opendray/opendray-v2/internal/oneshot/executor	9.062s	coverage: 67.1% of statements
+ok  	github.com/opendray/opendray-v2/internal/oneshot/queue	1.101s	coverage: 32.0% of statements
+ok  	github.com/opendray/opendray-v2/internal/oneshot/recovery	1.020s	coverage: 59.9% of statements
+ok  	github.com/opendray/opendray-v2/internal/oneshot/saga	1.027s	coverage: 78.6% of statements
+ok  	github.com/opendray/opendray-v2/internal/oneshot/store	1.009s
+ok  	github.com/opendray/opendray-v2/internal/oneshot/store	0.001s [no tests to run]
+PASS: isolated adapter/executor/store vet, race tests, PostgreSQL-tag and Windows/macOS compilation
+One-shot architecture boundaries: PASS
+One-shot task state: PASS
+OD-OS-10 Shell One-shot Adapter and Executor source gate: PASS
+One-shot task state: PASS
+OD-OS-15/16/17 provider adapters and RuntimeContext continuation source gate: PASS
+
+==> combined OD-OS-12/13/14/15/16/17 runtime core gate
+PASS: OD-OS-12 process-tree supervision, TERM/KILL cleanup, timeout, output drain and idempotent cancellation
+PASS: OD-OS-13 durable execution Saga, compensation audit, ACK recovery and restart reconciliation
+PASS: OD-OS-14 provider capability descriptor, versioned adapter registry, shared metadata and credential boundary
+PASS: OD-OS-15/16 Codex and Claude non-interactive adapters, JSONL, context IDs, resume args, redaction and failure mapping
+PASS: OD-OS-17 isolated RuntimeContext, exact ownership, atomic busy lease, new-process continuation and no replacement on resume failure
+PASS: OD-OS-10 Go files are formatted
+PASS: adapter contracts, Shell fixture allowlist, ordinary process executor, Run lifecycle and disabled worker gate
+PASS: executor has no PTY, Session, sessions-table or session_transcripts dependency
+ok  	github.com/opendray/opendray-v2/internal/oneshot/adapter	1.017s	coverage: 77.4% of statements
+ok  	github.com/opendray/opendray-v2/internal/oneshot/application	1.015s	coverage: 75.4% of statements
+ok  	github.com/opendray/opendray-v2/internal/oneshot/executor	9.455s	coverage: 67.1% of statements
+ok  	github.com/opendray/opendray-v2/internal/oneshot/queue	1.101s	coverage: 32.0% of statements
+ok  	github.com/opendray/opendray-v2/internal/oneshot/recovery	1.050s	coverage: 59.9% of statements
+ok  	github.com/opendray/opendray-v2/internal/oneshot/saga	1.024s	coverage: 78.6% of statements
+ok  	github.com/opendray/opendray-v2/internal/oneshot/store	1.010s
+ok  	github.com/opendray/opendray-v2/internal/oneshot/store	0.001s [no tests to run]
+PASS: isolated adapter/executor/store vet, race tests, PostgreSQL-tag and Windows/macOS compilation
+One-shot architecture boundaries: PASS
+One-shot task state: PASS
+OD-OS-10 Shell One-shot Adapter and Executor source gate: PASS
+One-shot task state: PASS
+OD-OS-12/13/14/15/16/17 One-shot runtime core source gate: PASS

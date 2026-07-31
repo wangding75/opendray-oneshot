@@ -1,0 +1,99 @@
+# ── Go ───────────────────────────────────────────────────────
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+/bin/
+/dist/
+/coverage.out
+/coverage.html
+go.work
+go.work.sum
+vendor/
+/opendray
+/opendray.log
+
+# embedded web bundle — produced by `cd app/web && pnpm build`
+internal/web/dist/
+
+# ── Editor / IDE ─────────────────────────────────────────────
+.vscode/
+.idea/
+.claude/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ── Local config & secrets ───────────────────────────────────
+.env
+.env.local
+.env.*.local
+config.toml
+config.local.toml
+*.pem
+*.key
+*.crt
+secrets/
+
+# ── Flutter / mobile (apps/mobile/) ──────────────────────────
+app/mobile/.dart_tool/
+app/mobile/.flutter-plugins
+app/mobile/.flutter-plugins-dependencies
+app/mobile/.packages
+app/mobile/.pub-cache/
+app/mobile/.pub/
+app/mobile/build/
+
+# ── Vendored Flutter packages (third_party/xterm/) ───────────
+# Library package — pubspec.lock should not be committed (the
+# consuming app's lock file is authoritative). Build artefacts
+# only appear when running tests inside the fork directly.
+third_party/xterm/.dart_tool/
+third_party/xterm/build/
+third_party/xterm/pubspec.lock
+app/mobile/ios/Pods/
+app/mobile/ios/.symlinks/
+app/mobile/ios/Flutter/Flutter.framework
+app/mobile/ios/Flutter/Flutter.podspec
+app/mobile/android/.gradle/
+app/mobile/android/captures/
+app/mobile/android/local.properties
+app/mobile/coverage/
+app/mobile/pubspec.lock
+
+# Mobile release artefacts produced by app/mobile/build_android.sh
+app/releases/
+
+# ── Web (apps/web/) ──────────────────────────────────────────
+app/web/node_modules/
+app/web/dist/
+app/web/.vite/
+app/web/coverage/
+app/web/.next/
+app/web/.nuxt/
+
+# ── SDK ts ───────────────────────────────────────────────────
+sdk-ts/node_modules/
+sdk-ts/dist/
+sdk-ts/coverage/
+
+# ── Tooling scripts ──────────────────────────────────────────
+scripts/node_modules/
+# Catch-all for any future subdir installs
+**/node_modules/
+
+# ── Tooling caches ───────────────────────────────────────────
+.air.toml
+tmp/
+.cache/
+
+# ── Local-only dev helpers (never synced to GitHub) ──────────
+# update-local.sh rebuilds + Developer-ID-signs + installs unreleased local
+# code; it's a maintainer-machine helper, not a shipped script. Keep it under
+# ~/.opendray/scripts/ on the dev box.
+scripts/update-local.sh
+docs/integrations/__pycache__/

@@ -1,0 +1,44 @@
+version: "2"
+
+run:
+  timeout: 5m
+  go: "1.25"
+
+linters:
+  default: standard
+  settings:
+    errcheck:
+      # Functions whose error returns are not actionable at the callsite.
+      # Excluded at config level rather than per-callsite to keep `_ =`
+      # clutter out of source. Each entry below is in one of three
+      # categories:
+      #   1. Resource cleanup — the resource is being released; the only
+      #      response to a Close error is logging, which we already do
+      #      at higher layers via the audit subsystem when relevant.
+      #   2. Fire-and-forget I/O — log/diagnostic writes whose failure
+      #      doesn't change the program's correctness.
+      #   3. Compensating actions — Rollback after a failed Commit; the
+      #      transaction is already torn down.
+      exclude-functions:
+        - (io.Closer).Close
+        - (*os.File).Close
+        - (*github.com/gorilla/websocket.Conn).Close
+        - (*compress/gzip.Reader).Close
+        - (*archive/zip.ReadCloser).Close
+        - (*github.com/fsnotify/fsnotify.Watcher).Close
+        - (github.com/jackc/pgx/v5.Tx).Rollback
+        - fmt.Fprintf
+        - fmt.Fprintln
+        - fmt.Fprint
+        - os.Remove
+        - os.RemoveAll
+        - os.Chmod
+
+formatters:
+  enable:
+    - gofmt
+    - goimports
+
+issues:
+  max-issues-per-linter: 0
+  max-same-issues: 0

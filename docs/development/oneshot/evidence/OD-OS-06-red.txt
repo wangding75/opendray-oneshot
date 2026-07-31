@@ -1,0 +1,6 @@
+OD-OS-06 Red evidence against baseline 6f726639ca88de5e083e631ff24eb629b39b4140
+
+internal/channel/delivery/service.go -> exit=128 (missing)
+internal/channel/delivery/model.go -> exit=128 (missing)
+internal/store/migrations/0082_channel_delivery_outbox.sql -> exit=128 (missing)
+internal/channel/delivery_contract.go -> exit=128 (missing)

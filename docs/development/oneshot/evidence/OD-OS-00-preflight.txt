@@ -1,0 +1,115 @@
+# OpenDray One-shot preflight
+utc=2026-07-27T03:49:15Z
+local=2026-07-27T11:49:15+0800
+repo=/mnt/data/opendray-work/opendray-main
+branch=feat/oneshot-agent
+head=649c7cb0a03b156a2ba4690be319c0086751b6a0
+upstream=649c7cb0a03b156a2ba4690be319c0086751b6a0
+os=Linux dd6db290c02a 6.12.13 #1 SMP Wed Jul 22 00:33:13 UTC 2026 x86_64 GNU/Linux
+
+## Git
+$ git --version
+git version 2.47.3
+[exit=0]
+
+## Go local
+$ env GOTOOLCHAIN=local go version
+go version go1.23.2 linux/amd64
+[exit=0]
+
+## Node
+$ node --version
+v22.16.0
+[exit=0]
+
+## Corepack
+$ corepack --version
+0.32.0
+[exit=0]
+
+## pnpm
+$ pnpm --version
+./scripts/oneshot/preflight.sh: line 14: pnpm: command not found
+[exit=127]
+
+## Flutter
+$ flutter --version
+./scripts/oneshot/preflight.sh: line 14: flutter: command not found
+[exit=127]
+
+## Dart
+$ dart --version
+./scripts/oneshot/preflight.sh: line 14: dart: command not found
+[exit=127]
+
+## PostgreSQL client
+$ psql --version
+./scripts/oneshot/preflight.sh: line 14: psql: command not found
+[exit=127]
+
+## Repository counts
+files=1301
+go_files=476
+go_test_files=185
+dart_files=142
+ts_tsx_files=185
+internal_go_packages=55
+migration_files=81
+
+## i18n parity
+$ node scripts/check-i18n-parity.mjs
+
+[es] 100% complete  (missing:0 extra:0 token-mismatch:0)
+
+[zh] 100% complete  (missing:0 extra:0 token-mismatch:0)
+
+OK: no blocking issues.
+[exit=0]
+
+## Go test baseline
+$ env GOTOOLCHAIN=local go test ./...
+go: go.mod requires go >= 1.25.0 (running go 1.23.2; GOTOOLCHAIN=local)
+[exit=1]
+
+## Web dependency check
+$ corepack pnpm --version
+/opt/nvm/versions/node/v22.16.0/lib/node_modules/corepack/dist/lib/corepack.cjs:22051
+    throw new Error(
+          ^
+
+Error: Error when performing the request to https://registry.npmjs.org/pnpm/-/pnpm-10.27.0.tgz; for troubleshooting help, see https://github.com/nodejs/corepack#troubleshooting
+    at fetch (/opt/nvm/versions/node/v22.16.0/lib/node_modules/corepack/dist/lib/corepack.cjs:22051:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async fetchUrlStream (/opt/nvm/versions/node/v22.16.0/lib/node_modules/corepack/dist/lib/corepack.cjs:22081:20)
+    ... 4 lines matching cause stack trace ...
+    at async Object.runMain (/opt/nvm/versions/node/v22.16.0/lib/node_modules/corepack/dist/lib/corepack.cjs:23648:7) {
+  [cause]: TypeError: fetch failed
+      at node:internal/deps/undici/undici:13510:13
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async fetch (/opt/nvm/versions/node/v22.16.0/lib/node_modules/corepack/dist/lib/corepack.cjs:22045:16)
+      at async fetchUrlStream (/opt/nvm/versions/node/v22.16.0/lib/node_modules/corepack/dist/lib/corepack.cjs:22081:20)
+      at async download (/opt/nvm/versions/node/v22.16.0/lib/node_modules/corepack/dist/lib/corepack.cjs:22204:18)
+      at async installVersion (/opt/nvm/versions/node/v22.16.0/lib/node_modules/corepack/dist/lib/corepack.cjs:22296:55)
+      at async Engine.ensurePackageManager (/opt/nvm/versions/node/v22.16.0/lib/node_modules/corepack/dist/lib/corepack.cjs:22847:32)
+      at async Engine.executePackageManagerRequest (/opt/nvm/versions/node/v22.16.0/lib/node_modules/corepack/dist/lib/corepack.cjs:22958:25)
+      at async Object.runMain (/opt/nvm/versions/node/v22.16.0/lib/node_modules/corepack/dist/lib/corepack.cjs:23648:7) {
+    [cause]: Error: getaddrinfo EAI_AGAIN registry.npmjs.org
+        at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26) {
+      errno: -3001,
+      code: 'EAI_AGAIN',
+      syscall: 'getaddrinfo',
+      hostname: 'registry.npmjs.org'
+    }
+  }
+}
+
+Node.js v22.16.0
+[exit=1]
+
+## Flutter availability
+$ sh -c command\ -v\ flutter\ \>/dev/null\ \&\&\ flutter\ --version
+[exit=127]
+
+## PostgreSQL availability
+$ sh -c command\ -v\ psql\ \>/dev/null\ \&\&\ psql\ --version
+[exit=127]

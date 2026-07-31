@@ -1,0 +1,85 @@
+contract: OD-OS-01
+status: frozen
+purpose: >-
+  Machine-readable coverage map for the pre-existing interactive PTY Session
+  behavior. Runtime commands remain mandatory at the final local gate.
+sourceGate:
+  command: python3 scripts/oneshot/check-pty-source-baseline.py
+  selfTest: scripts/oneshot/check-pty-source-baseline-test.sh
+  runtimeIndependent: true
+runtimeGate:
+  command: PTY_REGRESSION_REQUIRE_GO=1 PTY_REGRESSION_REQUIRE_MOBILE=1 scripts/oneshot/check-pty-regression.sh
+  runtimeRequiredAtFinalGate: true
+coverage:
+  - capability: pty_process_launch
+    source:
+      - internal/session/manager.go
+    tests:
+      - scripts/oneshot/check-pty-source-baseline.py
+  - capability: session_state_transitions
+    source:
+      - internal/session/session.go
+      - internal/session/transitions.go
+    tests:
+      - internal/session/transitions_test.go
+      - internal/session/start_reserve_test.go
+      - internal/session/reconcile_test.go
+  - capability: ring_buffer_replay
+    source:
+      - internal/session/ringbuf.go
+    tests:
+      - internal/session/ringbuf_test.go
+  - capability: terminal_virtual_state
+    source:
+      - internal/session/term.go
+    tests:
+      - internal/session/term_test.go
+  - capability: idle_and_turn_detection
+    source:
+      - internal/session/idle.go
+      - internal/session/turn.go
+    tests:
+      - internal/session/idle_test.go
+      - internal/session/turn_test.go
+  - capability: session_http_input_resize_buffer_stream
+    source:
+      - internal/session/handler.go
+    tests:
+      - internal/session/handler_test.go
+      - app/mobile/test/core/api/sessions_api_contract_test.dart
+      - scripts/oneshot/check-pty-source-baseline.py
+  - capability: channel_reply_active_last_priority
+    source:
+      - internal/session/channeladapter/binding_store.go
+      - internal/session/channeladapter/handler.go
+    tests:
+      - internal/session/channeladapter/binding_store_test.go
+      - internal/session/channeladapter/adapter_test.go
+  - capability: channel_and_conversation_scoped_bindings
+    source:
+      - internal/session/channeladapter/binding_store.go
+    tests:
+      - internal/session/channeladapter/binding_store_test.go
+  - capability: rune_by_rune_input_and_enter
+    source:
+      - internal/session/channeladapter/input_submitter.go
+    tests:
+      - internal/session/channeladapter/input_submitter_test.go
+  - capability: telegram_reply_and_callback_transport
+    source:
+      - internal/channel/telegram/telegram.go
+    tests:
+      - internal/channel/telegram/telegram_test.go
+  - capability: flutter_terminal_stream_reconnect_input_resize
+    source:
+      - app/mobile/lib/features/sessions/session_terminal_view.dart
+      - app/mobile/lib/core/api/sessions_api.dart
+    tests:
+      - app/mobile/test/core/api/sessions_api_contract_test.dart
+      - app/mobile/test/widget_test.dart
+      - scripts/oneshot/check-pty-source-baseline.py
+finalGatePolicy:
+  sourceGateMustPass: true
+  goRuntimeMustPass: true
+  flutterRuntimeMustPass: true
+  missingRuntimeToolchainStatus: deferred_not_passed

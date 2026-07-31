@@ -1,0 +1,7 @@
+# OD-OS-07 Red evidence
+baseline_commit=a84f08863ae2a9660a0b4bb7d60c885671132d83
+$ git cat-file -e a84f08863ae2a9660a0b4bb7d60c885671132d83:internal/oneshot/domain
+fatal: path 'internal/oneshot/domain' exists on disk, but not in 'a84f08863ae2a9660a0b4bb7d60c885671132d83'
+EXPECTED: One-shot domain package did not exist at baseline.
+$ git grep -n "type Task struct" a84f08863ae2a9660a0b4bb7d60c885671132d83 -- internal/oneshot/domain
+EXPECTED: no One-shot Task aggregate or state-machine tests existed.

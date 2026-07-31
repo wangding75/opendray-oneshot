@@ -1,0 +1,5265 @@
+{
+  "common": {
+    "ok": "确定",
+    "cancel": "取消",
+    "save": "保存",
+    "delete": "删除",
+    "edit": "编辑",
+    "back": "返回",
+    "done": "完成",
+    "close": "关闭",
+    "retry": "重试",
+    "copy": "复制",
+    "enabled": "已启用",
+    "refresh": "刷新",
+    "clear": "清除",
+    "more": "更多"
+  },
+  "auth": {
+    "signInTitle": "登录",
+    "changeServer": "更换",
+    "username": "用户名",
+    "password": "密码",
+    "signIn": "登录",
+    "signingIn": "登录中…",
+    "subtitle": "请使用运维账号登录。",
+    "errorRequired": "请输入用户名和密码",
+    "errorGeneric": "登录失败：{error}",
+    "errorFallback": "登录失败"
+  },
+  "nav": {
+    "sessions": "会话",
+    "memory": "记忆",
+    "notes": "笔记",
+    "more": "更多",
+    "activity": "活动",
+    "providers": "提供方",
+    "channels": "频道",
+    "integrations": "集成",
+    "plugins": "插件",
+    "backups": "备份",
+    "settings": "设置",
+    "workspace": "工作区",
+    "knowledge": "知识",
+    "vault": "文档库",
+    "cortex": "心智中枢",
+    "updateAvailable": "有可用更新",
+    "resources": "资源",
+    "docs": "文档与安装",
+    "community": "社区",
+    "sponsor": "赞助",
+    "updates": {
+      "title": "更新",
+      "whatsNew": "{version} 新内容",
+      "loading": "正在加载更新说明…",
+      "loadFailed": "无法加载更新说明（{error}）。",
+      "noHighlights": "此版本没有简短亮点。请打开完整更新日志查看详情。",
+      "openFull": "打开完整更新日志",
+      "markRead": "标为已读",
+      "unread": "未读更新说明",
+      "badgeCount": "更新 · {count}",
+      "sourceChangelog": "亮点来自 CHANGELOG.md（GitHub Release 正文为占位）。"
+    },
+    "roundTable": "圆桌"
+  },
+  "web": {
+    "brand": "opendray",
+    "loading": "加载中…",
+    "topbar": {
+      "expandSidebar": "展开侧边栏",
+      "collapseSidebar": "收起侧边栏",
+      "search": "搜索",
+      "openPalette": "打开命令面板",
+      "theme": "主题",
+      "themeLabel": "主题：{mode}",
+      "appearance": "外观",
+      "themeLight": "浅色",
+      "themeDark": "深色",
+      "themeSystem": "跟随系统",
+      "language": "语言",
+      "languageEnglish": "English",
+      "languageChinese": "中文",
+      "languageSpanish": "Español",
+      "signedInAs": "登录账号",
+      "tokenExpires": "令牌到期",
+      "signOut": "退出登录"
+    },
+    "sessions": {
+      "list": {
+        "title": "会话",
+        "countSeparator": "·",
+        "newAria": "创建新会话",
+        "newTooltip": "新建会话",
+        "loading": "加载中…",
+        "emptyTitle": "暂无会话。",
+        "emptyHint": "按 {kbd} 创建。",
+        "endedHeader": "已结束 ({count})",
+        "clearAll": "清空全部",
+        "confirmClearAll": "确定移除全部 {count} 个已结束的会话?",
+        "confirmTerminate": "终止并移除 {name}?",
+        "childPromoted": "其 {count} 个子任务会话将被提升为顶级。",
+        "childPromotedPlural": "其 {count} 个子任务会话将被提升为顶级。",
+        "footer": "{live} 运行中 · {ended} 已结束",
+        "row": {
+          "deleteAria": "删除会话",
+          "titleRemoveHistory": "从历史中移除",
+          "titleTerminate": "终止并移除",
+          "titleRemove": "移除",
+          "claudeAccountTitle": "Claude 账号：{label}"
+        },
+        "deleteFailedToast": "删除失败"
+      },
+      "tabs": {
+        "closeAria": "关闭标签并移除会话",
+        "closeTitle": "关闭标签并移除会话"
+      },
+      "page": {
+        "removedToast": "会话已移除",
+        "removeFailedToast": "移除失败",
+        "stoppedToast": "会话已停止",
+        "stopFailedToast": "停止失败",
+        "restartedToast": "会话已重启",
+        "restartFailedToast": "重启失败",
+        "confirmCloseTabTitle": "停止并移除 \"{name}\"?",
+        "confirmCloseTabDescription": "CLI 进程将被终止并删除该记录。",
+        "confirmCloseTabConfirm": "停止并移除",
+        "confirmRemoveTitle": "移除 {name}?",
+        "confirmRemoveTitleFallback": "移除会话?",
+        "confirmRemoveDescription": "这将删除该记录。",
+        "confirmRemoveConfirm": "移除"
+      },
+      "empty": {
+        "title": "未打开任何会话",
+        "hint": "从列表中挑选一个会话，或新建一个。快捷键：{kbdN} 新建，{kbdW} 关闭，{kbdRange} 切换。",
+        "spawn": "创建会话"
+      },
+      "header": {
+        "loadingSession": "正在加载会话…",
+        "showList": "显示会话列表",
+        "hideList": "隐藏会话列表",
+        "showInspector": "显示检查器",
+        "hideInspector": "隐藏检查器",
+        "attachImage": "附加图片",
+        "attachImageTooltip": "附加图片（或直接粘贴 / 拖入终端）",
+        "restart": "重启",
+        "restarting": "重启中…",
+        "remove": "移除",
+        "removing": "移除中…",
+        "stop": "停止",
+        "stopping": "停止中…",
+        "pid": "pid {pid}",
+        "selectText": "选择并复制",
+        "selectTextTooltip": "打开可选择文本视图,复制输出中的任意部分",
+        "transcript": "完整记录",
+        "transcriptTooltip": "打开整个会话的完整文本记录（适用于自身不支持滚动的 CLI，例如 Grok）"
+      },
+      "terminal": {
+        "uploadingToast": "正在上传图片…",
+        "uploadFailedToast": "上传失败",
+        "uploadInvalidTypeToast": "仅支持图片文件",
+        "dropToAttach": "释放以附加图片",
+        "attachInsert": "插入",
+        "attachClear": "全部清除",
+        "attachRemove": "移除 {name}",
+        "copiedToast": "已复制到剪贴板",
+        "copyFailedToast": "无法复制到剪贴板",
+        "selectCopyTitle": "选择并复制",
+        "selectCopyDesc": "拖动(触屏长按)选择输出中的任意部分,然后复制。",
+        "selectCopyCopySelection": "复制选中",
+        "selectCopyCopyAll": "全部复制",
+        "selectCopyNoSelection": "请先选择文本",
+        "selectCopyEmpty": "暂无可复制的输出",
+        "transcriptTitle": "会话完整记录",
+        "transcriptDesc": "PTY 至今输出的全部内容，已去除终端控制码。当运行中的 CLI 无法在其自身视图中向上滚动时尤其有用。",
+        "transcriptLoading": "正在加载完整记录…",
+        "transcriptEmpty": "暂无输出。",
+        "transcriptFetchFailed": "无法加载完整记录",
+        "transcriptRefresh": "刷新"
+      },
+      "spawn": {
+        "title": "创建会话",
+        "description": "在已注册的 Provider 下启动一个 CLI 会话。",
+        "provider": "Provider",
+        "claudeAccount": "Claude 账号",
+        "loadingAccounts": "正在加载账号…",
+        "noAccounts": "尚未检测到 Claude 账号。先 spawn 这个会话,在终端里运行 <1>claude login</1> —— 认证完成后凭据会落到网关的 <3>~/.claude</3>,下次进 spawn 时自动出现。",
+        "default": "默认",
+        "defaultTooltip": "使用系统 keychain / 环境变量",
+        "tokenEmptyBadge": "·未填",
+        "tokenMissingTooltip": "未设置 token — 请先在 Providers 面板中填入",
+        "multiAccountHint": "已配置多个账号 — 请为本次会话挑选一个。",
+        "cwd": "工作目录",
+        "cwdPlaceholder": "/Users/you/projects/foo",
+        "browse": "浏览",
+        "nameLabel": "名称（可选）",
+        "namePlaceholder": "claude in pet-tracker",
+        "argsLabel": "CLI 参数（每行一个）",
+        "bypassClaude": "跳过权限提示",
+        "bypassCodex": "跳过所有批准与沙盒 (--dangerously-bypass-approvals-and-sandbox)",
+        "bypassAntigravity": "跳过权限 / YOLO (--dangerously-skip-permissions)",
+        "bypassOpencode": "跳过权限检查 (--dangerously-skip-permissions)",
+        "bypassGrok": "跳过权限 / YOLO（--always-approve）",
+        "bypassOnHint": "本次会话将以更高的自主权运行。",
+        "bypassOffHint": "关闭 — 确认与提示按正常流程处理。",
+        "errorPickProvider": "请选择一个 Provider。",
+        "errorCwdRequired": "请填写工作目录。",
+        "cancel": "取消",
+        "submit": "创建",
+        "submitting": "创建中…",
+        "spawnedToast": "会话已创建",
+        "spawnedDescription": "{provider} · pid {pid}",
+        "pidFallback": "—"
+      },
+      "accountSwitcher": {
+        "tooltip": "切换 Claude 账号（将重启 CLI 进程）",
+        "tooltipAgy": "切换 Antigravity 账号（将重启 CLI 进程）",
+        "currentDefault": "默认",
+        "menuTitle": "切换 Claude 账号",
+        "menuTitleAgy": "切换 Antigravity 账号",
+        "confirmSwitchAgy": "切换账号会以全新对话重启 Antigravity CLI——CLI 内的历史记录不会在账号间保留。任何进行中的工具执行或未发送的输入都会丢失。是否继续？",
+        "defaultName": "默认",
+        "defaultSubtitle": "CLI 的系统 keychain / 环境变量",
+        "tokenEmpty": "·未填",
+        "confirmSwitch": "切换账户会以全新对话重启 Claude CLI —— CLI 内的历史不会跨账户保留。正在进行的工具调用或未发送的输入会丢失。是否继续？",
+        "confirmSwitchCarry": "切换账户将重启 Claude CLI。你最近对话的摘要会被带入，并以新账户发送给服务商。正在进行的工具调用或未发送的输入会丢失。是否继续？",
+        "carryContext": "带入对话上下文",
+        "carryContextHelp": "用你最近对话的摘要初始化新账户。先前内容会以新账户发送给服务商。",
+        "switchedToast": "账号已切换",
+        "switchedDescription": "当前使用 @{account} · pid {pid}",
+        "switchedDefault": "默认",
+        "switchFailedToast": "切换失败"
+      },
+      "inspector": {
+        "tabs": {
+          "files": "文件",
+          "git": "Git",
+          "search": "搜索",
+          "tasks": "任务",
+          "history": "历史",
+          "vault": "文档库",
+          "cortex": "心智中枢",
+          "database": "数据库"
+        },
+        "vaultPanel": {
+          "open": "打开文档库",
+          "projectDocs": "项目文档",
+          "projectDocsHint": "文档库中由 AI 撰写的项目文档。若本项目笔记在别处，可重新绑定文件夹。",
+          "pinnedHint": "已为本项目绑定自定义文档库文件夹。",
+          "bind": "绑定",
+          "changeLocation": "更改绑定到本项目的文档库文件夹",
+          "newDoc": "新建文档",
+          "cancel": "取消",
+          "create": "创建",
+          "filenamePlaceholder": "文件名.md",
+          "noDocs": "该文档库文件夹下暂无项目文档。",
+          "createFailed": "无法创建文档",
+          "mappingTitle": "绑定项目文档库文件夹",
+          "mappingHelp": "选择存放本项目笔记的文档库文件夹。文档库相对路径，例如 projects/my-app。留空则使用自动推导的默认值。",
+          "sessionCwd": "会话工作目录",
+          "folderLabel": "文档库文件夹",
+          "mappingStoredHint": "保存在文档库的 .opendray-projects.json 中，会随笔记一起同步。",
+          "save": "保存",
+          "clearOverride": "清除覆盖",
+          "boundToast": "已绑定项目文档库文件夹",
+          "clearedToast": "已清除覆盖 —— 使用默认文件夹",
+          "saveFailed": "无法保存映射"
+        },
+        "cortexPanel": {
+          "noCwd": "会话没有工作目录——心智中枢功能需要工作目录。",
+          "open": "打开心智中枢工作区",
+          "docs": "文档",
+          "journal": "日志",
+          "inbox": "收件箱",
+          "archived": "已归档",
+          "pending": "待处理",
+          "goal": "目标",
+          "plan": "计划",
+          "latestJournal": "最新日志",
+          "empty": "该项目尚未捕获任何心智中枢记忆。启动会话或设定目标以填充。"
+        }
+      },
+      "ended": {
+        "bufferUnavailable": "[缓冲区不可用]",
+        "readOnlyBanner": "[会话已结束 — 只读缓冲区]"
+      },
+      "fileBrowser": {
+        "title": "选择工作目录",
+        "description": "浏览网关主机的文件系统并选择一个文件夹。",
+        "parent": "上级目录",
+        "home": "家目录",
+        "refresh": "刷新",
+        "pathPlaceholder": "/Users/you/projects",
+        "loading": "加载中…",
+        "empty": "目录为空。",
+        "newFolder": "新建文件夹",
+        "newFolderPlaceholder": "new-folder-name",
+        "create": "创建",
+        "cancel": "取消",
+        "useThisFolder": "使用此文件夹",
+        "createdToast": "文件夹已创建",
+        "mkdirFailedToast": "创建失败",
+        "homeFailedToast": "读取家目录失败"
+      }
+    },
+    "memory": {
+      "title": "记忆",
+      "subtitle": "浏览、搜索并编辑 Agent 通过 opendray-memory MCP 服务器存储的记忆。",
+      "navProject": "项目",
+      "navArchived": "已归档",
+      "navWorkers": "Cortex 设置",
+      "navConfiguration": "存储与嵌入 →",
+      "navQuarantine": "隔离区"
+    },
+    "journalStale": {
+      "title": "清理陈旧条目",
+      "subtitle": "（超过 {days} 天、无 pending 冲突引用）",
+      "daysLabel": "超过（天）：",
+      "loading": "扫描中…",
+      "empty": "没有可清理的陈旧条目。",
+      "selectAll": "全选",
+      "deselectAll": "取消全选",
+      "deleteSelected": "删除 ({count})",
+      "deleted_one": "已删除 {count} 条",
+      "deleted_other": "已删除 {count} 条"
+    },
+    "conflicts": {
+      "title": "跨层冲突",
+      "subtitle": "每日 detector 在 facts/plan/goal/journal 之间发现的矛盾。",
+      "loading": "正在加载冲突…",
+      "empty": "无待处理冲突。点击\"立即检测\"运行一次按需扫描。",
+      "pickCwd": "选一个项目查看其冲突。",
+      "detectNow": "立即检测",
+      "detected": "新发现 {count} 条冲突",
+      "accept": "采纳",
+      "dismiss": "驳回",
+      "accepted": "已采纳 — 别忘了实际修正",
+      "dismissed": "已驳回",
+      "deletedFact": "已删除 fact 并采纳冲突",
+      "quickActions": "快速修复：",
+      "deleteFact": "删除 fact",
+      "deleteFactSide": "删除 {side}: {ref}",
+      "confirmDelete": {
+        "title": "确认删除 fact {side}?",
+        "description": "永久删除此 fact 并采纳冲突。另一侧保留为最终采信的版本。",
+        "targetLabel": "将删除（{side} 侧）：",
+        "keepLabel": "将保留（{side} 侧）：",
+        "nonFactOther": "（{layer} 条目 — 请打开对应 tab 查看完整内容）",
+        "evidenceLabel": "Detector 给出的证据：",
+        "loading": "加载 fact 内容中…",
+        "loadError": "无法加载 fact 内容，请在 Memory 页面手动查看。",
+        "cancel": "取消",
+        "confirm": "确认删除 {side}"
+      },
+      "openLayer": {
+        "plan": "打开计划编辑器",
+        "goal": "打开目标编辑器"
+      },
+      "severity": {
+        "low": "低",
+        "medium": "中",
+        "high": "高"
+      }
+    },
+    "memoryHealth": {
+      "title": "记忆健康 — 最近 {days} 天",
+      "subtitle": "本项目两套记忆子系统的运行情况聚合。",
+      "loading": "正在加载健康快照…",
+      "errorLoading": "加载健康快照失败。",
+      "pickCwd": "选一个项目查看其记忆健康。",
+      "newFacts": "新增 facts",
+      "newFactsHint": "累计 {total} 条",
+      "captureFires": "Capture 触发次数",
+      "captureFiresHint": "存入 {stored} · 去重 {deduped}",
+      "newJournal": "新增日志条目",
+      "newJournalHint": "累计 {total} 条",
+      "planAge": "计划最近更新",
+      "planAgeHint": "{count} 条 plan-drift 提案待审",
+      "planAgeHintNone": "无 plan-drift 提案待审",
+      "goalAge": "目标最近更新",
+      "pending": "待审提案",
+      "pendingHint": "最久 {days} 天",
+      "topHit": "命中最多 · {hits} 次",
+      "zeroHit": "{count} 条超过 7 天未命中的 fact — 清理候选。",
+      "never": "从未",
+      "today": "今日",
+      "daysAgo_one": "{count} 天前",
+      "daysAgo_other": "{count} 天前"
+    },
+    "memoryConfig": {
+      "title": "Cortex 设置",
+      "subtitle": "AI 闭环的全部运行时旋钮都在这里——spawn 注入、LLM provider、按任务的工作器路由、捕获触发器、注入策略、token 花费。保存即生效，无需重启。",
+      "sections": {
+        "providers": "Provider 池",
+        "workers": "任务路由 (Workers)",
+        "rules": "Capture 规则",
+        "profiles": "注入策略 (Injection profiles)",
+        "costs": "Token 成本"
+      },
+      "sectionHints": {
+        "providers": "已注册的 HTTP endpoint 池 (Ollama / LM Studio / Anthropic / OpenAI / Integration)，所有任务都能引用。",
+        "workers": "每个 task 选用 HTTP provider（便宜、本地）或 headless Claude / Antigravity Agent（质量更高，消耗 CLI 配额）。",
+        "rules": "Capture 引擎何时触发（每 N 条消息 / 闲置 / 累计 K 字符 / 手动）。规则若没固定 provider，会跟随上面 Capture 任务的 worker 设置。",
+        "profiles": "Session 启动时把哪些历史记忆塞进 agent system prompt（按最近、按相关度、混合、关闭）。",
+        "costs": "memory_summarizer_calls 重算的累计花费。本地 provider（Ollama / LM Studio / Integration）免费；云 provider 显示真实成本。"
+      },
+      "moveBanner": {
+        "title": "记忆配置已迁移",
+        "body": "所有记忆相关设置（providers / capture rules / injection profiles / cost）现在跟 Workers 在同一页面，相关开关聚在一起。",
+        "openButton": "打开 记忆配置 →"
+      },
+      "infra": {
+        "title": "存储与嵌入（基础设施）",
+        "hint": "记忆配置的另一半——嵌入后端、检索调参、gatekeeper/cleaner 总开关与知识图谱开关——位于 Server Settings，修改需重启。",
+        "openSettings": "Server Settings →",
+        "embedder": "嵌入器",
+        "gatekeeper": "gatekeeper",
+        "cleaner": "cleaner",
+        "knowledge": "知识图谱",
+        "on": "开",
+        "off": "关"
+      }
+    },
+    "memoryWorkers": {
+      "title": "Memory workers",
+      "loading": "正在加载 worker 配置…",
+      "errorTitle": "无法访问该接口。",
+      "errorDescription": "/api/v1/memory/workers 路由在 M25 中新增 — opendray 二进制可能需要重启以挂载它们并执行 migration 0029。",
+      "intro": "Memory 子系统的每个 LLM 接入点都可由本地 <1>summarizer</1>（LM Studio / OpenAI 兼容）端点服务，或通过以 <5>--print</5> 模式启动的无头 <3>Claude / Antigravity agent</3> 服务。叙事性任务（gitactivity、transcript）从 agent worker 中获益；高频任务（gatekeeper）按设计仍走本地端点。",
+      "enabledBadge": "已启用",
+      "disabledBadge": "已禁用",
+      "summarizerOnlyBadge": "仅 summarizer",
+      "callsCount": "{count} 次调用 · 24 小时",
+      "avgMs": "平均 {ms}ms",
+      "errorsCount": "{count} 次错误",
+      "workerLabel": "Worker",
+      "summarizerHttp": "Summarizer (HTTP)",
+      "agentCliPrint": "Agent (CLI --print)",
+      "summarizerProviderLabel": "Summarizer Provider",
+      "registryDefault": "注册表默认值",
+      "cliLabel": "CLI",
+      "selectPlaceholder": "选择",
+      "cliClaude": "Claude",
+      "claudeAccountLabel": "Claude 账号",
+      "claudeAccountDefault": "默认",
+      "agentWarning": "Agent 模式每次调用都会启动一个无头 CLI。延迟从 <1>~1s</1>（summarizer）上升到 <3>~5-15s</3>；成本从 CPU 转移到 Claude/Antigravity 配额。",
+      "enabledCheckbox": "启用",
+      "testButton": "测试",
+      "saveButton": "保存",
+      "recentCalls": "最近调用 ({count})",
+      "tableWhen": "时间",
+      "tableWorker": "worker",
+      "tableMs": "ms",
+      "tableOk": "ok",
+      "savedToast": "{label} 已更新",
+      "saveFailedToast": "保存失败",
+      "testOkToast": "{label} OK — {ms}ms",
+      "testFailedToast": "{label} 失败",
+      "testCallFailedToast": "测试调用失败",
+      "unknownError": "未知错误",
+      "tasks": {
+        "gatekeeper": {
+          "label": "Gatekeeper",
+          "description": "每次 memory_store 前的预写过滤器。高频（目标 <500ms） — 仅 summarizer。",
+          "modelAdvice": "高频的是/否判断——轻量模型（haiku / flash-lite / codex-mini / 本地）完全够用。"
+        },
+        "cleaner": {
+          "label": "Cleaner librarian",
+          "description": "周期性 LLM 整理。对旧记忆判定为保留 / 过期 / 重复。",
+          "modelAdvice": "批量判定旧事实去留——推荐轻量模型；按计划周期运行。"
+        },
+        "gitactivity": {
+          "label": "Git 活动总结器",
+          "description": "git log → 每 24 小时生成 2-3 段叙事。天然适合 agent worker。",
+          "modelAdvice": "git 历史的叙事性总结——均衡模型（sonnet / flash）的可读性明显更好。"
+        },
+        "transcript": {
+          "label": "会话记录总结器",
+          "description": "会话结束时的“agent 都做了什么”总结。天然适合 agent worker。",
+          "modelAdvice": "会话「agent 做了什么」总结——推荐均衡模型；其产出供日志与漂移检测使用。"
+        },
+        "plan_drift": {
+          "label": "计划漂移检测",
+          "description": "每个 session 结束后判断项目 plan 是否需要更新并提出 proposal。用 agent 推理质量更高。",
+          "modelAdvice": "改写目标/计划/章节——判断密集型；强模型（sonnet/opus）能避免糟糕的自动更新。"
+        },
+        "conflict_detector": {
+          "label": "跨层冲突检测",
+          "description": "每日扫描 facts/plan/goal/journal 之间的矛盾。模型越强，误报越少。",
+          "modelAdvice": "每日跨层矛盾扫描——均衡模型即可。"
+        },
+        "capture": {
+          "label": "Capture 引擎",
+          "description": "按触发器从 session transcript 抽取 fact。Agent 模式在长会话上 fact 质量明显更好；summarizer 模式便宜且本地。",
+          "modelAdvice": "频率最高的任务：每隔几条消息抽取事实——用能干活的最便宜模型（haiku / 本地）。"
+        },
+        "blueprint": {
+          "modelAdvice": "偶发、由你手动触发的项目分类——均衡模型；这里质量比成本重要。",
+          "label": "蓝图提议器",
+          "description": "根据仓库信号识别项目类型并提议文档章节结构。由蓝图编辑器手动触发。"
+        },
+        "curation": {
+          "modelAdvice": "你的对话式文档/方针编辑器——推荐强模型（sonnet/opus）；它改写的是你依赖的文档。",
+          "label": "AI 讨论",
+          "description": "驱动「与 AI 讨论」通道：更新文档章节、重订知识页；修订遵循锁定状态。"
+        }
+      },
+      "modelLabel": "模型",
+      "modelHint": "为该任务固定 CLI 模型（如基础杂活用 haiku）。留空 = CLI 默认。",
+      "modelCliDefault": "CLI 默认（最新）",
+      "modelCustom": "自定义…",
+      "modelCustomPlaceholder": "精确模型 ID",
+      "modelBackToList": "返回列表",
+      "cliCodex": "Codex（codex exec）",
+      "cliAntigravity": "Antigravity（agy --print）",
+      "cliGrok": "Grok (grok)",
+      "cliOpencode": "OpenCode (opencode run)",
+      "infraGateOff": "{label} 的路由已保存，但它的功能总开关在 Server Settings 中处于关闭状态——开启之前不会执行任何调用。",
+      "infraGateOpen": "去开启",
+      "providerModel": "模型："
+    },
+    "archived": {
+      "loading": "加载中…",
+      "emptyTitle": "暂无归档",
+      "emptyDescription": "所有项目均无已归档记忆。自动清理器会把过时和重复的事实软归档到这里（30 天内可恢复）——目前尚未移除任何内容。",
+      "title": "已归档记忆",
+      "subtitle": "软归档的记忆，在 30 天宽限期被清除前均可恢复。来源：auto-cleaner 的判定、逐条手动归档，以及你归档的整个项目——项目的记忆会一起到这里，取消归档时一起回来（项目归档不受宽限期清除影响）。",
+      "globalScope": "(全局)",
+      "summary": "{projects} 个项目 · {memories} 条归档记忆",
+      "memCount": "{count} 条记忆",
+      "restoreAll": "全部恢复",
+      "restoreAllTooltip": "恢复该项目下的全部归档记忆",
+      "restoreAllConfirm": "恢复 {project} 的全部 {count} 条归档记忆？",
+      "restoredAllToast": "已恢复 {count} 条记忆",
+      "deleteButton": "删除",
+      "deleteTooltip": "立即永久删除——跳过 30 天宽限期，不可撤销",
+      "deleteConfirm": "立即永久删除这条记忆？将跳过 30 天宽限期，且不可撤销。",
+      "deletedToast": "已永久删除",
+      "deleteFailedToast": "删除失败",
+      "deleteAll": "全部删除",
+      "deleteAllTooltip": "立即永久删除该项目下的全部归档记忆",
+      "deleteAllConfirm": "立即永久删除 {project} 的全部 {count} 条归档记忆？将跳过 30 天宽限期，且不可撤销。",
+      "deletedAllToast": "已删除 {count} 条记忆",
+      "openProject": "打开项目",
+      "archivedAtPrefix": "归档于",
+      "restoreButton": "恢复",
+      "restoredToast": "已恢复",
+      "restoreFailedToast": "恢复失败"
+    },
+    "project": {
+      "picker": {
+        "title": "选择项目",
+        "subtitle": "项目记忆按工作目录划分。选择一个以管理它的目标、计划、日志和清理队列。",
+        "pathPlaceholder": "/path/to/your/project",
+        "browse": "浏览",
+        "browseTooltip": "浏览网关主机的文件系统",
+        "open": "打开",
+        "recentLabel": "最近的项目（来自已存记忆）：",
+        "orphanTooltip": "看上去是被截断的 scope_key（老旧镜像导入 bug）。可能没有项目文档。",
+        "orphanBadge": "孤立"
+      },
+      "noCwd": "选择一个项目以管理其记忆。",
+      "header": {
+        "docsCount_one": "{count} 份文档",
+        "docsCount_other": "{count} 份文档",
+        "journalEntries_one": "{count} 条日志",
+        "journalEntries_other": "{count} 条日志",
+        "pendingProposals_one": "{count} 条待处理提案",
+        "pendingProposals_other": "{count} 条待处理提案",
+        "archivedCount": "{count} 条已归档"
+      },
+      "tabs": {
+        "health": "健康",
+        "goal": "目标",
+        "plan": "计划",
+        "current_objective": "当前目标",
+        "tech": "技术栈",
+        "activity": "活动",
+        "journal": "日志",
+        "inbox": "收件箱",
+        "conflicts": "冲突",
+        "archived": "已归档",
+        "overview": "概览",
+        "hygiene": "记忆卫生"
+      },
+      "docLabel": {
+        "goal": "目标",
+        "plan": "计划",
+        "current_objective": "当前目标",
+        "tech_stack": "技术栈",
+        "recent_activity": "最近活动"
+      },
+      "editor": {
+        "updatedBy": "更新者",
+        "noDocSet": "尚未设置{label}。",
+        "save": "保存",
+        "saveFailedToast": "保存失败",
+        "savedToast": "{label}已保存",
+        "goalPlaceholder": "我们在做什么？一段文字。每个 agent 在 spawn 时都会读取。",
+        "planPlaceholder": "当前计划 — 现在在做什么、下一步是什么。随进度更新。",
+        "sectionPlaceholder": "以 markdown 撰写本章节…"
+      },
+      "readonly": {
+        "tech_stack": {
+          "label": "技术栈与结构",
+          "empty": "在该项目运行一次 Claude 会话 — scanner 会在每次 spawn 时刷新。"
+        },
+        "recent_activity": {
+          "label": "最近活动 (git → LLM)",
+          "empty": "Git 活动总结每 24 小时运行；下次调度后再来看看。"
+        },
+        "noneCaptured": "尚未捕获{label}。",
+        "generatedBy": "生成者",
+        "lastRefresh": "最近刷新",
+        "customEmpty": "本章节由扫描器维护，扫描运行后自动填充。"
+      },
+      "journal": {
+        "loading": "加载中…",
+        "empty": "暂无日志条目。每次会话结束都会自动追加一条。"
+      },
+      "inbox": {
+        "loading": "加载中…",
+        "emptyTitle": "收件箱为空。",
+        "emptyHint": "Agent 通过 `project_goal_set` / `project_plan_set` MCP 工具在这里提交提案。",
+        "approvedToast": "{label}已更新",
+        "approveFailedToast": "批准失败",
+        "rejectedToast": "已驳回",
+        "rejectFailedToast": "驳回失败",
+        "sessionPrefix": "ses",
+        "warning": "批准将完全替换当前{label}。",
+        "warningSuffix": "请检查下方 diff；这不是合并。",
+        "current": "当前",
+        "proposed": "提议",
+        "emptyBody": "(空)",
+        "approve": "批准",
+        "reject": "驳回",
+        "confirmDialogTitle": "替换{label}?",
+        "confirmDialogDescription": "当前{label}将被提议内容覆盖。无法通过本界面撤销（可手动改回）。",
+        "confirmCancel": "取消",
+        "confirmReplace": "确认替换"
+      },
+      "archived": {
+        "hint": "自动清理器为该项目软归档的记忆。它们已从检索中排除，但在 30 天宽限期清除前均可恢复。",
+        "empty": "该项目暂无归档。清理器会自动把过时和重复的事实软归档到这里——目前还没有。",
+        "archivedAtPrefix": "归档于",
+        "restoreButton": "恢复",
+        "restoredToast": "已恢复",
+        "restoreFailedToast": "恢复失败"
+      },
+      "reset": {
+        "button": "重置",
+        "dialogTitle": "重置项目记忆?",
+        "dialogDescription": "删除该 cwd 下存储的所有项目上下文。不可撤销。",
+        "alwaysDeleted": "始终删除：目标、计划、提案、日志、清理决策。",
+        "alsoDeleteScannerLabel": "同时删除 scanner 文档",
+        "alsoDeleteScannerSuffix": "(tech_stack + recent_activity)。",
+        "alsoDeleteScannerHint": "下次 spawn 会自动重建 — 通常不勾选即可。",
+        "alsoDeleteMemoriesLabel": "同时删除 pgvector 记忆",
+        "alsoDeleteMemoriesSuffix": "（该 scope_key 下的）。",
+        "alsoDeleteMemoriesHint": "Agent 存储的长期事实（用户偏好、项目事实）。无法恢复。",
+        "cancel": "取消",
+        "deleteForever": "永久删除",
+        "successToast": "重置：已删除 {summary}",
+        "summary": {
+          "docs_one": "{count} 份文档",
+          "docs_other": "{count} 份文档",
+          "journal": "{count} 条日志",
+          "proposals_one": "{count} 条提案",
+          "proposals_other": "{count} 条提案",
+          "cleanup": "{count} 条清理",
+          "memories": "{count} 条记忆"
+        },
+        "failedToast": "重置失败"
+      },
+      "lifecycle": {
+        "status": {
+          "active": "活跃",
+          "paused": "暂停",
+          "archived": "已归档"
+        },
+        "activate": "激活",
+        "pause": "暂停",
+        "archive": "归档",
+        "idleSuggest": "长期闲置 — 建议归档",
+        "idleHint": "已有 {days} 天无活动",
+        "failedToast": "无法更改项目状态",
+        "applied": {
+          "active": "项目已重新激活",
+          "paused": "项目已暂停",
+          "archived": "项目已归档"
+        },
+        "tooltip": {
+          "badge": "项目生命周期。冻结(暂停/归档)的项目不会被注入新会话,也不参与 AI 蒸馏。",
+          "activate": "重新激活:注入新会话并恢复 AI 维护。",
+          "pause": "暂停:冻结此项目——跳过会话注入与 AI 蒸馏,但仍留在活跃列表。",
+          "archive": "归档:封存此项目——冻结并从常规视图隐藏。"
+        }
+      },
+      "docMeta": {
+        "maintainer": {
+          "coauthored": "你维护 · AI 提议",
+          "auto": "自动生成 · 只读",
+          "human": "人工撰写"
+        },
+        "purpose": {
+          "goal": "项目的长期目标与意图——我们最终在做什么、为什么做。当某次会话改变了方向,AI 会向 Inbox 提议更新,由你批准。",
+          "plan": "当前的路线图 / 进行中的工作。会话推进后 AI 会向 Inbox 提议更新,由你批准。",
+          "current_objective": "我们当前正在做的短期目标及其即时步骤。会话中的 AI 会随着进展直接写入，完成后滚动到下一个。",
+          "tech_stack": "技术栈与结构,由项目扫描器自动生成(每 6 小时刷新)。",
+          "recent_activity": "近期 Git 活动的 AI 摘要,自动刷新(每 12 小时)。",
+          "overview": "项目的官方文档——它是什么、有哪些功能、架构、如何构建/运行、依赖的基础设施。AI 从项目自身信号起草;你可编辑(即锁定)或重新生成。"
+        }
+      },
+      "proposalBanner": {
+        "text": "AI 已对此文档提议更新,等待你批准。",
+        "button": "去 Inbox 查看"
+      },
+      "overview": {
+        "aiManaged": "由 AI 维护(随项目刷新)",
+        "locked": "已锁定 — 你编辑过;AI 的更新会以提议送达",
+        "edit": "编辑",
+        "save": "保存(锁定)",
+        "cancel": "取消",
+        "unlock": "解锁(交还 AI)",
+        "regenerate": "重新生成",
+        "generate": "立即生成",
+        "regenerateHint": "让 AI 根据项目最新状态重写概览",
+        "editHint": "保存即锁定本页;解锁后 AI 会重新起草。",
+        "empty": "还没有概览。后台引擎会从项目的目标/计划、技术栈扫描、日志与记忆起草——也可以现在立即生成。",
+        "saved": "概览已保存",
+        "unlocked": "已解锁 — AI 将重新接管",
+        "regenerating": "正在重新生成概览…"
+      }
+    },
+    "memoryInspector": {
+      "status": {
+        "label": "当前 embedder",
+        "unavailable": "不可用",
+        "probing": "探测中…",
+        "dimensions": "{dim} 维 · {state}",
+        "enabled": "已启用",
+        "disabled": "已禁用",
+        "floorNoModel": "仅关键词（BM25）检索 — 未配置 embedding 模型。在 Settings 配置 dense 的 [memory.http] 端点即可启用语义记忆。",
+        "denseConfiguredPendingRestart": "已配置 {model}（dense）— 重启网关即启用语义记忆并自动重嵌历史记忆。",
+        "denseUnreachableFloor": "已配置 {model}（dense）但端点当前不可达 — 暂用关键词 floor，端点恢复后重启会自动升级。",
+        "denseDegraded": "dense embedder 已激活，但其端点当前不可达 — 现有向量已保留；新写入与相似度检索暂停，直到端点恢复。"
+      },
+      "scope": {
+        "label": "Scope",
+        "scopeKey": "Scope key",
+        "scopeKeyIgnored": "(global 时忽略)",
+        "scopeKeyCwd": "(项目的 cwd)",
+        "placeholderProject": "/path/to/project (cwd)",
+        "syncMd": "同步 .md",
+        "syncTooltip": "把 Claude 的 <cwd>/.claude/memory/*.md 重新摄取到 pgvector",
+        "browse": "浏览",
+        "browseTooltip": "浏览网关主机的文件系统，选择任意项目目录",
+        "values": {
+          "project": "project",
+          "global": "global"
+        }
+      },
+      "search": {
+        "placeholder": "语义搜索查询（Enter 运行；为空则浏览）",
+        "run": "搜索",
+        "clear": "清空",
+        "failedToast": "搜索失败"
+      },
+      "records": {
+        "noMemories": "暂无记忆",
+        "matches_one": "{count} 条匹配",
+        "matches_other": "{count} 条匹配",
+        "memories_one": "{count} 条记忆",
+        "memories_other": "{count} 条记忆",
+        "scopeGlobalSuffix": "（全局）",
+        "scopeInSuffix": "（{scope}：",
+        "addButton": "添加记忆",
+        "addTooltip": "手动在此 scope 创建一条记忆",
+        "deleteAll": "全部删除",
+        "deleteAllTooltip": "删除该 scope/scope_key 下的全部记忆",
+        "loading": "加载中…",
+        "enterScopeKeyHint": "输入 scope key 以浏览记忆。",
+        "noMatchesForQuery": "未找到匹配 \"{query}\"",
+        "noMemoriesInScope": "此 scope 暂无记忆。"
+      },
+      "row": {
+        "simBadge": "相似度 {value}",
+        "rankBadge": "排名分 {value}",
+        "rankTooltip": "有效分 {effective} = 相似度 {similarity} × 时效 {age} ({days}d) × 命中 {hits} × 置信 {confidence}",
+        "hits_one": "命中 {count} 次",
+        "hits_other": "命中 {count} 次",
+        "lastHitTooltip": "最近命中 {relative}",
+        "editPlaceholder": "记忆文本 — Cmd/Ctrl+Enter 保存 · Esc 取消",
+        "saveTooltip": "保存 (Cmd/Ctrl+Enter)",
+        "cancelTooltip": "取消 (Esc)",
+        "editTooltip": "编辑该记忆",
+        "deleteTooltip": "删除该记忆",
+        "emptyError": "记忆文本不能为空",
+        "deleteConfirm": "删除记忆 {id}? 不可恢复。",
+        "archiveTooltip": "归档（可逆）——移入「已归档」视图",
+        "quarantineTooltip": "隔离——移入审查队列，直到批准或过期"
+      },
+      "toasts": {
+        "deleted": "记忆已删除",
+        "deleteFailed": "删除失败",
+        "bulkDeleted_one": "已从此 scope 删除 {count} 条记忆",
+        "bulkDeleted_other": "已从此 scope 删除 {count} 条记忆",
+        "bulkDeleteFailed": "批量删除失败",
+        "created": "记忆已创建",
+        "createFailed": "创建失败",
+        "updated": "记忆已更新",
+        "updateFailed": "更新失败",
+        "migrated": "已迁移 {reembed}/{examined} 条记忆到 {to}",
+        "migrationFailed": "迁移失败",
+        "syncIngested_one": "已摄取 {count} 个新记忆文件",
+        "syncIngested_other": "已摄取 {count} 个新记忆文件",
+        "syncEmpty": "没有需要同步的新 .md 文件",
+        "syncEmptyDescription": "已是最新，或该 cwd 没有 Claude memory 目录。",
+        "syncFailed": "同步失败",
+        "archived": "记忆已归档——可在「已归档」视图中恢复",
+        "archiveFailed": "归档失败",
+        "quarantined": "记忆已隔离——请在 Cortex → 隔离区 中审查",
+        "quarantineFailed": "隔离失败"
+      },
+      "bulkDelete": {
+        "title": "删除此 scope 的全部记忆?",
+        "description": "这是一次 SQL 操作 — 该 scope 下全部记忆将被原子性删除。通过 Claude 镜像摄取的记忆会在下次 <1>同步 .md</1> 时重新出现；其余内容永久消失。",
+        "scope": "Scope",
+        "scopeKey": "Scope key",
+        "currentlyVisible": "当前可见",
+        "items_one": "{count} 条记忆",
+        "items_other": "{count} 条记忆",
+        "cancel": "取消",
+        "deleteAll": "全部删除"
+      },
+      "addMem": {
+        "title": "添加记忆",
+        "description": "手动创建一条记忆。Agent 会通过 <1>memory_store</1> MCP 工具自动创建；此表单用于运维想跳过 agent 直接录入事实的场景。",
+        "textLabel": "文本",
+        "textPlaceholder": "纯文本。Embedder 在存储时把它转成向量；agent 通过 memory_search 取回。",
+        "cancel": "取消",
+        "create": "创建"
+      },
+      "picker": {
+        "button": "选择",
+        "buttonTooltip": "从已保存的 scope key 或活跃会话中选择",
+        "loading": "加载中…",
+        "empty": "{scope} 暂无已保存的 key 或活跃会话。",
+        "savedHeader": "已保存的记忆",
+        "activeHeader": "活跃会话"
+      },
+      "migrationBanner": {
+        "headline_one": "{count} 条记忆不会出现在搜索结果中",
+        "headline_other": "{count} 条记忆不会出现在搜索结果中",
+        "subtitle": "{summary} — 当前 embedder 为 <1>{current}</1>。pgvector 按 embedder 分区其相似度索引，旧条目在重嵌入前不会被检索到。",
+        "summaryItem": "{count} 条在 {name}",
+        "migrateButton": "迁移"
+      },
+      "reembed": {
+        "title": "重新嵌入记忆",
+        "description": "对存储在其他 embedder 下的记忆重新计算向量，使它们再次可被搜索到。",
+        "targetEmbedder": "目标 embedder",
+        "onName": "在",
+        "totalToReembed": "待重嵌入总数",
+        "explainer": "每条记忆的文本会重新发送到当前 embedder；新向量原地替换旧向量。ID、scope、scope_key、metadata 与时间戳保持不变。搜索结果立即生效 — 无需重启。",
+        "reportExamined": "已检查",
+        "reportReembedded": "已重嵌入",
+        "reportFailed": "失败",
+        "reportFrom": "来源",
+        "errors_one": "{count} 个错误",
+        "errors_other": "{count} 个错误",
+        "done": "完成",
+        "cancel": "取消",
+        "reembedding": "重嵌入中…",
+        "reembedTotal": "重嵌入 {total} 条"
+      }
+    },
+    "notes": {
+      "title": "笔记",
+      "header": {
+        "outline": "大纲",
+        "showOutline": "显示大纲",
+        "hideOutline": "隐藏大纲",
+        "today": "今天",
+        "todayTooltip": "打开或创建今天的日志笔记",
+        "new": "新建"
+      },
+      "left": {
+        "tree": "目录树",
+        "tags": "标签",
+        "filterNotes": "过滤笔记…",
+        "filterTags": "过滤标签…",
+        "filteredBy": "已筛选",
+        "clearTagTooltip": "清除标签筛选",
+        "expandAll": "全部展开",
+        "expandAllTooltip": "展开全部文件夹",
+        "collapseAll": "全部收起",
+        "collapseAllTooltip": "收起全部文件夹",
+        "loading": "加载中…",
+        "footer": "{visible} / {total} 条笔记"
+      },
+      "tags": {
+        "emptyVault": "vault 中暂无标签。",
+        "noMatches": "未找到匹配 \"{query}\"。"
+      },
+      "tree": {
+        "empty": "vault 为空。"
+      },
+      "outline": {
+        "label": "大纲",
+        "empty": "此笔记没有标题。添加 <1>## 标题</1> 行以填充大纲。"
+      },
+      "newNote": {
+        "prompt": "新笔记路径（相对 vault，必须以 .md 结尾）",
+        "defaultPath": "library/notes-{date}.md",
+        "errorMustEndMd": "路径必须以 .md 结尾",
+        "createdToast": "笔记已创建",
+        "createFailedToast": "创建失败"
+      },
+      "empty": {
+        "title": "未选择笔记",
+        "hint": "从左侧目录树挑选一条笔记，直接跳到今天的日志，或新建一条。AI 生成的项目文档位于 <1>projects/</1>；个人草稿位于 <3>personal/</3>。",
+        "today": "今天的日志笔记",
+        "new": "新建笔记"
+      },
+      "picker": {
+        "browseAria": "浏览文件夹",
+        "matches_one": "{count} 个匹配",
+        "matches_other": "{count} 个匹配",
+        "foldersInVault": "vault 中 {count} 个文件夹",
+        "noMatch": "未找到匹配的文件夹。直接保存即可使用 <1>{value}</1>（首次写入时懒创建）。"
+      },
+      "vaultSync": {
+        "title": "Vault 同步",
+        "description": "把 notes vault 作为 git 仓库进行 commit、pull 与 push。认证使用网关主机的 git 凭据（SSH agent / credential helper）。",
+        "reading": "正在读取 vault 状态…",
+        "init": {
+          "title": "vault 尚未初始化为 git 仓库",
+          "body": "初始化会在 vault 根目录运行 <1>git init -b main</1> 并加入一份合理的 <3>.gitignore</3>。之后你就可以提交笔记并配置 remote（GitHub / Gitea / GitLab）进行跨机同步。",
+          "button": "把 vault 初始化为 git 仓库",
+          "initToast": "vault 已初始化为 git 仓库",
+          "initFailedToast": "初始化失败"
+        },
+        "branch": {
+          "clean": "干净",
+          "staged": "{count} 已暂存",
+          "modified": "{count} 已修改",
+          "untracked": "{count} 未跟踪"
+        },
+        "action": {
+          "pull": "拉取",
+          "push": "推送",
+          "pullTitleNoRemote": "请先配置 remote",
+          "pullTitleHasUpstream": "git pull --rebase --autostash",
+          "pullTitleNoUpstream": "拉取 origin 的 HEAD；隐式建立 tracking",
+          "pushTitleNoRemote": "请先配置 remote",
+          "pushTitleHasUpstream": "git push -u origin HEAD",
+          "pushTitleNoUpstream": "首次推送 — 会将 upstream 设为 origin/HEAD",
+          "noRemote": "尚未配置 remote — pull/push 已禁用",
+          "noUpstream": "尚无 upstream tracking — 首次推送会自动建立。",
+          "pulledToast": "已拉取",
+          "pullFailedToast": "拉取失败",
+          "pushedToast": "已推送",
+          "pushFailedToast": "推送失败"
+        },
+        "commit": {
+          "title": "提交",
+          "placeholder": "Notes: {date}（默认）",
+          "commitAll": "提交全部",
+          "hint": "暂存所有变更（<1>git add .</1>）然后用此 message 提交。message 为空则使用带时间戳的默认值。",
+          "committedToast": "已提交 {hash}",
+          "commitFailedToast": "提交失败"
+        },
+        "fileList": {
+          "title": "工作树 · {count}",
+          "moreSuffix": "+{count} 更多"
+        },
+        "remote": {
+          "title": "Remote（origin）",
+          "cancel": "取消",
+          "change": "更换",
+          "configure": "配置",
+          "empty": "尚未设置 remote。添加一个 HTTPS 或 SSH URL(例如 <1>git@github.com:you/notes.git</1> 或 <3>https://gitea.example.com/you/notes.git</3>)以启用 push / pull。",
+          "urlLabel": "URL（HTTPS 或 SSH）",
+          "urlPlaceholder": "git@host:owner/notes.git",
+          "save": "保存",
+          "savedToast": "Remote 已保存",
+          "saveFailedToast": "设置 remote 失败"
+        },
+        "history": {
+          "title": "最近提交",
+          "loading": "加载中…",
+          "empty": "暂无提交。"
+        },
+        "conflict": {
+          "kinds": {
+            "rebase": "rebase",
+            "merge": "merge",
+            "cherryPick": "cherry-pick",
+            "operation": "operation"
+          },
+          "headline": "vault 存在暂停的 {kind} 且有未解决的冲突",
+          "explainer": "在 {kind} 完成之前，pull、push 与 commit 都被阻塞。你可以选择 <1>中止</1>（把工作树恢复到 {kind} 之前的状态 — 保留本地提交，丢弃远端提交），或 <3>强制重置到 remote</3>（丢弃所有本地提交 + 未提交修改；vault 变成 origin 的精确镜像）。",
+          "conflictedHeader": "冲突文件 · {count}",
+          "abort": "中止 {kind}",
+          "abortTitle": "git {kind} --abort",
+          "forceReset": "强制重置到 remote",
+          "forceResetTitle": "git fetch && git reset --hard origin/<branch> && git clean -fd",
+          "forceResetConfirm": "破坏性操作：将\n  • 中止进行中的 {kind}\n  • 运行 git fetch origin\n  • reset --hard 到 origin/<branch>\n  • clean -fd（删除未跟踪文件）\n\n任何尚未推送到 origin 的本地提交以及任何未提交修改都将永久丢失。\n\n继续？",
+          "abortedToast": "已中止 {kind}",
+          "abortedDescription": "工作树已恢复到操作前状态。",
+          "abortFailedToast": "中止失败",
+          "resetToast": "已重置到 {branch}",
+          "resetDescription": "本地更改已丢弃；vault 与 remote 一致。",
+          "resetFailedToast": "重置失败"
+        },
+        "auth": {
+          "title": "认证",
+          "httpsTokenOk": "将使用 Plugins → Git hosts 中为 <1>{host}</1> 存的 token。✓",
+          "httpsTokenMissing": "<1>{host}</1> 上的 HTTPS remote，opendray 中没有配置 token。在你为其添加 token 之前，私有仓库的 push / pull 很可能失败。",
+          "ssh": "<1>{host}</1> 上的 SSH remote。认证使用网关主机的 <3>~/.ssh/</3>（ssh-agent、identity 文件、host config）。可在主机 shell 用 <5>ssh -T git@{host}</5> 验证。",
+          "configureTokenLink": "→ 配置 git host token"
+        },
+        "autoSync": {
+          "loading": "加载自动同步设置…",
+          "title": "自动同步",
+          "on": "开",
+          "runNow": "立即运行",
+          "runNowTooltip": "立即唤醒同步循环（跳过等待，然后运行所有到期的步骤）",
+          "configure": "配置",
+          "hide": "隐藏",
+          "enabled": "启用",
+          "enabledTooltipNoRemote": "请先配置 remote 才能启用自动同步",
+          "noRemoteHint": "尚无 remote — push/pull 将被跳过。",
+          "commitEvery": "提交间隔",
+          "commitEveryExamples": "示例：<1>30s</1>、<3>10m</3>、<5>2h</5>。最小 30s。",
+          "pullEvery": "拉取间隔",
+          "pullEveryHint": "仅在启用 Pull 时使用。",
+          "pushAfterCommit": "提交后 push",
+          "pullPeriodically": "周期性 pull",
+          "commitTemplateLabel": "提交 message 模板",
+          "commitTemplatePlaceholder": "Auto-sync: {date}（留空则使用默认）",
+          "saveSettings": "保存设置",
+          "discard": "丢弃",
+          "lastCommit": "最近 commit",
+          "lastPush": "最近 push",
+          "lastPull": "最近 pull",
+          "never": "从未",
+          "savedToast": "自动同步设置已保存",
+          "saveFailedToast": "保存失败",
+          "triggeredToast": "已触发自动同步",
+          "runFailedToast": "运行失败"
+        }
+      },
+      "syncBadge": {
+        "loading": "加载中…",
+        "syncLabel": "同步",
+        "initLabel": "初始化",
+        "initTooltip": "vault 尚未初始化为 git 仓库",
+        "conflictLabel": "冲突",
+        "conflictTooltip": "vault 存在未解决的冲突 — 点击进入恢复",
+        "syncFallback": "sync",
+        "tooltip": "分支 {branch} · {files} 处改动 · 领先 {ahead} · 落后 {behind}",
+        "tooltipAutoOn": " · 自动同步已开启",
+        "tooltipLastError": " · 上次错误：{error}",
+        "branchPlaceholder": "—"
+      }
+    },
+    "activity": {
+      "title": "活动",
+      "subtitle": "按调用维度审计每个由注册集成发起的 API 请求。包括入站调用（第三方应用以集成 API key 调用 opendray）和出站代理调用（admin → opendray 代理 → 集成）。本管理端 UI 直接发起的调用不会被记录。",
+      "refresh": "刷新",
+      "refreshTooltip": "刷新",
+      "filters": {
+        "integration": "集成",
+        "direction": "方向",
+        "status": "状态",
+        "allIntegrations": "所有集成",
+        "all": "全部",
+        "inbound": "入站",
+        "outbound": "出站",
+        "allStatuses": "所有状态",
+        "status2": "2xx 成功",
+        "status3": "3xx 重定向",
+        "status4": "4xx 客户端错误",
+        "status5": "5xx 服务端错误"
+      },
+      "callsCount_one": "{count} 次调用",
+      "callsCount_other": "{count} 次调用",
+      "loading": "加载中…",
+      "table": {
+        "time": "时间",
+        "integration": "集成",
+        "directionTitle": "方向",
+        "method": "方法",
+        "path": "路径",
+        "status": "状态",
+        "duration": "耗时",
+        "inboundAria": "入站",
+        "outboundAria": "出站"
+      },
+      "empty": {
+        "filtered": "没有调用符合当前筛选条件。",
+        "title": "尚未记录任何 API 调用",
+        "description": "当第三方应用以其集成 API key 调用 opendray 时，每次请求都会被记录在这里。",
+        "stepWithIntegrations": "在你的第三方应用中使用已有集成的 API key",
+        "stepRegister": "在 集成 → 新建 中注册一个集成",
+        "stepCallEndpoint": "调用任意接口，例如 <1>POST /api/v1/sessions</1>",
+        "stepAppears": "调用会在几秒内出现在这里",
+        "footnote": "你在本管理端 UI 中发起的调用不会被记录 — 仅集成归属的流量会被记录。"
+      },
+      "events": {
+        "loading": "正在加载事件…",
+        "empty": "尚无事件。",
+        "emptyFiltered": "没有匹配的事件。",
+        "loadOlder": "加载更早的事件",
+        "today": "今天",
+        "yesterday": "昨天"
+      }
+    },
+    "providers": {
+      "list": {
+        "title": "Providers",
+        "loading": "加载中…",
+        "disabledBadge": "已禁用",
+        "noneSelected": "未选择任何 Provider。"
+      },
+      "detail": {
+        "enabled": "已启用",
+        "disabled": "已禁用",
+        "toggleAria": "切换 {name}",
+        "configuration": "配置",
+        "noConfig": "此 Provider 没有可配置字段。",
+        "executable": "executable:",
+        "manifestHash": "manifest_hash:",
+        "reset": "重置",
+        "save": "保存更改",
+        "saving": "保存中…",
+        "savedToast": "Provider 配置已保存",
+        "saveFailedToast": "保存失败",
+        "toggleFailedToast": "切换失败",
+        "caps": {
+          "resume": "resume",
+          "stream": "stream",
+          "images": "images",
+          "mcp": "mcp"
+        },
+        "notInstalled": "未安装",
+        "brokenCli": "已安装但无法运行",
+        "updateAvailable": "有可用更新 → {version}",
+        "upToDate": "已是最新",
+        "update": "更新到 {version}",
+        "updating": "更新中…",
+        "updatedToast": "已更新 {from} → {to}",
+        "alreadyLatestToast": "已是最新",
+        "updateFailedToast": "更新失败",
+        "updateUnavailable": "此处无法在应用内更新"
+      },
+      "configForm": {
+        "selectPlaceholder": "选择…",
+        "defaultOption": "(默认)",
+        "switchOn": "开",
+        "switchOff": "关",
+        "showSecret": "显示密钥",
+        "hideSecret": "隐藏密钥"
+      },
+      "claudeAccounts": {
+        "title": "Claude 账号",
+        "importLocal": "导入本地",
+        "importLocalTooltip": "扫描网关主机上的 ~/.claude-accounts/ 目录并注册新的目录。该按钮仅在网关主机环境下工作。",
+        "importedNothingToast": "无需导入 — 账号已同步。",
+        "importedToast_one": "已从 ~/.claude-accounts 导入 {count} 个账号",
+        "importedToast_other": "已从 ~/.claude-accounts 导入 {count} 个账号",
+        "importFailedToast": "导入失败",
+        "addingTitle": "添加新账号。",
+        "addingBodyPrefix": "在网关主机执行：",
+        "addingBodySuffix": "opendray 的文件系统监听会自动注册新目录，或点击 <1>导入本地</1> 立即扫描。",
+        "architectureLink": "架构与完整指南 →",
+        "loading": "加载中…",
+        "empty": "暂无 Claude 账号。最简单的方式:打开会话页,spawn 一个 Claude 会话,在终端里运行 <1>claude login</1> —— 完成 OAuth 后,凭据会落到网关的 <3>~/.claude</3>,自动出现在这里。需要管理多账号身份时,可改用上方的 shell 工作流。",
+        "noTokenYet": "尚无 token",
+        "configDir": "config_dir:",
+        "tokenPath": "token_path:",
+        "toggleFailedToast": "切换失败",
+        "removeConfirm": "移除账号 \"{name}\"?",
+        "removedToast": "账号已移除",
+        "removeFailedToast": "移除失败",
+        "toggleAria": "切换 {name}",
+        "removeAria": "移除 {name}",
+        "identityAcceptedToast": "已接受新身份",
+        "identityAcceptFailedToast": "无法接受新身份"
+      },
+      "antigravityAccounts": {
+        "title": "Antigravity 账号",
+        "importLocal": "导入本地",
+        "importLocalTooltip": "扫描主机上的 ~/.antigravity-accounts/（以及网关用户的 ~），注册已登录的账号目录。仅限网关主机。",
+        "importedNothingToast": "无可导入——账号已同步。",
+        "importedToast_one": "已从 ~/.antigravity-accounts 导入 {count} 个账号",
+        "importedToast_other": "已从 ~/.antigravity-accounts 导入 {count} 个账号",
+        "importFailedToast": "导入失败",
+        "addingTitle": "添加新账号。",
+        "addingBodyPrefix": "Antigravity 的所有状态都基于 $HOME。为每个账号分配独立的 HOME，并在网关主机上登录：",
+        "addingBodySuffix": "然后点击 <1>导入本地</1> 进行注册。只有当 Google 登录写入 OAuth 令牌后，该目录才会被视为账号。",
+        "loading": "加载中…",
+        "empty": "尚无 Antigravity 账号。在网关主机上运行 <1>HOME=~/.antigravity-accounts/&lt;name&gt; agy</1>，完成 Google 登录，然后点击“导入本地”。",
+        "noTokenYet": "未登录",
+        "homeDir": "home：",
+        "toggleFailedToast": "切换失败",
+        "removeConfirm": "移除账号“{name}”？",
+        "removedToast": "账号已移除",
+        "removeFailedToast": "移除失败",
+        "toggleAria": "切换 {name}",
+        "removeAria": "移除 {name}"
+      },
+      "models": {
+        "title": "模型",
+        "help": "该提供方可用的模型。默认模型会通过 model 参数传给每个会话；会话仍可覆盖。",
+        "empty": "尚未配置任何模型。",
+        "add": "添加",
+        "addPlaceholder": "模型 ID（如 sonnet）",
+        "suggested": "建议（{count}）",
+        "default": "默认",
+        "makeDefault": "设为默认",
+        "setDefault": "用作默认模型",
+        "remove": "移除 {model}"
+      }
+    },
+    "channels": {
+      "title": "频道",
+      "subtitle": "双向消息集成。每个已启用且未静音的频道都会接收会话通知。",
+      "newButton": "新建频道",
+      "loading": "加载中…",
+      "empty": {
+        "title": "暂无频道",
+        "description": "内置类型：Telegram · Slack · Discord · 飞书 · 钉钉 · 企业微信。挑选一个并填入凭证，或使用 <1>bridge</1> 通过 WebSocket 接入自定义平台。"
+      },
+      "card": {
+        "running": "运行中",
+        "starting": "启动中…",
+        "disabled": "已禁用",
+        "muted": "已静音",
+        "tokenLabel": "token:",
+        "chatIdLabel": "chat_id:",
+        "channelIdLabel": "channel_id:",
+        "webhookLabel": "webhook:",
+        "copyWebhookTooltip": "复制 webhook URL",
+        "webhookCopiedToast": "已复制 webhook URL",
+        "setup": "配置",
+        "setupTooltip": "查看适配器连接信息和示例代码",
+        "test": "测试",
+        "testNotRunningTooltip": "频道必须处于运行状态",
+        "testBridgeTooltip": "Bridge 频道无法从管理端测试 — 请先连接一个适配器",
+        "editAria": "编辑频道",
+        "editTooltip": "编辑频道配置",
+        "deleteAria": "删除频道",
+        "muteAria": "静音或取消静音频道",
+        "muteTooltip": "静音通知(双向聊天仍可用)",
+        "unmuteTooltip": "取消静音通知",
+        "bridgeSuffix": "(bridge)"
+      },
+      "toasts": {
+        "testSent": "测试消息已发送",
+        "testFailed": "测试失败",
+        "deleteConfirm": "删除频道 {id}?",
+        "deleted": "频道已删除",
+        "created": "频道已创建",
+        "updated": "频道已更新",
+        "muted": "频道已静音",
+        "unmuted": "频道已取消静音"
+      },
+      "dialog": {
+        "editTitle": "编辑频道",
+        "createTitle": "注册频道",
+        "descriptionBridge": "外部适配器（Python/Node/...）通过 WebSocket 连接并出示此 token。",
+        "descriptionDefault": "配置消息集成。",
+        "kindLabel": "类型",
+        "kindImmutable": "（不可更改 — 如需更换类型请删除后重建）",
+        "enabledLabel": "启用",
+        "enabledBridgeHint": "（立即开始接受适配器连接）",
+        "enabledWebhookHint": "（立即开始接收 webhook）",
+        "enabledDefaultHint": "（立即启动）",
+        "cancel": "取消",
+        "save": "保存",
+        "saving": "保存中…",
+        "create": "创建",
+        "creating": "创建中…",
+        "unknownKind": "未知类型：{kind}",
+        "nameRequired": "name 不能为空",
+        "tokenRequired": "token 不能为空",
+        "topicIdsNumeric": "Topic ID 必须是数字（收到 {value}）",
+        "fieldRequired": "{label} 不能为空",
+        "cooldownInvalid": "Cooldown 必须是非负整数秒",
+        "snippetCapInvalid": "Snippet cap 必须是非负数字"
+      },
+      "notifications": {
+        "sectionTitle": "会话通知",
+        "repeatPolicyLabel": "重复策略",
+        "cooldownLabel": "冷却时长",
+        "onceReplyHint": "在该聊天中以非命令文本回复会重置抑制 — opendray 会把你的回复转发到会话的 stdin 并重新启用通知。",
+        "terminalSnippetLabel": "终端片段",
+        "embedSnippetLabel": "在 idle 通知中嵌入最近的终端画面",
+        "snippetExplainer": "开启后，idle 卡片会包含一段代码块片段，呈现用户在网页终端中会看到的内容 — Claude TUI 自身的装饰（状态 spinner、\"bypass permissions\" 提示、分隔线）会被自动过滤。",
+        "modes": {
+          "onceLabel": "每个会话仅一次（推荐）",
+          "onceHint": "当会话变为 idle 时通知一次，然后保持静默，直到会话结束或你通过该频道回复。",
+          "cooldownLabel": "时间窗口冷却",
+          "cooldownHint": "对同一 (会话, 事件) 在所选时间窗口内抑制重复通知。",
+          "everyLabel": "每次事件都通知（嘈杂）",
+          "everyHint": "不做抑制。仅用于低频频道。"
+        },
+        "cooldowns": {
+          "60": "1 分钟",
+          "300": "5 分钟",
+          "900": "15 分钟",
+          "1800": "30 分钟",
+          "3600": "1 小时"
+        },
+        "snippetCaps": {
+          "0": "不限制 — 拆分到多条消息（默认）",
+          "1000": "1000 字符（精简）",
+          "3000": "3000 字符",
+          "6000": "6000 字符",
+          "12000": "12000 字符"
+        }
+      },
+      "bridge": {
+        "nameLabel": "Bridge 名称",
+        "namePlaceholder": "wechat / discord-custom / whatsapp...",
+        "nameHint": "适配器的人类可读标签。会显示在频道列表中。",
+        "tokenLabel": "适配器 token",
+        "regenerateTooltip": "重新生成",
+        "copyTooltip": "复制",
+        "tokenCopiedToast": "已复制 token",
+        "tokenHint": "适配器通过 WS register 帧发送此 token（也可作为 <1>X-Bridge-Token</1> header）。",
+        "capsLabel": "接受的能力（可选白名单）",
+        "capsHint": "为空 = 接受适配器声明的任意能力。已选 = 即使适配器提供更多能力，也只允许这些。",
+        "afterCreate": "点击 <1>创建</1> 后，适配器设置对话框会自动打开，里面包含 WebSocket URL 和可直接复制的 Python / Node / wscat 起步代码。"
+      },
+      "setup": {
+        "title": "适配器设置 — {name}",
+        "description": "运行一个任意语言的适配器，使用这些凭证通过 WebSocket 连接到 opendray。opendray 会通过它路由会话通知和 slash 命令。",
+        "wsUrlLabel": "WebSocket URL",
+        "tokenLabel": "适配器 token",
+        "authInfo": "<1>认证：</1>通过 <3>X-Bridge-Token</3> header、<5>?token=</5> query 参数或 <7>Authorization: Bearer …</7> 之一发送 token。首个 WS 帧必须是 <9>{frame}</9>。完整协议见仓库中的 <11>docs/bridge-protocol.md</11>。",
+        "pythonInstall": "安装：<1>pip install websockets</1>。运行：<3>python adapter.py</3>。",
+        "nodeInstall": "安装：<1>npm i ws</1>。运行：<3>node adapter.mjs</3>。",
+        "wscatInstall": "安装：<1>npm i -g wscat</1>。连接后，粘贴上方的 JSON 注册帧，然后手动发送后续帧。",
+        "close": "关闭",
+        "copyHide": "隐藏",
+        "copyShow": "显示",
+        "copyLabelToast": "已复制 {label}",
+        "copyCode": "复制",
+        "copied": "已复制",
+        "codeCopiedToast": "已复制代码"
+      }
+    },
+    "integrations": {
+      "title": "集成",
+      "subtitle": "调用 opendray 的外部应用。通过 <1>/api/v1/proxy/&lt;prefix&gt;/…</1> 反向代理，并通过 WS 端点订阅事件。",
+      "register": "注册",
+      "loading": "加载中…",
+      "tabs": {
+        "registered": "已注册",
+        "console": "反向代理"
+      },
+      "empty": {
+        "title": "暂无集成",
+        "description": "注册一个外部应用，给它一个受限的 API key。它的代码不需要进入本仓库。",
+        "register": "注册集成"
+      },
+      "groupSystem": "系统（由 opendray 管理）",
+      "groupOperator": "用户注册",
+      "card": {
+        "managedBadge": "受管",
+        "managedTooltip": "opendray 管理这个集成。编辑或轮换它的 key 会导致正在运行的会话（mcp.json 中持有旧 bearer）失效。",
+        "consumerBadge": "consumer",
+        "consumerTooltip": "仅消费型集成 — 没有可供探测的 HTTP 服务",
+        "disabledBadge": "已禁用",
+        "consumerOnlyHint": "消费 opendray 的 API。未挂载反向代理。",
+        "lastProbed": "{relative} 探测过",
+        "rotated": "{relative} 轮换过",
+        "managedReadOnly": "只读 — opendray 把它的 key 烤进每次 spawn 的 mcp.json",
+        "managedReadOnlyTooltip": "opendray 管理此行。如需重置：删除 ~/.opendray/memory.key 后重启，或直接通过 SQL 删除此行 — 下次启动时会重新引导。",
+        "editAria": "编辑集成",
+        "editTooltip": "编辑 scopes / base URL / version",
+        "rotateKey": "轮换 key",
+        "deleteAria": "删除集成",
+        "rotateConfirm": "轮换 \"{name}\" 的 API key? 当前 key 将立即失效。",
+        "deleteConfirm": "删除集成 {name}?",
+        "removedToast": "集成已移除"
+      },
+      "defaultAgent": {
+        "title": "默认 agent",
+        "description": "当该集成创建会话且请求未指定相应字段时套用。请求值始终优先 — 这是默认值,而非强制。",
+        "providerLabel": "默认 provider",
+        "providerNone": "无默认",
+        "modelLabel": "默认模型",
+        "modelPlaceholder": "provider 默认(如 opus)",
+        "modelPickAria": "选择已知模型",
+        "accountLabel": "默认 Claude 账号",
+        "accountNone": "无默认",
+        "accountTokenMissing": "(缺少 token)",
+        "accountHint": "仅当默认 provider 为 Claude 时生效。"
+      },
+      "register_dialog": {
+        "title": "注册集成",
+        "description": "签发一次性 API key。关闭前请复制它 — opendray 不会再显示明文。",
+        "nameLabel": "名称",
+        "namePlaceholder": "PetTracker",
+        "modeHint": "如果是 <1>仅消费型</1> 集成（第三方应用调用 opendray API 但不暴露自身服务），保留下面两个字段为空。两个都填则是 <3>反向代理型</3> 集成。",
+        "baseUrlLabel": "Base URL",
+        "optionalSuffix": "(可选)",
+        "baseUrlPlaceholder": "http://192.168.1.10:8080",
+        "routePrefixLabel": "Route prefix",
+        "routePrefixPlaceholder": "pet-tracker",
+        "routePrefixHint": "可通过 <1>/api/v1/proxy/{prefix}/*</1> 访问。",
+        "routePrefixPlaceholderToken": "<prefix>",
+        "versionLabel": "Version（可选）",
+        "versionPlaceholder": "0.1.0",
+        "scopesLabel": "Scopes",
+        "scopesIntro": "选择该集成允许调用的 API 范围。每个开关映射到一个 Bearer token 声明 — opendray 会拒绝任何越权请求。",
+        "errorNameRequired": "Name 不能为空。",
+        "errorBothOrNeither": "base_url 和 route_prefix 必须成对设置。同时填入 = 反向代理集成；同时留空 = 仅消费型集成。",
+        "cancel": "取消",
+        "submit": "注册",
+        "submitting": "注册中…"
+      },
+      "reveal": {
+        "titleIssued": "API key 已签发",
+        "titleRotated": "API key 已轮换",
+        "description": "这是明文 key 唯一一次显示的机会。立即复制并更新所有消费端 — 旧 key（如有）将不再有效。",
+        "discardAria": "丢弃新 key",
+        "discardTooltip": "丢弃新 key（轮换已经发生 — 旧 key 同样失效）",
+        "discardConfirm": "确定丢弃新 key? 轮换已经使旧 key 失效 — 丢弃意味着此集成将没有任何可用 key，直到再次轮换。",
+        "copy": "复制",
+        "copied": "已复制",
+        "updateHint": "<1>请用此新 key 更新每个消费端应用。</1> 旧 key 已在服务端失效，下次请求会返回 <3>401 unauthorized</3>。",
+        "acknowledge": "我已复制 key 并会更新消费端应用。我了解 opendray 不会再显示它。",
+        "discard": "丢弃",
+        "done": "完成"
+      },
+      "edit_dialog": {
+        "title": "编辑集成 · {name}",
+        "description": "修改 scopes、version 或 base URL。Name 和 route prefix 不可更改 — 如需修改请删除并重新注册。",
+        "nameLabel": "Name",
+        "routePrefixLabel": "Route prefix",
+        "consumerOnlyLabel": "(仅消费型)",
+        "baseUrlLabel": "Base URL",
+        "baseUrlConsumerSuffix": "(仅消费型 — 留空)",
+        "baseUrlProxySuffix": "(反向代理目标)",
+        "baseUrlConsumerPlaceholder": "(留空 — 此集成消费 opendray API)",
+        "baseUrlProxyPlaceholder": "http://127.0.0.1:8080",
+        "consumerHint": "这是一个仅消费型集成。在此修改 base URL 还需要 route prefix；请删除后重新注册。",
+        "versionLabel": "Version",
+        "versionPlaceholder": "0.1.0",
+        "scopesLabel": "Scopes",
+        "scopesIntro": "收窄或放宽此集成 API key 授权的 API 范围。已颁发的 token 不受影响 — 新的 scope 集在下次请求时生效。",
+        "systemPromptLabel": "系统提示词",
+        "systemPromptHint": "会预置到此集成创建的每个会话前。留空则不使用。",
+        "bypassPermissionsLabel": "跳过权限确认",
+        "bypassPermissionsHint": "自动批准工具调用 — 此集成无人值守运行，没有操作员确认提示。",
+        "mcpServersLabel": "MCP 服务器",
+        "mcpServersHint": "MCP 服务器对象的 JSON 数组 —— 每项含 name、command、args、env(sse/http 用 url/headers)。空数组 = 无。",
+        "mcpServersInvalid": "MCP 服务器必须是合法的 JSON 数组。",
+        "errorModeSwitch": "在仅消费型与反向代理型之间切换需要删除并重新注册 — name 和 route_prefix 无法原地修改。",
+        "updatedToast": "集成已更新",
+        "cancel": "取消",
+        "save": "保存更改"
+      },
+      "proxy": {
+        "emptyTitle": "尚未注册集成",
+        "emptyDescription": "请先注册一个集成；控制台通过 /api/v1/proxy/{prefix}/* 以 admin token 代理请求。",
+        "targetLabel": "目标",
+        "selectPlaceholder": "选择集成…",
+        "baseLabel": "base:",
+        "history": "历史",
+        "historyEmpty": "此集成尚无历史请求",
+        "send": "发送",
+        "sending": "发送中…",
+        "extraHeadersLabel": "额外 header（每行一条，Name: Value）",
+        "bodyLabel": "Body",
+        "headers": "Headers",
+        "body": "Body",
+        "emptyBody": "(空)",
+        "requestFailed": "请求失败",
+        "stubText": "发送一个请求即可查看上游响应。",
+        "stubInjects": "opendray 会注入 <1>X-Integration-ID</1>，并剥离你的 <3>Authorization</3> header。",
+        "prefixPlaceholder": "<prefix>"
+      }
+    },
+    "plugins": {
+      "title": "检查器插件",
+      "subtitle": "配置在会话打开时右侧检查器面板呈现的数据源。每个插件都是管理员级别且在所有会话间共享。点击章节标题可折叠。",
+      "common": {
+        "loading": "加载中…",
+        "cancel": "取消",
+        "edit": "编辑",
+        "add": "添加",
+        "save": "保存",
+        "create": "创建"
+      },
+      "mcp": {
+        "title": "MCP 服务器",
+        "description": "注入到每次 spawn（claude / codex）的 Model Context Protocol 服务器。Vault 条目位于 <1>~/.opendray/vault/mcp/&lt;id&gt;/mcp.json</1>；env / headers 中以 <3>${KEY}</3> 引用的密钥来自下方 <5>MCP secrets</5>。",
+        "newServer": "新建服务器",
+        "empty": "尚无 MCP 服务器。添加一个以为 agent 会话暴露额外工具。",
+        "columns": {
+          "name": "名称",
+          "transport": "Transport",
+          "spec": "规范",
+          "enabled": "启用"
+        },
+        "noUrl": "无 URL",
+        "noCommand": "无 command",
+        "deleteConfirm": "删除 MCP 服务器 \"{id}\"?",
+        "removedToast": "MCP 服务器已移除",
+        "deleteFailedToast": "删除失败",
+        "toggleFailedToast": "切换失败",
+        "codexUnsupportedBadge": "Codex: 不支持",
+        "codexUnsupportedTooltip": "Codex CLI 仅支持 stdio 传输方式。Codex 会话将跳过此服务器；claude 和 antigravity 仍会使用。",
+        "builtinBadge": "内置",
+        "builtinTooltip": "由 opendray 自身提供——自动附加到每个支持 MCP 的会话。不可编辑或删除。",
+        "builtinDescription": "opendray 的共享记忆与知识服务器：memory_search / memory_store、project_goal 与 project_plan 读写、session_log_append、decision_record、doc_read、skill_distill、project_search。自动附加到每个 Claude / Codex / Antigravity 会话。",
+        "builtinAutoAttach": "始终启用",
+        "editor": {
+          "createTitle": "新建 MCP 服务器",
+          "editTitle": "编辑 MCP: {id}",
+          "description": "JSON 结构：stdio（默认）使用 <1>command</1>+<3>args</3>+<5>env</5>；sse / http 使用 <7>transport</7> +<9> url</9>+<11>headers</11>。以 <13>${API_KEY}</13> 引用密钥 — spawn 时会从密钥文件替换。",
+          "idLabel": "ID",
+          "idPlaceholder": "filesystem",
+          "idHint": "小写字母 / 数字 / 短横 / 下划线。同时作为目录名与默认 <1>name</1>。",
+          "bodyLabel": "mcp.json",
+          "invalidJson": "无效的 JSON：{error}",
+          "createdToast": "MCP 服务器已创建",
+          "savedToast": "MCP 服务器已保存",
+          "createFailedToast": "创建失败",
+          "saveFailedToast": "保存失败",
+          "transportLabel": "传输方式",
+          "transportHint": "切换传输方式会将 JSON 模板替换为对应的新模板。",
+          "transportStdio": "stdio (本地子进程)",
+          "transportSse": "sse (远程服务器)",
+          "transportHttp": "http (远程服务器)"
+        },
+        "test": {
+          "button": "测试",
+          "title": "从守护进程验证此 MCP 服务器",
+          "connected": "已连接 · {count} 个工具",
+          "reachable": "可达",
+          "failed": "测试失败"
+        }
+      },
+      "mcpSecrets": {
+        "title": "MCP 密钥",
+        "encryptedBadge": "已加密",
+        "plaintextBadge": "明文",
+        "encryptedTooltip": "AES-GCM 在磁盘上加密；密钥位于操作系统 keychain",
+        "plaintextTooltip": "操作系统 keychain 不可用 — 文件以明文存储。请检查网关日志。",
+        "description": "在任意 <3>mcp.json</3> 中以 <1>${KEY}</1> 占位符引用的值在 spawn 时会被替换。<5>已保存的值不会通过 API 返回</5> — 可以覆盖或删除，但无法读回。",
+        "descriptionStored": " 存储于 <1>{path}</1>。",
+        "addSecret": "添加密钥",
+        "empty": "暂无已存密钥。添加后即可在 MCP 服务器配置中以 <1>${KEY}</1> 引用。",
+        "columns": {
+          "key": "Key",
+          "value": "Value"
+        },
+        "editTooltip": "覆盖已存的值",
+        "deleteConfirm": "删除密钥 \"{key}\"? 任何引用 ${key} 的 mcp.json 在你重新设置之前都会回退到字面占位符。",
+        "removedToast": "密钥已移除",
+        "deleteFailedToast": "删除失败",
+        "editor": {
+          "addTitle": "添加密钥",
+          "updateTitle": "更新 {key}",
+          "addDescription": "若操作系统 keychain 可用，则在磁盘上加密存储。可在任意 mcp.json 的 env / headers / args / url 中以 ${KEY} 引用。",
+          "editDescription": "输入新值以覆盖。旧值无法恢复。",
+          "keyLabel": "Key",
+          "keyPlaceholder": "BRAVE_API_KEY",
+          "keyPattern": "必须匹配 <1>[A-Za-z_][A-Za-z0-9_]*</1>",
+          "keyCollision": "已存在 — 请使用编辑，或选择另一个名称。",
+          "valueLabel": "Value",
+          "valueHint": "输入时隐藏。已保存的值不会通过 API 返回。",
+          "addedToast": "密钥已添加",
+          "updatedToast": "密钥已更新",
+          "saveFailedToast": "保存失败"
+        }
+      },
+      "skills": {
+        "title": "Agent skills",
+        "description": "作为 Tier 1 索引注入到 Claude 会话的可复用能力 — agent 通过 <1>opendray skill describe &lt;id&gt;</1> 按需加载完整 SKILL.md。内置 skill 随二进制发布但可被 <3>自定义</3> — 你的修改保存到 <5>~/.opendray/vault/skills/&lt;id&gt;/SKILL.md</5> 并覆盖内置版本。点击重置可还原。",
+        "newSkill": "新建 skill",
+        "empty": "未找到任何 skill。",
+        "columns": {
+          "id": "ID",
+          "description": "描述",
+          "source": "来源"
+        },
+        "noDescription": "无描述",
+        "builtinBadge": "内置",
+        "builtinTooltip": "嵌入 opendray 二进制 — 点击自定义可在 vault 中覆盖",
+        "vaultBadge": "vault",
+        "overridesBuiltin": "覆盖内置",
+        "overridesBuiltinTooltip": "此 vault skill 覆盖了同 id 的内置版本",
+        "customize": "自定义",
+        "customizeTooltip": "打开 SKILL.md 并保存为 vault 覆盖",
+        "editTooltip": "编辑此 vault skill",
+        "resetTooltip": "删除 vault 覆盖并回退到内置版本",
+        "reset": "重置",
+        "resetConfirm": "将 \"{id}\" 重置为内置版本? 这会删除你的 vault SKILL.md 并回退到嵌入副本。",
+        "deleteConfirm": "从 vault 删除 skill \"{id}\"? 这会移除该 SKILL.md 文件。",
+        "removedToast": "Skill 已移除",
+        "deleteFailedToast": "删除失败",
+        "editor": {
+          "createTitle": "新建 skill",
+          "customizeTitle": "自定义内置：{id}",
+          "editTitle": "编辑 skill：{id}",
+          "customizeDescription": "你正在查看一个嵌入到 opendray 的内置 skill。保存会在相同 id 上创建一个 vault 覆盖 — 你的修改保存在 ~/.opendray/vault/skills/<id>/SKILL.md 中并遮盖内置版本，直到你点击重置。",
+          "editDescription": "SKILL.md 格式 — frontmatter（name + description），然后是 markdown 指令。description 会出现在 agent 的 Tier 1 索引中。",
+          "idLabel": "ID",
+          "idPlaceholder": "my-helper",
+          "idHint": "小写字母 / 数字 / 短横 / 下划线。作为 <1>~/.opendray/vault/skills/&lt;id&gt;/</1> 下的目录名。",
+          "bodyLabel": "SKILL.md",
+          "createdToast": "Skill 已创建",
+          "savedToast": "Skill 已保存",
+          "savedOverrideToast": "已保存为 vault 覆盖",
+          "createFailedToast": "创建失败",
+          "saveFailedToast": "保存失败",
+          "saveAsOverride": "保存为 vault 覆盖"
+        },
+        "dropHint": "或将 SKILL.md 文件拖放到此处以安装。",
+        "dropToInstall": "拖放 SKILL.md 以安装",
+        "uploading": "正在安装 skill…",
+        "uploadedToast": "Skill \"{id}\" 已安装",
+        "uploadFailedToast": "上传 skill 失败",
+        "uploadInvalidTypeToast": "仅支持拖放 SKILL.md 文件"
+      },
+      "customTasks": {
+        "title": "自定义任务",
+        "description": "在 Tasks 选项卡中以点选即运行的方式呈现的快捷方式。留空 cwd 即为所有会话可见的全局任务，或填写绝对路径以限定 scope。",
+        "addTask": "添加任务",
+        "empty": "尚无自定义任务。",
+        "columns": {
+          "name": "名称",
+          "command": "命令",
+          "scope": "Scope"
+        },
+        "globalScope": "全局",
+        "deleteConfirm": "删除自定义任务 \"{name}\"?",
+        "removedToast": "任务已移除",
+        "deleteFailedToast": "删除失败",
+        "dialog": {
+          "addTitle": "添加自定义任务",
+          "editTitle": "编辑 {name}",
+          "description": "命令会原样发送到会话的终端中，等同于在 prompt 处键入并回车。",
+          "nameLabel": "名称",
+          "namePlaceholder": "dev",
+          "commandLabel": "命令",
+          "commandPlaceholder": "docker compose up --build",
+          "descLabel": "描述（可选）",
+          "descPlaceholder": "启动开发环境并跟踪日志",
+          "cwdLabel": "cwd scope（可选）",
+          "cwdPlaceholder": "/Users/me/projects/foo（留空 = 全局）",
+          "cwdHint": "留空 = 在每个会话中都可见。否则只有当会话的 cwd 与此绝对路径匹配时才显示。",
+          "addedToast": "任务已添加",
+          "updatedToast": "任务已更新",
+          "addFailedToast": "添加失败",
+          "updateFailedToast": "更新失败"
+        }
+      },
+      "gitHosts": {
+        "title": "Git 主机",
+        "description": "每个主机一个 token — 被 Git 选项卡用来拉取 pull request，<1>也被 Notes vault sync</1> 使用（当其 remote 通过 HTTPS 指向同一主机上的私有仓库时）。支持 GitHub.com、自托管 GitHub Enterprise、Gitea 与 GitLab。",
+        "addHost": "添加主机",
+        "empty": "尚未配置任何 git 主机。\n添加一个以在检查器 Git 选项卡中启用 PR 列表。",
+        "columns": {
+          "host": "主机",
+          "kind": "类型",
+          "token": "Token",
+          "enabled": "启用"
+        },
+        "statusEnabled": "已启用",
+        "statusDisabled": "已禁用",
+        "deleteConfirm": "移除 git 主机 {host}? 对该主机的 PR 查询将停止工作。",
+        "removedToast": "Git 主机已移除",
+        "deleteFailedToast": "删除失败",
+        "dialog": {
+          "addTitle": "添加 git 主机",
+          "editTitle": "编辑 {host}",
+          "description": "Token 存储在网关上。仅用于只读 API 调用（列出 PR 等）。",
+          "kindLabel": "类型",
+          "kindGitHub": "GitHub",
+          "kindGitea": "Gitea",
+          "kindGitLab": "GitLab",
+          "hostLabel": "主机",
+          "hostPlaceholder": "github.com",
+          "displayNameLabel": "显示名称（可选）",
+          "displayNamePlaceholder": "Personal",
+          "tokenLabel": "Token",
+          "newTokenLabel": "新 token（留空表示保留）",
+          "tokenPlaceholder": "ghp_… / gho_… / glpat-…",
+          "tokenPlaceholderEdit": "…",
+          "tokenHint": "GitHub：带 <1>repo</1> scope 的 PAT。Gitea：带 <3>read:repository</3> 的 token。GitLab：带 <5>read_api</5> 的 PAT。",
+          "enabledLabel": "启用",
+          "addedToast": "Git 主机已添加",
+          "updatedToast": "Git 主机已更新",
+          "addFailedToast": "添加失败",
+          "updateFailedToast": "更新失败"
+        }
+      }
+    },
+    "backups": {
+      "title": "备份",
+      "subtitle": "写入到可插拔目标的加密 PostgreSQL dump。配置计划与保留策略，或触发一次性备份作为快速安全网。",
+      "exportData": "导出数据",
+      "loading": "加载中…",
+      "loadStatusFailedToast": "加载备份状态失败",
+      "tabs": {
+        "backups": "备份",
+        "schedules": "计划",
+        "targets": "目标"
+      },
+      "inventory": {
+        "title": "备份里包含什么？",
+        "summary": "{tables} 张表共 {rows} 行",
+        "description": "每次备份是一个对下方所有表执行 <1>pg_dump --format=custom</1> 的产物，外加 <3>manifest.json</3> 和（可选的）<5>config.toml</5>。计数是实时的；bundle 捕获的是备份发生那一刻的数据。",
+        "loadFailedToast": "加载清单失败",
+        "rowsLabel": "行"
+      },
+      "restart": {
+        "title": "请重启 opendray 以激活备份",
+        "description": "你的口令已保存。网关仅在启动时加载它，因此该功能在进程重启之前保持关闭。",
+        "keyFile": "密钥文件：",
+        "configuredVia": "配置方式：",
+        "envVar": "OPENDRAY_BACKUP_KEY 环境变量",
+        "checkAgain": "再次检查"
+      },
+      "setup": {
+        "title": "设置备份",
+        "description": "选择一个主口令。opendray 会用它加密每个备份 blob。<1>丢失它意味着你的备份无法恢复</1>，请在继续之前把它保存到密码管理器（Vaultwarden、1Password 等）。",
+        "generate": "生成",
+        "pasteOwn": "粘贴自定义",
+        "generateTitle": "256 位随机密钥",
+        "generateHint": "服务端生成一个加密随机的口令并仅显示一次。你必须在继续前复制它 — 没有恢复路径。",
+        "pasteLabel": "你的口令",
+        "pastePlaceholder": "至少 20 个字符",
+        "pasteHint": "建议：使用密码管理器生成 40 个以上字符。",
+        "savesTo": "保存到：",
+        "saving": "保存中…",
+        "generateAndSave": "生成并保存",
+        "save": "保存"
+      },
+      "generated": {
+        "title": "立即保存此口令",
+        "description": "这是 <1>唯一一次</1> 显示。opendray 与任何其他地方都将无法取回。请在继续前复制到密码管理器。",
+        "copy": "复制",
+        "copiedToast": "口令已复制到剪贴板",
+        "copyFailedToast": "复制失败 — 请手动选中并复制",
+        "savedTo": "已保存到：",
+        "ack": "我已将此口令保存到密码管理器",
+        "continue": "继续"
+      },
+      "status": {
+        "pgDump": "pg_dump",
+        "pgRestore": "pg_restore",
+        "pgDumpUnavailable": "不可用",
+        "pgDumpHint": "备份在 pg_dump 进入 PATH 之前无法运行（也可通过 <1>backup.pg_dump_path</1> 设置绝对路径）。请安装与你的服务器主版本匹配的 <3>postgresql-client</3> 并重启。"
+      },
+      "backupsTab": {
+        "backupNow": "立即备份",
+        "triggering": "触发中…",
+        "includeConfig": "包含 config.toml",
+        "fullInstance": "完整实例",
+        "fullInstanceHint": "同时打包 vault（notes/skills/mcp）、secrets.env 和 config.toml —— 重建可用实例所需的一切，而不只是数据库。",
+        "restoreFromFile": "从文件恢复",
+        "refresh": "刷新",
+        "queuedToast": "备份已排队",
+        "triggerFailedToast": "触发失败",
+        "listFailedToast": "加载备份列表失败",
+        "deleteConfirm": "删除备份 {id}? 该 blob 将从目标中移除。",
+        "deletedToast": "备份已删除",
+        "deleteFailedToast": "删除失败",
+        "empty": "暂无备份。点击上方 \"立即备份\" 进行第一次。",
+        "columns": {
+          "id": "ID",
+          "type": "类型",
+          "target": "目标",
+          "status": "状态",
+          "started": "开始",
+          "size": "大小",
+          "actions": "操作"
+        },
+        "downloadTooltip": "下载",
+        "deleteTooltip": "删除"
+      },
+      "restore": {
+        "title": "从备份 bundle 恢复",
+        "bundleLabel": "加密 bundle（.tar.gz.enc）",
+        "targetDsnLabel": "目标数据库 DSN",
+        "targetDsnHint": "（留空 = opendray 自己的 DB — 危险）",
+        "targetDsnPlaceholder": "postgres://user:pass@host:5432/dbname",
+        "cleanLabel": "--clean --if-exists（先 drop 现有 schema；恢复到已填充的 DB 上时必需）",
+        "auditNoteLabel": "审计备注（可选）",
+        "auditNotePlaceholder": "恢复原因 — 会出现在 slog 中",
+        "ownDbWarning": "你正在恢复到 <1>opendray 自己的数据库</1>。启用 \"--clean\" 时会 drop 每张表并按字面回放备份 — 不可逆。请输入 <3>I understand</3> 以继续。",
+        "confirmPlaceholder": "I understand",
+        "confirmSentinel": "I understand",
+        "pgRestoreOutput": "pg_restore 输出（最后 8 KiB）",
+        "noPgRestoreOutput": "（无 pg_restore 输出）",
+        "pickFileToast": "请先选择一个 bundle 文件",
+        "succeededToast": "恢复成功",
+        "replayedDescription": "已回放 {bytes}，来自 manifest {id}",
+        "failedToast": "恢复失败",
+        "restoring": "恢复中…",
+        "dryRunToast": "试运行完成 —— 查看计划后再应用",
+        "planTitle": "恢复计划（试运行 —— 未改动任何内容）",
+        "planDump": "数据库 dump：{size}",
+        "planConfig": "config.toml → {path}",
+        "planSecrets": "secrets.env → {path}",
+        "planVault": "vault：{files} 个文件（{roots}）",
+        "planApplyHint": "应用前会先做一次完整实例安全快照,再覆盖上述内容并执行 pg_restore。",
+        "preview": "预览（试运行）",
+        "previewing": "预览中…",
+        "previewFirstHint": "请先运行试运行预览",
+        "applyRestore": "应用恢复"
+      },
+      "kind": {
+        "dbOnly": "仅数据库",
+        "fullInstance": "完整实例",
+        "fullInstanceHint": "包含 vault、secrets.env 和 config.toml"
+      },
+      "verify": {
+        "ok": "已校验",
+        "okHint": "已解密并确认可恢复（pg_restore --list）",
+        "failed": "未校验"
+      },
+      "health": {
+        "headlineHealthy": "备份正常",
+        "headlineAttention": "需要关注",
+        "headlineNever": "尚无备份",
+        "lastSuccess": "最近成功备份",
+        "never": "从未",
+        "tiles": {
+          "recentFailures": "近期失败",
+          "verifyFailures": "校验失败",
+          "overdue": "逾期",
+          "schedules": "计划"
+        },
+        "loadFailedToast": "无法加载备份健康状态"
+      },
+      "trigger": {
+        "preMigrate": "迁移前",
+        "preMigrateHint": "schema 迁移前自动拍摄的快照",
+        "preRestore": "恢复前",
+        "preRestoreHint": "应用恢复前自动拍摄的安全快照"
+      },
+      "recoveryKit": {
+        "button": "恢复工具包",
+        "title": "下载恢复工具包",
+        "warning": "灾难恢复保险 —— 仅当本机与其密钥同时丢失时才需要,正常情况下你永远用不到。本工具包是你的备份口令,用你此处自设的密码封装。每次生成都是一份独立工具包、用当次的密码封装 —— 服务端不存储,因此没有唯一的“主密码”。请把工具包和它的密码一起、异地分开保存。注意:这个密码保护的是工具包本身,而不是网关 —— 任何有后台权限的人都能再生成一份。",
+        "passphraseLabel": "恢复口令（至少 8 位）",
+        "passphrasePlaceholder": "一个你不会丢失的强口令",
+        "confirmLabel": "确认恢复口令",
+        "mismatch": "两次口令不一致",
+        "generating": "生成中…",
+        "download": "下载工具包",
+        "downloadedToast": "恢复工具包已下载 —— 请妥善保存",
+        "failedToast": "无法生成恢复工具包"
+      },
+      "schedulesTab": {
+        "description": "周期备份。调度器每 30 秒轮询一次，并运行最旧的到期计划。",
+        "newSchedule": "新建计划",
+        "loadFailedToast": "加载计划失败",
+        "deleteConfirm": "删除计划 {id}?",
+        "deletedToast": "计划已删除",
+        "deleteFailedToast": "删除失败",
+        "toggleFailedToast": "切换失败",
+        "empty": "暂无计划。添加一个以进行周期性自动备份。",
+        "columns": {
+          "id": "ID",
+          "target": "目标",
+          "interval": "间隔",
+          "keep": "保留",
+          "nextRun": "下次运行",
+          "enabled": "启用",
+          "actions": "操作"
+        },
+        "keepCount": "{count} 个备份",
+        "deleteTooltip": "删除"
+      },
+      "newSchedule": {
+        "title": "新建备份计划",
+        "targetLabel": "目标",
+        "targetsHint": "选择一个或多个 —— 同一份备份会写入每个目标（3-2-1）。",
+        "everyHoursLabel": "每隔（小时）",
+        "keepLastNLabel": "保留最近 N 个",
+        "enableImmediately": "立即启用",
+        "createdToast": "计划已创建",
+        "createFailedToast": "创建失败",
+        "creating": "创建中…",
+        "create": "创建"
+      },
+      "fanout": {
+        "badge": "扇出",
+        "hint": "属于一次多目标扇出（组 {group}）"
+      },
+      "dedup": {
+        "badge": "已去重",
+        "hint": "与之前的备份内容相同 —— 复用已有 blob，未重复上传"
+      },
+      "targetsTab": {
+        "description": "存储目标。v1 支持 <1>local</1>（opendray 主机磁盘）与 <3>smb</3>（任意 SMB / CIFS 共享，如 UNAS 或群晖）。",
+        "newTarget": "新建目标",
+        "listFailedToast": "加载目标列表失败",
+        "deleteConfirm": "删除目标 {id}? 引用它的计划会阻止删除。",
+        "deletedToast": "目标已删除",
+        "deleteFailedToast": "删除失败",
+        "connectionOkToast": "连接成功",
+        "connectionFailedToast": "连接失败",
+        "testFailedToast": "测试失败",
+        "columns": {
+          "id": "ID",
+          "kind": "类型",
+          "config": "配置",
+          "enabled": "启用",
+          "actions": "操作"
+        },
+        "on": "开",
+        "off": "关",
+        "test": "测试",
+        "testing": "测试中…",
+        "deleteTooltip": "删除"
+      },
+      "targetEditor": {
+        "title": "新建备份目标",
+        "kindPicker": "你想备份到哪里？",
+        "idLabel": "ID（可选）",
+        "idPlaceholder": "留空则自动生成，例如 tgt_xxx",
+        "createdToast": "目标已创建",
+        "createFailedToast": "创建失败",
+        "creating": "创建中…",
+        "create": "创建目标",
+        "enableImmediately": "立即启用（否则保存为禁用 — 适合 \"先配置好，稍后开启\"）",
+        "local": {
+          "rootLabel": "根目录",
+          "rootHint": "留空 = cfg.backup.local_dir (~/.opendray/backups)",
+          "rootPlaceholder": "~/backups/opendray  或  /mnt/external-hdd/opendray"
+        },
+        "smb": {
+          "hostLabel": "主机",
+          "hostPlaceholder": "192.168.1.20",
+          "portLabel": "端口",
+          "shareLabel": "Share",
+          "shareHint": "SMB 服务器上的顶层共享名",
+          "sharePlaceholder": "Claude_Workspace",
+          "userLabel": "用户",
+          "passwordLabel": "密码",
+          "pathPrefixLabel": "路径前缀",
+          "pathPrefixHint": "共享根下的子文件夹（可选）",
+          "pathPrefixPlaceholder": "opendray/backups"
+        },
+        "s3": {
+          "endpointLabel": "Endpoint",
+          "endpointHint": "主机（不要带协议）。AWS: s3.amazonaws.com · R2: <accountid>.r2.cloudflarestorage.com · MinIO: minio.local:9000",
+          "endpointPlaceholder": "s3.amazonaws.com",
+          "regionLabel": "Region",
+          "regionHint": "仅 AWS；R2 用 'auto'",
+          "regionPlaceholder": "us-east-1 / auto",
+          "bucketLabel": "Bucket",
+          "bucketPlaceholder": "opendray-backups",
+          "accessKeyLabel": "Access key",
+          "secretKeyLabel": "Secret key",
+          "secretKeyHint": "AES-256-GCM 加密存储；不会被回显",
+          "pathPrefixLabel": "Path prefix",
+          "pathPrefixHint": "Object-key 前缀（可选）",
+          "pathPrefixPlaceholder": "opendray/backups",
+          "useHttps": "使用 HTTPS",
+          "pathStyle": "Path-style 寻址（legacy / MinIO）"
+        },
+        "webdav": {
+          "baseUrlLabel": "Base URL",
+          "baseUrlHint": "包含任意路径的完整 URL。示例：https://cloud.example.com/remote.php/dav/files/me/（Nextcloud）、https://nas.local:5006/（群晖）、https://dav.jianguoyun.com/dav/（坚果云）",
+          "baseUrlPlaceholder": "https://cloud.example.com/remote.php/dav/files/<user>/",
+          "userLabel": "用户",
+          "passwordLabel": "密码",
+          "pathPrefixLabel": "路径前缀",
+          "pathPrefixHint": "Base URL 下的子文件夹（可选）",
+          "pathPrefixPlaceholder": "opendray/backups"
+        },
+        "sftp": {
+          "hostLabel": "主机",
+          "hostPlaceholder": "vps.example.com",
+          "portLabel": "端口",
+          "userLabel": "用户",
+          "passwordLabel": "密码",
+          "passwordHint": "密码或私钥二选一。若两者都填，密码会被作为私钥口令使用。",
+          "privateKeyLabel": "私钥（PEM）",
+          "privateKeyHint": "粘贴 OpenSSH/PEM 格式的私钥内容（例如 ~/.ssh/id_ed25519）。留空则仅用密码认证。",
+          "privateKeyPlaceholder": "-----BEGIN OPENSSH PRIVATE KEY-----...",
+          "hostKeyLabel": "Host key（pinning）",
+          "hostKeyHint": "OpenSSH 风格的服务器公钥（运行 `ssh-keyscan host` 获取）。留空则禁用 pinning（LAN 之外不推荐）。",
+          "hostKeyPlaceholder": "ssh-ed25519 AAAA...",
+          "pathPrefixLabel": "路径前缀",
+          "pathPrefixHint": "绝对路径或相对家目录（可选）",
+          "pathPrefixPlaceholder": "/var/backups/opendray  或  opendray-backups"
+        },
+        "rclone": {
+          "rcloneHint": "要求 opendray 主机上已安装 <1>rclone</1> CLI。请先通过 <3>rclone config</3> 配置 remote，然后在下面填写 remote 名。opendray 在内部调用 <5>rclone rcat / cat / lsd</5>。",
+          "remoteLabel": "Remote name",
+          "remoteHint": "来自 `rclone config` 的名字（不带冒号）。例如：gdrive、onedrive、dropbox-personal、baidu-pan",
+          "remotePlaceholder": "gdrive",
+          "pathPrefixLabel": "路径前缀",
+          "pathPrefixHint": "Remote 根下的子文件夹（可选）",
+          "pathPrefixPlaceholder": "opendray/backups",
+          "binaryPathLabel": "二进制路径",
+          "binaryPathHint": "覆盖 `which rclone`。留空则走 PATH 查找。",
+          "binaryPathPlaceholder": "/opt/homebrew/bin/rclone",
+          "configPathLabel": "Config 路径",
+          "configPathHint": "覆盖 --config（默认 ~/.config/rclone/rclone.conf 或 ~/.rclone.conf）",
+          "configPathPlaceholder": "留空则使用 rclone 默认"
+        }
+      }
+    },
+    "serverSettings": {
+      "sections": {
+        "general": {
+          "title": "通用",
+          "desc": "监听地址、操作员账号、令牌 TTL。"
+        },
+        "logging": {
+          "title": "日志",
+          "desc": "日志级别、格式与实时跟踪。"
+        },
+        "sessions": {
+          "title": "会话",
+          "desc": "空闲检测阈值。"
+        },
+        "vault": {
+          "title": "Vault",
+          "desc": "笔记、技能与 git 版本化根目录。"
+        },
+        "mcp": {
+          "title": "MCP 注册表",
+          "desc": "服务器注册表与密钥。"
+        },
+        "memory": {
+          "title": "记忆 · 存储与嵌入",
+          "desc": "记忆子系统的基础设施一半：嵌入后端、检索调参与后台治理。重启后生效。运行时行为（工作器、捕获、注入）在 Cortex 设置中。"
+        },
+        "backup": {
+          "title": "备份",
+          "desc": "加密数据库备份、恢复，以及管理员数据导出。"
+        },
+        "claude": {
+          "title": "存储 · Claude",
+          "desc": "Claude 会话记录在磁盘上的位置。"
+        },
+        "codex": {
+          "title": "存储 · Codex",
+          "desc": "Codex 会话根目录。"
+        },
+        "antigravity": {
+          "title": "存储 · Antigravity",
+          "desc": "Antigravity (agy) 按会话存储的 SQLite 库。"
+        }
+      },
+      "loading": "正在加载服务器设置…",
+      "loadFailed": "加载失败：{message}",
+      "noConfigFlag": "opendray 启动时未指定 -config，设置仅从环境变量加载，无法在此编辑。",
+      "resetButton": "重置",
+      "resetButtonTitle": "丢弃此分区中未保存的修改",
+      "resetConfirm": "将\"{section}\"重置为上次保存的值？",
+      "badgeRestartRequired": "需要重启",
+      "badgeUnsaved": "未保存",
+      "saveButton": "保存修改",
+      "saveToastTitle": "设置已保存",
+      "saveToastDesc": "点击「重启」以应用。",
+      "saveErrorTitle": "保存失败",
+      "dangerousConfirm": "您更改了监听地址 / 管理员账号 / 管理员密码。重启后可能需要重新登录或使用新地址。是否继续？",
+      "unsavedHint": "有未保存的修改",
+      "savedHint": "所有修改已保存",
+      "searchPlaceholder": "筛选字段…",
+      "restart": {
+        "button": "重启服务器",
+        "buttonTitle": "对网关进程执行 self-exec",
+        "dirtyConfirm": "您有未保存的修改。重启将使用「上次保存」的配置，是否继续？",
+        "confirm": "重启 opendray 网关？所有打开的终端会话将自动重新连接。",
+        "overlay": "正在重启服务器…",
+        "waiting": "等待 /health · {tick}s",
+        "timedOutTitle": "重启超时",
+        "timedOutDesc": "Health 接口未恢复。请查看服务器日志。",
+        "successToast": "服务器已重启"
+      },
+      "formGroups": {
+        "network": "网络",
+        "operatorAccount": "操作员账号",
+        "memoryConfiguration": "配置",
+        "memoryHttp": "HTTP 后端（当 backend=http 时使用）",
+        "memoryLocal": "本地 ONNX（当 backend=local 时使用）",
+        "backupStatus": "状态",
+        "backupWhere": "备份目标位置",
+        "backupSchedules": "计划任务",
+        "backupWhatsInside": "备份里有什么？",
+        "memoryGovernance": "后台治理（gatekeeper / cleaner）",
+        "knowledgeGraph": "知识图谱",
+        "database": "数据库"
+      },
+      "fields": {
+        "listenAddress": {
+          "label": "监听地址",
+          "hint": "HTTP 服务绑定的 host:port，例如：0.0.0.0:8770。"
+        },
+        "username": {
+          "label": "用户名",
+          "hint": "登录表单使用的账号。修改后下次请求会强制重新登录。"
+        },
+        "password": {
+          "label": "密码",
+          "hint": "留空保持当前密码不变；填值则会覆盖。",
+          "hideTitle": "隐藏",
+          "revealTitle": "显示"
+        },
+        "tokenTTL": {
+          "label": "令牌 TTL",
+          "hint": "Bearer 令牌生命周期，使用 Go duration，如 \"24h\"、\"30m\"。留空 = 永不过期。"
+        },
+        "logLevel": {
+          "label": "日志级别",
+          "hint": "低于此级别的日志将被丢弃。"
+        },
+        "logFormat": {
+          "label": "格式",
+          "hint": "\"text\" 适合人读；\"json\" 便于机器解析。"
+        },
+        "logFile": {
+          "label": "日志文件",
+          "hint": "可选的文件路径。10MB 自动轮转，保留 5 个备份。留空 = 仅输出到 stderr。"
+        },
+        "idleThreshold": {
+          "label": "空闲阈值",
+          "hint": "会话静默这么久后触发 session.idle。留空 = 30s。"
+        },
+        "idlePollInterval": {
+          "label": "空闲轮询间隔",
+          "hint": "空闲检测器的唤醒频率。越低 = 延迟越低、唤醒越多。留空 = 5s。"
+        },
+        "vaultRoot": {
+          "label": "Vault 根目录",
+          "hint": "笔记、技能和 MCP 注册表的顶层目录。"
+        },
+        "notesDirectory": {
+          "label": "笔记目录",
+          "hint": "覆盖笔记位置。默认为 <vault root>/notes。"
+        },
+        "skillsDirectory": {
+          "label": "技能目录",
+          "hint": "覆盖技能位置。默认为 <vault root>/skills。"
+        },
+        "gitRoot": {
+          "label": "Git 根目录",
+          "hint": "Vault Sync 功能提交到的工作树。"
+        },
+        "personalPrefix": {
+          "label": "个人前缀",
+          "hint": "自动派生路径时用于个人笔记的文件夹名。默认 \"personal\"。"
+        },
+        "projectsPrefix": {
+          "label": "项目前缀",
+          "hint": "项目笔记的文件夹名。默认 \"projects\"。"
+        },
+        "registryRoot": {
+          "label": "注册表根目录",
+          "hint": "存放 MCP server JSON 定义的目录。默认为 <vault>/mcp。"
+        },
+        "secretsFile": {
+          "label": "密钥文件",
+          "hint": "spawn 时替换进 MCP server 命令的 key=value 文件。"
+        },
+        "memoryBackend": {
+          "label": "嵌入器后端",
+          "hint": "\"auto\" / \"bm25\" 使用纯 Go 关键词路径（无需 cgo）；\"http\" 调用任何兼容 OpenAI 的 /v1/embeddings（ollama / OpenAI / LocalAI）；\"local\" 进程内运行 ONNX sentence-transformer — 需要用 `-tags local_onnx` 编译的二进制。"
+        },
+        "memoryStore": {
+          "label": "存储",
+          "hint": "\"pgvector\" 复用 opendray 已有的 PG + vector 扩展；v1 唯一选项。"
+        },
+        "memoryTopK": {
+          "label": "默认 top-K",
+          "hint": "agent 未指定时 memory_search 返回多少条命中。留空 = 5。"
+        },
+        "memoryThreshold": {
+          "label": "相似度阈值",
+          "hint": "分数低于此值的命中将被丢弃。留空 = 0.1（宽松 — BM25 稀疏向量很少超过 0.5）。"
+        },
+        "memoryScope": {
+          "label": "默认作用域",
+          "hint": "agent 未指定时 memory_store 使用的作用域。\"project\"（推荐）按 cwd 分组；\"global\" 跨 cwd 共享。"
+        },
+        "memoryBaseUrl": {
+          "label": "Base URL",
+          "hint": "如 ollama 用 \"http://localhost:11434/v1\"，OpenAI 用 \"https://api.openai.com/v1\"。"
+        },
+        "memoryModel": {
+          "label": "模型",
+          "hint": "如 ollama 用 \"nomic-embed-text\"，OpenAI 用 \"text-embedding-3-small\"。"
+        },
+        "memoryApiKey": {
+          "label": "API 密钥",
+          "hint": "ollama / 本地服务可留空；OpenAI / Voyage / 托管服务必填。"
+        },
+        "memoryLocalModel": {
+          "label": "模型名",
+          "hint": "仅作显示用 — 出现在日志 / Inspector 中。如 \"bge-m3\"、\"bge-small-en-v1.5\"。"
+        },
+        "memoryLibraryPath": {
+          "label": "库路径",
+          "hint": "存放 libonnxruntime.dylib (macOS) / libonnxruntime.so (Linux) 的目录。`brew install onnxruntime` 后即 /opt/homebrew/opt/onnxruntime/lib。"
+        },
+        "memoryModelPath": {
+          "label": "模型路径",
+          "hint": ".onnx 权重的绝对路径。从 HuggingFace 下载，如 Xenova/bge-m3 或 Xenova/bge-small-en-v1.5。"
+        },
+        "memoryTokenizerPath": {
+          "label": "Tokenizer 路径",
+          "hint": "tokenizer.json（HuggingFace 标准格式）的绝对路径 — 通常和模型放在一起。"
+        },
+        "memoryMaxSeqLen": {
+          "label": "最大序列长度",
+          "hint": "超过这个 token 数会被截断。bge-m3 默认 512。留空 = 512。"
+        },
+        "claudeHistoryRoots": {
+          "label": "历史根目录",
+          "hint": "扫描 Claude 每项目 JSONL 记录的目录。留空 = 扫描 ~/.claude/projects + 所有 ~/.claude-accounts/*/projects。"
+        },
+        "claudeAccountsDir": {
+          "label": "账号目录",
+          "hint": "opendray 管理的 Claude 账号 ConfigDir 根目录。默认 ~/.claude-accounts。"
+        },
+        "codexSessionsRoot": {
+          "label": "会话根目录",
+          "hint": "遍历 Codex rollout JSONL 文件的目录。默认 ~/.codex/sessions。"
+        },
+        "antigravityConversationsRoot": {
+          "label": "会话目录",
+          "hint": "存放 agy 按会话 .db 文件的根目录。默认 ~/.gemini/antigravity-cli/conversations。"
+        },
+        "backupLocalDir": {
+          "label": "本地备份目录",
+          "hint": "自动创建的 `local` 目标的默认根目录。留空 = ~/.opendray/backups。需要重启。"
+        },
+        "backupExportDir": {
+          "label": "导出目录",
+          "hint": "一次性导出 zip 在磁盘上的暂存位置。留空 = ~/.opendray/exports。包将在 24 小时后自动过期。需要重启。"
+        },
+        "backupPgDumpPath": {
+          "label": "pg_dump 路径",
+          "hint": "pg_dump 的绝对路径。主版本号必须 ≥ 服务器的。留空 = PATH 上的第一个 pg_dump。"
+        },
+        "backupPgRestorePath": {
+          "label": "pg_restore 路径",
+          "hint": "/backups/restore 流程使用的 pg_restore 绝对路径。同样的主版本号规则。"
+        },
+        "memoryDedup": {
+          "label": "去重阈值",
+          "hint": "写入时折叠阈值：相似度高于此值会更新现有记忆而非插入近重复项。0 = 随嵌入器自动；负值完全关闭折叠。"
+        },
+        "gatekeeperEnabled": {
+          "label": "Gatekeeper（写入守门员）",
+          "hint": "写入前的 LLM 判官：判断 memory_store 是持久事实还是噪音。由哪个 LLM 执行在 Cortex 设置 → 工作器中路由。"
+        },
+        "gatekeeperLatency": {
+          "label": "Gatekeeper 最大延迟（ms）",
+          "hint": "超过该延迟时守门员退化为\"放行\"，不会因 LLM 慢而阻塞写入。默认 2000。"
+        },
+        "cleanerEnabled": {
+          "label": "Cleaner（自动馆员）",
+          "hint": "周期性扫描，将过期/重复的记忆软归档（可恢复，有宽限期）。由哪个 LLM 执行在 Cortex 设置 → 工作器中路由。"
+        },
+        "cleanerInterval": {
+          "label": "Cleaner 间隔（秒）",
+          "hint": "自动扫描的间隔秒数。默认 86400（24 小时）。"
+        },
+        "cleanerGlobalScope": {
+          "label": "Cleaner 扫描全局作用域",
+          "hint": "同时审查全局作用域的记忆（通常由操作员手工维护）。建议在信任 cleaner 之前保持关闭。"
+        },
+        "knowledgeEnabled": {
+          "label": "知识图谱",
+          "hint": "建立在情景记忆之上的结构化、自进化知识层（实体/手册/技能）。驱动 Cortex → 知识 标签页。"
+        },
+        "claudeWatcher": {
+          "label": "账号目录监视",
+          "hint": "监视 accounts_dir，当出现 .credentials.json（CLAUDE_CONFIG_DIR=<dir> claude login 的产物）时自动注册新账号。"
+        },
+        "claudeAutoFailover": {
+          "label": "限流自动切换",
+          "hint": "当活动会话撞到限流时自动切换到另一个 Claude 账号。需显式开启：它会在无人点击的情况下改变计费归属。"
+        },
+        "mobileTokenTTL": {
+          "label": "移动端 token 有效期",
+          "hint": "签发给移动 App 的 bearer token 的有效期。默认 720h（30 天）。"
+        },
+        "dbMaxConns": {
+          "label": "最大连接数",
+          "hint": "pgx 连接池上限。0 = 默认值（16）。"
+        }
+      },
+      "liveTail": {
+        "heading": "实时日志",
+        "description": "内存中的环形缓冲区（最近约 2,000 条）。重启后清空。"
+      },
+      "memoryInspectorCard": {
+        "heading": "检查器",
+        "description": "在专门页面浏览、搜索、编辑已存储的记忆。",
+        "openButton": "打开记忆 →"
+      },
+      "localOnnxBanner": "需要使用 <1>-tags local_onnx</1> 编译二进制。标准构建在选择此后端时会返回明确的 stub 错误。设置步骤参见 <3>记忆 → 本地 ONNX</3> 教程。",
+      "stringList": {
+        "noneDefault": "（无 — 使用内置默认值）",
+        "addPath": "添加路径",
+        "removeTitle": "移除"
+      },
+      "httpHelpers": {
+        "autoDetected": "启动时自动检测到",
+        "modelCount": "{count} 个模型 — 点击使用",
+        "presets": "预设：",
+        "testConnection": "测试连接",
+        "presetTip": {
+          "ollama": "本地 ollama 守护进程",
+          "lmStudio": "LM Studio 本地服务",
+          "openai": "OpenAI 云端（需要 API key）"
+        }
+      },
+      "probe": {
+        "unreachable": "✗ 不可达：{error}",
+        "connectionFailed": "连接失败",
+        "reachable": "✓ 可达 {detected}· 共 {total} 个模型 · {embedding} 个嵌入",
+        "modelMissing": "⚠ 配置的模型 {model} 不在列表中。从下方嵌入模型中选一个，或修正名称。",
+        "embeddingModelsLabel": "嵌入模型：",
+        "moreModels": "还有 {count} 个",
+        "noEmbeddingFound": "⚠ 没有模型名包含 \"embed\"。该端点可能未加载嵌入模型 — 请检查本地服务。",
+        "configuredTitle": "当前已配置",
+        "applyTitle": "点击应用"
+      },
+      "backup": {
+        "featureDisabledTitle": "功能已禁用",
+        "featureDisabledHint": "在 opendray 的环境变量中设置 <1>OPENDRAY_BACKUP_ENABLED=1</1> + <3>OPENDRAY_BACKUP_KEY=&lt;passphrase&gt;</3>，然后重启。主密码仅来自环境变量 — 永不写入 config.toml。",
+        "statusRowLabel": "状态",
+        "enabledHealthy": "已启用 · 健康",
+        "enabledDegraded": "已启用 · 异常",
+        "keyFingerprintLabel": "密钥指纹",
+        "keyFingerprintHint": "记录到 Vaultwarden — 丢失会锁死所有先前的备份",
+        "pgDumpLabel": "pg_dump",
+        "pgDumpUnavailable": "不可用",
+        "pgRestoreLabel": "pg_restore",
+        "pgRestoreNotResolved": "（未解析）",
+        "openBackups": "打开备份页 →",
+        "openExport": "打开导出 / 导入 →",
+        "whereDesc": "每个目标都是备份块可写入的一个地方。opendray 支持 <1>本地磁盘</1>、<3>SMB/CIFS</3>（Windows / NAS）、<5>S3 兼容</5>（AWS、R2、B2、MinIO、阿里云 OSS、腾讯云 COS …）、<7>WebDAV</7>（Nextcloud、群晖、坚果云）、<9>SFTP</9>，外加 <11>rclone</11> 透传，接入另外 70+ 个后端（Google Drive、OneDrive、Dropbox、百度云、阿里云盘 …）。",
+        "loading": "加载中…",
+        "noTargets": "尚未添加目标。添加一个开始备份。",
+        "addTarget": "添加目标",
+        "noSchedulesHint": "没有循环计划。在 <1>/backups → 计划任务</1> 添加一个以自动执行备份。",
+        "scheduleHeaders": {
+          "schedule": "计划",
+          "target": "目标",
+          "cadence": "频率",
+          "keep": "保留",
+          "state": "状态"
+        },
+        "every": "每 {interval}",
+        "backupsKeep": "{count} 份备份",
+        "stateEnabled": "已启用",
+        "statePaused": "已暂停",
+        "manageSchedules": "在 /backups → 计划任务 管理 →",
+        "whatsInsideDesc": "每份备份都是所有 opendray 表（sessions、integrations、memories、audit_log 等）的 <1>pg_dump --format=custom</1>，加上一个 <3>manifest.json</3>，以及（可选）当前的 <5>config.toml</5>。在 <7>备份页</7> 打开「备份里有什么？」面板可以看到带行数的实时清单。",
+        "advancedToggle": "高级选项（路径与客户端二进制）— 需要重启"
+      },
+      "targetRow": {
+        "on": "开",
+        "off": "关",
+        "test": "测试",
+        "testing": "测试中…",
+        "delete": "删除",
+        "connectionOk": "{id}：连接正常",
+        "connectionFailedTitle": "连接失败",
+        "testFailedTitle": "测试失败",
+        "deleteConfirm": "删除目标 \"{id}\"？引用它的计划任务将阻止删除。",
+        "deleteSuccess": "目标已删除",
+        "deleteFailedTitle": "删除失败",
+        "unknownError": "未知错误"
+      },
+      "toggle": {
+        "on": "开启",
+        "off": "关闭",
+        "defaultOn": "默认（开）",
+        "defaultOff": "默认（关）"
+      },
+      "memoryRuntimeBanner": "运行时 AI 行为——工作器、捕获规则、注入策略与 spawn 模式——位于 Cortex 设置，保存即生效。本区块是基础设施的一半：嵌入后端、存储与后台治理（需重启生效）。",
+      "memoryRuntimeBannerButton": "打开 Cortex 设置"
+    },
+    "settings": {
+      "title": "设置",
+      "subtitle": "工作区、账号与网关配置。",
+      "groups": {
+        "workspace": "工作区",
+        "server": "服务器",
+        "system": "系统"
+      },
+      "items": {
+        "appearance": "外观",
+        "font": "字号",
+        "account": "账号",
+        "status": "状态",
+        "about": "关于"
+      },
+      "health": {
+        "connecting": "连接中…",
+        "dbOk": "db 正常",
+        "dbDown": "db 异常"
+      },
+      "breadcrumb": {
+        "server": "服务器"
+      },
+      "appearance": {
+        "title": "外观",
+        "description": "选择 opendray 的外观风格。",
+        "options": {
+          "light": "浅色",
+          "lightDesc": "始终浅色",
+          "dark": "深色",
+          "darkDesc": "始终深色",
+          "system": "跟随系统",
+          "systemDesc": "跟随操作系统设置"
+        }
+      },
+      "font": {
+        "title": "字号",
+        "description": "缩放整个界面。按浏览器保存。",
+        "options": {
+          "compact": "紧凑",
+          "default": "默认",
+          "comfy": "舒适",
+          "large": "大"
+        }
+      },
+      "account": {
+        "title": "账号",
+        "description": "运维与当前 bearer token。",
+        "username": "用户名",
+        "tokenExpires": "Token 过期",
+        "changeCredentials": "修改凭证"
+      },
+      "changeCredentials": {
+        "title": "修改凭证",
+        "description": "先验证当前密码，再选择新凭证。所有其它已登录会话都将被吊销。",
+        "currentPassword": "当前密码",
+        "newUsername": "新用户名",
+        "newPassword": "新密码",
+        "newPasswordHint": "至少 8 个字符。",
+        "confirm": "确认新密码",
+        "errorTooShort": "新密码至少 8 个字符。",
+        "errorMismatch": "新密码和确认不一致。",
+        "errorWrongPassword": "当前密码不正确。",
+        "cancel": "取消",
+        "update": "更新",
+        "saving": "保存中…"
+      },
+      "system": {
+        "title": "系统状态",
+        "description": "来自网关 /health 接口的实时状态。",
+        "status": "状态",
+        "version": "版本",
+        "uptime": "运行时长",
+        "database": "数据库",
+        "reachable": "可达",
+        "unreachable": "不可达"
+      },
+      "about": {
+        "title": "关于",
+        "description": "opendray v2 — 面向 AI agent CLI 的多路复用 + 集成网关。源码采用 Apache 2.0 协议。",
+        "version": "版本",
+        "commit": "提交",
+        "updateAvailable": "有可用更新：{version}",
+        "releaseNotes": "发行说明 ↗",
+        "updateNow": "立即更新",
+        "upgradingShort": "更新中…",
+        "confirmRestart": "这将重启服务，正在运行的会话会重新连接。",
+        "confirmUpgrade": "升级并重启",
+        "upgrading": "正在升级到 {version}…",
+        "upgraded": "已更新到 {version}。",
+        "upgradeSlow": "升级耗时较长——如果服务未恢复，请检查日志。",
+        "guidedHint": "此处不支持应用内升级。请在服务器上运行：",
+        "checkFailed": "无法检查更新（离线或受限）。",
+        "upToDate": "已是最新版本。",
+        "checkUpdates": "检查更新",
+        "checking": "检查中…",
+        "reinstall": "重新安装",
+        "forcePrompt": "重启将中断 {count} 个进行中的会话（之后会自动恢复）。",
+        "upgradeAnyway": "仍然升级"
+      }
+    },
+    "logViewer": {
+      "filterPlaceholder": "过滤…",
+      "debugTooltip": "Debug 计数",
+      "infoTooltip": "Info 计数",
+      "warnTooltip": "Warn 计数",
+      "errorTooltip": "Error 计数",
+      "streaming": "正在流式传输",
+      "disconnected": "已断开",
+      "live": "实时",
+      "offline": "离线",
+      "pauseTooltip": "暂停自动滚动",
+      "resumeTooltip": "恢复自动滚动",
+      "clearTooltip": "清空本地视图（服务端 ring 不受影响）",
+      "downloadTooltip": "下载完整 ring 为 .log 文件",
+      "emptyWaiting": "等待日志记录…",
+      "emptyFiltered": "没有匹配 \"{query}\" 的记录"
+    },
+    "pathInput": {
+      "testButton": "测试",
+      "testTooltip": "解析并检查此路径",
+      "notFound": "未找到 ·",
+      "childrenSuffix": "项",
+      "expectedDirectory": "· 期望是目录"
+    },
+    "memoryAmbient": {
+      "header": {
+        "title": "环境记忆 — 自动捕获与注入",
+        "body": "opendray 每 10 秒轮询所有运行中的 agent 会话，通过可配置的 LLM 提取持久事实，去重后存入共享记忆池。配置由哪个 LLM 做提取（Provider）、何时触发提取（Capture rule）、以及在 spawn 时把什么内容（如果有）拼接到 agent 的 system prompt（Injection profile）。"
+      },
+      "loading": "加载中…",
+      "providers": {
+        "title": "Summarizer Providers",
+        "addButton": "添加 provider",
+        "intro": "至少需要一个已启用的 provider 才能真正触发捕获。本地选项（Ollama、LM Studio、Integration）让你的会话内容不出外网。",
+        "empty": "尚未配置 provider。",
+        "row": {
+          "defaultBadge": "★ 默认",
+          "makeDefault": "设为默认",
+          "test": "测试",
+          "testing": "测试中…",
+          "delete": "删除",
+          "testOk": "{name}：连接成功",
+          "testFailedToast": "测试失败",
+          "deleteConfirm": "删除 provider \"{name}\"?",
+          "deletedToast": "Provider 已删除",
+          "deleteFailedToast": "删除失败",
+          "updateFailedToast": "更新失败",
+          "madeDefaultToast": "{name} 已设为默认"
+        },
+        "dialog": {
+          "title": "添加 summarizer provider",
+          "kindLabel": "类型",
+          "nameLabel": "名称",
+          "namePlaceholder": "例如 lmstudio-qwen",
+          "modelLabel": "模型",
+          "baseUrlLabel": "Base URL",
+          "integrationNote": "Integration 类型 provider 通过一个已注册的集成解析 base URL。请先在 Integrations 中配置；更高级的 wiring（extra_config）在本版本中仅 DB 配置。",
+          "apiKeyLabel": "API key",
+          "apiKeyHint": "AES-GCM 加密存储（使用 backup 主口令）。不会被回显；保存后只显示指纹。",
+          "makeDefaultLabel": "将此设为默认 provider",
+          "create": "创建",
+          "nameRequiredToast": "名称不能为空",
+          "createdToast": "已创建 Provider {name}",
+          "createFailedToast": "创建失败"
+        },
+        "modelSelect": {
+          "editTitle": "更换模型",
+          "dialogTitle": "更换模型 — {name}",
+          "custom": "自定义…",
+          "backToList": "从列表选择",
+          "refresh": "重新扫描端点上的模型",
+          "unreachable": "端点不可达——请手动输入模型名；服务启动后会显示模型列表。",
+          "none": "端点有响应但没有公布任何模型——在 LM Studio 加载或在 Ollama pull 一个模型后重新扫描。",
+          "notOnEndpoint": "端点上不存在",
+          "save": "保存模型",
+          "savedToast": "{name} 现在使用 {model}"
+        }
+      },
+      "rules": {
+        "title": "捕获规则",
+        "addButton": "添加规则",
+        "intro": "每条规则表示 \"当此 trigger 触发时，对新的会话消息做总结并存储持久事实。\" 单会话规则覆盖全局默认。v1 内置 4 种 trigger 类型。",
+        "empty": "尚无捕获规则。添加一条以启用自动捕获。",
+        "row": {
+          "globalDefault": "全局默认",
+          "scopeLabel": "scope:",
+          "dedupLabel": "dedup:",
+          "runNow": "立即运行",
+          "running": "运行中…",
+          "delete": "删除",
+          "firedToast": "规则已对 {sessions} 个会话触发",
+          "runNowFailedToast": "立即运行失败",
+          "deleteConfirm": "删除规则 \"{name}\"?",
+          "deletedToast": "规则已删除",
+          "deleteFailedToast": "删除失败",
+          "summary": {
+            "afterMessages": "每 {n} 条消息",
+            "onIdle": "idle ≥ {seconds}s",
+            "kChars": "≥ {k} 字符",
+            "manual": "仅手动"
+          }
+        },
+        "dialog": {
+          "title": "添加捕获规则",
+          "nameLabel": "名称",
+          "triggerLabel": "Trigger",
+          "nLabel": "N（消息条数）",
+          "idleLabel": "Idle 秒数",
+          "kLabel": "K（字符数）",
+          "scopeLabel": "目标 scope",
+          "scopeProject": "project（推荐）",
+          "scopeGlobal": "global",
+          "dedupLabel": "去重阈值（0.0 – 1.0）",
+          "dedupHint": "越高 = 去重越严格。0.85 是推荐的平衡点。",
+          "create": "创建",
+          "nameRequiredToast": "名称不能为空",
+          "createdToast": "已创建规则 {name}",
+          "createFailedToast": "创建失败"
+        }
+      },
+      "profiles": {
+        "title": "Injection Profiles",
+        "addButton": "添加 profile",
+        "intro": "spawn 时，opendray 会把最近的项目记忆作为一段 markdown banner 拼接到 agent 的 system prompt — 前提是配置了 profile。没有 profile 时，模型仍可按需调用 memory_search。",
+        "empty": "尚无 injection profile。spawn 时不会自动注入记忆 — 模型仍可使用 memory_search。",
+        "row": {
+          "globalDefault": "全局默认",
+          "delete": "删除",
+          "deleteConfirm": "删除该 injection profile?",
+          "deletedToast": "Profile 已删除",
+          "deleteFailedToast": "删除失败"
+        },
+        "dialog": {
+          "title": "添加 injection profile",
+          "strategyLabel": "策略",
+          "kLabel": "K（注入的 top memory 数）",
+          "hint": "每个 session_id 一个 profile（或全局默认）。单会话 profile 暂只能通过 API 添加；UI 当前只管理全局默认。",
+          "create": "创建",
+          "createdToast": "Profile 已创建",
+          "createFailedToast": "创建失败"
+        }
+      },
+      "cost": {
+        "title": "Token 成本（总计）",
+        "intro": "按 provider 聚合自 <1>memory_summarizer_calls</1>。本地 provider（Ollama、LM Studio、Integration）按 $0 计价 — 硬件成本由运维承担。",
+        "empty": "暂无已启用的 provider — 没有成本数据。",
+        "columns": {
+          "provider": "Provider",
+          "calls": "调用",
+          "inTokens": "输入 token",
+          "outTokens": "输出 token",
+          "usdEst": "USD 估算"
+        }
+      }
+    },
+    "noteEditor": {
+      "loading": "加载中…",
+      "source": "源码",
+      "preview": "预览",
+      "tagTitle": "标签 #{tag}",
+      "emptyNote": "空白笔记。切换到源码标签开始书写。",
+      "saveFailedToast": "保存失败",
+      "status": {
+        "saveFailed": "保存失败",
+        "saving": "保存中…",
+        "unsaved": "未保存",
+        "newNote": "新笔记",
+        "saved": "已保存"
+      }
+    },
+    "export": {
+      "title": "导出数据",
+      "subtitle": "把选中的逻辑实体打成一份一次性 zip 包。服务器上保留 24 小时后自动回收。",
+      "backToBackups": "← 备份",
+      "sections": {
+        "export": "导出",
+        "import": "导入"
+      },
+      "form": {
+        "scope": "范围",
+        "memories": "记忆",
+        "memoriesHint": "跨 CLI 持久化的记忆行（text + scope + metadata）。向量被省略；导入端重嵌入。",
+        "integrations": "集成",
+        "customTasks": "自定义任务",
+        "customTasksHint": "在 Inspector 的 Tasks 标签里展示的运维自定义任务。",
+        "integrationOptions": {
+          "none": "无",
+          "noneHint": "完全跳过 integrations 表。",
+          "metadata": "仅元数据（推荐）",
+          "metadataHint": "ID、name、route prefix、scopes — 不包含任何 API key 凭证。",
+          "plaintext": "包含明文 API key",
+          "plaintextHint": "v1 仅 bcrypt：不存在可恢复的明文。Manifest 会记录此事实；不会泄露任何内容。"
+        },
+        "confirmWarning": "输入 <1>I understand</1> 以确认。opendray 当前只存 bcrypt 哈希 — 选择明文也不会导出任何明文（该选项为将来保留明文缓存的版本而预留）。",
+        "confirmPlaceholder": "I understand",
+        "confirmSentinel": "i understand",
+        "footnote": "审计日志与会话记录不在范围内 — 由 /backups（运维 dump）覆盖。",
+        "building": "构建中…",
+        "create": "创建导出",
+        "readyToast": "导出就绪",
+        "readyDescription": "{bytes} 字节",
+        "failedToast": "导出失败"
+      },
+      "history": {
+        "loading": "加载中…",
+        "empty": "暂无导出。请使用上面的表单创建一个。",
+        "title": "历史",
+        "columns": {
+          "id": "ID",
+          "status": "状态",
+          "scope": "范围",
+          "size": "大小",
+          "expires": "过期",
+          "actions": "操作"
+        },
+        "download": "下载",
+        "deleteTooltip": "删除",
+        "listFailedToast": "加载导出列表失败",
+        "downloadFailedToast": "下载失败",
+        "noTokenToast": "没有下载 token（已过期？）",
+        "deleteConfirm": "删除导出 {id}?",
+        "deletedToast": "导出已删除",
+        "deleteFailedToast": "删除失败",
+        "scopeEmpty": "(空)"
+      },
+      "import": {
+        "intro": "将一个导出 bundle（zip）回放到当前数据库。冲突项（id 一致，或 integrations 的 route_prefix 唯一冲突）默认 <1>跳过</1>。记忆条目会被标记为 <3>embedder=imported_v1</3>，需要做一次重嵌入后搜索才能返回；可在 <5>Memory → 维护</5> 触发。集成以 <7>enabled=false</7> 导入并使用非 bcrypt 的占位 key — 启用前请轮换。",
+        "memoryLink": "Memory → 维护",
+        "bundleLabel": "Bundle (.zip)",
+        "memoriesLabel": "记忆",
+        "integrationsLabel": "集成（仅元数据 — 不会导入 key）",
+        "customTasksLabel": "自定义任务",
+        "importing": "导入中…",
+        "importBundle": "导入 bundle",
+        "pickFileToast": "请先选择一个 bundle 文件",
+        "doneToast": "导入完成",
+        "finishedWithErrors": "导入完成但有错误",
+        "failedToast": "导入失败",
+        "summaryCard": {
+          "memories": "记忆",
+          "integrations": "集成",
+          "customTasks": "自定义任务",
+          "created": "已创建",
+          "skipped": "已跳过",
+          "failed": "失败"
+        }
+      },
+      "imports": {
+        "loading": "加载中…",
+        "empty": "暂无导入。",
+        "title": "历史",
+        "columns": {
+          "id": "ID",
+          "status": "状态",
+          "source": "来源",
+          "counts": "计数",
+          "when": "时间"
+        },
+        "noneCounts": "(无)",
+        "listFailedToast": "加载导入列表失败"
+      }
+    },
+    "knowledge": {
+      "title": "知识",
+      "subtitle": "跨所有项目沉淀的知识——基础设施与规约,加上从过往工作蒸馏的教训与可复用功能。开新项目时注入,快速起步、不从头再来。",
+      "searchPlaceholder": "搜索知识…",
+      "search": "搜索",
+      "browse": "浏览",
+      "cwdPlaceholder": "项目路径(cwd),用于按范围搜索",
+      "noResults": "无结果。",
+      "empty": "暂无内容。知识会在你工作时自动蒸馏。",
+      "neighbors": "关联",
+      "promote": "提升为全局",
+      "skillify": "生成技能",
+      "promoted": "已提升为全局",
+      "skillified": "已生成技能:{title}",
+      "actionFailed": "操作失败",
+      "selectHint": "选择一个节点查看详情。",
+      "scope": "范围",
+      "delete": "删除",
+      "deleted": "已删除",
+      "deleteConfirm": "删除此节点?技能将永久删除;自动派生的事实/实体可能在下次扫描时重新出现。",
+      "scopes": {
+        "all": "全部",
+        "global": "全局",
+        "project": "项目",
+        "domain": "领域"
+      },
+      "kb": {
+        "tab": "知识库",
+        "graphTab": "图谱",
+        "graphCounts": "{nodes} 节点 · {edges} 连接",
+        "global": "全局",
+        "projectHandbook": "项目手册",
+        "locked": "你已编辑",
+        "aiDrafted": "AI 起草",
+        "edit": "编辑",
+        "unlock": "解锁(交还 AI 维护)",
+        "regenerate": "重新生成",
+        "save": "保存",
+        "cancel": "取消",
+        "editHint": "保存后此页将锁定,AI 不再覆盖。",
+        "empty": "尚未生成。点「重新生成」,或在你工作时自动构建。",
+        "saved": "已保存",
+        "unlocked": "已解锁——AI 将重新维护此页",
+        "regenerating": "正在后台重新生成…",
+        "kinds": {
+          "kb_infrastructure": "基础设施",
+          "kb_conventions": "开发规范",
+          "kb_lessons": "经验教训",
+          "kb_reusable": "可复用功能"
+        },
+        "foundational": "基础 / 规约",
+        "foundationalHint": "基础设施与规范——注入每个项目的强约束规则。",
+        "emergent": "经验",
+        "emergentHint": "从过往工作蒸馏的教训与可复用功能——参考性引导。",
+        "bindingBadge": "强约束 · 必须遵守",
+        "referenceBadge": "参考",
+        "proposal": {
+          "text": "AI 提议更新此页(出现了与之冲突的新证据)。",
+          "preview": "预览",
+          "hide": "收起",
+          "approve": "批准",
+          "reject": "拒绝",
+          "approved": "更新已批准",
+          "rejected": "提议已拒绝"
+        },
+        "discuss": "与 AI 讨论",
+        "discussHint": "与 AI 对话重新制定这页方针——已锁定的页面只会产生提案，绝不覆写",
+        "onDemand": "按需",
+        "searchHint": "搜索知识页",
+        "searchEmpty": "没有匹配的知识页",
+        "removePage": "移除页面",
+        "removePageHint": "从知识库移除此页（内容保留，重新添加同名标识即可恢复）",
+        "pageRemovedToast": "页面已移除",
+        "newPage": {
+          "button": "新建知识页",
+          "title": "新建知识页",
+          "description": "为每个知识领域建立独立的细粒度页面，而不是把所有内容塞进四个经典页——AI 按页索引，只检索任务需要的部分。",
+          "slugPlaceholder": "network_topology",
+          "titlePlaceholder": "标题（如：网络拓扑）",
+          "descPlaceholder": "一句话：这个页面收录什么",
+          "inject": "注入每次启动",
+          "injectHint": "关闭（多数情况推荐）：页面不进启动横幅，AI 通过记忆搜索按需取用。开启：基础类页面作为强约束注入，经验类作为参考注入。",
+          "create": "创建页面",
+          "createdToast": "知识页已创建"
+        },
+        "pageSettings": {
+          "button": "设置",
+          "title": "页面设置",
+          "description": "编辑此页面的标题、摘要、性质与注入方式。slug 固定不可改,页面正文另行编辑。",
+          "hint": "编辑此页面的标题、摘要、性质与注入开关",
+          "save": "保存设置",
+          "savedToast": "页面设置已更新"
+        },
+        "librarian": {
+          "button": "用 AI 管理知识库",
+          "hint": "启动一个跨页面的 AI 图书管理员,可整理、创建、编辑任意知识页",
+          "launchedToast": "KB 图书管理员会话已启动",
+          "title": "启动 KB 图书管理员",
+          "dialogHint": "选择用来整理知识库的 cloud agent。它将获得对所有 KB 页面的读写工具。",
+          "provider": "Cloud agent",
+          "account": "Claude 账号",
+          "launch": "启动"
+        }
+      },
+      "kinds": {
+        "all": "全部",
+        "entity": "实体",
+        "fact": "事实",
+        "playbook": "Playbook",
+        "skill": "技能"
+      },
+      "distill": {
+        "tab": "蒸馏",
+        "intro": "技能 = 从你的真实工作中蒸馏出的、被验证过且可重复执行的【流程】。经验编译器跨项目挖掘会话日志，把相似工作聚类，只有当同一流程在 2 次以上会话中【成功】完成时才生成候选——每条证据引文都会与日志原文逐字核验。候选按「复现次数 × 手动流程耗时」排序，最省时间的优先蒸馏；纯机械化的流程还会编译成带验证步骤的可执行 run.sh。",
+        "playbooks": "手册——已蒸馏，待审阅",
+        "playbooksHint": "出现在这里的每个候选都已通过门禁：≥2 次成功会话、经核验的证据引文、≥3 个具体步骤。按节省时间排序（复现次数 × 手动分钟数）。把会复用的提升为技能，其余丢弃。",
+        "playbooksEmpty": "还没有挖掘产物——当同一流程在两次以上会话中成功完成后，候选会出现在这里。",
+        "skills": "技能——生效中，随启动注入",
+        "skillsHint": "已提升的手册。每个新会话都会获得这些技能。",
+        "skillsEmpty": "还没有技能——提升一个手册来创建第一个。",
+        "skillify": "提升为技能",
+        "skillifyHint": "渲染为技能文件并注入每次启动",
+        "discard": "丢弃",
+        "retire": "退役技能",
+        "injectedBadge": "已注入",
+        "skillifiedToast": "已晋升——已发布到 插件 → Agent Skills，新会话将加载此技能",
+        "removedToast": "已移除",
+        "usage": "{count} 个会话用到",
+        "lastUsed": "最近 {date}",
+        "enabledToast": "技能已启用——新会话将可加载",
+        "disabledToast": "技能已停用——已从加载集合移除",
+        "disabledBadge": "停用",
+        "toggleHint": "启用的技能才会被会话加载；当前阶段用不到的就停掉",
+        "viewHint": "点击查看完整流程",
+        "inAgentSkills": "已发布到 插件 → Agent Skills",
+        "agentSkillsHint": "渲染后的 SKILL.md 存放在技能 vault 中——可在 插件 → Agent Skills 查看与管理。",
+        "notInVault": "已停用——SKILL.md 已从 vault 移除",
+        "compiledBadge": "已编译",
+        "compiledHint": "附带可执行的 run.sh（含验证步骤）；提升时还会注册为自定义任务",
+        "recurrence": "成功 ×{count}",
+        "timeCost": "手动约 {minutes} 分钟",
+        "projectSpan": "{count} 个项目",
+        "scoreHint": "按「复现次数 × 手动耗时」排序——最省操作员时间的优先蒸馏",
+        "outcomes": "加载后 {ok} 次成功 / {failed} 次失败",
+        "retirement": {
+          "never_used": "从未用到",
+          "never_usedHint": "注入超过 14 天没有任何会话引用——结果回路建议退役",
+          "low_success": "成功率低",
+          "low_successHint": "加载此技能的会话持续以失败告终——结果回路建议退役",
+          "dormant": "休眠",
+          "dormantHint": "曾被使用，但已 45+ 天无引用——结果回路建议退役"
+        },
+        "retirementEmpty": "暂无退役候选——所有技能都在发挥作用。",
+        "retirementHint": "结果回路建议淘汰的技能——同意的可禁用。",
+        "retirementTitle": "退役候选"
+      },
+      "graph": {
+        "tab": "图谱",
+        "intro": "AI 所学一切的关系图谱：哪些项目共用同一技术、哪些技能与坑绑定在哪些实体上。动共享基础设施之前，先在这里确认节点的爆炸半径。",
+        "empty": "还没有知识——图谱会随着会话运行自动生长：锚定扫描从项目工作中提取实体，蒸馏再沉淀出手册与技能。跑几个工作会话后再来看看。",
+        "hint": "滚轮缩放 · 拖动背景平移 · 拖动节点整理布局 · 点击节点查看详情",
+        "legend": {
+          "project": "项目",
+          "entity": "实体",
+          "playbook": "手册",
+          "skill": "技能"
+        },
+        "connections": "{count} 个关联节点",
+        "noLinks": "还没有任何东西关联到这个节点。"
+      }
+    },
+    "cortex": {
+      "home": {
+        "title": "心智中枢 Cortex",
+        "subtitle": "一个模块、三层一环：原始记忆结晶为各项目的官方文档，再蒸馏为跨项目知识，并注入每个新会话。",
+        "disabled": "未启用",
+        "pendingProposals": "{count} 个待审",
+        "loopHint": "记忆 → 笔记 → 知识 → 注入每次启动。层级提升是转化，绝不是复制。",
+        "activeProjects": "活跃项目",
+        "idle": "闲置 {days} 天",
+        "memory": {
+          "title": "记忆",
+          "description": "从会话中自动采集的原始事实——按相关性召回；第三方来源默认隔离。",
+          "quarantine": "{count} 条隔离中"
+        },
+        "notes": {
+          "title": "笔记",
+          "description": "每个项目的官方文档——按蓝图组织章节，AI 随工作进展持续维护。",
+          "projects": "{count} 个活跃"
+        },
+        "knowledge": {
+          "title": "知识",
+          "description": "跨项目、可迭代的经验资产：绑定性基础方针 + 涌现的经验教训，注入每次启动。"
+        },
+        "settings": "设置",
+        "proposals": {
+          "title": "待审提案（{count}）",
+          "hint": "AI 对项目笔记与知识库页面提出的更新，等待你的裁决。批准即发布，拒绝即丢弃。",
+          "kbLabel": "知识库",
+          "preview": "预览",
+          "hide": "收起",
+          "approve": "批准",
+          "reject": "拒绝",
+          "open": "打开所属页面",
+          "approvedToast": "提案已批准——文档已更新",
+          "rejectedToast": "提案已拒绝",
+          "failedToast": "操作失败"
+        }
+      },
+      "chat": {
+        "title": "AI 讨论",
+        "show": "与 AI 讨论",
+        "hide": "收起对话",
+        "emptyHint": "让 AI 更新、重组或重写这份文档。AI 维护且未锁定时直接生效；你锁定过的文档会以提案进入收件箱。",
+        "placeholder": "例如：根据最近的工作更新本节 · ⌘↵ 发送",
+        "thinking": "AI 处理中…",
+        "sendFailed": "发送失败",
+        "escalate": "升级为会话",
+        "escalated": "已升级",
+        "escalateHint": "拉起完整 agent 会话，基于代码库取证，并携带本对话上下文",
+        "escalateFailed": "升级失败",
+        "escalatedToast": "Agent 会话已启动",
+        "closeHint": "关闭此对话",
+        "revisionApplied": "文档已更新",
+        "revisionProposed": "已生成提案——请到收件箱审阅",
+        "modelLabel": "模型：",
+        "modelHint": "为本次讨论选择 cloud-agent 供应商 + 模型。默认沿用全局讨论模型配置。",
+        "modelGlobalDefault": "默认（全局）",
+        "modelCliDefault": "CLI 默认",
+        "modelChangeFailed": "切换讨论模型失败",
+        "modelGroupCloud": "云端 agent",
+        "modelGroupLocal": "本地模型",
+        "accountDefault": "默认账号",
+        "accountHint": "本次讨论使用哪个 Claude 账号(Claude 是多账号)。",
+        "modelProviderDefault": "供应商默认",
+        "modelProbeFailed": "无法连接端点列出模型——用供应商默认，或在 Memory 设置里配置。"
+      },
+      "blueprint": {
+        "open": "蓝图",
+        "openHint": "编辑本项目文档包含哪些章节",
+        "title": "文档蓝图",
+        "description": "本项目官方文档的章节结构。不同类型的项目应有不同的章节——可自行调整，也可让 AI 按项目类型提议。",
+        "propose": "AI 提议",
+        "proposeHint": "识别项目类型并提议契合的章节结构",
+        "proposeFailed": "提议失败",
+        "proposalNote": "AI 判断项目类型为：{type}——{reason} 请在下方审阅并自由修改后应用。",
+        "addSection": "添加章节",
+        "slugPlaceholder": "标识",
+        "titlePlaceholder": "标题",
+        "hintPlaceholder": "维护提示——一句话指引 AI 如何维护本章节（可选）",
+        "mode": {
+          "ai": "AI",
+          "human": "人工",
+          "scanner": "扫描器"
+        },
+        "inject": "注入",
+        "reserved": "保留",
+        "deleteNote": "删除章节只是隐藏，内容不会丢——重新添加同名标识即可恢复。",
+        "cancel": "取消",
+        "apply": "应用蓝图",
+        "applyFailed": "应用失败",
+        "appliedToast": "蓝图已应用",
+        "writePolicy": {
+          "direct": "直接写入",
+          "proposal": "提案",
+          "hint": "直接写入：会话中的 AI 在文档未锁定时直接更新实时文档。提案：AI 的写入需先经你批准。"
+        }
+      },
+      "quarantine": {
+        "title": "隔离区",
+        "subtitle": "在被采信为持久记忆之前需要审查的事实：第三方 integration 的捕获会按策略落到这里，你也可以在记忆检查器中手动隔离任何一条记忆。属实的批准入库，其余丢弃——未审查的条目会自动过期。",
+        "empty": "隔离区为空。条目来源：integration 来源会话（记忆策略为 “quarantine”），或你在记忆检查器中手动隔离的记忆。",
+        "promote": "升格",
+        "promoteHint": "移入正式记忆（参与召回与知识蒸馏）",
+        "discard": "丢弃",
+        "promotedToast": "已升格为正式记忆",
+        "discardedToast": "已丢弃",
+        "actionFailed": "操作失败",
+        "expires": "{date} 到期"
+      },
+      "settings": {
+        "injection": {
+          "title": "启动注入",
+          "hint": "每个【新建会话】预先加载多少心智中枢上下文。切换立即生效（影响之后新建的会话）——后端无需重启。",
+          "active": "当前",
+          "mode": {
+            "lean": {
+              "label": "精简——索引 + 按需取用（推荐）",
+              "description": "只注入强约束的基础方针，外加文档章节与知识页的紧凑索引。AI 通过 doc_read / project_search 工具按任务需要精准取回。省 token，长会话也不会被开场信息淹没。"
+            },
+            "full": {
+              "label": "完整——全部注入",
+              "description": "启动时把所有标记注入的章节与知识页完整注入（旧行为）。简单直接，但每个会话都花 token，且挤占上下文窗口。"
+            }
+          },
+          "savedToast": "注入模式已保存——新建会话立即采用，后端无需重启",
+          "saveFailed": "保存失败",
+          "note": "完整模式下章节/知识页各自的注入开关（蓝图编辑器 / 知识页）仍然生效；精简模式下基础方针始终注入，其余一律走索引。"
+        }
+      }
+    },
+    "database": {
+      "dialog": {
+        "createTitle": "添加数据库连接",
+        "editTitle": "编辑连接",
+        "description": "连接到此项目的数据库以浏览和编辑数据。凭据将加密存储。",
+        "name": "名称",
+        "host": "主机",
+        "port": "端口",
+        "database": "数据库",
+        "username": "用户名",
+        "password": "密码",
+        "passwordKept": "保持不变 —— 留空即保留",
+        "sslMode": "SSL 模式",
+        "readOnly": "只读(禁止此连接写入)",
+        "superuserWarning": "该用户是超级用户(或 linivek 管理员)。日常工作请优先使用仅 CRUD 权限的项目角色。",
+        "test": "测试",
+        "save": "保存",
+        "testFailed": "连接测试失败",
+        "testOk": "已连接 — {version}（{ms} ms）",
+        "savedCreate": "连接已添加",
+        "savedEdit": "连接已更新",
+        "missingFields": "需要填写名称和数据库（服务器引擎还需主机和用户名）",
+        "driver": "数据库类型",
+        "drivers": {
+          "postgres": "PostgreSQL",
+          "mysql": "MySQL",
+          "mariadb": "MariaDB",
+          "sqlite": "SQLite"
+        },
+        "filePath": "数据库文件",
+        "filePathHint": "项目目录内的 SQLite 文件路径。"
+      },
+      "results": {
+        "noColumns": "{command} —— 影响 {rows} 行"
+      },
+      "tree": {
+        "loading": "正在加载 schema…",
+        "noSchemas": "该用户无可见 schema"
+      },
+      "row": {
+        "insertTitle": "插入行",
+        "editTitle": "编辑行",
+        "setNull": "设为 NULL",
+        "save": "保存",
+        "savedInsert": "行已插入",
+        "savedEdit": "行已更新",
+        "noChanges": "没有需要保存的更改"
+      },
+      "grid": {
+        "insert": "插入",
+        "refresh": "刷新",
+        "edit": "编辑",
+        "delete": "删除",
+        "deleted": "行已删除",
+        "confirmDelete": "删除此行?",
+        "loading": "正在加载数据…",
+        "readOnlyHint": "此连接为只读 —— 无法编辑行。",
+        "noPkHint": "此表没有主键 —— 行编辑已禁用。",
+        "pageInfo": "第 {from}–{to} 行"
+      },
+      "console": {
+        "placeholder": "SELECT * FROM …",
+        "run": "运行",
+        "runHint": "Cmd/Ctrl+Enter 运行",
+        "stats": "{command} · {rows} 行 · {ms} 毫秒",
+        "truncated": "已截断",
+        "empty": "运行查询以查看结果。",
+        "truncatedNote": "结果已截断"
+      },
+      "panel": {
+        "loading": "正在加载连接…",
+        "emptyTitle": "暂无数据库连接",
+        "emptyBody": "注册一个连接以浏览此项目的数据库、编辑行并运行 SQL。连接按项目隔离并加密存储。",
+        "addConnection": "添加连接",
+        "add": "添加",
+        "edit": "编辑",
+        "delete": "删除",
+        "deleted": "连接已删除",
+        "confirmDelete": "删除此连接?",
+        "console": "SQL 控制台",
+        "openWorkbench": "展开工作台"
+      },
+      "workbench": {
+        "title": "数据库工作台"
+      }
+    },
+    "roundTable": {
+      "title": "圆桌",
+      "experimental": "实验性",
+      "subtitle": "跨厂商 AI 群聊。@ 点名 claude、codex 或 antigravity,它们就在群里回复——像 Telegram 群一样,每个成员背后是不同厂商的模型。",
+      "new": "新建圆桌",
+      "loading": "加载中…",
+      "empty": "还没有圆桌。",
+      "selectHint": "选择一个圆桌打开群聊。",
+      "you": "你",
+      "summary": "总结",
+      "dialog": {
+        "title": "新建圆桌",
+        "description": "选择成员(每厂商一个模型)。不用填主题——直接开聊,群聊会用你的第一条消息自动命名。",
+        "cwd": "项目路径(可选)",
+        "cwdHint": "把群聊绑定到项目以检索记忆。",
+        "seats": "成员",
+        "seatsHint": "每厂商一个。从下拉里选每个成员的模型。",
+        "create": "创建",
+        "created": "圆桌已创建",
+        "project": "项目(可选)",
+        "start": "开始聊天",
+        "browse": "浏览",
+        "cwdPlaceholder": "/项目/路径(可选)",
+        "modelPlaceholder": "模型",
+        "modelLoading": "加载中…",
+        "accountPlaceholder": "账号",
+        "accountDefault": "默认账号",
+        "accountNoToken": "无凭据",
+        "personaPlaceholder": "角色 / 人设(可选)—— 决定该成员以什么立场发言",
+        "personaPresets": {
+          "label": "或选一个角色:",
+          "security": "安全审查员",
+          "performance": "性能优化派",
+          "ux": "用户体验倡导者",
+          "skeptic": "唱反调者 — 专找漏洞",
+          "pragmatist": "务实派 — 先上线"
+        },
+        "framing": "框架(可选)",
+        "framingPlaceholder": "当前议题 + 成员关系 —— 如「议题:认证重构。claude 主导架构,codex 只挑安全漏洞。」"
+      },
+      "detail": {
+        "loading": "加载群聊…",
+        "loadFailed": "加载群聊失败。",
+        "close": "关闭",
+        "closeConfirm": "关闭该群聊?会保留记录但停止新消息,之后可重新开启。",
+        "reopen": "重新开启",
+        "summarize": "总结",
+        "summarizing": "总结中…",
+        "emptyThread": "还没有消息。",
+        "emptyHint": "发条消息并 @ 点名某个成员,它就会回复。",
+        "replying": "成员正在回复…",
+        "mentionHint": "点名:",
+        "composerPlaceholder": "给群里发消息…(@claude、@all — ⌘/Ctrl+Enter 发送)",
+        "send": "发送",
+        "delete": "删除",
+        "deleteConfirm": "删除这个群聊及其所有消息?此操作不可撤销。",
+        "roles": "成员",
+        "rolesTitle": "成员与角色",
+        "rolesFraming": "讨论框架(所有成员共享)",
+        "rolesSave": "保存",
+        "rolesSaved": "角色已更新",
+        "rolesHint": "议题演进时可增删成员、重新分配角色 —— 下一轮回复生效。",
+        "membersMin": "至少保留一名成员。",
+        "continueDiscussion": "继续讨论",
+        "continued": "继续讨论中…"
+      },
+      "status": {
+        "active": "进行中",
+        "closed": "已关闭"
+      },
+      "untitled": "新群聊",
+      "handoff": {
+        "button": "交给开发",
+        "title": "交给开发会话",
+        "description": "群成员只讨论(只读)。这会开一个有完整文件权限的真会话去执行讨论结果——用最近的总结当种子,没总结就用整段讨论。",
+        "executor": "执行者",
+        "executorHint": "由哪个成员实际动手(带文件权限的真会话)。",
+        "project": "项目",
+        "projectPlaceholder": "/项目/路径",
+        "projectHint": "在哪个项目里改。必填。",
+        "run": "开始执行",
+        "started": "会话已启动——正在跳转",
+        "continueLabel": "继续用现有会话",
+        "continueHint": "把新方案作为后续发给上次的执行会话;如果它已结束,则自动新开一个。",
+        "claudeAccount": "Claude 账号",
+        "accountDefault": "默认",
+        "runContinue": "继续执行",
+        "bypassLabel": "跳过权限确认(YOLO)",
+        "bypassHint": "用执行方的 bypass 参数启动会话,不再逐个确认操作 —— 与创建 session 时的开关一致。"
+      },
+      "plan": {
+        "button": "分工",
+        "title": "分工计划",
+        "hint": "把工作拆成按角色指派的步骤,再按顺序运行 —— 每步作为项目里的真实会话执行。",
+        "draft": "根据讨论起草",
+        "drafting": "正在起草计划…",
+        "empty": "还没有计划。根据讨论起草一个,或手动添加步骤。",
+        "addStep": "添加步骤",
+        "assignee": "负责人",
+        "taskPlaceholder": "该成员要做什么",
+        "save": "保存计划",
+        "saved": "计划已保存",
+        "run": "运行",
+        "rerun": "重跑",
+        "running": "运行中",
+        "done": "完成",
+        "pending": "待运行",
+        "openSession": "打开会话",
+        "needProject": "运行步骤前需绑定项目(cwd)。",
+        "bindProject": "绑定",
+        "projectBound": "项目已绑定",
+        "runTitle": "运行此步",
+        "runStep": "运行",
+        "account": "账号",
+        "accountDefault": "默认",
+        "bypass": "跳过权限 (YOLO)",
+        "bypassHint": "用 bypass 标志启动会话,不再逐个请求批准。"
+      }
+    }
+  },
+  "more": {
+    "title": "更多",
+    "identity": {
+      "signedInAs": "登录账号",
+      "server": "服务器",
+      "tokenExpires": "令牌到期"
+    },
+    "sections": {
+      "gateway": "网关",
+      "plugins": "插件",
+      "memory": "记忆",
+      "system": "系统"
+    },
+    "items": {
+      "integrations": {
+        "title": "集成",
+        "subtitle": "API 调用方 — 近期活动与错误率"
+      },
+      "activity": {
+        "title": "活动",
+        "subtitle": "集成 API 调用审计"
+      },
+      "memoryAmbient": {
+        "title": "捕获与注入",
+        "subtitle": "记忆捕获规则 + 注入配置"
+      },
+      "channels": {
+        "title": "通道",
+        "subtitle": "通知目的地"
+      },
+      "providers": {
+        "title": "提供商",
+        "subtitle": "Claude / Codex / Antigravity CLI 状态"
+      },
+      "mcp": {
+        "title": "MCP",
+        "subtitle": "Model Context Protocol 服务与密钥"
+      },
+      "skills": {
+        "title": "技能",
+        "subtitle": "Agent SKILL.md 库（内置 + 库）"
+      },
+      "gitHosts": {
+        "title": "Git 主机",
+        "subtitle": "GitHub / GitLab 等的 PAT 凭据"
+      },
+      "customTasks": {
+        "title": "自定义任务",
+        "subtitle": "会话任务选择器中显示的斜杠命令"
+      },
+      "cortexHub": {
+        "title": "Cortex",
+        "subtitle": "记忆 → 笔记 → 知识中枢 + 待审提案"
+      },
+      "projectMemory": {
+        "title": "项目目标 / 计划 / 日志",
+        "subtitle": "按 cwd 的记忆层 2-4 + 代理提案"
+      },
+      "archived": {
+        "title": "已归档记忆",
+        "subtitle": "恢复自动清理器软归档的记忆（30 天宽限期）"
+      },
+      "quarantine": {
+        "title": "隔离区",
+        "subtitle": "在捕获的记忆被采信为持久记忆前进行审查"
+      },
+      "backups": {
+        "title": "备份",
+        "subtitle": "最新备份状态与立即运行"
+      },
+      "dataExport": {
+        "title": "数据导出与导入",
+        "subtitle": "用户级数据包（记忆 / 集成 / 自定义任务）"
+      },
+      "settings": {
+        "title": "设置",
+        "subtitle": "语言、外观、账户"
+      },
+      "about": {
+        "title": "关于",
+        "subtitle": "构建版本与服务器信息"
+      },
+      "vault": {
+        "title": "文档库",
+        "subtitle": "自由 markdown 笔记(Obsidian 同步)"
+      },
+      "roundTable": {
+        "title": "圆桌",
+        "subtitle": "跨厂商 AI 群聊"
+      }
+    },
+    "signOut": "退出登录"
+  },
+  "activity": {
+    "title": "活动",
+    "empty": "暂无集成调用记录。",
+    "loadFailed": "加载活动失败",
+    "callsCount": "{count} 次调用",
+    "directionInbound": "入站",
+    "directionOutbound": "出站",
+    "filter": {
+      "title": "筛选调用",
+      "direction": "方向",
+      "directionAll": "全部",
+      "status": "状态",
+      "statusAll": "全部",
+      "integration": "集成",
+      "integrationAll": "全部集成",
+      "apply": "应用",
+      "clear": "清除",
+      "activeCount": "{count} 个生效"
+    },
+    "detail": {
+      "title": "调用详情",
+      "integration": "集成",
+      "direction": "方向",
+      "status": "状态",
+      "duration": "耗时",
+      "bytes": "字节",
+      "requestId": "请求 ID",
+      "resource": "资源",
+      "timestamp": "时间"
+    }
+  },
+  "memoryAmbient": {
+    "title": "捕获与注入",
+    "intro": "会话如何被总结进记忆,以及预加载哪些上下文。创建规则与详细编辑请在 web 管理端进行。",
+    "captureSection": "捕获规则",
+    "injectionSection": "注入配置",
+    "empty": "尚未配置。",
+    "loadFailed": "加载失败",
+    "runNow": "立即运行",
+    "ranSnack": "已对 {count} 个会话运行",
+    "actionFailed": "操作失败:{error}",
+    "strategyLabel": "策略",
+    "scopeProject": "项目",
+    "scopeGlobal": "全局",
+    "triggerAfterMessages": "N 条消息后",
+    "triggerOnIdle": "空闲时",
+    "triggerKChars": "K 字符后",
+    "triggerManual": "手动",
+    "triggerUnknown": "未知",
+    "strategyNone": "无(按需搜索)",
+    "strategyTopKRecent": "最近 Top-K",
+    "strategyTopKRelevant": "相关 Top-K",
+    "strategyOnKeyword": "关键词触发",
+    "strategyManualOnly": "仅手动",
+    "strategyHybrid": "混合摘要",
+    "strategyUnknown": "未知"
+  },
+  "sessions": {
+    "dock": {
+      "more": "更多"
+    },
+    "tools": {
+      "searchHint": "搜索工具",
+      "inspectSection": "检查",
+      "sessionSection": "会话"
+    },
+    "title": "会话",
+    "refresh": "刷新",
+    "actions": "操作",
+    "spawn": "创建",
+    "filters": {
+      "all": "全部",
+      "running": "运行中",
+      "idle": "空闲",
+      "ended": "已结束"
+    },
+    "card": {
+      "startedRelative": "{provider} · {when}启动"
+    },
+    "empty": {
+      "titleAll": "暂无会话",
+      "titleFiltered": "没有匹配「{filter}」筛选的会话。",
+      "subtitleAll": "点击「创建」按钮新建一个。",
+      "subtitleFiltered": "试试其他筛选条件或下拉刷新。"
+    },
+    "errorTitle": "加载会话失败",
+    "relative": {
+      "secondsAgo": "{n} 秒前",
+      "minutesAgo": "{n} 分钟前",
+      "hoursAgo": "{n} 小时前",
+      "daysAgo": "{n} 天前"
+    },
+    "detail": {
+      "fallbackTitle": "会话",
+      "refreshMetadata": "刷新元数据",
+      "inspector": "检查器（文件 / Git / 任务 / 历史 / 笔记）",
+      "projectMemory": "项目记忆（目标 / 计划 / 日志 / 收件箱）",
+      "actions": "操作",
+      "started": "{when} 启动",
+      "startedEnded": "{started} 启动  ·  {ended} 结束",
+      "idPrefix": "id: {id}",
+      "errorTitle": "加载会话失败",
+      "accountSwitcher": {
+        "tooltip": "切换 Claude 账号",
+        "sheetTitle": "切换 Claude 账号",
+        "current": "当前：{account}",
+        "defaultName": "默认（系统凭据）",
+        "defaultSubtitle": "使用 CLI 自身的登录，不指定具体账号",
+        "defaultShort": "默认",
+        "tokenEmpty": "无 token",
+        "confirmTitle": "切换账号？",
+        "confirmBody": "这会用新账号重启 CLI——当前 CLI 内的对话上下文会丢失（会话标签保留）。",
+        "confirmAction": "切换",
+        "cancel": "取消",
+        "switchedSnack": "已切换到 {account}",
+        "switchFailed": "切换失败：{error}",
+        "noneHint": "未配置 Claude 账号。请在 更多 → Providers → Claude 中添加。",
+        "tooltipAgy": "切换 Antigravity 账号",
+        "sheetTitleAgy": "切换 Antigravity 账号",
+        "confirmBodyAgy": "这会用全新对话重启 Antigravity CLI——CLI 内的历史不会在账号间保留（会话标签保留）。",
+        "noneHintAgy": "未配置 Antigravity 账号。请在 更多 → Providers → Antigravity 中添加。"
+      }
+    },
+    "terminal": {
+      "snackbar": {
+        "imagePickerFailed": "图片选择失败：{error}",
+        "uploadingImage": "正在上传图片…",
+        "imageAttached": "已附加图片：{path}",
+        "uploadFailed": "上传失败（{status}）：{message}",
+        "uploadFailedGeneric": "上传失败：{error}"
+      },
+      "imageSource": {
+        "photoLibrary": "相册",
+        "takePhoto": "拍照"
+      },
+      "keyboard": {
+        "paste": "粘贴",
+        "attachImage": "附加图片",
+        "enter": "回车",
+        "selectText": "选择文本"
+      },
+      "attachments": {
+        "insert": "插入",
+        "clear": "全部清除",
+        "remove": "移除 {name}"
+      },
+      "connection": {
+        "connecting": "连接中…",
+        "connected": "已连接",
+        "reconnecting": "重连中…",
+        "reconnectingWithError": "重连中（{error}）…",
+        "disconnected": "已断开",
+        "disconnectedWithError": "已断开（{error}）",
+        "ended": "会话已结束"
+      },
+      "selectCopy": {
+        "title": "选择并复制",
+        "hint": "长按选择输出中的任意部分,然后复制。",
+        "copyAll": "全部复制",
+        "copiedAll": "已复制全部输出({count} 个字符)",
+        "empty": "暂无可复制的输出"
+      }
+    },
+    "action": {
+      "stop": "停止",
+      "stopping": "停止中…",
+      "stopDescription": "发送 SIGTERM，保留历史",
+      "restart": "重启",
+      "restarting": "重启中…",
+      "restartDescription": "重新启动 CLI 进程",
+      "delete": "删除",
+      "deleteDescription": "移除会话及其历史",
+      "deleteConfirm": "确定永久删除此会话吗？其环形缓冲区和历史将全部丢失。",
+      "errors": {
+        "stop": "停止失败：{error}",
+        "start": "重启失败：{error}",
+        "delete": "删除失败：{error}"
+      }
+    },
+    "dirPicker": {
+      "parent": "上级",
+      "newFolder": "新建文件夹",
+      "useThisFolder": "使用此文件夹",
+      "loading": "加载中…",
+      "empty": "此处没有子文件夹。\n选择此文件夹，或新建一个。",
+      "createdSnack": "已创建 {path}",
+      "mkdirFailedSnack": "创建文件夹失败：{error}",
+      "dialog": {
+        "title": "新建文件夹",
+        "hint": "文件夹名",
+        "create": "创建"
+      }
+    },
+    "inspector": {
+      "shell": {
+        "title": "检查器",
+        "loadError": "加载会话失败：{error}",
+        "tabs": {
+          "files": "文件",
+          "git": "Git",
+          "tasks": "任务",
+          "history": "历史",
+          "vault": "文档库",
+          "cortex": "心智中枢",
+          "database": "数据库"
+        }
+      },
+      "cortex": {
+        "title": "心智中枢工作区",
+        "blurb": "本项目的目标、计划、日志、收件箱与记忆整理 —— 由 AI 维护的心智中枢。",
+        "open": "打开心智中枢工作区"
+      },
+      "shared": {
+        "refresh": "刷新",
+        "inserted": "已插入：{text}",
+        "insertFailedApi": "插入失败（{status}）：{message}",
+        "insertFailedGeneric": "插入失败：{error}",
+        "insertFailedShort": "插入失败：{error}"
+      },
+      "history": {
+        "insertIntoTerminal": "插入到终端",
+        "searchHint": "搜索提示…"
+      },
+      "files": {
+        "insertAtRef": "作为 @引用 插入",
+        "insertPath": "插入路径",
+        "insertPathSubtitle": "原样粘贴绝对路径",
+        "readContent": "读取内容",
+        "readContentSubtitle": "最多 256 KiB 纯文本",
+        "readFailedApi": "读取失败（{status}）：{message}",
+        "readFailedGeneric": "读取失败：{error}",
+        "parent": "上级",
+        "backToCwd": "返回会话目录",
+        "upload": "上传文件",
+        "uploaded": "已上传 {count} 个文件",
+        "uploadFailed": "{name} 上传失败:{message}"
+      },
+      "git": {
+        "insertAtRef": "作为 @引用 插入",
+        "insertPath": "插入路径",
+        "showDiff": "查看 diff",
+        "diffFailedApi": "Diff 失败（{status}）：{message}",
+        "diffFailedGeneric": "Diff 失败：{error}",
+        "insertHash": "插入哈希",
+        "showFullPatch": "查看完整 patch",
+        "showFailedApi": "查看失败（{status}）：{message}",
+        "showFailedGeneric": "查看失败：{error}",
+        "tabStatus": "状态",
+        "tabLog": "日志"
+      },
+      "tasks": {
+        "runCommand": "运行命令",
+        "runCommandSubtitle": "在新的 shell 会话中运行并切换过去",
+        "filterHint": "筛选任务…",
+        "noMatch": "没有匹配“{query}”的任务",
+        "emptyTitle": "此目录没有任务",
+        "emptyHint": "正在查找 package.json、Makefile、Taskfile、justfile、Cargo.toml、go.mod、pyproject.toml 或 shell 脚本",
+        "addCustomTask": "添加自定义任务"
+      },
+      "notes": {
+        "insertedAt": "已插入：@{path}",
+        "myNotes": "我的笔记",
+        "projectDocs": "项目文档",
+        "insertAtRefTooltip": "作为 @引用 插入",
+        "insertAtRefShort": "插入 @引用",
+        "draftHint": "# {project}\n\n想法、待办、为 agent 提供的上下文…",
+        "createFailed": "创建失败：{error}",
+        "saveFailed": "保存失败：{error}",
+        "changeLocationTooltip": "更改项目文档位置",
+        "filenameHint": "文件名（例如：spec 或 design.md）",
+        "create": "创建",
+        "filterHint": "筛选…",
+        "locationDialogTitle": "项目文档位置",
+        "loadFailedApi": "加载失败：{error}",
+        "loadFailedGeneric": "加载失败：{error}",
+        "saveFailedApi": "保存失败：{error}",
+        "saveFailedGeneric": "保存失败：{error}",
+        "insertFailedApi": "插入失败：{error}",
+        "insertFailedGeneric": "插入失败：{error}",
+        "createFailedApi": "创建失败：{error}",
+        "createFailedGeneric": "创建失败：{error}",
+        "personalHint": "个人草稿 — 随输入自动保存。AI agent 不会写入这里。",
+        "projectDocsHint": "架构 / 规范 / 决策 / 计划 / 回顾 — 通常由 agent 撰写或维护。",
+        "mappingCleared": "映射已清除 — 使用默认值",
+        "mappedTo": "已映射到 {path}",
+        "cancelTooltip": "取消",
+        "newDocTooltip": "新建文档",
+        "noProjectMapping": "无法为此会话解析项目映射。检查网关是否配置了笔记库，以及会话的 cwd 是否已设置。",
+        "emptyProjectDocs": "暂无项目文档。点击 + 创建一个，或让 AI agent 根据提示生成。",
+        "emptyFilterMatch": "未找到匹配「{query}」的内容。",
+        "locationDialogHelp": "将此会话的 cwd 固定到笔记库下的某个文件夹。留空 = 重置。",
+        "sessionCwd": "会话 cwd",
+        "projectDocsPath": "相对笔记库的项目文档路径",
+        "locationStoredHint": "存储于 <vault>/.opendray-projects.json — 与笔记库其余部分一起 git 同步。",
+        "pinnedHint": "已固定到 {path}/（覆盖 {defaultPath}）。AI agent 也会在此撰写文档。",
+        "noProjectMapping2": "（无项目映射）",
+        "clearOverride": "清除覆盖",
+        "save": "保存"
+      }
+    },
+    "spawnSheet": {
+      "title": "新建会话",
+      "errorRequired": "需要指定提供商和工作目录",
+      "errorGeneric": "创建会话失败：{error}",
+      "cancel": "取消",
+      "spawn": "创建",
+      "providerLabel": "提供商",
+      "disabledSuffix": "（已停用）",
+      "cwdLabel": "工作目录",
+      "cwdHint": "/Users/you/projects/foo",
+      "cwdHelper": "网关主机上的绝对路径。",
+      "browse": "浏览",
+      "nameLabel": "名称（可选）",
+      "nameHint": "例如：backend-refactor",
+      "argsLabel": "额外参数（可选）",
+      "argsHint": "--continue --verbose",
+      "argsHelper": "以空格分隔；留空使用提供商默认值。",
+      "bypass": {
+        "labelClaude": "绕过权限",
+        "labelCodex": "跳过批准与沙盒",
+        "labelAntigravity": "跳过权限 / YOLO",
+        "labelOpencode": "跳过权限检查",
+        "labelGrok": "跳过权限 / YOLO（--always-approve）",
+        "subtitleOn": "此会话将以提升的自主权运行。",
+        "subtitleOff": "关闭 — 确认和提示按正常方式处理。"
+      },
+      "noProviders": {
+        "title": "未配置任何提供商",
+        "message": "网关没有启用任何 CLI 提供商。在 Web 管理端的「提供商」中配置，或编辑 config.toml 的 [providers] 段，然后点击重新加载。",
+        "reload": "重新加载"
+      },
+      "providerLoadError": {
+        "title": "无法加载提供商",
+        "networkError": "网络错误",
+        "serverPrefix": "服务器 {code}",
+        "format": "{prefix}：{message}"
+      },
+      "claudeAccount": {
+        "label": "Claude 账号",
+        "helperMulti": "已配置多个账号 — 为此会话选择一个。",
+        "helperSingle": "选择已配置的账号，或使用默认（环境变量 / 系统）。",
+        "default": "默认（环境变量 / 系统）",
+        "disabledSuffix": "（已停用）",
+        "noTokenSuffix": "（无令牌）",
+        "noneHint": "未配置 Claude 账号 — 网关将使用系统的 ANTHROPIC_API_KEY。在 Web 管理端的「设置 → 账号」中添加账号。",
+        "errorHint": "无法加载 Claude 账号（{error}）。会话将以网关默认配置启动。"
+      }
+    }
+  },
+  "mcp": {
+    "title": "MCP",
+    "newServer": "新建服务器",
+    "addSecret": "添加密钥",
+    "editConfig": "编辑配置",
+    "viewRawConfig": "查看原始配置",
+    "copyId": "复制 ID",
+    "copiedSnack": "已复制 {id}",
+    "deleteServerTitle": "删除 MCP 服务器？",
+    "deleteSecretTitle": "删除密钥？",
+    "errorPrefix": {
+      "delete": "删除失败",
+      "add": "添加失败",
+      "update": "更新失败",
+      "toggle": "切换失败"
+    },
+    "errorWithMessage": "{prefix}：{error}",
+    "editor": {
+      "nameHint": "my-mcp-server",
+      "jsonHint": "JSON 配置 — name、transport: stdio、command、args…",
+      "descriptionPlaceholder": "可选的一行说明",
+      "validateJsonObject": "正文必须是 JSON 对象",
+      "validateJsonInvalid": "无效的 JSON：{error}",
+      "appBarEdit": "编辑 MCP 服务器",
+      "appBarNew": "新建 MCP 服务器",
+      "idLockedHint": "编辑模式下锁定 — 需删除后重建以更改。",
+      "jsonLabel": "服务器 JSON",
+      "jsonSchemaHelp": "Schema：transport 必须是 stdio、http 或 sse。stdio 需要 command + args。http/sse 需要 url + headers。用 \\$secret:KEY 引用密钥库的密钥。",
+      "idLabel": "id（URL 片段，小写字母数字 / 横线 / 下划线）",
+      "idRequired": "id 必填",
+      "saving": "保存中…",
+      "save": "保存",
+      "create": "创建"
+    },
+    "secret": {
+      "keyLabel": "键",
+      "keyHint": "GITHUB_TOKEN、OPENAI_KEY、…",
+      "valueLabel": "值",
+      "keyRequired": "必须填写键。",
+      "keyInvalid": "键必须匹配 [A-Za-z_][A-Za-z0-9_]* — 与 shell 环境变量规则相同。",
+      "valueRequired": "必须填写值。",
+      "replaceTitle": "替换密钥值",
+      "addTitle": "添加密钥",
+      "saveButton": "保存",
+      "addButton": "添加",
+      "helpRules": "shell 环境变量规则：字母或 _ 开头，仅含字母 / 数字 / _。",
+      "replaceHint": "粘贴新值（旧值被擦除）",
+      "addHint": "粘贴密钥值",
+      "addedSnack": "已添加密钥 {key}。",
+      "updatedSnack": "已更新密钥 {key}。",
+      "deletedSnack": "已删除 {key}。",
+      "deleteBody": "从加密的密钥库中移除该值。引用此密钥的 MCP 服务器在恢复前将无法启动。"
+    },
+    "popup": {
+      "editConfigSubtitle": "完整 JSON 编辑器 — 仅限密钥库支持的服务器",
+      "viewRawSubtitle": "服务器 JSON 的只读查看器",
+      "deleteLabel": "删除"
+    },
+    "kv": {
+      "transport": "传输",
+      "description": "描述",
+      "command": "命令",
+      "args": "参数",
+      "headers": "Headers"
+    },
+    "deleteServerBody": "移除 {id} 的密钥库目录。引用此服务器的会话将无法启动。",
+    "deleteServerSnack": "已删除 {id}。",
+    "serversCount": "服务器（{count}）",
+    "secretsCount": "密钥（{count}）",
+    "emptyServers": "未注册任何 MCP 服务器。点击「新建服务器」添加一个。",
+    "emptySecrets": "暂无密钥。添加一个，将敏感的 env / headers 注入 MCP 服务器，无需放在 JSON 里。",
+    "noVaultFileYet": "尚无密钥库文件 — 添加密钥时会创建。",
+    "tapToReplaceHint": "点击替换 · 长按 / 垃圾桶 删除",
+    "failedToLoad": "加载 MCP 状态失败",
+    "serverCreatedSnack": "MCP 服务器已创建。",
+    "serverUpdatedSnack": "MCP 服务器已更新。",
+    "envHeading": "环境变量",
+    "encryptionAes": "AES-GCM 加密（密钥存于 OS keychain）",
+    "encryptionPlaintext": "明文 — keychain 不可用",
+    "toggleEnabledSnack": "{name} 已启用。",
+    "toggleDisabledSnack": "{name} 已停用。",
+    "builtinBadge": "内置",
+    "builtinAlwaysOn": "始终启用",
+    "builtinHint": "由 opendray 提供——自动附加到每个会话。不可编辑或删除。"
+  },
+  "providers": {
+    "title": "提供商",
+    "configSaved": "提供商配置已更新。",
+    "saveFailedApi": "保存失败：{error}",
+    "saveFailedGeneric": "保存失败：{error}",
+    "reload": "重新加载",
+    "errorPrefix": {
+      "toggle": "切换失败",
+      "rename": "重命名失败",
+      "delete": "删除失败"
+    },
+    "errorWithMessage": "{prefix}：{error}",
+    "updateCheck": {
+      "sectionTitle": "CLI 版本",
+      "checking": "正在检查更新…",
+      "checkFailed": "无法检查更新",
+      "notInstalled": "网关主机上未安装",
+      "installed": "已安装：{version}",
+      "upToDate": "已是最新",
+      "updateAvailable": "有可用更新：{version}",
+      "latest": "最新 {version}",
+      "updateButton": "更新 CLI",
+      "updating": "正在更新…",
+      "updatedSnack": "已更新到 {version}。",
+      "noChangeSnack": "已是最新版本。",
+      "updateFailed": "更新失败：{error}",
+      "notAvailableHere": "此主机不支持应用内更新：{reason}",
+      "activeSessionsWarning": "有 {n} 个活跃会话正在使用此 CLI——更新不会中断它们，但它们在重启前仍使用旧版本。"
+    },
+    "accounts": {
+      "rename": "重命名",
+      "renameTitle": "重命名 {name}",
+      "displayNameLabel": "显示名",
+      "displayNameHint": "工作账号",
+      "deleteTitle": "删除账号？",
+      "importFailedApi": "导入失败：{error}",
+      "importFailedGeneric": "导入失败：{error}",
+      "enable": "启用",
+      "disable": "停用",
+      "deleteLabel": "删除",
+      "deleteBody": "移除该账号及其存储的 OAuth token。已使用此账号的会话保持运行，但重新认证会失败。",
+      "deletedSnack": "已删除 {name}。",
+      "importSyncedSnack": "已同步 — 网关没有新账号。",
+      "importedSnackOne": "已导入 {n} 个账号。",
+      "importedSnackOther": "已导入 {n} 个账号。",
+      "importing": "同步中…",
+      "importLocal": "导入本地",
+      "addHint": "添加新账号仅可在网关主机上操作。",
+      "addBody": "新目录会自动出现在这里。OAuth 流程步骤参见文档。",
+      "loadFailed": "加载账号失败：{error}",
+      "intro": "以 Claude 提供商启动的会话会从这些账号中选择（或回退到环境变量）。",
+      "enabledSnack": "{name} 已启用。",
+      "disabledSnack": "{name} 已停用。",
+      "renamedSnack": "已重命名为 {name}。",
+      "activeSessions": "{count} 个活跃",
+      "usedAgo": "{when}使用",
+      "identityChanged": "身份已变更",
+      "identityWas": "原为 {email}",
+      "acceptIdentity": "接受",
+      "identityAcceptedSnack": "已接受身份变更",
+      "identityAcceptFailed": "接受失败"
+    },
+    "antigravityAccounts": {
+      "addHint": "添加新账号仅可在网关主机上操作。",
+      "addBody": "在网关主机上为每个账号分配独立的 HOME（HOME=~/.antigravity-accounts/<name> agy），完成 Google 登录后点按“导入本地”。",
+      "intro": "以 Antigravity 提供商启动的会话会从这些账号中选择（或回退到网关默认 HOME）。",
+      "empty": "尚无 Antigravity 账号。在网关主机上运行 HOME=~/.antigravity-accounts/<name> agy，完成 Google 登录后点按“导入本地”。",
+      "deleteTitle": "移除账号？",
+      "deleteBody": "从 opendray 移除该账号。磁盘上的 HOME 目录保持不变；已使用它的会话保持运行。",
+      "importSyncedSnack": "已同步 — 网关没有新账号。",
+      "noTokenYet": "未登录",
+      "homeDir": "home：{dir}"
+    },
+    "configFallbackTitle": "提供商配置",
+    "saving": "保存中…",
+    "save": "保存",
+    "configLoadFailed": "加载提供商失败",
+    "argsHelper": "以空格分隔的 CLI 参数。",
+    "listEmptyHeadline": "未加载任何提供商。",
+    "listEmptyBody": "网关在启动时从插件目录解析提供商。如果有遗漏，请检查日志。",
+    "listLoadFailed": "加载提供商失败",
+    "cliSectionHeader": "CLI 提供商",
+    "enabledSnack": "{name} 已启用。",
+    "disabledSnack": "{name} 已停用。"
+  },
+  "integrations": {
+    "title": "集成",
+    "register": "注册",
+    "registerDialogTitle": "注册集成",
+    "edit": "编辑",
+    "editTitle": "编辑 {name}",
+    "enabledLabel": "已启用",
+    "iSavedIt": "我已保存",
+    "apiKeyForName": "{name} 的 API key",
+    "apiKeySubtitleRegister": "将其交给集成方，使其能够通过 /api/v1/{routePrefix}/… 进行认证。",
+    "copiedRequestId": "已复制 request_id {id}",
+    "updateOk": "集成已更新。",
+    "registerFailedApi": "注册失败：{error}",
+    "registerFailedGeneric": "注册失败：{error}",
+    "updateFailedApi": "更新失败：{error}",
+    "updateFailedGeneric": "更新失败：{error}",
+    "deleteTitle": "删除集成？",
+    "deletedSnack": "已删除 {name}。",
+    "deleteFailedApi": "删除失败：{error}",
+    "deleteFailedGeneric": "删除失败：{error}",
+    "rotateKey": "轮换密钥",
+    "rotateConfirmTitle": "轮换 API key？",
+    "rotate": "轮换",
+    "newApiKeyTitle": "{name} 的新 API key",
+    "newApiKeySubtitle": "将其交给集成方。旧密钥已失效。",
+    "rotateFailedApi": "轮换失败：{error}",
+    "rotateFailedGeneric": "轮换失败：{error}",
+    "deleteBody": "移除该注册并吊销 API key。使用旧 key 的进行中请求将开始失败。",
+    "rotateBody": "为 {name} 生成新 API key 并立即让旧 key 失效。",
+    "appBarFallback": "集成",
+    "tooltipMore": "更多",
+    "tooltipReadOnly": "系统集成 — 只读",
+    "kvRoutePrefix": "路由前缀",
+    "kvBaseUrl": "Base URL",
+    "kvScopes": "范围",
+    "kvVersion": "版本",
+    "kvLastHealthPing": "最近健康检查",
+    "kvCreated": "创建于",
+    "kvKeyRotated": "Key 轮换于",
+    "detailLoadFailed": "加载集成失败：{error}",
+    "callsLoadFailed": "加载调用失败",
+    "noMatchingCalls": "日志中暂无匹配的调用。",
+    "directionAll": "全部",
+    "directionInbound": "入站",
+    "directionOutbound": "出站",
+    "form": {
+      "validateRequired": "名称、Base URL、路由前缀必填。",
+      "fieldName": "名称",
+      "fieldNameHint": "My Bot",
+      "fieldBaseUrl": "Base URL",
+      "fieldRoutePrefix": "路由前缀",
+      "routePrefixHelper": "可通过 /api/v1/<前缀>/... 访问",
+      "fieldVersion": "版本（可选）",
+      "validateBaseUrl": "必须填写 Base URL。",
+      "editFieldVersion": "版本",
+      "apiKeyWarn": "此 key 只显示这一次。",
+      "copyCopied": "已复制",
+      "copyCopy": "复制"
+    },
+    "defaultAgent": {
+      "title": "默认 agent",
+      "description": "当该集成创建会话且请求未指定相应字段时套用。请求值始终优先。",
+      "providerLabel": "默认 provider",
+      "providerNone": "无默认",
+      "modelLabel": "默认模型",
+      "modelHint": "provider 默认(如 opus)",
+      "accountLabel": "默认 Claude 账号",
+      "accountNone": "无默认",
+      "accountTokenMissing": "(缺少 token)",
+      "accountHint": "仅当默认 provider 为 Claude 时生效。"
+    },
+    "emptyState": "在 Web 管理端注册：集成 → 新建。",
+    "sectionRegistered": "已注册",
+    "sectionSystem": "系统",
+    "listLoadFailed": "加载集成失败"
+  },
+  "memoryWorkers": {
+    "title": "记忆工作器",
+    "savedSnack": "{label} 已保存",
+    "saveFailed": "保存失败：{error}",
+    "testFailed": "测试调用失败：{error}",
+    "workerLabel": "工作器",
+    "summarizerHttp": "摘要器（HTTP）",
+    "agentCliPrint": "Agent（CLI --print）",
+    "cliLabel": "CLI",
+    "cliClaude": "Claude",
+    "cliCodex": "Codex（codex exec）",
+    "cliAntigravity": "Antigravity（agy --print）",
+    "cliGrok": "Grok (grok)",
+    "cliOpencode": "OpenCode (opencode run)",
+    "modelLabel": "模型",
+    "modelCliDefault": "CLI 默认(最新)",
+    "modelCustom": "自定义…",
+    "modelCustomPlaceholder": "精确模型 id",
+    "modelBackToList": "列表",
+    "claudeAccountLabel": "Claude 账号",
+    "claudeAccountDefault": "默认",
+    "test": "测试",
+    "intro": "每个记忆系统的 LLM 触点都可以独立服务 — 由本地 summarizer 端点（LM Studio / OpenAI 兼容）或在 --print 模式下生成无头 Claude / Antigravity agent 来处理。高质量叙事任务（gitactivity、transcript）适合 agent 工作器；高频任务（gatekeeper）按设计保留在本地端点上。",
+    "errorTitle": "端点不可达",
+    "errorDetail": "/api/v1/memory/workers 路由在 M25 中是新增的 — opendray 二进制可能需要重启以挂载这些路由并运行迁移 0029。",
+    "summarizerOnlyBadge": "仅 summarizer",
+    "summarizerProviderLabel": "Summarizer 提供商",
+    "registryDefault": "注册表默认",
+    "agentWarning": "Agent 模式每次调用都会生成无头 CLI。延迟约 5-15 秒（相比 summarizer 约 1 秒）；成本从 CPU 转移到你的 Claude / Antigravity 配额。",
+    "noCalls24h": "过去 24 小时没有调用。",
+    "testOkSnack": "{label} OK — {duration}ms",
+    "testFailedReturnedSnack": "{label} 失败：{error}",
+    "unknownError": "未知",
+    "tasks": {
+      "gatekeeper": {
+        "label": "守门员",
+        "description": "每次 memory_store 写入前的过滤器。高频（目标 <500ms） — 仅 summarizer。"
+      },
+      "cleaner": {
+        "label": "清理馆员",
+        "description": "定期 LLM 馆员。判断旧记忆为保留 / 过期 / 重复。"
+      },
+      "gitactivity": {
+        "label": "Git 活动摘要器",
+        "description": "git log → 每 24 小时的 2-3 段叙事。天然适合 agent 工作器。"
+      },
+      "transcript": {
+        "label": "会话记录摘要器",
+        "description": "会话结束时的「agent 做了什么」摘要。天然适合 agent 工作器。"
+      },
+      "planDrift": {
+        "label": "计划漂移检测",
+        "description": "每个 session 结束后判断项目 plan 是否需要更新并提出 proposal。用 agent 推理质量更高。"
+      },
+      "conflictDetector": {
+        "label": "跨层冲突检测",
+        "description": "每日扫描 facts/plan/goal/journal 之间的矛盾。模型越强，误报越少。"
+      },
+      "capture": {
+        "label": "Capture 引擎",
+        "description": "按触发器从 session transcript 抽取 fact。Agent 模式在长会话上 fact 质量明显更好；summarizer 模式便宜且本地。"
+      }
+    }
+  },
+  "memoryArchived": {
+    "title": "已归档记忆",
+    "loadFailed": "加载失败：{error}",
+    "restoreFailed": "恢复失败：{error}",
+    "emptyTitle": "暂无归档",
+    "emptyBody": "所有项目均无已归档记忆。自动清理器会把过时和重复的事实软归档到这里（30 天内可恢复）——目前尚未移除任何内容。",
+    "globalScope": "(全局)",
+    "countBadge": "{count} 条已归档",
+    "restore": "恢复",
+    "restoreAll": "全部恢复",
+    "deleteAll": "全部删除",
+    "restoreAllConfirm": "恢复 {project} 的全部 {count} 条归档记忆？",
+    "deleteAllConfirm": "永久删除 {project} 的全部 {count} 条归档记忆？将跳过 30 天宽限期，且不可撤销。",
+    "deletePermanently": "删除",
+    "deleteConfirm": "立即永久删除这条记忆？将跳过 30 天宽限期，且不可撤销。",
+    "restoredToast": "已恢复",
+    "restoredAllToast": "已恢复 {count} 条记忆",
+    "deletedToast": "已永久删除",
+    "deletedAllToast": "已删除 {count} 条记忆",
+    "deleteFailed": "删除失败：{error}",
+    "summary": "{projects} 个项目 · {memories} 条归档"
+  },
+  "project": {
+    "title": "项目",
+    "pickFirst": "请先选择一个项目。",
+    "health": {
+      "title": "记忆健康 — 最近 {days} 天",
+      "subtitle": "本项目两套记忆子系统的运行情况聚合。",
+      "newFacts": "新增 facts",
+      "newFactsHint": "累计 {total} 条",
+      "captureFires": "Capture 触发次数",
+      "captureFiresHint": "存入 {stored} · 去重 {deduped}",
+      "newJournal": "新增日志条目",
+      "newJournalHint": "累计 {total} 条",
+      "planAge": "计划最近更新",
+      "planAgeHint": "{count} 条 plan-drift 提案待审",
+      "planAgeHintNone": "无 plan-drift 提案待审",
+      "goalAge": "目标最近更新",
+      "pending": "待审提案",
+      "pendingHint": "最久 {days} 天",
+      "topHit": "命中最多 · {hits} 次",
+      "zeroHit": "{count} 条超过 7 天未命中的 fact — 清理候选。",
+      "never": "从未",
+      "today": "今日",
+      "daysAgo": "{count} 天前"
+    },
+    "conflicts": {
+      "subtitle": "每日 detector 在 facts/plan/goal/journal 之间发现的矛盾。",
+      "empty": "无待处理冲突。点击「立即检测」运行一次按需扫描。",
+      "detectNow": "立即检测",
+      "detected": "新发现 {count} 条冲突",
+      "accept": "采纳",
+      "dismiss": "驳回",
+      "deleteFact": "删除 fact {side}",
+      "deleteConfirmTitle": "确认删除 fact {side}?",
+      "deleteConfirmBody": "永久删除此 fact 并采纳冲突。另一侧保留为最终采信版本。",
+      "deleteWillDelete": "将删除（{side} 侧）：",
+      "deleteWillKeep": "将保留（{side} 侧）：",
+      "deleteNonFactOther": "（{layer} 条目 — 请打开对应 tab 查看）",
+      "deleteLoading": "加载中…",
+      "deleteFactLabel": "删除 {side}",
+      "deletedFact": "已删除 fact 并采纳冲突",
+      "openPlanEditor": "打开计划编辑器",
+      "openGoalEditor": "打开目标编辑器",
+      "severity": {
+        "low": "低",
+        "medium": "中",
+        "high": "高"
+      }
+    },
+    "journalPrune": {
+      "title": "清理陈旧日志条目",
+      "subtitle": "超过 {days} 天、无 pending 冲突引用。",
+      "daysLabel": "超过（天）：",
+      "empty": "没有可清理的陈旧条目。",
+      "selectAll": "全选",
+      "deselectAll": "取消全选",
+      "deleteSelected": "删除 ({count})",
+      "deleted": "已删除 {count} 条"
+    },
+    "loadFailed": "加载失败：{error}",
+    "projectsLoadFailed": "加载项目列表失败：{error}",
+    "projectLabel": "项目",
+    "browseFolder": "浏览文件夹…",
+    "resetTooltip": "重置项目记忆",
+    "append": "追加",
+    "appendDialogTitle": "追加日志条目",
+    "titleFieldLabel": "标题（可选）",
+    "contentFieldLabel": "内容（Markdown）",
+    "appendFailed": "失败：{error}",
+    "approveFailed": "批准失败：{error}",
+    "rejectFailed": "拒绝失败：{error}",
+    "resetConfirmTitle": "重置项目记忆？",
+    "alsoDeleteScanner": "同时删除扫描器文档",
+    "alsoDeletePgvector": "同时删除 pgvector 记忆",
+    "deleteForever": "永久删除",
+    "resetDoneSnack": "已重置：{parts}",
+    "resetFailed": "重置失败：{error}",
+    "docSavedSnack": "{kind} 已保存",
+    "docSaveFailed": "保存失败：{error}",
+    "docHintTemplate": "以 Markdown 编写 {kind}…",
+    "deleteEntryTooltip": "删除条目",
+    "agentReason": "Agent 原因",
+    "reject": "拒绝",
+    "approve": "批准",
+    "replaceConfirmTitle": "替换当前 {kind}？",
+    "replaceKind": "替换 {kind}",
+    "archived": {
+      "emptyTitle": "暂无归档",
+      "emptyBody": "该项目暂无归档记忆。自动清理器会把过时和重复的事实软归档到这里——目前还没有。",
+      "restoreFailed": "恢复失败：{error}",
+      "restore": "恢复"
+    }
+  },
+  "backups": {
+    "title": "备份",
+    "runConfirmTitle": "立即运行备份？",
+    "runConfirmBody": "向本地目标触发一次新的转储。任务在服务端运行；此列表会随进度刷新。",
+    "runFullInstance": "完整实例",
+    "runFullInstanceHint": "同时打包 vault、secrets.env 和 config.toml —— 而不只是数据库。",
+    "kindDbOnly": "仅数据库",
+    "kindFullInstance": "完整实例",
+    "dedupValue": "复用已有 blob（内容相同）",
+    "verifyOk": "已校验",
+    "verifyFailed": "未校验（检查失败）",
+    "verifyPending": "未校验",
+    "run": "运行",
+    "runNow": "立即运行",
+    "queueing": "入队中…",
+    "queuedSnack": "备份已入队（{id}）。监控进度中…",
+    "runFailedApi": "运行失败：{error}",
+    "runFailedGeneric": "运行失败：{error}",
+    "rowSucceededSnack": "备份成功（{bytes}）。",
+    "rowFailedSnack": "备份失败：{error}",
+    "unknownError": "未知错误",
+    "detailTitle": "备份详情",
+    "deleteTitle": "删除备份？",
+    "deleteBody": "从 {target} 移除二进制文件，并在索引中标记该行为已删除。",
+    "deletedSnack": "已删除 {id}。",
+    "deleteFailedApi": "删除失败：{error}",
+    "deleteFailedGeneric": "删除失败：{error}",
+    "menuSchedules": "计划",
+    "menuTargets": "目标",
+    "kv": {
+      "status": "状态",
+      "verified": "校验",
+      "kind": "类型",
+      "target": "目标",
+      "dedup": "去重",
+      "fanout": "扇出组",
+      "triggeredBy": "触发者",
+      "started": "开始",
+      "finished": "完成",
+      "size": "大小",
+      "encrypted": "已加密",
+      "targetPath": "目标路径",
+      "error": "错误",
+      "yes": "是",
+      "no": "否"
+    },
+    "recoveryKit": {
+      "menuLabel": "恢复工具包",
+      "title": "恢复工具包",
+      "warning": "灾难恢复保险 —— 仅当本机与其密钥同时丢失时才需要,正常情况下你永远用不到。本工具包是你的备份口令,用你此处自设的密码封装。每次生成都是一份独立工具包、用当次的密码封装 —— 服务端不存储,因此没有唯一的“主密码”。请把工具包和它的密码一起、异地分开保存。注意:这个密码保护的是工具包本身,而不是网关 —— 任何有后台权限的人都能再生成一份。",
+      "passphraseLabel": "恢复口令（至少 8 位）",
+      "confirmLabel": "确认恢复口令",
+      "generate": "生成",
+      "copy": "复制工具包",
+      "copied": "恢复工具包已复制 —— 请妥善保存",
+      "failed": "无法生成恢复工具包：{error}"
+    },
+    "emptyMissingDeps": {
+      "headline": "备份暂时无法运行",
+      "body": "安装 postgresql-client 并重启 opendray。"
+    },
+    "emptyNoTargets": {
+      "headline": "未配置任何备份目标",
+      "body": "打开「更多」菜单 → 目标，添加一个目的地（本地 / S3 / SMB / SFTP / WebDAV / rclone）。然后返回并点击「立即运行」。"
+    },
+    "emptyNoBackups": {
+      "headline": "暂无备份",
+      "body": "点击「立即运行」生成一次新快照，或打开「计划」设置定期运行。"
+    },
+    "restartToActivate": "重启 opendray 以激活备份",
+    "passphraseSaved": "你的密语已保存。网关仅在启动时加载，因此更改需重启后才生效。",
+    "keyFileLabel": "密钥文件",
+    "configuredViaLabel": "配置方式",
+    "wizard": {
+      "title": "设置备份",
+      "intro": "选择一个主密语。opendray 用它通过 AES-256-GCM 加密每一份备份。丢失密语就丢失数据 — 无法恢复。",
+      "saving": "保存中…",
+      "generateAndSave": "生成并保存",
+      "savePassphrase": "保存密语",
+      "generateHint": "服务器生成密码学级别随机密语，你复制到密码管理器，然后确认。",
+      "helperRecommended": "建议：从密码管理器生成 40+ 字符",
+      "saveNowHeader": "立即保存这个密语",
+      "saveNowBody": "此处只显示一次。之后无法从 opendray 取回。"
+    },
+    "overviewTargets": "目标",
+    "overviewSchedules": "计划",
+    "overviewBackups": "备份",
+    "health": {
+      "headlineHealthy": "备份正常",
+      "headlineAttention": "需要关注",
+      "headlineNever": "尚无备份",
+      "lastSuccess": "最近成功备份",
+      "never": "从未",
+      "tiles": {
+        "recentFailures": "近期失败",
+        "verifyFailures": "校验失败",
+        "overdue": "逾期",
+        "schedules": "计划"
+      }
+    },
+    "failedToLoad": "加载备份失败",
+    "envVarConfigured": "OPENDRAY_BACKUP_KEY 环境变量",
+    "savedConfirmCheckbox": "我已将密语保存到密码管理器",
+    "pgDumpMissing": "pg_dump 不在 PATH 中。请安装 postgresql-client 并重启 opendray。",
+    "encryption": {
+      "checkAgain": "重新检查",
+      "generate": "生成",
+      "paste": "粘贴",
+      "random256bit": "256 位随机密钥",
+      "passphraseLabel": "你的密语",
+      "passphraseHint": "至少 20 个字符",
+      "passphraseCopied": "密语已复制到剪贴板"
+    },
+    "restoreFromFile": "从文件恢复",
+    "restore": {
+      "title": "从备份包恢复",
+      "subtitle": "将加密的 .tar.gz.enc 备份包重放到 Postgres 数据库。备份包将从本机上传 — 请选择此前生成的文件。",
+      "bundleLabel": "备份文件（.tar.gz.enc）",
+      "pickFile": "选择文件",
+      "fileSelected": "{name} · {size}",
+      "noFile": "未选择文件",
+      "targetDsnLabel": "目标 Postgres DSN",
+      "targetDsnHint": "留空表示恢复到 opendray 自身的数据库。",
+      "targetDsnPlaceholder": "postgres://user:pass@host:5432/dbname",
+      "cleanLabel": "pg_restore --clean --if-exists",
+      "cleanHint": "重新创建之前先删除已存在的对象。",
+      "auditNoteLabel": "审计备注（可选）",
+      "auditNotePlaceholder": "例如：恢复 #INC-481",
+      "ownDbWarning": "恢复到 opendray 自身的数据库将覆写本网关当前提供服务的数据。请输入 \"I understand\" 以确认。",
+      "confirmPlaceholder": "输入 \"I understand\"",
+      "confirmSentinel": "I understand",
+      "restoring": "恢复中…",
+      "preview": "预览（试运行）",
+      "previewing": "预览中…",
+      "previewFirstHint": "请先运行试运行预览",
+      "applyRestore": "应用恢复",
+      "dryRunToast": "试运行完成 — 请检查计划后再应用",
+      "planTitle": "恢复计划（试运行 — 未做任何更改）",
+      "planDump": "数据库转储：{size}",
+      "planConfig": "config.toml → {path}",
+      "planSecrets": "secrets.env → {path}",
+      "planVault": "vault：{files} 个文件（{roots}）",
+      "planApplyHint": "应用前会先做一次全实例安全快照，然后覆盖以上内容并运行 pg_restore。",
+      "succeededTitle": "恢复成功",
+      "succeededBody": "已从备份 {id} 重放 {bytes}。",
+      "failedTitle": "恢复失败",
+      "pickFileToast": "请先选择一个备份文件。",
+      "outputTitle": "pg_restore 输出",
+      "noPgRestoreOutput": "（空 — 恢复无声完成）",
+      "manifestTitle": "清单",
+      "manifestBackupId": "备份 ID",
+      "manifestVersion": "清单版本",
+      "manifestCreatedAt": "创建时间",
+      "manifestPgVersion": "pg_version",
+      "manifestOpendrayVersion": "opendray 版本",
+      "fingerprint": "密钥指纹",
+      "fingerprintOk": "已匹配",
+      "fingerprintMismatch": "不匹配",
+      "encryptionAlgo": "加密算法",
+      "bytesRead": "已读字节",
+      "targetDsnUsed": "目标 DSN",
+      "targetDsnSelfLabel": "（opendray 自身数据库）",
+      "done": "完成"
+    },
+    "inventory": {
+      "title": "备份里有什么",
+      "summary": "{rows} 行 · {tables} 表",
+      "description": "opendray Postgres 数据库的实时行数。备份会捕获以下所有行；磁盘上的二进制工件不包含在内。",
+      "rowsLabel": "行",
+      "loadFailedToast": "加载清单失败",
+      "loading": "加载中…",
+      "tap": "点击展开"
+    }
+  },
+  "backupTargets": {
+    "title": "备份目标",
+    "newTarget": "新建目标",
+    "testConnection": "测试连接",
+    "editConfig": "编辑配置",
+    "viewRawConfig": "查看原始配置",
+    "configDialogTitle": "{kind} 配置",
+    "deleteTitle": "删除目标？",
+    "errorWithMessage": "{prefix}：{error}"
+  },
+  "backupSchedules": {
+    "title": "备份计划",
+    "newButton": "新建",
+    "deleteTitle": "删除计划？",
+    "targetLabel": "目标",
+    "targetsHint": "选择一个或多个 —— 同一份备份会写入每个目标（3-2-1）。",
+    "intervalLabel": "间隔",
+    "retentionLabel": "保留（最近 N 个）",
+    "errorWithMessage": "{prefix}：{error}",
+    "noTargets": "未配置任何备份目标。请从 Web 管理端或「目标」屏添加。",
+    "okMsgCreate": "计划已创建。",
+    "okMsgUpdate": "计划已更新。",
+    "okMsgDelete": "计划已删除。",
+    "errorPrefixCreate": "创建失败",
+    "errorPrefixUpdate": "更新失败",
+    "errorPrefixDelete": "删除失败",
+    "deleteBody": "移除目标 {targetId} 的定期规格。已存在的备份不受影响。",
+    "emptyList": "暂无计划。\n点击「新建」创建一个。",
+    "validatePickTarget": "请选择一个目标。",
+    "validateInterval": "间隔必须大于 0。",
+    "formTitleEdit": "编辑计划",
+    "formTitleNew": "新建计划",
+    "saveButtonEdit": "保存",
+    "saveButtonNew": "创建",
+    "targetFixedHint": "目标一旦创建即不可改。",
+    "enabledOn": "调度器将按周期运行。",
+    "enabledOff": "已暂停 — 重新启用前不会自动运行。",
+    "loadFailedTitle": "加载计划失败",
+    "pausedBadge": "已暂停",
+    "everyInterval": "每 {interval}",
+    "keepRetention": "· 保留 {n}",
+    "nextRun": "· 下次 {when}",
+    "lastRun": "· 上次 {when}"
+  },
+  "backupTargetEditor": {
+    "useHttps": "使用 HTTPS",
+    "pathStyle": "路径风格寻址",
+    "pathStyleSubtitle": "旧版 / MinIO",
+    "kinds": {
+      "local": {
+        "label": "本地磁盘",
+        "description": "运行 opendray 的机器上的文件夹"
+      },
+      "smb": {
+        "label": "SMB 共享",
+        "description": "Windows 共享 + 多数家用 NAS 设备"
+      },
+      "webdav": {
+        "label": "WebDAV",
+        "description": "自托管云盘 + 文件共享服务"
+      },
+      "sftp": {
+        "label": "SFTP",
+        "description": "任何可 SSH 访问的服务器"
+      },
+      "s3": {
+        "label": "S3 / 兼容",
+        "description": "Amazon S3 + S3 兼容存储桶（MinIO、R2、B2）"
+      },
+      "rclone": {
+        "label": "rclone（任意）",
+        "description": "通过 rclone CLI 访问 OneDrive、Google Drive、Dropbox"
+      }
+    },
+    "formTitleEdit": "编辑目标",
+    "formTitleNew": "新建备份目标",
+    "idHintAuto": "自动：{prefix}-1",
+    "idHelper": "小写字母、数字、连字符。默认为下一个可用槽。",
+    "enabledOn": "定期和临时备份可使用此目标。",
+    "enabledOff": "服务器将拒绝向此处写入备份。",
+    "saving": "保存中…",
+    "create": "创建",
+    "rootDirLabel": "根目录",
+    "rootDirHint": "留空 = cfg.backup.local_dir (~/.opendray/backups)",
+    "hostLabel": "主机",
+    "portLabel": "端口",
+    "shareLabel": "共享",
+    "shareHint": "顶层共享名",
+    "shareSampleHint": "Claude_Workspace",
+    "userLabel": "用户",
+    "passwordLabel": "密码",
+    "passwordHintKeepCurrent": "留空 = 保留当前值",
+    "passwordHintKeep": "留空 = 保留",
+    "pathPrefixLabel": "路径前缀",
+    "pathPrefixHintShareRoot": "共享根下的子文件夹（可选）",
+    "pathPrefixHintBaseUrl": "Base URL 下的子文件夹（可选）",
+    "pathPrefixHintObjectKey": "对象键前缀（可选）",
+    "pathPrefixHintSshFolder": "绝对路径或相对用户主目录（可选）",
+    "pathPrefixHintRemoteRoot": "远端根下的子文件夹（可选）",
+    "endpointLabel": "端点",
+    "regionLabel": "区域",
+    "bucketLabel": "存储桶",
+    "accessKeyLabel": "Access Key",
+    "secretKeyLabel": "Secret Key",
+    "secretKeyHintEdit": "留空 = 保留当前值。已 AES-256-GCM 加密存储。",
+    "secretKeyHintNew": "已 AES-256-GCM 加密存储；不会回显。",
+    "baseUrlLabel": "Base URL",
+    "baseUrlHint": "完整 URL 包含路径。Nextcloud：https://cloud.example/remote.php/dav/files/<user>",
+    "sftpPasswordHintEdit": "留空 = 保留。如果密码 + 私钥同时存在，私钥优先。",
+    "sftpPasswordHintNew": "密码或私钥二选一。两者同时存在时，密码仅作回退。",
+    "privateKeyLabel": "私钥（PEM）",
+    "privateKeyHintEdit": "留空 = 保留。粘贴 OpenSSH/PEM 内容。",
+    "privateKeyHintNew": "粘贴 OpenSSH/PEM 私钥内容。多行输入 — 保留 BEGIN/END 标记。",
+    "hostKeyLabel": "Host key（pinning）",
+    "hostKeyHint": "OpenSSH 格式的服务器公钥。`ssh-keyscan <host>` 获取。留空 = 不 pinning（局域网外不推荐）。",
+    "rcloneNote": "需要 opendray 主机上安装 rclone CLI。首次需运行 `rclone config` 交互式认证云账户。",
+    "rcloneRemoteLabel": "远端名",
+    "rcloneRemoteHint": "来自 `rclone config` 的名字（不带冒号）。",
+    "rcloneBinaryLabel": "二进制路径",
+    "rcloneBinaryHint": "覆盖 `which rclone`。留空 = PATH 查找。",
+    "rcloneConfigLabel": "配置路径",
+    "rcloneConfigHint": "覆盖 --config。留空 = rclone 默认。"
+  },
+  "githosts": {
+    "title": "Git 主机",
+    "addHost": "添加主机",
+    "deleteTitle": "删除 Git 主机？",
+    "errorWithMessage": "{prefix}：{error}",
+    "errorPrefix": {
+      "toggle": "切换失败",
+      "delete": "删除失败"
+    },
+    "form": {
+      "kindLabel": "类型",
+      "hostLabel": "主机",
+      "nameLabel": "名称",
+      "nameHint": "work-github、personal-gitlab、…",
+      "kinds": {
+        "github": "GitHub",
+        "gitlab": "GitLab",
+        "bitbucket": "Bitbucket",
+        "gitea": "Gitea",
+        "custom": "自定义"
+      },
+      "validateHost": "必须填写主机。",
+      "validateName": "必须填写名称。",
+      "snackAdded": "主机已添加。",
+      "snackUpdated": "主机已更新。",
+      "saveFailedApi": "保存失败：{error}",
+      "saveFailedGeneric": "保存失败：{error}",
+      "saving": "保存中…",
+      "save": "保存",
+      "add": "添加",
+      "nameHelper": "在 PR 列表中显示的名字。",
+      "tokenLabelKeep": "Token（留空 = 保留现有）",
+      "tokenLabel": "Token",
+      "tokenHintKeep": "留空 = 保留现有。",
+      "tokenHintNew": "粘贴个人访问令牌。",
+      "enabledHelper": "可供会话用于 PR / 远端查找。",
+      "validateTokenRequired": "添加主机时必须填写 Token。",
+      "appBarEdit": "编辑 {name}",
+      "appBarNew": "添加 Git 主机",
+      "tokenPreviewHint": "当前预览：{preview}",
+      "tokenPreviewNone": "（无）",
+      "pausedSubtitle": "已暂停 — 会话跳过此主机。"
+    },
+    "deleteBody": "移除该凭据。试图列出 {host} 的 PR 的会话将回退到未认证 API。",
+    "deletedSnack": "已删除 {name}。",
+    "enabledSnack": "{name} 已启用。",
+    "disabledSnack": "{name} 已停用。",
+    "emptyList": "未配置任何 Git 主机。\n\n添加一个凭据，让网关可以列出你仓库的 pull request。",
+    "failedToLoad": "加载 Git 主机失败"
+  },
+  "channels": {
+    "title": "通道",
+    "new": "新建",
+    "sendTest": "发送测试消息",
+    "editConfig": "编辑配置",
+    "editNotifications": "编辑通知",
+    "viewRawConfig": "查看原始配置",
+    "copyChannelId": "复制通道 ID",
+    "copiedSnack": "已复制 {id}",
+    "createdSnack": "已创建 {kind} 通道。",
+    "createFailedApi": "创建失败：{error}",
+    "createFailedGeneric": "创建失败：{error}",
+    "deleteTitle": "删除通道？",
+    "configDialog": {
+      "title": "{kind} 配置"
+    },
+    "webhookDialog": {
+      "title": "{kind} Webhook URL",
+      "copiedSnack": "已复制 Webhook URL。"
+    },
+    "errorWithMessage": "{prefix}：{error}",
+    "notifications": {
+      "title": "通知偏好",
+      "repeatPolicy": "重复策略",
+      "cooldownWindow": "冷却时间",
+      "includeSnippet": "包含终端片段",
+      "snippetLengthCap": "片段长度上限",
+      "snippetHelper": "在每条通知中嵌入终端最近的内容。",
+      "snippetNoCap": "无上限",
+      "snippetChars": "{n} 字符",
+      "updatedSnack": "通知偏好已更新。",
+      "modes": {
+        "onceLabel": "每会话一次",
+        "onceDescription": "空闲时触发一次，回复或结束前不再触发。",
+        "cooldownLabel": "时间窗冷却",
+        "cooldownDescription": "在所选时间窗内抑制重复。",
+        "everyLabel": "每次事件（嘈杂）",
+        "everyDescription": "不抑制 — 仅适合低频通道。"
+      }
+    },
+    "popup": {
+      "enable": "启用",
+      "disable": "停用",
+      "mute": "静音",
+      "unmute": "取消静音",
+      "deleteLabel": "删除"
+    },
+    "badges": {
+      "running": "运行中",
+      "starting": "启动中…",
+      "disabled": "已停用",
+      "muted": "已静音"
+    },
+    "capsLabel": "· 能力：{list}",
+    "bridgeWebOnly": "Bridge 通道仅 Web 端",
+    "bridgeEmptyAdd": "在 Web 管理端添加：通道 → 新建。",
+    "deleteBody": "停止该通道并移除其配置。仍在传输中的通知会被静默丢弃。",
+    "snacks": {
+      "testDispatched": "测试消息已发送。",
+      "channelEnabled": "通道已启用。",
+      "channelDisabled": "通道已停用。",
+      "channelMuted": "通道已静音。",
+      "channelUnmuted": "通道已取消静音。",
+      "configUpdated": "通道配置已更新。",
+      "channelDeleted": "通道已删除。"
+    },
+    "errorPrefix": {
+      "test": "测试失败",
+      "toggle": "切换失败",
+      "muteToggle": "静音切换失败",
+      "update": "更新失败",
+      "delete": "删除失败"
+    },
+    "failedToLoad": "加载通道失败",
+    "kinds": {
+      "telegram": {
+        "description": "通过 @BotFather 创建机器人。opendray 长轮询 getUpdates 并通过 REST 发送。原生支持按钮和 reply_to_message。",
+        "botTokenLabel": "机器人 Token",
+        "botTokenHint": "从 @BotFather 获取。存储于通道配置；仅管理员 API 可见。",
+        "chatIdLabel": "默认 chat ID",
+        "chatIdPlaceholder": "42（可选 — 没有 ReplyCtx 时使用）",
+        "ownerUserIdsLabel": "Telegram 拥有者用户 ID",
+        "ownerUserIdsPlaceholder": "123456789（多个用逗号分隔）",
+        "ownerUserIdsHint": "只有这些数字 Telegram 用户 ID 才能驱动会话、运行命令或点击按钮；其他人一律忽略。留空则允许任何人（双向聊天不推荐）。私聊 @userinfobot 获取你的 ID。",
+        "chatEnabledLabel": "双向聊天（将消息路由进会话）",
+        "chatEnabledHint": "开启后，你的消息会被输入选定会话，agent 在此回复。仅需通知时关闭。",
+        "chatTypingLabel": "agent 工作时显示“正在输入…”",
+        "chatTypingHint": "在 agent 回复稳定前显示正在输入指示。",
+        "replyMaxCharsLabel": "回复最大长度（字符）",
+        "replyMaxCharsPlaceholder": "3500（留空 = 3500，0 = 不限）",
+        "replyMaxCharsHint": "限制 agent 回复发送多少字符后被截断并附“…(已截断)”。留空使用 3500 默认（约一条消息）；设为 0 则发送完整回复，跨多条消息拆分。"
+      },
+      "slack": {
+        "description": "Socket Mode — 无需公网 webhook。需要 bot OAuth token（xoxb-）和带 connections:write 的 app-level token（xapp-）。",
+        "botTokenLabel": "Bot token（xoxb-…）",
+        "botTokenHint": "OAuth & Permissions → Bot User OAuth Token。需要 chat:write。",
+        "appTokenLabel": "App-level token（xapp-…）",
+        "appTokenHint": "Settings → Basic Information → App-Level Tokens。范围：connections:write。",
+        "channelIdLabel": "默认 channel ID",
+        "channelIdPlaceholder": "C0123ABC456（可选）"
+      },
+      "discord": {
+        "description": "通过 Discord Developer Portal 创建机器人，启用 MESSAGE CONTENT INTENT。连接 Gateway WS — 无需公网 URL。",
+        "botTokenLabel": "Bot token",
+        "botTokenPlaceholder": "来自 Discord Developer Portal 的 Bot token",
+        "botTokenHint": "Application → Bot → Reset Token。邀请机器人时勾选 send_messages + embed_links。",
+        "channelIdLabel": "默认 channel ID",
+        "channelIdPlaceholder": "123456789012345678（可选）"
+      },
+      "feishu": {
+        "description": "应用级凭据。入站走事件订阅 webhook。下方生成公网 webhook URL — 粘贴到飞书开放平台控制台。",
+        "afterCreateHint": "在通道卡上打开 webhook URL，粘贴到飞书开放平台 → 事件订阅 → Request URL。",
+        "appIdLabel": "App ID",
+        "appSecretLabel": "App secret",
+        "appSecretPlaceholder": "应用凭据 secret",
+        "verificationTokenLabel": "Verification token",
+        "verificationTokenHint": "来自 事件订阅 → Verification Token。设置后，opendray 拒绝 token 不匹配的 webhook。",
+        "chatIdLabel": "默认 chat ID（oc_…）",
+        "chatIdPlaceholder": "oc_xxxxxxxxxx（可选）"
+      },
+      "dingtalk": {
+        "description": "自定义群机器人。仅外发。群聊 → 机器人 → 添加 → 加签模式 → 复制 webhook + secret。",
+        "webhookUrlLabel": "Webhook URL",
+        "secretLabel": "加签 secret",
+        "secretHint": "当机器人为「加签」安全模式时，将 secret 复制到这里。opendray 自动添加 timestamp + sign 参数。"
+      },
+      "wecom": {
+        "description": "群机器人 webhook。仅外发（文本 + markdown）。群设置 → 群机器人 → 添加 → 复制 webhook URL。",
+        "webhookKeyLabel": "Webhook key",
+        "webhookKeyPlaceholder": "「key=」查询参数值",
+        "webhookKeyHint": "或将整个 webhook URL 粘贴到下方字段 — 任一即可。",
+        "webhookUrlLabel": "或完整 webhook URL"
+      }
+    }
+  },
+  "onboarding": {
+    "gatewayLabel": "网关 URL",
+    "gatewayHint": "https://opendray.example.com",
+    "continue": "继续"
+  },
+  "skills": {
+    "title": "技能",
+    "newSkill": "新建技能",
+    "install": "安装 SKILL.md",
+    "installedSnack": "已安装 {name}",
+    "installFailed": "安装失败:{error}",
+    "customizingBuiltin": "自定义内置 {id}",
+    "idLabel": "Id（slug）",
+    "idHint": "例如：tdd-guide",
+    "bodyLabel": "正文（Markdown）",
+    "loadFailedApi": "加载失败：{error}",
+    "loadFailedGeneric": "加载失败：{error}",
+    "idRequired": "必须填写 Id。",
+    "bodyRequired": "正文不能为空。",
+    "snackCreated": "技能已创建。",
+    "snackOverride": "已保存为库覆盖。",
+    "snackUpdated": "技能已更新。",
+    "saveFailedApi": "保存失败：{error}",
+    "saveFailedGeneric": "保存失败：{error}",
+    "resetTitle": "重置为内置？",
+    "deleteTitle": "删除技能？",
+    "resetBody": "移除 {id} 的库覆盖。会话将回退到内置正文。",
+    "resetButton": "重置",
+    "resetSnack": "已将 {id} 重置为内置。",
+    "deletedSnack": "已删除 {id}。",
+    "deleteFailedApi": "删除失败：{error}",
+    "deleteFailedGeneric": "删除失败：{error}",
+    "deleteBody": "从库中移除 {id}。引用它的会话在恢复前会失败。",
+    "newSkillTitle": "新建技能",
+    "customizeTitle": "自定义 {id}",
+    "editTitle": "编辑 {id}",
+    "resetTooltip": "重置为内置",
+    "deleteTooltip": "删除",
+    "saving": "保存中…",
+    "saveOverride": "保存覆盖",
+    "overrideBanner": "保存会以相同 id 创建一个库覆盖。会话将使用此正文而非内置版本，直到你重置。",
+    "idHelper": "小写字母 / 数字 / 横线。创建后锁定。",
+    "emptyList": "未配置任何技能。网关附带内置技能（planner、code-reviewer 等）。",
+    "failedToLoad": "加载技能失败"
+  },
+  "customTasks": {
+    "title": "自定义任务",
+    "newTask": "新建任务",
+    "deleteTitle": "删除任务？",
+    "deletedSnack": "已删除 {name}。",
+    "deleteFailedApi": "删除失败：{error}",
+    "deleteFailedGeneric": "删除失败：{error}",
+    "popupEdit": "编辑",
+    "popupDelete": "删除",
+    "nameHint": "例如：backend-tests",
+    "commandHint": "/run pnpm test --filter backend",
+    "descriptionHint": "在任务名下方显示的一行说明。",
+    "scopeGlobal": "全局",
+    "scopeProject": "项目",
+    "cwdHint": "/Users/you/projects/backend",
+    "snackCreated": "任务已创建。",
+    "snackUpdated": "任务已更新。",
+    "deleteBody": "从目录中移除任务。已插入到会话中的实例不受影响。",
+    "introBanner": "定义自己的斜杠命令。它们会与内置任务一起出现在会话任务选择器中。",
+    "validateNameRequired": "必须填写名称",
+    "validateCommandRequired": "必须填写命令",
+    "validateProjectCwd": "项目范围任务需要绝对 cwd 路径",
+    "appBarEdit": "编辑自定义任务",
+    "appBarNew": "新建自定义任务",
+    "fieldName": "名称",
+    "nameHelper": "在检查器的任务选择器中显示。",
+    "fieldCommand": "命令",
+    "commandHelper": "选择时插入到会话的文本。可以是 CLI 命令或 Claude 斜杠命令。",
+    "fieldDescription": "描述（可选）",
+    "fieldScope": "范围",
+    "globalScopeHint": "从任何会话可见，不论 cwd。",
+    "projectScopeHint": "仅当会话的 cwd 匹配以下路径时可见。",
+    "fieldProjectCwd": "项目 cwd",
+    "cwdHelper": "绝对路径。以此 cwd 启动的会话将看到该任务。",
+    "saving": "保存中…",
+    "save": "保存",
+    "create": "创建",
+    "failedToLoad": "加载自定义任务失败"
+  },
+  "notesPage": {
+    "title": "笔记",
+    "newButton": "新建",
+    "newNoteDialogTitle": "新建笔记",
+    "searchHint": "搜索整个仓库…",
+    "up": "上级",
+    "copyPath": "复制路径",
+    "open": "打开",
+    "copiedSnack": "已复制 {path}",
+    "deleteTitle": "删除笔记？",
+    "deletedSnack": "已删除 {path}",
+    "deleteFailedApi": "删除失败：{error}",
+    "deleteFailedGeneric": "删除失败：{error}",
+    "createFailedApi": "创建失败：{error}",
+    "createFailedGeneric": "创建失败：{error}",
+    "pathLabel": "相对仓库的路径",
+    "pathHint": "personal/scratch.md",
+    "create": "创建",
+    "popupDelete": "删除",
+    "deleteBody": "此操作不可撤销。仓库的 git 同步会同时移除网关主机上的文件。",
+    "emptyFilterMatch": "未找到匹配「{query}」的笔记。",
+    "emptyVault": "仓库为空。点击 + 创建第一条笔记。",
+    "emptyFolder": "文件夹「{path}」为空。",
+    "validatePath": "必须填写路径",
+    "validatePathDots": "路径不能包含「..」",
+    "pathHelper": "缺失时自动追加 .md。",
+    "editor": {
+      "markdownHint": "Markdown…",
+      "saving": "保存中…",
+      "autosave": "随输入自动保存",
+      "loadFailedApi": "加载失败：{error}",
+      "loadFailedGeneric": "加载失败：{error}",
+      "saveFailedApi": "保存失败：{error}",
+      "saveFailedGeneric": "保存失败：{error}",
+      "savedAt": "{time} 已保存"
+    }
+  },
+  "dataExport": {
+    "title": "数据导出与导入",
+    "subtitle": "面向用户的数据包，用于迁移或验证 — 与 /backups（灾难恢复）相互独立。",
+    "sections": {
+      "export": "导出",
+      "import": "导入"
+    },
+    "form": {
+      "scope": "范围",
+      "memories": "记忆",
+      "memoriesHint": "所有已持久化的记忆及其向量。",
+      "integrations": "集成",
+      "integrationOptions": {
+        "none": "跳过",
+        "noneHint": "不包含 /integrations 注册表。",
+        "metadata": "仅元数据（默认）",
+        "metadataHint": "每个集成的名称 + 端点，不含 API 密钥。",
+        "plaintext": "明文密钥",
+        "plaintextHint": "危险：包含原始 API 令牌。v1 仅存储 bcrypt 哈希，因此此选项当前实际为空操作；仍然提供以提示这一事实。"
+      },
+      "confirmWarning": "明文密钥导出包含可解密的机密。请输入 \"I understand\" 以确认。",
+      "confirmPlaceholder": "输入 \"I understand\"",
+      "confirmSentinel": "I understand",
+      "customTasks": "自定义任务",
+      "customTasksHint": "用户级任务定义（cron 计划 + 脚本主体）。",
+      "footnote": "数据包在创建后 7 天过期。下载链接为单次使用。",
+      "create": "创建数据包",
+      "building": "构建中…",
+      "readyToast": "数据包已就绪",
+      "readyDescription": "{bytes} 字节 — 在下方历史中下载。",
+      "failedToast": "数据包创建失败：{error}"
+    },
+    "history": {
+      "title": "导出历史",
+      "loading": "加载中…",
+      "empty": "暂无导出。",
+      "listFailedToast": "加载导出失败：{error}",
+      "downloadFailedToast": "获取下载令牌失败：{error}",
+      "noTokenToast": "该导出无可用的下载令牌（已消费或过期）。",
+      "deletedToast": "已删除导出。",
+      "deleteFailedToast": "删除导出失败：{error}",
+      "deleteConfirmTitle": "删除导出？",
+      "deleteConfirmBody": "移除数据包并撤销下载令牌。{id}",
+      "download": "下载",
+      "delete": "删除",
+      "downloadCopiedToast": "下载 URL 已复制到剪贴板。在浏览器中粘贴以获取（单次使用）。",
+      "columns": {
+        "scope": "范围",
+        "size": "大小",
+        "expires": "过期",
+        "actions": "操作"
+      },
+      "scopeEmpty": "（空）",
+      "scopeMemories": "记忆",
+      "scopeIntegrations": "集成({mode})",
+      "scopeCustomTasks": "自定义任务"
+    },
+    "import": {
+      "intro": "重放此前由「导出」生成的数据包。仅勾选的实体会被导入；数据包中其余内容会被忽略。",
+      "bundleLabel": "数据包文件（.zip）",
+      "pickFile": "选择文件",
+      "fileSelected": "{name} · {size}",
+      "noFile": "未选择文件",
+      "memoriesLabel": "记忆",
+      "integrationsLabel": "集成",
+      "customTasksLabel": "自定义任务",
+      "importBundle": "导入数据包",
+      "importing": "导入中…",
+      "pickFileToast": "请先选择数据包文件。",
+      "doneToast": "导入完成",
+      "finishedWithErrors": "导入完成但有错误",
+      "failedToast": "导入失败：{error}",
+      "summaryCard": {
+        "memories": "记忆",
+        "integrations": "集成",
+        "customTasks": "自定义任务",
+        "created": "创建",
+        "skipped": "跳过",
+        "failed": "失败"
+      }
+    },
+    "imports": {
+      "title": "导入历史",
+      "loading": "加载中…",
+      "empty": "暂无导入。",
+      "listFailedToast": "加载导入失败：{error}",
+      "noneCounts": "（无计数）",
+      "sourceUnknown": "（未知来源）",
+      "columns": {
+        "id": "ID",
+        "status": "状态",
+        "source": "来源",
+        "counts": "计数",
+        "when": "时间"
+      }
+    },
+    "relative": {
+      "inSeconds": "{n} 秒后",
+      "inMinutes": "{n} 分钟后",
+      "inHours": "{n} 小时后",
+      "inDays": "{n} 天后",
+      "secondsAgo": "{n} 秒前",
+      "minutesAgo": "{n} 分钟前",
+      "hoursAgo": "{n} 小时前"
+    },
+    "status": {
+      "pending": "等待",
+      "running": "运行中",
+      "ready": "就绪",
+      "failed": "失败",
+      "expired": "过期",
+      "succeeded": "成功"
+    }
+  },
+  "memory": {
+    "status": {
+      "label": "当前生效 embedder",
+      "dimensions": "{dim} 维 · {state}",
+      "enabled": "已启用",
+      "disabled": "已禁用",
+      "floorNoModel": "仅关键词（BM25）检索 — 未配置 embedding 模型。在 Settings 配置 dense 端点即可启用语义记忆。",
+      "denseConfiguredPendingRestart": "已配置 {model}（dense）— 重启网关即启用语义记忆并自动重嵌历史记忆。",
+      "denseUnreachableFloor": "已配置 {model}（dense）但端点当前不可达 — 暂用关键词 floor，端点恢复后重启会自动升级。",
+      "denseDegraded": "dense embedder 已激活，但其端点当前不可达 — 现有向量已保留；新写入与相似度检索暂停，直到端点恢复。"
+    },
+    "title": "记忆",
+    "more": "更多",
+    "workers": "记忆工作器",
+    "rank": {
+      "title": "排名分解",
+      "effective": "有效分：{value}",
+      "similarity": "余弦相似度",
+      "ageMultiplier": "时效系数（{days} 天前）",
+      "hitMultiplier": "命中系数（{hits} 次命中）",
+      "confidenceMultiplier": "置信度系数",
+      "formula": "有效分 = 相似度 × 时效 × 命中 × 置信度",
+      "close": "关闭"
+    },
+    "new": "新建",
+    "searchHint": "搜索…",
+    "projectLabel": "项目",
+    "filterHint": "按名称或路径筛选…",
+    "copied": "已复制",
+    "copyTooltip": "复制文本",
+    "deleteAllConfirm": {
+      "title": "删除此范围内所有记忆？",
+      "deleteAll": "全部删除"
+    },
+    "deletedSnackOne": "已删除 {n} 条记忆",
+    "deletedSnackOther": "已删除 {n} 条记忆",
+    "bulkDeleteFailedApi": "批量删除失败：{error}",
+    "bulkDeleteFailedGeneric": "批量删除失败：{error}",
+    "deleteOne": {
+      "title": "删除该记忆？",
+      "body": "此操作不可撤销。"
+    },
+    "scope": {
+      "project": "项目",
+      "global": "全局"
+    },
+    "create": {
+      "textLabel": "文本",
+      "scopeKeyLabel": "范围键（项目 cwd）",
+      "scopeKeyHint": "/Users/you/projects/foo",
+      "submit": "创建"
+    },
+    "archive": "归档",
+    "quarantine": "隔离",
+    "archivedToast": "记忆已归档——可在「已归档」中恢复",
+    "quarantinedToast": "记忆已隔离——请在 Cortex → 隔离区 审查",
+    "archiveFailed": "归档失败：{error}",
+    "quarantineFailed": "隔离失败：{error}",
+    "reembed": {
+      "menuItem": "全部重嵌",
+      "confirmTitle": "重嵌所有记忆？",
+      "confirmBody": "用当前 embedding 模型重新编码所有已存记忆和 KB 页面。切换模型后需要执行（向量维度会变）。可能需要一些时间。",
+      "confirmButton": "重嵌",
+      "running": "重嵌中……可能需要一些时间。",
+      "done": "已重嵌 {count} 条记忆。",
+      "failed": "重嵌失败：{error}"
+    }
+  },
+  "about": {
+    "title": "关于",
+    "loading": "加载中…",
+    "sections": {
+      "app": "应用",
+      "server": "服务器",
+      "gateway": "网关"
+    },
+    "fields": {
+      "app": "应用",
+      "version": "版本",
+      "versionFormat": "{version}（build {build}）",
+      "package": "包名",
+      "url": "URL",
+      "signedInAs": "登录账号",
+      "tokenExpires": "令牌到期"
+    },
+    "copied": "已复制 {label}",
+    "copyTooltip": "复制",
+    "copyLabels": {
+      "version": "版本",
+      "serverUrl": "服务器 URL"
+    },
+    "tagline": "opendray mobile — 多 CLI 网关控制。\n源码：github.com/Opendray/opendray",
+    "gateway": {
+      "version": "版本",
+      "commit": "提交",
+      "checking": "正在检查更新…",
+      "upToDate": "已是最新",
+      "updateAvailable": "有可用更新：{version}",
+      "releaseNotes": "更新说明",
+      "checkFailed": "无法检查更新"
+    }
+  },
+  "settings": {
+    "title": "设置",
+    "language": {
+      "section": "语言",
+      "system": "跟随系统",
+      "systemSubtitle": "跟随手机的语言设置",
+      "english": "English",
+      "chinese": "中文",
+      "spanish": "Español"
+    },
+    "appearance": {
+      "section": "外观",
+      "system": "跟随系统",
+      "systemSubtitle": "跟随手机的外观设置",
+      "light": "浅色",
+      "lightSubtitle": "始终使用浅色主题",
+      "dark": "深色",
+      "darkSubtitle": "始终使用深色主题"
+    },
+    "account": {
+      "section": "账户",
+      "changeCredentials": "修改凭据",
+      "changeCredentialsSubtitle": "用户名和密码"
+    },
+    "gateway": {
+      "section": "网关",
+      "serverSettings": "服务器设置",
+      "serverSettingsSubtitle": "监听地址、日志、凭据库、内存、存储路径…",
+      "liveLogs": "实时日志",
+      "liveLogsSubtitle": "查看网关实时日志 — 与 Web 管理端同源"
+    },
+    "changeCredentials": {
+      "title": "修改凭据",
+      "explanation": "验证当前密码，然后选择新凭据。其他已登录会话将全部失效。",
+      "currentPassword": "当前密码",
+      "newUsername": "新用户名",
+      "newPassword": "新密码",
+      "confirmPassword": "确认新密码",
+      "validatorRequired": "必填",
+      "passwordHelper": "至少 8 个字符",
+      "passwordTooShort": "至少需要 8 个字符",
+      "passwordMismatch": "与新密码不一致",
+      "updatedSnack": "凭据已更新。",
+      "wrongCurrent": "当前密码不正确。",
+      "saving": "保存中…",
+      "update": "更新"
+    },
+    "logViewer": {
+      "title": "实时日志",
+      "reconnect": "重新连接",
+      "copyBuffer": "复制缓冲",
+      "clearLocal": "清除本地视图",
+      "copiedSnack": "已将缓冲复制到剪贴板",
+      "filterHint": "筛选子串…",
+      "levels": {
+        "all": "全部",
+        "debug": "调试",
+        "info": "信息",
+        "warn": "警告",
+        "error": "错误"
+      }
+    },
+    "serverSettings": {
+      "title": "服务器设置",
+      "reloadTooltip": "从服务器重新加载",
+      "restartTooltip": "重启网关",
+      "restartConfirmTitle": "重启 opendray？",
+      "restartConfirmBody": "网关将自我 exec。手机应用可能短暂断开连接。",
+      "restart": "重启",
+      "restartQueuedSnack": "已请求重启。稍后下拉刷新。",
+      "restartFailedApi": "重启失败：{error}",
+      "restartFailedGeneric": "重启失败：{error}",
+      "loadedFrom": "加载自：{path}",
+      "restartHint": "大部分配置需要重启网关后生效。重启按钮在 AppBar 中。",
+      "savedNeedsRestart": "已保存。重启网关以生效。",
+      "savedSimple": "已保存。",
+      "changesNeedRestart": "此配置的修改需重启网关。",
+      "loadFailed": "加载服务器设置失败",
+      "sections": {
+        "general": "通用",
+        "logging": "日志",
+        "sessions": "会话",
+        "vault": "凭据库",
+        "mcpRegistry": "MCP 注册表",
+        "memory": "记忆",
+        "backup": "备份",
+        "storageClaude": "存储 · Claude",
+        "storageCodex": "存储 · Codex",
+        "storageAntigravity": "存储 · Antigravity"
+      },
+      "sectionDescriptions": {
+        "general": "监听地址、管理员账号、令牌 TTL。",
+        "logging": "详细程度、格式、磁盘日志路径。",
+        "sessions": "空闲检测阈值。",
+        "vault": "笔记、技能、git 版本化的根目录。",
+        "mcpRegistry": "MCP 服务器 + 密钥文件的凭据库路径。",
+        "memory": "跨 CLI 的持久记忆子系统。",
+        "backup": "加密的数据库备份 + 管理数据导出。密语保存在密钥文件（设置 → 备份）。",
+        "storageClaude": "Claude 会话记录在磁盘的存放位置。",
+        "storageCodex": "Codex 会话根目录。",
+        "storageAntigravity": "agy 按会话存储的 SQLite 库。"
+      },
+      "fields": {
+        "listenAddress": "监听地址",
+        "adminUser": "管理员用户",
+        "adminUserHelper": "当未设置密钥文件或环境变量时生效。否则参见 设置 → 账户。",
+        "adminPassword": "管理员密码",
+        "adminPasswordHelper": "留空 = 保留。日常轮换请用 设置 → 账户（密钥文件支持，无需重启）。",
+        "tokenTtlWeb": "令牌 TTL（Web）",
+        "tokenTtlHelper": "Go duration 字符串，如 24h、30m。",
+        "level": "级别",
+        "format": "格式",
+        "filePath": "文件路径",
+        "filePathHelper": "留空 = 仅 stdout。",
+        "idleThreshold": "空闲阈值",
+        "idleThresholdHelper": "会话被标记为空闲前的安静时长。Go duration。",
+        "idleCheckInterval": "空闲检查间隔",
+        "idleCheckHelper": "空闲回收器运行的频率。",
+        "root": "根目录",
+        "rootHelper": "notes / skills / git_root 子路径的父目录。",
+        "notesPath": "笔记路径",
+        "skillsPath": "技能路径",
+        "gitRoot": "Git 根",
+        "personalPrefix": "个人前缀",
+        "projectsPrefix": "项目前缀",
+        "registryRoot": "注册表根",
+        "secretsFile": "密钥文件",
+        "backend": "后端",
+        "store": "存储",
+        "defaultTopK": "默认 top-k",
+        "similarityThreshold": "相似度阈值",
+        "defaultScope": "默认范围",
+        "preserveHelper": "留空 = 保留当前值。",
+        "localModelName": "本地模型名",
+        "localLibraryPath": "本地库路径",
+        "localModelPath": "本地模型路径",
+        "localTokenizerPath": "本地分词器路径",
+        "localMaxSeqLen": "本地最大序列长度",
+        "backupEnabled": "已启用",
+        "backupEnabledHelper": "即使打开此项，备份子系统仍需配置 OPENDRAY_BACKUP_KEY 或密钥文件才会运行。",
+        "backupLocalDir": "本地目录",
+        "backupExportDir": "导出目录",
+        "pathHelper": "留空 = 启动时从 PATH 解析。",
+        "accountsDir": "账号目录",
+        "accountsHelper": "各账号 .claude/ 子目录的父目录。留空 = ~/.claude-accounts。",
+        "sessionsRoot": "会话根目录",
+        "sessionsRootHelper": "留空 = ~/.codex/sessions。",
+        "listenHelper": "网关绑定的 host:port。需重启。",
+        "secretsHelper": "AES-256-GCM 加密的密钥库。",
+        "backendHelper": "auto 选择最佳可用；local 需要 ONNX。",
+        "similarityHelper": "0.0–1.0；低于此值的结果会被过滤。",
+        "defaultFallback": "默认：{value}",
+        "httpBaseUrl": "HTTP base URL",
+        "httpModel": "HTTP model",
+        "httpApiKey": "HTTP api key",
+        "httpDimensions": "HTTP dimensions",
+        "pgDumpPath": "pg_dump 路径",
+        "pgRestorePath": "pg_restore 路径",
+        "conversationsRoot": "会话目录",
+        "dedupThreshold": "去重阈值",
+        "dedupHelper": "写入折叠阈值；0=随嵌入器，负值关闭折叠。",
+        "gatekeeperEnabled": "Gatekeeper",
+        "gatekeeperHelper": "memory_store 的写前 LLM 判官。执行 provider 在 Cortex 设置中路由。",
+        "cleanerEnabled": "Cleaner",
+        "cleanerHelper": "周期性自动馆员，软归档过期/重复记忆。",
+        "knowledgeEnabled": "知识图谱",
+        "knowledgeHelper": "建立在记忆之上的结构化实体/手册/技能层。"
+      },
+      "validateInteger": "「{field}」必须是整数",
+      "validateNumber": "「{field}」必须是数字",
+      "embedderModel": {
+        "reprobe": "重新检测端点",
+        "unreachable": "端点不可达——请手动填写模型 id。",
+        "pickHint": "选择模型",
+        "manual": "手动输入",
+        "pickFromList": "从列表选择"
+      }
+    }
+  },
+  "memoryQuarantine": {
+    "title": "隔离区",
+    "subtitle": "在被采信为持久记忆前需要审查的事实：integration 捕获按策略落到这里，你也可以手动隔离任何记忆。属实的批准入库，其余丢弃——未审查的条目会自动过期。",
+    "empty": "隔离区为空。",
+    "loadFailed": "加载失败：{error}",
+    "promote": "批准",
+    "discard": "丢弃",
+    "promotedToast": "已批准为持久记忆",
+    "discardedToast": "已丢弃",
+    "actionFailed": "操作失败：{error}",
+    "expires": "{date} 过期",
+    "countBadge": "{count} 条待审"
+  },
+  "cortexHub": {
+    "title": "Cortex",
+    "subtitle": "经验飞轮：记忆 → 笔记 → 知识，回流到每个会话。",
+    "idleBadge": "闲置 {days} 天",
+    "activeProjectsBadge": "{count} 个活跃",
+    "activeProjectsTitle": "活跃项目",
+    "loopHint": "会话喂养记忆 → 记忆提炼为笔记 → 笔记沉淀为知识 → 知识引导每个新会话。",
+    "settings": "设置",
+    "memory": "记忆",
+    "memoryDesc": "代理存取的跨会话原始事实。",
+    "notes": "笔记",
+    "notesDesc": "每个项目的官方目标 / 计划 / 日志。",
+    "knowledge": "知识",
+    "knowledgeDesc": "跨项目沉淀的专业知识。",
+    "quarantineBadge": "{count} 条待审",
+    "pendingBadge": "{count} 条待审",
+    "disabled": "已禁用",
+    "inboxTitle": "待审提案（{count}）",
+    "inboxHint": "AI 对项目笔记与知识库页面提出的更新。批准即发布，拒绝即丢弃。",
+    "kbLabel": "知识库",
+    "preview": "预览",
+    "hide": "收起",
+    "approve": "批准",
+    "reject": "拒绝",
+    "approvedToast": "提案已批准",
+    "rejectedToast": "提案已拒绝",
+    "actionFailed": "操作失败：{error}",
+    "loadFailed": "加载失败：{error}"
+  },
+  "cortexSettings": {
+    "title": "Cortex 设置",
+    "tabWorkers": "工作器",
+    "tabCapture": "捕获与注入",
+    "tabProviders": "Provider",
+    "providersHint": "总结/agent 工作器路由到的 LLM 端点。",
+    "providersEmpty": "未配置 provider。",
+    "providersManageOnWeb": "在 web 管理端添加或编辑 provider。",
+    "providersLoadFailed": "加载 provider 失败",
+    "defaultBadge": "默认"
+  },
+  "agentTasks": {
+    "navLabel": "任务",
+    "title": "Agent 任务",
+    "create": "新建任务",
+    "emptyTitle": "暂无 Agent 任务",
+    "emptyBody": "创建非交互式 Agent 任务。终端会话保持独立。",
+    "refresh": "刷新",
+    "all": "全部",
+    "loadMore": "加载更多",
+    "offline": "网络已断开，正在显示最近一次加载的状态。",
+    "retry": "重试",
+    "project": "项目",
+    "provider": "Provider",
+    "prompt": "任务指令",
+    "workspace": "工作目录",
+    "contextMode": "上下文",
+    "newContext": "新上下文",
+    "continueContext": "继续上下文",
+    "attachments": "附件",
+    "timeout": "超时秒数",
+    "telegramNotify": "完成后通知 Telegram",
+    "submit": "创建任务",
+    "creating": "正在创建…",
+    "required": "此项必填",
+    "invalidTimeout": "请输入 30 到 86400 秒之间的超时时间",
+    "details": "任务详情",
+    "runs": "运行记录",
+    "events": "实时输出",
+    "artifacts": "制品",
+    "continueAction": "继续",
+    "cancelAction": "取消",
+    "confirm": "确认",
+    "retryAction": "重试",
+    "confirmCancel": "确认取消该任务并终止当前进程树？",
+    "confirmRetry": "确认创建新的重试 Run？",
+    "waitingInput": "等待补充输入",
+    "continueHint": "输入后续指令",
+    "send": "发送",
+    "stdout": "标准输出",
+    "stderr": "标准错误",
+    "raw": "原始事件",
+    "download": "下载",
+    "verified": "完整性校验通过",
+    "downloadFailed": "制品下载失败",
+    "noRuns": "暂无 Run",
+    "noOutput": "暂无输出",
+    "source": "来源",
+    "status": "状态",
+    "created": "创建时间",
+    "updated": "更新时间",
+    "context": "运行上下文",
+    "currentRun": "当前 Run",
+    "networkError": "网络请求失败",
+    "permissionError": "当前账号没有此操作权限",
+    "sessionIsolation": "One-shot 任务不会打开或写入终端会话。",
+    "capabilityResume": "支持继续",
+    "capabilityAttachment": "支持附件",
+    "smallScreenHint": "小屏设备会自动纵向排列字段。",
+    "filterStatus": "状态筛选",
+    "taskCreated": "任务已创建",
+    "actionFailed": "操作失败",
+    "loading": "加载中…",
+    "open": "打开",
+    "timeline": "时间线",
+    "result": "结果",
+    "idempotent": "重复点击会复用同一个幂等键。",
+    "telegramSource": "Telegram",
+    "mobileSource": "移动端",
+    "apiSource": "API",
+    "unknownSource": "未知",
+    "cancelled": "已取消",
+    "completed": "已完成",
+    "failed": "失败",
+    "timedOut": "已超时",
+    "running": "运行中",
+    "queued": "排队中",
+    "pending": "待处理",
+    "waiting": "等待输入",
+    "unknown": "未知",
+    "allProjects": "全部项目"
+  }
+}

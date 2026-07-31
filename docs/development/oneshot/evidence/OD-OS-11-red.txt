@@ -1,0 +1,6 @@
+PASS: OD-OS-10 Go files are formatted
+PASS: adapter contracts, Shell fixture allowlist, ordinary process executor, Run lifecycle and disabled worker gate
+PASS: executor has no PTY, Session, sessions-table or session_transcripts dependency
+# github.com/opendray/opendray-v2/internal/oneshot/executor
+# [github.com/opendray/opendray-v2/internal/oneshot/executor]
+vet: internal/oneshot/executor/output_collector_test.go:19:12: undefined: OutputCursor

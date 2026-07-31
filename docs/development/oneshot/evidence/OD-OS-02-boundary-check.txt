@@ -1,0 +1,11 @@
+$ scripts/oneshot/check-boundaries.sh
+One-shot architecture boundaries: PASS
+
+$ scripts/oneshot/check-boundaries-test.sh
+One-shot boundary checker self-test: PASS
+
+$ bash -n scripts/oneshot/check-boundaries.sh scripts/oneshot/check-boundaries-test.sh
+PASS
+
+$ git diff --check 188ea1d..7a3edf3
+PASS
