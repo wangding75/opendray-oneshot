@@ -258,11 +258,12 @@ func TestPostgresStoreFinalizeRunWithTaskAtomic(t *testing.T) {
 	store, root := postgresStore(t)
 	defer root.Close()
 	ctx := context.Background()
-	providerID := "od10-provider-" + strings.ToLower(time.Now().UTC().Format("150405.000000"))
+	ts := strings.ToLower(time.Now().UTC().Format("150405.000000"))
+	providerID := "od10-provider-" + ts
 	seedProvider(t, root, providerID)
-	owner := domain.Owner{Kind: domain.PrincipalAdmin, ID: "od10-owner"}
+	owner := domain.Owner{Kind: domain.PrincipalAdmin, ID: "od10-owner-" + ts}
 	now := time.Now().UTC().Add(time.Second)
-	taskSnapshot, deliverySnapshot := makeTaskDelivery(t, owner, providerID, "od10-message", "od10-key", now)
+	taskSnapshot, deliverySnapshot := makeTaskDelivery(t, owner, providerID, "od10-message-"+ts, "od10-key-"+ts, now)
 	persistedTask, persistedDelivery, err := store.CreateTaskWithDelivery(ctx, taskSnapshot, deliverySnapshot)
 	if err != nil {
 		t.Fatal(err)
@@ -357,7 +358,7 @@ func TestPostgresRunLifecycleConcurrentWritersKeepBothEvents(t *testing.T) {
 	seedProvider(t, root, providerID)
 	owner := domain.Owner{Kind: domain.PrincipalAdmin, ID: "lifecycle-owner-" + strings.ToLower(time.Now().UTC().Format("150405.000000"))}
 	now := time.Now().UTC().Add(time.Second)
-	taskSnapshot, deliverySnapshot := makeTaskDelivery(t, owner, providerID, "lifecycle-message", "lifecycle-key", now)
+	taskSnapshot, deliverySnapshot := makeTaskDelivery(t, owner, providerID, "lifecycle-message-"+strings.ToLower(time.Now().UTC().Format("150405.000000")), "lifecycle-key-"+strings.ToLower(time.Now().UTC().Format("150405.000000")), now)
 	persistedTask, persistedDelivery, err := store.CreateTaskWithDelivery(ctx, taskSnapshot, deliverySnapshot)
 	if err != nil {
 		t.Fatal(err)
