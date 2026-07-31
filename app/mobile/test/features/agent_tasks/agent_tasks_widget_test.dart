@@ -13,7 +13,7 @@ import 'package:opendray/features/agent_tasks/presentation/widgets/agent_task_st
 
 class _FakeRepository extends AgentTasksRepository {
   _FakeRepository({required this.capability})
-      : super(api: AgentTasksApi(Dio()), streams: null);
+    : super(api: AgentTasksApi(Dio()), streams: null);
 
   final AgentProviderCapability capability;
   int createCalls = 0;
@@ -21,19 +21,20 @@ class _FakeRepository extends AgentTasksRepository {
 
   @override
   Future<List<ProjectSummary>> listProjects() async => [
-        ProjectSummary(
-          cwd: '/repo',
-          status: 'active',
-          updatedBy: 'operator',
-          lastActivityAt: DateTime.utc(2026, 7, 28),
-          idleDays: 0,
-          suggestArchive: false,
-        ),
-      ];
+    ProjectSummary(
+      cwd: '/repo',
+      status: 'active',
+      updatedBy: 'operator',
+      lastActivityAt: DateTime.utc(2026, 7, 28),
+      idleDays: 0,
+      suggestArchive: false,
+    ),
+  ];
 
   @override
-  Future<List<AgentProviderCapability>> listProviderCapabilities() async =>
-      [capability];
+  Future<List<AgentProviderCapability>> listProviderCapabilities() async => [
+    capability,
+  ];
 
   @override
   Future<AgentPage<AgentTask>> listTasks({
@@ -56,18 +57,20 @@ AgentProviderCapability _capability({
   bool resume = false,
   bool attachments = false,
 }) => AgentProviderCapability(
-      providerId: 'codex',
-      displayName: 'Codex CLI',
-      enabled: true,
-      supportsNonInteractive: true,
-      supportsResume: resume,
-      structuredOutput: true,
-      attachments: attachments,
-      cancellation: true,
-    );
+  providerId: 'codex',
+  displayName: 'Codex CLI',
+  enabled: true,
+  supportsNonInteractive: true,
+  supportsResume: resume,
+  structuredOutput: true,
+  attachments: attachments,
+  cancellation: true,
+);
 
 void main() {
-  testWidgets('All frozen Task statuses render a semantic badge', (tester) async {
+  testWidgets('All frozen Task statuses render a semantic badge', (
+    tester,
+  ) async {
     for (final status in AgentTaskStatus.values.where(
       (status) => status != AgentTaskStatus.unknown,
     )) {
@@ -90,9 +93,7 @@ void main() {
 
     await tester.pumpWidget(
       ProviderScope(
-        overrides: [
-          agentTasksRepositoryProvider.overrideWithValue(repository),
-        ],
+        overrides: [agentTasksRepositoryProvider.overrideWithValue(repository)],
         child: const MaterialApp(home: CreateAgentTaskScreen()),
       ),
     );
@@ -113,16 +114,14 @@ void main() {
     );
     await tester.pumpWidget(
       ProviderScope(
-        overrides: [
-          agentTasksRepositoryProvider.overrideWithValue(repository),
-        ],
+        overrides: [agentTasksRepositoryProvider.overrideWithValue(repository)],
         child: const MaterialApp(home: CreateAgentTaskScreen()),
       ),
     );
     await tester.pumpAndSettle();
 
     expect(find.text('Context'), findsWidgets);
-    expect(find.text('Attachments'), findsOneWidget);
+    expect(find.widgetWithText(OutlinedButton, 'Choose files'), findsOneWidget);
   });
 
   testWidgets('Duplicate submit taps dispatch only one create request', (
@@ -131,9 +130,7 @@ void main() {
     final repository = _FakeRepository(capability: _capability());
     await tester.pumpWidget(
       ProviderScope(
-        overrides: [
-          agentTasksRepositoryProvider.overrideWithValue(repository),
-        ],
+        overrides: [agentTasksRepositoryProvider.overrideWithValue(repository)],
         child: const MaterialApp(home: CreateAgentTaskScreen()),
       ),
     );
@@ -142,6 +139,20 @@ void main() {
     final fields = find.byType(TextFormField);
     await tester.enterText(fields.at(1), 'Implement a safe feature');
     final submit = find.widgetWithText(FilledButton, 'Create task');
+    final scrollable = find
+        .descendant(
+          of: find.byType(Form),
+          matching: find.byType(Scrollable),
+        )
+        .first;
+    await tester.dragUntilVisible(
+      submit,
+      scrollable,
+      const Offset(0, -300),
+    );
+
+    expect(submit, findsOneWidget);
+
     await tester.tap(submit);
     await tester.tap(submit);
     await tester.pump();

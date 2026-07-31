@@ -17,19 +17,21 @@ class CreateAgentTaskScreen extends ConsumerStatefulWidget {
       _CreateAgentTaskScreenState();
 }
 
-class _CreateAgentTaskScreenState
-    extends ConsumerState<CreateAgentTaskScreen> {
+class _CreateAgentTaskScreenState extends ConsumerState<CreateAgentTaskScreen> {
   final _formKey = GlobalKey<FormState>();
   final _promptController = TextEditingController();
   final _workspaceController = TextEditingController();
   final _timeoutController = TextEditingController(text: '3600');
   final List<StagedAgentAttachment> _attachments = [];
   bool _uploadingAttachment = false;
-  late Future<({
-    List<ProjectSummary> projects,
-    List<AgentProviderCapability> providers,
-    List<AgentTask> resumableTasks,
-  })> _options;
+  late Future<
+    ({
+      List<ProjectSummary> projects,
+      List<AgentProviderCapability> providers,
+      List<AgentTask> resumableTasks,
+    })
+  >
+  _options;
 
   String? _projectId;
   String? _providerId;
@@ -53,11 +55,14 @@ class _CreateAgentTaskScreenState
     }
   }
 
-  Future<({
-    List<ProjectSummary> projects,
-    List<AgentProviderCapability> providers,
-    List<AgentTask> resumableTasks,
-  })> _loadOptions() async {
+  Future<
+    ({
+      List<ProjectSummary> projects,
+      List<AgentProviderCapability> providers,
+      List<AgentTask> resumableTasks,
+    })
+  >
+  _loadOptions() async {
     final repository = ref.read(agentTasksRepositoryProvider);
     final values = await Future.wait<Object>([
       repository.listProjects(),
@@ -139,14 +144,13 @@ class _CreateAgentTaskScreenState
       )
       .toList(growable: false);
 
-  Future<void> _submit(
-    List<AgentProviderCapability> providers,
-  ) async {
+  Future<void> _submit(List<AgentProviderCapability> providers) async {
     if (_submitting || !_formKey.currentState!.validate()) return;
     final provider = _selectedProvider(providers);
     if (provider == null || _projectId == null) return;
-    final key = _idempotencyKey ??=
-        AgentTasksApi.newIdempotencyKey('mobile-create');
+    final key = _idempotencyKey ??= AgentTasksApi.newIdempotencyKey(
+      'mobile-create',
+    );
     final attachmentRefs = provider.attachments
         ? _attachments.map((item) => item.id).toList(growable: false)
         : const <String>[];
@@ -228,12 +232,14 @@ class _CreateAgentTaskScreenState
             retryable: false,
           );
         }
-        staged.add(await repository.stageAttachment(
-          projectId: projectId,
-          fileName: file.name,
-          bytes: bytes,
-          mimeType: _mimeForExtension(file.extension),
-        ));
+        staged.add(
+          await repository.stageAttachment(
+            projectId: projectId,
+            fileName: file.name,
+            bytes: bytes,
+            mimeType: _mimeForExtension(file.extension),
+          ),
+        );
       }
       if (!mounted) return;
       setState(() {
@@ -252,10 +258,9 @@ class _CreateAgentTaskScreenState
 
   Future<void> _removeAttachment(StagedAgentAttachment item) async {
     try {
-      await ref.read(agentTasksRepositoryProvider).deleteStagedAttachment(
-            item.id,
-            projectId: item.projectId,
-          );
+      await ref
+          .read(agentTasksRepositoryProvider)
+          .deleteStagedAttachment(item.id, projectId: item.projectId);
       if (!mounted) return;
       setState(() {
         _attachments.removeWhere((value) => value.id == item.id);
@@ -269,17 +274,27 @@ class _CreateAgentTaskScreenState
 
   String? _mimeForExtension(String? extension) {
     switch (extension?.toLowerCase()) {
-      case 'txt': return 'text/plain';
-      case 'md': return 'text/markdown';
-      case 'csv': return 'text/csv';
-      case 'json': return 'application/json';
-      case 'pdf': return 'application/pdf';
-      case 'png': return 'image/png';
+      case 'txt':
+        return 'text/plain';
+      case 'md':
+        return 'text/markdown';
+      case 'csv':
+        return 'text/csv';
+      case 'json':
+        return 'application/json';
+      case 'pdf':
+        return 'application/pdf';
+      case 'png':
+        return 'image/png';
       case 'jpg':
-      case 'jpeg': return 'image/jpeg';
-      case 'gif': return 'image/gif';
-      case 'webp': return 'image/webp';
-      default: return null;
+      case 'jpeg':
+        return 'image/jpeg';
+      case 'gif':
+        return 'image/gif';
+      case 'webp':
+        return 'image/webp';
+      default:
+        return null;
     }
   }
 
@@ -288,243 +303,259 @@ class _CreateAgentTaskScreenState
     final strings = AgentTasksStrings.current;
     return Scaffold(
       appBar: AppBar(title: Text(strings('create'))),
-      body: FutureBuilder<({
-        List<ProjectSummary> projects,
-        List<AgentProviderCapability> providers,
-        List<AgentTask> resumableTasks,
-      })>(
-        future: _options,
-        builder: (context, snapshot) {
-          if (snapshot.connectionState != ConnectionState.done) {
-            return const Center(child: CircularProgressIndicator());
-          }
-          if (snapshot.hasError) {
-            return _OptionsError(
-              error: snapshot.error!,
-              onRetry: () => setState(() => _options = _loadOptions()),
-            );
-          }
-          final data = snapshot.data!;
-          final selectedProvider = _selectedProvider(data.providers);
-          return Form(
-            key: _formKey,
-            child: ListView(
-              padding: const EdgeInsets.fromLTRB(16, 16, 16, 32),
-              children: [
-                Card(
-                  color: Theme.of(context).colorScheme.surfaceContainerHighest,
-                  child: Padding(
-                    padding: const EdgeInsets.all(12),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Icon(Icons.call_split),
-                        const SizedBox(width: 10),
-                        Expanded(child: Text(strings('sessionIsolation'))),
-                      ],
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 16),
-                LayoutBuilder(
-                  builder: (context, constraints) {
-                    final compact = constraints.maxWidth < 620;
-                    final project = _projectField(data.projects);
-                    final provider = _providerField(data.providers);
-                    if (compact) {
-                      return Column(
-                        children: [
-                          project,
-                          const SizedBox(height: 12),
-                          provider,
-                        ],
-                      );
-                    }
-                    return Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Expanded(child: project),
-                        const SizedBox(width: 12),
-                        Expanded(child: provider),
-                      ],
-                    );
-                  },
-                ),
-                const SizedBox(height: 12),
-                TextFormField(
-                  controller: _workspaceController,
-                  decoration: InputDecoration(
-                    labelText: strings('workspace'),
-                    prefixIcon: const Icon(Icons.folder_outlined),
-                  ),
-                  validator: (value) => value == null || value.trim().isEmpty
-                      ? strings('required')
-                      : null,
-                ),
-                const SizedBox(height: 12),
-                TextFormField(
-                  controller: _promptController,
-                  minLines: 5,
-                  maxLines: 12,
-                  textInputAction: TextInputAction.newline,
-                  decoration: InputDecoration(
-                    labelText: strings('prompt'),
-                    alignLabelWithHint: true,
-                    prefixIcon: const Padding(
-                      padding: EdgeInsets.only(bottom: 100),
-                      child: Icon(Icons.edit_note),
-                    ),
-                  ),
-                  validator: (value) => value == null || value.trim().isEmpty
-                      ? strings('required')
-                      : null,
-                ),
-                const SizedBox(height: 12),
-                if (selectedProvider?.supportsResume == true) ...[
-                  SwitchListTile.adaptive(
-                    value: _continueContext,
-                    onChanged: (value) {
-                      final compatible = _compatibleResumeTasks(
-                        data.resumableTasks,
-                        selectedProvider!,
-                      );
-                      setState(() {
-                        _continueContext = value;
-                        _resumeTaskId = value && compatible.isNotEmpty
-                            ? compatible.first.id
-                            : null;
-                        _idempotencyKey = null;
-                      });
-                    },
-                    secondary: const Icon(Icons.history),
-                    title: Text(strings('contextMode')),
-                    subtitle: Text(
-                      _continueContext
-                          ? strings('continueContext')
-                          : strings('newContext'),
-                    ),
-                  ),
-                  if (_continueContext)
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 12),
-                      child: DropdownButtonFormField<String>(
-                        initialValue: _resumeTaskId,
-                        isExpanded: true,
-                        decoration: InputDecoration(
-                          labelText: strings('continueContext'),
-                          prefixIcon: const Icon(Icons.account_tree_outlined),
+      body:
+          FutureBuilder<
+            ({
+              List<ProjectSummary> projects,
+              List<AgentProviderCapability> providers,
+              List<AgentTask> resumableTasks,
+            })
+          >(
+            future: _options,
+            builder: (context, snapshot) {
+              if (snapshot.connectionState != ConnectionState.done) {
+                return const Center(child: CircularProgressIndicator());
+              }
+              if (snapshot.hasError) {
+                return _OptionsError(
+                  error: snapshot.error!,
+                  onRetry: () => setState(() => _options = _loadOptions()),
+                );
+              }
+              final data = snapshot.data!;
+              final selectedProvider = _selectedProvider(data.providers);
+              return Form(
+                key: _formKey,
+                child: ListView(
+                  padding: const EdgeInsets.fromLTRB(16, 16, 16, 32),
+                  children: [
+                    Card(
+                      color: Theme.of(
+                        context,
+                      ).colorScheme.surfaceContainerHighest,
+                      child: Padding(
+                        padding: const EdgeInsets.all(12),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Icon(Icons.call_split),
+                            const SizedBox(width: 10),
+                            Expanded(child: Text(strings('sessionIsolation'))),
+                          ],
                         ),
-                        items: [
-                          for (final task in _compatibleResumeTasks(
-                            data.resumableTasks,
-                            selectedProvider,
-                          ))
-                            DropdownMenuItem(
-                              value: task.id,
-                              child: Text(
-                                '${task.prompt} · ${task.runtimeContextId}',
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                            ),
-                        ],
-                        onChanged: (value) => setState(() {
-                          _resumeTaskId = value;
-                          _idempotencyKey = null;
-                        }),
-                        validator: (value) => _continueContext && value == null
-                            ? strings('required')
-                            : null,
                       ),
                     ),
-                ],
-                if (selectedProvider?.attachments == true) ...[
-                  const SizedBox(height: 8),
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: OutlinedButton.icon(
-                      onPressed: _uploadingAttachment || _projectId == null
+                    const SizedBox(height: 16),
+                    LayoutBuilder(
+                      builder: (context, constraints) {
+                        final compact = constraints.maxWidth < 620;
+                        final project = _projectField(data.projects);
+                        final provider = _providerField(data.providers);
+                        if (compact) {
+                          return Column(
+                            children: [
+                              project,
+                              const SizedBox(height: 12),
+                              provider,
+                            ],
+                          );
+                        }
+                        return Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Expanded(child: project),
+                            const SizedBox(width: 12),
+                            Expanded(child: provider),
+                          ],
+                        );
+                      },
+                    ),
+                    const SizedBox(height: 12),
+                    TextFormField(
+                      controller: _workspaceController,
+                      decoration: InputDecoration(
+                        labelText: strings('workspace'),
+                        prefixIcon: const Icon(Icons.folder_outlined),
+                      ),
+                      validator: (value) =>
+                          value == null || value.trim().isEmpty
+                          ? strings('required')
+                          : null,
+                    ),
+                    const SizedBox(height: 12),
+                    TextFormField(
+                      controller: _promptController,
+                      minLines: 5,
+                      maxLines: 12,
+                      textInputAction: TextInputAction.newline,
+                      decoration: InputDecoration(
+                        labelText: strings('prompt'),
+                        alignLabelWithHint: true,
+                        prefixIcon: const Padding(
+                          padding: EdgeInsets.only(bottom: 100),
+                          child: Icon(Icons.edit_note),
+                        ),
+                      ),
+                      validator: (value) =>
+                          value == null || value.trim().isEmpty
+                          ? strings('required')
+                          : null,
+                    ),
+                    const SizedBox(height: 12),
+                    if (selectedProvider?.supportsResume == true) ...[
+                      SwitchListTile.adaptive(
+                        value: _continueContext,
+                        onChanged: (value) {
+                          final compatible = _compatibleResumeTasks(
+                            data.resumableTasks,
+                            selectedProvider!,
+                          );
+                          setState(() {
+                            _continueContext = value;
+                            _resumeTaskId = value && compatible.isNotEmpty
+                                ? compatible.first.id
+                                : null;
+                            _idempotencyKey = null;
+                          });
+                        },
+                        secondary: const Icon(Icons.history),
+                        title: Text(strings('contextMode')),
+                        subtitle: Text(
+                          _continueContext
+                              ? strings('continueContext')
+                              : strings('newContext'),
+                        ),
+                      ),
+                      if (_continueContext)
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 12),
+                          child: DropdownButtonFormField<String>(
+                            initialValue: _resumeTaskId,
+                            isExpanded: true,
+                            decoration: InputDecoration(
+                              labelText: strings('continueContext'),
+                              prefixIcon: const Icon(
+                                Icons.account_tree_outlined,
+                              ),
+                            ),
+                            items: [
+                              for (final task in _compatibleResumeTasks(
+                                data.resumableTasks,
+                                selectedProvider!,
+                              ))
+                                DropdownMenuItem(
+                                  value: task.id,
+                                  child: Text(
+                                    '${task.prompt} · ${task.runtimeContextId}',
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                ),
+                            ],
+                            onChanged: (value) => setState(() {
+                              _resumeTaskId = value;
+                              _idempotencyKey = null;
+                            }),
+                            validator: (value) =>
+                                _continueContext && value == null
+                                ? strings('required')
+                                : null,
+                          ),
+                        ),
+                    ],
+                    if (selectedProvider?.attachments == true) ...[
+                      const SizedBox(height: 8),
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: OutlinedButton.icon(
+                          onPressed: _uploadingAttachment || _projectId == null
+                              ? null
+                              : _pickAttachments,
+                          icon: _uploadingAttachment
+                              ? const SizedBox.square(
+                                  dimension: 16,
+                                  child: CircularProgressIndicator(
+                                    strokeWidth: 2,
+                                  ),
+                                )
+                              : const Icon(Icons.attach_file),
+                          label: Text(strings('pickAttachments')),
+                        ),
+                      ),
+                      if (_attachments.isNotEmpty)
+                        Wrap(
+                          spacing: 8,
+                          runSpacing: 8,
+                          children: [
+                            for (final item in _attachments)
+                              InputChip(
+                                label: Text(
+                                  '${item.name} · ${item.sizeBytes} B',
+                                ),
+                                onDeleted: _submitting
+                                    ? null
+                                    : () => _removeAttachment(item),
+                              ),
+                          ],
+                        ),
+                    ],
+                    if (!_continueContext) ...[
+                      const SizedBox(height: 12),
+                      TextFormField(
+                        controller: _timeoutController,
+                        keyboardType: TextInputType.number,
+                        decoration: InputDecoration(
+                          labelText: strings('timeout'),
+                          prefixIcon: const Icon(Icons.timer_outlined),
+                        ),
+                        validator: (value) {
+                          final seconds = int.tryParse(value?.trim() ?? '');
+                          return seconds == null ||
+                                  seconds < 30 ||
+                                  seconds > 86400
+                              ? strings('invalidTimeout')
+                              : null;
+                        },
+                      ),
+                      SwitchListTile.adaptive(
+                        value: _telegramNotify,
+                        onChanged: (value) => setState(() {
+                          _telegramNotify = value;
+                          _idempotencyKey = null;
+                        }),
+                        secondary: const Icon(Icons.send_outlined),
+                        title: Text(strings('telegramNotify')),
+                      ),
+                    ],
+                    if (_error != null) ...[
+                      const SizedBox(height: 8),
+                      _InlineError(error: _error!),
+                    ],
+                    const SizedBox(height: 20),
+                    FilledButton.icon(
+                      onPressed: _submitting
                           ? null
-                          : _pickAttachments,
-                      icon: _uploadingAttachment
+                          : () => _submit(data.providers),
+                      icon: _submitting
                           ? const SizedBox.square(
-                              dimension: 16,
+                              dimension: 18,
                               child: CircularProgressIndicator(strokeWidth: 2),
                             )
-                          : const Icon(Icons.attach_file),
-                      label: Text(strings('pickAttachments')),
+                          : const Icon(Icons.play_arrow),
+                      label: Text(
+                        _submitting ? strings('creating') : strings('submit'),
+                      ),
                     ),
-                  ),
-                  if (_attachments.isNotEmpty)
-                    Wrap(
-                      spacing: 8,
-                      runSpacing: 8,
-                      children: [
-                        for (final item in _attachments)
-                          InputChip(
-                            label: Text('${item.name} · ${item.sizeBytes} B'),
-                            onDeleted: _submitting
-                                ? null
-                                : () => _removeAttachment(item),
-                          ),
-                      ],
+                    const SizedBox(height: 8),
+                    Text(
+                      strings('idempotent'),
+                      textAlign: TextAlign.center,
+                      style: Theme.of(context).textTheme.bodySmall,
                     ),
-                ],
-                if (!_continueContext) ...[
-                  const SizedBox(height: 12),
-                  TextFormField(
-                    controller: _timeoutController,
-                    keyboardType: TextInputType.number,
-                    decoration: InputDecoration(
-                      labelText: strings('timeout'),
-                      prefixIcon: const Icon(Icons.timer_outlined),
-                    ),
-                    validator: (value) {
-                      final seconds = int.tryParse(value?.trim() ?? '');
-                      return seconds == null || seconds < 30 || seconds > 86400
-                          ? strings('invalidTimeout')
-                          : null;
-                    },
-                  ),
-                  SwitchListTile.adaptive(
-                    value: _telegramNotify,
-                    onChanged: (value) => setState(() {
-                      _telegramNotify = value;
-                      _idempotencyKey = null;
-                    }),
-                    secondary: const Icon(Icons.send_outlined),
-                    title: Text(strings('telegramNotify')),
-                  ),
-                ],
-                if (_error != null) ...[
-                  const SizedBox(height: 8),
-                  _InlineError(error: _error!),
-                ],
-                const SizedBox(height: 20),
-                FilledButton.icon(
-                  onPressed: _submitting
-                      ? null
-                      : () => _submit(data.providers),
-                  icon: _submitting
-                      ? const SizedBox.square(
-                          dimension: 18,
-                          child: CircularProgressIndicator(strokeWidth: 2),
-                        )
-                      : const Icon(Icons.play_arrow),
-                  label: Text(
-                    _submitting ? strings('creating') : strings('submit'),
-                  ),
+                  ],
                 ),
-                const SizedBox(height: 8),
-                Text(
-                  strings('idempotent'),
-                  textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.bodySmall,
-                ),
-              ],
-            ),
-          );
-        },
-      ),
+              );
+            },
+          ),
     );
   }
 
@@ -613,7 +644,10 @@ class _OptionsError extends StatelessWidget {
             const SizedBox(height: 12),
             Text(error.toString(), textAlign: TextAlign.center),
             const SizedBox(height: 12),
-            FilledButton.tonal(onPressed: onRetry, child: Text(strings('retry'))),
+            FilledButton.tonal(
+              onPressed: onRetry,
+              child: Text(strings('retry')),
+            ),
           ],
         ),
       ),
@@ -632,15 +666,18 @@ class _InlineError extends StatelessWidget {
     final message = error.isForbidden
         ? strings('permissionError')
         : error.isOffline
-            ? strings('networkError')
-            : error.message;
+        ? strings('networkError')
+        : error.message;
     return Card(
       color: Theme.of(context).colorScheme.errorContainer,
       child: Padding(
         padding: const EdgeInsets.all(12),
         child: Row(
           children: [
-            Icon(Icons.error_outline, color: Theme.of(context).colorScheme.error),
+            Icon(
+              Icons.error_outline,
+              color: Theme.of(context).colorScheme.error,
+            ),
             const SizedBox(width: 10),
             Expanded(child: Text(message)),
           ],
