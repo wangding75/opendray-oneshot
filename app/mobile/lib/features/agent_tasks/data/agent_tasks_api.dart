@@ -6,7 +6,6 @@ import 'package:crypto/crypto.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:opendray/core/api/api_exception.dart';
 import 'package:opendray/core/api/dio_provider.dart';
 import 'package:opendray/core/api/project_docs_api.dart';
 import 'package:opendray/features/agent_tasks/domain/agent_task_models.dart';
@@ -263,7 +262,6 @@ class AgentTasksApi {
     }
   }
 
-
   Future<StagedAgentAttachment> stageAttachment({
     required String projectId,
     required String fileName,
@@ -335,15 +333,18 @@ class AgentTasksApi {
           .value('etag')
           ?.replaceAll('"', '')
           .trim();
-      final lengthMatches = headerLength == null || headerLength == bytes.length;
+      final lengthMatches =
+          headerLength == null || headerLength == bytes.length;
       final metadataLengthMatches =
           artifact.sizeBytes <= 0 || artifact.sizeBytes == bytes.length;
       final metadataHashMatches =
           artifact.sha256.isNotEmpty && actual == artifact.sha256;
-      final digestMatches = responseDigest == null ||
+      final digestMatches =
+          responseDigest == null ||
           responseDigest.isEmpty ||
           responseDigest == 'sha-256=$actualBase64';
-      final etagMatches = responseETag == null ||
+      final etagMatches =
+          responseETag == null ||
           responseETag.isEmpty ||
           responseETag == actual;
       if (!lengthMatches ||
@@ -360,7 +361,8 @@ class AgentTasksApi {
       }
       return ArtifactDownload(
         bytes: bytes,
-        contentType: response.headers.value(Headers.contentTypeHeader) ??
+        contentType:
+            response.headers.value(Headers.contentTypeHeader) ??
             artifact.contentType,
         fileName: artifact.name,
         sha256: actual,
@@ -378,16 +380,15 @@ class AgentTasksApi {
   /// /oneshot route set unchanged.
   Future<List<AgentProviderCapability>> listProviderCapabilities() async {
     try {
-      final response =
-          await _dio.get<Map<String, dynamic>>('/api/v1/providers');
+      final response = await _dio.get<Map<String, dynamic>>(
+        '/api/v1/providers',
+      );
       final raw = response.data?['providers'];
       if (raw is! List) return const [];
       return raw
           .whereType<Map<String, dynamic>>()
           .map(AgentProviderCapability.fromProviderGatewayJson)
-          .where(
-            (item) => item.enabled && item.supportsNonInteractive,
-          )
+          .where((item) => item.enabled && item.supportsNonInteractive)
           .toList(growable: false);
     } on Object catch (error) {
       throw AgentTasksApiException.from(error);
@@ -426,9 +427,9 @@ AgentPage<T> _page<T>(
   final raw = json?['items'] ?? json?['Items'];
   final items = raw is List
       ? raw
-          .whereType<Map<String, dynamic>>()
-          .map(parser)
-          .toList(growable: false)
+            .whereType<Map<String, dynamic>>()
+            .map(parser)
+            .toList(growable: false)
       : <T>[];
   final next = (json?['next_cursor'] ?? json?['NextCursor'])?.toString();
   return AgentPage<T>(
