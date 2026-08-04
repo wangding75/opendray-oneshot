@@ -1,6 +1,6 @@
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:file_picker/file_picker.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:opendray/core/api/project_docs_api.dart';
@@ -95,7 +95,7 @@ class _CreateAgentTaskScreenState extends ConsumerState<CreateAgentTaskScreen> {
     var scannedTasks = 0;
     final visitedCursors = <String>{};
     String? cursor;
-    do {
+    for (;;) {
       final page = await repository.listTasks(cursor: cursor);
       scannedTasks += page.items.length;
       for (final task in page.items) {
@@ -112,7 +112,7 @@ class _CreateAgentTaskScreenState extends ConsumerState<CreateAgentTaskScreen> {
         break;
       }
       cursor = nextCursor;
-    } while (true);
+    }
     final values = tasks.values.toList()
       ..sort((a, b) => b.updatedAt.compareTo(a.updatedAt));
     return values.length <= maxCandidates
@@ -300,7 +300,7 @@ class _CreateAgentTaskScreenState extends ConsumerState<CreateAgentTaskScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final strings = AgentTasksStrings.current;
+    final strings = AgentTasksStrings();
     return Scaffold(
       appBar: AppBar(title: Text(strings('create'))),
       body:
@@ -402,7 +402,7 @@ class _CreateAgentTaskScreenState extends ConsumerState<CreateAgentTaskScreen> {
                           : null,
                     ),
                     const SizedBox(height: 12),
-                    if (selectedProvider?.supportsResume == true) ...[
+                    if (selectedProvider?.supportsResume ?? false) ...[
                       SwitchListTile.adaptive(
                         value: _continueContext,
                         onChanged: (value) {
@@ -462,7 +462,7 @@ class _CreateAgentTaskScreenState extends ConsumerState<CreateAgentTaskScreen> {
                           ),
                         ),
                     ],
-                    if (selectedProvider?.attachments == true) ...[
+                    if (selectedProvider?.attachments ?? false) ...[
                       const SizedBox(height: 8),
                       Align(
                         alignment: Alignment.centerLeft,
@@ -560,7 +560,7 @@ class _CreateAgentTaskScreenState extends ConsumerState<CreateAgentTaskScreen> {
   }
 
   Widget _projectField(List<ProjectSummary> projects) {
-    final strings = AgentTasksStrings.current;
+    final strings = AgentTasksStrings();
     return DropdownButtonFormField<String>(
       initialValue: _projectId,
       isExpanded: true,
@@ -583,7 +583,7 @@ class _CreateAgentTaskScreenState extends ConsumerState<CreateAgentTaskScreen> {
   }
 
   Widget _providerField(List<AgentProviderCapability> providers) {
-    final strings = AgentTasksStrings.current;
+    final strings = AgentTasksStrings();
     return DropdownButtonFormField<String>(
       initialValue: _providerId,
       isExpanded: true,
@@ -633,7 +633,7 @@ class _OptionsError extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final strings = AgentTasksStrings.current;
+    final strings = AgentTasksStrings();
     return Center(
       child: Padding(
         padding: const EdgeInsets.all(32),
@@ -662,7 +662,7 @@ class _InlineError extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final strings = AgentTasksStrings.current;
+    final strings = AgentTasksStrings();
     final message = error.isForbidden
         ? strings('permissionError')
         : error.isOffline

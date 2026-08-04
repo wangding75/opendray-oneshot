@@ -15,37 +15,38 @@ enum AgentTaskStatus {
   unknown;
 
   static AgentTaskStatus parse(Object? value) => switch (value?.toString()) {
-        'pending' => AgentTaskStatus.pending,
-        'queued' => AgentTaskStatus.queued,
-        'running' => AgentTaskStatus.running,
-        'waiting_input' => AgentTaskStatus.waitingInput,
-        'completed' => AgentTaskStatus.completed,
-        'failed' => AgentTaskStatus.failed,
-        'cancelled' => AgentTaskStatus.cancelled,
-        'timed_out' => AgentTaskStatus.timedOut,
-        _ => AgentTaskStatus.unknown,
-      };
+    'pending' => AgentTaskStatus.pending,
+    'queued' => AgentTaskStatus.queued,
+    'running' => AgentTaskStatus.running,
+    'waiting_input' => AgentTaskStatus.waitingInput,
+    'completed' => AgentTaskStatus.completed,
+    'failed' => AgentTaskStatus.failed,
+    'cancelled' => AgentTaskStatus.cancelled,
+    'timed_out' => AgentTaskStatus.timedOut,
+    _ => AgentTaskStatus.unknown,
+  };
 
   String get wire => switch (this) {
-        AgentTaskStatus.pending => 'pending',
-        AgentTaskStatus.queued => 'queued',
-        AgentTaskStatus.running => 'running',
-        AgentTaskStatus.waitingInput => 'waiting_input',
-        AgentTaskStatus.completed => 'completed',
-        AgentTaskStatus.failed => 'failed',
-        AgentTaskStatus.cancelled => 'cancelled',
-        AgentTaskStatus.timedOut => 'timed_out',
-        AgentTaskStatus.unknown => 'unknown',
-      };
+    AgentTaskStatus.pending => 'pending',
+    AgentTaskStatus.queued => 'queued',
+    AgentTaskStatus.running => 'running',
+    AgentTaskStatus.waitingInput => 'waiting_input',
+    AgentTaskStatus.completed => 'completed',
+    AgentTaskStatus.failed => 'failed',
+    AgentTaskStatus.cancelled => 'cancelled',
+    AgentTaskStatus.timedOut => 'timed_out',
+    AgentTaskStatus.unknown => 'unknown',
+  };
 
   bool get isActive => switch (this) {
-        AgentTaskStatus.pending ||
-        AgentTaskStatus.queued ||
-        AgentTaskStatus.running => true,
-        _ => false,
-      };
+    AgentTaskStatus.pending ||
+    AgentTaskStatus.queued ||
+    AgentTaskStatus.running => true,
+    _ => false,
+  };
 
-  bool get canContinue => this == AgentTaskStatus.waitingInput ||
+  bool get canContinue =>
+      this == AgentTaskStatus.waitingInput ||
       this == AgentTaskStatus.completed ||
       this == AgentTaskStatus.failed ||
       this == AgentTaskStatus.timedOut;
@@ -69,30 +70,30 @@ enum AgentRunStatus {
   unknown;
 
   static AgentRunStatus parse(Object? value) => switch (value?.toString()) {
-        'created' => AgentRunStatus.created,
-        'starting' => AgentRunStatus.starting,
-        'running' => AgentRunStatus.running,
-        'collecting_output' => AgentRunStatus.collectingOutput,
-        'waiting_input' => AgentRunStatus.waitingInput,
-        'completed' => AgentRunStatus.completed,
-        'failed' => AgentRunStatus.failed,
-        'cancelled' => AgentRunStatus.cancelled,
-        'timed_out' => AgentRunStatus.timedOut,
-        _ => AgentRunStatus.unknown,
-      };
+    'created' => AgentRunStatus.created,
+    'starting' => AgentRunStatus.starting,
+    'running' => AgentRunStatus.running,
+    'collecting_output' => AgentRunStatus.collectingOutput,
+    'waiting_input' => AgentRunStatus.waitingInput,
+    'completed' => AgentRunStatus.completed,
+    'failed' => AgentRunStatus.failed,
+    'cancelled' => AgentRunStatus.cancelled,
+    'timed_out' => AgentRunStatus.timedOut,
+    _ => AgentRunStatus.unknown,
+  };
 
   String get wire => switch (this) {
-        AgentRunStatus.created => 'created',
-        AgentRunStatus.starting => 'starting',
-        AgentRunStatus.running => 'running',
-        AgentRunStatus.collectingOutput => 'collecting_output',
-        AgentRunStatus.waitingInput => 'waiting_input',
-        AgentRunStatus.completed => 'completed',
-        AgentRunStatus.failed => 'failed',
-        AgentRunStatus.cancelled => 'cancelled',
-        AgentRunStatus.timedOut => 'timed_out',
-        AgentRunStatus.unknown => 'unknown',
-      };
+    AgentRunStatus.created => 'created',
+    AgentRunStatus.starting => 'starting',
+    AgentRunStatus.running => 'running',
+    AgentRunStatus.collectingOutput => 'collecting_output',
+    AgentRunStatus.waitingInput => 'waiting_input',
+    AgentRunStatus.completed => 'completed',
+    AgentRunStatus.failed => 'failed',
+    AgentRunStatus.cancelled => 'cancelled',
+    AgentRunStatus.timedOut => 'timed_out',
+    AgentRunStatus.unknown => 'unknown',
+  };
 }
 
 class AgentTaskSource {
@@ -129,18 +130,18 @@ class AgentTaskSource {
   final String? clientRequestId;
 
   Map<String, dynamic> toJson() => {
-        'kind': kind,
+    'kind': kind,
+    if (channelId != null) 'channel_id': channelId,
+    if (messageId != null) 'source_message_id': messageId,
+    if (clientRequestId != null) 'client_request_id': clientRequestId,
+    if (conversationId != null || threadId != null || messageId != null)
+      'reply_address': {
         if (channelId != null) 'channel_id': channelId,
-        if (messageId != null) 'source_message_id': messageId,
-        if (clientRequestId != null) 'client_request_id': clientRequestId,
-        if (conversationId != null || threadId != null || messageId != null)
-          'reply_address': {
-            if (channelId != null) 'channel_id': channelId,
-            if (conversationId != null) 'conversation_id': conversationId,
-            if (threadId != null) 'thread_id': threadId,
-            if (messageId != null) 'message_id': messageId,
-          },
-      };
+        if (conversationId != null) 'conversation_id': conversationId,
+        if (threadId != null) 'thread_id': threadId,
+        if (messageId != null) 'message_id': messageId,
+      },
+  };
 }
 
 class AgentTask {
@@ -159,18 +160,18 @@ class AgentTask {
   });
 
   factory AgentTask.fromJson(Map<String, dynamic> json) => AgentTask(
-        id: json['id']?.toString() ?? '',
-        projectId: json['project_id']?.toString() ?? '',
-        providerId: json['provider_id']?.toString() ?? '',
-        source: AgentTaskSource.fromJson(_map(json['source'])),
-        prompt: json['prompt']?.toString() ?? '',
-        status: AgentTaskStatus.parse(json['status']),
-        currentRunId: _nullableString(json['current_run_id']),
-        runtimeContextId: _nullableString(json['runtime_context_id']),
-        version: _int(json['version']),
-        createdAt: _date(json['created_at']),
-        updatedAt: _date(json['updated_at']),
-      );
+    id: json['id']?.toString() ?? '',
+    projectId: json['project_id']?.toString() ?? '',
+    providerId: json['provider_id']?.toString() ?? '',
+    source: AgentTaskSource.fromJson(_map(json['source'])),
+    prompt: json['prompt']?.toString() ?? '',
+    status: AgentTaskStatus.parse(json['status']),
+    currentRunId: _nullableString(json['current_run_id']),
+    runtimeContextId: _nullableString(json['runtime_context_id']),
+    version: _int(json['version']),
+    createdAt: _date(json['created_at']),
+    updatedAt: _date(json['updated_at']),
+  );
 
   final String id;
   final String projectId;
@@ -203,20 +204,20 @@ class AgentRun {
   });
 
   factory AgentRun.fromJson(Map<String, dynamic> json) => AgentRun(
-        id: json['id']?.toString() ?? '',
-        taskId: json['task_id']?.toString() ?? '',
-        deliveryId: json['delivery_id']?.toString() ?? '',
-        providerId: json['provider_id']?.toString() ?? '',
-        runtimeContextId: _nullableString(json['runtime_context_id']),
-        status: AgentRunStatus.parse(json['status']),
-        pid: _nullableInt(json['pid']),
-        exitCode: _nullableInt(json['exit_code']),
-        errorCode: _nullableString(json['error_code']),
-        errorMessage: _nullableString(json['error_message']),
-        startedAt: _nullableDate(json['started_at']),
-        finishedAt: _nullableDate(json['finished_at']),
-        createdAt: _date(json['created_at']),
-      );
+    id: json['id']?.toString() ?? '',
+    taskId: json['task_id']?.toString() ?? '',
+    deliveryId: json['delivery_id']?.toString() ?? '',
+    providerId: json['provider_id']?.toString() ?? '',
+    runtimeContextId: _nullableString(json['runtime_context_id']),
+    status: AgentRunStatus.parse(json['status']),
+    pid: _nullableInt(json['pid']),
+    exitCode: _nullableInt(json['exit_code']),
+    errorCode: _nullableString(json['error_code']),
+    errorMessage: _nullableString(json['error_message']),
+    startedAt: _nullableDate(json['started_at']),
+    finishedAt: _nullableDate(json['finished_at']),
+    createdAt: _date(json['created_at']),
+  );
 
   final String id;
   final String taskId;
@@ -246,17 +247,16 @@ class AgentEvent {
   });
 
   factory AgentEvent.fromJson(Map<String, dynamic> json) => AgentEvent(
-        id: json['id']?.toString() ?? json['event_id']?.toString() ?? '',
-        runId: json['run_id']?.toString() ?? '',
-        sequence: _int(json['sequence']),
-        type: json['type']?.toString() ??
-            json['event_type']?.toString() ??
-            'unknown',
-        adapterId: json['adapter_id']?.toString() ?? '',
-        adapterVersion: json['adapter_version']?.toString() ?? '',
-        content: _map(json['content']),
-        occurredAt: _date(json['occurred_at'] ?? json['ts']),
-      );
+    id: json['id']?.toString() ?? json['event_id']?.toString() ?? '',
+    runId: json['run_id']?.toString() ?? '',
+    sequence: _int(json['sequence']),
+    type:
+        json['type']?.toString() ?? json['event_type']?.toString() ?? 'unknown',
+    adapterId: json['adapter_id']?.toString() ?? '',
+    adapterVersion: json['adapter_version']?.toString() ?? '',
+    content: _map(json['content']),
+    occurredAt: _date(json['occurred_at'] ?? json['ts']),
+  );
 
   final String id;
   final String runId;
@@ -268,14 +268,15 @@ class AgentEvent {
   final DateTime occurredAt;
 
   String get streamName => switch (content['stream']?.toString()) {
-        'stderr' => 'stderr',
-        'stdout' => 'stdout',
-        _ => type.contains('stderr')
-            ? 'stderr'
-            : type.contains('stdout')
-                ? 'stdout'
-                : 'raw',
-      };
+    'stderr' => 'stderr',
+    'stdout' => 'stdout',
+    _ =>
+      type.contains('stderr')
+          ? 'stderr'
+          : type.contains('stdout')
+          ? 'stdout'
+          : 'raw',
+  };
 
   String get displayText {
     for (final key in const ['text', 'message', 'delta', 'output']) {
@@ -285,7 +286,6 @@ class AgentEvent {
     return const JsonEncoder.withIndent('  ').convert(content);
   }
 }
-
 
 class AgentEventTimeline {
   const AgentEventTimeline._();
@@ -304,9 +304,7 @@ class AgentEventTimeline {
     final result = byKey.values.toList()
       ..sort((a, b) {
         final sequence = a.sequence.compareTo(b.sequence);
-        return sequence != 0
-            ? sequence
-            : a.occurredAt.compareTo(b.occurredAt);
+        return sequence != 0 ? sequence : a.occurredAt.compareTo(b.occurredAt);
       });
     if (result.length <= maxEvents) return result;
     return result.sublist(result.length - maxEvents);
@@ -328,18 +326,17 @@ class AgentArtifact {
   });
 
   factory AgentArtifact.fromJson(Map<String, dynamic> json) => AgentArtifact(
-        id: json['id']?.toString() ?? '',
-        taskId: json['task_id']?.toString() ?? '',
-        runId: _nullableString(json['run_id']),
-        kind: json['kind']?.toString() ?? '',
-        name: json['name']?.toString() ?? 'artifact.bin',
-        contentType: json['content_type']?.toString() ??
-            'application/octet-stream',
-        sizeBytes: _int(json['size_bytes']),
-        sha256: json['sha256']?.toString() ?? '',
-        metadata: _map(json['metadata']),
-        createdAt: _date(json['created_at']),
-      );
+    id: json['id']?.toString() ?? '',
+    taskId: json['task_id']?.toString() ?? '',
+    runId: _nullableString(json['run_id']),
+    kind: json['kind']?.toString() ?? '',
+    name: json['name']?.toString() ?? 'artifact.bin',
+    contentType: json['content_type']?.toString() ?? 'application/octet-stream',
+    sizeBytes: _int(json['size_bytes']),
+    sha256: json['sha256']?.toString() ?? '',
+    metadata: _map(json['metadata']),
+    createdAt: _date(json['created_at']),
+  );
 
   final String id;
   final String taskId;
@@ -372,17 +369,19 @@ class AgentProviderCapability {
     final descriptor = _map(json['oneshot']);
     final oneShotCapabilities = _map(descriptor['capabilities']);
     final catalogProviderId = manifest['id']?.toString() ?? '';
-    final providerId = descriptor['provider_id']?.toString().isNotEmpty == true
+    final providerId =
+        (descriptor['provider_id']?.toString().isNotEmpty ?? false)
         ? descriptor['provider_id'].toString()
         : catalogProviderId == 'claude'
-            ? 'claude-code'
-            : catalogProviderId;
+        ? 'claude-code'
+        : catalogProviderId;
     final hasDescriptor = descriptor.isNotEmpty;
     final supportedFallback =
         catalogProviderId == 'codex' || catalogProviderId == 'claude';
     return AgentProviderCapability(
       providerId: providerId,
-      displayName: descriptor['display_name']?.toString() ??
+      displayName:
+          descriptor['display_name']?.toString() ??
           manifest['displayName']?.toString() ??
           manifest['displayName_zh']?.toString() ??
           catalogProviderId,
@@ -399,9 +398,7 @@ class AgentProviderCapability {
           ? oneShotCapabilities['structured_output'] == true
           : supportedFallback,
       // PTY manifest supportsImages is not a One-shot attachment contract.
-      attachments: hasDescriptor
-          ? oneShotCapabilities['attachments'] == true
-          : false,
+      attachments: hasDescriptor && oneShotCapabilities['attachments'] == true,
       cancellation: hasDescriptor
           ? oneShotCapabilities['cancellation'] == true
           : supportedFallback,
@@ -447,7 +444,8 @@ class AgentStreamFrame {
   final Map<String, dynamic> data;
 
   String get identity {
-    final id = data['event_id'] ?? data['id'] ?? data['run_id'] ?? data['task_id'];
+    final id =
+        data['event_id'] ?? data['id'] ?? data['run_id'] ?? data['task_id'];
     return '$topic|${id ?? ''}|$cursor';
   }
 }
@@ -474,21 +472,18 @@ class CreateAgentTaskInput {
   final bool continueContext;
 
   Map<String, dynamic> toJson(String clientRequestId) => {
-        'project_id': projectId,
-        'provider_id': providerId,
-        'prompt': prompt,
-        'workspace_path': workspacePath,
-        'attachment_refs': attachmentRefs,
-        'timeout_seconds': timeoutSeconds,
-        'source': {
-          'kind': 'mobile',
-          'client_request_id': clientRequestId,
-        },
-        'options': {
-          'telegram_notify': telegramNotify,
-          'context_mode': continueContext ? 'continue' : 'new',
-        },
-      };
+    'project_id': projectId,
+    'provider_id': providerId,
+    'prompt': prompt,
+    'workspace_path': workspacePath,
+    'attachment_refs': attachmentRefs,
+    'timeout_seconds': timeoutSeconds,
+    'source': {'kind': 'mobile', 'client_request_id': clientRequestId},
+    'options': {
+      'telegram_notify': telegramNotify,
+      'context_mode': continueContext ? 'continue' : 'new',
+    },
+  };
 }
 
 class ContinueAgentTaskInput {
@@ -507,12 +502,12 @@ class ContinueAgentTaskInput {
   final List<String> attachmentRefs;
 
   Map<String, dynamic> toJson() => {
-        'project_id': projectId,
-        if (providerId.isNotEmpty) 'provider_id': providerId,
-        if (workspacePath.isNotEmpty) 'workspace_path': workspacePath,
-        'prompt_delta': promptDelta,
-        'attachment_refs': attachmentRefs,
-      };
+    'project_id': projectId,
+    if (providerId.isNotEmpty) 'provider_id': providerId,
+    if (workspacePath.isNotEmpty) 'workspace_path': workspacePath,
+    'prompt_delta': promptDelta,
+    'attachment_refs': attachmentRefs,
+  };
 }
 
 class ArtifactDownload {
@@ -539,7 +534,8 @@ String? _nullableString(Object? value) {
   return result == null || result.isEmpty ? null : result;
 }
 
-int _int(Object? value) => value is num ? value.toInt() : int.tryParse('$value') ?? 0;
+int _int(Object? value) =>
+    value is num ? value.toInt() : int.tryParse('$value') ?? 0;
 int? _nullableInt(Object? value) => value == null ? null : _int(value);
 DateTime _date(Object? value) =>
     DateTime.tryParse(value?.toString() ?? '')?.toUtc() ??
@@ -565,7 +561,9 @@ class StagedAgentAttachment {
       detectedMime: json['detected_mime']?.toString() ?? '',
       sizeBytes: (json['size_bytes'] as num?)?.toInt() ?? 0,
       sha256: json['sha256']?.toString() ?? '',
-      expiresAt: DateTime.tryParse(json['expires_at']?.toString() ?? '')?.toUtc(),
+      expiresAt: DateTime.tryParse(
+        json['expires_at']?.toString() ?? '',
+      )?.toUtc(),
     );
   }
 

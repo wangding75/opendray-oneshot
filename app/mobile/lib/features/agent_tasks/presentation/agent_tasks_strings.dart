@@ -4,17 +4,20 @@ import 'package:opendray/core/i18n/strings.g.dart';
 /// the feature compilable in source-only environments where slang codegen is
 /// deliberately deferred to the final Flutter runtime gate.
 class AgentTasksStrings {
-  AgentTasksStrings._(this._values);
-
-  final Map<String, String> _values;
-  String call(String key) => _values[key] ?? _english[key] ?? key;
-
-  static AgentTasksStrings get current =>
+  factory AgentTasksStrings() =>
       AgentTasksStrings._(switch (LocaleSettings.currentLocale) {
         AppLocale.es => _spanish,
         AppLocale.zh => _chinese,
         AppLocale.en => _english,
       });
+
+  const AgentTasksStrings._(this._values);
+
+  final Map<String, String> _values;
+
+  String call(String key) => _values[key] ?? _english[key] ?? key;
+
+  static final AgentTasksStrings current = AgentTasksStrings();
 }
 
 const _english = <String, String>{

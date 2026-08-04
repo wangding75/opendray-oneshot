@@ -2,21 +2,18 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:web_socket_channel/io.dart';
-import 'package:web_socket_channel/web_socket_channel.dart';
-
 import 'package:opendray/core/auth/auth_state.dart';
 import 'package:opendray/features/agent_tasks/data/agent_tasks_api.dart';
 import 'package:opendray/features/agent_tasks/domain/agent_task_models.dart';
+import 'package:web_socket_channel/io.dart';
+import 'package:web_socket_channel/web_socket_channel.dart';
 
-typedef AgentSocketConnector = WebSocketChannel Function(
-  Uri uri,
-  Map<String, dynamic> headers,
-);
+typedef AgentSocketConnector =
+    WebSocketChannel Function(Uri uri, Map<String, dynamic> headers);
 
 class AgentStreamCursorTracker {
   AgentStreamCursorTracker({String? initialCursor})
-      : lastCursor = initialCursor ?? '';
+    : lastCursor = initialCursor ?? '';
 
   String lastCursor;
   final Set<String> _seen = <String>{};
@@ -36,12 +33,13 @@ class AgentTaskStreamClient {
     this.initialBackoff = const Duration(milliseconds: 250),
     this.maxBackoff = const Duration(seconds: 8),
     AgentSocketConnector? connect,
-  }) : _connect = connect ??
-            ((uri, headers) => IOWebSocketChannel.connect(
-                  uri,
-                  headers: headers,
-                  pingInterval: const Duration(seconds: 20),
-                ));
+  }) : _connect =
+           connect ??
+           ((uri, headers) => IOWebSocketChannel.connect(
+             uri,
+             headers: headers,
+             pingInterval: const Duration(seconds: 20),
+           ));
 
   final String serverUrl;
   final String token;
@@ -49,10 +47,8 @@ class AgentTaskStreamClient {
   final Duration maxBackoff;
   final AgentSocketConnector _connect;
 
-  Stream<AgentStreamFrame> taskStream({
-    String? projectId,
-    String? cursor,
-  }) => _reconnectingStream(
+  Stream<AgentStreamFrame> taskStream({String? projectId, String? cursor}) =>
+      _reconnectingStream(
         path: '/api/v1/oneshot/tasks/stream',
         query: {
           if (projectId != null && projectId.isNotEmpty)
@@ -66,13 +62,12 @@ class AgentTaskStreamClient {
     String? projectId,
     String? cursor,
   }) => _reconnectingStream(
-        path: '/api/v1/oneshot/runs/$runId/stream',
-        query: {
-          if (projectId != null && projectId.isNotEmpty)
-            'project_id': projectId,
-        },
-        initialCursor: cursor,
-      );
+    path: '/api/v1/oneshot/runs/$runId/stream',
+    query: {
+      if (projectId != null && projectId.isNotEmpty) 'project_id': projectId,
+    },
+    initialCursor: cursor,
+  );
 
   Stream<AgentStreamFrame> _reconnectingStream({
     required String path,
@@ -89,13 +84,10 @@ class AgentTaskStreamClient {
 
     Future<void> connect() async {
       if (stopped) return;
-      final uri = buildUri(
-        path,
-        {
-          ...query,
-          if (tracker.lastCursor.isNotEmpty) 'cursor': tracker.lastCursor,
-        },
-      );
+      final uri = buildUri(path, {
+        ...query,
+        if (tracker.lastCursor.isNotEmpty) 'cursor': tracker.lastCursor,
+      });
       try {
         channel = _connect(uri, {'Authorization': 'Bearer $token'});
         await channel!.ready;
@@ -149,11 +141,13 @@ class AgentTaskStreamClient {
     }
 
     scheduleReconnect = () {
-      if (stopped || reconnectTimer?.isActive == true) return;
+      if (stopped || (reconnectTimer?.isActive ?? false)) return;
       reconnectTimer = Timer(backoff, connect);
-      final nextMillis = (backoff.inMilliseconds * 2)
-          .clamp(initialBackoff.inMilliseconds, maxBackoff.inMilliseconds);
-      backoff = Duration(milliseconds: nextMillis.toInt());
+      final nextMillis = (backoff.inMilliseconds * 2).clamp(
+        initialBackoff.inMilliseconds,
+        maxBackoff.inMilliseconds,
+      );
+      backoff = Duration(milliseconds: nextMillis);
     };
 
     controller = StreamController<AgentStreamFrame>(
@@ -170,9 +164,7 @@ class AgentTaskStreamClient {
   static AgentStreamFrame decodeFrame(String raw) {
     final decoded = jsonDecode(raw);
     if (decoded is! Map) {
-      throw const FormatException(
-        'One-shot stream frame is not an object',
-      );
+      throw const FormatException('One-shot stream frame is not an object');
     }
     return AgentStreamFrame.fromJson(Map<String, dynamic>.from(decoded));
   }
@@ -203,8 +195,8 @@ class AgentStreamErrorMapper {
     final statusCode = code.contains('unauthorized')
         ? 401
         : code.contains('forbidden')
-            ? 403
-            : 500;
+        ? 403
+        : 500;
     return AgentTasksApiException(
       statusCode: statusCode,
       code: code,

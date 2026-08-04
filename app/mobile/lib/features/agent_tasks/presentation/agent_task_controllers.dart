@@ -40,22 +40,21 @@ class AgentTaskListState {
     bool? offline,
     AgentTasksApiException? error,
     bool clearError = false,
-  }) =>
-      AgentTaskListState(
-        items: items ?? this.items,
-        nextCursor: clearNextCursor ? null : nextCursor ?? this.nextCursor,
-        status: clearStatus ? null : status ?? this.status,
-        projectId: clearProject ? null : projectId ?? this.projectId,
-        loading: loading ?? this.loading,
-        loadingMore: loadingMore ?? this.loadingMore,
-        offline: offline ?? this.offline,
-        error: clearError ? null : error ?? this.error,
-      );
+  }) => AgentTaskListState(
+    items: items ?? this.items,
+    nextCursor: clearNextCursor ? null : nextCursor ?? this.nextCursor,
+    status: clearStatus ? null : status ?? this.status,
+    projectId: clearProject ? null : projectId ?? this.projectId,
+    loading: loading ?? this.loading,
+    loadingMore: loadingMore ?? this.loadingMore,
+    offline: offline ?? this.offline,
+    error: clearError ? null : error ?? this.error,
+  );
 }
 
 class AgentTaskListController extends StateNotifier<AgentTaskListState> {
   AgentTaskListController(this._repository)
-      : super(const AgentTaskListState(loading: true)) {
+    : super(const AgentTaskListState(loading: true)) {
     unawaited(refresh());
     _subscribe();
   }
@@ -158,15 +157,17 @@ class AgentTaskListController extends StateNotifier<AgentTaskListState> {
   }
 }
 
-
 final agentTaskProjectOptionsProvider = FutureProvider.autoDispose((ref) {
   return ref.watch(agentTasksRepositoryProvider).listProjects();
 });
 
-final agentTaskListControllerProvider = StateNotifierProvider.autoDispose<
-    AgentTaskListController, AgentTaskListState>((ref) {
-  return AgentTaskListController(ref.watch(agentTasksRepositoryProvider));
-});
+final agentTaskListControllerProvider =
+    StateNotifierProvider.autoDispose<
+      AgentTaskListController,
+      AgentTaskListState
+    >((ref) {
+      return AgentTaskListController(ref.watch(agentTasksRepositoryProvider));
+    });
 
 class AgentTaskDetailState {
   const AgentTaskDetailState({
@@ -207,26 +208,23 @@ class AgentTaskDetailState {
     bool clearError = false,
     String? streamCursor,
     bool clearStreamCursor = false,
-  }) =>
-      AgentTaskDetailState(
-        task: task ?? this.task,
-        runs: runs ?? this.runs,
-        selectedRun:
-            clearSelectedRun ? null : selectedRun ?? this.selectedRun,
-        events: events ?? this.events,
-        artifacts: artifacts ?? this.artifacts,
-        loading: loading ?? this.loading,
-        actionLoading: actionLoading ?? this.actionLoading,
-        offline: offline ?? this.offline,
-        error: clearError ? null : error ?? this.error,
-        streamCursor:
-            clearStreamCursor ? null : streamCursor ?? this.streamCursor,
-      );
+  }) => AgentTaskDetailState(
+    task: task ?? this.task,
+    runs: runs ?? this.runs,
+    selectedRun: clearSelectedRun ? null : selectedRun ?? this.selectedRun,
+    events: events ?? this.events,
+    artifacts: artifacts ?? this.artifacts,
+    loading: loading ?? this.loading,
+    actionLoading: actionLoading ?? this.actionLoading,
+    offline: offline ?? this.offline,
+    error: clearError ? null : error ?? this.error,
+    streamCursor: clearStreamCursor ? null : streamCursor ?? this.streamCursor,
+  );
 }
 
 class AgentTaskDetailController extends StateNotifier<AgentTaskDetailState> {
   AgentTaskDetailController(this._repository, this.taskId)
-      : super(const AgentTaskDetailState()) {
+    : super(const AgentTaskDetailState()) {
     unawaited(refresh());
   }
 
@@ -255,10 +253,7 @@ class AgentTaskDetailController extends StateNotifier<AgentTaskDetailState> {
       var events = const <AgentEvent>[];
       var artifacts = const <AgentArtifact>[];
       if (selected != null) {
-        final eventItems = await _loadAllEvents(
-          selected.id,
-          task.projectId,
-        );
+        final eventItems = await _loadAllEvents(selected.id, task.projectId);
         final artifactItems = await _loadAllArtifacts(
           selected.id,
           task.projectId,
@@ -302,10 +297,7 @@ class AgentTaskDetailController extends StateNotifier<AgentTaskDetailState> {
     );
     try {
       final eventItems = await _loadAllEvents(run.id, task.projectId);
-      final artifactItems = await _loadAllArtifacts(
-        run.id,
-        task.projectId,
-      );
+      final artifactItems = await _loadAllArtifacts(run.id, task.projectId);
       state = state.copyWith(
         events: _dedupeEvents(eventItems),
         artifacts: artifactItems,
@@ -330,7 +322,7 @@ class AgentTaskDetailController extends StateNotifier<AgentTaskDetailState> {
     final events = <AgentEvent>[];
     String? cursor;
     final visitedCursors = <String>{};
-    do {
+    for (;;) {
       final page = await _repository.listEvents(
         runId,
         projectId: projectId,
@@ -345,7 +337,7 @@ class AgentTaskDetailController extends StateNotifier<AgentTaskDetailState> {
         break;
       }
       cursor = nextCursor;
-    } while (true);
+    }
     return events.length <= maxHistoricalEvents
         ? events
         : events.sublist(events.length - maxHistoricalEvents);
@@ -359,7 +351,7 @@ class AgentTaskDetailController extends StateNotifier<AgentTaskDetailState> {
     final artifacts = <AgentArtifact>[];
     final visitedCursors = <String>{};
     String? cursor;
-    do {
+    for (;;) {
       final page = await _repository.listArtifacts(
         runId,
         projectId: projectId,
@@ -374,7 +366,7 @@ class AgentTaskDetailController extends StateNotifier<AgentTaskDetailState> {
         break;
       }
       cursor = nextCursor;
-    } while (true);
+    }
     return artifacts.length <= maxArtifacts
         ? artifacts
         : artifacts.sublist(0, maxArtifacts);
@@ -383,37 +375,40 @@ class AgentTaskDetailController extends StateNotifier<AgentTaskDetailState> {
   Future<void> cancel() async {
     final task = state.task;
     if (task == null || state.actionLoading) return;
-    await _runAction(() => _repository.cancelTask(
-          task.id,
-          projectId: task.projectId,
-        ));
+    await _runAction(
+      () => _repository.cancelTask(task.id, projectId: task.projectId),
+    );
   }
 
   Future<void> retry({String promptDelta = ''}) async {
     final task = state.task;
     if (task == null || state.actionLoading) return;
     final key = AgentTasksApi.newIdempotencyKey('retry-${task.id}');
-    await _runAction(() => _repository.retryTask(
-          task.id,
-          projectId: task.projectId,
-          idempotencyKey: key,
-          promptDelta: promptDelta,
-        ));
+    await _runAction(
+      () => _repository.retryTask(
+        task.id,
+        projectId: task.projectId,
+        idempotencyKey: key,
+        promptDelta: promptDelta,
+      ),
+    );
   }
 
   Future<void> continueTask(String promptDelta) async {
     final task = state.task;
     if (task == null || state.actionLoading) return;
     final key = AgentTasksApi.newIdempotencyKey('continue-${task.id}');
-    await _runAction(() => _repository.continueTask(
-          task.id,
-          ContinueAgentTaskInput(
-            projectId: task.projectId,
-            providerId: task.providerId,
-            promptDelta: promptDelta,
-          ),
-          idempotencyKey: key,
-        ));
+    await _runAction(
+      () => _repository.continueTask(
+        task.id,
+        ContinueAgentTaskInput(
+          projectId: task.projectId,
+          providerId: task.providerId,
+          promptDelta: promptDelta,
+        ),
+        idempotencyKey: key,
+      ),
+    );
   }
 
   Future<ArtifactDownload> downloadArtifact(AgentArtifact artifact) =>
@@ -457,15 +452,8 @@ class AgentTaskDetailController extends StateNotifier<AgentTaskDetailState> {
     if (run == null) return;
     final runId = run.id;
     _runSubscription = _repository
-        .runStream(
-          runId,
-          projectId: projectId,
-          cursor: state.streamCursor,
-        )
-        .listen(
-          (frame) => _applyFrame(runId, frame),
-          onError: (_) {},
-        );
+        .runStream(runId, projectId: projectId, cursor: state.streamCursor)
+        .listen((frame) => _applyFrame(runId, frame), onError: (_) {});
   }
 
   void _applyFrame(String runId, AgentStreamFrame frame) {
@@ -498,5 +486,8 @@ class AgentTaskDetailController extends StateNotifier<AgentTaskDetailState> {
 
 final agentTaskDetailControllerProvider = StateNotifierProvider.autoDispose
     .family<AgentTaskDetailController, AgentTaskDetailState, String>((ref, id) {
-  return AgentTaskDetailController(ref.watch(agentTasksRepositoryProvider), id);
-});
+      return AgentTaskDetailController(
+        ref.watch(agentTasksRepositoryProvider),
+        id,
+      );
+    });
