@@ -159,6 +159,14 @@ func (s *ProcessSupervisor) Start(ctx context.Context, spec adapter.CommandSpec,
 		closePipes()
 		return nil, domain.NewDomainError(domain.ErrorExecutionFailed, "failed to start One-shot child process", err)
 	}
+	// Bind the child to its own platform tree resource (e.g. a Windows Job
+	// Object) now that the process is running. This is a no-op on platforms
+	// that manage the process tree through the process group alone.
+	if err := adoptProcessTree(cmd); err != nil {
+		closePipes()
+		_ = cmd.Process.Kill()
+		return nil, domain.NewDomainError(domain.ErrorExecutionFailed, "failed to adopt One-shot child process tree", err)
+	}
 	// The parent must not keep child-side descriptors open.
 	_ = stdoutWriter.Close()
 	_ = stderrWriter.Close()

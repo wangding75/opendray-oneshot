@@ -22,6 +22,11 @@ func configureProcessTree(cmd *exec.Cmd) error {
 	return nil
 }
 
+// adoptProcessTree binds a running child to a platform tree resource. Linux
+// manages the tree through the process group configured in configureProcessTree,
+// so there is nothing additional to bind.
+func adoptProcessTree(_ *exec.Cmd) error { return nil }
+
 func terminateProcessTree(pid int) error {
 	err := syscall.Kill(-pid, syscall.SIGTERM)
 	if errors.Is(err, syscall.ESRCH) {
