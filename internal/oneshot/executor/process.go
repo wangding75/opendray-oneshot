@@ -10,6 +10,7 @@ import (
 
 	"github.com/opendray/opendray-v2/internal/oneshot/adapter"
 	"github.com/opendray/opendray-v2/internal/oneshot/domain"
+	"github.com/opendray/opendray-v2/internal/oneshot/workspacepolicy"
 )
 
 // ProcessExecutor is the provider-neutral facade over ProcessSupervisor.
@@ -17,6 +18,7 @@ type ProcessExecutor struct {
 	stdout     io.Writer
 	stderr     io.Writer
 	supervisor *ProcessSupervisor
+	policy     *workspacepolicy.Policy
 }
 
 type ProcessExecutorOption func(*ProcessExecutor)
@@ -33,6 +35,12 @@ func WithProcessSupervisor(supervisor *ProcessSupervisor) ProcessExecutorOption 
 		if supervisor != nil {
 			executor.supervisor = supervisor
 		}
+	}
+}
+
+func WithWorkspacePolicy(policy *workspacepolicy.Policy) ProcessExecutorOption {
+	return func(executor *ProcessExecutor) {
+		executor.policy = policy
 	}
 }
 
@@ -64,6 +72,16 @@ func (e *ProcessExecutor) Start(ctx context.Context, spec adapter.CommandSpec) (
 func (e *ProcessExecutor) StartWithOutput(ctx context.Context, spec adapter.CommandSpec, stdout, stderr io.Writer) (*Process, error) {
 	if e == nil || e.supervisor == nil {
 		return nil, domain.NewDomainError(domain.ErrorProviderUnavailable, "One-shot process executor is unavailable", nil)
+	}
+	if e.policy != nil {
+		if !e.policy.HasRoots() {
+			return nil, domain.InvalidRequestf("no allowed One-shot workspace roots are configured")
+		}
+		canonicalDir, err := e.policy.NormalizeAndValidate(spec.Dir)
+		if err != nil {
+			return nil, err
+		}
+		spec.Dir = canonicalDir
 	}
 	return e.supervisor.Start(ctx, spec, stdout, stderr)
 }

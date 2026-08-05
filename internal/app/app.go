@@ -71,6 +71,7 @@ import (
 	oneshootqueue "github.com/opendray/opendray-v2/internal/oneshot/queue"
 	oneshootrecovery "github.com/opendray/opendray-v2/internal/oneshot/recovery"
 	oneshootstore "github.com/opendray/opendray-v2/internal/oneshot/store"
+	oneshootworkspacepolicy "github.com/opendray/opendray-v2/internal/oneshot/workspacepolicy"
 	"github.com/opendray/opendray-v2/internal/projectdoc"
 	"github.com/opendray/opendray-v2/internal/projectscan"
 	"github.com/opendray/opendray-v2/internal/prwatcher"
@@ -653,9 +654,22 @@ func New(ctx context.Context, cfg config.Config) (*App, error) {
 		st.Close()
 		return nil, fmt.Errorf("init oneshot attachment staging: %w", err)
 	}
+	oneshootDefaultWorkspace := strings.TrimSpace(expandPath(cfg.OneShot.WorkspaceRoot))
+	oneshootAllowedRoots := append([]string(nil), cfg.OneShot.AllowedWorkspaceRoots...)
+	if len(oneshootAllowedRoots) == 0 && oneshootDefaultWorkspace != "" {
+		oneshootAllowedRoots = []string{oneshootDefaultWorkspace}
+	}
+	oneshootWorkspacePolicy, err := oneshootworkspacepolicy.New(oneshootAllowedRoots)
+	if err != nil {
+		st.Close()
+		return nil, fmt.Errorf("init oneshot workspace policy: %w", err)
+	}
 	oneshootAttachmentCleaner := oneshootattachment.NewWorker(oneshootAttachments, time.Minute, log)
 	oneshootSupervisor := oneshootexecutor.NewProcessSupervisor()
-	oneshootProcessExecutor := oneshootexecutor.NewProcessExecutor(oneshootexecutor.WithProcessSupervisor(oneshootSupervisor))
+	oneshootProcessExecutor := oneshootexecutor.NewProcessExecutor(
+		oneshootexecutor.WithProcessSupervisor(oneshootSupervisor),
+		oneshootexecutor.WithWorkspacePolicy(oneshootWorkspacePolicy),
+	)
 	oneshootNotificationSink := oneshootnotification.NewOutboxSink(oneshootRepository)
 	oneshootRunService, err := oneshootexecutor.NewRunService(
 		oneshootRepository, oneshootRegistry, oneshootProcessExecutor,
@@ -675,7 +689,10 @@ func New(ctx context.Context, cfg config.Config) (*App, error) {
 		st.Close()
 		return nil, fmt.Errorf("init oneshot control service: %w", err)
 	}
-	oneshootDispatch := oneshootapplication.NewDispatchService(oneshootQueue)
+	oneshootDispatch := oneshootapplication.NewDispatchService(
+		oneshootQueue,
+		oneshootapplication.WithWorkspacePolicy(oneshootWorkspacePolicy, oneshootDefaultWorkspace),
+	)
 	oneshootContinuation, err := oneshootapplication.NewContinuationService(oneshootRepository, oneshootRegistry)
 	if err != nil {
 		st.Close()
@@ -692,7 +709,7 @@ func New(ctx context.Context, cfg config.Config) (*App, error) {
 	}
 	oneshootChannels, err := oneshootchanneladapter.New(oneshootchanneladapter.Config{
 		Enabled: cfg.OneShot.Enabled, DefaultProjectID: cfg.OneShot.DefaultProjectID,
-		DefaultProvider: cfg.OneShot.DefaultProviderID, DefaultWorkspace: expandPath(cfg.OneShot.WorkspaceRoot),
+		DefaultProvider: cfg.OneShot.DefaultProviderID, DefaultWorkspace: oneshootDefaultWorkspace,
 	}, oneshootDispatch, oneshootContinuation, oneshootControl, oneshootRepository,
 		oneshootCapabilities, log, oneshootchanneladapter.WithAttachmentStager(oneshootAttachments))
 	if err != nil {

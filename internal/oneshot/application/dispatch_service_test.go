@@ -2,12 +2,15 @@ package application
 
 import (
 	"context"
+	"os"
+	"path/filepath"
 	"strings"
 	"testing"
 	"time"
 
 	"github.com/opendray/opendray-v2/internal/oneshot/domain"
 	"github.com/opendray/opendray-v2/internal/oneshot/queue"
+	"github.com/opendray/opendray-v2/internal/oneshot/workspacepolicy"
 )
 
 func baseCommand() CreateTaskCommand {
@@ -27,11 +30,17 @@ func baseCommand() CreateTaskCommand {
 }
 
 func TestDispatchServiceIdempotentReplayAndConflict(t *testing.T) {
+	root := t.TempDir()
+	policy, err := workspacepolicy.New([]string{root})
+	if err != nil {
+		t.Fatal(err)
+	}
 	repository := queue.NewMemoryQueue(nil)
-	service := NewDispatchService(repository)
+	service := NewDispatchService(repository, WithWorkspacePolicy(policy, root))
 	fixed := time.Date(2026, 7, 27, 12, 0, 0, 0, time.UTC)
 	service.now = func() time.Time { return fixed }
 	command := baseCommand()
+	command.WorkspacePath = root
 
 	first, err := service.CreateTask(context.Background(), command)
 	if err != nil {
@@ -56,9 +65,15 @@ func TestDispatchServiceIdempotentReplayAndConflict(t *testing.T) {
 }
 
 func TestDispatchServiceTelegramDerivesStableKey(t *testing.T) {
+	root := t.TempDir()
+	policy, err := workspacepolicy.New([]string{root})
+	if err != nil {
+		t.Fatal(err)
+	}
 	repository := queue.NewMemoryQueue(nil)
-	service := NewDispatchService(repository)
+	service := NewDispatchService(repository, WithWorkspacePolicy(policy, root))
 	command := baseCommand()
+	command.WorkspacePath = root
 	command.Source = domain.Source{
 		Kind: domain.SourceTelegram, ChannelID: "telegram-main", SourceMessageID: "update-100",
 	}
@@ -84,10 +99,16 @@ func TestDispatchServiceTelegramDerivesStableKey(t *testing.T) {
 }
 
 func TestDispatchServiceRequiresAPIIdempotencyKey(t *testing.T) {
-	service := NewDispatchService(queue.NewMemoryQueue(nil))
+	root := t.TempDir()
+	policy, err := workspacepolicy.New([]string{root})
+	if err != nil {
+		t.Fatal(err)
+	}
+	service := NewDispatchService(queue.NewMemoryQueue(nil), WithWorkspacePolicy(policy, root))
 	command := baseCommand()
+	command.WorkspacePath = root
 	command.IdempotencyKey = ""
-	_, err := service.CreateTask(context.Background(), command)
+	_, err = service.CreateTask(context.Background(), command)
 	if !domain.HasCode(err, domain.ErrorIdempotencyRequired) {
 		t.Fatalf("missing key err=%v", err)
 	}
@@ -119,5 +140,66 @@ func TestCanonicalCreatePayloadSHA256IsStableAndAttachmentBound(t *testing.T) {
 	}
 	if strings.ToLower(changed) != changed {
 		t.Fatalf("hash is not lowercase: %s", changed)
+	}
+}
+
+func TestDispatchServiceCanonicalizesWorkspaceBeforePersistence(t *testing.T) {
+	root := t.TempDir()
+	child := filepath.Join(root, "child")
+	if err := os.MkdirAll(child, 0o755); err != nil {
+		t.Fatal(err)
+	}
+	policy, err := workspacepolicy.New([]string{root})
+	if err != nil {
+		t.Fatal(err)
+	}
+	repository := queue.NewMemoryQueue(nil)
+	service := NewDispatchService(repository, WithWorkspacePolicy(policy, root))
+	command := baseCommand()
+	command.WorkspacePath = filepath.Join(child, ".")
+	result, err := service.CreateTask(context.Background(), command)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if got := result.Delivery.Input.Options["workspace_path"]; got != filepath.Clean(child) {
+		t.Fatalf("workspace_path=%v", got)
+	}
+}
+
+func TestDispatchServiceRejectsWorkspaceOutsideAllowedRootsWithoutConsumingIdempotencyKey(t *testing.T) {
+	root := t.TempDir()
+	outside := t.TempDir()
+	policy, err := workspacepolicy.New([]string{root})
+	if err != nil {
+		t.Fatal(err)
+	}
+	repository := queue.NewMemoryQueue(nil)
+	service := NewDispatchService(repository, WithWorkspacePolicy(policy, root))
+	command := baseCommand()
+	command.WorkspacePath = outside
+	if _, err := service.CreateTask(context.Background(), command); err == nil {
+		t.Fatal("outside workspace accepted")
+	}
+	command.WorkspacePath = root
+	result, err := service.CreateTask(context.Background(), command)
+	if err != nil {
+		t.Fatalf("valid replay after invalid request should succeed: %v", err)
+	}
+	if !result.Created {
+		t.Fatal("valid request was blocked by prior invalid request")
+	}
+}
+
+func TestDispatchServiceRequiresConfiguredWorkspacePolicy(t *testing.T) {
+	repository := queue.NewMemoryQueue(nil)
+	policy, err := workspacepolicy.New(nil)
+	if err != nil {
+		t.Fatal(err)
+	}
+	service := NewDispatchService(repository, WithWorkspacePolicy(policy, ""))
+	command := baseCommand()
+	command.WorkspacePath = t.TempDir()
+	if _, err := service.CreateTask(context.Background(), command); !domain.HasCode(err, domain.ErrorInvalidRequest) {
+		t.Fatalf("err=%v", err)
 	}
 }

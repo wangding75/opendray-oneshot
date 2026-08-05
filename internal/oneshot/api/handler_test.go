@@ -19,7 +19,9 @@ import (
 	"github.com/opendray/opendray-v2/internal/oneshot/application"
 	attachmentservice "github.com/opendray/opendray-v2/internal/oneshot/attachment"
 	"github.com/opendray/opendray-v2/internal/oneshot/domain"
+	"github.com/opendray/opendray-v2/internal/oneshot/queue"
 	"github.com/opendray/opendray-v2/internal/oneshot/store"
+	"github.com/opendray/opendray-v2/internal/oneshot/workspacepolicy"
 )
 
 func TestRequestIDMiddlewareStabilizesGeneratedID(t *testing.T) {
@@ -296,6 +298,30 @@ func TestCreateTaskRouteNormalizesTrustedRESTSource(t *testing.T) {
 	}
 	if creator.calls != 1 || creator.command.Source.Kind != domain.SourceMobile || creator.command.Source.ReplyAddress != nil {
 		t.Fatalf("unexpected application command: calls=%d source=%+v", creator.calls, creator.command.Source)
+	}
+}
+
+func TestCreateTaskRouteRejectsWorkspaceOutsideAllowedRoots(t *testing.T) {
+	root := t.TempDir()
+	policy, err := workspacepolicy.New([]string{root})
+	if err != nil {
+		t.Fatal(err)
+	}
+	creator := application.NewDispatchService(queue.NewMemoryQueue(nil), application.WithWorkspacePolicy(policy, root))
+	h, err := New(Options{Enabled: true, Creator: creator, Repository: &apiRepositoryFixture{}})
+	if err != nil {
+		t.Fatal(err)
+	}
+	body := `{"project_id":"project-1","provider_id":"codex","prompt":"hello","workspace_path":"` + strings.ReplaceAll(t.TempDir(), `\`, `\\`) + `"}`
+	req := requestWithIntegrationPrincipal(httptest.NewRequest(http.MethodPost, "/oneshot/tasks", strings.NewReader(body)), scopeTaskCreate)
+	req.Header.Set("Content-Type", "application/json")
+	req.Header.Set("Idempotency-Key", "workspace-invalid-1")
+	recorder := httptest.NewRecorder()
+	router := chi.NewRouter()
+	h.Mount(router)
+	router.ServeHTTP(recorder, req)
+	if recorder.Code < 400 || recorder.Code >= 500 {
+		t.Fatalf("status=%d body=%s", recorder.Code, recorder.Body.String())
 	}
 }
 

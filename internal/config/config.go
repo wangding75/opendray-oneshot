@@ -498,19 +498,20 @@ type LogConfig struct {
 // OneShotConfig keeps non-interactive execution opt-in and isolates its
 // workspace/artifact roots from interactive Session storage.
 type OneShotConfig struct {
-	Enabled                  bool   `toml:"enabled" json:"enabled"`
-	WorkerCount              int    `toml:"worker_count" json:"worker_count"`
-	WorkspaceRoot            string `toml:"workspace_root" json:"workspace_root"`
-	ArtifactRoot             string `toml:"artifact_root" json:"artifact_root"`
-	AttachmentMaxBytes       int64  `toml:"attachment_max_bytes" json:"attachment_max_bytes"`
-	AttachmentTTL            string `toml:"attachment_ttl" json:"attachment_ttl"`
-	TerminationGrace         string `toml:"termination_grace" json:"termination_grace"`
-	QueuePollInterval        string `toml:"queue_poll_interval" json:"queue_poll_interval"`
-	NotificationPollInterval string `toml:"notification_poll_interval" json:"notification_poll_interval"`
-	DefaultProjectID         string `toml:"default_project_id" json:"default_project_id"`
-	DefaultProviderID        string `toml:"default_provider_id" json:"default_provider_id"`
-	CodexMinimumVersion      string `toml:"codex_minimum_version" json:"codex_minimum_version"`
-	ClaudeMinimumVersion     string `toml:"claude_minimum_version" json:"claude_minimum_version"`
+	Enabled                  bool     `toml:"enabled" json:"enabled"`
+	WorkerCount              int      `toml:"worker_count" json:"worker_count"`
+	WorkspaceRoot            string   `toml:"workspace_root" json:"workspace_root"`
+	AllowedWorkspaceRoots    []string `toml:"allowed_workspace_roots" json:"allowed_workspace_roots"`
+	ArtifactRoot             string   `toml:"artifact_root" json:"artifact_root"`
+	AttachmentMaxBytes       int64    `toml:"attachment_max_bytes" json:"attachment_max_bytes"`
+	AttachmentTTL            string   `toml:"attachment_ttl" json:"attachment_ttl"`
+	TerminationGrace         string   `toml:"termination_grace" json:"termination_grace"`
+	QueuePollInterval        string   `toml:"queue_poll_interval" json:"queue_poll_interval"`
+	NotificationPollInterval string   `toml:"notification_poll_interval" json:"notification_poll_interval"`
+	DefaultProjectID         string   `toml:"default_project_id" json:"default_project_id"`
+	DefaultProviderID        string   `toml:"default_provider_id" json:"default_provider_id"`
+	CodexMinimumVersion      string   `toml:"codex_minimum_version" json:"codex_minimum_version"`
+	ClaudeMinimumVersion     string   `toml:"claude_minimum_version" json:"claude_minimum_version"`
 }
 
 func (c OneShotConfig) TerminationGraceDuration() time.Duration {
@@ -693,6 +694,9 @@ func applyEnv(cfg *Config) {
 	if v := os.Getenv("OPENDRAY_ONESHOT_WORKSPACE_ROOT"); v != "" {
 		cfg.OneShot.WorkspaceRoot = v
 	}
+	if v := os.Getenv("OPENDRAY_ONESHOT_ALLOWED_WORKSPACE_ROOTS"); v != "" {
+		cfg.OneShot.AllowedWorkspaceRoots = splitPathList(v)
+	}
 	if v := os.Getenv("OPENDRAY_ONESHOT_ARTIFACT_ROOT"); v != "" {
 		cfg.OneShot.ArtifactRoot = v
 	}
@@ -716,6 +720,19 @@ func applyEnv(cfg *Config) {
 	if v := os.Getenv("OPENDRAY_ONESHOT_CLAUDE_MINIMUM_VERSION"); v != "" {
 		cfg.OneShot.ClaudeMinimumVersion = v
 	}
+}
+
+func splitPathList(value string) []string {
+	return splitPathListWithSeparator(value, os.PathListSeparator)
+}
+
+func splitPathListWithSeparator(value string, separator rune) []string {
+	parts := strings.Split(value, string(separator))
+	out := make([]string, 0, len(parts))
+	for _, part := range parts {
+		out = append(out, strings.TrimSpace(part))
+	}
+	return out
 }
 
 var providerMinimumVersionPattern = regexp.MustCompile(`^v?[0-9]+(?:\.[0-9]+){1,3}(?:[-+][0-9A-Za-z.-]+)?$`)

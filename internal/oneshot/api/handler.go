@@ -245,9 +245,6 @@ func (h *Handler) createTask(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	options := cloneMap(req.Options)
-	if strings.TrimSpace(req.WorkspacePath) != "" {
-		options["workspace_path"] = strings.TrimSpace(req.WorkspacePath)
-	}
 	if req.TimeoutSeconds > 0 {
 		options["timeout_seconds"] = req.TimeoutSeconds
 	}
@@ -273,7 +270,7 @@ func (h *Handler) createTask(w http.ResponseWriter, r *http.Request) {
 	}
 	attachments := append([]string(nil), req.AttachmentRefs...)
 	attachments = append(attachments, req.Attachments...)
-	result, err := h.creator.CreateTask(r.Context(), application.CreateTaskCommand{Owner: owner, ProjectID: req.ProjectID, ProviderID: req.ProviderID, Source: source, Prompt: req.Prompt, Input: domain.DeliveryInput{AttachmentRefs: attachments, Options: options}, IdempotencyKey: key, MaxAttempts: req.MaxAttempts})
+	result, err := h.creator.CreateTask(r.Context(), application.CreateTaskCommand{Owner: owner, ProjectID: req.ProjectID, ProviderID: req.ProviderID, WorkspacePath: req.WorkspacePath, Source: source, Prompt: req.Prompt, Input: domain.DeliveryInput{AttachmentRefs: attachments, Options: options}, IdempotencyKey: key, MaxAttempts: req.MaxAttempts})
 	if err != nil {
 		h.auditFailure(r.Context(), principal, actionTaskCreate, "task", "", req.ProjectID, key, err)
 		h.writeError(w, r, err)

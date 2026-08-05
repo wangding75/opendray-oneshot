@@ -201,8 +201,8 @@ func (a *Adapter) runCommand(ctx context.Context, cc channel.CommandContext) (*c
 	}
 	result, err := a.creator.CreateTask(ctx, application.CreateTaskCommand{
 		Owner: owner, ProjectID: parsed.ProjectID, ProviderID: parsed.ProviderID,
-		Source: source, Prompt: parsed.Prompt,
-		Input:          domain.DeliveryInput{AttachmentRefs: refs, Options: map[string]any{"workspace_path": parsed.Workspace}},
+		WorkspacePath: parsed.Workspace, Source: source, Prompt: parsed.Prompt,
+		Input:          domain.DeliveryInput{AttachmentRefs: refs},
 		IdempotencyKey: telegramKey(cc.Message),
 	})
 	if err != nil {

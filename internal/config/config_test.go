@@ -158,3 +158,45 @@ func TestLoadRejectsInvalidOneShotProviderMinimumVersions(t *testing.T) {
 		t.Fatalf("invalid Claude minimum version was accepted: %v", err)
 	}
 }
+
+func TestLoad_AllowedWorkspaceRootsEnv(t *testing.T) {
+	t.Setenv("OPENDRAY_DATABASE_URL", "postgres://x")
+	t.Setenv("OPENDRAY_ONESHOT_ALLOWED_WORKSPACE_ROOTS", strings.Join([]string{"/srv/work one", "/srv/work-two"}, string(os.PathListSeparator)))
+	got, err := Load("")
+	if err != nil {
+		t.Fatalf("Load: %v", err)
+	}
+	if len(got.OneShot.AllowedWorkspaceRoots) != 2 || got.OneShot.AllowedWorkspaceRoots[0] != "/srv/work one" || got.OneShot.AllowedWorkspaceRoots[1] != "/srv/work-two" {
+		t.Fatalf("roots=%v", got.OneShot.AllowedWorkspaceRoots)
+	}
+}
+
+func TestLoad_AllowedWorkspaceRootsFromTOML(t *testing.T) {
+	dir := t.TempDir()
+	path := filepath.Join(dir, "config.toml")
+	if err := os.WriteFile(path, []byte(`
+[database]
+url = "postgres://x"
+
+[oneshot]
+allowed_workspace_roots = ["/srv/work one", "/srv/work-two"]
+`), 0o600); err != nil {
+		t.Fatal(err)
+	}
+	got, err := Load(path)
+	if err != nil {
+		t.Fatalf("Load: %v", err)
+	}
+	if len(got.OneShot.AllowedWorkspaceRoots) != 2 || got.OneShot.AllowedWorkspaceRoots[0] != "/srv/work one" || got.OneShot.AllowedWorkspaceRoots[1] != "/srv/work-two" {
+		t.Fatalf("roots=%v", got.OneShot.AllowedWorkspaceRoots)
+	}
+}
+
+func TestSplitPathListWithSeparator(t *testing.T) {
+	if got := splitPathListWithSeparator(`C:\Work One;D:\Two`, ';'); len(got) != 2 || got[0] != `C:\Work One` || got[1] != `D:\Two` {
+		t.Fatalf("windows split=%v", got)
+	}
+	if got := splitPathListWithSeparator(`/srv/work:/srv/other`, ':'); len(got) != 2 || got[0] != `/srv/work` || got[1] != `/srv/other` {
+		t.Fatalf("linux split=%v", got)
+	}
+}

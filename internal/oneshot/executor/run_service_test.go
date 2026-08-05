@@ -14,6 +14,7 @@ import (
 	"github.com/opendray/opendray-v2/internal/oneshot/domain"
 	"github.com/opendray/opendray-v2/internal/oneshot/queue"
 	"github.com/opendray/opendray-v2/internal/oneshot/saga"
+	"github.com/opendray/opendray-v2/internal/oneshot/workspacepolicy"
 )
 
 type fakeRunRepository struct {
@@ -904,5 +905,102 @@ func TestResumeFailureKeepsOriginalContextAndDoesNotCreateReplacement(t *testing
 	}
 	if resumeRun.Status != domain.RunFailed || resumeRun.ErrorCode == nil || *resumeRun.ErrorCode != string(domain.ErrorResumeFailed) {
 		t.Fatalf("resume Run=%+v", resumeRun)
+	}
+}
+
+func TestRunServiceRejectsLegacyTaskWorkspaceOutsideAllowedRootsBeforeStart(t *testing.T) {
+	if os.PathSeparator == '\\' {
+		t.Skip("Unix fake provider")
+	}
+	allowedRoot := t.TempDir()
+	unsafeWorkspace := t.TempDir()
+	policy, err := workspacepolicy.New([]string{allowedRoot})
+	if err != nil {
+		t.Fatal(err)
+	}
+	registry, err := adapter.NewConfiguredRegistry(true, providerFixtureCatalog{metadata: map[string]adapter.ProviderMetadata{
+		adapter.CodexProviderID: {ID: adapter.CodexProviderID, Version: "9.0.0", Executable: fakeProviderExecutable(t), Enabled: true, Environment: map[string]adapter.EnvironmentValue{"FAKE_PROVIDER": {Value: "codex"}}},
+	}}, nil, adapter.NewCodexAdapter(adapter.CodexConfig{Enabled: true}))
+	if err != nil {
+		t.Fatal(err)
+	}
+	executionQueue := queue.NewMemoryQueue(nil)
+	task, _ := enqueueProviderTask(t, executionQueue, adapter.CodexProviderID, unsafeWorkspace)
+	repository := newFakeRunRepository(executionQueue)
+	storage, err := NewFileArtifactStorage(filepath.Join(t.TempDir(), "artifacts"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	service, err := NewRunService(repository, registry, NewProcessExecutor(WithWorkspacePolicy(policy)), WithArtifactStorage(storage))
+	if err != nil {
+		t.Fatal(err)
+	}
+	worker, err := queue.NewWorker(executionQueue, service, "workspace-policy-worker", queue.WithWorkerClaimLimit(1))
+	if err != nil {
+		t.Fatal(err)
+	}
+	if err := worker.DrainOnce(context.Background()); err != nil {
+		t.Fatal(err)
+	}
+	owner := domain.Owner{Kind: task.PrincipalKind, ID: task.PrincipalID}
+	persistedTask, err := repository.GetTask(context.Background(), owner, task.ID)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if persistedTask.Status != domain.TaskFailed {
+		t.Fatalf("task=%+v", persistedTask)
+	}
+	if _, err := os.Stat(filepath.Join(unsafeWorkspace, "pids.log")); !os.IsNotExist(err) {
+		t.Fatalf("provider process started unexpectedly; stat err=%v", err)
+	}
+}
+
+func TestRunServiceRejectsDeletedWorkspaceBeforeStart(t *testing.T) {
+	if os.PathSeparator == '\\' {
+		t.Skip("Unix fake provider")
+	}
+	allowedRoot := t.TempDir()
+	workspace := filepath.Join(allowedRoot, "child")
+	if err := os.MkdirAll(workspace, 0o755); err != nil {
+		t.Fatal(err)
+	}
+	policy, err := workspacepolicy.New([]string{allowedRoot})
+	if err != nil {
+		t.Fatal(err)
+	}
+	registry, err := adapter.NewConfiguredRegistry(true, providerFixtureCatalog{metadata: map[string]adapter.ProviderMetadata{
+		adapter.CodexProviderID: {ID: adapter.CodexProviderID, Version: "9.0.0", Executable: fakeProviderExecutable(t), Enabled: true, Environment: map[string]adapter.EnvironmentValue{"FAKE_PROVIDER": {Value: "codex"}}},
+	}}, nil, adapter.NewCodexAdapter(adapter.CodexConfig{Enabled: true}))
+	if err != nil {
+		t.Fatal(err)
+	}
+	executionQueue := queue.NewMemoryQueue(nil)
+	task, _ := enqueueProviderTask(t, executionQueue, adapter.CodexProviderID, workspace)
+	if err := os.RemoveAll(workspace); err != nil {
+		t.Fatal(err)
+	}
+	repository := newFakeRunRepository(executionQueue)
+	storage, err := NewFileArtifactStorage(filepath.Join(t.TempDir(), "artifacts"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	service, err := NewRunService(repository, registry, NewProcessExecutor(WithWorkspacePolicy(policy)), WithArtifactStorage(storage))
+	if err != nil {
+		t.Fatal(err)
+	}
+	worker, err := queue.NewWorker(executionQueue, service, "workspace-delete-worker", queue.WithWorkerClaimLimit(1))
+	if err != nil {
+		t.Fatal(err)
+	}
+	if err := worker.DrainOnce(context.Background()); err != nil {
+		t.Fatal(err)
+	}
+	owner := domain.Owner{Kind: task.PrincipalKind, ID: task.PrincipalID}
+	persistedTask, err := repository.GetTask(context.Background(), owner, task.ID)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if persistedTask.Status != domain.TaskFailed {
+		t.Fatalf("task=%+v", persistedTask)
 	}
 }

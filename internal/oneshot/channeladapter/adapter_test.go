@@ -4,6 +4,7 @@ import (
 	"context"
 	"errors"
 	"io"
+	"path/filepath"
 	"strings"
 	"testing"
 	"time"
@@ -12,7 +13,9 @@ import (
 	"github.com/opendray/opendray-v2/internal/oneshot/application"
 	attachmentservice "github.com/opendray/opendray-v2/internal/oneshot/attachment"
 	"github.com/opendray/opendray-v2/internal/oneshot/domain"
+	"github.com/opendray/opendray-v2/internal/oneshot/queue"
 	"github.com/opendray/opendray-v2/internal/oneshot/store"
+	"github.com/opendray/opendray-v2/internal/oneshot/workspacepolicy"
 )
 
 type adapterRepoFixture struct {
@@ -221,5 +224,47 @@ func TestContinuationAcknowledgementSendFailureIsReturned(t *testing.T) {
 	})
 	if result.Status != channel.DispatchHandled || err == nil || !strings.Contains(err.Error(), "continuation acknowledgement") {
 		t.Fatalf("send failure was hidden: result=%+v err=%v", result, err)
+	}
+}
+
+func TestRunCommandRejectsWorkspaceOutsideAllowedRoots(t *testing.T) {
+	root := t.TempDir()
+	policy, err := workspacepolicy.New([]string{root})
+	if err != nil {
+		t.Fatal(err)
+	}
+	creator := application.NewDispatchService(queue.NewMemoryQueue(nil), application.WithWorkspacePolicy(policy, root))
+	adapter, err := New(Config{Enabled: true, DefaultProjectID: "project-1", DefaultProvider: "future", DefaultWorkspace: root}, creator, nil, nil, &adapterRepoFixture{}, providerFixture{attach: true}, nil)
+	if err != nil {
+		t.Fatal(err)
+	}
+	card, err := adapter.runCommand(context.Background(), channel.CommandContext{
+		Channel: telegramChannelFixture{},
+		Args:    []string{"--workspace", filepath.Join(t.TempDir(), "outside"), "--", "hello"},
+		Message: channel.ChannelMessage{ChannelID: "telegram-main", ConversationID: "chat-1", Author: "10001", SourceMessageID: "msg-1", Metadata: map[string]any{"tg_user_id": "10001"}},
+	})
+	if err == nil || card != nil {
+		t.Fatalf("outside workspace accepted: card=%+v err=%v", card, err)
+	}
+}
+
+func TestRunCommandCreatesTaskWithinAllowedWorkspace(t *testing.T) {
+	root := t.TempDir()
+	policy, err := workspacepolicy.New([]string{root})
+	if err != nil {
+		t.Fatal(err)
+	}
+	creator := application.NewDispatchService(queue.NewMemoryQueue(nil), application.WithWorkspacePolicy(policy, root))
+	adapter, err := New(Config{Enabled: true, DefaultProjectID: "project-1", DefaultProvider: "future", DefaultWorkspace: root}, creator, nil, nil, &adapterRepoFixture{}, providerFixture{attach: true}, nil)
+	if err != nil {
+		t.Fatal(err)
+	}
+	card, err := adapter.runCommand(context.Background(), channel.CommandContext{
+		Channel: telegramChannelFixture{},
+		Args:    []string{"--workspace", root, "--", "hello"},
+		Message: channel.ChannelMessage{ChannelID: "telegram-main", ConversationID: "chat-1", Author: "10001", SourceMessageID: "msg-2", Metadata: map[string]any{"tg_user_id": "10001"}},
+	})
+	if err != nil || card == nil {
+		t.Fatalf("card=%+v err=%v", card, err)
 	}
 }

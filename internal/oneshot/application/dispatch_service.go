@@ -12,21 +12,39 @@ import (
 
 	"github.com/opendray/opendray-v2/internal/oneshot/domain"
 	"github.com/opendray/opendray-v2/internal/oneshot/queue"
+	"github.com/opendray/opendray-v2/internal/oneshot/workspacepolicy"
 )
 
 const createTaskPath = "/api/v1/oneshot/tasks"
 
 // DispatchService durably creates the Task and its initial execution Delivery.
 type DispatchService struct {
-	repository queue.Repository
-	now        func() time.Time
+	repository       queue.Repository
+	now              func() time.Time
+	policy           *workspacepolicy.Policy
+	defaultWorkspace string
 }
 
-func NewDispatchService(repository queue.Repository) *DispatchService {
-	return &DispatchService{
+type DispatchServiceOption func(*DispatchService)
+
+func WithWorkspacePolicy(policy *workspacepolicy.Policy, defaultWorkspace string) DispatchServiceOption {
+	return func(service *DispatchService) {
+		service.policy = policy
+		service.defaultWorkspace = strings.TrimSpace(defaultWorkspace)
+	}
+}
+
+func NewDispatchService(repository queue.Repository, options ...DispatchServiceOption) *DispatchService {
+	service := &DispatchService{
 		repository: repository,
 		now:        func() time.Time { return time.Now().UTC() },
 	}
+	for _, option := range options {
+		if option != nil {
+			option(service)
+		}
+	}
+	return service
 }
 
 // CreateTaskCommand is the canonical create input shared by API, Telegram,
@@ -35,6 +53,7 @@ type CreateTaskCommand struct {
 	Owner          domain.Owner
 	ProjectID      string
 	ProviderID     string
+	WorkspacePath  string
 	Source         domain.Source
 	Prompt         string
 	Input          domain.DeliveryInput
@@ -64,6 +83,12 @@ func (s *DispatchService) CreateTask(ctx context.Context, command CreateTaskComm
 	if err != nil {
 		return CreateTaskResult{}, err
 	}
+	workspace, err := s.workspacePath(command.WorkspacePath)
+	if err != nil {
+		return CreateTaskResult{}, err
+	}
+	command.Input.Options = cloneCreateOptions(command.Input.Options)
+	command.Input.Options["workspace_path"] = workspace
 	payloadSHA, err := CanonicalCreatePayloadSHA256(command)
 	if err != nil {
 		return CreateTaskResult{}, err
@@ -99,6 +124,31 @@ func (s *DispatchService) CreateTask(ctx context.Context, command CreateTaskComm
 		return CreateTaskResult{}, err
 	}
 	return CreateTaskResult{Task: result.Task, Delivery: result.Delivery, Created: result.Created}, nil
+}
+
+func (s *DispatchService) workspacePath(requested string) (string, error) {
+	workspace := strings.TrimSpace(requested)
+	if workspace == "" {
+		workspace = strings.TrimSpace(s.defaultWorkspace)
+	}
+	if workspace == "" {
+		return "", domain.InvalidRequestf("no default One-shot workspace is configured")
+	}
+	if s.policy == nil || !s.policy.HasRoots() {
+		return "", domain.InvalidRequestf("no allowed One-shot workspace roots are configured")
+	}
+	return s.policy.NormalizeAndValidate(workspace)
+}
+
+func cloneCreateOptions(input map[string]any) map[string]any {
+	if len(input) == 0 {
+		return map[string]any{}
+	}
+	cloned := make(map[string]any, len(input))
+	for key, value := range input {
+		cloned[key] = value
+	}
+	return cloned
 }
 
 func requestIdempotencyKey(source domain.Source, supplied string) (string, error) {

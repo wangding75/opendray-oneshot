@@ -9,6 +9,7 @@ import (
 
 	"github.com/opendray/opendray-v2/internal/oneshot/adapter"
 	"github.com/opendray/opendray-v2/internal/oneshot/domain"
+	"github.com/opendray/opendray-v2/internal/oneshot/workspacepolicy"
 )
 
 func fixturePath(t *testing.T, name string) string {
@@ -114,5 +115,27 @@ func TestProcessExecutorRejectsInvalidSpec(t *testing.T) {
 		if _, err := executor.Start(context.Background(), spec); !domain.HasCode(err, domain.ErrorInvalidRequest) {
 			t.Fatalf("spec %+v error = %v", spec.Redacted(), err)
 		}
+	}
+}
+
+func TestProcessExecutorWorkspacePolicyRejectsDirectoryOutsideAllowedRoots(t *testing.T) {
+	root := t.TempDir()
+	policy, err := workspacepolicy.New([]string{root})
+	if err != nil {
+		t.Fatal(err)
+	}
+	executable, err := os.Executable()
+	if err != nil {
+		t.Fatal(err)
+	}
+	if os.PathSeparator != '\\' {
+		executable = "/bin/sh"
+	}
+	_, err = NewProcessExecutor(WithWorkspacePolicy(policy)).Start(context.Background(), adapter.CommandSpec{
+		Executable: executable,
+		Dir:        t.TempDir(),
+	})
+	if !domain.HasCode(err, domain.ErrorForbidden) {
+		t.Fatalf("err=%v", err)
 	}
 }
