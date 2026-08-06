@@ -20,6 +20,7 @@ if command -v go >/dev/null 2>&1; then
   mkdir -p "$TMP/internal/oneshot" "$TMP/internal/store" "$TMP/stubs/pgx/pgconn" "$TMP/stubs/pgx/pgxpool"
   cp -R internal/oneshot/domain "$TMP/internal/oneshot/domain"
   cp -R internal/oneshot/queue "$TMP/internal/oneshot/queue"
+  cp -R internal/oneshot/workspacepolicy "$TMP/internal/oneshot/workspacepolicy"
   mkdir -p "$TMP/internal/oneshot/application" "$TMP/internal/oneshot/store"
   cp internal/oneshot/application/dispatch_service.go internal/oneshot/application/dispatch_service_test.go "$TMP/internal/oneshot/application/"
   cat > "$TMP/go.mod" <<'MOD'

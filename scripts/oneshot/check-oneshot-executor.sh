@@ -27,6 +27,7 @@ if command -v go >/dev/null 2>&1; then
   cp -R internal/oneshot/recovery "$TMP/internal/oneshot/recovery"
   cp -R internal/oneshot/testdata "$TMP/internal/oneshot/testdata"
   cp -R internal/oneshot/store "$TMP/internal/oneshot/store"
+  cp -R internal/oneshot/workspacepolicy "$TMP/internal/oneshot/workspacepolicy"
   cp internal/store/migrations/0083_oneshot.sql "$TMP/internal/store/migrations/0083_oneshot.sql"
   cp internal/store/migrations/0084_oneshot_run_saga.sql "$TMP/internal/store/migrations/0084_oneshot_run_saga.sql"
   cat > "$TMP/go.mod" <<'MOD'
