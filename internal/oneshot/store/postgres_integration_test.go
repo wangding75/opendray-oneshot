@@ -30,10 +30,6 @@ func postgresStore(t *testing.T) (*Store, *rootstore.Store) {
 	if err != nil {
 		t.Skipf("PostgreSQL unavailable: %v", err)
 	}
-	if err := root.Migrate(ctx, slog.New(slog.NewTextHandler(io.Discard, nil))); err != nil {
-		root.Close()
-		t.Fatalf("migrate: %v", err)
-	}
 	isolated := isolatedDSN(t, ctx, root, dsn, "od08")
 	storeRoot, err := rootstore.Open(ctx, isolated, 4)
 	if err != nil {

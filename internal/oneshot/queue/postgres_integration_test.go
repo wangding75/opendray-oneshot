@@ -33,10 +33,6 @@ func liveQueue(t *testing.T) (*queue.PostgresQueue, *rootstore.Store, domain.Own
 	if err != nil {
 		t.Skipf("PostgreSQL unavailable: %v", err)
 	}
-	if err := root.Migrate(ctx, slog.New(slog.NewTextHandler(io.Discard, nil))); err != nil {
-		root.Close()
-		t.Fatalf("migrate: %v", err)
-	}
 	isolated := isolatedDSN(t, ctx, root, dsn, "od09")
 	queueRoot, err := rootstore.Open(ctx, isolated, 8)
 	if err != nil {
