@@ -7,6 +7,7 @@ import (
 	"io"
 	"log/slog"
 	"os"
+	"path/filepath"
 	"sync"
 	"sync/atomic"
 	"testing"
@@ -15,6 +16,7 @@ import (
 	"github.com/opendray/opendray-v2/internal/oneshot/application"
 	"github.com/opendray/opendray-v2/internal/oneshot/domain"
 	"github.com/opendray/opendray-v2/internal/oneshot/queue"
+	"github.com/opendray/opendray-v2/internal/oneshot/workspacepolicy"
 	rootstore "github.com/opendray/opendray-v2/internal/store"
 )
 
@@ -51,11 +53,20 @@ VALUES ($1,'od09-test','{}'::jsonb,true) ON CONFLICT (id) DO NOTHING`, providerI
 
 func enqueueLive(t *testing.T, repository queue.Repository, owner domain.Owner, providerID, key string) application.CreateTaskResult {
 	t.Helper()
-	service := application.NewDispatchService(repository)
+	workspace := filepath.Join(t.TempDir(), "workspace")
+	if err := os.MkdirAll(workspace, 0o755); err != nil {
+		t.Fatal(err)
+	}
+	policy, err := workspacepolicy.New([]string{workspace})
+	if err != nil {
+		t.Fatal(err)
+	}
+	service := application.NewDispatchService(repository, application.WithWorkspacePolicy(policy, workspace))
 	result, err := service.CreateTask(context.Background(), application.CreateTaskCommand{
 		Owner: owner, ProjectID: "od09-project", ProviderID: providerID,
 		Source:         domain.Source{Kind: domain.SourceAPI, ClientRequestID: key},
 		Prompt:         "queue integration " + key,
+		WorkspacePath:  workspace,
 		Input:          domain.DeliveryInput{AttachmentRefs: []string{}, Options: map[string]any{}},
 		IdempotencyKey: key, MaxAttempts: 3,
 	})
@@ -163,11 +174,20 @@ func TestPostgresQueueCompetitionLeaseRecoveryIdempotencyAndRestart(t *testing.T
 	}
 
 	// Same key/payload replays; different payload conflicts.
-	service := application.NewDispatchService(repository)
+	workspace := filepath.Join(t.TempDir(), "workspace-idem")
+	if err := os.MkdirAll(workspace, 0o755); err != nil {
+		t.Fatal(err)
+	}
+	policy, err := workspacepolicy.New([]string{workspace})
+	if err != nil {
+		t.Fatal(err)
+	}
+	service := application.NewDispatchService(repository, application.WithWorkspacePolicy(policy, workspace))
 	command := application.CreateTaskCommand{
 		Owner: owner, ProjectID: "od09-project", ProviderID: providerID,
-		Source: domain.Source{Kind: domain.SourceAPI, ClientRequestID: "idem"},
-		Prompt: "idempotent", Input: domain.DeliveryInput{AttachmentRefs: []string{}, Options: map[string]any{}},
+		Source:        domain.Source{Kind: domain.SourceAPI, ClientRequestID: "idem"},
+		WorkspacePath: workspace,
+		Prompt:        "idempotent", Input: domain.DeliveryInput{AttachmentRefs: []string{}, Options: map[string]any{}},
 		IdempotencyKey: "idem", MaxAttempts: 3,
 	}
 	first, err := service.CreateTask(ctx, command)
