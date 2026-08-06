@@ -4,8 +4,10 @@ package queue_test
 
 import (
 	"context"
+	"fmt"
 	"io"
 	"log/slog"
+	"net/url"
 	"os"
 	"path/filepath"
 	"sync"
@@ -35,20 +37,59 @@ func liveQueue(t *testing.T) (*queue.PostgresQueue, *rootstore.Store, domain.Own
 		root.Close()
 		t.Fatalf("migrate: %v", err)
 	}
+	isolated := isolatedDSN(t, ctx, root, dsn, "od09")
+	queueRoot, err := rootstore.Open(ctx, isolated, 8)
+	if err != nil {
+		root.Close()
+		t.Fatalf("open isolated db: %v", err)
+	}
+	if err := queueRoot.Migrate(ctx, slog.New(slog.NewTextHandler(io.Discard, nil))); err != nil {
+		queueRoot.Close()
+		root.Close()
+		t.Fatalf("migrate isolated db: %v", err)
+	}
 	providerID := "od09-provider-" + time.Now().UTC().Format("150405000000")
-	if _, err := root.Pool().Exec(ctx, `INSERT INTO providers (id,manifest_hash,config,enabled)
+	if _, err := queueRoot.Pool().Exec(ctx, `INSERT INTO providers (id,manifest_hash,config,enabled)
 VALUES ($1,'od09-test','{}'::jsonb,true) ON CONFLICT (id) DO NOTHING`, providerID); err != nil {
+		queueRoot.Close()
 		root.Close()
 		t.Fatal(err)
 	}
 	owner := domain.Owner{Kind: domain.PrincipalAdmin, ID: "od09-owner-" + time.Now().UTC().Format("150405000000")}
 	t.Cleanup(func() {
-		_, _ = root.Pool().Exec(ctx, `DELETE FROM oneshot_idempotency_keys WHERE principal_kind=$1 AND principal_id=$2`, owner.Kind, owner.ID)
-		_, _ = root.Pool().Exec(ctx, `DELETE FROM oneshot_tasks WHERE principal_kind=$1 AND principal_id=$2`, owner.Kind, owner.ID)
-		_, _ = root.Pool().Exec(ctx, `DELETE FROM providers WHERE id=$1`, providerID)
+		_, _ = queueRoot.Pool().Exec(ctx, `DELETE FROM oneshot_idempotency_keys WHERE principal_kind=$1 AND principal_id=$2`, owner.Kind, owner.ID)
+		_, _ = queueRoot.Pool().Exec(ctx, `DELETE FROM oneshot_tasks WHERE principal_kind=$1 AND principal_id=$2`, owner.Kind, owner.ID)
+		_, _ = queueRoot.Pool().Exec(ctx, `DELETE FROM providers WHERE id=$1`, providerID)
+		queueRoot.Close()
 		root.Close()
 	})
-	return queue.NewPostgresQueue(root.Pool(), nil), root, owner, providerID
+	return queue.NewPostgresQueue(queueRoot.Pool(), nil), queueRoot, owner, providerID
+}
+
+func isolatedDSN(t *testing.T, ctx context.Context, admin *rootstore.Store, dsn, prefix string) string {
+	t.Helper()
+	parsed, err := url.Parse(dsn)
+	if err != nil || parsed.Scheme == "" {
+		t.Skipf("cannot parse OPENDRAY_DEV_DB_URL for isolated db: %v", err)
+	}
+	name := fmt.Sprintf("%s_%d_%d", prefix, os.Getpid(), time.Now().UnixNano()%1_000_000)
+	if _, err := admin.Pool().Exec(ctx, `CREATE DATABASE "`+name+`"`); err != nil {
+		t.Fatalf("create isolated db: %v", err)
+	}
+	t.Cleanup(func() {
+		_, _ = admin.Pool().Exec(context.Background(), `DROP DATABASE IF EXISTS "`+name+`" WITH (FORCE)`)
+	})
+	parsed.Path = "/" + name
+	isolated := parsed.String()
+	isolatedRoot, err := rootstore.Open(ctx, isolated, 1)
+	if err != nil {
+		t.Fatalf("open isolated db for extension: %v", err)
+	}
+	defer isolatedRoot.Close()
+	if _, err := isolatedRoot.Pool().Exec(ctx, `CREATE EXTENSION IF NOT EXISTS vector;`); err != nil {
+		t.Fatalf("enable vector extension in isolated db: %v", err)
+	}
+	return isolated
 }
 
 func enqueueLive(t *testing.T, repository queue.Repository, owner domain.Owner, providerID, key string) application.CreateTaskResult {

@@ -4,8 +4,10 @@ package store
 
 import (
 	"context"
+	"fmt"
 	"io"
 	"log/slog"
+	"net/url"
 	"os"
 	"strings"
 	"sync"
@@ -32,7 +34,48 @@ func postgresStore(t *testing.T) (*Store, *rootstore.Store) {
 		root.Close()
 		t.Fatalf("migrate: %v", err)
 	}
-	return New(root.Pool()), root
+	isolated := isolatedDSN(t, ctx, root, dsn, "od08")
+	storeRoot, err := rootstore.Open(ctx, isolated, 4)
+	if err != nil {
+		root.Close()
+		t.Fatalf("open isolated db: %v", err)
+	}
+	t.Cleanup(func() {
+		storeRoot.Close()
+		root.Close()
+	})
+	if err := storeRoot.Migrate(ctx, slog.New(slog.NewTextHandler(io.Discard, nil))); err != nil {
+		storeRoot.Close()
+		root.Close()
+		t.Fatalf("migrate isolated db: %v", err)
+	}
+	return New(storeRoot.Pool()), storeRoot
+}
+
+func isolatedDSN(t *testing.T, ctx context.Context, admin *rootstore.Store, dsn, prefix string) string {
+	t.Helper()
+	parsed, err := url.Parse(dsn)
+	if err != nil || parsed.Scheme == "" {
+		t.Skipf("cannot parse OPENDRAY_DEV_DB_URL for isolated db: %v", err)
+	}
+	name := fmt.Sprintf("%s_%d_%d", prefix, os.Getpid(), time.Now().UnixNano()%1_000_000)
+	if _, err := admin.Pool().Exec(ctx, `CREATE DATABASE "`+name+`"`); err != nil {
+		t.Fatalf("create isolated db: %v", err)
+	}
+	t.Cleanup(func() {
+		_, _ = admin.Pool().Exec(context.Background(), `DROP DATABASE IF EXISTS "`+name+`" WITH (FORCE)`)
+	})
+	parsed.Path = "/" + name
+	isolated := parsed.String()
+	isolatedRoot, err := rootstore.Open(ctx, isolated, 1)
+	if err != nil {
+		t.Fatalf("open isolated db for extension: %v", err)
+	}
+	defer isolatedRoot.Close()
+	if _, err := isolatedRoot.Pool().Exec(ctx, `CREATE EXTENSION IF NOT EXISTS vector;`); err != nil {
+		t.Fatalf("enable vector extension in isolated db: %v", err)
+	}
+	return isolated
 }
 
 func seedProvider(t *testing.T, root *rootstore.Store, id string) {
