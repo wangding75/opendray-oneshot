@@ -22,6 +22,8 @@ import (
 	rootstore "github.com/opendray/opendray-v2/internal/store"
 )
 
+var dbCounter atomic.Uint64
+
 func liveQueue(t *testing.T) (*queue.PostgresQueue, *rootstore.Store, domain.Owner, string) {
 	t.Helper()
 	dsn := os.Getenv("OPENDRAY_DEV_DB_URL")
@@ -29,63 +31,95 @@ func liveQueue(t *testing.T) (*queue.PostgresQueue, *rootstore.Store, domain.Own
 		t.Skip("OPENDRAY_DEV_DB_URL not set; use a disposable PostgreSQL database")
 	}
 	ctx := context.Background()
-	root, err := rootstore.Open(ctx, dsn, 8)
+	admin, err := rootstore.Open(ctx, dsn, 8)
 	if err != nil {
 		t.Skipf("PostgreSQL unavailable: %v", err)
 	}
-	isolated := isolatedDSN(t, ctx, root, dsn, "od09")
+
+	parsed, err := url.Parse(dsn)
+	if err != nil || parsed.Scheme == "" {
+		admin.Close()
+		t.Skipf("cannot parse OPENDRAY_DEV_DB_URL for isolated db: %v", err)
+	}
+
+	dbName := fmt.Sprintf("od09_%d_%d_%d", os.Getpid(), time.Now().UnixNano(), dbCounter.Add(1))
+	if _, err := admin.Pool().Exec(ctx, `CREATE DATABASE "`+dbName+`"`); err != nil {
+		admin.Close()
+		t.Fatalf("create isolated database %s: %v", dbName, err)
+	}
+
+	parsed.Path = "/" + dbName
+	isolated := parsed.String()
+
+	isolatedRoot, err := rootstore.Open(ctx, isolated, 1)
+	if err != nil {
+		_, dropErr := admin.Pool().Exec(ctx, `DROP DATABASE IF EXISTS "`+dbName+`" WITH (FORCE)`)
+		admin.Close()
+		if dropErr != nil {
+			t.Fatalf("open isolated db for extension: %v (and failed to drop database %s: %v)", err, dbName, dropErr)
+		}
+		t.Fatalf("open isolated db for extension: %v", err)
+	}
+	if _, err := isolatedRoot.Pool().Exec(ctx, `CREATE EXTENSION IF NOT EXISTS vector;`); err != nil {
+		isolatedRoot.Close()
+		_, dropErr := admin.Pool().Exec(ctx, `DROP DATABASE IF EXISTS "`+dbName+`" WITH (FORCE)`)
+		admin.Close()
+		if dropErr != nil {
+			t.Fatalf("enable vector extension: %v (and failed to drop database %s: %v)", err, dbName, dropErr)
+		}
+		t.Fatalf("enable vector extension in isolated db: %v", err)
+	}
+	isolatedRoot.Close()
+
 	queueRoot, err := rootstore.Open(ctx, isolated, 8)
 	if err != nil {
-		root.Close()
+		_, dropErr := admin.Pool().Exec(ctx, `DROP DATABASE IF EXISTS "`+dbName+`" WITH (FORCE)`)
+		admin.Close()
+		if dropErr != nil {
+			t.Fatalf("open isolated db: %v (and failed to drop database %s: %v)", err, dbName, dropErr)
+		}
 		t.Fatalf("open isolated db: %v", err)
 	}
+
 	if err := queueRoot.Migrate(ctx, slog.New(slog.NewTextHandler(io.Discard, nil))); err != nil {
 		queueRoot.Close()
-		root.Close()
+		_, dropErr := admin.Pool().Exec(ctx, `DROP DATABASE IF EXISTS "`+dbName+`" WITH (FORCE)`)
+		admin.Close()
+		if dropErr != nil {
+			t.Fatalf("migrate isolated db: %v (and failed to drop database %s: %v)", err, dbName, dropErr)
+		}
 		t.Fatalf("migrate isolated db: %v", err)
 	}
+
 	providerID := "od09-provider-" + time.Now().UTC().Format("150405000000")
 	if _, err := queueRoot.Pool().Exec(ctx, `INSERT INTO providers (id,manifest_hash,config,enabled)
 VALUES ($1,'od09-test','{}'::jsonb,true) ON CONFLICT (id) DO NOTHING`, providerID); err != nil {
 		queueRoot.Close()
-		root.Close()
-		t.Fatal(err)
+		_, dropErr := admin.Pool().Exec(ctx, `DROP DATABASE IF EXISTS "`+dbName+`" WITH (FORCE)`)
+		admin.Close()
+		if dropErr != nil {
+			t.Fatalf("seed provider: %v (and failed to drop database %s: %v)", err, dbName, dropErr)
+		}
+		t.Fatalf("seed provider: %v", err)
 	}
-	owner := domain.Owner{Kind: domain.PrincipalAdmin, ID: "od09-owner-" + time.Now().UTC().Format("150405000000")}
-	t.Cleanup(func() {
-		_, _ = queueRoot.Pool().Exec(ctx, `DELETE FROM oneshot_idempotency_keys WHERE principal_kind=$1 AND principal_id=$2`, owner.Kind, owner.ID)
-		_, _ = queueRoot.Pool().Exec(ctx, `DELETE FROM oneshot_tasks WHERE principal_kind=$1 AND principal_id=$2`, owner.Kind, owner.ID)
-		_, _ = queueRoot.Pool().Exec(ctx, `DELETE FROM providers WHERE id=$1`, providerID)
-		queueRoot.Close()
-		root.Close()
-	})
-	return queue.NewPostgresQueue(queueRoot.Pool(), nil), queueRoot, owner, providerID
-}
 
-func isolatedDSN(t *testing.T, ctx context.Context, admin *rootstore.Store, dsn, prefix string) string {
-	t.Helper()
-	parsed, err := url.Parse(dsn)
-	if err != nil || parsed.Scheme == "" {
-		t.Skipf("cannot parse OPENDRAY_DEV_DB_URL for isolated db: %v", err)
-	}
-	name := fmt.Sprintf("%s_%d_%d", prefix, os.Getpid(), time.Now().UnixNano()%1_000_000)
-	if _, err := admin.Pool().Exec(ctx, `CREATE DATABASE "`+name+`"`); err != nil {
-		t.Fatalf("create isolated db: %v", err)
-	}
+	owner := domain.Owner{Kind: domain.PrincipalAdmin, ID: "od09-owner-" + time.Now().UTC().Format("150405000000")}
+
 	t.Cleanup(func() {
-		_, _ = admin.Pool().Exec(context.Background(), `DROP DATABASE IF EXISTS "`+name+`" WITH (FORCE)`)
+		_, _ = queueRoot.Pool().Exec(context.Background(), `DELETE FROM oneshot_idempotency_keys WHERE principal_kind=$1 AND principal_id=$2`, owner.Kind, owner.ID)
+		_, _ = queueRoot.Pool().Exec(context.Background(), `DELETE FROM oneshot_tasks WHERE principal_kind=$1 AND principal_id=$2`, owner.Kind, owner.ID)
+		_, _ = queueRoot.Pool().Exec(context.Background(), `DELETE FROM providers WHERE id=$1`, providerID)
+
+		queueRoot.Close()
+
+		if _, dropErr := admin.Pool().Exec(context.Background(), `DROP DATABASE IF EXISTS "`+dbName+`" WITH (FORCE)`); dropErr != nil {
+			t.Errorf("failed to DROP DATABASE %s: %v", dbName, dropErr)
+		}
+
+		admin.Close()
 	})
-	parsed.Path = "/" + name
-	isolated := parsed.String()
-	isolatedRoot, err := rootstore.Open(ctx, isolated, 1)
-	if err != nil {
-		t.Fatalf("open isolated db for extension: %v", err)
-	}
-	defer isolatedRoot.Close()
-	if _, err := isolatedRoot.Pool().Exec(ctx, `CREATE EXTENSION IF NOT EXISTS vector;`); err != nil {
-		t.Fatalf("enable vector extension in isolated db: %v", err)
-	}
-	return isolated
+
+	return queue.NewPostgresQueue(queueRoot.Pool(), nil), queueRoot, owner, providerID
 }
 
 func enqueueLive(t *testing.T, repository queue.Repository, owner domain.Owner, providerID, key string) application.CreateTaskResult {
@@ -156,14 +190,14 @@ func TestPostgresQueueCompetitionLeaseRecoveryIdempotencyAndRestart(t *testing.T
 	}
 	_, err = tx.Exec(ctx, `INSERT INTO oneshot_runs (
  id,task_id,delivery_id,provider_id,status,started_at,finished_at,created_at
-) VALUES ($1,$2,$3,$4,'completed',clock_timestamp(),clock_timestamp(),clock_timestamp())`,
+) VALUES ($1,$2,$3,$4,'completed',now(),now(),now())`,
 		runID, created.Task.ID, created.Delivery.ID, providerID)
 	if err == nil {
 		_, err = tx.Exec(ctx, `UPDATE oneshot_deliveries SET run_id=$1 WHERE id=$2`, runID, created.Delivery.ID)
 	}
 	if err == nil {
 		_, err = tx.Exec(ctx, `UPDATE oneshot_tasks SET status='completed',current_run_id=$1,
- version=version+1,updated_at=clock_timestamp() WHERE id=$2`, runID, created.Task.ID)
+ version=version+1,updated_at=now() WHERE id=$2`, runID, created.Task.ID)
 	}
 	if err != nil {
 		_ = tx.Rollback(ctx)
@@ -193,7 +227,7 @@ func TestPostgresQueueCompetitionLeaseRecoveryIdempotencyAndRestart(t *testing.T
 	result, err := root.Pool().Exec(
 		ctx,
 		`UPDATE oneshot_deliveries
-         SET lease_until = clock_timestamp() - interval '1 second'
+         SET lease_until = now() - interval '1 second'
          WHERE id = $1
            AND status = 'reserved'
            AND attempt = 1`,
@@ -238,5 +272,51 @@ func TestPostgresQueueCompetitionLeaseRecoveryIdempotencyAndRestart(t *testing.T
 	command.Prompt = "different"
 	if _, err := service.CreateTask(ctx, command); !domain.HasCode(err, domain.ErrorIdempotencyConflict) {
 		t.Fatalf("payload conflict err=%v", err)
+	}
+}
+
+func TestPostgresQueueLifecycleAndCleanup(t *testing.T) {
+	dsn := os.Getenv("OPENDRAY_DEV_DB_URL")
+	if dsn == "" {
+		t.Skip("OPENDRAY_DEV_DB_URL not set")
+	}
+
+	ctx := context.Background()
+	admin, err := rootstore.Open(ctx, dsn, 1)
+	if err != nil {
+		t.Fatalf("connect admin: %v", err)
+	}
+	defer admin.Close()
+
+	var dbName string
+
+	t.Run("SubTestIsolatedQueue", func(t *testing.T) {
+		_, root, _, _ := liveQueue(t)
+		if root == nil {
+			t.Fatal("root is nil")
+		}
+
+		err = root.Pool().QueryRow(ctx, "SELECT current_database()").Scan(&dbName)
+		if err != nil {
+			t.Fatal(err)
+		}
+
+		var exists bool
+		err = admin.Pool().QueryRow(ctx, "SELECT EXISTS(SELECT 1 FROM pg_database WHERE datname = $1)", dbName).Scan(&exists)
+		if err != nil {
+			t.Fatal(err)
+		}
+		if !exists {
+			t.Fatalf("expected database %s to exist during test", dbName)
+		}
+	})
+
+	var exists bool
+	err = admin.Pool().QueryRow(ctx, "SELECT EXISTS(SELECT 1 FROM pg_database WHERE datname = $1)", dbName).Scan(&exists)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if exists {
+		t.Fatalf("expected database %s to be dropped after test completion", dbName)
 	}
 }

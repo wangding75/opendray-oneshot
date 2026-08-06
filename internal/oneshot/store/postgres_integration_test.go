@@ -9,8 +9,10 @@ import (
 	"log/slog"
 	"net/url"
 	"os"
+	"path/filepath"
 	"strings"
 	"sync"
+	"sync/atomic"
 	"testing"
 	"time"
 
@@ -19,6 +21,8 @@ import (
 	rootstore "github.com/opendray/opendray-v2/internal/store"
 )
 
+var dbCounter atomic.Uint64
+
 func postgresStore(t *testing.T) (*Store, *rootstore.Store) {
 	t.Helper()
 	dsn := os.Getenv("OPENDRAY_DEV_DB_URL")
@@ -26,52 +30,77 @@ func postgresStore(t *testing.T) (*Store, *rootstore.Store) {
 		t.Skip("OPENDRAY_DEV_DB_URL not set; use a disposable PostgreSQL database")
 	}
 	ctx := context.Background()
-	root, err := rootstore.Open(ctx, dsn, 4)
+	admin, err := rootstore.Open(ctx, dsn, 4)
 	if err != nil {
 		t.Skipf("PostgreSQL unavailable: %v", err)
 	}
-	isolated := isolatedDSN(t, ctx, root, dsn, "od08")
-	storeRoot, err := rootstore.Open(ctx, isolated, 4)
-	if err != nil {
-		root.Close()
-		t.Fatalf("open isolated db: %v", err)
-	}
-	t.Cleanup(func() {
-		storeRoot.Close()
-		root.Close()
-	})
-	if err := storeRoot.Migrate(ctx, slog.New(slog.NewTextHandler(io.Discard, nil))); err != nil {
-		storeRoot.Close()
-		root.Close()
-		t.Fatalf("migrate isolated db: %v", err)
-	}
-	return New(storeRoot.Pool()), storeRoot
-}
 
-func isolatedDSN(t *testing.T, ctx context.Context, admin *rootstore.Store, dsn, prefix string) string {
-	t.Helper()
 	parsed, err := url.Parse(dsn)
 	if err != nil || parsed.Scheme == "" {
+		admin.Close()
 		t.Skipf("cannot parse OPENDRAY_DEV_DB_URL for isolated db: %v", err)
 	}
-	name := fmt.Sprintf("%s_%d_%d", prefix, os.Getpid(), time.Now().UnixNano()%1_000_000)
-	if _, err := admin.Pool().Exec(ctx, `CREATE DATABASE "`+name+`"`); err != nil {
-		t.Fatalf("create isolated db: %v", err)
+
+	dbName := fmt.Sprintf("od08_%d_%d_%d", os.Getpid(), time.Now().UnixNano(), dbCounter.Add(1))
+	if _, err := admin.Pool().Exec(ctx, `CREATE DATABASE "`+dbName+`"`); err != nil {
+		admin.Close()
+		t.Fatalf("create isolated database %s: %v", dbName, err)
 	}
-	t.Cleanup(func() {
-		_, _ = admin.Pool().Exec(context.Background(), `DROP DATABASE IF EXISTS "`+name+`" WITH (FORCE)`)
-	})
-	parsed.Path = "/" + name
+
+	parsed.Path = "/" + dbName
 	isolated := parsed.String()
+
 	isolatedRoot, err := rootstore.Open(ctx, isolated, 1)
 	if err != nil {
+		_, dropErr := admin.Pool().Exec(ctx, `DROP DATABASE IF EXISTS "`+dbName+`" WITH (FORCE)`)
+		admin.Close()
+		if dropErr != nil {
+			t.Fatalf("open isolated db for extension: %v (and failed to drop database %s: %v)", err, dbName, dropErr)
+		}
 		t.Fatalf("open isolated db for extension: %v", err)
 	}
-	defer isolatedRoot.Close()
 	if _, err := isolatedRoot.Pool().Exec(ctx, `CREATE EXTENSION IF NOT EXISTS vector;`); err != nil {
+		isolatedRoot.Close()
+		_, dropErr := admin.Pool().Exec(ctx, `DROP DATABASE IF EXISTS "`+dbName+`" WITH (FORCE)`)
+		admin.Close()
+		if dropErr != nil {
+			t.Fatalf("enable vector extension: %v (and failed to drop database %s: %v)", err, dbName, dropErr)
+		}
 		t.Fatalf("enable vector extension in isolated db: %v", err)
 	}
-	return isolated
+	isolatedRoot.Close()
+
+	storeRoot, err := rootstore.Open(ctx, isolated, 4)
+	if err != nil {
+		_, dropErr := admin.Pool().Exec(ctx, `DROP DATABASE IF EXISTS "`+dbName+`" WITH (FORCE)`)
+		admin.Close()
+		if dropErr != nil {
+			t.Fatalf("open isolated db: %v (and failed to drop database %s: %v)", err, dbName, dropErr)
+		}
+		t.Fatalf("open isolated db: %v", err)
+	}
+
+	if err := storeRoot.Migrate(ctx, slog.New(slog.NewTextHandler(io.Discard, nil))); err != nil {
+		storeRoot.Close()
+		_, dropErr := admin.Pool().Exec(ctx, `DROP DATABASE IF EXISTS "`+dbName+`" WITH (FORCE)`)
+		admin.Close()
+		if dropErr != nil {
+			t.Fatalf("migrate isolated db: %v (and failed to drop database %s: %v)", err, dbName, dropErr)
+		}
+		t.Fatalf("migrate isolated db: %v", err)
+	}
+
+	t.Cleanup(func() {
+		storeRoot.Close()
+
+		if _, dropErr := admin.Pool().Exec(context.Background(), `DROP DATABASE IF EXISTS "`+dbName+`" WITH (FORCE)`); dropErr != nil {
+			t.Errorf("failed to DROP DATABASE %s: %v", dbName, dropErr)
+		}
+
+		admin.Close()
+	})
+
+	return New(storeRoot.Pool()), storeRoot
 }
 
 func seedProvider(t *testing.T, root *rootstore.Store, id string) {
@@ -111,7 +140,6 @@ func makeTaskDelivery(t *testing.T, owner domain.Owner, providerID, sourceMessag
 
 func TestPostgresStoreCRUDOwnershipAndConstraints(t *testing.T) {
 	store, root := postgresStore(t)
-	defer root.Close()
 	ctx := context.Background()
 	providerID := "od08-provider-" + strings.ToLower(time.Now().UTC().Format("150405.000000"))
 	seedProvider(t, root, providerID)
@@ -262,7 +290,7 @@ VALUES ('orn_conflict',$1,'odl_conflict',$2,'created',NOW())`, persistedTask.ID,
 	// Context optimistic version and owner filtering.
 	contextAggregate, err := domain.NewRuntimeContext(domain.RuntimeContextArgs{
 		Owner: owner, ProjectID: persistedTask.ProjectID, ProviderID: providerID,
-		ProviderContextID: "provider-context-1", WorkspacePath: "/tmp/opendray-od08",
+		ProviderContextID: "provider-context-1", WorkspacePath: filepath.Join(t.TempDir(), "opendray-od08"),
 	}, now)
 	if err != nil {
 		t.Fatal(err)
@@ -295,7 +323,6 @@ VALUES ('orn_conflict',$1,'odl_conflict',$2,'created',NOW())`, persistedTask.ID,
 
 func TestPostgresStoreFinalizeRunWithTaskAtomic(t *testing.T) {
 	store, root := postgresStore(t)
-	defer root.Close()
 	ctx := context.Background()
 	ts := strings.ToLower(time.Now().UTC().Format("150405.000000"))
 	providerID := "od10-provider-" + ts
@@ -391,7 +418,6 @@ func TestPostgresStoreFinalizeRunWithTaskAtomic(t *testing.T) {
 
 func TestPostgresRunLifecycleConcurrentWritersKeepBothEvents(t *testing.T) {
 	store, root := postgresStore(t)
-	defer root.Close()
 	ctx := context.Background()
 	providerID := "lifecycle-provider-" + strings.ToLower(time.Now().UTC().Format("150405.000000"))
 	seedProvider(t, root, providerID)
@@ -446,7 +472,27 @@ func TestPostgresRunLifecycleConcurrentWritersKeepBothEvents(t *testing.T) {
 		go func(topic string, offset int) {
 			defer wg.Done()
 			<-start
-			errs <- insertRunLifecycle(ctx, root.Pool(), owner, persistedRun, topic, reserveAt.Add(time.Duration(offset+3)*time.Millisecond))
+			tx, err := root.Pool().Begin(ctx)
+			if err != nil {
+				errs <- err
+				return
+			}
+			defer tx.Rollback(ctx)
+
+			_, err = tx.Exec(ctx, `SELECT 1 FROM oneshot_runs WHERE id = $1 FOR UPDATE`, persistedRun.ID)
+			if err != nil {
+				errs <- err
+				return
+			}
+
+			err = insertRunLifecycle(ctx, tx, owner, persistedRun, topic, reserveAt.Add(time.Duration(offset+3)*time.Millisecond))
+			if err != nil {
+				errs <- err
+				return
+			}
+
+			err = tx.Commit(ctx)
+			errs <- err
 		}(topic, i)
 	}
 	close(start)
@@ -490,5 +536,51 @@ ORDER BY sequence`, persistedRun.ID)
 		if sequence != int64(i+1) {
 			t.Fatalf("lifecycle sequence gap/duplicate: %v", sequences)
 		}
+	}
+}
+
+func TestPostgresStoreLifecycleAndCleanup(t *testing.T) {
+	dsn := os.Getenv("OPENDRAY_DEV_DB_URL")
+	if dsn == "" {
+		t.Skip("OPENDRAY_DEV_DB_URL not set")
+	}
+
+	ctx := context.Background()
+	admin, err := rootstore.Open(ctx, dsn, 1)
+	if err != nil {
+		t.Fatalf("connect admin: %v", err)
+	}
+	defer admin.Close()
+
+	var dbName string
+
+	t.Run("SubTestIsolatedStore", func(t *testing.T) {
+		_, root := postgresStore(t)
+		if root == nil {
+			t.Fatal("root is nil")
+		}
+
+		err = root.Pool().QueryRow(ctx, "SELECT current_database()").Scan(&dbName)
+		if err != nil {
+			t.Fatal(err)
+		}
+
+		var exists bool
+		err = admin.Pool().QueryRow(ctx, "SELECT EXISTS(SELECT 1 FROM pg_database WHERE datname = $1)", dbName).Scan(&exists)
+		if err != nil {
+			t.Fatal(err)
+		}
+		if !exists {
+			t.Fatalf("expected database %s to exist during test", dbName)
+		}
+	})
+
+	var exists bool
+	err = admin.Pool().QueryRow(ctx, "SELECT EXISTS(SELECT 1 FROM pg_database WHERE datname = $1)", dbName).Scan(&exists)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if exists {
+		t.Fatalf("expected database %s to be dropped after test completion", dbName)
 	}
 }
