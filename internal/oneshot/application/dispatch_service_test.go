@@ -203,3 +203,63 @@ func TestDispatchServiceRequiresConfiguredWorkspacePolicy(t *testing.T) {
 		t.Fatalf("err=%v", err)
 	}
 }
+
+func TestDispatchServiceErrorContract(t *testing.T) {
+	root := t.TempDir()
+	file := filepath.Join(root, "file.txt")
+	if err := os.WriteFile(file, []byte("x"), 0o600); err != nil {
+		t.Fatal(err)
+	}
+	policy, err := workspacepolicy.New([]string{root})
+	if err != nil {
+		t.Fatal(err)
+	}
+	repository := queue.NewMemoryQueue(nil)
+	service := NewDispatchService(repository, WithWorkspacePolicy(policy, root))
+
+	// 1. Relative path
+	cmd := baseCommand()
+	cmd.WorkspacePath = "relative"
+	_, err = service.CreateTask(context.Background(), cmd)
+	if !domain.HasCode(err, domain.ErrorInvalidRequest) {
+		t.Errorf("expected ErrorInvalidRequest, got %v", err)
+	}
+
+	// 2. Nonexistent path
+	cmd = baseCommand()
+	cmd.WorkspacePath = filepath.Join(root, "missing")
+	_, err = service.CreateTask(context.Background(), cmd)
+	if !domain.HasCode(err, domain.ErrorInvalidRequest) {
+		t.Errorf("expected ErrorInvalidRequest, got %v", err)
+	}
+
+	// 3. Regular file path
+	cmd = baseCommand()
+	cmd.WorkspacePath = file
+	_, err = service.CreateTask(context.Background(), cmd)
+	if !domain.HasCode(err, domain.ErrorInvalidRequest) {
+		t.Errorf("expected ErrorInvalidRequest, got %v", err)
+	}
+
+	// 4. Outside allowed roots
+	outside := t.TempDir()
+	cmd = baseCommand()
+	cmd.WorkspacePath = outside
+	_, err = service.CreateTask(context.Background(), cmd)
+	if !domain.HasCode(err, domain.ErrorForbidden) {
+		t.Errorf("expected ErrorForbidden, got %v", err)
+	}
+
+	// 5. Unconfigured allowed roots
+	emptyPolicy, err := workspacepolicy.New(nil)
+	if err != nil {
+		t.Fatal(err)
+	}
+	emptyService := NewDispatchService(repository, WithWorkspacePolicy(emptyPolicy, ""))
+	cmd = baseCommand()
+	cmd.WorkspacePath = root
+	_, err = emptyService.CreateTask(context.Background(), cmd)
+	if !domain.HasCode(err, domain.ErrorInvalidRequest) {
+		t.Errorf("expected ErrorInvalidRequest, got %v", err)
+	}
+}

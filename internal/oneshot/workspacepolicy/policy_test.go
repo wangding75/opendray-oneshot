@@ -1,6 +1,7 @@
 package workspacepolicy
 
 import (
+	"errors"
 	"os"
 	"path/filepath"
 	"runtime"
@@ -9,6 +10,75 @@ import (
 
 	"github.com/opendray/opendray-v2/internal/oneshot/domain"
 )
+
+func TestWorkspacePolicyErrorContract(t *testing.T) {
+	root := t.TempDir()
+	file := filepath.Join(root, "file.txt")
+	if err := os.WriteFile(file, []byte("x"), 0o600); err != nil {
+		t.Fatal(err)
+	}
+	policy, err := New([]string{root})
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	// 1. Relative path
+	_, err = policy.NormalizeAndValidate("relative")
+	if !errors.Is(err, ErrInvalidWorkspace) {
+		t.Errorf("expected ErrInvalidWorkspace, got %v", err)
+	}
+	if gotCode, ok := domain.CodeOf(err); !ok || gotCode != domain.ErrorInvalidRequest {
+		t.Errorf("expected ErrorInvalidRequest code, got %s", gotCode)
+	}
+
+	// 2. Path does not exist
+	missing := filepath.Join(root, "missing")
+	_, err = policy.NormalizeAndValidate(missing)
+	if !errors.Is(err, ErrInvalidWorkspace) {
+		t.Errorf("expected ErrInvalidWorkspace, got %v", err)
+	}
+	if gotCode, ok := domain.CodeOf(err); !ok || gotCode != domain.ErrorInvalidRequest {
+		t.Errorf("expected ErrorInvalidRequest code, got %s", gotCode)
+	}
+	if !strings.Contains(err.Error(), "does not exist") {
+		t.Errorf("expected error message to contain 'does not exist', got %v", err)
+	}
+
+	// 3. Ordinary file (not directory)
+	_, err = policy.NormalizeAndValidate(file)
+	if !errors.Is(err, ErrInvalidWorkspace) {
+		t.Errorf("expected ErrInvalidWorkspace, got %v", err)
+	}
+	if gotCode, ok := domain.CodeOf(err); !ok || gotCode != domain.ErrorInvalidRequest {
+		t.Errorf("expected ErrorInvalidRequest code, got %s", gotCode)
+	}
+	if !strings.Contains(err.Error(), "reference a directory") {
+		t.Errorf("expected error message to contain 'reference a directory', got %v", err)
+	}
+
+	// 4. Outside allowed roots
+	outside := t.TempDir()
+	_, err = policy.NormalizeAndValidate(outside)
+	if !errors.Is(err, ErrWorkspaceOutsideAllowedRoots) {
+		t.Errorf("expected ErrWorkspaceOutsideAllowedRoots, got %v", err)
+	}
+	if gotCode, ok := domain.CodeOf(err); !ok || gotCode != domain.ErrorForbidden {
+		t.Errorf("expected ErrorForbidden code, got %s", gotCode)
+	}
+
+	// 5. Unconfigured allowed roots
+	emptyPolicy, err := New(nil)
+	if err != nil {
+		t.Fatal(err)
+	}
+	_, err = emptyPolicy.NormalizeAndValidate(root)
+	if !errors.Is(err, ErrWorkspaceNotConfigured) {
+		t.Errorf("expected ErrWorkspaceNotConfigured, got %v", err)
+	}
+	if gotCode, ok := domain.CodeOf(err); !ok || gotCode != domain.ErrorInvalidRequest {
+		t.Errorf("expected ErrorInvalidRequest code, got %s", gotCode)
+	}
+}
 
 func TestAllowedRootInitializationValidAndDedup(t *testing.T) {
 	root := t.TempDir()

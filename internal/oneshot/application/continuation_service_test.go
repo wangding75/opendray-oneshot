@@ -2,6 +2,7 @@ package application
 
 import (
 	"context"
+	"path/filepath"
 	"sync"
 	"testing"
 	"time"
@@ -103,9 +104,10 @@ func completedContinuationFixture(t *testing.T, providerID string) (*continuatio
 	t.Helper()
 	now := time.Date(2026, 7, 28, 9, 0, 0, 0, time.UTC)
 	owner := domain.Owner{Kind: domain.PrincipalAdmin, ID: "owner-1"}
+	tmpDir := filepath.Clean(t.TempDir())
 	contextAggregate, err := domain.NewRuntimeContext(domain.RuntimeContextArgs{
 		Owner: owner, ProjectID: "project-1", ProviderID: providerID,
-		ProviderContextID: "provider-context-1", WorkspacePath: "/tmp/workspace",
+		ProviderContextID: "provider-context-1", WorkspacePath: tmpDir,
 	}, now)
 	if err != nil {
 		t.Fatal(err)
@@ -129,7 +131,7 @@ func completedContinuationFixture(t *testing.T, providerID string) (*continuatio
 	repository := &continuationMemoryRepository{task: restored.Snapshot(), context: contextSnapshot, replays: make(map[string]continuationReplay)}
 	command := ContinueTaskCommand{
 		Owner: owner, ProjectID: "project-1", TaskID: taskSnapshot.ID,
-		ProviderID: providerID, WorkspacePath: "/tmp/workspace",
+		ProviderID: providerID, WorkspacePath: tmpDir,
 		PromptDelta: "continue from the previous result", IdempotencyKey: "continue-key", MaxAttempts: 3,
 	}
 	return repository, command
@@ -198,7 +200,7 @@ func TestContinuationServiceEnforcesExactOwnerProjectProviderWorkspaceAndActiveC
 			command.ProviderID = adapter.ClaudeProviderID
 		}, code: domain.ErrorContextOwnerMismatch},
 		{name: "workspace", mutate: func(_ *continuationMemoryRepository, command *ContinueTaskCommand) {
-			command.WorkspacePath = "/tmp/other"
+			command.WorkspacePath = filepath.Join(filepath.Dir(command.WorkspacePath), "other")
 		}, code: domain.ErrorContextOwnerMismatch},
 		{name: "busy-context", mutate: func(repository *continuationMemoryRepository, _ *ContinueTaskCommand) {
 			repository.context.Status = domain.ContextBusy

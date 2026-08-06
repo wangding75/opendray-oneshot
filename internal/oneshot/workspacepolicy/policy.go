@@ -10,6 +10,59 @@ import (
 	"github.com/opendray/opendray-v2/internal/oneshot/domain"
 )
 
+// WorkspacePolicyError bridges WorkspacePolicy errors to DomainError codes.
+type WorkspacePolicyError struct {
+	Code    domain.ErrorCode
+	Message string
+	Cause   error
+}
+
+func (e *WorkspacePolicyError) Error() string {
+	return e.Message
+}
+
+func (e *WorkspacePolicyError) Unwrap() error {
+	return e.Cause
+}
+
+func (e *WorkspacePolicyError) As(target any) bool {
+	if de, ok := target.(**domain.DomainError); ok {
+		*de = domain.NewDomainError(e.Code, e.Message, e.Cause)
+		return true
+	}
+	return false
+}
+
+func (e *WorkspacePolicyError) Is(target error) bool {
+	if target == ErrWorkspaceOutsideAllowedRoots {
+		return e.Code == domain.ErrorForbidden && e.Message == "workspace_path is outside the allowed workspace roots"
+	}
+	if target == ErrWorkspaceNotConfigured {
+		return e.Code == domain.ErrorInvalidRequest && e.Message == "no allowed workspace root is configured"
+	}
+	if target == ErrInvalidWorkspace {
+		return e.Code == domain.ErrorInvalidRequest
+	}
+	if we, ok := target.(*WorkspacePolicyError); ok {
+		return e.Code == we.Code && (we.Message == "" || e.Message == we.Message)
+	}
+	return false
+}
+
+var (
+	ErrWorkspaceNotConfigured = &WorkspacePolicyError{
+		Code:    domain.ErrorInvalidRequest,
+		Message: "no allowed workspace root is configured",
+	}
+	ErrWorkspaceOutsideAllowedRoots = &WorkspacePolicyError{
+		Code:    domain.ErrorForbidden,
+		Message: "workspace_path is outside the allowed workspace roots",
+	}
+	ErrInvalidWorkspace = &WorkspacePolicyError{
+		Code: domain.ErrorInvalidRequest,
+	}
+)
+
 // Policy centralizes One-shot workspace authorization. It canonicalizes roots
 // once at startup and applies the same containment checks during Task creation
 // and process start.
@@ -53,7 +106,7 @@ func (p *Policy) HasRoots() bool { return p != nil && len(p.roots) > 0 }
 
 func (p *Policy) NormalizeAndValidate(path string) (string, error) {
 	if p == nil || len(p.roots) == 0 {
-		return "", domain.InvalidRequestf("no allowed One-shot workspace roots are configured")
+		return "", ErrWorkspaceNotConfigured
 	}
 	candidate, err := canonicalizeExistingDirectory(path)
 	if err != nil {
@@ -68,32 +121,67 @@ func (p *Policy) NormalizeAndValidate(path string) (string, error) {
 			return candidate, nil
 		}
 	}
-	return "", domain.NewDomainError(domain.ErrorForbidden, "workspace_path is outside the allowed One-shot workspace roots", nil)
+	return "", ErrWorkspaceOutsideAllowedRoots
 }
 
 func canonicalizeExistingDirectory(path string) (string, error) {
 	path = strings.TrimSpace(path)
 	if path == "" {
-		return "", domain.InvalidRequestf("workspace_path is required")
+		return "", &WorkspacePolicyError{
+			Code:    domain.ErrorInvalidRequest,
+			Message: "workspace_path is required",
+		}
 	}
 	if !filepath.IsAbs(path) {
-		return "", domain.InvalidRequestf("workspace_path must be absolute")
+		return "", &WorkspacePolicyError{
+			Code:    domain.ErrorInvalidRequest,
+			Message: "workspace_path must be absolute",
+		}
 	}
 	cleaned := filepath.Clean(path)
 	abs, err := filepath.Abs(cleaned)
 	if err != nil {
-		return "", domain.NewDomainError(domain.ErrorExecutionFailed, "failed to resolve workspace_path", err)
+		return "", &WorkspacePolicyError{
+			Code:    domain.ErrorInvalidRequest,
+			Message: "workspace_path is invalid",
+			Cause:   err,
+		}
 	}
 	evaluated, err := filepath.EvalSymlinks(abs)
 	if err != nil {
-		return "", domain.NewDomainError(domain.ErrorExecutionFailed, "workspace_path is unavailable", err)
+		if os.IsNotExist(err) {
+			return "", &WorkspacePolicyError{
+				Code:    domain.ErrorInvalidRequest,
+				Message: "workspace_path does not exist",
+				Cause:   err,
+			}
+		}
+		return "", &WorkspacePolicyError{
+			Code:    domain.ErrorInvalidRequest,
+			Message: "workspace_path is invalid",
+			Cause:   err,
+		}
 	}
 	info, err := os.Stat(evaluated)
 	if err != nil {
-		return "", domain.NewDomainError(domain.ErrorExecutionFailed, "workspace_path is unavailable", err)
+		if os.IsNotExist(err) {
+			return "", &WorkspacePolicyError{
+				Code:    domain.ErrorInvalidRequest,
+				Message: "workspace_path does not exist",
+				Cause:   err,
+			}
+		}
+		return "", &WorkspacePolicyError{
+			Code:    domain.ErrorInvalidRequest,
+			Message: "workspace_path is invalid",
+			Cause:   err,
+		}
 	}
 	if !info.IsDir() {
-		return "", domain.InvalidRequestf("workspace_path must be a directory")
+		return "", &WorkspacePolicyError{
+			Code:    domain.ErrorInvalidRequest,
+			Message: "workspace_path must reference a directory",
+		}
 	}
 	return filepath.Clean(evaluated), nil
 }

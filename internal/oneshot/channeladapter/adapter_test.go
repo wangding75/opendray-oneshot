@@ -268,3 +268,36 @@ func TestRunCommandCreatesTaskWithinAllowedWorkspace(t *testing.T) {
 		t.Fatalf("card=%+v err=%v", card, err)
 	}
 }
+
+func TestWorkspacePolicyChannelErrorContract(t *testing.T) {
+	root := t.TempDir()
+	policy, err := workspacepolicy.New([]string{root})
+	if err != nil {
+		t.Fatal(err)
+	}
+	creator := application.NewDispatchService(queue.NewMemoryQueue(nil), application.WithWorkspacePolicy(policy, root))
+	adapter, err := New(Config{Enabled: true, DefaultProjectID: "project-1", DefaultProvider: "future", DefaultWorkspace: root}, creator, nil, nil, &adapterRepoFixture{}, providerFixture{attach: true}, nil)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	// 1. Outside root
+	_, err = adapter.runCommand(context.Background(), channel.CommandContext{
+		Channel: telegramChannelFixture{},
+		Args:    []string{"--workspace", t.TempDir(), "--", "hello"},
+		Message: channel.ChannelMessage{ChannelID: "telegram-main", ConversationID: "chat-1", Author: "10001", SourceMessageID: "msg-1", Metadata: map[string]any{"tg_user_id": "10001"}},
+	})
+	if err == nil || !strings.Contains(err.Error(), "workspace_path is outside the allowed workspace roots") {
+		t.Errorf("expected outside allowed roots message, got %v", err)
+	}
+
+	// 2. Nonexistent workspace
+	_, err = adapter.runCommand(context.Background(), channel.CommandContext{
+		Channel: telegramChannelFixture{},
+		Args:    []string{"--workspace", filepath.Join(root, "missing"), "--", "hello"},
+		Message: channel.ChannelMessage{ChannelID: "telegram-main", ConversationID: "chat-1", Author: "10001", SourceMessageID: "msg-1", Metadata: map[string]any{"tg_user_id": "10001"}},
+	})
+	if err == nil || !strings.Contains(err.Error(), "workspace_path does not exist") {
+		t.Errorf("expected does not exist message, got %v", err)
+	}
+}

@@ -231,11 +231,15 @@ func TestMountRegistersFrozenSixteenRouteControlPlane(t *testing.T) {
 type apiCreatorFixture struct {
 	calls   int
 	command application.CreateTaskCommand
+	err     error
 }
 
 func (f *apiCreatorFixture) CreateTask(_ context.Context, command application.CreateTaskCommand) (application.CreateTaskResult, error) {
 	f.calls++
 	f.command = command
+	if f.err != nil {
+		return application.CreateTaskResult{}, f.err
+	}
 	return application.CreateTaskResult{
 		Task:     domain.TaskSnapshot{ID: "otk_01J00000000000000000000000", ProjectID: command.ProjectID, ProviderID: command.ProviderID, Source: command.Source},
 		Delivery: domain.DeliverySnapshot{ID: "odl_01J00000000000000000000000"},
@@ -320,8 +324,70 @@ func TestCreateTaskRouteRejectsWorkspaceOutsideAllowedRoots(t *testing.T) {
 	router := chi.NewRouter()
 	h.Mount(router)
 	router.ServeHTTP(recorder, req)
-	if recorder.Code < 400 || recorder.Code >= 500 {
+	if recorder.Code != http.StatusForbidden {
 		t.Fatalf("status=%d body=%s", recorder.Code, recorder.Body.String())
+	}
+}
+
+func TestWorkspacePolicyAPIErrorContract(t *testing.T) {
+	creator := &apiCreatorFixture{}
+	h, err := New(Options{Enabled: true, Creator: creator, Repository: &apiRepositoryFixture{}})
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	tests := []struct {
+		name           string
+		err            error
+		expectedStatus int
+	}{
+		{
+			name:           "relative path",
+			err:            domain.NewDomainError(domain.ErrorInvalidRequest, "workspace_path must be absolute", nil),
+			expectedStatus: http.StatusBadRequest,
+		},
+		{
+			name:           "does not exist",
+			err:            domain.NewDomainError(domain.ErrorInvalidRequest, "workspace_path does not exist", nil),
+			expectedStatus: http.StatusBadRequest,
+		},
+		{
+			name:           "ordinary file",
+			err:            domain.NewDomainError(domain.ErrorInvalidRequest, "workspace_path must reference a directory", nil),
+			expectedStatus: http.StatusBadRequest,
+		},
+		{
+			name:           "outside root",
+			err:            domain.NewDomainError(domain.ErrorForbidden, "workspace_path is outside the allowed workspace roots", nil),
+			expectedStatus: http.StatusForbidden,
+		},
+		{
+			name:           "unconfigured roots",
+			err:            domain.NewDomainError(domain.ErrorInvalidRequest, "no allowed workspace root is configured", nil),
+			expectedStatus: http.StatusBadRequest,
+		},
+		{
+			name:           "internal database failure",
+			err:            domain.NewDomainError(domain.ErrorInternal, "database connection lost", nil),
+			expectedStatus: http.StatusInternalServerError,
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			creator.err = tt.err
+			body := `{"project_id":"project-1","provider_id":"codex","prompt":"hello","workspace_path":"/workspace"}`
+			req := requestWithIntegrationPrincipal(httptest.NewRequest(http.MethodPost, "/oneshot/tasks", strings.NewReader(body)), scopeTaskCreate)
+			req.Header.Set("Content-Type", "application/json")
+			req.Header.Set("Idempotency-Key", "test-key")
+			recorder := httptest.NewRecorder()
+			router := chi.NewRouter()
+			h.Mount(router)
+			router.ServeHTTP(recorder, req)
+			if recorder.Code != tt.expectedStatus {
+				t.Errorf("expected status %d, got %d", tt.expectedStatus, recorder.Code)
+			}
+		})
 	}
 }
 
