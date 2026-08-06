@@ -76,6 +76,7 @@ import (
   "github.com/jackc/pgx/v5/pgconn"
 )
 type Pool struct{}
+func (*Pool) Begin(context.Context)(pgx.Tx,error){ return nil,nil }
 func (*Pool) BeginTx(context.Context,pgx.TxOptions)(pgx.Tx,error){ return nil,nil }
 func (*Pool) Query(context.Context,string,...any)(pgx.Rows,error){ return nil,nil }
 func (*Pool) QueryRow(context.Context,string,...any) pgx.Row { return nil }
