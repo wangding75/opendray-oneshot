@@ -5,10 +5,13 @@ import (
 	"context"
 	"encoding/base64"
 	"encoding/json"
+	"errors"
 	"io"
 	"mime/multipart"
 	"net/http"
 	"net/http/httptest"
+	"os"
+	"path/filepath"
 	"strings"
 	"sync/atomic"
 	"testing"
@@ -329,66 +332,320 @@ func TestCreateTaskRouteRejectsWorkspaceOutsideAllowedRoots(t *testing.T) {
 	}
 }
 
-func TestWorkspacePolicyAPIErrorContract(t *testing.T) {
-	creator := &apiCreatorFixture{}
-	h, err := New(Options{Enabled: true, Creator: creator, Repository: &apiRepositoryFixture{}})
+type contractTestQueueRepository struct {
+	calls       int
+	lastRequest queue.EnqueueRequest
+	err         error
+}
+
+func (r *contractTestQueueRepository) Enqueue(ctx context.Context, req queue.EnqueueRequest) (queue.EnqueueResult, error) {
+	r.calls++
+	r.lastRequest = req
+	if r.err != nil {
+		return queue.EnqueueResult{}, r.err
+	}
+	return queue.EnqueueResult{
+		Task:     req.Task,
+		Delivery: req.Delivery,
+		Created:  true,
+	}, nil
+}
+
+func (r *contractTestQueueRepository) ClaimDue(ctx context.Context, workerID string, limit int, lease time.Duration) ([]queue.Claim, error) {
+	return nil, nil
+}
+
+func (r *contractTestQueueRepository) RenewLease(ctx context.Context, deliveryID, workerID string, lease time.Duration) (domain.DeliverySnapshot, error) {
+	return domain.DeliverySnapshot{}, nil
+}
+
+func (r *contractTestQueueRepository) Ack(ctx context.Context, deliveryID, workerID string) (domain.DeliverySnapshot, error) {
+	return domain.DeliverySnapshot{}, nil
+}
+
+func (r *contractTestQueueRepository) Nack(ctx context.Context, deliveryID, workerID string, code domain.ErrorCode, policy queue.RetryPolicy) (domain.DeliverySnapshot, error) {
+	return domain.DeliverySnapshot{}, nil
+}
+
+func (r *contractTestQueueRepository) DeadLetter(ctx context.Context, deliveryID, workerID string, code domain.ErrorCode) (domain.DeliverySnapshot, error) {
+	return domain.DeliverySnapshot{}, nil
+}
+
+func (r *contractTestQueueRepository) Cancel(ctx context.Context, deliveryID string, owner domain.Owner, workerID string) (domain.DeliverySnapshot, error) {
+	return domain.DeliverySnapshot{}, nil
+}
+
+func (r *contractTestQueueRepository) AcknowledgeRecovered(ctx context.Context, deliveryID, runID string) (domain.DeliverySnapshot, error) {
+	return domain.DeliverySnapshot{}, nil
+}
+
+func assertNoSensitiveInfo(t *testing.T, body string, root, outside, home string) {
+	t.Helper()
+	checkContains := func(sens string, desc string) {
+		if sens == "" {
+			return
+		}
+		// Raw check
+		if strings.Contains(body, sens) {
+			t.Errorf("sensitive %s %q exposed in response: %q", desc, sens, body)
+		}
+		// Escaped JSON check
+		escaped, _ := json.Marshal(sens)
+		escapedStr := string(escaped[1 : len(escaped)-1]) // strip quotes
+		if strings.Contains(body, escapedStr) {
+			t.Errorf("escaped sensitive %s %q exposed in response: %q", desc, escapedStr, body)
+		}
+		// Normal/forward slash check
+		normalized := strings.ReplaceAll(sens, `\`, `/`)
+		if strings.Contains(body, normalized) {
+			t.Errorf("normalized sensitive %s %q exposed in response: %q", desc, normalized, body)
+		}
+	}
+
+	checkContains(root, "root path")
+	checkContains(outside, "outside path")
+	checkContains(home, "user home")
+
+	for _, envName := range []string{"APPDATA", "USERPROFILE", "HOME"} {
+		val := os.Getenv(envName)
+		if val != "" {
+			checkContains(val, "environment variable "+envName)
+		}
+	}
+}
+
+func TestWorkspacePolicyAPIErrorContractDetailed(t *testing.T) {
+	root := t.TempDir()
+	outside := t.TempDir()
+	home, _ := os.UserHomeDir()
+
+	file := filepath.Join(root, "file.txt")
+	if err := os.WriteFile(file, []byte("x"), 0o600); err != nil {
+		t.Fatal(err)
+	}
+
+	policy, err := workspacepolicy.New([]string{root})
 	if err != nil {
 		t.Fatal(err)
 	}
 
 	tests := []struct {
 		name           string
-		err            error
+		workspacePath  string
+		repoErr        error
+		emptyPolicy    bool
 		expectedStatus int
+		expectedCode   domain.ErrorCode
+		expectEnqueue  int
 	}{
 		{
+			name:           "legal workspace path",
+			workspacePath:  root,
+			expectedStatus: http.StatusAccepted,
+			expectEnqueue:  1,
+		},
+		{
 			name:           "relative path",
-			err:            domain.NewDomainError(domain.ErrorInvalidRequest, "workspace_path must be absolute", nil),
+			workspacePath:  "relative",
 			expectedStatus: http.StatusBadRequest,
+			expectedCode:   domain.ErrorInvalidRequest,
+			expectEnqueue:  0,
 		},
 		{
 			name:           "does not exist",
-			err:            domain.NewDomainError(domain.ErrorInvalidRequest, "workspace_path does not exist", nil),
+			workspacePath:  filepath.Join(root, "missing"),
 			expectedStatus: http.StatusBadRequest,
+			expectedCode:   domain.ErrorInvalidRequest,
+			expectEnqueue:  0,
 		},
 		{
 			name:           "ordinary file",
-			err:            domain.NewDomainError(domain.ErrorInvalidRequest, "workspace_path must reference a directory", nil),
+			workspacePath:  file,
 			expectedStatus: http.StatusBadRequest,
+			expectedCode:   domain.ErrorInvalidRequest,
+			expectEnqueue:  0,
 		},
 		{
 			name:           "outside root",
-			err:            domain.NewDomainError(domain.ErrorForbidden, "workspace_path is outside the allowed workspace roots", nil),
+			workspacePath:  outside,
 			expectedStatus: http.StatusForbidden,
+			expectedCode:   domain.ErrorForbidden,
+			expectEnqueue:  0,
 		},
 		{
 			name:           "unconfigured roots",
-			err:            domain.NewDomainError(domain.ErrorInvalidRequest, "no allowed workspace root is configured", nil),
+			workspacePath:  root,
+			emptyPolicy:    true,
 			expectedStatus: http.StatusBadRequest,
+			expectedCode:   domain.ErrorInvalidRequest,
+			expectEnqueue:  0,
 		},
 		{
-			name:           "internal database failure",
-			err:            domain.NewDomainError(domain.ErrorInternal, "database connection lost", nil),
+			name:           "repository internal failure",
+			workspacePath:  root,
+			repoErr:        errors.New("dreaded database connection failure"),
 			expectedStatus: http.StatusInternalServerError,
+			expectedCode:   domain.ErrorInternal,
+			expectEnqueue:  1,
 		},
 	}
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			creator.err = tt.err
-			body := `{"project_id":"project-1","provider_id":"codex","prompt":"hello","workspace_path":"/workspace"}`
-			req := requestWithIntegrationPrincipal(httptest.NewRequest(http.MethodPost, "/oneshot/tasks", strings.NewReader(body)), scopeTaskCreate)
-			req.Header.Set("Content-Type", "application/json")
-			req.Header.Set("Idempotency-Key", "test-key")
-			recorder := httptest.NewRecorder()
+			repo := &contractTestQueueRepository{err: tt.repoErr}
+			var activePolicy *workspacepolicy.Policy
+			if tt.emptyPolicy {
+				activePolicy, _ = workspacepolicy.New(nil)
+			} else {
+				activePolicy = policy
+			}
+
+			service := application.NewDispatchService(repo, application.WithWorkspacePolicy(activePolicy, root))
+			h, err := New(Options{
+				Enabled:    true,
+				Creator:    service,
+				Repository: &apiRepositoryFixture{},
+			})
+			if err != nil {
+				t.Fatal(err)
+			}
+
 			router := chi.NewRouter()
 			h.Mount(router)
+
+			body := map[string]any{
+				"project_id":     "project-1",
+				"provider_id":    "codex",
+				"prompt":         "hello world",
+				"workspace_path": tt.workspacePath,
+			}
+			bodyBytes, _ := json.Marshal(body)
+
+			req := requestWithIntegrationPrincipal(httptest.NewRequest(http.MethodPost, "/oneshot/tasks", strings.NewReader(string(bodyBytes))), scopeTaskCreate)
+			req.Header.Set("Content-Type", "application/json")
+			req.Header.Set("Idempotency-Key", "test-key-id")
+
+			recorder := httptest.NewRecorder()
 			router.ServeHTTP(recorder, req)
+
 			if recorder.Code != tt.expectedStatus {
-				t.Errorf("expected status %d, got %d", tt.expectedStatus, recorder.Code)
+				t.Errorf("expected status %d, got %d. Body: %s", tt.expectedStatus, recorder.Code, recorder.Body.String())
+			}
+
+			if repo.calls != tt.expectEnqueue {
+				t.Errorf("expected %d enqueue calls, got %d", tt.expectEnqueue, repo.calls)
+			}
+
+			bodyStr := recorder.Body.String()
+
+			if tt.expectedStatus >= 400 {
+				// Assert error JSON structure
+				var resp struct {
+					Error struct {
+						Code      string         `json:"code"`
+						Message   string         `json:"message"`
+						RequestID string         `json:"request_id"`
+						Retryable bool           `json:"retryable"`
+						Details   map[string]any `json:"details"`
+					} `json:"error"`
+				}
+				if err := json.Unmarshal([]byte(bodyStr), &resp); err != nil {
+					t.Fatalf("failed to unmarshal JSON: %v, body: %q", err, bodyStr)
+				}
+
+				if resp.Error.Code != string(tt.expectedCode) {
+					t.Errorf("expected error code %q, got %q", tt.expectedCode, resp.Error.Code)
+				}
+				if resp.Error.Message == "" {
+					t.Error("expected error message to be not empty")
+				}
+
+				// Make sure sensitive data is not leaked
+				assertNoSensitiveInfo(t, bodyStr, root, outside, home)
+
+				// For repo internal failure, check that the cause is not leaked
+				if tt.repoErr != nil {
+					if strings.Contains(bodyStr, tt.repoErr.Error()) {
+						t.Errorf("internal repository cause leaked in body: %s", bodyStr)
+					}
+				}
+			} else {
+				// Success (202)
+				var resp struct {
+					Task     domain.TaskSnapshot     `json:"task"`
+					Delivery domain.DeliverySnapshot `json:"delivery"`
+					Created  bool                    `json:"created"`
+				}
+				if err := json.Unmarshal([]byte(bodyStr), &resp); err != nil {
+					t.Fatalf("failed to unmarshal success JSON: %v, body: %q", err, bodyStr)
+				}
+				if !resp.Created {
+					t.Error("expected created to be true")
+				}
+				if resp.Task.ID == "" {
+					t.Error("expected task ID to be populated")
+				}
 			}
 		})
 	}
+
+	t.Run("symlink escape", func(t *testing.T) {
+		escapeTarget := t.TempDir()
+		escapeLink := filepath.Join(root, "escape-link")
+		if err := os.Symlink(escapeTarget, escapeLink); err != nil {
+			t.Skipf("symlink unavailable: %v", err)
+		}
+		defer os.Remove(escapeLink)
+
+		repo := &contractTestQueueRepository{}
+		service := application.NewDispatchService(repo, application.WithWorkspacePolicy(policy, root))
+		h, err := New(Options{
+			Enabled:    true,
+			Creator:    service,
+			Repository: &apiRepositoryFixture{},
+		})
+		if err != nil {
+			t.Fatal(err)
+		}
+
+		router := chi.NewRouter()
+		h.Mount(router)
+
+		body := map[string]any{
+			"project_id":     "project-1",
+			"provider_id":    "codex",
+			"prompt":         "hello world",
+			"workspace_path": escapeLink,
+		}
+		bodyBytes, _ := json.Marshal(body)
+
+		req := requestWithIntegrationPrincipal(httptest.NewRequest(http.MethodPost, "/oneshot/tasks", strings.NewReader(string(bodyBytes))), scopeTaskCreate)
+		req.Header.Set("Content-Type", "application/json")
+		req.Header.Set("Idempotency-Key", "test-key-symlink")
+
+		recorder := httptest.NewRecorder()
+		router.ServeHTTP(recorder, req)
+
+		if recorder.Code != http.StatusForbidden {
+			t.Errorf("expected status %d, got %d. Body: %s", http.StatusForbidden, recorder.Code, recorder.Body.String())
+		}
+		if repo.calls != 0 {
+			t.Errorf("expected 0 enqueue calls, got %d", repo.calls)
+		}
+
+		bodyStr := recorder.Body.String()
+		var resp struct {
+			Error struct {
+				Code string `json:"code"`
+			} `json:"error"`
+		}
+		_ = json.Unmarshal([]byte(bodyStr), &resp)
+		if resp.Error.Code != string(domain.ErrorForbidden) {
+			t.Errorf("expected error code %q, got %q", domain.ErrorForbidden, resp.Error.Code)
+		}
+
+		assertNoSensitiveInfo(t, bodyStr, root, escapeTarget, home)
+	})
 }
 
 type apiErrorReader struct{}

@@ -78,6 +78,53 @@ func TestWorkspacePolicyErrorContract(t *testing.T) {
 	if gotCode, ok := domain.CodeOf(err); !ok || gotCode != domain.ErrorInvalidRequest {
 		t.Errorf("expected ErrorInvalidRequest code, got %s", gotCode)
 	}
+
+	// Test As, Is, HasCode and Cause preservation explicitly
+	t.Run("error classification behavior", func(t *testing.T) {
+		cause := errors.New("underlying filesystem error")
+		werr := &WorkspacePolicyError{
+			Code:    domain.ErrorInvalidRequest,
+			Message: "custom workspace error",
+			Cause:   cause,
+		}
+
+		// 1. errors.As behavior
+		var de *domain.DomainError
+		if !errors.As(werr, &de) {
+			t.Fatal("expected errors.As to succeed for WorkspacePolicyError")
+		}
+		if de.Code != domain.ErrorInvalidRequest {
+			t.Errorf("expected code %s, got %s", domain.ErrorInvalidRequest, de.Code)
+		}
+		if de.Message != "custom workspace error" {
+			t.Errorf("expected message 'custom workspace error', got %q", de.Message)
+		}
+		if de.Cause != cause {
+			t.Errorf("expected cause to be preserved, got %v", de.Cause)
+		}
+
+		// 2. domain.HasCode behavior
+		if !domain.HasCode(werr, domain.ErrorInvalidRequest) {
+			t.Error("expected domain.HasCode to report true for ErrorInvalidRequest")
+		}
+		if domain.HasCode(werr, domain.ErrorForbidden) {
+			t.Error("expected domain.HasCode to report false for ErrorForbidden")
+		}
+
+		// 3. errors.Is behavior
+		if !errors.Is(werr, ErrInvalidWorkspace) {
+			t.Error("expected errors.Is to match ErrInvalidWorkspace")
+		}
+
+		// A non-workspace error with ErrorInvalidRequest must NOT be identified as a workspace error
+		nonWorkspaceErr := domain.NewDomainError(domain.ErrorInvalidRequest, "some other invalid request", nil)
+		if errors.Is(nonWorkspaceErr, ErrInvalidWorkspace) {
+			t.Error("expected errors.Is NOT to match ErrInvalidWorkspace for general DomainError")
+		}
+		if errors.Is(nonWorkspaceErr, ErrWorkspaceNotConfigured) {
+			t.Error("expected errors.Is NOT to match ErrWorkspaceNotConfigured for general DomainError")
+		}
+	})
 }
 
 func TestAllowedRootInitializationValidAndDedup(t *testing.T) {
