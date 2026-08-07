@@ -24,6 +24,22 @@ import (
 
 var dbCounter atomic.Uint64
 
+// modelResolverFn returns the requested model resolver for live Queue tests.
+func modelResolverFn(model string) application.ModelResolver {
+	return modelResolverFunc(func(_ context.Context, _, requested string) (string, error) {
+		if requested != "" {
+			return requested, nil
+		}
+		return model, nil
+	})
+}
+
+type modelResolverFunc func(ctx context.Context, providerID, requestedModel string) (string, error)
+
+func (f modelResolverFunc) ResolveModel(ctx context.Context, providerID, requestedModel string) (string, error) {
+	return f(ctx, providerID, requestedModel)
+}
+
 func liveQueue(t *testing.T) (*queue.PostgresQueue, *rootstore.Store, domain.Owner, string) {
 	t.Helper()
 	dsn := os.Getenv("OPENDRAY_DEV_DB_URL")
@@ -132,12 +148,15 @@ func enqueueLive(t *testing.T, repository queue.Repository, owner domain.Owner, 
 	if err != nil {
 		t.Fatal(err)
 	}
-	service := application.NewDispatchService(repository, application.WithWorkspacePolicy(policy, workspace))
+	service := application.NewDispatchService(repository,
+		application.WithWorkspacePolicy(policy, workspace),
+		application.WithModelResolver(modelResolverFn(key)))
 	result, err := service.CreateTask(context.Background(), application.CreateTaskCommand{
 		Owner: owner, ProjectID: "od09-project", ProviderID: providerID,
 		Source:         domain.Source{Kind: domain.SourceAPI, ClientRequestID: key},
 		Prompt:         "queue integration " + key,
 		WorkspacePath:  workspace,
+		Model:          key,
 		Input:          domain.DeliveryInput{AttachmentRefs: []string{}, Options: map[string]any{}},
 		IdempotencyKey: key, MaxAttempts: 3,
 	})
@@ -272,6 +291,49 @@ func TestPostgresQueueCompetitionLeaseRecoveryIdempotencyAndRestart(t *testing.T
 	command.Prompt = "different"
 	if _, err := service.CreateTask(ctx, command); !domain.HasCode(err, domain.ErrorIdempotencyConflict) {
 		t.Fatalf("payload conflict err=%v", err)
+	}
+}
+
+func TestPostgresQueueClaimPreservesModelAndAdjacentFields(t *testing.T) {
+	repository, _, owner, providerID := liveQueue(t)
+	ctx := context.Background()
+	created := enqueueLive(t, repository, owner, providerID, "claim-model-test")
+
+	claims, err := repository.ClaimDue(ctx, "model-worker", 1, time.Minute)
+	if err != nil {
+		t.Fatalf("claim: %v", err)
+	}
+	if len(claims) != 1 {
+		t.Fatalf("claims=%d; want 1", len(claims))
+	}
+	claimed := claims[0]
+
+	if claimed.Task.ID != created.Task.ID {
+		t.Fatalf("claimed.Task.ID=%s created=%s", claimed.Task.ID, created.Task.ID)
+	}
+	if claimed.Task.Model != "claim-model-test" {
+		t.Fatalf("claimed.Task.Model=%q; want %q", claimed.Task.Model, "claim-model-test")
+	}
+	if claimed.Task.ProviderID != providerID {
+		t.Fatalf("claimed.Task.ProviderID=%q; want %q", claimed.Task.ProviderID, providerID)
+	}
+	if claimed.Task.Source.Kind != created.Task.Source.Kind || claimed.Task.Source.ClientRequestID != "claim-model-test" {
+		t.Fatalf("claimed.Task.Source=%+v; adjacency misaligned", claimed.Task.Source)
+	}
+	if claimed.Task.Prompt != created.Task.Prompt {
+		t.Fatalf("claimed.Task.Prompt=%q; want %q (field shifted)", claimed.Task.Prompt, created.Task.Prompt)
+	}
+	if claimed.Delivery.ID != created.Delivery.ID {
+		t.Fatalf("claimed.Delivery.ID=%s created=%s", claimed.Delivery.ID, created.Delivery.ID)
+	}
+
+	// A claimed (reserved) Delivery must not be claimed a second time.
+	again, err := repository.ClaimDue(ctx, "model-worker-again", 1, time.Minute)
+	if err != nil {
+		t.Fatalf("second claim: %v", err)
+	}
+	if len(again) != 0 {
+		t.Fatalf("second claim returned %d deliveries; want 0 (duplicate claim)", len(again))
 	}
 }
 

@@ -755,7 +755,7 @@ func scanClaim(row scanner) (domain.TaskSnapshot, domain.DeliverySnapshot, error
 	var inputRaw []byte
 	if err := row.Scan(
 		&task.ID, &task.PrincipalKind, &task.PrincipalID, &task.ProjectID, &task.ProviderID,
-		&sourceRaw, &task.Prompt, &task.Status, &task.CurrentRunID, &task.RuntimeContextID,
+		&task.Model, &sourceRaw, &task.Prompt, &task.Status, &task.CurrentRunID, &task.RuntimeContextID,
 		&task.Version, &task.CreatedAt, &task.UpdatedAt,
 		&delivery.ID, &delivery.TaskID, &delivery.Operation, &delivery.RequestedByKind,
 		&delivery.RequestedByID, &inputRaw, &delivery.IdempotencyKey, &delivery.PayloadSHA256,

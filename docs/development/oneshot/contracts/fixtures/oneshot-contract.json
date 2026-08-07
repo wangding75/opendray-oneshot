@@ -47,6 +47,13 @@
           "description": "Requested One-shot provider adapter."
         },
         {
+          "name": "model",
+          "type": "string",
+          "required": true,
+          "immutable": true,
+          "description": "Requested model identifier for the provider adapter."
+        },
+        {
           "name": "source",
           "type": "object",
           "required": true,
@@ -309,6 +316,13 @@
           "required": true,
           "immutable": true,
           "description": ""
+        },
+        {
+          "name": "model",
+          "type": "string",
+          "required": true,
+          "immutable": true,
+          "description": "Model identifier used for this execution."
         },
         {
           "name": "runtime_context_id",

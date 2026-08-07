@@ -60,7 +60,7 @@ for fragment in required_sql_fragments:
 
 # Catch malformed static INSERT statements even when a live PostgreSQL instance
 # is not available in the source-validation environment.
-for table, expected_count in (("oneshot_tasks", 16), ("oneshot_deliveries", 18)):
+for table, expected_count in (("oneshot_tasks", 17), ("oneshot_deliveries", 18)):
     match = re.search(
         rf"INSERT INTO {table} \(\s*(.*?)\s*\) VALUES \((.*?)\)",
         postgres,

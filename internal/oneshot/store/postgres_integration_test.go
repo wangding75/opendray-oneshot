@@ -117,7 +117,7 @@ ON CONFLICT (id) DO NOTHING`, id)
 func makeTaskDelivery(t *testing.T, owner domain.Owner, providerID, sourceMessage, key string, now time.Time) (domain.TaskSnapshot, domain.DeliverySnapshot) {
 	t.Helper()
 	task, err := domain.NewTask(domain.TaskArgs{
-		Owner: owner, ProjectID: "project-od08", ProviderID: providerID,
+		Owner: owner, ProjectID: "project-od08", ProviderID: providerID, Model: "store-test-model",
 		Source: domain.Source{Kind: domain.SourceTelegram, ChannelID: "channel-od08", SourceMessageID: sourceMessage},
 		Prompt: "persist this task",
 	}, now)

@@ -169,7 +169,7 @@ func recoveryItem(t *testing.T, status domain.RunStatus, stage saga.Stage) saga.
 	owner := domain.Owner{Kind: domain.PrincipalAdmin, ID: "recovery-owner"}
 	task, err := domain.NewTask(domain.TaskArgs{
 		Owner: owner, ProjectID: "recovery-project", ProviderID: "shell-oneshot-fixture",
-		Model: "shell",
+		Model:  "shell",
 		Source: domain.Source{Kind: domain.SourceAPI, ClientRequestID: "recovery-request"}, Prompt: "recover",
 	}, now)
 	if err != nil {

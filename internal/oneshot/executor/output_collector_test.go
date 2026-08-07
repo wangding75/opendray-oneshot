@@ -69,7 +69,7 @@ func outputIdentity(t *testing.T) (domain.Owner, domain.TaskSnapshot, domain.Run
 	owner := domain.Owner{Kind: domain.PrincipalAdmin, ID: "output-owner"}
 	task, err := domain.NewTask(domain.TaskArgs{
 		Owner: owner, ProjectID: "output-project", ProviderID: adapter.ShellProviderID,
-		Model: "shell",
+		Model:  "shell",
 		Source: domain.Source{Kind: domain.SourceAPI, ClientRequestID: "output-request"},
 		Prompt: "capture output",
 	}, now)

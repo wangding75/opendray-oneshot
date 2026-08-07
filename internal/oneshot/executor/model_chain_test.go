@@ -52,7 +52,7 @@ func TestModelSnapshotPreservedEndToEnd(t *testing.T) {
 	// 2. Create delivery
 	delivery, err := domain.NewDelivery(domain.DeliveryArgs{
 		TaskID: task.Snapshot().ID, Operation: domain.DeliveryNew, RequestedBy: owner,
-		Input: domain.DeliveryInput{AttachmentRefs: []string{}, Options: map[string]any{}},
+		Input:          domain.DeliveryInput{AttachmentRefs: []string{}, Options: map[string]any{}},
 		IdempotencyKey: "test-idempotency-key", PayloadSHA256: "0000000000000000000000000000000000000000000000000000000000000000",
 		MaxAttempts: 1, AvailableAt: now,
 	}, now)

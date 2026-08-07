@@ -17,6 +17,7 @@
       "principal_id": "operator",
       "project_id": "prj_demo",
       "provider_id": "codex",
+      "model": "claude-sonnet-4-6",
       "source": {
         "kind": "mobile",
         "client_request_id": "mob_01"
