@@ -273,8 +273,8 @@ INSERT INTO oneshot_deliveries (
 		t.Fatal(err)
 	}
 	_, err = root.Pool().Exec(ctx, `
-INSERT INTO oneshot_runs (id,task_id,delivery_id,provider_id,status,created_at)
-VALUES ('orn_conflict',$1,'odl_conflict',$2,'created',NOW())`, persistedTask.ID, providerID)
+INSERT INTO oneshot_runs (id,task_id,delivery_id,provider_id,model,status,created_at)
+VALUES ('orn_conflict',$1,'odl_conflict',$2,'test-model','created',NOW())`, persistedTask.ID, providerID)
 	var pgConflict bool
 	if err != nil {
 		pgConflict = true

@@ -208,9 +208,9 @@ func TestPostgresQueueCompetitionLeaseRecoveryIdempotencyAndRestart(t *testing.T
 		t.Fatal(err)
 	}
 	_, err = tx.Exec(ctx, `INSERT INTO oneshot_runs (
- id,task_id,delivery_id,provider_id,status,started_at,finished_at,created_at
-) VALUES ($1,$2,$3,$4,'completed',now(),now(),now())`,
-		runID, created.Task.ID, created.Delivery.ID, providerID)
+ id,task_id,delivery_id,provider_id,model,status,started_at,finished_at,created_at
+) VALUES ($1,$2,$3,$4,$5,'completed',now(),now(),now())`,
+		runID, created.Task.ID, created.Delivery.ID, providerID, created.Task.Model)
 	if err == nil {
 		_, err = tx.Exec(ctx, `UPDATE oneshot_deliveries SET run_id=$1 WHERE id=$2`, runID, created.Delivery.ID)
 	}

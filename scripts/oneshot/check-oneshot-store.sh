@@ -98,6 +98,7 @@ func (s *Store) Close() {}
 func (s *Store) Pool() *pgxpool.Pool { return s.pool }
 func (s *Store) ensureMigrationsTable(context.Context) error { return nil }
 func (s *Store) applyOne(context.Context,migrationFile) error { return nil }
+func loadMigrations() ([]migrationFile, error) { return nil, nil }
 GO
   (
     cd "$TMP"
