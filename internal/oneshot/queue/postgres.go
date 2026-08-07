@@ -21,7 +21,7 @@ d.idempotency_key,d.payload_sha256,d.status,d.attempt,d.max_attempts,
 d.available_at,d.lease_owner,d.lease_until,d.run_id,d.last_error_code,d.created_at,d.updated_at`
 
 const taskColumns = `
-t.id,t.principal_kind,t.principal_id,t.project_id,t.provider_id,t.source,t.prompt,
+t.id,t.principal_kind,t.principal_id,t.project_id,t.provider_id,t.model,t.source,t.prompt,
 t.status,t.current_run_id,t.runtime_context_id,t.version,t.created_at,t.updated_at`
 
 // PostgresQueue is the production reliable One-shot execution queue.
@@ -222,13 +222,13 @@ func insertTask(ctx context.Context, tx pgx.Tx, snapshot domain.TaskSnapshot) (d
 		return domain.TaskSnapshot{}, domain.InvalidRequestf("task source is not JSON-compatible")
 	}
 	out, err := scanTask(tx.QueryRow(ctx, `INSERT INTO oneshot_tasks (
-    id,principal_kind,principal_id,project_id,provider_id,source,source_kind,
+    id,principal_kind,principal_id,project_id,provider_id,model,source,source_kind,
     source_channel_id,source_message_id,prompt,status,current_run_id,
     runtime_context_id,version,created_at,updated_at
-) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16)
+) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17)
 RETURNING `+strings.ReplaceAll(taskColumns, "t.", ""),
 		snapshot.ID, snapshot.PrincipalKind, snapshot.PrincipalID, snapshot.ProjectID,
-		snapshot.ProviderID, source, snapshot.Source.Kind, nullableString(snapshot.Source.ChannelID),
+		snapshot.ProviderID, snapshot.Model, source, snapshot.Source.Kind, nullableString(snapshot.Source.ChannelID),
 		nullableString(snapshot.Source.SourceMessageID), snapshot.Prompt, snapshot.Status,
 		snapshot.CurrentRunID, snapshot.RuntimeContextID, snapshot.Version,
 		snapshot.CreatedAt.UTC(), snapshot.UpdatedAt.UTC()))
@@ -786,7 +786,7 @@ func scanTask(row scanner) (domain.TaskSnapshot, error) {
 	var task domain.TaskSnapshot
 	var sourceRaw []byte
 	if err := row.Scan(&task.ID, &task.PrincipalKind, &task.PrincipalID, &task.ProjectID,
-		&task.ProviderID, &sourceRaw, &task.Prompt, &task.Status, &task.CurrentRunID,
+		&task.ProviderID, &task.Model, &sourceRaw, &task.Prompt, &task.Status, &task.CurrentRunID,
 		&task.RuntimeContextID, &task.Version, &task.CreatedAt, &task.UpdatedAt); err != nil {
 		return domain.TaskSnapshot{}, err
 	}

@@ -20,12 +20,19 @@ func TestShellAdapterDisabledByDefault(t *testing.T) {
 	}
 }
 
+func testExecutable() string {
+	if filepath.Separator == '\\' {
+		return `C:\bin\sh`
+	}
+	return "/bin/sh"
+}
+
 func TestShellAdapterRequiresAllowlistedCommand(t *testing.T) {
 	cwd := t.TempDir()
 	adapter := NewShellAdapter(ShellConfig{
 		Enabled: true,
 		Commands: map[string]CommandSpec{
-			"success": {Executable: "/bin/sh", Args: []string{"fixture.sh"}, Dir: cwd},
+			"success": {Executable: testExecutable(), Args: []string{"fixture.sh"}, Dir: cwd},
 		},
 	})
 	_, err := adapter.BuildCommand(context.Background(), ExecutionInput{CommandName: "rm -rf /"})
@@ -40,7 +47,7 @@ func TestShellAdapterEnvironmentAllowlistAndRedaction(t *testing.T) {
 		Enabled: true,
 		Commands: map[string]CommandSpec{
 			"success": {
-				Executable: "/bin/sh",
+				Executable: testExecutable(),
 				Args:       []string{"fixture.sh"},
 				Dir:        cwd,
 				Environment: map[string]EnvironmentValue{
@@ -85,7 +92,7 @@ func TestShellAdapterEnvironmentAllowlistAndRedaction(t *testing.T) {
 func TestShellAdapterReturnsDefensiveCommandCopy(t *testing.T) {
 	cwd := t.TempDir()
 	original := CommandSpec{
-		Executable: "/bin/sh",
+		Executable: testExecutable(),
 		Args:       []string{"fixture.sh"},
 		Dir:        cwd,
 		Environment: map[string]EnvironmentValue{
@@ -111,7 +118,7 @@ func TestShellAdapterReturnsDefensiveCommandCopy(t *testing.T) {
 func TestShellAdapterRejectsRelativeExecutableAndCWD(t *testing.T) {
 	adapter := NewShellAdapter(ShellConfig{Enabled: true, Commands: map[string]CommandSpec{
 		"relative-executable": {Executable: "sh", Dir: t.TempDir()},
-		"relative-cwd":        {Executable: "/bin/sh", Dir: "."},
+		"relative-cwd":        {Executable: testExecutable(), Dir: "."},
 	}})
 	for _, name := range []string{"relative-executable", "relative-cwd"} {
 		_, err := adapter.BuildCommand(context.Background(), ExecutionInput{CommandName: name})

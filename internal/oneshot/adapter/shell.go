@@ -79,6 +79,9 @@ func (a *ShellAdapter) BuildCommand(ctx context.Context, input ExecutionInput) (
 	if !a.Enabled() {
 		return CommandSpec{}, domain.NewDomainError(domain.ErrorDisabled, "test Shell One-shot adapter is disabled", nil)
 	}
+	if input.Run.Model != "" && input.Run.Model != "shell" {
+		return CommandSpec{}, domain.NewDomainError(domain.ErrorInvalidRequest, "Shell fixture does not support model selection: "+input.Run.Model, nil)
+	}
 	name := strings.TrimSpace(input.CommandName)
 	command, ok := a.commands[name]
 	if !ok || name == "" {
@@ -148,4 +151,7 @@ func (a *ShellAdapter) NormalizeOutput(ctx context.Context, chunk OutputChunk) (
 	return []NormalizedOutputEvent{{
 		Type: "shell.passthrough", Content: content, OccurredAt: chunk.ReceivedAt,
 	}}, nil
+}
+func (a *ShellAdapter) DefaultModel() string {
+	return "shell"
 }

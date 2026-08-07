@@ -2,6 +2,7 @@ package application
 
 import (
 	"context"
+	"path/filepath"
 	"sync"
 	"testing"
 	"time"
@@ -92,6 +93,7 @@ func (nonResumeAdapter) Enabled() bool                  { return true }
 func (nonResumeAdapter) Capabilities() adapter.Capabilities {
 	return adapter.Capabilities{SupportsNonInteractive: true, Cancellation: true}
 }
+func (nonResumeAdapter) DefaultModel() string { return "default-model" }
 func (nonResumeAdapter) BuildCommand(context.Context, adapter.ExecutionInput) (adapter.CommandSpec, error) {
 	return adapter.CommandSpec{}, nil
 }
@@ -103,9 +105,13 @@ func completedContinuationFixture(t *testing.T, providerID string) (*continuatio
 	t.Helper()
 	now := time.Date(2026, 7, 28, 9, 0, 0, 0, time.UTC)
 	owner := domain.Owner{Kind: domain.PrincipalAdmin, ID: "owner-1"}
+	workspacePath := "/tmp/workspace"
+	if filepath.Separator == '\\' {
+		workspacePath = `C:\tmp\workspace`
+	}
 	contextAggregate, err := domain.NewRuntimeContext(domain.RuntimeContextArgs{
 		Owner: owner, ProjectID: "project-1", ProviderID: providerID,
-		ProviderContextID: "provider-context-1", WorkspacePath: "/tmp/workspace",
+		ProviderContextID: "provider-context-1", WorkspacePath: workspacePath,
 	}, now)
 	if err != nil {
 		t.Fatal(err)
@@ -113,7 +119,7 @@ func completedContinuationFixture(t *testing.T, providerID string) (*continuatio
 	contextSnapshot := contextAggregate.Snapshot()
 	task, err := domain.NewTask(domain.TaskArgs{
 		Owner: owner, ProjectID: "project-1", ProviderID: providerID,
-		Source: domain.Source{Kind: domain.SourceAPI}, Prompt: "initial prompt",
+		Model: "default-model", Source: domain.Source{Kind: domain.SourceAPI}, Prompt: "initial prompt",
 	}, now)
 	if err != nil {
 		t.Fatal(err)
@@ -129,7 +135,7 @@ func completedContinuationFixture(t *testing.T, providerID string) (*continuatio
 	repository := &continuationMemoryRepository{task: restored.Snapshot(), context: contextSnapshot, replays: make(map[string]continuationReplay)}
 	command := ContinueTaskCommand{
 		Owner: owner, ProjectID: "project-1", TaskID: taskSnapshot.ID,
-		ProviderID: providerID, WorkspacePath: "/tmp/workspace",
+		ProviderID: providerID, WorkspacePath: workspacePath,
 		PromptDelta: "continue from the previous result", IdempotencyKey: "continue-key", MaxAttempts: 3,
 	}
 	return repository, command

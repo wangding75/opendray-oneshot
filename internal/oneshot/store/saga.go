@@ -116,12 +116,12 @@ func (s *Store) ListRecoverableRuns(ctx context.Context, limit int) ([]saga.Reco
 	}
 	rows, err := s.pool.Query(ctx, `
 SELECT
-    t.id,t.principal_kind,t.principal_id,t.project_id,t.provider_id,t.source,t.prompt,
+    t.id,t.principal_kind,t.principal_id,t.project_id,t.provider_id,t.model,t.source,t.prompt,
     t.status,t.current_run_id,t.runtime_context_id,t.version,t.created_at,t.updated_at,
     d.id,d.task_id,d.operation,d.requested_by_kind,d.requested_by_id,d.input,
     d.idempotency_key,d.payload_sha256,d.status,d.attempt,d.max_attempts,
     d.available_at,d.lease_owner,d.lease_until,d.run_id,d.last_error_code,d.created_at,d.updated_at,
-    r.id,r.task_id,r.delivery_id,r.provider_id,r.runtime_context_id,r.status,r.pid,r.exit_code,
+    r.id,r.task_id,r.delivery_id,r.provider_id,r.model,r.runtime_context_id,r.status,r.pid,r.exit_code,
     r.error_code,r.error_message,r.started_at,r.finished_at,r.created_at,
     g.run_id,g.task_id,g.delivery_id,g.stage,g.credential_lease_id,g.pid,g.exit_code,
     g.result_error_code,g.result_error_message,g.result_cancelled,g.result_timed_out,
@@ -165,7 +165,7 @@ func scanRecoveryItem(row scanner) (saga.RecoveryItem, error) {
 	var state saga.State
 	var sourceRaw, inputRaw []byte
 	if err := row.Scan(
-		&task.ID, &task.PrincipalKind, &task.PrincipalID, &task.ProjectID, &task.ProviderID,
+		&task.ID, &task.PrincipalKind, &task.PrincipalID, &task.ProjectID, &task.ProviderID, &task.Model,
 		&sourceRaw, &task.Prompt, &task.Status, &task.CurrentRunID, &task.RuntimeContextID,
 		&task.Version, &task.CreatedAt, &task.UpdatedAt,
 		&delivery.ID, &delivery.TaskID, &delivery.Operation, &delivery.RequestedByKind,
@@ -173,7 +173,7 @@ func scanRecoveryItem(row scanner) (saga.RecoveryItem, error) {
 		&delivery.Status, &delivery.Attempt, &delivery.MaxAttempts, &delivery.AvailableAt,
 		&delivery.LeaseOwner, &delivery.LeaseUntil, &delivery.RunID, &delivery.LastErrorCode,
 		&delivery.CreatedAt, &delivery.UpdatedAt,
-		&run.ID, &run.TaskID, &run.DeliveryID, &run.ProviderID, &run.RuntimeContextID,
+		&run.ID, &run.TaskID, &run.DeliveryID, &run.ProviderID, &run.Model, &run.RuntimeContextID,
 		&run.Status, &run.PID, &run.ExitCode, &run.ErrorCode, &run.ErrorMessage,
 		&run.StartedAt, &run.FinishedAt, &run.CreatedAt,
 		&state.RunID, &state.TaskID, &state.DeliveryID, &state.Stage,

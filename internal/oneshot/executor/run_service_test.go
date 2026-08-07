@@ -378,6 +378,7 @@ func enqueueShellTask(t *testing.T, executionQueue *queue.MemoryQueue, commandNa
 		Owner:      owner,
 		ProjectID:  "executor-test-project",
 		ProviderID: adapter.ShellProviderID,
+		Model:      "shell",
 		Source:     domain.Source{Kind: domain.SourceAPI, ClientRequestID: "executor-test-request"},
 		Prompt:     "execute fixture",
 	}, now)
@@ -658,6 +659,7 @@ func enqueueProviderTask(t *testing.T, executionQueue *queue.MemoryQueue, provid
 	owner := domain.Owner{Kind: domain.PrincipalAdmin, ID: "provider-owner"}
 	task, err := domain.NewTask(domain.TaskArgs{
 		Owner: owner, ProjectID: "provider-project", ProviderID: providerID,
+		Model: "mock-model",
 		Source: domain.Source{Kind: domain.SourceAPI, ClientRequestID: "provider-request"},
 		Prompt: "initial provider prompt",
 	}, now)

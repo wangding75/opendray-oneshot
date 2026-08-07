@@ -74,6 +74,7 @@ type RunSnapshot struct {
 	TaskID           string     `json:"task_id"`
 	DeliveryID       string     `json:"delivery_id"`
 	ProviderID       string     `json:"provider_id"`
+	Model            string     `json:"model"`
 	RuntimeContextID *string    `json:"runtime_context_id,omitempty"`
 	Status           RunStatus  `json:"status"`
 	PID              *int       `json:"pid,omitempty"`
@@ -91,6 +92,7 @@ type Run struct {
 	taskID           string
 	deliveryID       string
 	providerID       string
+	model            string
 	runtimeContextID *string
 	status           RunStatus
 	pid              *int
@@ -123,6 +125,9 @@ func NewRun(task TaskSnapshot, delivery DeliverySnapshot, context *RuntimeContex
 	if delivery.RunID != nil {
 		return nil, runConflict("Delivery already owns a Run")
 	}
+	if task.Model == "" {
+		return nil, NewDomainError(ErrorInvalidRequest, "Task configuration is unexecutable: missing model snapshot", nil)
+	}
 	var contextID *string
 	if delivery.Operation == DeliveryContinue {
 		if context == nil {
@@ -143,6 +148,7 @@ func NewRun(task TaskSnapshot, delivery DeliverySnapshot, context *RuntimeContex
 		taskID:           task.ID,
 		deliveryID:       delivery.ID,
 		providerID:       task.ProviderID,
+		model:            task.Model,
 		runtimeContextID: contextID,
 		status:           RunCreated,
 		createdAt:        normalizedNow,
@@ -159,6 +165,7 @@ func RestoreRun(snapshot RunSnapshot) (*Run, error) {
 		taskID:           snapshot.TaskID,
 		deliveryID:       snapshot.DeliveryID,
 		providerID:       snapshot.ProviderID,
+		model:            snapshot.Model,
 		runtimeContextID: cloneOptionalString(snapshot.RuntimeContextID),
 		status:           snapshot.Status,
 		pid:              cloneOptionalInt(snapshot.PID),
@@ -233,6 +240,7 @@ func (r *Run) Snapshot() RunSnapshot {
 		TaskID:           r.taskID,
 		DeliveryID:       r.deliveryID,
 		ProviderID:       r.providerID,
+		Model:            r.model,
 		RuntimeContextID: cloneOptionalString(r.runtimeContextID),
 		Status:           r.status,
 		PID:              cloneOptionalInt(r.pid),

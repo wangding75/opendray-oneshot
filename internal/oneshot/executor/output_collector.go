@@ -66,7 +66,7 @@ func (s *FileArtifactStorage) resolve(storageKey string) (string, error) {
 		return "", domain.NewDomainError(domain.ErrorArtifactUnavailable, "artifact storage is unavailable", nil)
 	}
 	cleaned := filepath.Clean(strings.TrimSpace(storageKey))
-	if cleaned == "." || filepath.IsAbs(cleaned) || strings.HasPrefix(cleaned, ".."+string(os.PathSeparator)) || cleaned == ".." {
+	if cleaned == "." || filepath.IsAbs(cleaned) || strings.HasPrefix(cleaned, "/") || strings.HasPrefix(cleaned, "\\") || strings.HasPrefix(cleaned, ".."+string(os.PathSeparator)) || cleaned == ".." {
 		return "", domain.InvalidRequestf("artifact storage key must be server-controlled and relative")
 	}
 	resolved := filepath.Join(s.root, cleaned)

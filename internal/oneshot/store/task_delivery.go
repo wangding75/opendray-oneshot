@@ -17,7 +17,7 @@ type scanner interface {
 }
 
 const taskColumns = `
-    id, principal_kind, principal_id, project_id, provider_id, source, prompt,
+    id, principal_kind, principal_id, project_id, provider_id, model, source, prompt,
     status, current_run_id, runtime_context_id, version, created_at, updated_at`
 
 func validateTask(snapshot domain.TaskSnapshot) error {
@@ -44,14 +44,14 @@ func (s *Store) insertTask(ctx context.Context, q interface {
 	}
 	row := q.QueryRow(ctx, `
 INSERT INTO oneshot_tasks (
-    id, principal_kind, principal_id, project_id, provider_id,
+    id, principal_kind, principal_id, project_id, provider_id, model,
     source, source_kind, source_channel_id, source_message_id, prompt,
     status, current_run_id, runtime_context_id, version, created_at, updated_at
 ) VALUES (
-    $1,$2,$3,$4,$5,$6,$7,NULLIF($8,''),NULLIF($9,''),$10,$11,$12,$13,$14,$15,$16
+    $1,$2,$3,$4,$5,$6,$7,$8,NULLIF($9,''),NULLIF($10,''),$11,$12,$13,$14,$15,$16,$17
 )
 RETURNING `+taskColumns,
-		snapshot.ID, snapshot.PrincipalKind, snapshot.PrincipalID, snapshot.ProjectID, snapshot.ProviderID,
+		snapshot.ID, snapshot.PrincipalKind, snapshot.PrincipalID, snapshot.ProjectID, snapshot.ProviderID, snapshot.Model,
 		source, snapshot.Source.Kind, sourceChannelID, sourceMessageID, snapshot.Prompt,
 		snapshot.Status, snapshot.CurrentRunID, snapshot.RuntimeContextID, snapshot.Version,
 		snapshot.CreatedAt.UTC(), snapshot.UpdatedAt.UTC())
@@ -533,7 +533,7 @@ func scanTask(row scanner) (domain.TaskSnapshot, error) {
 	var snapshot domain.TaskSnapshot
 	var sourceRaw []byte
 	if err := row.Scan(&snapshot.ID, &snapshot.PrincipalKind, &snapshot.PrincipalID,
-		&snapshot.ProjectID, &snapshot.ProviderID, &sourceRaw, &snapshot.Prompt,
+		&snapshot.ProjectID, &snapshot.ProviderID, &snapshot.Model, &sourceRaw, &snapshot.Prompt,
 		&snapshot.Status, &snapshot.CurrentRunID, &snapshot.RuntimeContextID,
 		&snapshot.Version, &snapshot.CreatedAt, &snapshot.UpdatedAt); err != nil {
 		return domain.TaskSnapshot{}, err

@@ -189,7 +189,7 @@ func TestTaskSourceAndReplyAddressAreImmutableSnapshots(t *testing.T) {
 	source := testSource()
 	task, err := NewTask(TaskArgs{
 		Owner: testOwner(), ProjectID: "prj_demo", ProviderID: "codex",
-		Source: source, Prompt: "immutable",
+		Model: "default-model", Source: source, Prompt: "immutable",
 	}, testNow)
 	if err != nil {
 		t.Fatal(err)

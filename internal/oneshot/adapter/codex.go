@@ -79,8 +79,10 @@ func (a *CodexAdapter) BuildCommand(ctx context.Context, input ExecutionInput) (
 	if a.config.SkipGitRepoCheck {
 		args = append(args, "--skip-git-repo-check")
 	}
-	if model := strings.TrimSpace(a.config.Model); model != "" {
+	if model := strings.TrimSpace(input.Run.Model); model != "" {
 		args = append(args, "--model", model)
+	} else {
+		return CommandSpec{}, domain.NewDomainError(domain.ErrorInvalidRequest, "Codex execution requires a model snapshot", nil)
 	}
 	if effort := strings.TrimSpace(a.config.ReasoningEffort); effort != "" {
 		switch effort {
@@ -133,6 +135,13 @@ func (a *CodexAdapter) NormalizeOutput(ctx context.Context, chunk OutputChunk) (
 		}
 		return "codex." + typeName, payload
 	})
+}
+
+func (a *CodexAdapter) DefaultModel() string {
+	if a == nil {
+		return ""
+	}
+	return a.config.Model
 }
 
 func (a *CodexAdapter) RuntimeContextEvidence(ctx context.Context, runID string) (RuntimeContextEvidence, bool, error) {

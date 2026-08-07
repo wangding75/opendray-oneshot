@@ -16,6 +16,7 @@ func queuedFixture(t *testing.T, now time.Time, maxAttempts int) (EnqueueRequest
 	owner := domain.Owner{Kind: domain.PrincipalAdmin, ID: "queue-test-owner"}
 	task, err := domain.NewTask(domain.TaskArgs{
 		Owner: owner, ProjectID: "project-queue", ProviderID: "provider-queue",
+		Model: "mock-model",
 		Source: domain.Source{Kind: domain.SourceAPI, ClientRequestID: "request-1"},
 		Prompt: "run reliable queue fixture",
 	}, now)

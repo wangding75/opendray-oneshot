@@ -622,8 +622,16 @@ func New(ctx context.Context, cfg config.Config) (*App, error) {
 	oneshootProviderCatalog := oneshootappwire.NewCatalog(cat)
 	oneshootRegistry, err := oneshootadapter.NewConfiguredRegistry(
 		cfg.OneShot.Enabled, oneshootProviderCatalog, nil,
-		oneshootadapter.NewCodexAdapter(oneshootadapter.CodexConfig{Enabled: cfg.OneShot.Enabled, MinimumVersion: cfg.OneShot.CodexMinimumVersion}),
-		oneshootadapter.NewClaudeAdapter(oneshootadapter.ClaudeConfig{Enabled: cfg.OneShot.Enabled, MinimumVersion: cfg.OneShot.ClaudeMinimumVersion}),
+		oneshootadapter.NewCodexAdapter(oneshootadapter.CodexConfig{
+			Enabled:        cfg.OneShot.Enabled,
+			MinimumVersion: cfg.OneShot.CodexMinimumVersion,
+			Model:          cfg.OneShot.CodexDefaultModel,
+		}),
+		oneshootadapter.NewClaudeAdapter(oneshootadapter.ClaudeConfig{
+			Enabled:        cfg.OneShot.Enabled,
+			MinimumVersion: cfg.OneShot.ClaudeMinimumVersion,
+			Model:          cfg.OneShot.ClaudeDefaultModel,
+		}),
 	)
 	if err != nil {
 		st.Close()

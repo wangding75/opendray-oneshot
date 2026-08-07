@@ -72,8 +72,10 @@ func (a *ClaudeAdapter) BuildCommand(ctx context.Context, input ExecutionInput) 
 	}
 	a.states.prepare(input.Run.ID, input.Delivery.Operation == domain.DeliveryContinue)
 	args := []string{"-p", "--output-format", "stream-json", "--verbose"}
-	if model := strings.TrimSpace(a.config.Model); model != "" {
+	if model := strings.TrimSpace(input.Run.Model); model != "" {
 		args = append(args, "--model", model)
+	} else {
+		return CommandSpec{}, domain.NewDomainError(domain.ErrorInvalidRequest, "Claude execution requires a model snapshot", nil)
 	}
 	if mode := strings.TrimSpace(a.config.PermissionMode); mode != "" {
 		switch mode {
@@ -121,6 +123,13 @@ func (a *ClaudeAdapter) NormalizeOutput(ctx context.Context, chunk OutputChunk) 
 		}
 		return "claude." + typeName, payload
 	})
+}
+
+func (a *ClaudeAdapter) DefaultModel() string {
+	if a == nil {
+		return ""
+	}
+	return a.config.Model
 }
 
 func (a *ClaudeAdapter) RuntimeContextEvidence(ctx context.Context, runID string) (RuntimeContextEvidence, bool, error) {

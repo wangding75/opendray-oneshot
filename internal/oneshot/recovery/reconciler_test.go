@@ -3,6 +3,7 @@ package recovery
 import (
 	"context"
 	"errors"
+	"path/filepath"
 	"sync"
 	"testing"
 	"time"
@@ -168,6 +169,7 @@ func recoveryItem(t *testing.T, status domain.RunStatus, stage saga.Stage) saga.
 	owner := domain.Owner{Kind: domain.PrincipalAdmin, ID: "recovery-owner"}
 	task, err := domain.NewTask(domain.TaskArgs{
 		Owner: owner, ProjectID: "recovery-project", ProviderID: "shell-oneshot-fixture",
+		Model: "shell",
 		Source: domain.Source{Kind: domain.SourceAPI, ClientRequestID: "recovery-request"}, Prompt: "recover",
 	}, now)
 	if err != nil {
@@ -249,12 +251,16 @@ func recoveryItem(t *testing.T, status domain.RunStatus, stage saga.Stage) saga.
 func attachBusyRuntimeContext(t *testing.T, item *saga.RecoveryItem) domain.RuntimeContextSnapshot {
 	t.Helper()
 	createdAt := item.Run.CreatedAt.Add(-time.Second)
+	workspacePath := "/tmp/opendray-recovery-workspace"
+	if filepath.Separator == '\\' {
+		workspacePath = `C:\tmp\opendray-recovery-workspace`
+	}
 	runtimeContext, err := domain.NewRuntimeContext(domain.RuntimeContextArgs{
 		Owner:             item.Owner,
 		ProjectID:         item.Task.ProjectID,
 		ProviderID:        item.Run.ProviderID,
 		ProviderContextID: "provider-context-recovery",
-		WorkspacePath:     "/tmp/opendray-recovery-workspace",
+		WorkspacePath:     workspacePath,
 	}, createdAt)
 	if err != nil {
 		t.Fatal(err)

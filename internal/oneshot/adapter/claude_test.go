@@ -3,6 +3,7 @@ package adapter
 import (
 	"context"
 	"os"
+	"path/filepath"
 	"reflect"
 	"strings"
 	"testing"
@@ -13,8 +14,13 @@ import (
 
 func TestClaudeBuildCommandGolden(t *testing.T) {
 	input := providerTestInput(ClaudeProviderID, domain.DeliveryNew)
-	input.Environment = map[string]string{"CLAUDE_CONFIG_DIR": "/tmp/claude-account"}
-	adapter := NewClaudeAdapter(ClaudeConfig{Enabled: true, Model: "claude-opus-4-1", PermissionMode: "plan", MaxTurns: 12})
+	claudeConfigDir := "/tmp/claude-account"
+	if filepath.Separator == '\\' {
+		claudeConfigDir = `C:\tmp\claude-account`
+	}
+	input.Environment = map[string]string{"CLAUDE_CONFIG_DIR": claudeConfigDir}
+	input.Run.Model = "claude-opus-4-1"
+	adapter := NewClaudeAdapter(ClaudeConfig{Enabled: true, Model: "ignored-model", PermissionMode: "plan", MaxTurns: 12})
 	spec, err := adapter.BuildCommand(context.Background(), input)
 	if err != nil {
 		t.Fatal(err)
@@ -31,7 +37,11 @@ func TestClaudeBuildCommandGolden(t *testing.T) {
 func TestClaudeResumeGolden(t *testing.T) {
 	input := providerTestInput(ClaudeProviderID, domain.DeliveryContinue)
 	input.Environment = nil
-	ctx, _ := domain.NewRuntimeContext(domain.RuntimeContextArgs{Owner: domain.Owner{Kind: domain.PrincipalAdmin, ID: "user-1"}, ProjectID: "project-1", ProviderID: ClaudeProviderID, ProviderContextID: "session-123", WorkspacePath: "/tmp/workspace"}, time.Now().UTC())
+	workspacePath := "/tmp/workspace"
+	if filepath.Separator == '\\' {
+		workspacePath = `C:\tmp\workspace`
+	}
+	ctx, _ := domain.NewRuntimeContext(domain.RuntimeContextArgs{Owner: domain.Owner{Kind: domain.PrincipalAdmin, ID: "user-1"}, ProjectID: "project-1", ProviderID: ClaudeProviderID, ProviderContextID: "session-123", WorkspacePath: workspacePath}, time.Now().UTC())
 	snapshot := ctx.Snapshot()
 	input.RuntimeContext = &snapshot
 	adapter := NewClaudeAdapter(ClaudeConfig{Enabled: true})
@@ -39,7 +49,7 @@ func TestClaudeResumeGolden(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	want := []string{"-p", "--output-format", "stream-json", "--verbose", "--resume", "session-123"}
+	want := []string{"-p", "--output-format", "stream-json", "--verbose", "--model", "default-model", "--resume", "session-123"}
 	if !reflect.DeepEqual(spec.Args, want) || string(spec.Stdin) != "follow up" {
 		t.Fatalf("resume=%#v stdin=%q", spec.Args, string(spec.Stdin))
 	}
@@ -94,9 +104,13 @@ func TestClaudeFixtureAndResumeFailureMapping(t *testing.T) {
 
 	resumeInput := providerTestInput(ClaudeProviderID, domain.DeliveryContinue)
 	resumeInput.Environment = nil
+	workspacePath := "/tmp/workspace"
+	if filepath.Separator == '\\' {
+		workspacePath = `C:\tmp\workspace`
+	}
 	contextAggregate, err := domain.NewRuntimeContext(domain.RuntimeContextArgs{
 		Owner: domain.Owner{Kind: domain.PrincipalAdmin, ID: "user-1"}, ProjectID: "project-1",
-		ProviderID: ClaudeProviderID, ProviderContextID: "missing-session", WorkspacePath: "/tmp/workspace",
+		ProviderID: ClaudeProviderID, ProviderContextID: "missing-session", WorkspacePath: workspacePath,
 	}, time.Now().UTC())
 	if err != nil {
 		t.Fatal(err)

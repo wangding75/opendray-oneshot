@@ -512,6 +512,8 @@ type OneShotConfig struct {
 	DefaultProviderID        string   `toml:"default_provider_id" json:"default_provider_id"`
 	CodexMinimumVersion      string   `toml:"codex_minimum_version" json:"codex_minimum_version"`
 	ClaudeMinimumVersion     string   `toml:"claude_minimum_version" json:"claude_minimum_version"`
+	ClaudeDefaultModel       string   `toml:"claude_default_model" json:"claude_default_model"`
+	CodexDefaultModel        string   `toml:"codex_default_model" json:"codex_default_model"`
 }
 
 func (c OneShotConfig) TerminationGraceDuration() time.Duration {

@@ -20,12 +20,12 @@ func insertRun(ctx context.Context, q interface {
 }, snapshot domain.RunSnapshot) (domain.RunSnapshot, error) {
 	out, err := scanRun(q.QueryRow(ctx, `
 INSERT INTO oneshot_runs (
-    id,task_id,delivery_id,provider_id,runtime_context_id,status,pid,exit_code,
+    id,task_id,delivery_id,provider_id,model,runtime_context_id,status,pid,exit_code,
     error_code,error_message,started_at,finished_at,created_at
-) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13)
-RETURNING id,task_id,delivery_id,provider_id,runtime_context_id,status,pid,exit_code,
+) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14)
+RETURNING id,task_id,delivery_id,provider_id,model,runtime_context_id,status,pid,exit_code,
           error_code,error_message,started_at,finished_at,created_at`,
-		snapshot.ID, snapshot.TaskID, snapshot.DeliveryID, snapshot.ProviderID,
+		snapshot.ID, snapshot.TaskID, snapshot.DeliveryID, snapshot.ProviderID, snapshot.Model,
 		snapshot.RuntimeContextID, snapshot.Status, snapshot.PID, snapshot.ExitCode,
 		snapshot.ErrorCode, snapshot.ErrorMessage, snapshot.StartedAt, snapshot.FinishedAt,
 		snapshot.CreatedAt.UTC()))
@@ -187,7 +187,7 @@ func (s *Store) GetRun(ctx context.Context, owner domain.Owner, id string) (doma
 		return domain.RunSnapshot{}, err
 	}
 	out, err := scanRun(s.pool.QueryRow(ctx, `
-SELECT r.id,r.task_id,r.delivery_id,r.provider_id,r.runtime_context_id,r.status,r.pid,r.exit_code,
+SELECT r.id,r.task_id,r.delivery_id,r.provider_id,r.model,r.runtime_context_id,r.status,r.pid,r.exit_code,
        r.error_code,r.error_message,r.started_at,r.finished_at,r.created_at
 FROM oneshot_runs r JOIN oneshot_tasks t ON t.id=r.task_id
 WHERE r.id=$1 AND t.principal_kind=$2 AND t.principal_id=$3`, id, owner.Kind, owner.ID))
@@ -235,7 +235,7 @@ UPDATE oneshot_runs r SET
     status=$1,pid=$2,exit_code=$3,error_code=$4,error_message=$5,started_at=$6,finished_at=$7
 FROM oneshot_tasks t
 WHERE r.id=$8 AND t.id=r.task_id AND t.principal_kind=$9 AND t.principal_id=$10
-RETURNING r.id,r.task_id,r.delivery_id,r.provider_id,r.runtime_context_id,r.status,r.pid,r.exit_code,
+RETURNING r.id,r.task_id,r.delivery_id,r.provider_id,r.model,r.runtime_context_id,r.status,r.pid,r.exit_code,
           r.error_code,r.error_message,r.started_at,r.finished_at,r.created_at`,
 		snapshot.Status, snapshot.PID, snapshot.ExitCode, snapshot.ErrorCode, snapshot.ErrorMessage,
 		snapshot.StartedAt, snapshot.FinishedAt, snapshot.ID, owner.Kind, owner.ID))
@@ -318,7 +318,7 @@ func (s *Store) ListRuns(ctx context.Context, owner domain.Owner, taskID string,
 		return Page[domain.RunSnapshot]{}, err
 	}
 	query := `
-SELECT r.id,r.task_id,r.delivery_id,r.provider_id,r.runtime_context_id,r.status,r.pid,r.exit_code,
+SELECT r.id,r.task_id,r.delivery_id,r.provider_id,r.model,r.runtime_context_id,r.status,r.pid,r.exit_code,
        r.error_code,r.error_message,r.started_at,r.finished_at,r.created_at
 FROM oneshot_runs r JOIN oneshot_tasks t ON t.id=r.task_id
 WHERE t.principal_kind=$1 AND t.principal_id=$2 AND ($3='' OR r.task_id=$3)`
@@ -357,7 +357,7 @@ WHERE t.principal_kind=$1 AND t.principal_id=$2 AND ($3='' OR r.task_id=$3)`
 func scanRun(row scanner) (domain.RunSnapshot, error) {
 	var snapshot domain.RunSnapshot
 	if err := row.Scan(&snapshot.ID, &snapshot.TaskID, &snapshot.DeliveryID,
-		&snapshot.ProviderID, &snapshot.RuntimeContextID, &snapshot.Status,
+		&snapshot.ProviderID, &snapshot.Model, &snapshot.RuntimeContextID, &snapshot.Status,
 		&snapshot.PID, &snapshot.ExitCode, &snapshot.ErrorCode, &snapshot.ErrorMessage,
 		&snapshot.StartedAt, &snapshot.FinishedAt, &snapshot.CreatedAt); err != nil {
 		return domain.RunSnapshot{}, err

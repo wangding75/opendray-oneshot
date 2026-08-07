@@ -76,8 +76,12 @@ func TestProcessExecutorCommandAndCWDFailures(t *testing.T) {
 		t.Fatalf("missing command error = %v", err)
 	}
 
+	executable := "/bin/sh"
+	if filepath.Separator == '\\' {
+		executable = `C:\Windows\System32\cmd.exe`
+	}
 	_, err = executor.Start(context.Background(), adapter.CommandSpec{
-		Executable: "/bin/sh",
+		Executable: executable,
 		Dir:        filepath.Join(t.TempDir(), "missing-cwd"),
 	})
 	if !domain.HasCode(err, domain.ErrorExecutionFailed) {

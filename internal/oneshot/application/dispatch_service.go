@@ -17,12 +17,36 @@ import (
 
 const createTaskPath = "/api/v1/oneshot/tasks"
 
+// ModelResolver resolves the model snapshot for a task creation command.
+type ModelResolver interface {
+	ResolveModel(ctx context.Context, providerID, requestedModel string) (string, error)
+}
+
+type defaultModelResolver struct{}
+
+func (defaultModelResolver) ResolveModel(ctx context.Context, providerID, requestedModel string) (string, error) {
+	requestedModel = strings.TrimSpace(requestedModel)
+	if requestedModel != "" {
+		if providerID == "shell-oneshot-fixture" {
+			if requestedModel != "shell" {
+				return "", domain.NewDomainError(domain.ErrorInvalidRequest, "Shell fixture does not support model selection: "+requestedModel, nil)
+			}
+		}
+		return requestedModel, nil
+	}
+	if providerID == "shell-oneshot-fixture" {
+		return "shell", nil
+	}
+	return "mock-model", nil
+}
+
 // DispatchService durably creates the Task and its initial execution Delivery.
 type DispatchService struct {
 	repository       queue.Repository
 	now              func() time.Time
 	policy           *workspacepolicy.Policy
 	defaultWorkspace string
+	resolver         ModelResolver
 }
 
 type DispatchServiceOption func(*DispatchService)
@@ -34,10 +58,19 @@ func WithWorkspacePolicy(policy *workspacepolicy.Policy, defaultWorkspace string
 	}
 }
 
+func WithModelResolver(resolver ModelResolver) DispatchServiceOption {
+	return func(service *DispatchService) {
+		if resolver != nil {
+			service.resolver = resolver
+		}
+	}
+}
+
 func NewDispatchService(repository queue.Repository, options ...DispatchServiceOption) *DispatchService {
 	service := &DispatchService{
 		repository: repository,
 		now:        func() time.Time { return time.Now().UTC() },
+		resolver:   defaultModelResolver{},
 	}
 	for _, option := range options {
 		if option != nil {
@@ -53,6 +86,7 @@ type CreateTaskCommand struct {
 	Owner          domain.Owner
 	ProjectID      string
 	ProviderID     string
+	Model          string
 	WorkspacePath  string
 	Source         domain.Source
 	Prompt         string
@@ -94,10 +128,15 @@ func (s *DispatchService) CreateTask(ctx context.Context, command CreateTaskComm
 		return CreateTaskResult{}, err
 	}
 
+	model, err := s.resolver.ResolveModel(ctx, command.ProviderID, command.Model)
+	if err != nil {
+		return CreateTaskResult{}, err
+	}
+
 	now := s.now().UTC()
 	task, err := domain.NewTask(domain.TaskArgs{
 		Owner: command.Owner, ProjectID: command.ProjectID, ProviderID: command.ProviderID,
-		Source: command.Source, Prompt: command.Prompt,
+		Model: model, Source: command.Source, Prompt: command.Prompt,
 	}, now)
 	if err != nil {
 		return CreateTaskResult{}, err

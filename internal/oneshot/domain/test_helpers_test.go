@@ -1,6 +1,7 @@
 package domain
 
 import (
+	"path/filepath"
 	"strings"
 	"testing"
 	"time"
@@ -31,6 +32,7 @@ func mustTask(t *testing.T) *Task {
 		Owner:      testOwner(),
 		ProjectID:  "prj_demo",
 		ProviderID: "codex",
+		Model:      "default-model",
 		Source:     testSource(),
 		Prompt:     "Fix the focused test.",
 	}, testNow)
@@ -64,12 +66,16 @@ func mustDelivery(t *testing.T, task TaskSnapshot, operation DeliveryOperation, 
 
 func mustContext(t *testing.T, owner Owner, projectID, providerID string, at time.Time) *RuntimeContext {
 	t.Helper()
+	workspacePath := "/srv/opendray/workspaces/demo"
+	if filepath.Separator == '\\' {
+		workspacePath = `C:\srv\opendray\workspaces\demo`
+	}
 	context, err := NewRuntimeContext(RuntimeContextArgs{
 		Owner:             owner,
 		ProjectID:         projectID,
 		ProviderID:        providerID,
 		ProviderContextID: "provider-context-1",
-		WorkspacePath:     "/srv/opendray/workspaces/demo",
+		WorkspacePath:     workspacePath,
 	}, at)
 	if err != nil {
 		t.Fatalf("NewRuntimeContext: %v", err)

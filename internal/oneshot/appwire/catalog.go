@@ -58,7 +58,21 @@ func (c *Catalog) OneShotProvider(ctx context.Context, providerID string) (adapt
 	if strings.TrimSpace(runtime.InstalledVersion) == "" {
 		return adapter.ProviderMetadata{}, domain.NewDomainError(domain.ErrorProviderUnavailable, "provider version is unavailable", nil)
 	}
-	return adapter.ProviderMetadata{ID: providerID, DisplayName: item.Manifest.DisplayName, Version: runtime.InstalledVersion, Executable: runtime.Path, Enabled: item.Enabled, Environment: map[string]adapter.EnvironmentValue{}}, nil
+	var defaultModel string
+	if item.Config != nil {
+		if m, ok := item.Config["model"].(string); ok {
+			defaultModel = strings.TrimSpace(m)
+		}
+	}
+	return adapter.ProviderMetadata{
+		ID:           providerID,
+		DisplayName:  item.Manifest.DisplayName,
+		Version:      runtime.InstalledVersion,
+		Executable:   runtime.Path,
+		Enabled:      item.Enabled,
+		DefaultModel: defaultModel,
+		Environment:  map[string]adapter.EnvironmentValue{},
+	}, nil
 }
 
 type CapabilityCatalog struct{ registry *adapter.Registry }

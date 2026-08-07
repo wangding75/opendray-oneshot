@@ -62,7 +62,7 @@ func validControlTask(t *testing.T, status domain.TaskStatus) domain.TaskSnapsho
 	now := time.Now().UTC()
 	task, err := domain.NewTask(domain.TaskArgs{
 		Owner: domain.Owner{Kind: domain.PrincipalAdmin, ID: "owner-1"}, ProjectID: "project-1",
-		ProviderID: "codex", Source: domain.Source{Kind: domain.SourceAPI}, Prompt: "test",
+		ProviderID: "codex", Model: "default-model", Source: domain.Source{Kind: domain.SourceAPI}, Prompt: "test",
 	}, now)
 	if err != nil {
 		t.Fatal(err)

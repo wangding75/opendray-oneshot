@@ -133,12 +133,13 @@ type Capabilities struct {
 // ProviderMetadata is the small shared provider view consumed by One-shot.
 // It intentionally excludes PTY arguments and interactive input rules.
 type ProviderMetadata struct {
-	ID          string                      `json:"id"`
-	DisplayName string                      `json:"display_name"`
-	Version     string                      `json:"version"`
-	Executable  string                      `json:"executable"`
-	Enabled     bool                        `json:"enabled"`
-	Environment map[string]EnvironmentValue `json:"-"`
+	ID           string                      `json:"id"`
+	DisplayName  string                      `json:"display_name"`
+	Version      string                      `json:"version"`
+	Executable   string                      `json:"executable"`
+	Enabled      bool                        `json:"enabled"`
+	DefaultModel string                      `json:"default_model"`
+	Environment  map[string]EnvironmentValue `json:"-"`
 }
 
 // ProviderCatalog resolves shared CLI path/version/enabled metadata without
@@ -197,6 +198,7 @@ type OneShotAdapter interface {
 	MinimumProviderVersion() string
 	Enabled() bool
 	Capabilities() Capabilities
+	DefaultModel() string
 	BuildCommand(context.Context, ExecutionInput) (CommandSpec, error)
 	NormalizeOutput(context.Context, OutputChunk) ([]NormalizedOutputEvent, error)
 }

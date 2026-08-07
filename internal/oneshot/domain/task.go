@@ -85,6 +85,7 @@ type TaskArgs struct {
 	Owner      Owner
 	ProjectID  string
 	ProviderID string
+	Model      string
 	Source     Source
 	Prompt     string
 }
@@ -96,6 +97,7 @@ type TaskSnapshot struct {
 	PrincipalID      string        `json:"principal_id"`
 	ProjectID        string        `json:"project_id"`
 	ProviderID       string        `json:"provider_id"`
+	Model            string        `json:"model"`
 	Source           Source        `json:"source"`
 	Prompt           string        `json:"prompt"`
 	Status           TaskStatus    `json:"status"`
@@ -112,6 +114,7 @@ type Task struct {
 	owner            Owner
 	projectID        string
 	providerID       string
+	model            string
 	source           Source
 	prompt           string
 	status           TaskStatus
@@ -137,6 +140,9 @@ func NewTask(args TaskArgs, now time.Time) (*Task, error) {
 	if err := requireNonEmpty(args.ProviderID, "provider_id"); err != nil {
 		return nil, err
 	}
+	if err := requireNonEmpty(args.Model, "model"); err != nil {
+		return nil, err
+	}
 	if err := args.Source.Validate(); err != nil {
 		return nil, err
 	}
@@ -148,6 +154,7 @@ func NewTask(args TaskArgs, now time.Time) (*Task, error) {
 		owner:      args.Owner,
 		projectID:  args.ProjectID,
 		providerID: args.ProviderID,
+		model:      args.Model,
 		source:     cloneSource(args.Source),
 		prompt:     args.Prompt,
 		status:     TaskPending,
@@ -167,6 +174,7 @@ func RestoreTask(snapshot TaskSnapshot) (*Task, error) {
 		owner:            Owner{Kind: snapshot.PrincipalKind, ID: snapshot.PrincipalID},
 		projectID:        snapshot.ProjectID,
 		providerID:       snapshot.ProviderID,
+		model:            snapshot.Model,
 		source:           cloneSource(snapshot.Source),
 		prompt:           snapshot.Prompt,
 		status:           snapshot.Status,
@@ -239,6 +247,7 @@ func (t *Task) Snapshot() TaskSnapshot {
 		PrincipalID:      t.owner.ID,
 		ProjectID:        t.projectID,
 		ProviderID:       t.providerID,
+		Model:            t.model,
 		Source:           cloneSource(t.source),
 		Prompt:           t.prompt,
 		Status:           t.status,

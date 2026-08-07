@@ -145,6 +145,46 @@ func (r *Registry) ResolveProvider(ctx context.Context, providerID string) (Reso
 	return ResolvedProvider{Adapter: item, Metadata: cloneProviderMetadata(metadata), Capabilities: item.Capabilities()}, nil
 }
 
+// ResolveModel resolves the model snapshot for a task creation command.
+func (r *Registry) ResolveModel(ctx context.Context, providerID, requestedModel string) (string, error) {
+	if r == nil {
+		return "", domain.NewDomainError(domain.ErrorProviderUnavailable, "One-shot adapter registry is unavailable", nil)
+	}
+	r.mu.RLock()
+	adapter, exists := r.adapters[providerID]
+	r.mu.RUnlock()
+	if !exists {
+		return "", domain.NewDomainError(domain.ErrorUnsupportedProvider, fmt.Sprintf("provider %q is not registered", providerID), nil)
+	}
+
+	requestedModel = strings.TrimSpace(requestedModel)
+	if requestedModel != "" {
+		if providerID == "shell-oneshot-fixture" {
+			if requestedModel != "shell" {
+				return "", domain.NewDomainError(domain.ErrorInvalidRequest, fmt.Sprintf("provider %q does not support model selection: %q", providerID, requestedModel), nil)
+			}
+		}
+		return requestedModel, nil
+	}
+
+	// Resolve default model from catalog/database first
+	if r.catalog != nil {
+		meta, err := r.catalog.OneShotProvider(ctx, providerID)
+		if err == nil && strings.TrimSpace(meta.DefaultModel) != "" {
+			return strings.TrimSpace(meta.DefaultModel), nil
+		}
+	}
+
+	// Fallback to adapter configuration (TOML) default model
+	defaultModel := strings.TrimSpace(adapter.DefaultModel())
+	if defaultModel != "" {
+		return defaultModel, nil
+	}
+
+	// If no model is configured/resolved, return invalid request (400)
+	return "", domain.NewDomainError(domain.ErrorInvalidRequest, fmt.Sprintf("provider %q has no default model configured", providerID), nil)
+}
+
 // Describe returns one client-visible capability descriptor.
 func (r *Registry) Describe(ctx context.Context, providerID string) (ProviderDescriptor, error) {
 	resolved, err := r.ResolveProvider(ctx, providerID)

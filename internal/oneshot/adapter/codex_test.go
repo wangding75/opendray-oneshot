@@ -3,6 +3,7 @@ package adapter
 import (
 	"context"
 	"os"
+	"path/filepath"
 	"reflect"
 	"strings"
 	"testing"
@@ -14,23 +15,32 @@ import (
 func providerTestInput(provider string, operation domain.DeliveryOperation) ExecutionInput {
 	now := time.Now().UTC()
 	owner := domain.Owner{Kind: domain.PrincipalAdmin, ID: "user-1"}
-	task, _ := domain.NewTask(domain.TaskArgs{Owner: owner, ProjectID: "project-1", ProviderID: provider, Source: domain.Source{Kind: domain.SourceAPI}, Prompt: "initial prompt"}, now)
-	delivery, _ := domain.NewDelivery(domain.DeliveryArgs{TaskID: task.Snapshot().ID, Operation: operation, RequestedBy: owner, Input: domain.DeliveryInput{PromptDelta: map[bool]string{true: "follow up"}[operation == domain.DeliveryContinue], Options: map[string]any{"workspace_path": "/tmp/workspace"}}, IdempotencyKey: "key", PayloadSHA256: strings.Repeat("a", 64), MaxAttempts: 3}, now)
-	return ExecutionInput{Task: task.Snapshot(), Delivery: delivery.Snapshot(), Run: domain.RunSnapshot{ID: domain.NewRunID()}, Prompt: task.Snapshot().Prompt, Environment: map[string]string{"OPENAI_API_KEY": "secret"}}
+	workspacePath := "/tmp/workspace"
+	if filepath.Separator == '\\' {
+		workspacePath = `C:\tmp\workspace`
+	}
+	task, _ := domain.NewTask(domain.TaskArgs{Owner: owner, ProjectID: "project-1", ProviderID: provider, Model: "default-model", Source: domain.Source{Kind: domain.SourceAPI}, Prompt: "initial prompt"}, now)
+	delivery, _ := domain.NewDelivery(domain.DeliveryArgs{TaskID: task.Snapshot().ID, Operation: operation, RequestedBy: owner, Input: domain.DeliveryInput{PromptDelta: map[bool]string{true: "follow up"}[operation == domain.DeliveryContinue], Options: map[string]any{"workspace_path": workspacePath}}, IdempotencyKey: "key", PayloadSHA256: strings.Repeat("a", 64), MaxAttempts: 3}, now)
+	return ExecutionInput{Task: task.Snapshot(), Delivery: delivery.Snapshot(), Run: domain.RunSnapshot{ID: domain.NewRunID(), Model: "default-model"}, Prompt: task.Snapshot().Prompt, Environment: map[string]string{"OPENAI_API_KEY": "secret"}}
 }
 
 func TestCodexBuildCommandGolden(t *testing.T) {
 	input := providerTestInput(CodexProviderID, domain.DeliveryNew)
-	adapter := NewCodexAdapter(CodexConfig{Enabled: true, Model: "gpt-5.3-codex", ReasoningEffort: "high", Sandbox: "workspace-write", SkipGitRepoCheck: true})
+	workspacePath := "/tmp/workspace"
+	if filepath.Separator == '\\' {
+		workspacePath = `C:\tmp\workspace`
+	}
+	input.Run.Model = "gpt-5.3-codex"
+	adapter := NewCodexAdapter(CodexConfig{Enabled: true, Model: "ignored-model", ReasoningEffort: "high", Sandbox: "workspace-write", SkipGitRepoCheck: true})
 	spec, err := adapter.BuildCommand(context.Background(), input)
 	if err != nil {
 		t.Fatal(err)
 	}
-	want := []string{"exec", "--json", "--color", "never", "--skip-git-repo-check", "--model", "gpt-5.3-codex", "-c", `model_reasoning_effort="high"`, "--sandbox", "workspace-write", "-C", "/tmp/workspace", "-"}
+	want := []string{"exec", "--json", "--color", "never", "--skip-git-repo-check", "--model", "gpt-5.3-codex", "-c", `model_reasoning_effort="high"`, "--sandbox", "workspace-write", "-C", workspacePath, "-"}
 	if !reflect.DeepEqual(spec.Args, want) {
 		t.Fatalf("args\n got: %#v\nwant: %#v", spec.Args, want)
 	}
-	if string(spec.Stdin) != "initial prompt" || spec.Dir != "/tmp/workspace" {
+	if string(spec.Stdin) != "initial prompt" || spec.Dir != workspacePath {
 		t.Fatalf("spec = %+v stdin=%q", spec.Redacted(), string(spec.Stdin))
 	}
 	if spec.Redacted().Environment["OPENAI_API_KEY"] != "[REDACTED]" {
@@ -40,7 +50,13 @@ func TestCodexBuildCommandGolden(t *testing.T) {
 
 func TestCodexResumeGoldenAndWorkspaceGuard(t *testing.T) {
 	input := providerTestInput(CodexProviderID, domain.DeliveryContinue)
-	ctx, _ := domain.NewRuntimeContext(domain.RuntimeContextArgs{Owner: domain.Owner{Kind: domain.PrincipalAdmin, ID: "user-1"}, ProjectID: "project-1", ProviderID: CodexProviderID, ProviderContextID: "thread-123", WorkspacePath: "/tmp/workspace"}, time.Now().UTC())
+	workspacePath := "/tmp/workspace"
+	otherPath := "/tmp/other"
+	if filepath.Separator == '\\' {
+		workspacePath = `C:\tmp\workspace`
+		otherPath = `C:\tmp\other`
+	}
+	ctx, _ := domain.NewRuntimeContext(domain.RuntimeContextArgs{Owner: domain.Owner{Kind: domain.PrincipalAdmin, ID: "user-1"}, ProjectID: "project-1", ProviderID: CodexProviderID, ProviderContextID: "thread-123", WorkspacePath: workspacePath}, time.Now().UTC())
 	snapshot := ctx.Snapshot()
 	input.RuntimeContext = &snapshot
 	adapter := NewCodexAdapter(CodexConfig{Enabled: true})
@@ -48,11 +64,11 @@ func TestCodexResumeGoldenAndWorkspaceGuard(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	want := []string{"exec", "--json", "--color", "never", "-C", "/tmp/workspace", "resume", "thread-123", "-"}
+	want := []string{"exec", "--json", "--color", "never", "--model", "default-model", "-C", workspacePath, "resume", "thread-123", "-"}
 	if !reflect.DeepEqual(spec.Args, want) || string(spec.Stdin) != "follow up" {
 		t.Fatalf("resume spec = %#v stdin=%q", spec.Args, string(spec.Stdin))
 	}
-	input.Delivery.Input.Options["workspace_path"] = "/tmp/other"
+	input.Delivery.Input.Options["workspace_path"] = otherPath
 	if _, err := adapter.BuildCommand(context.Background(), input); !domain.HasCode(err, domain.ErrorContextOwnerMismatch) {
 		t.Fatalf("workspace error = %v", err)
 	}
@@ -120,9 +136,13 @@ func TestCodexFixtureAndResumeFailureMapping(t *testing.T) {
 	}
 
 	resumeInput := providerTestInput(CodexProviderID, domain.DeliveryContinue)
+	workspacePath := "/tmp/workspace"
+	if filepath.Separator == '\\' {
+		workspacePath = `C:\tmp\workspace`
+	}
 	contextAggregate, err := domain.NewRuntimeContext(domain.RuntimeContextArgs{
 		Owner: domain.Owner{Kind: domain.PrincipalAdmin, ID: "user-1"}, ProjectID: "project-1",
-		ProviderID: CodexProviderID, ProviderContextID: "missing-thread", WorkspacePath: "/tmp/workspace",
+		ProviderID: CodexProviderID, ProviderContextID: "missing-thread", WorkspacePath: workspacePath,
 	}, time.Now().UTC())
 	if err != nil {
 		t.Fatal(err)

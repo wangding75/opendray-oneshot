@@ -23,6 +23,7 @@ func (a registryTestAdapter) AdapterVersion() string         { return a.adapterV
 func (a registryTestAdapter) MinimumProviderVersion() string { return a.minimumVer }
 func (a registryTestAdapter) Enabled() bool                  { return a.enabled }
 func (a registryTestAdapter) Capabilities() Capabilities     { return a.capabilities }
+func (a registryTestAdapter) DefaultModel() string            { return "default-model" }
 func (a registryTestAdapter) BuildCommand(context.Context, ExecutionInput) (CommandSpec, error) {
 	return CommandSpec{}, nil
 }

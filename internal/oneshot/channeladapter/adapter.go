@@ -171,7 +171,7 @@ func (a *Adapter) Dispatch(ctx context.Context, req channel.InboundDispatchReque
 	return channel.InboundDispatchResult{Status: channel.DispatchHandled}, nil
 }
 
-type runArgs struct{ ProjectID, ProviderID, Workspace, Prompt string }
+type runArgs struct{ ProjectID, ProviderID, Model, Workspace, Prompt string }
 
 func (a *Adapter) runCommand(ctx context.Context, cc channel.CommandContext) (*channel.Card, error) {
 	if !a.config.Enabled {
@@ -200,7 +200,7 @@ func (a *Adapter) runCommand(ctx context.Context, cc channel.CommandContext) (*c
 		return nil, err
 	}
 	result, err := a.creator.CreateTask(ctx, application.CreateTaskCommand{
-		Owner: owner, ProjectID: parsed.ProjectID, ProviderID: parsed.ProviderID,
+		Owner: owner, ProjectID: parsed.ProjectID, ProviderID: parsed.ProviderID, Model: parsed.Model,
 		WorkspacePath: parsed.Workspace, Source: source, Prompt: parsed.Prompt,
 		Input:          domain.DeliveryInput{AttachmentRefs: refs},
 		IdempotencyKey: telegramKey(cc.Message),
@@ -503,6 +503,12 @@ func (a *Adapter) parseRunArgs(ctx context.Context, args []string) (runArgs, err
 				return out, fmt.Errorf("--provider requires a value")
 			}
 			out.ProviderID = args[i]
+		case "--model":
+			i++
+			if i >= len(args) {
+				return out, fmt.Errorf("--model requires a value")
+			}
+			out.Model = args[i]
 		case "--workspace":
 			i++
 			if i >= len(args) {
@@ -518,6 +524,7 @@ func (a *Adapter) parseRunArgs(ctx context.Context, args []string) (runArgs, err
 	}
 	out.ProjectID = strings.TrimSpace(out.ProjectID)
 	out.ProviderID = strings.TrimSpace(out.ProviderID)
+	out.Model = strings.TrimSpace(out.Model)
 	out.Workspace = strings.TrimSpace(out.Workspace)
 	out.Prompt = strings.TrimSpace(strings.Join(prompt, " "))
 	if out.ProjectID == "" || out.ProviderID == "" || out.Workspace == "" || out.Prompt == "" {
